@@ -64,3 +64,20 @@ interoperability and hardware documentation research. Files mirrored from
 `ipc-firmware` are credited to that repo's contributors. Do not embed
 credentials, WiFi passwords, or serial numbers/MAC addresses in submissions
 (redact before submitting).
+
+## 2026-08-27 — wiki-sourced captures
+
+5 more vendor captures, extracted from serial-log excerpts embedded in
+thingino-firmware.wiki camera pages (files suffixed `-from-wiki`):
+
+| file | SoC | source page |
+|---|---|---|
+| logs/xiaomi_mjsxj03hl-t23x-t31x-serial-from-wiki.boot.log | T31L/N | Camera:-Xiaomi-MJSXJ03HL |
+| logs/jooan_a6m-t23x-t31x-serial-from-wiki.boot.log | T23N | Camera:-Jooan-A6M |
+| logs/lsc_3215672-t23x-t31x-serial-from-wiki.boot.log | T23N | Camera:-LSC-3215672 |
+| logs/galayou_g2-t23x-t31x-serial-from-wiki.boot.log | T23N (of 3 hw revs) | Camera:-Galayou-G2 |
+| logs/sannce_i21ag-t23x-t31x-serial-from-wiki.boot.log | T10 | Camera:-Sannce-I21AG |
+
+Notable: vendor T31L/N mpll = 1200 MHz (our 2026.07 SPL plan: 1000) and
+vpll = 1200; vendor T23 boards show apll 1188 (LSC/Galayou) vs 1400 (Jooan A6M)
+with mpll 1200 throughout — per-model vendor clock tuning is real.

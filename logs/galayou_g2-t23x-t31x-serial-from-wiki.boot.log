@@ -1,0 +1,67 @@
+U-Boot SPL 2013.07 (Nov 18 2023 - 10:39:44)
+Board info: T23N
+
+apll_freq = 1188000000
+mpll_freq = 1200000000
+sdram init start
+DDR clk rate 600000000
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Nov 18 2023 - 10:39:44)
+
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 215k for U-Boot at: 83fc8000
+Reserving 32784k for malloc() at: 81fc4000
+Reserving 32 Bytes for Board Info at: 81fc3fe0
+Reserving 124 Bytes for Global Data at: 81fc3f64
+Reserving 128k for boot params() at: 81fa3f64
+Stack Pointer at: 81fa3f48
+Now running in RAM - U-Boot at: 83fc8000
+MMC:   msc: 0
+the manufacturer 85
+SF: Detected P25Q64H
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====>PHY not found!Jz4775-9161
+Hit any key to stop autoboot:  0
+isvp_t23#
+
+isvp_t23# mmc rescan
+isvp_t23# mmcinfo
+Device: msc
+Manufacturer ID: c8
+OEM: 55aa
+Name: APPSD
+Tran Speed: 50000000
+Rd Block Len: 512
+SD version 2.0
+High Capacity: No
+Capacity: 121 MiB
+Bus Width: 1-bit
+
+isvp_t23# mmc read 0x82000000 0x10 0x4000
+
+MMC read: dev # 0, block # 16, count 16384 ... 16384 blocks read: OK
+
+isvp_t23# md 0x82000000 8
+82000000: 03040506 55aa5502 00001daa 00003200    .....U.U.....2..
+82000010: 00000000 00000000 00000000 00000000    ................
+
+isvp_t23# sf probe 0
+the manufacturer 85
+SF: Detected P25Q64H
+
+--->probe spend 4 ms
+
+isvp_t23# sf erase 0x0 0x800000
+SF: 8388608 bytes @ 0x0 Erased: OK
+--->erase spend 278 ms
+
+isvp_t23# sf write 0x82000000 0x0 0x800000
+SF: 8388608 bytes @ 0x0 Written: OK
+--->write spend 51612 ms

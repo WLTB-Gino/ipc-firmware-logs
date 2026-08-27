@@ -1,0 +1,98 @@
+U-Boot 2013.07 (Sep 26 2017 - 10:51:34)
+
+Board: ISVP (Ingenic XBurst T10 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 435k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer c2
+SF: Detected MX25L64**E
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Jz4775-9161
+Hit any key to stop autoboot:  0
+the manufacturer c2
+SF: Detected MX25L64**E
+
+U-Boot 2013.07 (Sep 26 2017 - 10:51:34)
+
+Board: ISVP (Ingenic XBurst T10 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 435k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer c2
+SF: Detected MX25L64**E
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Jz4775-9161
+Hit any key to stop autoboot:  0
+the manufacturer c2
+SF: Detected MX25L64**E
+
+--->probe spend 4 ms
+SF: 1507328 bytes @ 0x40000 Read: OK
+--->read spend 220 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1446926 Bytes = 1.4 MiB
+   Load Address: 80010000
+   Entry Point:  80382800
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+# Just line by line, NOT at once!
+setenv baseaddr 0x80600000; setenv flashsize 0x800000;
+mw.b ${baseaddr} ff ${flashsize};
+sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
+mmc dev 0; mmc erase 0x10 0x4000;
+mmc write ${baseaddr} 0x10 0x4000;
+
+isvp# mmc rescan; mmcinfo; fatls mmc 0
+Device: msc
+Manufacturer ID: 0
+OEM: 3000
+Name: APPSD 
+Tran Speed: 50000000
+Rd Block Len: 512
+SD version 2.0
+High Capacity: No
+Capacity: 60 MiB
+Bus Width: 4-bit
+isvp# fatls mmc 0
+  8388608   thingino-sannce21.bin
+
+1 file(s), 0 dir(s)
+
+# Just line by line, NOT at once!
+setenv flashsize 0x800000; setenv baseaddr 0x82000000;
+mw.b ${baseaddr} 0xff ${flashsize};
+fatload mmc 0:1 ${baseaddr} thingino-sannce21.bin;
+sf probe 0; sf erase 0x0 ${flashsize};
+sf write ${baseaddr} 0x0 ${filesize};
+
+# Just line by line, NOT at once!
+setenv flashsize 0x800000; setenv baseaddr 0x82000000;
+mw.b ${baseaddr} 0xff ${flashsize};
+fatload mmc 0:1 ${baseaddr} fulldump.bin
+sf probe 0; sf lock 0; sf erase 0x0 ${flashsize};
+sf write ${baseaddr} 0x0 ${filesize};

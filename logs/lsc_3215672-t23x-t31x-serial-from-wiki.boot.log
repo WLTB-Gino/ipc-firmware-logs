@@ -1,0 +1,44 @@
+U-Boot SPL 2013.07-gfc0af3c (Oct 28 2024 - 18:27:53)
+Board info: T23N
+
+apll_freq = 1188000000 
+mpll_freq = 1200000000 
+sdram init start
+DDR clk rate 600000000
+DDR_PAR of eFuse: 00000000 00000000
+sdram init finished
+image entry point: 0x80100000
+
+
+U-Boot 2013.07-gfc0af3c (Oct 28 2024 - 18:27:53)
+
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 441k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer 20
+SF: Detected XM25QH64C
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====>PHY not found!Jz4775-9161
+Hit any key to stop autoboot:  0 
+isvp_t23#
+
+watchdog 0;
+setenv baseaddr 0x82000000;
+mmc dev 0;
+mmc erase 0x10 0x8000;
+setenv flashsize 0x800000;
+mw.b ${baseaddr} ff ${flashsize};
+sf probe 0; 
+sf read ${baseaddr} 0x0 ${flashsize};
+mmc write ${baseaddr} 0x10 0x8000
