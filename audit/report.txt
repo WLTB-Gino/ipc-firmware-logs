@@ -1,0 +1,108 @@
+# profiles: 225   U-Boot 2026.07 (default; none pin 2013.07)
+# Kconfig defaults: src=INTERNAL freq=400MHz; module defaults: clk_name=mpll avpu_clk=550M
+# per-SKU PLLs (MHz):
+#   a1n        apll=1104.0 mpll=1608.0 vpll=None
+#   t10l       apll=712.0 mpll=1200.0 vpll=None
+#   t10n       apll=860.0 mpll=1200.0 vpll=None
+#   t20l       apll=712.0 mpll=1000.0 vpll=None
+#   t20n       apll=860.0 mpll=1000.0 vpll=None
+#   t20x       apll=860.0 mpll=1000.0 vpll=None
+#   t21hp      apll=1200.0 mpll=1000.0 vpll=None
+#   t21n       apll=864.0 mpll=900.0 vpll=None
+#   t23dl      apll=1188.0 mpll=1200.0 vpll=None
+#   t23dn      apll=1400.0 mpll=1200.0 vpll=None
+#   t23n       apll=1188.0 mpll=1200.0 vpll=None
+#   t23nhp     apll=1400.0 mpll=1200.0 vpll=None
+#   t23nlp     apll=936.0 mpll=1200.0 vpll=None
+#   t23x       apll=1188.0 mpll=1200.0 vpll=None
+#   t23zn      apll=1400.0 mpll=1200.0 vpll=None
+#   t30a       apll=1200.0 mpll=1200.0 vpll=None
+#   t30l       apll=750.0 mpll=1000.0 vpll=None
+#   t30n       apll=900.0 mpll=1000.0 vpll=None
+#   t30x       apll=900.0 mpll=1000.0 vpll=None
+#   t31a       apll=1512.0 mpll=1500.0 vpll=None
+#   t31l       apll=1008.0 mpll=1000.0 vpll=None
+#   t31lc      apll=1104.0 mpll=1000.0 vpll=None
+#   t31n       apll=1404.0 mpll=1000.0 vpll=None
+#   t31x       apll=1392.0 mpll=1200.0 vpll=None
+#   t40n       apll=912.0 mpll=1000.0 vpll=None
+#   t40xp      apll=1008.0 mpll=1200.0 vpll=None
+#   t40xp-nor  apll=1008.0 mpll=1200.0 vpll=None
+#   t41lq      apll=None mpll=None vpll=None
+#   t41nq      apll=None mpll=1400.0 vpll=None
+
+== KCONFIG-MAP-GAP: 3 ==
+  <global> [-] BR2_AVPU_CLK_486MHZ selectable but mk map lacks 486
+  <global> [-] BR2_ISP_CLKA_486MHZ selectable but mk map lacks 486
+  <global> [-] BR2_ISP_CLKS_486MHZ selectable but mk map lacks 486
+
+== LAYER1-EMPTY-MAP: 11 ==
+  feisda_hd620_t31x_jxq03_eth+rtl8188ftv [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  jienuo_jn107ardwifi_t31l_gc2083_eth+rtl8131bu [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  tptek_wor504jch_t31x_gc4653_eth+rtl8731 [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_djz_t31n_gc2083_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_djz_t31n_gc4653_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_fjz_t31x_gc4653_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_h33_t31l_gc2083_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_s37i_t31l_imx307_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_z55_t31x_gc4653_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  vanhua_z55i_t31x_gc4653_eth [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+  360_ap6pcm03_t31x_gc4653_eth+atbm6031 [t31] [PINNED] 486MHz selected, map lacks 486 -> avpu_clk param ABSENT -> module default 550MHz requested -> actual 400MHz on vpll(1200)
+
+== LAYER2-PARENT-OFF: 9 ==
+  iget_c5pt_t41lq_gc4023_jl1101 [t41] [DEFAULT] 400MHz on mpll: PLL not programmed by this U-Boot (off)
+  cinnado_d13k_t41nq_sc5336_atbm6132bu [t41] [PINNED] 550MHz on apll: PLL not programmed by this U-Boot (off)
+  cinnado_d1_3k_atbm6132u [t41] [PINNED] 550MHz on apll: PLL not programmed by this U-Boot (off)
+  hugolog_e5p_t41lq_sc4336p_atbm6062u [t41] [PINNED] 550MHz on apll: PLL not programmed by this U-Boot (off)
+  vanhua_t55a_t41lq_gc5603_eth [t41] [DEFAULT] 400MHz on mpll: PLL not programmed by this U-Boot (off)
+  vanhua_z66si_t41nq_gc4023_eth [t41] [PINNED] 550MHz on apll: PLL not programmed by this U-Boot (off)
+  wuuk_y0910_t41nq_sc4336p_atbm6031 [t41] [PINNED] 550MHz on sclka: PLL not programmed by this U-Boot (off)
+  wyze_cam4_t41nq_os04d10_atbm6062s [t41] [PINNED] 550MHz on sclka: PLL not programmed by this U-Boot (off)
+  wyze_floodlightv2_t41nq_gc3003a_atbm6031 [t41] [PINNED] 550MHz on sclka: PLL not programmed by this U-Boot (off)
+
+== LAYER2-UNREACHABLE: 40 ==
+  aosu_c5l_t31l_sc3336_rtl8188ftv [t31] [PINNED] 400MHz on mpll(1000) -> actual 333MHz
+  aosu_c5l_t31l_sc3338_rtl8188ftv [t31] [PINNED] 400MHz on mpll(1000) -> actual 333MHz
+  dekco_dc5l_t31l_sc3336_rtl8188ftv [t31] [PINNED] 400MHz on mpll(1000) -> actual 333MHz
+  hamedal_c20_t31a_gc2053 [t31] [PINNED] 600MHz on mpll(1500) -> actual 500MHz
+  hc_3301ymt1_t31n_sc2332_eth+hi3881 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  hl_jdpan01_t31l_gc2053_atbm6031 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  hugolog_e5_t31l_sc2336p_atbm6012bx [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  laview_l2_t31l_sc3338_atbm6012b [t31] [PINNED] 600MHz on mpll(1000) -> actual 500MHz
+  laview_l2_t31l_sc3338_atbm6012bx [t31] [PINNED] 600MHz on mpll(1000) -> actual 500MHz
+  laview_l2_t31l_sc3338_ssv6256p [t31] [PINNED] 600MHz on mpll(1000) -> actual 500MHz
+  overtech_ov59wb_t31n_sc223a_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  tplink_tapo_c100_t31l_sc2336_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  tplink_tapo_c100_t31l_sc2336_wq9001 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  tplink_tapo_c500_t31l_sc2336_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  tplink_tapo_tc70_t31l_sc2336_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  vanhua_ak54_t31n_gc2053_eth [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  vanhua_l34_t31l_gc2083_eth [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wanjiaan_hdc51_t31l_jxf37_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wanjiaan_hdc51_t31l_sc2332_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wanjiaan_hdc51_t31l_sc2332_rtl8188ftv_mmc [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wanjiaan_hdc55_t31n_sc2332_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wansview_g6_t31l_sc2336_atbm6012b [t31] [PINNED] 600MHz on mpll(1000) -> actual 500MHz
+  wansview_g6_t31l_sc2336_ssv6256p [t31] [PINNED] 600MHz on mpll(1000) -> actual 500MHz
+  wyze_cam3_t31al_gc2053_atbm6031 [t31] [PINNED] 600MHz on mpll(1500) -> actual 500MHz
+  wyze_camfl1_t31al_gc2053_atbm6031 [t31] [PINNED] 600MHz on mpll(1500) -> actual 500MHz
+  xiaomi_mjsxj05hl_t31l_gc2053_atbm6031 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  360_k7ts_t41nq_gc4023_eth [t41] [DEFAULT] 400MHz on mpll(1400) -> actual 350MHz
+  camsoy_okc01_t31lc_gc1084_hi3881 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  cinnado_d1_t31l_kernel44 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  galayou_g2_t31lc_sc2336_atbm6012b [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  galayou_g2_t31lc_sc2336_atbm6012bx [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  galayou_g7_t31lc_sc2336_atbm6012b [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  h3c_tc2100_t31n_jxq03_eth+ssv6155 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  jooan_w5u_t40nn_os02g10_ssv6256p [t40] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  laxihub_14t_t31l_sc2336_atbm6032 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  noorio_t110_t41nq_gc4023_aic8800d [t41] [DEFAULT] 400MHz on mpll(1400) -> actual 350MHz
+  vanhua_s62i_t40nn_imx307_eth [t40] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wansview_y1_t31l_os02g10_atbm6031 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  wj01_t31l_jxh62_rtl8188ftv [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+  xiaomi_mjsxj03hl_t31n_jxq03p_rtl8189ftv_k4 [t31] [DEFAULT] 400MHz on mpll(1000) -> actual 333MHz
+
+== MAP-EXTRA: 1 ==
+  <global> [-] ISP_CLK map has 120MHz not offered in Kconfig
+
+VALIDATION: all anchors passed
