@@ -1,0 +1,8 @@
+# Evidence: WUUK Y0910 (T41, WUUK) — stock Thingino-build kernel, parent-clock failure
+# Source: Discord user keenz3d, 2026-08-25, channel 1538335022203936858
+# Not a stock-firmware log (Thingino build), but documents the Layer-3
+# parent-PLL-off bug live on a T41 device.
+[ 8.064564] Failed to modify the parent clock.
+# Context: avpu/isp module attempts to switch parent to sclka which the
+# 2026.07 SPL did not program on this t41 leaf. Vendor-firmware capture of
+# this same device (y0910) is still wanted to see what parent vendor uses.

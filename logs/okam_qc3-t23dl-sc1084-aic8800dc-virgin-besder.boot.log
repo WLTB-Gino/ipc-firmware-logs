@@ -1,0 +1,679 @@
+U-Boot SPL 2013.07-H20240729a (Jan 09 2025 - 21:29:12)
+Board info: T23DL
+
+apll_freq = 1404000000
+mpll_freq = 1200000000
+sdram init start
+DDR clk rate 600000000
+DDR_PAR of eFuse: 00000000 00000000
+sdram init finished
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Jan 09 2025 - 21:29:12)
+
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  32 MiB
+Top of RAM usable for U-Boot at: 82000000
+Reserving 446k for U-Boot at: 81f90000
+Reserving 16400k for malloc() at: 80f8c000
+Reserving 32 Bytes for Board Info at: 80f8bfe0
+Reserving 124 Bytes for Global Data at: 80f8bf64
+Reserving 128k for boot params() at: 80f6bf64
+Stack Pointer at: 80f6bf48
+Now running in RAM - U-Boot at: 81f90000
+MMC:   msc: 0
+the manufacturer 5e
+SF: Detected ZB25VQ64
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+watchdog open!
+===gpio_direction_output PB18 out0===
+===QC6-V8-T23N-202404017-V1===
+Net:   ====>PHY not found!Jz4775-9161
+the manufacturer 5e
+SF: Detected ZB25VQ64
+
+Hit any key to stop autoboot:  0
+the manufacturer 5e
+SF: Detected ZB25VQ64
+
+--->probe spend 4 ms
+SF: 2097152 bytes @ 0x40000 Read: OK
+--->read spend 674 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_pike_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1281026 Bytes = 1.2 MiB
+   Load Address: 80010000
+   Entry Point:  8030ea60
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+mdev is ok......
+The flash is not xmc exit
+[D][1970/01/01/08:00:00][tfUpgrade.c<WatchDogInit>:297]WatchDogInit success
+[M][1970/01/01/08:00:00][tfUpgrade.c<WatchDogInit>:300]create WatchDogProc
+func = WatchDogProc
+[    0.989827] watchdog watchdog0: watchdog did not stop!O[b][26]
+
+[M][1970/01/01/08:00:00][tfUpgrade.c<main>:1580]tfupgrade jz t23 8m version 3.0 20231219--UpgradeType [0]
+[M][1970/01/01/08:00:00][tfUpgrade.c<GpioUnexport>:394]unexport GPIO[b][26]
+/etc/init.d/rcS: line 36: /system/system/bin/msg_demo: not found
+1970-01-01 00:00:02-0060 [DEBUG] vp_logger.c:0065 [vp_logger_read_thread]:start
+
+veepai login: [M][1970/01/01/08:00:02][auto_upgrade.c<main>:1383]auto upgrade version 7.0 date:20250106
+
+2025-12-22 08:21:31-0559 [DEBUG] vp_logger.c:0071 [vp_logger_read_thread]:app:61,kernel:0
+1970-01-01 00:00:02-0408 [DEBUG] vp_sdk.c:0099 [main]:app start
+
+veepai login: 1970-01-01 00:00:02-0408 [DEBUG] vp_sdk.c:0100 [main]:app start wifi version 2
+1970-01-01 00:00:02-0435 [DEBUG] vp_flash.c:0248 [vp_flash_info]:mtd.size:262144 mtd.write_size:256 erase_size:32768 oob_size:0
+
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0154 [vp_factory_param_parse]:pid:KLKJ-UUMzLVctMU1Qo6i/qMasu/otILOjtedXSUZJKS3Qwrzcubk===QC3-W
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0167 [vp_factory_param_parse]:update_time:1766362781
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0176 [vp_factory_param_parse]:find horizontal_moto config
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0181 [vp_factory_param_parse]:horizontal_moto_have:0
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0209 [vp_factory_param_parse]:find vertical_moto config
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0214 [vp_factory_param_parse]:vertical_moto_have:0
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0331 [vp_factory_param_parse]:find white_light config
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0336 [vp_factory_param_parse]:white_led_have:1
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0341 [vp_factory_param_parse]:white_led_ctrl:1
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0347 [vp_factory_param_parse]:white_led_full_color:1
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0353 [vp_factory_param_parse]:white_led_default_mode:0
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0361 [vp_factory_param_parse]:white_led_app_show:7
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0468 [vp_factory_param_parse]:find speaker config
+1970-01-01 00:00:02-0540 [DEBUG] vp_factory.c:0473 [vp_factory_param_parse]:speaker_have:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0491 [vp_factory_param_parse]:speaker_siren:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0497 [vp_factory_param_parse]:speaker_speak:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0507 [vp_factory_param_parse]:find mic config
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0512 [vp_factory_param_parse]:mic_have:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0528 [vp_factory_param_parse]:find ir_cut config
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0533 [vp_factory_param_parse]:ir_cut_have:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0539 [vp_factory_param_parse]:ir_cut_ctrl:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0549 [vp_factory_param_parse]:find ir_led config
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0554 [vp_factory_param_parse]:ir_led_have:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:0560 [vp_factory_param_parse]:ir_led_ctrl:1
+1970-01-01 00:00:02-0541 [WARN] vp_factory.c:0098 [vp_factory_param_init]:hardware param:
+1970-01-01 00:00:02-0541 [WARN] vp_factory.c:0099 [vp_factory_param_init]:{"PID":"KLKJ-UUMzLVctMU1Qo6i/qMasu/otILOjtedXSUZJKS3Qwrzcubk===QC3-W","updateT":1766362781,"HMotor":{"Have":0},"VMotor":{"Have":0},"wLed":{"Have":1,"Ctrl":1,"Color":1,"ColorMode":0,"ColorShow":7},"Speaker":{"Have":1,"Siren":1,"Speak":1,"dbTalk":1},"Mic":{"Have":1},"Ircut":{"Have":1,"Ctrl":1},"IRLed":{"Have":1,"Ctrl":1}}
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:1261 [vp_order_param_parse]:mirror:3
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:1275 [vp_order_param_parse]:language:1
+1970-01-01 00:00:02-0541 [DEBUG] vp_factory.c:1552 [vp_order_param_parse]:find low_power config
+1970-01-01 00:00:02-0541 [WARN] vp_factory.c:0108 [vp_factory_param_init]:order param:
+1970-01-01 00:00:02-0541 [WARN] vp_factory.c:0109 [vp_factory_param_init]:{"Image":{"mirror":"3"},"TfRecord":{"motionRecord":"0"},"LowPower":{"undefined":"0"},"Audio":{"language":1}}
+
+veepai login: 2025-12-22 08:21:31-0029 [WARN] vp_nvs.c:0499 [vp_nvs_get_blob]:nvs get key:VP_EYE4_AUTH len:8192 error
+2025-12-22 08:21:31-0037 [DEBUG] sensor_hal.c:0112 [vp_sensor_hal_detect]:insmod /system/system/bin/sinfo.ko i2c_num_max=1
+2025-12-22 08:21:31-0309 [DEBUG] sensor_hal.c:0144 [vp_sensor_hal_detect]:sensor num [1] first_id [1] second_id [-1]
+2025-12-22 08:21:31-0309 [DEBUG] sensor_hal.c:0224 [vp_sensor_hal_insmod_driver]:### insmod /system/system/media/tx-isp-t23.ko isp_memopt=1 direct_mode=1 isp_clk=200000000 isp_clka=600000000 ivdc_mem_line=300 ###
+2025-12-22 08:21:31-0564 [DEBUG] sensor_hal.c:0248 [vp_sensor_hal_insmod_driver]:### insmod /system/system/media/sensor_gc1084_t23.ko shvflip=1 ###
+2025-12-22 08:21:32-0993 [DEBUG] vp_video.c:0375 [vp_video_init]:video_format:0
+i264e[info]: profile High, level 4.0
+i264e[info]: profile High, level 1.2
+2025-12-22 08:21:32-0994 [DEBUG] vp_video_encoder.c:0237 [vp_video_config_print]:idx:0, chn:0, nrvbs:1, sensor[1280x720], enc[1920x1080], crop:0, scale:1, fps:15, bitrate:768, jpeg:0
+2025-12-22 08:21:32-0995 [DEBUG] vp_video_encoder.c:0237 [vp_video_config_print]:idx:0, chn:1, nrvbs:2, sensor[1280x720], enc[352x224], crop:0, scale:1, fps:15, bitrate:512, jpeg:0
+2025-12-22 08:21:32-0996 [DEBUG] vp_video_encoder.c:0361 [vp_video_encoder_create]:fs_channel:0 enc_group:0 enc_chn:0
+2025-12-22 08:21:33-0000 [DEBUG] vp_video_encoder.c:0361 [vp_video_encoder_create]:fs_channel:1 enc_group:1 enc_chn:1
+2025-12-22 08:21:33-0004 [DEBUG] vp_video_encoder.c:0577 [vp_video_encoder_create]:IMP_OSD_CreateGroup chnNum 1
+2025-12-22 08:21:33-0096 [STACK] vp_video_osd.c:0154 [vp_video_osd_init]:idx:0,chn:0
+2025-12-22 08:21:33-0096 [STACK] vp_video_osd.c:0154 [vp_video_osd_init]:idx:0,chn:1
+2025-12-22 08:21:33-0096 [DEBUG] vp_video_soft_pho_sens.c:0494 [vp_video_soft_pho_sens_init]:vp_video_soft_pho_sens init success
+2025-12-22 08:21:33-0096 [DEBUG] vp_audio.c:0085 [vp_audio_config_print]:voice input config sample_rate:16000 bits:16 channel:1
+2025-12-22 08:21:33-0096 [DEBUG] vp_video_soft_pho_sens.c:0210 [vp_soft_sensor_update_switch_value]:day2night=60000 night2day=4100 gblimit=54 dayevcomp=3000 nightevcomp=0 gbmaxvalid=220 gbcomp=41
+2025-12-22 08:21:33-0097 [DEBUG] vp_video_osd.c:0041 [vp_osd_update_fn]:start
+2025-12-22 08:21:33-0098 [DEBUG] vp_video_osd.c:0041 [vp_osd_update_fn]:start
+2025-12-22 08:21:33-0098 [DEBUG] vp_video.c:0214 [vp_video_pthread_func]:idx:0 chn:1 start
+2025-12-22 08:21:33-0099 [DEBUG] vp_video.c:0214 [vp_video_pthread_func]:idx:0 chn:0 start
+2025-12-22 08:21:33-0149 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 0.00,Bitrate: 0.00(kb/s) 0.00(KB/s) frame key no:0 timestamp:4691426 duration:66666 gop:0
+2025-12-22 08:21:33-0282 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 0.00,Bitrate: 0.00(kb/s) 0.00(KB/s) frame key no:0 timestamp:4824243 duration:66666 gop:0
+warn: shm_init,53shm init already
+2025-12-22 08:21:34-0009 [ERROR] vp_audio.c:0618 [vp_audio_vqe_config]:hpf: 1, co_frequency: 400, ns: 1, agc: 1, agc_ns: 2, agc_db_fs: 5, agc_gain_db: 15, hs: 1
+HD_CREATE is over.
+2025-12-22 08:21:34-0228 [DEBUG] vp_audio.c:0085 [vp_audio_config_print]:voice output config sample_rate:16000 bits:16 channel:1
+warn: shm_init,53shm init already
+2025-12-22 08:21:34-0518 [DEBUG] vp_lpc.c:0425 [vp_lpc_init]:state:0 mode:0 work:5 wakeup_reason:0 reboot_reason:0 battery_factor:0.000000 voltage_threshold:0.000000
+2025-12-22 08:21:34-0518 [DEBUG] vp_nvs.c:0341 [vp_nvs_set_blob]:key:LPC-CFG
+2025-12-22 08:21:34-0543 [DEBUG] vp_gpio_driver.c:0025 [vp_gpio_insmod_driver]:insmod /system/system/bin/vp-gpio.ko
+2025-12-22 08:21:34-0566 [DEBUG] vp_algorithm.c:1203 [vp_algorithm_init]:vp_algorithm_ivs_bind:0
+2025-12-22 08:21:34-0576 [DEBUG] vp_algorithm.c:0138 [vp_algorithm_detect_init]:start
+2025-12-22 08:21:34-0623 [DEBUG] vp_algorithm_jz.c:0197 [vp_algorithm_jz_load]:human interface:0xdeff30
+2025-12-22 08:21:34-0623 [DEBUG] vp_algorithm.c:1095 [vp_algorithm_notify_thread]:start
+2025-12-22 08:21:34-0656 [DEBUG] vp_cgi_hal.c:0397 [vp_cgi_set_detect_param]:alarm_detect_type:0, track:0, human_frame:0, smart_night_mode:0, cloud:0
+2025-12-22 08:21:34-0656 [STACK] vp_algorithm.c:1386 [vp_algorithm_set_param]:update idx:0 chn:1 detect type:0 notify:0 interval:5 jpeg:0 enable:0 notify:0
+2025-12-22 08:21:34-0656 [STACK] vp_algorithm.c:1386 [vp_algorithm_set_param]:update idx:0 chn:1 detect type:1 notify:0 interval:5 jpeg:0 enable:0 notify:0
+2025-12-22 08:21:34-0657 [DEBUG] vp_isp_t23.c:0873 [vp_isp_set_mirr_flip]:mirror:1, flip:1
+2025-12-22 08:21:34-0660 [WARN] vp_capability.c:1884 [vp_capability_init]:wifi_mode = 0, state = 0
+2025-12-22 08:21:34-0660 [DEBUG] vp_mcu.c:0203 [vp_mcu_init]:puya mcu init.
+2025-12-22 08:21:34-0660 [ERROR] vp_uart.c:0196 [vp_uart_open_path]:open uart:/dev/ttyS2 baudrate:9600 databits:8 stopbits:1 parity:0 error
+2025-12-22 08:21:34-0660 [ERROR] vp_puya_uart.c:0278 [vp_puya_uart_init]:uart open fail
+2025-12-22 08:21:34-0660 [DEBUG] vp_mcu.c:0153 [vp_mcu_state_callback_func]:g_mcu_state:0, state:0
+2025-12-22 08:21:34-0663 [ERROR] vp_dashboard.c:0059 [vp_dashboard_add_errcode]:---------- add errcode: 2, ex_param = 0
+INFO(jzdl): jzdl version:(00000000_659989c)  built:20240822-1042(4.7.2 c)
+2025-12-22 08:21:35-0135 [DEBUG] vp_wifi_aic8800.c:0098 [vp_wifi_insmod_driver]:mkdir /tmp/wpa_supplicant
+2025-12-22 08:21:35-0158 [DEBUG] vp_wifi_aic8800.c:0123 [vp_wifi_insmod_driver]:*** insmod /addfs/wifi/aic_load_fw.ko aic_fw_path="/addfs/wifi" ***
+2025-12-22 08:21:35-0244 [DEBUG] vp_wifi_aic8800.c:0127 [vp_wifi_insmod_driver]:*** insmod /addfs/wifi/aic8800_fdrv.ko ***
+INFO(persondet): Ingenic DL PersonDet Promotion Version:0.1.23(00000103_111fcc8)  built:20241226-1122(4.7.2 c)
+param frameWidth: 352 frameHeight: 224  sense: -1 score: 0.580000 detdist: -1 det_size: 352 ptime: 0 count: 0 mod: 1 enable_perm: 0 enable_move: 1 track_mode: 0 observation_period: 5 active_count: 2 move_scale: 1.000000 move_sldwin_size: 2 sensor_size: 1 is_wide_angle: 0 max_move_wh: 352.000000
+2025-12-22 08:21:35-0393 [DEBUG] vp_algorithm_jz.c:0200 [vp_algorithm_jz_load]:interface->init, ret = 0
+2025-12-22 08:21:35-0393 [DEBUG] vp_algorithm.c:0175 [vp_algorithm_detect_init]:end
+2025-12-22 08:21:35-0393 [DEBUG] vp_algorithm_ivs.c:0049 [vp_algorithm_ivs_thread]:start
+--------------------------------------------->>>>>>>>>>>>> vp_project running auto_ota exit
+[    7.856757] rwnx_set_wiphy_params: Registering custom regulatory
+2025-12-22 08:21:36-0461 [DEBUG] vp_wifi_aic8800.c:0024 [vp_wifi_check_wlan0_exist]:wait wlan0 timeout 9
+2025-12-22 08:21:36-0710 [DEBUG] vp_wifi_aic8800.c:0140 [vp_wifi_insmod_driver]:---------- insmod wifi driver end -----------
+2025-12-22 08:21:36-0752 [WARN] vp_nvs.c:0499 [vp_nvs_get_blob]:nvs get key:VEEPAI-WIFI-STA len:128 error
+2025-12-22 08:21:37-0061 [DEBUG] vp_supplicant.c:0277 [vp_supplicant_init]:type:2 state:0
+2025-12-22 08:21:37-0104 [DEBUG] vp_network.c:0952 [vp_network_select]:start
+2025-12-22 08:21:37-0144 [WARN] vp_pir_8800.c:0160 [vp_pir_init]:pir model define not found!!!
+2025-12-22 08:21:37-0483 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 14.52,Bitrate: 6.92(kb/s) 0.86(KB/s) frame key no:60 timestamp:9025099 duration:68878 gop:60
+2025-12-22 08:21:37-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.00,Bitrate: 41.20(kb/s) 5.15(KB/s) frame key no:60 timestamp:9091685 duration:66677 gop:60
+2025-12-22 08:21:37-0653 [DEBUG] vp_supplicant.c:0163 [vp_scan_res_handler]:num:8
+2025-12-22 08:21:37-0653 [DEBUG] vp_supplicant.c:0151 [vp_scan_callback]:timestamp[9] g_supp.scan_time[0] diff[9] ap_size[0]
+2025-12-22 08:21:37-0653 [DEBUG] vp_supplicant.c:0140 [vp_scan_ap_convert]:---> scan ap end, count = 8
+2025-12-22 08:21:37-0653 [DEBUG] vp_supplicant.c:0155 [vp_scan_callback]:g_supp.ap_size[8]
+2025-12-22 08:21:37-0653 [DEBUG] vp_wifi_hal.c:0227 [vp_supp_scan_callback_fn]:state:1 len:8
+[    9.759133] i2c i2c-2: --I2C pio write wait timeout
+insmod: can't insert '/system/system/bin/motor_iic.ko': Connection timed out
+2025-12-22 08:21:38-0217 [WARN] vp_motor_driver.c:0032 [vp_motor_insmod_driver]:insmod /system/system/bin/motor_iic.ko error:1
+2025-12-22 08:21:38-0217 [ERROR] vp_ptz.c:0484 [vp_ptz_init]:motor init fail
+2025-12-22 08:21:38-0253 [DEBUG] vp_session_web.c:0130 [vp_web_create_socket]:web server listen 127.0.0.1:81
+2025-12-22 08:21:38-0274 [WARN] vp_nvs.c:0499 [vp_nvs_get_blob]:nvs get key:OAT-CRC len:28 error
+2025-12-22 08:21:38-0275 [WARN] vp_ota.c:0099 [vp_ota_init]:Not found nvs storage key:OAT-CRC set crcs is zero
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:0 size:262144 offset:0 crc:0x00000000
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:2 size:1409024 offset:262144 crc:0x00000000
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:3 size:3538944 offset:1671168 crc:0x00000000
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:5 size:2719744 offset:5210112 crc:0x00000000
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:9 size:196608 offset:7929856 crc:0x00000000
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:7 size:262144 offset:8126464 crc:0x00000000
+2025-12-22 08:21:38-0275 [DEBUG] vp_ota.c:0109 [vp_ota_init]:type:10 size:8388608 offset:0 crc:0x00000000
+2025-12-22 08:21:38-0275 [WARN] vp_lpc.c:0643 [vp_lpc_set_work]:work:5,5 reboot:0 wakeup:0 sleep_time:82800
+2025-12-22 08:21:38-0275 [WARN] vp_capability.c:1233 [vp_obs_lpc_callback_func]:wakeup_reason = 0 reboot_reason = 0
+2025-12-22 08:21:38-0275 [DEBUG] vp_capability.c:1256 [vp_obs_lpc_callback_func]:wakeup_enable = 1, reboot_enable = 1, res = 1
+2025-12-22 08:21:38-0275 [DEBUG] vp_pir_8800.c:0076 [vp_pir_set_wakeup]:enable:1 interval:0 [0,0,0]
+2025-12-22 08:21:38-0275 [DEBUG] aic_channel_msg.c:0916 [aic_channel_msg_send]:send cmd[19], data_len:[3],
+2025-12-22 08:21:38-0278 [ERROR] aic_channel.c:0259 [aic_channel_send]:Could not read interface vnet0 flags: No such device
+
+2025-12-22 08:21:38-0328 [ERROR] aic_channel_msg.c:0933 [aic_channel_msg_send]:send cmd[19], cmd_len:[4], data_len:[3] error:-1
+2025-12-22 08:21:38-0384 [DEBUG] vp_wifi_aic8800.c:0205 [vp_wifi_start]:------- wifi start ----------
+2025-12-22 08:21:38-0385 [ERROR] vp_wifi_hal.c:0642 [vp_wifi_hal_connect_by_ssid]:---> ssid:  key: , mode = 0
+2025-12-22 08:21:38-0385 [DEBUG] vp_sdk.c:0151 [main]:app run
+2025-12-22 08:21:38-0385 [DEBUG] vp_main.c:0029 [vp_main]:Project:vp version:20.110.100.10 brand:Veepai model:VP platform:0x04
+2025-12-22 08:21:38-0385 [DEBUG] vp_nvs.c:0341 [vp_nvs_set_blob]:key:vp_version
+2025-12-22 08:21:38-0386 [WARN] vp_sdk.c:0173 [main]:cpu:44.86%, app_mem:total:20560(KB) used:19456(KB) free:1104(KB) diff:0(KB)
+2025-12-22 08:21:38-0397 [DEBUG] vp_search.c:0387 [vp_search_sock_open]:network search Init success = 54
+2025-12-22 08:21:38-0445 [DEBUG] vp_aic8800_ble.c:0144 [vp_aic8800_ble_load_mac]:read ble mac: XX:XX:XX:XX:XX:XX
+2025-12-22 08:21:38-0446 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+Will use /addfs/wifi/ble_userconfig.json
+bt_hci_tool server setting
+use USB
+bt dev open successful
+support ble
+bt device test ok
+hci recv thread ready (nil)
+2025-12-22 08:21:38-0663 [WARN] vp_nvs.c:0499 [vp_nvs_get_blob]:nvs get key:vp_ota_result len:4 error
+2025-12-22 08:21:38-0663 [ERROR] vp_capability.c:1497 [vp_capability_update_result_thread]: ota result ret = -1, update_result = 0, reboot_reason = 0
+app queue_ th wait connect accept
+2025-12-22 08:21:39-0446 [DEBUG] vp_smartlink.c:0823 [vp_smart_link_func]:device_id: VE9272667NVGM
+2025-12-22 08:21:39-0446 [DEBUG] vp_audio.c:1350 [vp_audio_lock]:current priority:-1,new priority:2
+2025-12-22 08:21:39-0446 [DEBUG] vp_audio_play.c:0305 [vp_audio_play_file]:index:55  /system/www/EN/vwificonfig.opus
+2025-12-22 08:21:39-0446 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:39-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,11
+2025-12-22 08:21:39-0529 [DEBUG] vp_audio_play.c:0194 [vp_audio_play_item_free]:item.fd:55
+2025-12-22 08:21:39-0529 [DEBUG] vp_capability.c:1664 [vp_obs_audio_callback_func]:audio event:0x00000004, type:0x00001300
+2025-12-22 08:21:39-0529 [DEBUG] vp_capability.c:1668 [vp_obs_audio_callback_func]:----> play audio work lock, work_lock_cnt: 1.
+app_ble_init
+app_smartconfig_init
+bt stack thread ready3 (nil)
+ do notify
+sts,len=4
+recv_len 4
+COMMAND(4):
+01 03 0C 00
+txdone 1
+offset 4 recv_len 0
+ do tx done
+read byte(7): type 4
+04 0E 04 05 03 0C 00
+sts,len=12
+recv_len 12
+COMMAND(12):
+01 01 0C 08 FF FF FF FF FF 9F 00 20
+txdone 1
+offset 12 recv_len 0
+read byte(7): type 4
+04 0E 04 05 01 0C 00
+sts,len=12
+ do notify
+recv_len 12
+COMMAND(12):
+01 01 20 08 FF FF 0F 00 00 00 00 00
+txdone 1
+offset 12 recv_len 0
+read byte(7): type 4
+04 0E 04 05 01 20 00
+sts,len=4
+ do notify
+recv_len 4
+COMMAND(4):
+01 02 20 00
+txdone 1
+offset 4 recv_len 0
+read byte(10): type 4
+04 0E 07 05 02 20 00 FB 00 0E
+sts,len=4
+ do notify
+recv_len 4
+COMMAND(4):
+01 3A 20 00
+txdone 1
+offset 4 recv_len 0
+read byte(9): type 4
+04 0E 06 05 3A 20 00 F6 04
+hci_le_read_max_adv_data_len_cmd_cmp_evt_handler 8
+rd max adv data len 1270
+sts,len=4
+ do notify
+recv_len 4
+COMMAND(4):
+01 3B 20 00
+txdone 1
+offset 4 recv_len 0
+read byte(8): type 4
+04 0E 05 05 3B 20 00 0C
+sts,len=10
+recv_len 10
+COMMAND(10):
+01 01 FC 06 00 00 50 40 20 04
+txdone 1
+offset 10 recv_len 0
+sts,len=7
+sts,len=10
+gapm_dev_set_bt_addr_cmd_handler
+ do notify
+ do tx done
+read byte(12): type 4
+04 0E 09 05 01 FC 00 04 18 88 C7 07
+is ok
+recv_len 17
+COMMAND(7):
+01 31 20 03 03 00 00
+txdone 1
+offset 7 recv_len 10
+COMMAND(10):
+01 70 FC 06 AA C0 00 45 56 67
+txdone 1
+offset 17 recv_len 0
+read byte(7): type 4
+04 0E 04 05 31 20 00
+read byte(7): type 4
+04 0E 04 05 70 FC 00
+sts,len=8
+!!!!!!!!  set bt addr  complete
+ do tx done
+recv_len 8
+COMMAND(8):
+01 4D 20 04 00 00 00 00
+txdone 1
+offset 8 recv_len 0
+read byte(7): type 4
+04 0E 04 05 4D 20 00
+sts,len=8
+ do tx done
+recv_len 8
+COMMAND(8):
+01 24 20 04 1B 00 48 01
+txdone 1
+offset 8 recv_len 0
+read byte(7): type 4
+04 0E 04 05 24 20 00
+BLE: ble_user_add_svc_cb
+smartconfig_init
+Found 2 characteristics
+service sec_en 0 .
+Fetched 2 characteristics.
+Database:
+
+uuid: 0x00 0x28 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+perm: 0x00000200
+ext perm: 0x00000000
+max len: 0x00000000
+
+uuid: 0x03 0x28 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+perm: 0x00000200
+ext perm: 0x00000000
+max len: 0x00000000
+
+uuid: 0xfb 0x34 0x9b 0x5f 0x80 0x00 0x00 0x80 0x00 0x10 0x00 0x00 0xf1 0xff 0x00 0x00
+perm: 0x00003e00
+ext perm: 0x0000c000
+max len: 0x000000c8
+
+uuid: 0x02 0x29 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+perm: 0x00000a00
+ext perm: 0x00000000
+max len: 0x00000000
+
+uuid: 0x03 0x28 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+perm: 0x00000200
+ext perm: 0x00000000
+max len: 0x00000000
+
+uuid: 0xfb 0x34 0x9b 0x5f 0x80 0x00 0x00 0x80 0x00 0x10 0x00 0x00 0xf6 0xff 0x00 0x00
+perm: 0x00002800
+ext perm: 0x0000c000
+max len: 0x000000c8
+
+uuid: 0x02 0x29 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+perm: 0x00000a00
+ext perm: 0x00000000
+max len: 0x00000000
+gapm_profile_added_ind_handler
+!!!!!!!!!!!@@@@@@@@@@@@@@@@@
+ble_s_to_c send(0,0):
+sts,len=36
+recv_len 36
+COMMAND(36):
+01 17 20 20 67 45 8B 6B C6 23 7B 32 69 98 3C 64 73 48 33 66 51 DC B0 74 FF 5C 49 19 4A 94 E8 2A EC 58 55 62
+txdone 1
+offset 36 recv_len 0
+ do tx done
+ do notify
+read byte(23): type 4
+04 0E 14 05 17 20 00 1C E6 DA 1A 3D 49 C6 FD AF 9F 53 66 75 FE F8 08
+sts,len=36
+ do notify
+recv_len 36
+COMMAND(36):
+01 17 20 20 29 1F 8E 23 CD 7C E8 46 BA 58 1B 3D AB D7 7E 50 F2 41 B1 2E FB 1E B7 41 E3 A9 E2 79 46 E1 45 75
+txdone 1
+offset 36 recv_len 0
+ do tx done
+read byte(23): type 4
+04 0E 14 05 17 20 00 C5 6F E3 2B 1C F5 79 FD A7 4E 6C 78 40 70 0C FC
+BLE: ble_user_add_svc_cb
+ do notify
+2025-12-22 08:21:40-0446 [DEBUG] vp_supplicant.c:0151 [vp_scan_callback]:timestamp[11] g_supp.scan_time[9] diff[2] ap_size[8]
+2025-12-22 08:21:40-0446 [DEBUG] vp_supplicant.c:0155 [vp_scan_callback]:g_supp.ap_size[8]
+2025-12-22 08:21:40-0446 [DEBUG] vp_wifi_hal.c:0227 [vp_supp_scan_callback_fn]:state:1 len:8
+2025-12-22 08:21:40-0446 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:40-0909 [INFO] vp_nvs.c:0020 [vp_nvs_erase_size]:start erase size start:0 len:131072!
+2025-12-22 08:21:41-0195 [INFO] vp_nvs.c:0029 [vp_nvs_erase_size]:end erase size start:0 end:131072!
+2025-12-22 08:21:41-0276 [INFO] vp_nvs.c:0020 [vp_nvs_erase_size]:start erase size start:131072 len:131072!
+2025-12-22 08:21:41-0447 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+app_q_client_socket  11
+ble_s_to_c send(0,0):
+app queue_ th wait connect accept
+ app_queue_done on
+ queue_recv_len 105
+0x11  0x6  0x0  0x87  0x47  0x5d  0x3a  0xef  0x18  0x13  0x11  0x0  0x49  0x50  0x43  0x2d  0x56  0x45  0x39  0x32  0x37  0x32  0x36  0x36  0x37  0x4e  0x56  0x47  0x4d  0x5  0x9  0x0  0xa0  0x0  0x0  0x0  0xa0  0x0  0x0  0x0  0x6  0x4  0x1d  0x0  0x2  0x1  0x6  0x2  0xa  0xec  0x3  0x3  0xd0  0xfd  0x12  0xff  0x1  0x66  0x48  0x55  0x4e  0x74  0x70  0x43  0x7a  0x0  0x0  0x0  0x0  0x0  0x0  0x0  0x0  0x12  0x13  0x0  0x12  0x9  0x49  0x50  0x43  0x2d  0x56  0x45  0x39  0x32  0x37  0x32  0x36  0x36  0x37  0x4e  0x56  0x47  0x4d  0x15  0x4  0x0  0x0  0x0  0x0  0x10  0x9  0x0  0x0
+ recv_s_len 6,  recv_s_offset 0
+APP:ble_only_msg id:17 ,len = 6
+set bt addr is:  0x87 0x47 0x5d 0x3a 0xef 0x18
+APP: msg id:17 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 96
+recv_s_len 17,  recv_s_offset 9
+APP:ble_only_msg id:19 ,len = 17
+APP: msg id:19 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 76
+recv_s_len 9,  recv_s_offset 29
+APP:ble_only_msg id:5 ,len = 9
+set  adv param ,min_intv 160,adv_intv_max  160,max_tx_pwr 6
+APP: msg id:5 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 64
+recv_s_len 29,  recv_s_offset 41
+APP:ble_only_msg id:4 ,len = 29
+APP: msg id:4 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 32
+recv_s_len 19,  recv_s_offset 73
+APP:ble_only_msg id:18 ,len = 19
+APP: msg id:18 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 10
+recv_s_len 4,  recv_s_offset 95
+APP:ble_only_msg id:21 ,len = 4
+lbh_server_set_print_en 0x10000000
+APP: msg id:21 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 3
+recv_s_len 0,  recv_s_offset 102
+APP:ble_only_msg id:9 ,len = 0
+appm_adv_fsm_next,adv_state 0
+APP: msg id:9 :status:0 exit
+ble_s_to_c send(1,0):
+queue_recv_len 0
+sts,len=10
+gapm_dev_set_bt_addr_cmd_handler
+gapm_activity_create_cmd_handler, 0
+gapm_adv_check_param, error = 0 ,0
+gapm_adv_create, 0
+gapm_adv_send_hci_le_set_ext_adv_param_cmd,0,13,a0,0,0,a0,0,0
+ 2: 0,0,0,0,0,0,6,0
+sts,len=29
+ do notify
+recv_len 39
+COMMAND(10):
+01 70 FC 06 87 47 5D 3A EF 18
+txdone 1
+offset 10 recv_len 29
+COMMAND(29):
+01 36 20 19 00 13 00 A0 00 00 A0 00 00 07 00 00 00 00 00 00 00 00 00 06 01 00 00 00 00
+txdone 1
+offset 39 recv_len 0
+ do tx done
+read byte(7): type 4
+04 0E 04 05 70 FC 00
+read byte(8): type 4
+04 0E 05 05 36 20 00 21
+!!!!!!!!  set bt addr  complete
+hci_le_cmd_cmp_evt_creating_handler ,state 0
+gapm_cmp_evt_handler op 0xa0, adv_op a0, scan_op 0,init_op 0
+appm_adv_fsm_next,adv_state 1
+appm_set_adv_data, adv_data_len = 29
+appm_set_adv_data, adv_param.type = 0
+appm_set_adv_data, adv_state = 2
+sts,len=37
+recv_len 37
+COMMAND(37):
+01 37 20 21 00 03 00 1D 02 01 06 02 0A EC 03 03 D0 FD 12 FF 01 66 48 55 4E 74 70 43 7A 00 00 00 00 00 00 00 00
+txdone 1
+offset 37 recv_len 0
+read byte(7): type 4
+04 0E 04 05 37 20 00
+gapm_cmp_evt_handler op 0xa9, adv_op a9, scan_op 0,init_op 0
+appm_adv_fsm_next,adv_state 2
+appm_set_scan_rsp_data, scan_res_len = 19
+sts,len=27
+ do notify
+recv_len 27
+COMMAND(27):
+01 38 20 17 00 03 00 13 12 09 49 50 43 2D 56 45 39 32 37 32 36 36 37 4E 56 47 4D
+txdone 1
+offset 27 recv_len 0
+ do tx done
+app_queue_reg_callback
+client version :v 0.1.0
+app_q_server_socket connect OK
+client recv_len 4
+recv_num_len 0,  recv_num_offset 0
+2025-12-22 08:21:41-0448 [DEBUG] vp_aic8800_ble.c:0295 [client_queue_msg_callback]:BLE_INIT_DONE
+read byte(7): type 4
+04 0E 04 05 38 20 00
+gapm_cmp_evt_handler op 0xaa, adv_op aa, scan_op 0,init_op 0
+appm_adv_fsm_next,adv_state 3
+sts,len=10
+recv_len 10
+COMMAND(10):
+01 39 20 06 01 01 00 00 00 00
+txdone 1
+offset 10 recv_len 0
+read byte(7): type 4
+04 0E 04 05 39 20 00
+gapm_cmp_evt_handler op 0xa4, adv_op a4, scan_op 0,init_op 0
+appm_adv_fsm_next,adv_state 5
+ble_s_to_c send(2,0):
+ do notify
+ do tx done
+msg send(17,6):
+87 47 5D 3A EF 18
+send ok 9
+msg send(19,17):
+49 50 43 2D 56 45 39 32 37 32 36 36 37 4E 56 47 4D
+send ok 20
+msg send(5,9):
+A0 00 00 00 A0 00 00 00 06
+send ok 12
+msg send(4,29):
+02 01 06 02 0A EC 03 03 D0 FD 12 FF 01 66 48 55 4E 74 70 43 7A 00 00 00 00 00 00 00 00
+send ok 32
+2025-12-22 08:21:41-0448 [DEBUG] vp_aic8800_ble.c:0308 [client_queue_msg_callback]:------ ble dev: IPC-VE9272667NVGM
+msg send(18,19):
+12 09 49 50 43 2D 56 45 39 32 37 32 36 36 37 4E 56 47 4D
+send ok 22
+lbh_client_set_print_en 0x10000000
+msg send(21,4):
+00 00 00 10
+send ok 7
+msg send(9,0):
+send ok 3
+client recv_len 4
+recv_num_len 0,  recv_num_offset 0
+2025-12-22 08:21:41-0450 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+2025-12-22 08:21:41-0483 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.00,Bitrate: 3.08(kb/s) 0.39(KB/s) frame key no:120 timestamp:13024943 duration:66688 gop:60
+client recv_len 28
+recv_num_len 0,  recv_num_offset 0
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+recv_num_len 0,  recv_num_offset 4
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+recv_num_len 0,  recv_num_offset 8
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+recv_num_len 0,  recv_num_offset 12
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+recv_num_len 0,  recv_num_offset 16
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+recv_num_len 0,  recv_num_offset 20
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0320 [client_queue_msg_callback]:BLE_MSG_DONE
+recv_num_len 0,  recv_num_offset 24
+2025-12-22 08:21:41-0488 [DEBUG] vp_aic8800_ble.c:0323 [client_queue_msg_callback]:BLE_ADV_ENABLE
+2025-12-22 08:21:41-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:2 ota_state:0 sleep_time:82809,13
+2025-12-22 08:21:41-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 14.99,Bitrate: 31.24(kb/s) 3.90(KB/s) frame key no:120 timestamp:13091618 duration:66732 gop:60
+2025-12-22 08:21:41-0600 [INFO] vp_nvs.c:0029 [vp_nvs_erase_size]:end erase size start:131072 end:262144!
+ifconfig: SIOCSIFADDR: No such device
+route: SIOCDELRT: No such process
+2025-12-22 08:21:41-0819 [DEBUG] vp_supplicant.c:0041 [vp_supplicant_run_fn]:ret:0
+killall: udhcpc: no process killed
+killall: udhcpd: no process killed
+2025-12-22 08:21:41-0868 [DEBUG] vp_wifi_hal.c:0467 [vp_wifi_hal_start_ap]:------ start ap: ssid = @IPC-9272667
+2025-12-22 08:21:42-0048 [DEBUG] vp_capability.c:1664 [vp_obs_audio_callback_func]:audio event:0x00000004, type:0x00001300
+2025-12-22 08:21:42-0048 [DEBUG] vp_capability.c:1672 [vp_obs_audio_callback_func]:----> stop audio work unlock, work_lock_cnt: 0.
+2025-12-22 08:21:42-0447 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+udhcpd: max_leases=235 is too big, setting to 99
+2025-12-22 08:21:42-0599 [DEBUG] vp_video_soft_pho_sens.c:0210 [vp_soft_sensor_update_switch_value]:day2night=60000 night2day=4100 gblimit=54 dayevcomp=3000 nightevcomp=0 gbmaxvalid=220 gbcomp=41
+2025-12-22 08:21:42-0635 [DEBUG] vp_wifi_hal.c:0418 [vp_wifi_hal_ap_start]:-------------- ap mode open ------------------
+2025-12-22 08:21:42-0635 [DEBUG] vp_session_ppcs.c:0674 [vp_obs_ppcs_ap_mode_func]:ppcs start state:1 suspend:0 listen_state:0
+2025-12-22 08:21:42-0744 [DEBUG] vp_session_ppcs.c:0534 [vp_session_ppcs_listen_fn]:start
+2025-12-22 08:21:42-0771 [DEBUG] vp_ppcs.c:0180 [vp_ppcs_init]:ppcs version = [5.2.1.0]
+2025-12-22 08:21:42-0808 [DEBUG] vp_ppcs.c:0184 [vp_ppcs_init]:init str: {"InitString":"REDACTED-SSID","MaxNumSess":3,"SessAliveSec":20}
+2025-12-22 08:21:42-0860 [DEBUG] vp_session_ppcs.c:0614 [vp_session_ppcs_listen_fn]:device_id = VE9272667NVGM, pid = VSTC904862WFYGX, license = WRQBSV, server =
+2025-12-22 08:21:42-0860 [DEBUG] vp_session_ppcs.c:0092 [vp_session_ppcs_listen]:ppcs listen id:VSTC904862WFYGX server:
+**create skt:39
+**create skt:40
+2025-12-22 08:21:43-0447 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:43-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,15
+2025-12-22 08:21:43-0661 [ERROR] vp_capability_night_mode.c:0485 [vp_capability_night_mode_thread]:night_mode_thread no motor break
+2025-12-22 08:21:44-0447 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:45-0447 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:45-0486 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 14.99,Bitrate: 3.14(kb/s) 0.39(KB/s) frame key no:180 timestamp:17027908 duration:66729 gop:60
+2025-12-22 08:21:45-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,17
+2025-12-22 08:21:45-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.00,Bitrate: 21.26(kb/s) 2.66(KB/s) frame key no:180 timestamp:17091664 duration:66685 gop:60
+2025-12-22 08:21:45-0703 [DEBUG] vp_nvs.c:0341 [vp_nvs_set_blob]:key:dashboard_list
+2025-12-22 08:21:46-0448 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:47-0448 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:47-0503 [WARN] vp_sdk.c:0173 [main]:cpu:43.30%, app_mem:total:20560(KB) used:19720(KB) free:840(KB) diff:-264(KB)
+2025-12-22 08:21:47-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,19
+2025-12-22 08:21:48-0448 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:49-0448 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:49-0486 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.00,Bitrate: 2.37(kb/s) 0.30(KB/s) frame key no:240 timestamp:21027984 duration:66669 gop:60
+2025-12-22 08:21:49-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,21
+2025-12-22 08:21:49-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.00,Bitrate: 48.90(kb/s) 6.11(KB/s) frame key no:240 timestamp:21091641 duration:66670 gop:60
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2129 [vp_alarm_ability_proc]:alarm ability start proc
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2140 [vp_alarm_ability_proc]:reboot = 0, factory_mode = 0 lock_cnt:0, aov_wakeup = 0, wakeup_mode = 0, sleep_mode = 0 VIP = 0, move_detection = 3
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2145 [vp_alarm_ability_proc]:timeplan motion_record_act = 0, motion_push_act = 0, person_push_act = 0, record_act = 0, white_light_act = 0, privacy_pos_act = 0
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2150 [vp_alarm_ability_proc]:cloud type:0 push_switch = 1, push_video_switch = 0, record_time = 10, auto_record_mode = 0
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2155 [vp_alarm_ability_proc]:alarm_time = 0, alarm_event = 0, alarm_duration = 0, alarm_push list_num = 0, cloud_push list_num = 0
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2160 [vp_alarm_ability_proc]:timestamp:21 monitor:[ctx = (nil), start_time = 0, end_time = 0] person:[ctx = (nil), start_time = 0, end_time = 0]
+2025-12-22 08:21:49-0663 [DEBUG] vp_capability_alarm.c:2166 [vp_alarm_ability_proc]:privacy_status:0, device_privacy_pos:0 power_switch:0 dv_mode_switch:0 low_power:0 aov_work_enable:0 human_detect_enable:0
+2025-12-22 08:21:50-0448 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:51-0448 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:51-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,23
+2025-12-22 08:21:51-0736 [INFO] vp_nvs.c:0020 [vp_nvs_erase_size]:start erase size start:0 len:131072!
+2025-12-22 08:21:52-0030 [INFO] vp_nvs.c:0029 [vp_nvs_erase_size]:end erase size start:0 end:131072!
+2025-12-22 08:21:52-0103 [INFO] vp_nvs.c:0020 [vp_nvs_erase_size]:start erase size start:131072 len:131072!
+2025-12-22 08:21:52-0393 [INFO] vp_nvs.c:0029 [vp_nvs_erase_size]:end erase size start:131072 end:262144!
+2025-12-22 08:21:52-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:52-0601 [DEBUG] vp_video_soft_pho_sens.c:0210 [vp_soft_sensor_update_switch_value]:day2night=60000 night2day=4100 gblimit=54 dayevcomp=3000 nightevcomp=0 gbmaxvalid=220 gbcomp=41
+2025-12-22 08:21:53-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:53-0482 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.00,Bitrate: 8.67(kb/s) 1.08(KB/s) frame key no:300 timestamp:25024775 duration:66688 gop:60
+2025-12-22 08:21:53-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,25
+2025-12-22 08:21:53-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 14.99,Bitrate: 12.99(kb/s) 1.62(KB/s) frame key no:300 timestamp:25091644 duration:66708 gop:60
+2025-12-22 08:21:54-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:55-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:55-0518 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,27
+2025-12-22 08:21:56-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:57-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:57-0482 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 14.99,Bitrate: 2.49(kb/s) 0.31(KB/s) frame key no:360 timestamp:29024845 duration:66723 gop:60
+2025-12-22 08:21:57-0503 [DEBUG] vp_sdk.c:0169 [main]:cpu:36.80%, app_mem:total:20560(KB) used:17836(KB) free:2724(KB) diff:1884(KB)
+2025-12-22 08:21:57-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,29
+2025-12-22 08:21:57-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.00,Bitrate: 11.96(kb/s) 1.49(KB/s) frame key no:360 timestamp:29091672 duration:66675 gop:60
+2025-12-22 08:21:58-0449 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:59-0450 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:21:59-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,31
+2025-12-22 08:22:00-0450 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:01-0450 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:01-0483 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.00,Bitrate: 2.22(kb/s) 0.28(KB/s) frame key no:420 timestamp:33024916 duration:66677 gop:60
+2025-12-22 08:22:01-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,33
+2025-12-22 08:22:01-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 14.99,Bitrate: 13.32(kb/s) 1.66(KB/s) frame key no:420 timestamp:33091603 duration:66695 gop:60
+2025-12-22 08:22:02-0450 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:02-0603 [DEBUG] vp_video_soft_pho_sens.c:0210 [vp_soft_sensor_update_switch_value]:day2night=60000 night2day=4100 gblimit=54 dayevcomp=3000 nightevcomp=0 gbmaxvalid=220 gbcomp=41
+2025-12-22 08:22:03-0450 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:03-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,35
+2025-12-22 08:22:04-0450 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:05-0451 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:05-0483 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.00,Bitrate: 2.32(kb/s) 0.29(KB/s) frame key no:480 timestamp:37024932 duration:66670 gop:60
+2025-12-22 08:22:05-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,37
+2025-12-22 08:22:05-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.00,Bitrate: 13.43(kb/s) 1.68(KB/s) frame key no:480 timestamp:37091618 duration:66666 gop:60
+2025-12-22 08:22:06-0451 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:07-0451 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:07-0504 [DEBUG] vp_sdk.c:0169 [main]:cpu:33.32%, app_mem:total:20560(KB) used:18052(KB) free:2508(KB) diff:-216(KB)
+2025-12-22 08:22:07-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,39
+2025-12-22 08:22:08-0451 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:09-0419 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.02,Bitrate: 2.08(kb/s) 0.26(KB/s) frame key no:540 timestamp:40961618 duration:66588 gop:60
+2025-12-22 08:22:09-0451 [DEBUG] vp_smartlink.c:0823 [vp_smart_link_func]:device_id: VE9272667NVGM
+2025-12-22 08:22:09-0451 [DEBUG] vp_audio.c:1350 [vp_audio_lock]:current priority:-1,new priority:2
+2025-12-22 08:22:09-0451 [DEBUG] vp_audio_play.c:0305 [vp_audio_play_file]:index:41  /system/www/EN/vwificonfig.opus
+2025-12-22 08:22:09-0451 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:09-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,41
+2025-12-22 08:22:09-0532 [DEBUG] vp_audio_play.c:0194 [vp_audio_play_item_free]:item.fd:41
+2025-12-22 08:22:09-0532 [DEBUG] vp_capability.c:1664 [vp_obs_audio_callback_func]:audio event:0x00000004, type:0x00001300
+2025-12-22 08:22:09-0532 [DEBUG] vp_capability.c:1668 [vp_obs_audio_callback_func]:----> play audio work lock, work_lock_cnt: 1.
+2025-12-22 08:22:09-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.02,Bitrate: 11.99(kb/s) 1.50(KB/s) frame key no:540 timestamp:41091513 duration:66586 gop:60
+2025-12-22 08:22:10-0452 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:11-0452 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:11-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:2 ota_state:0 sleep_time:82809,43
+2025-12-22 08:22:11-0968 [DEBUG] vp_capability.c:1664 [vp_obs_audio_callback_func]:audio event:0x00000004, type:0x00001300
+2025-12-22 08:22:11-0968 [DEBUG] vp_capability.c:1672 [vp_obs_audio_callback_func]:----> stop audio work unlock, work_lock_cnt: 0.
+2025-12-22 08:22:12-0452 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:12-0605 [DEBUG] vp_video_soft_pho_sens.c:0210 [vp_soft_sensor_update_switch_value]:day2night=60000 night2day=4100 gblimit=54 dayevcomp=3000 nightevcomp=0 gbmaxvalid=220 gbcomp=41
+2025-12-22 08:22:13-0452 [DEBUG] vp_smartlink.c:0571 [vp_smart_link_func]:g_vp_smart_link.en_state = 1, bind_step = 0
+2025-12-22 08:22:13-0488 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:1 FPS: 15.03,Bitrate: 2.41(kb/s) 0.30(KB/s) frame key no:600 timestamp:45030415 duration:66554 gop:60
+2025-12-22 08:22:13-0519 [WARN] vp_lpc.c:0261 [vp_sleep_timer_func]:work_mode:5 work_count:1 ota_state:0 sleep_time:82809,45
+2025-12-22 08:22:13-0549 [INFO] vp_video.c:0125 [vp_video_fps_statistics]:video idx:0 chn:0 FPS: 15.00,Bitrate: 12.23(kb/s) 1.53(KB/s) frame key no:600 timestamp:45091319 duration:66675 gop:60

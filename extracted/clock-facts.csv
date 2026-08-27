@@ -1,0 +1,5 @@
+device,soc,apll_mhz,mpll_mhz,vpll_mhz,ddr_mhz,cclk,l2,h0,h2,pclk,isp_clk_mhz,isp_clka_mhz,isp_clks_mhz,avpu_clk_mhz,source,bootloader,notes
+cinnado_d1_t32lq_sc4336,T32LQ,900,1200,1188,600,900,450,200,200,100,,,,,logs/cinnado_d1-t32lq-sc4336-atbm6162-virgin.boot.log,vendor U-Boot 2013.07-H20250211a,vendor U-Boot; TNPU line: tnna_clk=900 v0=450; redacted MACs/SSID
+okam_qc3_t23dl_gc1084,T23DL,1404,1200,,600,,,,,,,,,,logs/okam_qc3-t23dl-sc1084-aic8800dc-virgin-besder.boot.log,vendor U-Boot SPL 2013.07-H20240729a,vendor insmod: tx-isp-t23.ko isp_clk=200 isp_clka=600 (SDK defaults are 153/416!); no kernel CCLK line in capture
+vanhua_z55_t31x,T31X,,,1080,,,,200,200,100,,,,,evidence/discord-ccclines.md,stock bootloader (Nic 2026-08-21),kernel CCLK line 1392/696; vpll=1080 measured later on this unit; CPM APCR/MPCR reads 0x0640510D
+wyze_cam2_t20x,T20X,,,,,860,430,200,200,100,,,,,evidence/discord-ccclines.md,unknown,CCLK 860 anomaly: not 24MHz-integer (24*36=864); ACR devmem read wanted
