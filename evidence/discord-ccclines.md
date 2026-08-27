@@ -11,5 +11,8 @@ CCLK:1392MHz L2CLK:696Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
 # Wyze Cam2 (T20X, JXF22) — reported 2026-08-10, session 1536450347848044675
 # Bootloader state unknown
 CCLK:860MHz L2CLK:430Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
-# ANOMALY: 860 is not an integer 24MHz PLL product (24*36=864). Suspect
-# non-24MHz crystal or divider rounding. ACR devmem read would resolve.
+# RESOLVED 2026-08-27 (gtxaspec "864mhz"): not a crystal/rounding mystery.
+# T20X (non-LITE) Thingino 2013.07 SPL = APLL_860M macro = CONFIG_SYS_APLL_FREQ
+# 860160000 (frac 0xae147a) — kernel prints floored "860". Vendor T20 boards
+# also ship 860160000-class APLL. gtxaspec spotted it instantly. ACR devmem
+# read no longer needed.
