@@ -1,0 +1,778 @@
+isvp_t30# print
+baudrate=115200
+bootargs=console=ttyS1,115200n8 mem=73M@0x0 rmem=34M@0x4900000 ispmem=21M@0x6B00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2048k(kernel),3392k(root),640k(driver),4736k(appfs),4736k(backupa),256k(config),256k(para),-(flag)
+bootcmd=sdupdate; sf probe;sf read 0x80600000 0x40000 0x280000; bootm 0x80600000
+bootdelay=5
+ethaddr=XX:XX:XX:XX:XX:XX
+gatewayip=193.169.4.1
+ipaddr=193.169.4.81
+loads_echo=1
+netmask=255.255.255.0
+serverip=193.169.4.2
+stderr=serial
+stdin=serial
+stdout=serial
+
+Environment size: 568/16380 bytes
+
+U-Boot SPL 2013.07 (Jun 17 2019 - 12:19:35)
+Timer init
+CLK stop
+PLL init
+pll_init:411
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+fbdiv = 38 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02500860
+CPM_CPAPCR 04a0484d
+fbdiv = 42 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02900860
+CPM_CPMPCR 07c0882d
+fbdiv = 50 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 03100860
+CPM_CPVPCR 0310086d
+fbdiv = 50 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 03100860
+CPM_CPEPCR 0310086d
+cppcr 0x9a773310
+apll_freq 900000000
+mpll_freq 1000000000
+vpll_freq = 1200000000 epll = 1200000000
+ddr sel mpll, cpu sel apll
+ddrfreq 500000000
+cclk  900000000
+l2clk 450000000
+h0clk 200000000
+h2clk 200000000
+pclk  100000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00e73011
+T30_0x5: 00000007
+T30_0x15: 0000000c
+T30_0x4: 00000000
+T30_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T30_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T30_190: 0000001e
+T30_194: 0000001c
+jz-04 :  0x00000051
+jz-08 :  0x000000a0
+jz-28 :  0x00000024
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0ae88a42
+DDRC_CTRL           0x0000891c
+DDRC_LMR            0x00000000
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x040e0806
+DDRC_TIMING2        0x02170807
+DDRC_TIMING3        0x2008051d
+DDRC_TIMING4        0x1f240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x32170505
+DDRC_REFCNT         0x00f23a01
+DDRC_MMAP0          0x000020f8
+DDRC_MMAP1          0x00002800
+DDRC_REMAP1         0x03020100
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f0e0d0c
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Jun 17 2019 - 12:19:35)
+
+Board: ISVP (Ingenic XBurst T30 SoC)
+DRAM:  128 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 399k for U-Boot at: 83f9c000
+Reserving 32784k for malloc() at: 81f98000
+Reserving 32 Bytes for Board Info at: 81f97fe0
+Reserving 124 Bytes for Global Data at: 81f97f64
+Reserving 128k for boot params() at: 81f77f64
+Stack Pointer at: 81f77f48
+Now running in RAM - U-Boot at: 83f9c000
+MMC:   msc: 0
+the manufacturer c8
+SF: Detected GD25Q128
+
+In:    serial
+Out:   serial
+Err:   serial
+gpio_request lable = wifi_enable_gpio gpio = 62
+the level of this gpio is 0
+gpio_request lable = yellow_gpio gpio = 38
+the level of this gpio is 1
+gpio_request lable = blue_gpio gpio = 39
+the level of this gpio is 0
+gpio_request lable = blue_gpio gpio = 49
+the level of this gpio is 0
+gpio_request lable = IRCUTN_gpio gpio = 73
+the level of this gpio is 0
+gpio_request lable = IRCUTP_gpio gpio = 72
+the level of this gpio is 0
+gpio_request lable = night_gpio gpio = 90
+the level of this gpio is 0
+gpio_request lable = USB_able_gpio gpio = 51
+the level of this gpio is 1
+gpio_request lable = SD_able_gpio gpio = 48
+the level of this gpio is 0
+gpio_request lable = SDcd_check_gpio gpio = 45
+the level of this gpio is 1
+gpio_request lable = SPK_able_gpio gpio = 63
+the level of this gpio is 0
+gpio_request lable = wifi_enable_gpio gpio = 62
+the level of this gpio is 1
+Press ESC to abort autoboot in 5 seconds
+gpio_request lable = sdupgrade gpio = 46
+the manufacturer c8
+SF: Detected GD25Q128
+
+start=0
+start=40000
+len=40000
+flash check read...
+the manufacturer c8
+SF: Detected GD25Q128
+
+Erasing SPI flash...Writing to SPI flash...done
+the manufacturer c8
+SF: Detected GD25Q128
+
+--->probe spend 4 ms
+SF: 2621440 bytes @ 0x40000 Read: OK
+--->read spend 380 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_monkey_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1748213 Bytes = 1.7 MiB
+   Load Address: 80010000
+   Entry Point:  803c5010
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_monkey_1.0__ (root@chenx-Latitude-3490) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #3 PREEMPT Wed Dec 26 10:26:30 CST 2018
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:1218051B
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:900MHz L2CLK:450Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 004f0000 @ 00010000 (usable)
+[    0.000000]  memory: 00040000 @ 00500000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 04900000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x048fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x048fffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 18542
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=73M@0x0 rmem=34M@0x4900000 ispmem=21M@0x6B00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2048k(kernel),3392k(root),640k(driver),4736k(appfs),4736k(backupa),256k(config),256k(para),-(flag)
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 67812k/74752k available (3831k kernel code, 6940k reserved, 1224k data, 256k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:422
+[    0.000000] clockevents_config_and_register success.
+[    0.000025] Calibrating delay loop... 898.66 BogoMIPS (lpj=4493312)
+[    0.087754] pid_max: default: 32768 minimum: 301
+[    0.092732] Mount-cache hash table entries: 512
+[    0.097852] Initializing cgroup subsys debug
+[    0.102117] Initializing cgroup subsys freezer
+[    0.109096] regulator-dummy: no parameters
+[    0.113340] NET: Registered protocol family 16
+[    0.133691] bio: create slab <bio-0> at 0
+[    0.140018] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.145265] SCSI subsystem initialized
+[    0.149198] usbcore: registered new interface driver usbfs
+[    0.154734] usbcore: registered new interface driver hub
+[    0.160228] usbcore: registered new device driver usb
+[    0.165506] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.171702]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.177832] media: Linux media interface: v0.10
+[    0.182384] Linux video capture interface: v2.00
+[    0.189104] Switching to clocksource jz_clocksource
+[    0.194635] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.199624] cfg80211: Calling CRDA to update world regulatory domain
+[    0.206070] jz-dwc2 jz-dwc2: regulator vbus get error
+[    0.211129] DWC IN OTG MODE
+[    0.364470] sft id =========================off
+[    0.369062] dwc2 dwc2: Keep PHY ON
+[    0.372431] dwc2 dwc2: Using Buffer DMA mode
+[    0.576692] dwc2 dwc2: Core Release: 3.00a
+[    0.580802] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.587156] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.594552] hub 1-0:1.0: USB hub found
+[    0.598292] hub 1-0:1.0: 1 port detected
+[    0.602376] dwc2 dwc2: DWC2 Host Initialized
+[    0.606922] NET: Registered protocol family 2
+[    0.611852] TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.618932] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.625335] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.631805] TCP: reno registered
+[    0.635047] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.640945] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.647603] NET: Registered protocol family 1
+[    0.652288] RPC: Registered named UNIX socket transport module.
+[    0.658294] RPC: Registered udp transport module.
+[    0.662988] RPC: Registered tcp transport module.
+[    0.667770] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.674741] freq_udelay_jiffys[0].max_num = 10
+[    0.679168] cpufreq  udelay  loops_per_jiffy
+[    0.683599] dwc2 dwc2: ID PIN CHANGED!
+[    0.687451] init DWC as A_HOST
+[    0.690499] 12000     59910   59910
+[    0.693737] 24000     119821  119821
+[    0.697303] 60000     299554  299554
+[    0.700671] 120000    599108  599108
+[    0.704308] 200000    998513  998513
+[    0.707763] 300000    1497770         1497770
+[    0.711471] 600000    2995541         2995541
+[    0.715204] 792000    3954114         3954114
+[    0.718888] 1008000   5032509         5032509
+[    0.722684] 1200000   5991082         5991082
+[    0.732035] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.738957] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.744925] msgmni has been set to 132
+[    0.750053] io scheduler noop registered
+[    0.754111] io scheduler cfq registered (default)
+[    0.760573] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.767307] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.775469] console [ttyS1] enabled, bootconsole disabled
+[    0.775469] console [ttyS1] enabled, bootconsole disabled
+[    0.790493] brd: module loaded
+[    0.795944] loop: module loaded
+[    0.799822] zram: Created 2 device(s) ...
+[    0.804153] logger: created 256K log 'log_main'
+[    0.809415] jz SADC driver registeres over!
+[    0.814970] jz TCU driver register completed
+[    0.819895] the id code = c84018, the flash name is GD25Q127C
+[    0.825885] JZ SFC Controller for SFC channel 0 driver register
+[    0.832005] 9 cmdlinepart partitions found on MTD device jz_sfc
+[    0.838116] Creating 9 MTD partitions on "jz_sfc":
+[    0.843063] 0x000000000000-0x000000040000 : "boot"
+[    0.848578] 0x000000040000-0x000000240000 : "kernel"
+[    0.854249] 0x000000240000-0x000000590000 : "root"
+[    0.859725] 0x000000590000-0x000000630000 : "driver"
+[    0.865431] 0x000000630000-0x000000ad0000 : "appfs"
+[    0.870978] 0x000000ad0000-0x000000f70000 : "backupa"
+[    0.876787] 0x000000f70000-0x000000fb0000 : "config"
+[    0.882422] 0x000000fb0000-0x000000ff0000 : "para"
+[    0.887957] 0x000000ff0000-0x000001000000 : "flag"
+[    0.893464] SPI NOR MTD LOAD OK
+[    0.896980] dma dma0chan20: Channel 20 have been requested.(phy id 11,type 0x16 desc a11e1000)
+[    0.905915] dma dma0chan21: Channel 21 have been requested.(phy id 10,type 0x16 desc a11e2000)
+[    0.915037] jz-ssi jz-ssi.0: master is unqueued, this is deprecated
+[    0.921613] JZ SSI Controller for SPI channel 0 driver register
+[    0.927840] tun: Universal TUN/TAP device driver, 1.6
+[    0.933043] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.939561] usbcore: registered new interface driver zd1201
+[    0.945395] usbcore: registered new interface driver cdc_acm
+[    0.951221] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    0.959561] usbcore: registered new interface driver usb-storage
+[    0.965903] usbcore: registered new interface driver usbserial
+[    0.971945] usbcore: registered new interface driver cp210x
+[    0.977755] usbserial: USB Serial support registered for cp210x
+[    0.983894] usbcore: registered new interface driver pl2303
+[    0.989679] usbserial: USB Serial support registered for pl2303
+[    0.996141] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.034136] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.039495] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.085053] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.090685] TCP: cubic registered
+[    1.094150] NET: Registered protocol family 17
+[    1.099181] soc_vpu probe success,version:1.0.0-03203fd46d
+[    1.105233] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.112524] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    1.124469] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    1.132230] Freeing unused kernel memory: 256K (80500000 - 80540000)
+mdev is ok......
+[    1.794188] dwc2 dwc2:  ++OTG Interrupt: A-Device Timeout Change++
+
+hualai login: [    4.461365] @@@@ tx-isp-probe ok(version H20190611a) @@@@@
+[    4.491835] motor_probe [ChenX @ Hualai Technologies]
+[    4.497143] Hualai motor driver version: MT20181205a
+[    4.511163] jz_pwm_probe[201] d_name = tcu_chn0
+[    4.518362] jz_pwm_probe[201] d_name = tcu_chn1
+[    4.525640] jz_pwm_probe[201] d_name = tcu_chn4
+[    4.532658] jz_pwm_probe[201] d_name = tcu_chn5
+[    4.539948] The version of PWM driver is H20180309a
+[    4.553175] request pwm channel 0 successfully
+[    4.560065] request pwm channel 1 successfully
+[    4.564862] request pwm channel 4 successfully
+[    4.569442] request pwm channel 5 successfully
+[    4.574636] pwm-jz pwm-jz: jz_pwm_probe register ok !
+[    4.613575] jz_codec_register: probe() successful!
+[    4.984482] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a066b000)
+[    4.993707] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a06dc000)
+[    5.396225] RTL871X: module init start
+[    5.400097] RTL871X: rtl8189ftv v4.3.24.7_21113.20170208.nova.1.02
+[    5.408515] RTL871X: build time: Nov 28 2018 09:57:19
+[    5.413732] wlan power on
+[    5.434548] RTL871X: module init ret=0
+[    5.452691] zram0: detected capacity change from 0 to 16777216
+Setting up swapspace version 1, size = 16773120 bytes
+UUID=9028c2fa-c97f-4258-b171-d[    5.466838] Adding 16380k swap on /dev/zram0.  Priority:-1 extents:1 across:16380k SS
+02c55858773
+[    5.486846] mmc1: card claims to support voltages below the defined range. These will be ignored.
+[    5.507554] mmc1: new SDIO card at address 0001
+[    5.518356] RTL871X: ++++++++rtw_drv_init: vendor=0x024c device=0xf179 class=0x07
+[    5.572722] RTL871X: HW EFUSE
+[    5.575919] RTL871X: hal_com_config_channel_plan chplan:0x20
+[    5.707530] RTL871X: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[    5.727217] RTL871X: rtw_ndev_init(wlan0) if1 mac_addr=XX:XX:XX:XX:XX:XX
+
+=====Welcome login sdk sync shellcall tool=====
+
+===========welcome to assis process=========
+[Build date] Jun 15 2020 (12:37:45)
+[exec] msgSndId:0
+[exec] msgRcvId:32769
+[SDK-DOG]dbg: turn on watchdog success!
+[01/01/1970 08:00:09]===========welcome to iCamera_app===========
+[exec] msgSndId:0
+[exec] msgRcvId:32769
+msg productservices/communicate/msg/msg.c,77:[msg]dbg: msg_queue_create() ok  MsgId:65538
+../base/timer/timer.c,92:timer_init complete.
+[01/01/1970 08:00:09]watchdog_init() ok  TimerId:1
+[01/01/1970 08:00:09]<Reading> /params/config/.product_config
+[PRODUCT] [PRODUCT_TYPE ] [Camera]
+[PRODUCT] [PRODUCT_MODEL] [WYZEDB3]
+[PRODUCT] [BOARD_TEST   ] [000F]
+[PRODUCT] [FACTORY_TEST ] [0000]
+[PRODUCT] [HARDWARE_VER ] [H00A0000]
+[PRODUCT] [KEY          ] [oGp9pgEsWyDGNg9alocLENzZhlD0zowOX9x455X6BesJeDzii/lV4ABOz8ms]
+[PRODUCT] [KEY_CHECKSUM ] [12345678]
+[PRODUCT] [CONFIG_INFO  ] [2CAA8E9CAA09|73487021|hmmEjQ2hoW5zkrGT|2929]
+[PRODUCT] [macAddr      ] [2CAA8E9CAA09]
+[01/01/1970 08:00:09]<Reading> /system/bin/app.ver
+[PRODUCT] [appver       ] [4.25.0.102]
+[01/01/1970 08:00:09]<Reading> /etc/config/.user_config
+[USERSET] [indicator    ] [1]
+[USERSET] [nightVision  ] [3]
+[USERSET] [bitRate      ] [180]
+[USERSET] [res          ] [1]
+[USERSET] [fps          ] [20]
+[USERSET] [horSwitch    ] [1]
+[USERSET] [verSwitch    ] [1]
+[USERSET] [osdSwitch    ] [1]
+[USERSET] [logSd        ] [1]
+[USERSET] [logUdisk     ] [1]
+[USERSET] [telntSwitch  ] [2]
+[USERSET] [recordType   ] [1]
+[USERSET] [MASwitch     ] [2]
+[USERSET] [MALevel      ] [5]
+[USERSET] [AASwitch     ] [2]
+[USERSET] [AALevel      ] [5]
+[USERSET] [SASwitch     ] [2]
+[USERSET] [CASwitch     ] [2]
+[USERSET] [TBStart      ] [0]
+[USERSET] [TBDuration   ] [1440]
+[USERSET] [drawBoxSwitch] [1]
+[USERSET] [timezone     ] [8]
+[USERSET] [MMALevel     ] [150]
+[USERSET] [AMALevel     ] [100]
+[USERSET] [MAT          ] [0]
+[USERSET] [AST          ] [1]
+[USERSET] [motionTrack  ] [2]
+[USERSET] [motionCruisin] [2]
+[USERSET] [AASX         ] [25]
+[USERSET] [AASY         ] [25]
+[USERSET] [AALX         ] [50]
+[USERSET] [AALY         ] [50]
+[USERSET] [motionback   ] [1]
+[USERSET] [slide_x      ] [0]
+[USERSET] [slide_y      ] [0]
+[USERSET] [preset_x     ] [0]
+[USERSET] [preset_y     ] [0]
+[USERSET] [ubootflag    ] [0]
+[USERSET] [exposureModel] [0]
+[USERSET] [limit_max_x  ] [0]
+[USERSET] [limit_min_x  ] [0]
+[USERSET] [limit_max_y  ] [0]
+[USERSET] [limit_min_y  ] [0]
+[USERSET] [motor_limit  ] [0]
+[USERSET] [resoluselect ] [1]
+[USERSET] [low_bitrate  ] [30]
+[USERSET] [watermark_flag] [0]
+[USERSET] [speaker_vol  ] [50]
+[USERSET] [pir_alaram   ] [0]
+[USERSET] [alarmDate    ] [255]
+[USERSET] [alarmInterval] [180]
+[USERSET] [storage_device] [1]
+[USERSET] [white_switch ] [2]
+[USERSET] [white_brightness] [100]
+[USERSET] [white_face_switch] [1]
+[USERSET] [faceSwtich   ] [1]
+[USERSET] [osdLogoSwitch] [1]
+[USERSET] [firstBindFlag] [0]
+[USERSET] [chime_voice  ] [6]
+[USERSET] [chime_music  ] [1]
+[USERSET] [chime_times  ] [1]
+[USERSET] [chime_bucket_start] [960]
+[USERSET] [chime_bucket_duration] [1440]
+[USERNET] [ssid         ] [**********]
+[USERNET] [password     ] [**********]
+[USERNET] [wifiType     ] [5]
+[USERNET] [p2pid        ] [76TLBWA4EJC7JBDX111A]
+[USERNET] [r_encr       ] [B/Bfk0eymWrE9y9N]
+[USERNET] [sub1gMac     ] []
+----------------------------------------
+    WELCOME TO LOCALSDK      ('_)')
+----------------------------------------
+    platform: ingenict30
+    version : SDK20190612d
+    update  : Jun 15 2020 (12:37:35)
+----------------------------------------
+[SDK-GPIO]dbg: Pin(39)  Lvl(0)  Dir(out)
+[SDK-GPIO]dbg: Pin(38)  Lvl(0)  Dir(out)
+[SDK-GPIO]dbg: Pin(72)  Lvl(0)  Dir(out)
+[SDK-GPIO]dbg: Pin(73)  Lvl(0)  Dir(out[   10.219488] name : i2c-gpio1 nr : 1
+)
+[SDK-GPIO]dbg: Pin(48)  Lvl(1)  Dir(out)
+[SDK-GPIO]dbg: Pin([   10.226695] name : i2c0 nr : 0
+46)  Lvl(1)  Dir(in)
+[SDK-GPIO]dbg: Pin(45)  Lvl(0)  Dir(in)
+[SDK-GPIO]dbg: Pin(40)  Lvl(1)  Dir(in)
+[SDK-GPIO]dbg: Pin(60)  Lvl(1)  Dir(out)
+[SDK-THREAD]dbg: Platform Thread Create OK!  ('_)')
+[SDK-THREAD]dbg: Platform Thread Create OK!  ('_)')
+[localsdk_get_version][5]
+[01/01/1970 08:00:10][init_local_sdk] localsdk version:5
+[01/01/1970 08:00:10][init_local_sdk] localsdk version:5
+[SDK-THREAD]dbg: Platform Thread Start...
+[   10.295837] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[   10.302929] i2c i2c-0: --I2C txabrt:
+[   10.306978] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.313614] error: sensor_read,158 ret = -5
+[   10.317989]  sensor_read: addr=0xa value = 0x0
+[   10.322573] err sensor read addr = 0xa, value = 0x0
+[   10.388173] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[   10.395313] i2c i2c-0: --I2C txabrt:
+[   10.399276] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.405963] error: sensor_read,158 ret = -5
+[   10.410271]  sensor_read: addr=0xa value = 0x0
+[   10.414940] err sensor read addr = 0xa, value = 0x0
+[   10.480617] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[   10.487774] i2c i2c-0: --I2C txabrt:
+[   10.491747] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.498399] error: sensor_read,158 ret = -5
+[   10.502706]  sensor_read: addr=0x0 value = 0x0
+[   10.507337] err sensor read addr = 0x0, value = 0x0
+[   10.572957] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[   10.580107] i2c i2c-0: --I2C txabrt:
+[   10.584117] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.590682] error: sensor_read,158 ret = -5
+[   10.595061]  sensor_read: addr=0x0 value = 0x0
+[   10.599647] err sensor read addr = 0x0, value = 0x0
+[   10.665327] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[   10.672415] i2c i2c-0: --I2C txabrt:
+[   10.676463] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.683029] error: sensor_read,158 ret = -5
+[   10.687487]  sensor_read: addr=0x0 value = 0x0
+[   10.692073] err sensor read addr = 0x0, value = 0x0
+[   10.757957]  sensor_read: addr=0x3107 value = 0x32
+[   10.824091]  sensor_read: addr=0x3107 value = 0x32
+[   10.900867]  sensor_read: addr=0x3107 value = 0x32
+[   10.967357]  sensor_read: addr=0x3107 value = 0x32
+[   10.972934]  sensor_read: addr=0x3108 value = 0x35
+[   10.977960] info: success sensor find : sc4236
+[   10.982563] misc sinfo_release
+##### sensor type: sc4236 #####
+[ShellCall @Input ] insmod /system/etc/sensor/sensor_sc4236.ko sensor_resolution=300 [len:64][type:w]
+[ShellCall @Output] 0 [len:4]
+[   11.255100] sc4236 chip found @ 0x30 (i2c0)
+flags = 0x0
+funcs: 0x0
+[   11.558146] ncu_frame_channel_streamon,471: nuc size = 3359232, num = 2
+##### sensor fps: 20 #####
+[SDK-OSD]dbg: layer[0] is Enable...
+[SDK-OSD]dbg: layer[1] is Enable...
+[SDK-OSD]dbg: layer[2] is Enable...
+[SDK-THREAD]dbg: Set Video Enc Callback Doing...
+sample_framesource_init:before setting
+[corp] height:1296 left:0 top:0 width:1728
+[scaler] height:1296 width:1728
+sample_framesource_init:after setting
+[corp] height:1296 left:0 top:0 width:1728
+[scaler] height:1296 width:1728
+i264e[info]: profile Main, level 5.0
+[SDK-OSD]dbg: layer[0] create OK...
+[SDK-OSD]dbg: layer[1] create OK...
+[SDK-OSD]dbg: layer[2] create OK...
+[SDK-VIDEO]dbg: IMP_System_Bind(chn0) [FS]--bind->[OSD] OK!
+[SDK-VIDEO]dbg: IMP_System_Bind(chn0) [OSD]--bind->[ENC] OK!
+!!!!!!!!!!!!!!!!!!local_sdk_video_run:1531!!!!!!!!!!!!!!!!!!!!!!
+[SDK-VIDEO]dbg: start fs chn0...
+[SDK-VIDEO]dbg: start enc chn0...
+[local_sdk_video_create] Enc_thread(chn0) create OK!  ('_)')
+[SDK-OSD]dbg: layer[0] is Enable...
+[SDK-OSD]dbg: layer[1] is Enable...
+[SDK-OSD]dbg: layer[2] is Enable...
+[SDK-THREAD]dbg: Set Video Enc Callback Doing...
+sample_framesource_init:before setting
+[corp] height:480 left:0 top:0 width:640
+[scaler] height:480 width:640
+sample_framesource_init:after setting
+[corp] height:480 left:0 top:0 width:640
+[scaler] height:480 width:640
+[SDK-VIDEO]dbg: Encoder Chn0 Thread Start...
+i264e[info]: profile Main, level 3.0
+[SDK-OSD]dbg: layer[0] create OK...
+[SDK-OSD]dbg: layer[1] create OK...
+[SDK-OSD]dbg: layer[2] create OK...
+[SDK-VIDEO]dbg: IMP_System_Bind(chn1) [FS]--bind->[OSD] OK!
+[SDK-VIDEO]dbg: IMP_System_Bind(chn1) [OSD]--bind->[ENC] OK!
+!!!!!!!!!!!!!!!!!!local_sdk_video_run:1531!!!!!!!!!!!!!!!!!!!!!!
+[SDK-VIDEO]dbg: start fs chn1...
+[SDK-VIDEO]dbg: start enc chn1...
+[local_sdk_video_create] Yuv_thread(chn1) create OK!  ('_)')
+[local_sdk_video_create] Enc_thread(chn1) create OK!  ('_)')
+[SDK-AUDIO]dbg: Audio Thread(chn0) create OK!  ('_)')
+[SDK-THREAD]dbg: Set Audio Enc Callback Doing...
+[SDK-THREAD]dbg: Set Video PCM Callback Doing...
+[SDK-VIDEO]dbg: YUV Chn1 Thread Start...
+[SDK-VIDEO]dbg: Encoder Chn1 Thread Start...
+[SDK-AUDIO]dbg: Audio Thread(chn0) Start...
+[   12.024023] codec_set_device: set device: MIC...
+[   12.066266] SPEAKERCTL_MODE2!!!!!!!!!!!!!!!!!!!
+[local_sdk_speaker_init]: ioctl = 0
+[   12.284023] codec_set_device: set device: speaker...
+[SDK-SPKER]dbg: speaker volume: 75
+[SDK-SPKER]dbg: speaker gain: 28
+[netServ]dbg: Set net_state Callback Doing...
+[01/01/1970 08:00:12]wifi sta mode....
+[01/01/1970 08:00:12]ssid: REDACTED
+[01/01/1970 08:00:12]passwd: REDACTED
+[01/01/1970 08:00:13]dhcp doing...
+../base/shellcall/shellcall.c,453:[exec]cmd:killall -9 wpa_supplicant;killall -9 udhcpc;killall -9 udhcpd;killall -9 hostapd;killall -9 telnetd;ifconfig wlan0 0.0.0.0
+../base/shellcall/shellcall.c,401:cmd=[killall -9 wpa_supplicant;killall -9 udhcpc;killall -9 udhcpd;killall -9 hostapd;killall -9 telnetd;ifconfig wlan0 0.0.0.0]
+##dbg## (local_sdk_swith_sta) func return...
+[SDK-THREAD]dbg: Set night_state Callback Doing...
+<>===================< IRcut on >==================<>
+killall: wpa_supplicant: no process killed
+killall: udhcpc: no process killed
+killall: udhcpd: no process killed
+killall: hostapd: no process killed
+killall: telnetd: no process killed
+[SDK-THREAD]dbg: Set Video YUV Callback Doing...
+[SDK-THREAD]dbg: Set setup_keydown Callback Doing...
+[SDK-THREAD]dbg: Set reset_keydown Callback Doing...
+[SDK-THREAD]dbg: Set setup_keydown Callback Doing...
+[01/01/1970 08:00:13]devmonitor/devmonitor.c,31:======monitor_fd:23======
+event/event.c,49:EVENT_READABLE
+event/event.c,73:Event Add OK[fd=23], evnets[1]
+
+[01/01/1970 08:00:13]devmonitor/devmonitor.c,42:dev_monitor_init complete.
+motion alarm switch : 2
+[01/01/1970 08:00:13][sub1g]tty_info.fd0=24
+[sub1g]sub1g_init:ttyS0 open success
+_________________ Write (len:8) ________________
+SndData:0xaa 0x55 0x53 0x04 0x14 0xff 0x02 0x69
+---sub1g_get_dongle_version---
+0xaa 0x55 0x53 0x03 0x16 0x01 0x6b
+---end---
+_________________ Write (len:8) ________________
+SndData:0xaa 0x55 0x53 0x03 0x16 0x01 0x6b 0x00
+[sub1g]Send success!  nSndLen=8
+<>===================< IRcut off >=================<>
+RcvData:
+0x55 0xaa 0x53 0x1d 0x17 0x30 0x2e 0x30
+0x2e 0x30 0x2e 0x30 0x42 0x20 0x56 0x31
+0x2e 0x30 0x20 0x53 0x65 0x6e 0x73 0x6f
+0x72 0x20 0x43 0x48 0x49 0x4d 0x45 0x08
+0x37
+[sub1g]Invaild cmd
+../base/shellcall/shellcall.c,453:[exec]cmd:cp -f /system/etc/wpa_supplicant.conf /tmp/
+../base/shellcall/shellcall.c,401:cmd=[cp -f /system/etc/wpa_supplicant.conf /tmp/]
+[netServ]exec: wpa_supplicant -D nl80211 -i wlan0 -c /tmp/wpa_supplicant.conf -B;wpa_cli -a /system/bin/wifi_monitor.sh &
+Successfully initialized wpa_supplicant
+rfkill: Cannot open RFKILL control device
+nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
+[netServ]dbg: wifi connect...
+Selected interface 'wlan0'
+<>===================< IRcut on >==================<>
+led_light_do_action:whiteLedState3
+led_light_do_action:actionTmp:1 brightnessStart:0 brightnessEnd:0
+white_led_init complete
+[prompt]dbg: === SPK READY PLAY === [/usr/share/notification/COMMON/doorbelltips.wav]
+[prompt]dbg: === SPK START PLAY === [/usr/share/notification/COMMON/doorbelltips.wav]
+[SDK-SPKER]dbg: speaker volume: 40
+[local_sdk_speaker_feed_pcm_data]war: Speaker Cache Busy...
+[local_sdk_speaker_feed_pcm_data]war: Speaker Cache Busy...
+[netServ]dbg: wifi connect...
+[prompt]log: fread len(114) err...
+[SDK-SPKER]dbg: speaker volume: 75
+[prompt]dbg: === SPK END PLAY === [/usr/share/notification/COMMON/doorbelltips.wav]
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+recive_message_looper:msgHeader->type=11102
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[01/01/1970 08:00:59]Current network is unavailable!!!
+recive_message_looper:msgHeader->type=11102
+../base/timer/timer.c,71:timer_del id:[2]
+[01/01/1970 08:01:00]dhcp doing...
+../base/shellcall/shellcall.c,453:[exec]cmd:killall -9 wpa_supplicant;killall -9 udhcpc;killall -9 udhcpd;killall -9 hostapd;killall -9 telnetd;ifconfig wlan0 0.0.0.0
+../base/shellcall/shellcall.c,401:cmd=[killall -9 wpa_supplicant;killall -9 udhcpc;killall -9 udhcpd;killall -9 hostapd;killall -9 telnetd;ifconfig wlan0 0.0.0.0]
+##dbg## (local_sdk_swith_sta) func return...
+killall: udhcpc: no process killed
+killall: udhcpd: no process killed
+killall: hostapd: no process killed
+killall: telnetd: no process killed
+../base/shellcall/shellcall.c,453:[exec]cmd:cp -f /system/etc/wpa_supplicant.conf /tmp/
+../base/shellcall/shellcall.c,401:cmd=[cp -f /system/etc/wpa_supplicant.conf /tmp/]
+[netServ]exec: wpa_supplicant -D nl80211 -i wlan0 -c /tmp/wpa_supplicant.conf -B;wpa_cli -a /system/bin/wifi_monitor.sh &
+Successfully initialized wpa_supplicant
+rfkill: Cannot open RFKILL control device
+nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
+[netServ]dbg: wifi connect...
+Selected interface 'wlan0'
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+wpa_supplicant did not reply to PING command - exiting
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+recive_message_looper:msgHeader->type=11102
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[01/01/1970 08:01:46]Current network is unavailable!!!
+../base/timer/timer.c,71:timer_del id:[2]
+[01/01/1970 08:01:47]dhcp doing...
+../base/shellcall/shellcall.c,453:[exec]cmd:killall -9 wpa_supplicant;killall -9 udhcpc;killall -9 udhcpd;killall -9 hostapd;killall -9 telnetd;ifconfig wlan0 0.0.0.0
+../base/shellcall/shellcall.c,401:cmd=[killall -9 wpa_supplicant;killall -9 udhcpc;killall -9 udhcpd;killall -9 hostapd;killall -9 telnetd;ifconfig wlan0 0.0.0.0]
+##dbg## (local_sdk_swith_sta) func return...
+killall: udhcpc: no process killed
+killall: udhcpd: no process killed
+killall: hostapd: no process killed
+killall: telnetd: no process killed
+../base/shellcall/shellcall.c,453:[exec]cmd:cp -f /system/etc/wpa_supplicant.conf /tmp/
+../base/shellcall/shellcall.c,401:cmd=[cp -f /system/etc/wpa_supplicant.conf /tmp/]
+[netServ]exec: wpa_supplicant -D nl80211 -i wlan0 -c /tmp/wpa_supplicant.conf -B;wpa_cli -a /system/bin/wifi_monitor.sh &
+Successfully initialized wpa_supplicant
+rfkill: Cannot open RFKILL control device
+nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
+[netServ]dbg: wifi connect...
+Selected interface 'wlan0'
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+wpa_supplicant did not reply to PING command - exiting
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...
+[netServ]dbg: wifi connect...

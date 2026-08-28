@@ -1,0 +1,451 @@
+Support Commands: 
+GetAnrCfgInfo           	GetAnrProcess           	GetAnrRecordList        
+ShowIpcAbility          	accessDvrSwitch         	channelPlayback         
+clearDisksMode          	ctrlArchDebug           	decStat                 
+disableHB               	disableHik264           	dspStatus               
+dvrLogInfo              	dt                      	enableHB                
+enableHik264            	enableWatchdog          	errputClose             
+errputOpen              	get3GMode               	getCMS                  
+getCycleReboot          	getDbgCtrl              	getHardInfo             
+getIp                   	getLastErrorInfo        	getPlayTestCtrl         
+getPort                 	getServerInfo           	guiChkCfg               
+guiEnterMenuCount       	guiPrtScr               	guiStatus               
+helpm                   	helpu                   	i2cRead                 
+megaDspConfig           	miscCmd                 	netstat                 
+outputClose             	outputOpen              	partRecDetails          
+ping                    	printPart               	pthreadInfo             
+recorderChanInfo        	recorderFileInfo        	recorderFileKeyFrame    
+recorderHDIdle          	recorderMediaInfo       	recorderPAllocFile      
+recorderParam           	recorderSegExtraInfo    	recorderStatus          
+sendATCom               	set3GPrint              	set3GEnable             
+searchInfo              	setGateway              	setIp                   
+setlang                 	setMtu                  	setoutputmode           
+setPrint                	show8107coreUseInfo     	showCurPlayChanFileInfo 
+showDeviceTemp          	showIpcMemInfo          	showNetIpcmInfo         
+showNetLinksInfo        	showPlayChanStatus      	showPlayClipFile        
+showPlayScreenInfo      	showPlayStatus          	showPlayTime            
+showPreviewInfo         	showShareSvcInfo        	showSpareWorkStatus     
+showTagSysInfo          	showUserInfo            	showpu                  
+t1                      	t2                      	transcodeResStatus      
+getDateInfo             	dmesg                   	help 
+========================================
+
+U-Boot 2013.07 (Aug 17 2021 - 11:21:10)
+
+Board: ISVP (Ingenic XBurst T31 SoC)
+DRAM:  128 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 511k for U-Boot at: 83f80000
+Reserving 32769k for malloc() at: 81f7fc00
+Reserving 32 Bytes for Board Info at: 81f7fbe0
+Reserving 124 Bytes for Global Data at: 81f7fb64
+Reserving 128k for boot params() at: 81f5fb64
+Stack Pointer at: 81f5fb48
+Now running in RAM - U-Boot at: 83f80000
+MMC:   msc: 0
+the manufacturer ef
+SF: Detected W25Q128
+
+libezbsp-[svn 91010] (Sep 22 2020-20:00:30)
+
+U-Boot 2013.07 svn119050 (Aug 17 2021 - 11:21:10)
+product name:CP1_1296P_2020_CMCC
+Card did not respond to voltage select!
+Card did not respond to voltage select!
+device name mmc!
+Card did not respond to voltage select!
+Unknow device type!
+MMC read file e63fc1dc9043f3ef.dav failed,ret=-1!
+load_update_file fail
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====> At PhyBase:0 found phy id:0x1cc816
+Jz4775-9161
+Hit Ctrl+u to stop autoboot: 1
+
+HKVS # help
+?       - alias for 'help'
+base    - print or set address offset
+boot    - boot default, i.e., run 'bootcmd'
+bootd   - boot default, i.e., run 'bootcmd'
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+bootzrt - Will go to the zrt system
+cmp     - memory compare
+config_set- set libezbsp cfg
+config_show- show_config
+coninfo - print console devices and information
+cp      - memory copy
+crc32   - checksum calculation
+echo    - echo args to console
+erase_env- erase env
+erasep  - erase parttion
+ethphy  - ethphy contrl
+ezboot  - Boot kernel image from memory
+ezgpio  - ez set/get gpio
+ezloady - ezloady
+ezmtdparts- print mtdparts
+ezping  - ping [addr]
+ezreset - Reboot the system
+eztftp  - tftp [addr] [filename]
+ezversion- Show version
+fatinfo - print information about filesystem
+fatload - load binary file from a dos filesystem
+fatls   - list files in a directory (default /)
+format  - format flash except bootloader area
+go      - go xxx.bin thru net
+gos     - go xxx.bin thru serial
+help    - print command description/usage
+loadb   - load binary file over serial line (kermit mode)
+loads   - load S-Record file over serial line
+loadss  - load system to DRAM
+loady   - load binary file over serial line (ymodem mode)
+loop    - infinite loop on address range
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mmc     - MMC sub system
+mmcinfo - display MMC info
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+saveenv - save environment variables to persistent storage
+setenv  - set environment variables
+sf      - SPI flash sub-system
+sleep   - delay execution for some time
+tftpboot- boot image via network using TFTP protocol
+upa     - update app image
+upapp   - update app image
+upb     - update bootloader
+upbs    - update bootloader from serial
+update  - update digicap.dav
+updateb - update bootloader
+upf     - update firmware, format and update (factory use)
+upk     - update uImage
+upm     - update minisys
+upp     - update parttion
+HKVS # 
+
+
+====
+dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_swan_1.0__[svn 119860] (zhengxiaodong@Cpl-Ezviz-General-74-190) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #2 PREEMPT Tue Aug 17 11:24:03 CST 2021
+[    0.000000] CPU0 RESET ERROR PC:801A7E40
+[    0.000000] [<801a7e40>] zlib_inflate+0x984/0x1210
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_get_rate, parent = 1392000000, rate = 0, m = 0, n = 0, reg val = 0x081000ff
+[    0.000000] cgu_get_rate, parent = 1392000000, rate = 0, m = 0, n = 0, reg val = 0x081000ff
+[    0.000000] CCLK:1392MHz L2CLK:696Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 004c9000 @ 00010000 (usable)
+[    0.000000]  memory: 002b7000 @ 004d9000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 04e00000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x04dfffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x04dfffff]
+[    0.000000] On node 0 totalpages: 19968
+[    0.000000] free_area_init_node: node 0, pgdat 804d8020, node_mem_map 81000000
+[    0.000000]   Normal zone: 156 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 19968 pages, LIFO batch:3
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 19812
+[    0.000000] Kernel command line: console=ttyS1,115200n8 init=/linuxrc rootfstype=initramfs root=/dev/ram0 rw mtdparts=jz_sfc:256k(bld)ro,64k(env),64k(enc)ro,4608k(sys0),4m(recov),6272k(app0),1m(cfg) ip=192.0.0.64:::255.255.255.0 ethaddr=XX:XX:XX:XX:XX:XX devinfo=CP1_1296P_2020_CMCC DEVINFO=CP1_1296P_2020_CMCC rst=0 boot_from=PART_MAIN UPDATE_SOURCE=net SERVERIP=192.0.0.128 XAPP=0 mem=78M@0x0 rmem=50M@0x4e00000
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 70572k/79872k available (3734k kernel code, 9300k reserved, 1164k data, 2780k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000017] Calibrating delay loop... 1391.00 BogoMIPS (lpj=6955008)
+[    0.090036] pid_max: default: 32768 minimum: 301
+[    0.090231] Mount-cache hash table entries: 512
+[    0.090722] Initializing cgroup subsys debug
+[    0.090743] Initializing cgroup subsys freezer
+[    0.092700] regulator-dummy: no parameters
+[    0.092847] NET: Registered protocol family 16
+[    0.093308] register process exit failed.
+[    0.102863] bio: create slab <bio-0> at 0
+[    0.104415] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.104697] usbcore: registered new interface driver usbfs
+[    0.104740] usbcore: registered new interface driver hub
+[    0.104891] usbcore: registered new device driver usb
+[    0.105074] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.105150]  (null): set:249  hold:250 dev=100000000 h=500 l=500
+[    0.105216] media: Linux media interface: v0.10
+[    0.105249] Linux video capture interface: v2.00
+[    0.106778] Switching to clocksource jz_clocksource
+[    0.107306] NET: Registered protocol family 2
+[    0.107704] TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.107736] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.107756] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.107808] TCP: reno registered
+[    0.107821] UDP hash t[   19.037739] Exit hikio_motor_run ctrl->left_step=0 
+able entries: 256 (order: 0, 4096 bytes)
+[    0.107842] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.108064] NET: Registered protocol family 1
+[    0.110114] cfg80211: Calling CRDA to update world regulatory domain
+[    0.201888] freq_udelay_jiffys[0].max_num = 10
+[    0.201900] cpufreq 	udelay 	loops_per_jiffy	
+[    0.201905] 12000	 59956	 59956	
+[    0.201910] 24000	 119913	 119913	
+[    0.201916] 60000	 299784	 299784	
+[    0.201921] 120000	 599569	 599569	
+[    0.201927] 200000	 999282	 999282	
+[    0.201932] 300000	 1498924	 1498924	
+[    0.201938] 600000	 2997848	 2997848	
+[    0.201944] 792000	 3957159	 3957159	
+[    0.201949] 1008000	 5036385	 5036385	
+[    0.201954] 1200000	 5995696	 5995696	
+[    0.205816] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.205964] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.206226] msgmni has been set to 137
+[    0.207538] io scheduler noop registered (default)
+[    0.207580] io scheduler cfq registered
+[    0.207646] The version of PWM driver is H20180309a
+[    0.208726] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.658964] console [ttyS1] enabled
+[    0.665351] brd: module loaded
+[    0.669961] loop: module loaded
+[    0.673642] zram: Created 2 device(s) ...
+[    0.677918] logger: created 256K log 'log_main'
+[    0.682814] jz_pwm_probe[212] d_name = tcu_chn0
+[    0.687748] jz TCU driver register completed
+[    0.692409] wait stable.[289][cgu_ssi]
+[    0.696336] the id code = ef4018, the flash name is WIN25Q128
+[    0.702350] jz-sfc jz-sfc: Status: CMD_RDSR:0, CMD_RDSR_1:2, CMD_RDSR_2:60
+[    0.709548] JZ SFC Controller for SFC channel 0 driver register
+[    0.715671] 7 cmdlinepart partitions found on MTD device jz_sfc
+[    0.721782] Creating 7 MTD partitions on "jz_sfc":
+[    0.726725] 0x000000000000-0x000000040000 : "bld"
+[    0.732001] 0x000000040000-0x000000050000 : "env"
+[    0.737253] 0x000000050000-0x000000060000 : "enc"
+[    0.742442] 0x000000060000-0x0000004e0000 : "sys0"
+[    0.747805] 0x0000004e0000-0x0000008e0000 : "recov"
+[    0.753179] 0x0000008e0000-0x000000f00000 : "app0"
+[    0.758531] 0x000000f00000-0x000001000000 : "cfg"
+[    0.763708] SPI NOR MTD LOAD OK
+[    0.767351] jz-ssi jz-ssi.1: master is unqueued, this is deprecated
+[    0.773911] JZ SSI Controller for SPI channel 1 driver register
+[    0.780127] tun: Universal TUN/TAP device driver, 1.6
+[    0.785331] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.791805] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.804228] libphy: jz_mii_bus: probed
+[    0.808237] =======>gmacdev = 0x8256a200<================
+[    0.813803] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.820753] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.827583] jz_mac jz_mac.0: JZ on-chip Ethernet MAC driver, Version 1.0
+[    0.834557] PPP generic driver version 2.4.2
+[    0.839218] dwc2 otg probe start
+[    0.839247] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.844292] DWC IN OTG MODE
+[    0.847889] dwc2 dwc2: Keep PHY ON
+[    0.851401] dwc2 dwc2: Using Buffer DMA mode
+[    0.855805] dwc2 dwc2: Core Release: 3.00a
+[    0.860103] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.866588] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.873881] hub 1-0:1.0: USB hub found
+[    0.877819] hub 1-0:1.0: 1 port detected
+[    0.881968] dwc2 dwc2: DWC2 Host Initialized
+[    0.886417] dwc2 otg probe success
+[    0.886493] rtc-pcf8563 1-0051: chip found, driver version 0.4.3
+[    0.894586] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    0.902351] rtc-pcf8563 1-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    0.909312] i2c /dev entries driver
+[    0.913249] wait stable.[289][cgu_msc0]
+[    0.917257] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    0.956835] card [jzmmc_v1.2.0] connected!
+[    0.961069] dwc2 dwc2: ID PIN CHANGED!
+[    0.965035] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    0.970369] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    0.976263] jz_codec_register: probe() successful!
+[    0.981445] cgu_set_rate, parent = 1392000000, rate = 2048000, n = 10875, reg val = 0x01002a7b
+[    0.981459] cgu_enable,cgu_i2s_spk reg val = 0x21002a7b
+[    0.981479] cgu_set_rate, parent = 1392000000, rate = 2048000, n = 10875, reg val = 0x01002a7b
+[    0.981486] cgu_enable,cgu_i2s_mic reg val = 0x21002a7b
+[    0.981497] codec_codec_ctl ignore init codec
+[    0.986059] codec_fast_start init
+[    0.989554] Audio init codec
+[    0.993072] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a2583000)
+[    1.002473] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a2590000)
+[    1.011927] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a2580000)
+[    1.021236] TCP: cubic registered
+[    1.025054] NET: Registered protocol family 10
+[    1.030375] sit: IPv6 over IPv4 tunneling driver
+[    1.035661] NET: Registered protocol family 17
+[    1.041063] gpio-keys gpio-keys: No IRQ specified
+[    1.045985] gpio-keys: probe of gpio-keys failed with error -22
+[    1.054076] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    1.061779] rtc-pcf8563 1-0051: setting system clock to 2024-07-26 16:39:52 UTC (1722011992)
+[    1.084711] Adjust rtl8201 MDI amplitude Page1 Reg17 value from 0x84ca to 0x819a
+[    1.092387] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    1.117084] IP-Config: Complete:
+[    1.120461]      device=eth0, hwaddr=XX:XX:XX:XX:XX:XX, ipaddr=192.0.0.64, mask=255.255.255.0, gw=255.255.255.255
+[    1.131101]      host=192.0.0.64, domain=, nis-domain=(none)
+[    1.136998]      bootserver=255.255.255.255, rootserver=255.255.255.255, rootpath=
+[    1.151023] set smart card not supported!
+[    1.155179] mmc_is_support_smart_tf: cid info not matched ...
+[    1.163850] Freeing unused kernel memory: 2780K (804d9000 - 80790000)
+[    1.170644] mmc_is_support_smart_tf: cid info not matched ...
+[    1.176672] mmc0: new SDHC card at address 0001
+[    1.188533] mmcblk0: mmc0:0001 00000 7.44 GiB 
+[    1.197291]  mmcblk0: p1
+[    1.200191] online sd_name=mmc0
+[    1.203437] Change SD state from STOR_OFFLINE to STOR_ONLINE
+[    1.356280] wait stable.[289][cgu_isp]
+[    1.390264] @@@@ tx-isp-probe ok(version H20200612a), compiler date=Jun 12 2020 @@@@@
+[    1.406892] Audio codec_set_buildin_mic
+[    1.416923] usb 1-1: new high-speed USB device number 2 using dwc2
+[    1.458060] motor_probe911
+[    1.474632] MS419X9 svn version:53394
+[    1.496958] wait stable.[289][cgu_ssi]
+[    1.514462] MS419X9 driver init success
+[    1.527108] Enter hikio_motor_init 
+[    1.530734] mmc0 power register success!
+[    1.534779] set_mci_pin_mode: SD state is STOR_ONLINE 
+[    1.846820] codec_fast_start done
+[    6.521483] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    6.534575] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    6.877079] wait stable.[289][cgu_isp]
+[    6.953216] probe ok ------->jxq03
+[    7.007310] -----jxq03_detect: 711 ret = 0, v = 0x05
+[    7.012918] -----jxq03_detect: 719 ret = 0, v = 0x07
+[    7.018052] jxq03 chip found @ 0x40 (i2c0)
+[    7.022270] sensor driver version H20200930b
+[    7.172484] jxq03 stream on
+[    7.202064] codec_codec_ctl: set sample rate...
+[    7.202400] codec_codec_ctl: set device...
+[    7.202406] codec_set_device ignore codec_set_buildin_mic
+[    7.214932] codec_codec_ctl: set repaly channel...
+[    7.214956] codec_codec_ctl: set sample rate...
+[    7.215138] codec_codec_ctl: set device...
+[    7.215145] codec_set_device ignore codec_set_speaker
+[    7.225204] aes_open: aes open successful!
+[    7.358592] 15689,1024,1596,8016,15872,156,1024,1024,1024,1024,2,1024,1024,1,1024,1024
+[    7.390794] request pwm channel 0 successfully
+[    9.108427] 15689,1024,1596,8016,15872,156,1024,1024,1024,1024,2,1024,1024,1,1024,1024
+[   11.074987] RTW: module init start
+[   11.082122] RTW: rtl8188fu v5.7.4_33085.20190419_country_onekey_xingneng_20201113
+[   11.104949] RTW: build time: Jun 17 2021 15:52:57
+[   11.110268] hik_wifi_preinit: enter
+[   11.114040] RTW: ERROR hik_wifi_preinit: pick=CN,len=2
+[   11.119576] RTW: ERROR hik_set_country country_code:CN,use default channel plan set . 
+[   11.135990] RTW: ERROR ##hik_set_country :: country_code:CN;rtw_channel_plan=0x20
+[   11.152414] soc platform:MIPS-T31
+[   11.160746] wifi chip:rtl8188fu
+[   11.170654] wifi version:SVN-SN115913
+[   11.183428] build time:Jun 17 2021  15:52:57
+[   11.238285] RTW: HW EFUSE
+[   11.241014] RTW: 0x000: 29 81 00 CC  0B 00 00 00  00 0C 04 4C  10 0C 00 00  
+[   11.265780] RTW: 0x010: 2C 2B 2B 2B  2B 2B 2E 2C  2B 2B 2B 02  FF FF FF FF  
+[   11.278397] RTW: 0x020: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.307112] RTW: 0x030: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.321228] RTW: 0x040: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.342831] RTW: 0x050: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.361331] RTW: 0x060: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.382526] RTW: 0x070: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.399302] RTW: 0x080: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.422851] RTW: 0x090: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.442972] RTW: 0x0A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.455970] RTW: 0x0B0: FF FF FF FF  FF FF FF FF  20 1F 1C 00  00 00 00 FF  
+[   11.475979] RTW: 0x0C0: FF 11 00 10  00 FF 00 FF  00 00 FF FF  FF FF FF FF  
+[   11.502672] RTW: 0x0D0: DA 0B 79 F1  42 66 40 D4  E8 53 0A 20  D3 09 03 52  
+[   11.513917] RTW: 0x0E0: 65 61 6C 74  65 6B 09 03  38 30 32 2E  31 31 6E 00  
+[   11.538273] RTW: 0x0F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.546148] RTW: 0x100: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.554971] RTW: 0x110: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.563002] RTW: 0x120: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.578822] RTW: 0x130: C1 AE FF FF  FF FF FF FF  FF FF 00 11  FF FF FF FF  
+[   11.586212] RTW: 0x140: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.594906] RTW: 0x150: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.609712] RTW: 0x160: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.620355] RTW: 0x170: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.627766] RTW: 0x180: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.636051] RTW: 0x190: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.647929] RTW: 0x1A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.658983] RTW: 0x1B0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.666403] RTW: 0x1C0: FF FF FF FF  FF FF FF FF  FF FF FF FF[   20.000725] tcu_chn1 tcu_chn1.1: timer enable
+  FF FF FF FF  
+[   11.675317] RTW: 0x1D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.688011] RTW: 0x1E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.699933[   20.023594] MS419X9:thread id:268, done:0
+] RTW: 0x1F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.714492] RTW: hal_com_config_channel_plan chplan:0x20
+[   11.777396] RTW: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[   11.788753] RTW: exception mapping country:00 domain:0x20 to regd_name:NONE
+[   11.798979] RTW: rtw_ndev_init(wlan0) if1 mac_addr=XX:XX:XX:XX:XX:XX
+[   11.853319] usbcore: registered new interface driver rtl8188fu
+[   11.871013] RTW: module init ret=0
+[   12.436638] RTW: wlan0- hw port(0) mac_addr =XX:XX:XX:XX:XX:XX
+[   12.473458] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   12.985207] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[   13.036903] Enter hikio_motor_run 
+[   13.065352] @@@ WANGC in step_num: 780 act: 736 speed=150...
+[   14.474731] RTW: nolinked power save enter
+[   15.191840] RTW: wlan0- hw port(0) mac_addr =XX:XX:XX:XX:XX:XX
+[   15.213097] RTW: nolinked power save leave
+[   15.233390] scan ch:1
+[   15.371434] scan ch:2
+[   15.488450] scan ch:3
+[   15.609124] scan ch:4
+[   15.762451] scan ch:5
+[   15.928979] scan ch:6
+[   16.086429] scan ch:7
+[   16.243019] scan ch:8
+[   16.363039] scan ch:9
+[   16.499490] scan ch:10
+[   16.662894] scan ch:11
+[   16.786336] scan ch:12
+[   16.935196] scan ch:13
+[   17.062030] ========== ACS (VER-3) ==========
+[   17.066567] Best 24G Channel:1
+[   17.070952] Best 5G Channel:0
+[   17.070952] 
+[   17.088278] RTW: nolinked power save enter
+[   18.113185] Exit hikio_motor_run ctrl->left_step=0 
+[   18.220400] 15689,1024,1596,8016,1024,500,1024,1024,1024,1024,2,1024,1024,1,1024,1024
+[   18.239938] Enter hikio_motor_run 
+[   18.253804] @@@ WANGC in step_num: 120 act: 113 speed=150...
+==================================
+/ # mount -t debugfs none /sys/kernel/debug;cat /sys/kernel/debug/gpio
+GPIOs 0-31, GPIO A:
+ gpio-0   (JZ_SPI_CS           ) in  lo
+
+GPIOs 32-63, GPIO B:
+ gpio-49  (vd_pin              ) out lo
+ gpio-50  (rst_pin             ) out hi
+ gpio-51  (motor_st1_gpio      ) out lo
+ gpio-52  (motor_st3_gpio      ) out lo
+ gpio-53  (motor_st4_gpio      ) out lo
+ gpio-54  (motor_st2_gpio      ) out lo
+ gpio-57  (sda                 ) in  lo
+ gpio-58  (scl                 ) in  lo
+ gpio-62  (JZ_SPI_CS           ) out lo
+ gpio-63  (mmc_detect          ) in  lo
+
+GPIOs 64-95, GPIO C:
+
+================================================
+/ # lsmod
+libhal 7385 0 - Live 0xc02af000
+ez_ms419x9 16050 0 - Live 0xc02a2000
+motor_gpio 13304 1 libhal, Live 0xc0292000
+aes_dev 7020 0 - Live 0xc0286000 (O)
+avpu 14521 0 - Live 0xc0279000 (O)
+tx_isp_t31 944618 0 - Live 0xc0163000 (O)

@@ -1,0 +1,321 @@
+Ver:240106-T23ZN-SINGLE-b860074-MP
+led_status_hide: 0.
+riscv set sensor:gc2083 1920x1080
+tag::i2c_addr:0x37
+tag::reg_addr_size:2
+tag::reg_value_size:1
+This program was compiled on Mar  4 2024 at 15:39:47.
+stream on :61 ms
+start init isp :63 ms
+iq data addr=0x3f18034
+exp_parameter[10]ae count:2
+ae_ev_step = 500 500 4 512 512 max_ag=128456 max_dg=4096
+log2_max_ag=456839 max_ag:128448 max_sensor_dg=1024 max_isp_dg=4096 min_isp_dg=1024
+start get stream :172 ms
+get stream :244 ms
+veepai num:1 intt:1197 again:1024 dgain:1024 luma:18 ev:1197
+get stream :284 ms
+veemailbox:1  will stop riscv stop_complete=0
+pai num:2 intt:1232 again:2048 dgain:1024 luma:18 ev:2464
+get stream :324 ms
+veepai num:3 intt:1232 again:4096 dgain:1024 luma:18 ev:4928
+g_gpio_white_led [59]g_gpio_led [50] g_gpio_ircut_p [38] g_gpio_ircut_n [39]
+g_adc_value=10, g_is_night [0] g_adc_direction [0]
+converting luma:18 g_is_night:0 ev:2821
+prepare_mips_start intt 0x4d0 again 2344 dgain 1172
+###  mips_para_t->ev:2821 intt:1232 again:2344 dgain:1172
+stop riscv :370 ms
+Connect Fail, ret = -1, errno = 128, port = 49815
+​
+Zeratul login: [D][01/01/00:00:00][param.c:2162]g_backupInfo [{&vuid=VQ0501481GXLW&vlisence=9998f648232bdb2e&uid=VSTJ669156YYJUZ&lisence=GIZPXN&ssid=XXX&auth=2&wifikey=XXXXXXXXXXXX&pwd=58926e2234d5c5&flip_mode=0&adc_value=10&led_hide=0&ir_mode=auto&tagErrorTimes=0&}]
+[D][01/01/00:00:00][param.c:2021]gIrAdcValue [10]
+[D][01/01/00:00:00][param.c:2032]tag ir_mode [auto]
+[T 390]start insmod /lib/modules/mmc_core.ko
+[D][01/01/00:00:00][sample-common.c:590]my_cmdline_get_env gConfigNrvbsMain [1]
+[M][01/01/00:00:00][sample-common.c:668]check sensor gc2083
+[M][01/01/00:00:00][sample-common.c:950]detect first sensor_info.name[gc2083]-[gc2083]-addr[0x37].
+[D][01/01/00:00:00][sample-common.c:953]sample_system_init start.
+[D][01/01/00:00:00][sample-common.c:1034]ImpSystemInit success.
+[D][01/01/00:00:00][sample-common.c:3807]init Main stream !
+i264e[info]: profile High, level 5.0
+[M][01/01/00:00:00][sample-common.c:2295]SensorType[5], picWidth[2304], picHeight[1296]====
+[M][01/01/00:00:00][sample-common.c:2390]OSD Init Success.
+[D][01/01/00:00:00][sample-common.c:2533]Main Video Start... chnNum = 0
+[D][01/01/00:00:00][sample-common.c:3807]init Sub stream !
+i264e[info]: profile High, level 2.1
+[D][01/01/00:00:00][zrt_audio.c:1547]AudioAttrInit[8000]
+[D][01/01/00:00:00][zrt_audio.c:941]ai rate[8000].
+[D][01/01/00:00:00][zrt_audio.c:977]Audio In GetChnParam usrFrmDepth : 20.
+warn: shm_init,53shm init already
+warn: shm_init,53shm init already
+[D][01/01/00:00:00][zrt_audio.c:1152]StartAudioDecode Success.
+[M][01/01/00:00:00][zrt_audio.c:682]Audio input vol[85] gain[23].
+[D][01/01/00:00:00][zrt_audio.c:836]Audio output vol[80] gain[24]
+​
+[M][01/01/00:00:00][sample-common.c:2295]SensorType[5], picWidth[640], picHeight[360]====
+[M][01/01/00:00:00][sample-common.c2390]OSD Init Success.
+[D][01/01/00:00:00][sample-common.c:3634]sample_ivs_persondet_start success [448 256]
+INFO(jzdl): jzdl version:1.4.0(00010400_0a593ef)  built:20230925-1744(4.7.2 c)
+[D][01/01/00:00:00][zrt_audio.c:1803]Enter playAlarmAudioThread .
+[D][01/01/00:00:00][zrt_audio.c:1203]======start AudioEncodeThreadProcess======
+​
+++++++++++++++++++++++++++++++++
+Get First Video [Main Stream]
+++++++++++++++++++++++++++++++++
+[W][01/01/00:00:00][avmem.c:387]Update Main 0 Stream I, mv_iframe = 0, framenum = 0, framesize = 183439, ntsamp = 477-1997858314.
+INFO(persondet): Ingenic DL PersonDet Promotion Version:0.0.13(00000003_111fcc8)  built:20231115-1606(5.4.0 simd)
+param frameWidth: 448 frameHeight: 256  sense: -1 score: 0.400000 detdist: 1 det_size: 448 ptime: 1 count: 0 mod: 1 enable_perm: 0 enable_move: 1 track_mode: 0 observation_period: 0 active_count: 0 move_scale: 1.000000 move_sldwin_size: 2 sensor_size: 2 is_wide_angle: 0
+[D][01/01/00:00:00][sample-common.c:2754]Sub Video Start... chnNum = 1
+[D][01/01/00:00:00][h264osd.c:438]H264OsdShow enable: 1
+[D][01/01/00:00:00][h264osd.c:438]H264OsdShow enable: 0
+[D][01/01/00:00:00][sample-common.c:6306]IVS Det SaveTime = 504
+[T 538]get first audio AudioEncBufferPush
+​
+++++++++++++++++++++++++++++++++
+Get First Video [Sub Stream]
+++++++++++++++++++++++++++++++++
+[D][01/01/00:00:00][param.c:73]times[26*10ms], MTD_NAME_PATH [/dev/mtd5] !
+[D][01/01/00:00:00][cam_dual_config_flash.c:121]open /dev/mtd5 success, fd = 19.
+[D][01/01/00:00:00][cam_dual_config_flash.c:313]all block num rollingCode, rollingCode[8] = [37 37 0 0 0 0 0 0]!!!
+[D][01/01/00:00:00][cam_dual_config_flash.c:361]222 g_masterBlockNum=0, g_backupBlockNum=1.
+[D][01/01/00:00:00][cam_dual_config.c:520]calCrc32Val:f5c9bac9, headcrc32Val:f5c9bac9
+[D][01/01/00:00:00][cam_dual_config.c:533]clCrc32Val:f5c9bac9, BakHeadcrc32Val:f5c9bac9
+[D][01/01/00:00:00][cam_dual_config.c:559]config and bakconfig both newest!
+[D][01/01/00:00:00][cam_dual_config.c:1589]dual_config_get_user_info_cfg is not valid!
+[E][01/01/00:00:00][param.c:3166]dual_config_get_blob rtc_currtime fail
+[D][01/01/00:00:00][param.c:1213]FactoryParamRead size = 1032
+[D][01/01/00:00:00][param.c:1194]updateT: 1720979899: 1720979899
+[D][01/01/00:00:00][param.c:1203]factoryparam->mcuVersion: [10.104.176]
+[D][01/01/00:00:00][param.c:851]vc_nvs_get_blob SYSPARAMLIST success !
+[D][01/01/00:00:00][param.c:316]vc_nvs_get_blob NETWORKPARAMLIST success !
+[D][01/01/00:00:00][param.c:351]networkparam->WifiParam.SSID [XXX]!
+[D][01/01/00:00:00][param.c:128]SysConfigRead size = 740
+[D][01/01/00:00:00][param.c:1118]sys version: *********************[10.175.121.5]
+[D][01/01/00:00:00][cam_dual_config.c:1461]dual_config_get_upgrade_info_cfg is not valid!
+[E][01/01/00:00:00][param.c:1249]UpgradeInfoRead fail.
+[D][01/01/00:00:00][param.c:1312]tag_crc[0] uImage_crc[0] rootfs_crc[0] hi3861l_crc[0] 
+[D][01/01/00:00:00][pushserver.c:512]ServerWakeInfoRead  Success
+[D][01/01/00:00:00][cam_dual_config.c:1503]dual_config_get_p2p_info_cfg is not valid!
+[W][01/01/00:00:00][param.c:2711]vc_nvs_get_blob pushInfoRead fail
+[D][01/01/00:00:00][vstclog.c:606]open /dev/logdev success, fd = 21 !!
+prepare data
+[D][01/01/00:00:00][gpio_v300.c:137]GPIO[b][8]
+[D][01/01/00:00:00][cam_dual_config.c:1675]dual_config_get_voice_info_cfg is not valid!
+[W][01/01/00:00:00][param.c:2924]vc_nvs_get_blob g_stVoiceTypedef_Read fail
+[D][01/01/00:00:00][vstclog.c:110]log switch:0
+[D][01/01/00:00:00][record.c:4817]CloudRecordProc start
+[T 742]rtc_app_init ...
+[T 746]insmod /lb/modules/hichannel.ko mcuVersion=1 over
+[D][01/01/00:00:00][hichannel_main.c:2257]insert hichannel time = 356.
+[D][01/01/00:00:00][gpio_v300.c:137]GPIO[b][11]
+[D][01/01/00:00:00][gpio_v300.c:2081]first init start MW3 GetGpioModel():0, GetModelOnoffFlag:0
+[D][01/01/00:00:00][gpio_v300.c:137]GPIO[b][13]
+[D][01/01/00:00:00][gpio_v300.c:137]GPIO[b][10]
+[D][01/01/00:00:00][record.c:5524]record_set_time: 300
+[D][01/01/00:00:00][vstcp2p.c:1025]ObjP2pInit
+[D][01/01/00:00:00][vstcp2p.c:180]P2pUserInit
+[D][01/01/00:00:00][vstcp2p.c:200]find p2p server: VSTJ
+[D][01/01/00:00:00][vstcp2p.c:203]PPPP_GetAPIVersion = 83888128, P2pInitstring[EEGDFHBLKGJIGEJNEOHEFBEIGANCHHMBHIFEAHDEAMJCKCKJDJAFDDPPHLKJIHLMBENHKDCHPHNJBODA:vstarcam2019]
+[D][01/01/00:00:00][gpio_v300.c:4297]AgingTestModeProc......
+[M][01/01/00:00:00][record.c:458]RecordProc 0 start.
+[D][01/01/00:00:00][cam_ircut.c:1914]ircut thread proc
+[D][01/01/00:00:00][cam_ircut.c:1924]========g_UbootDayOrNightStatus[1]
+​
+[D][01/01/00:00:00][watch_dog.c:149]info: timeout = 120
+​
+[D][01/01/00:00:00][gpio_v300.c:3184]waitresetflagcnt[1] isPowerOnFlag [1]
+[T 815]waitTimes [19] InsertMmcKoState [1] is ok!
+[D][01/01/00:00:00][audiostream.c:178]StreamAudioUserInit
+[D][01/01/00:00:00][ipc_init.c:198]create MemCheckProc thread
+[D][01/01/00:00:00][sdk_init.c:53]CheckBootCmd:[bootcmd=http get 10.175.121 vp_ota_update.bin]
+[D][01/01/00:00:00][pushserver.c:6780]NewPushToServerProc Is Running...
+[D][01/01/00:00:00][cgireboot.c:50]GetModelOnoffFlag [0], lowPower [0]
+[D][01/01/00:00:00][pushserver.c:4771]VuidGetState = [2], DeviceId [VQ0501481GXLW]
+[D][01/01/00:00:00][timeplan.c:593]TimingPlanProc
+[D][01/01/00:00:00][cgireboot.c:138]get_wakeup_reason_proc thread run!!!
+[T 863]PPPP_Initialize over
+​
+[D][01/01/00:00:00][vstcp2p.c:1027]ObjP2pThread
+[D][01/01/00:00:00][vstcp2p.c:500]PPPP_Listen : sysconfig->DeviceId[VSTJ669156YYJUZ] port[0] license[GIZPXN]
+[D][01/01/00:00:00][hichannel_main.c:187]net device up success.
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[24], hichannlen[20], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[35], hichannlen[16], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[0], hichannlen[11], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[20], hichannlen[21], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[30], hichannlen[17], buflen[1].
+Read 0x4000 bytes at 0x3c000 on /dev/mtd0
+[D][01/01/00:00:00][sdk_init.c:84]CheckBootCmd:[bootcmd=http get 10.175.121 vp_ota_update.bin] ok!!!
+[D][01/01/00:00:00][gpio_v300.c:3184]waitresetflagcnt[2] isPowerOnFlag [1]
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[31], hichannlen[18], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[51], hichannlen[21], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[45], hichannlen[30], buflen[0].
+[D][01/01/00:00:00][hichannel_main.c:1790]cmd[27], hichannlen[23], buflen[1].
+[D][01/01/00:00:01][cam_ircut.c:218]ircut_switch_off
+[D][01/01/00:00:01][cam_ircut.c:1966]UbootDayOrNightStatus[1]
+​
+[D][01/01/00:00:01][gpio_v300.c:3184]waitresetflagcnt[3] isPowerOnFlag [1]
+[D][01/01/00:00:01][hichannel_main.c:1790]cmd[58], hichannlen[16], buflen[1].
+[W][01/01/00:00:01][pir_p824m.c:443]Sensrc[2] Sens[1].
+[W][01/01/00:00:01][wifi.c:181]hi_channel_set_pir_attr[0x286b20], pir_level:1.
+[D][01/01/00:00:01][hichannel_main.c:1790]cmd[61], hichannlen[16], buflen[5].
+[D][01/01/00:00:01][cam_dual_config.c:1283]dual_config_get_timing_plan_cfg is not valid!
+[M][01/01/00:00:01][timeplan.c:470]dual_config_get_blob TIMING_PLAN_STR  NULL
+[D][01/01/00:00:01][timeplan.c:472]timingPlanInfo.ini no exsit
+[D][01/01/00:00:01][hichannel_main.c:1790]cmd[47], hichannlen[18], buflen[100].
+[D][01/01/00:00:01][wifi.c:473]update vol factor: 10639
+[D][01/01/00:00:01][hichannel_main.c:1790]cmd[49], hichannlen[22], buflen[4].
+[D][01/01/00:00:01][gpio_v300.c:3184]waitresetflagcnt[4] isPowerOnFlag [1]
+[D][01/01/00:00:01][gpio_v300.c:3184]waitresetflagcnt[5] isPowerOnFlag [1]
+[D][01/01/00:00:01][hichannel_main.c:1695]##receive scm_version [10.104.176]
+[D][01/01/00:00:01][hichannel_main.c:1714]get sys time[1726277044][0x66][0xe4][0xe5][0xb4]
+[T 1247]HOST_CMD_GET_SYS_TIME over
+[W][01/01/00:00:01][rtc_app.c:361]DateUpdateSync 2024/09/14/01-24-04
+[D][09/14/01:24:04][hichannel_main.c:1616]mac_addr:B4-61-E9-50-41-D5
+[D][09/14/01:24:04][h264osd.c:438]H264OsdShow enable: 1
+[T 1311]filetimerProc
+[D][09/14/01:24:04][gpio_v300.c:3184]waitresetflagcnt[6] isPowerOnFlag [1]
+[D][09/14/01:24:04][vstclog.c:1169]Log Write Len = 10500
+[D][09/14/01:24:04][vstclog.c:961]Update LogRead Sockid [-1] -> [27]
+[D][09/14/01:24:04][hichannel_main.c:240]net device mac success.
+[D][09/14/01:24:04][hichannel_main.c:982]get adc value times less than 2 times!
+[D][09/14/01:24:04][hichannel_main.c:1677]==============wakeup[0]=================
+[D][09/14/01:24:04][hichannel_main.c:1707]g_hi3861l_resetflag[0]
+[D][09/14/01:24:04][wifi.c:208]recv 3861L device_id = 13, VQ0501481GXLW
+[D][09/14/01:24:04][wifi.c:209]recv 3861L device_license = 16, 9998f648232bdb2e
+[D][09/14/01:24:04][hichannel_main.c:1743]wifiEnchancedMode[1]
+[E][09/14/01:24:04][pir_p824m.c:566]Pir_P824_Thread get wakeup reason: 0.
+[W]09/14/01:24:04][pir_p824m.c:605]Pir_Update_Sen after hichannel init.
+[D][09/14/01:24:04][networkswitch.c:1369]SetSleepTimesCostDown to 30 sec.
+[D][09/14/01:24:04][networkswitch.c:2278]========wakeup[0] [-10]========
+[T 1364]==========wakeup[0][-10]======
+[D][09/14/01:24:04][gpio_v300.c:535]Set Pir Low: --> [-1]
+[D][09/14/01:24:04][gpio_v300.c:137]GPIO[b][21]
+[D][09/14/01:24:04][gpio_v300.c:140]GPIO[b][21] gpiotool B 21 up
+-------- T23 gpio status --------
+PxINT= 0x20000000
+PxMSK= 0xde366fff
+PxPAT1=0x9e31ca00
+PxPAT0=0x40022000
+INT  MSK  PAT1  PAT0
+ 0    1    1     0
+GPIO pin level:1
+gpio status is input=1
+Pull up enable
+Pull down disable
+Drive strength is 4mA
+--------------------------------
+[D][09/14/01:24:04][gpio_v300.c:3234]=========powercnt[0] reset[0] 3861update[0] wakeup[0] pwron[1]============
+​
+[W][09/14/01:24:04][param.c:364]SysParamWrite not change !
+[D][09/14/01:24:04][record.c:4756]max_cloud_record_time: 10
+[D][09/14/01:24:04][networkswitch.c:1590]WifiPreType[0]
+[D][09/14/01:24:04][networkswitch.c:1653]NETNONE, start Station
+[E][09/14/01:24:04][networkswitch.c:1167]socket SIOCGIFHWADDR failed
+[D][09/14/01:24:04][hichannel_main.c:1790]cmd[0], hichannlen[11], buflen[0].
+[D][09/14/01:24:04][hichannel_main.c:1616]mac_addr:B4-61-E9-50-41-D5
+[D][09/14/01:24:04][hichannel_main.c:240]net device mac success.
+[D][09/14/01:24:04][hichannel_main.c:1790]cmd[10], hichannlen[13], buflen[0].
+[D][09/14/01:24:04][wifi.c:1536]wifi connect info: ssid[XXX],passwd[XXXXXXXXXXXX],auth[2]
+[D][09/14/01:24:04][hichannel_main.c:1790]cmd[14], hichannlen[16], buflen[116].
+[W][09/14/01:24:04][vstcp2p.c:521]PPPP_Listen timeout
+[D][09/14/01:24:04][vstcp2p.c:500]PPPP_Listen : sysconfig->DeviceId[VSTJ669156YYJUZ] port[0] license[GIZPXN]
+[D][09/14/01:24:04][wific:2074]start hi_3861L_update_process
+[D][09/14/01:24:04][brushFlash.c:874]set UpgradeStatus:0
+[D][09/14/01:24:04][wifi.c:2247]exit hi_3861L_update_process
+[D][09/14/01:24:05][record.c:4397]Wait Internet: 0, ServerStatus: 0
+[D][09/14/01:24:05][pushserver.c:5884]wifiConnectingTimeout:21
+[E][09/14/01:24:05][hichannel_main.c:1777]hisi_link_rec cmd not found, cmd = 52
+[D][09/14/01:24:06][networkswitch.c:3831]pir:0, sleep:27, audio:0, IrAdc:465, sTime:2, lowP:0 ,PowerSwitch0, Cloud:0-0, live:0.
+[D][09/14/01:24:06][hichannel_main.c:1272]adcVal:423-423-418,key:0,pir:0,tamper:0,onecall:0,BatRate:100,chargeVal:9,charge:0,irAdc:465, devicetype:0
+[D][09/14/01:24:07][pushserver.c:5884]wifiConnectingTimeout:41
+[D][09/14/01:24:07][record.c:4397]Wait Internet: 0, ServerStatus: 0
+[E][09/14/01:24:07][hichannel_main.c:1777]hisi_link_rec cmd not found, cmd = 52
+[D][09/14/01:24:07][hichannel_main.c:370]wlan ip[XXXXXXXXXXXXXXX] netmask[XXXXXXXXXXXXX] gw[XXXXXXXXXXXXX].
+[D][09/14/01:24:07][hichannel_main.c:305]Add EN dns.
+[D][09/14/01:24:07][hichannel_main.c:425]net device up success.
+[D][09/14/01:24:07][wifi.c:1604]set connectStatus connected![2]
+[D][09/14/01:24:08][pushserver.c:6900]{"did":"VQ0501481GXLW"}
+​
+vc_request_post_json is https://node-manage-3.eye4.cn/deviceNotice
+[D][09/14/01:24:08][pushserver.c:6172]MasterServerDomain [liteos-master-3.eye4.cn]
+[M][09/14/01:24:08][param.c:256]networkparam not change
+[D][09/14/01:24:08][wifi.c:1578]connectStatus[2] success
+[D][09/14/01:24:08][cam_dual_config.c:1633]dual_config_get_wifi_info_cfg is not valid!
+[W][09/14/01:24:08][param.c:1082]dual_config_get_blob TMPWIFIPARAM failed
+​
+[D][09/14/01:24:08][networkswitch.c:1257]NetWorkDhcpStart ...
+​
+[D][09/14/01:24:08][networkswitch.c:2009]link:0 WifiPreType:2
+​
+[D][09/14/01:24:08][pushserver.c:6174]MasterServerIp [47.88.8.151]:[32320] ret [0]
+host:node-manage-3.eye4.cn port:443, address:47.254.50.29
+[W][09/14/01:24:08][avmem.c:387]Update Main 0 Stream I, mv_iframe = 197, framenum = 75, framesize = 102504, ntsamp = 5467-1997858314.
+StreamNum[0]: FPS: 15.13, Bitrate: 1272.55(kbps)
+StreamNum[1]: FPS: 14.96, Bitrate: 76.27(kbps)
+[D][09/14/01:24:08][pushserver.c:6180]contectToTcp MasterServerSocket [29].
+ed7dc193e88242c56c5832724a34aa03da14b62d
+[D][09/14/01:24:08][pushserver.c:1117]base64Key len:28 :7X3Bk+iCQsVsWDJySjSqA9oUti0=, sign[7915]
+[D][09/14/01:24:08][pushserver.c:1141]{"event":"getNodeInfo","did":"VQ001481GXLW","AccessKey":"9QDU2DZ3gulyXnze","timestamp":1726241048,"sign":7915,"action":1,"signature":"7X3Bk+iCQsVsWDJySjSqA9oUti0="}
+​
+[D][09/14/01:24:08][pushserver.c:1256]create_object_for_send_get_node_info signature ok
+[D][09/14/01:24:08][pushserver.c:1175]buffer is {"did":"VQ0501481GXLW","event":"getNodeInfo","ip":"172.233.131.118","port":32321,"push_address":"47.88.8.151","push_port":12322}
+​
+[D][09/14/01:24:08][pushserver.c:1209]heartbeat ip = 172.233.131.118, port = 32321.
+[D][09/14/01:24:08][pushserver.c:1225]push ip = 47.88.8.151, port = 12322.
+[D][09/14/01:24:08][pushserver.c:6188]DoSendGetNodeInfo success.
+[D][09/14/01:24:08][pushserver.c:536]node info not change
+[D][09/14/01:24:08][pushserver.c:5297]shutdown_heartbeat_socket.
+[D][09/14/01:24:08][pushserver.c:2622]{"vuid":"VQ0501481GXLW","code":"9998f648232bdb2e","dealer":"OEM","version":"10.175.121.5"}
+vc_request_post_json is https://vuid-3.eye4.cn/
+[D][09/14/01:24:08][vstcp2p.c:500]PPPP_Listen : sysconfig->DeviceId[VSTJ669156YYJUZ] port[0] license[GIZPXN]
+host:vuid-3.eye4.cn port:443, address:47.254.50.29
+[W][09/14/01:24:08][h264motion.c:74]MotionDet_SetCheckResultNomal [0]---------
+vc_net_connect success.
+[D][09/14/01:24:09][pushserver.c:6946]go push server request cb.
+[D][09/14/01:24:09][pushserver.c:6958]rspBuf = {"address":"http://47.88.8.151:3002","token":"dUSAVC5kTwxHR4a%2Bjcqfs4J5jVLUDQoGSxP%2FgGOgWYRSDLzWwMAvkc7VM7cFlvZn","master":"3","timestamp":1726629426}
+[D][09/14/01:24:09][pushserver.c:6929]address = http://47.88.8.151:3002
+[D][09/14/01:24:09][pushserver.c:6930]token = dUSAVC5kTwxHR4a%2Bjcqfs4J5jVLUDQoGSxP%2FgGOgWYRSDLzWwMAvkc7VM7cFlvZn
+[D][09/14/01:24:09][pushserver.c:6931]master = 3
+[D][09/14/01:24:09][pushserver.c:6932]timestamp = 1726629426
+[D][09/14/01:24:09][rtc_app.c:118]NtpSetLocalTime: tv_sec = 1726629426, tonezone = -36000
+[D][09/18/13:17:06][hichannel_main.c:1790]cmd[34], hichannlen[16], buflen[4].
+[D][09/18/13:17:06][wifi.c:299]set sys time[1726665426][0x66][0xea][0xd2][0xd2]
+[D][09/18/13:17:06][cam_dual_config.c:740]dual config set push server cfg!
+vc_net_connect success.
+[D][09/18/13:17:06][networkswitch.c:3831]pir:0, sleep:24, audio:0, IrAdc:465, sTime:5, lowP:0 ,PowerSwitch0, Cloud:0-0, live:0.
+[D][09/18/13:17:06][pushserver.c:6076]contectToTcp heartBeat [172.233.131.118]:[32321]
+[D][09/18/13:17:06][pushserver.c:2498]go uid request cb.
+[D][09/18/13:17:06][pushserver.c:2509]rspBuf = {"uid":"VSTJ669156YYJUZ","password":"GIZPXN","address":"EEGDFHBLKGJIGEJNEOHEFBEIGANCHHMBHIFEAHDEAMJCKCKJDJAFDDPPHLKJIHLMBENHKDCHPHNJBODA:vstarcam2019","supplier":"1","cluster":"10"}
+[D][09/18/13:17:06][pushserver.c:2433]get uid = VSTJ669156YYJUZ
+[D][09/18/13:17:06][pushserver.c:2450]get password = REDACTED
+[D][09/18/13:17:06][pushserver.c:2471]supplier = 1
+[D][09/18/13:17:06][pushserver.c:2477]address = EEGDFHBLKGJIGEJNEOHEFBEIGANCHHMBHIFEAHDEAMJCKCKJDJAFDDPPHLKJIHLMBENHKDCHPHNJBODA:vstarcam2019
+[D][09/18/13:17:06][vstcp2p.c:151]rite P2pInitstring = EEGDFHBLKGJIGEJNEOHEFBEIGANCHHMBHIFEAHDEAMJCKCKJDJAFDDPPHLKJIHLMBENHKDCHPHNJBODA:vstarcam2019
+[D][09/18/13:17:06][param.c:2766]push cfg not changed .
+[D][09/18/13:17:06][pushserver.c:4797]VuidRet [200]
+[D][09/18/13:17:06][pushserver.c:4563]{"type":"liteos","uid":"VQ0501481GXLW","oemid":"OEM","state":"1","version":"10.175.121.5","scm_vserin":"10.104.176","support_humanDetect":"1","dealer":"OEM","bUseWifi":1,"support_alexa":"2","width":"640","height":"360","bHaveTfcard":0}
+​
+auth url: https://authentication-3.eye4.cn/v2
+vc_request_post_json is https://authentication-3.eye4.cn/v2
+host:authentication-3.eye4.cn port:443, address:47.254.50.29
+[D][09/18/13:17:06][pushserver.c:1343]register! Get wakeup reason[0] [0]
+c5d1efcd2dee36c0dab2d40989f8efedaa79827a
+[D][09/18/13:17:06][pushserver.c:1474]{"event":"register","did":"VQ0501481GXLW","ULPC":0,"AccessKey":"9QDU2DZ3gulyXnze","timestamp":1726629426,"sign":7798,"wakeupReason":0,"xVersion":"2","mark":"3","version":"10.175.121.5","signature":"xdHvzS3uNsDastQJifjv7ap5gno="}
+​
+[D][09/18/13:17:06][pushserver.c:1718]create_object_for_send_register signature ok
+[D][09/18/13:17:06][vstclog.c:1169]Log Write Len = 20752
+[D][09/18/13:17:06][record.c:4397]Wait Internet: 0, ServerStatus: 0
+[W][09/18/13:17:06][vstcp2p.c:521]PPPP_Listen timeout
+[D][09/18/13:17:06][vstcp2p.c:500]PPPP_Listen : sysconfig->DeviceId[VSTJ669156YYJUZ] port[0] license[GIZPXN]
+vc_net_connect success.
+[D][09/18/13:17:07][pushserver.c:5676]RecvBuf [{"event":"register","wake":"XGT57","ST":1726629427,"heartRate_sleep":60,"heartRate_activation":10,"token":"jv1wunzmjef","d009":{"class":"D009","type":"qiniu","url":"http://upload-na0.qiniup.com","access_token":"WGifYYH5dUfdgm8vJhgY12bfpV1s5qiqHMYAFjID:f22FmZx8xWxigsxSvdyReYqspXY=:eyJkZWxldGVBZnRlckRheXMiOjMwLCJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInNjb3BlIjoiZDAxNS1uYTAiLCJjYWxsYmFja1VybCI6Imh0dHA6Ly80Ny4yNTQuNTIuNDI6ODAxNS9EMDE1IiwiY2FsbGJhY2tCb2R5Ijoie1wia2V5XCI6XCIkKGtleSlcIixcInJlZ2lvblwiOlwibmEwXCIsXCJkMDA5X2lkXCI6JCh4OmQwMDlfaWQpLFwiY3ljbGVcIjozMH0iLCJkZWFkbGluZSI6MTcyOTIyMTQyNn0="}}].
+[D][09/18/13:17:07][pushserver.c:5344]RECV register msg.
+[D][09/18/13:17:07][cam_dual_config.c:818]dual config set log info cfg!
+[D][09/18/13:17:07][pushserver.c:5525]ST [1726629427]
+[D][09/18/13:17:07][rtc_app.c:141]curr_timep=1726665427, utc_time=1726629427
+[W][09/18/13:17:07][rtc_app.c:361]DateUpdateSync 2024/09/18/13-17-07
+[D][09/18/13:17:07][hichannel_main.c:1790]cmd[34], hichannlen[16], buflen[4].
+[D][09/18/13:17:07][wifi.c:299]set sys time[1726665427][0x66][0xea][0xd2][0xd3]
+[D][09/18/13:17:07][hichannel_main.c:1272]adcVal:423-423-418,key:0,pir:0,tamper:0,onecall:0,BatRate:100,chargeVal:9,charge:0,irAdc:464, devicetype:0
+[D][09/18/13:17:07][pushserver.c:1989]Get electricity[100]
+[D][09/18/13:17:07][pushserver.c:1994]{"event":"heartbeat","did":"VQ0501481GXLW","ULPC":0,"status":"active","token":"jv1wunzmjef","electricity":"100"}

@@ -1,0 +1,743 @@
+
+U-Boot SPL 2013.07 (Sep 14 2023 - 13:47:16)
+Board info: T41NQ
+
+apll_freq = 1008000000 
+mpll_freq = 1200000000 
+vpll_freq = 1188000000 
+sdram init start
+DDR clk rate 600000000
+DDRP_INNOPHY_PLL_CTRL: 00000028
+DDRP_INNOPHY_PLL_CTRL: 00000020
+T41NQ ddr phy skew set
+CPU0 RESET ERROR PC: 5e7e9ff8
+CPU1 RESET ERROR PC: befe3bfa
+mem data:
+81000000:   00000000  ffffffff  00000000  ffffffff
+81000010:   00000000  ffffffff  00000000  ffffffff
+81000020:   00000000  ffffffff  00000000  ffffffff
+81000030:   00000000  ffffffff  00000000  ffffffff
+spl_sfc_nand_load:412
+00006c00,00064000,80100000
+spl_sfc_nand_load:415
+image entry point: 0x80100000
+Board: ISVP (Ingenic XBurst2 T41 SoC)
+DRAM size is 128 MiB
+Top of RAM usable for U-Boot at: 88000000
+Reserving 464k for U-Boot at: 87f88000
+Reserving 32896k for malloc() at: 85f68000
+Reserving 32 Bytes for Board Info at: 85f67fe0
+Reserving 124 Bytes for Global Data at: 85f67f64
+Reserving 128k for boot params() at: 85f47f64
+Stack Pointer at: 85f47f48
+Now running in RAM - U-Boot at: 87f88000
+NAND:  0 MiB
+SFC_NAND:  ***sfc init!
+MMC:   MSC: 0
+
+NAND read: device 0 offset 0xc0000, size 0x20000
+ 131072 bytes read: OK
+
+NAND read: device 0 offset 0xe0000, size 0x20000
+ 131072 bytes read: OK
+Data transfer:    serial
+Net:   Jz4775-9161
+Hit any key to stop autoboot:  0 
+Nand Init Done!
+BootConcifg: Magic[0xCBAE9527] Boot MTD[kernel:1 rootfs:2 appfs:3]
+do_mmc_init start!
+do_mmc_init  device not found!
+
+NAND read: device 0 offset 0x100000, size 0x300000
+ 3145728 bytes read: OK
+   Image Name:   Linux-4.4.94
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    2246517 Bytes = 2.1 MiB
+   Load Address: 80010000
+   Entry Point:  80499910
+   Verifying Checksum ... OK
+   Uncompressing lzma Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (root@cp3) (gcc version 7.2.0 (Ingenic Linux-Release5.1.4.1-Default(xburst2(fp64)+glibc2.29+Go language) 2022.08-08 10:51:21) ) #1 SMP PREEMPT Thu Sep 14 13:54:09 CST 2023
+[    0.000000] CPU0 RESET ERROR PC:5E7E9FF8
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00132100 (Ingenic XBurst@II)
+[    0.000000] FPU revision is: 00f32100
+[    0.000000] MIPS: machine is ingenic,marmot
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00629000 @ 00010000 (usable)
+[    0.000000]  memory: 00037000 @ 00639000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 03800000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x00000000037fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x00000000037fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x00000000037fffff]
+[    0.000000] [SMP] Slave CPU(s) 1 available.
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.000000] PERCPU: Embedded 10 pages/cpu @81097000 s8528 r8192 d24240 u40960
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 14224
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=56M@0x0 rmem=38M@0x3800000 nmem=34M@0x5E00000 init=/linuxrc ubi.mtd=2 root=ubi0:rootfs rootfstype=ubifs ro system=/dev/mtdblock3 mtdparts=sfc0_nand:1M(uboot),3M(kernel),8M(rootfs),32M(appfs),3M(kernel2),8M(rootfs2),32M(appfs2),41728k(param),128k(SN),-(bootconfig) lpj=11968512
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 49852K/57344K available (4672K kernel code, 271K rwdata, 1356K rodata, 220K init, 156K bss, 7492K reserved, 0K cma-reserved)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] parse cpu-intc-iomap, intc define in dt is too large!
+[    0.000000] core irq setup finished and percpu irq inited! NR_IRQS = 419
+[    0.000000] t41 Clock Power Management Unit init sucess!
+[    0.000000] parse cpu-ost-iomap, ost number define in dt is too large!
+[    0.000000] percpu cpu_num:0 timerevent init
+[    0.000000] clockevents_config_and_register success.
+[    0.000000] clocksource: jz_clocksource: mask: 0x7fffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 64 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000452] Console: colour dummy device 80x25
+[    0.004895] Calibrating delay loop (skipped) preset value.. 2393.70 BogoMIPS (lpj=11968512)
+[    0.013355] pid_max: default: 32768 minimum: 301
+[    0.018240] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.024875] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.032665] [SMP] Prepare 2 cores., cpu: 0
+[    0.116007] [SMP] Booting CPU1 ...
+[    0.119380] CPU1 RESET ERROR PC:FFFE0FC4
+[    0.119397] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.119401] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.119406] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.119472] percpu cpu_num:1 timerevent init
+[    0.119490] clockevents_config_and_register success.
+[    0.119495] CPU1 revision is: 00132100 (Ingenic XBurst@II)
+[    0.119498] FPU revision is: 00f32100
+[    0.119743] Brought up 2 CPUs
+[    0.166584] devtmpfs: initialized
+[    0.174702] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.184696] futex hash table entries: 512 (order: 2, 16384 bytes)
+[    0.190991] pinctrl core: initialized pinctrl subsystem
+[    0.196716] NET: Registered protocol family 16
+[    0.206419] ingenic pinctrl 10010000.pinctrl: 4 gpio chip add success, pins 128
+[    0.214452] ingenic pinctrl 10010000.pinctrl: ingenic pinctrl probe success
+[    0.227536] dmmu_init 807 PTRS_PER_PTE = 1024
+[    0.303728] ingenic-dma 13420000.dma: INGENIC SoC DMA initialized
+[    0.311003] inno phy probe success
+[    0.317351] clocksource: Switched to clocksource jz_clocksource
+[    0.344272] NET: Registered protocol family 2
+[    0.349194] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.356197] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.362726] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.369272] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.375134] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.381749] NET: Registered protocol family 1
+[    0.386448] RPC: Registered named UNIX socket transport module.
+[    0.392459] RPC: Registered udp transport module.
+[    0.397150] RPC: Registered tcp transport module.
+[    0.401972] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.411231] squashfs: version 4.0 (2021/14/49) Phillip Lougher 
+[    0.417666] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.431561] jitterentropy: Initialization failed with host not compliant with requirements: 2
+[    0.440782] io scheduler noop registered
+[    0.444688] io scheduler deadline registered
+[    0.449086] io scheduler cfq registered (default)
+[    0.453975] ingenic,t41-pwm 13460000.pwm: PWM clk100k:480
+[    0.459425] ingenic,t41-pwm 13460000.pwm: period_ns:max=1365312,min=42
+[    0.468558] Ingenic drawbox probe sucess!
+[    0.472921] vpu_register
+[    0.475408] helix probe success
+[    0.480697] aip_init success
+[    0.484116] 10031000.serial: ttyS1 at MMIO 0x10031000 (irq = 58, base_baud = 6250000) is a uart1
+[    0.493053] console [ttyS1] enabled
+[    0.493053] console [ttyS1] enabled
+[    0.500195] bootconsole [early0] disabled
+[    0.500195] bootconsole [early0] disabled
+[    0.509062] 10035000.serial: ttyS5 at MMIO 0x10035000 (irq = 64, base_baud = 6250000) is a uart5
+[    0.523512] ingenic-tcu 10002000.tcu: Ingenic TCU driver register completed ret = 0
+[    0.532672] ingenic-sfc 13440000.sfc0: Found Supported nand device, id = 0xc891,name = GD5F1GM7UE
+[    0.542018] use nand common get feature interface!
+[    0.547075] Scanning device for bad blocks
+[    0.555360] random: nonblocking pool is initialized
+[    0.656234] ingenic-sfc 13440000.sfc0: NOTICE: this flash haven`t param, magic_num:3040506
+[    0.664936] ingenic-sfc 13440000.sfc0: read partition from flash failed!
+[    0.671978] ingenic-sfc 13440000.sfc0: read mtdparts!
+[    0.677295] 10 cmdlinepart partitions found on MTD device sfc0_nand
+[    0.683883] Creating 10 MTD partitions on "sfc0_nand":
+[    0.689284] 0x000000000000-0x000000100000 : "uboot"
+[    0.696069] 0x000000100000-0x000000400000 : "kernel"
+[    0.702920] 0x000000400000-0x000000c00000 : "rootfs"
+[    0.709791] 0x000000c00000-0x000002c00000 : "appfs"
+[    0.716505] 0x000002c00000-0x000002f00000 : "kernel2"
+[    0.723508] 0x000002f00000-0x000003700000 : "rootfs2"
+[    0.730482] 0x000003700000-0x000005700000 : "appfs2"
+[    0.737321] 0x000005700000-0x000007fc0000 : "param"
+[    0.744130] 0x000007fc0000-0x000007fe0000 : "SN"
+[    0.750673] 0x000007fe0000-0x000008000000 : "bootconfig"
+[    0.757918] ingenic-sfc 13440000.sfc0: SPI NAND MTD LOAD OK
+[    0.764162] dwc2 13500000.otg: Configuration mismatch. Forcing peripheral mode
+[    0.771886] OTG CLK 1f877fc4
+[    0.776293] CPCCR CLK 1580
+[    0.779180] dwc2 13500000.otg: 1024 invalid for host_nperio_tx_fifo_size. Check HW configuration.
+[    0.788527] dwc2 13500000.otg: 1024 invalid for host_perio_tx_fifo_size. Check HW configuration.
+[    0.837386] dwc2 13500000.otg: EPs: 9, dedicated fifos, 3576 entries in SPRAM
+[    0.846075] ingenic-i2c 10050000.i2c: register i2c0 success.
+[    0.853788] Netfilter messages via NETLINK v0.30.
+[    0.858886] ip_set: protocol 6
+[    0.862261] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    0.867995] NET: Registered protocol family 17
+[    0.875177] soc_vpu probe success,version:1.0.0-03203fd46d
+[    0.881666] ubi0: attaching mtd2
+[    0.917182] ubi0: scanning is finished
+[    0.931627] ubi0: attached mtd2 (name "rootfs", size 8 MiB)
+[    0.937511] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    0.944722] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    0.951862] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    0.959183] ubi0: good PEBs: 64, bad PEBs: 0, corrupted PEBs: 0
+[    0.965390] ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    0.972990] ubi0: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 1613115762
+[    0.982594] ubi0: available PEBs: 0, total reserved PEBs: 64, PEBs reserved for bad PEB handling: 20
+[    0.992325] ubi0: background thread "ubi_bgt0d" started, PID 440
+[    1.795633] UBIFS (ubi0:0): static UBI volume - read-only mode
+[    1.906383] UBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name "rootfs", R/O mode
+[    1.915127] UBIFS (ubi0:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    1.925553] UBIFS (ubi0:0): FS size: 2793472 bytes (2 MiB, 22 LEBs), journal size 1142785 bytes (1 MiB, 8 LEBs)
+[    1.936147] UBIFS (ubi0:0): reserved for root: 0 bytes (0 KiB)
+[    1.942275] UBIFS (ubi0:0): media format: w4/r0 (latest is w4/r0), UUID 66570D54-F10D-4066-9340-BA62BB90C300, small LPT model
+[    1.954876] UBIFS (ubi0:0): full atime support is enabled.
+[    1.960715] VFS: Mounted root (ubifs filesystem) readonly on device 0:14.
+[    1.968619] devtmpfs: mounted
+[    1.971885] Freeing unused kernel memory: 220K
+mdev is ok......
+net.core.wmem_max = 26214400
+net.core.wmem_default = 26214400
+[    2.293281] ubi1: attaching mtd3
+[    2.426105] ubi1: scanning is finished
+[    2.440719] ubi1: attached mtd3 (name "appfs", size 32 MiB)
+[    2.446623] ubi1: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.455697] ubi1: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.462892] ubi1: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.470250] ubi1: good PEBs: 256, bad PEBs: 0, corrupted PEBs: 0
+[    2.476548] ubi1: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.484189] ubi1: max/mean erase counter: 1/0, WL threshold: 4096, image sequence number: 213084148
+[    2.493716] ubi1: available PEBs: 0, total reserved PEBs: 256, PEBs reserved for bad PEB handling: 20
+[    2.503436] ubi1: background thread "ubi_bgt1d" started, PID 463
+UBI device number 1, total 256 LEBs (32505856 bytes, 31.0 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+[    2.618141] UBIFS (ubi1:0): UBIFS: mounted UBI device 1, volume 0, name "appfs", R/O mode
+[    2.626728] UBIFS (ubi1:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.637180] UBIFS (ubi1:0): FS size: 27172864 bytes (25 MiB, 214 LEBs), journal size 3936256 bytes (3 MiB, 31 LEBs)
+[    2.648142] UBIFS (ubi1:0): reserved for root: 0 bytes (0 KiB)
+[    2.654264] UBIFS (ubi1:0): media format: w4/r0 (latest is w4/r0), UUID 76A3E9B4-4FC5-40A8-A713-C60D6EA75E8A, small LPT model
+[    2.666968] UBIFS (ubi1:0): full atime support is enabled.
+[    2.687192] ubi2: attaching mtd7
+
+Ingenic-uc1_1 login: [    2.856013] ubi2: scanning is finished
+[    2.869912] ubi2 warning: print_rsvd_warning: cannot reserve enough PEBs for bad PEB handling, reserved 18, need 20
+[    2.881733] ubi2: attached mtd7 (name "param", size 40 MiB)
+[    2.889516] ubi2: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.896733] ubi2: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.903926] ubi2: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.911275] ubi2: good PEBs: 326, bad PEBs: 0, corrupted PEBs: 0
+[    2.917634] ubi2: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.925210] ubi2: max/mean erase counter: 2/1, WL threshold: 4096, image sequence number: 486846354
+[    2.934744] ubi2: available PEBs: 0, total reserved PEBs: 326, PEBs reserved for bad PEB handling: 18
+[    2.944457] ubi2: background thread "ubi_bgt2d" started, PID 473
+UBI device number 2, total 326 LEBs (41394176 bytes, 39.4 MiB), available 0 LEBs (0 bytes), LEB [    2.956995] UBIFS (ubi2:0): background thread "ubifs_bgt2_0" started, PID 476
+size 126976 bytes (124.0 KiB)
+[    3.017751] UBIFS (ubi2:0): recovery needed
+[    3.086870] UBIFS (ubi2:0): recovery completed
+[    3.091668] UBIFS (ubi2:0): UBIFS: mounted UBI device 2, volume 0, name "param"
+[    3.099375] UBIFS (ubi2:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    3.109795] UBIFS (ubi2:0): FS size: 36061184 bytes (34 MiB, 284 LEBs), journal size 4952064 bytes (4 MiB, 39 LEBs)
+[    3.120761] UBIFS (ubi2:0): reserved for root: 0 bytes (0 KiB)
+[    3.126881] UBIFS (ubi2:0): media format: w4/r0 (latest is w4/r0), UUID 23029520-4356-4915-BF48-E1DC463D5845, small LPT model
+[    3.139075] UBIFS (ubi2:0): full atime support is enabled.
+[    3.908005] sdhci: Secure Digital Host Controller Interface driver
+[    3.914539] sdhci: Copyright(c) Pierre Ossman
+[    3.977392] mmc0: SDHCI controller on ingenic-sdhci [13060000.msc] using ADMA
+[    3.987552] mmc0: card removed
+[    4.027400] mmc1: SDHCI controller on ingenic-sdhci [13070000.msc] using ADMA
+[    4.160239] mmc1: new high speed SDIO card at address 0001
+[    4.200513] [atbm_log]:SVN_VER=22688,DPLL_CLOCK=24,BUILD_TIME=[===== =====]
+[    4.207904] [atbm_log]:----drvier RATEPOLCIY=OLD
+[    4.212940] [atbm_log]:Probe called
+[    4.216679] [atbm_log]:atbm_sdio_probe:v12
+[    4.221051] [atbm_log]:Allocated hw_priv @ 8063af00
+[    4.226837] [atbm_log]:[BH] register.
+[    4.230852] [atbm_log]: wait_event_interruptible from  send_prbresp_wq
+[    4.237845] [atbm_log]:atbmwifi INIT_WORK enable
+[    4.242834] [atbm_log]:atbmwifi INIT_WORK enable
+[    4.247839] [atbm_log]:atbm_before_load_firmware++
+[    4.252912] [atbm_log]:atbm_sdio_rx_thread
+[    4.258042] [atbm_log]:atbm_HwGetChipType, chipver=0x49, g_wifi_chip_type[10]
+[    4.265812] [atbm_log]:atbm_before_load_firmware:0xab0016c = [34800000]
+[    4.273160] [atbm_log]:atbm_before_load_firmware:0xab0016c = [34800000]
+[    4.280140] [atbm_log]:rx timeout
+[    4.283993] [atbm_log]:atbm_before_load_firmware:do not set config to smu
+[    4.529840] [atbm_log]:atbm_before_load_firmware:read [0x16100074]=[0],ret(0)
+[    4.537519] [atbm_log]:atbm_before_load_firmware:write [0x16100074]=[1],ret(0)
+[    4.783280] [atbm_log]:atbm_start_load_firmware++
+[    4.788258] [atbm_log]:used firmware.h=
+[    4.792300] [atbm_log]:START DOWNLOAD ICCM=========
+[    4.797442] [atbm_log]:atbm_load_firmware_generic: addr 10000: len 22000
+[    4.881622] [atbm_log]:START DOWNLOAD DCCM=========
+[    4.886748] [atbm_log]:atbm_load_firmware_generic: addr 800000: len 9000
+[    4.913918] [atbm_log]:atbm_after_load_firmware++
+[    4.946682] [atbm_log]:firmwareCap f589
+[    4.950733] [atbm_log]:firmwareCap2 5984
+[    4.954844] [atbm_log]:wsm_caps.firmwareCap 5984f589
+[    4.959892] [atbm_log]:apollo wifi WSM init done.
+[    4.959892]    Input buffers: 42 x 1728 bytes
+[    4.959892]    Hardware: 7.1280
+[    4.959892]    WSM firmware [=MODEM=RF=Ares_AX  2GHZ Dec  9 2022 16:08:35NOTXConfrim ap sleep], ver: 15425, build: 2980, api: 1060, cap: 0x5984F589 Config[30004]  expection 900b80c, ep0 cmd addr 901d3f8 NumOfStations[4] NumOfInterfaces[3]
+[    4.995035] [atbm_log]:EFUSE(8)				[0]
+[    4.995058] [atbm_log]:atbm_after_load_firmware:1380==> val32 = 4001200 
+[    4.995141] [atbm_log]:set_block_size=256
+[    4.995146] [atbm_log]:mdelay wait wsm_startup_done  !!
+[    4.995261] [atbm_log]:atbm_sdio_tx_thread
+[    5.020025] [atbm_log]:EFUSE(I)					[1]
+[    5.024044] [atbm_log]:EFUSE(B)			[0]
+[    5.027895] [atbm_log]:CAPABILITIES_ATBM_PRIVATE_IE      [0]
+[    5.033828] [atbm_log]:CAPABILITIES_NVR_IPC              [0]
+[    5.039778] [atbm_log]:CAPABILITIES_NO_CONFIRM           [1]
+[    5.045711] [atbm_log]:CAPABILITIES_SDIO_PATCH           [0]
+[    5.051656] [atbm_log]:CAPABILITIES_NO_BACKOFF           [0]
+[    5.057601] [atbm_log]:CAPABILITIES_CFO                  [0]
+[    5.063533] [atbm_log]:CAPABILITIES_AGC                  [1]
+[    5.069477] [atbm_log]:CAPABILITIES_TXCAL                [1]
+[    5.075410] [atbm_log]:CAPABILITIES_MONITOR              [0]
+[    5.081364] [atbm_log]:CAPABILITIES_CUSTOM               [1]
+[    5.087297] [atbm_log]:CAPABILITIES_SMARTCONFIG          [0]
+[    5.093249] [atbm_log]:CAPABILITIES_ETF                  [1]
+[    5.099193] [atbm_log]:CAPABILITIES_LMAC_RATECTL         [1]
+[    5.105127] [atbm_log]:CAPABILITIES_LMAC_TPC             [1]
+[    5.111069] [atbm_log]:CAPABILITIES_LMAC_TEMPC           [1]
+[    5.117001] [atbm_log]:CAPABILITIES_CTS_BUG              [0]
+[    5.122947] [atbm_log]:CAPABILITIES_USB_RECOVERY_BUG     [0]
+[    5.128891] [atbm_log]:CAPABILITIES_USE_IPC              [0]
+[    5.134822] [atbm_log]:CAPABILITIES_OUTER_PA             [0]
+[    5.140768] [atbm_log]:CAPABILITIES_POWER_CONSUMPTION    [0]
+[    5.146700] [atbm_log]:CAPABILITIES_RSSI_DECIDE_TXPOWER  [0]
+[    5.152647] [atbm_log]:CAPABILITIES_RTS_LONG_DURATION    [1]
+[    5.158590] [atbm_log]:CAPABILITIES_TX_CFO_PPM_CORRECTION[1]
+[    5.164521] [atbm_log]:CAPABILITIES_SHARE_CRYSTAL       [0]
+[    5.170372] [atbm_log]:CAPABILITIES_HW_CHECKSUM          [0]
+[    5.176304] [atbm_log]:CAPABILITIES_SINGLE_CHANNEL_MULRX [1]
+[    5.182247] [atbm_log]:CAPABILITIES_CFO_DCXO_CORRECTION  [1]
+[    5.188192] [atbm_log]:EX_CAPABILITIES_TWO_CHIP_ONE_SOC	[0]
+[    5.193851] [atbm_log]:EX_CAPABILITIES_MANUAL_SET_AC 	[0][atbm_log]:EX_CAPABILITIES_LMAC_BW_CONTROL	[1]
+[    5.203721] [atbm_log]:EX_CAPABILITIES_SUPPORT_TWO_ANTENNA	[0][atbm_log]:EX_CAPABILITIES_ENABLE_STA_REMAIN_ON_CHANNEL	[0]
+[    5.215237] [atbm_log]:EX_CAPABILITIES_ENABLE_PS 	   [1][atbm_log]:EX_CAPABILITIES_TX_REQUEST_FIFO_LINK 	   [0]
+[    5.225836] [atbm_log]:EX_CAPABILITIES_CHIP_TYPE		6032IS
+[    5.231599] [atbm_log]:CONFIG_PRODUCT_TEST_USE_FEATURE_ID [1]
+[    5.237634] [atbm_log]:CONFIG_PRODUCT_TEST_USE_GOLDEN_LED [1]
+[    5.244307] [atbm_log]:wsm_generic_confirm:status(2)
+[    5.249610] [atbm_log]:<WARNING> wsm_write_mib fail !!! mibId=4132
+[    5.256594] [atbm_log]:apollo wifi : can't open /data/.mac.info
+[    5.263305] [atbm_log]:efuse data is [0x1,0x28,0x1b,0x1b,0x1d,0xf,0x0,0x0,0x38:0xbe:0xab:0xe:0x92:0x81]
+[    5.273234] [atbm_log]:apollo wifi : can't open /tmp/atbm_txpwer_dcxo_cfg.txt
+[    5.280778] [atbm_log]:apollo wifi : can't open /tmp/set_rate_power.txt
+[    5.288040] [atbm_log]:get chip id [a4][1][1] 
+[    5.292708] [atbm_log]:current chiptype 6031s 
+[    5.297637] [atbm_log]:cfg80211_regdomain is NULL
+[    5.302630] [atbm_log]:country code 00 country_support_chan = 14 
+[    5.309496] [atbm_log]:enable sg
+[    5.314577] [atbm_log]:enable sg
+[    5.319676] [atbm_log]:is registered as 'ALTOBEAM'
+[    5.324748] [atbm_log]:[atbm_wtd]:set wtd_probe = 1
+[    5.576948] no manual card detect
+[    5.707627] @@@@ tx-isp-probe ok (version H20221101a) compiler date: Nov 18 2022 @@@@
+[    5.735968] @@@@ avpu driver ok(version H20220825a) @@@@@
+[    5.777549] @@@@@ inner codec power up@@@@@@
+[    6.197443] @@@@ audio driver ok(version H20210526a) @@@@@
+[    6.226280] @@@@@ multi-process system driver init @@@@@
+[    6.232290] nmem_size = 34M
+[    6.235225] nmem_start = 0x5E00000
+[    6.248594] soc_nna_probe success
+[    6.252235] soc_nna_init success
+Normal Boot---->
+wait wlan0 up
+watch_cache run interval 10 sec
+wlan0 init done
+[    6.277668] watch_cache (577): drop_caches: 3
+Successfully initialized wpa_supplicant
+wpa_suplicant deamon finish
+wdt_init success
+version: 1.1.22
+GIT 87115e237b50dc8169598e4d2dfbd8db9376f9e4 2023-08-31T17:33:38+08:00
+Query_MTD[FlashTool.c:124]:BlockSize 131072
+DiskMgrServices[DiskMgr.c:102]:DiskMgrServices Starting....
+DRIVERS-version T41..
+[    7.074027] soc_nna_open: open sucess
+[    7.082902] soc-nna version is 00000041
+The soc-nna version is 00000041
+[I/magik::venus]: ***********************
+[I/magik::venus]: venus memory map size: 0
+[I/magik::venus]: ***********************
+@@ Ingenic AIP LIB Ver is H20230705a @@
+[I/magik::venus]: ***********************
+[I/magik::venus]: venus init sucess.
+[I/magik::venus]: ***********************
+INFO(magik): venus version:0.2.0.2.ALPHA(00000200_f19c0fa)  built:20230814-2317(7.2.0 r5.1.8 libc2.29 mips T41@NNA2)
+INFO(magik): model version:0.1.9.NNA2_9b46aad 
+INFO(magik): model version:0.1.0.NNA2_5232523 
+INFO(magik): model version:0.1.0.NNA2_5232523 
+IMP_Plat_Init[jz/t41/IMP_Platform.c:99]:chris aVersion:IMP-1.0.1
+IMP_Check_Sensor[jz/t41/IMP_Platform.c:81]:Sensor[sc4336p, I2C_ADDR:0x30]
+[    8.975726] ==>0 client = 81821e00 sensor=82b81c00
+[    8.985437] set sensor mclk(0) gpio
+[    8.989210] 
+[    8.989210] ====>[default_boot=0] [resolution=2560x1440] [video_interface=0] [MCLK=0] 
+[    9.097523] -----sc4336p_detect: 547 ret = 0, v = 0x9c
+[    9.103064] -----sc4336p_detect: 555 ret = 0, v = 0x42
+[    9.108479] sc4336p chip found @ 0x30 (i2c0)
+[    9.112958] sensor driver version H20230531a
+[    9.117838]  Create framechan0 OK! 
+[    9.121800]  Create framechan1 OK! 
+[    9.125766]  Create framechan2 OK! 
+[    9.617488] sc4336p stream on
+---- FPGA board is ready ----
+  Board UID : 30AB6E51
+  Board HW ID : 71000260
+  Board rev.  : 62D42E77
+  Board date  : 20211214
+-----------------------------
+IMP_Plat_Init[jz/t41/IMP_Platform.c:209]:IMP System init Done!
+FontMatrix_Load[AVCodec.c:168]:FontMatrixPath[/system/res/iso8859-1-24x48.bin]
+
+FontMatrix_SizeCheck[AVCodec.c:153]:Font Path[/system/res/iso8859-1-24x48.bin] width[24] height[48]
+FontMatrix_Load[AVCodec.c:168]:FontMatrixPath[/system/res/iso8859-1-16x32.bin]
+
+FontMatrix_SizeCheck[AVCodec.c:153]:Font Path[/system/res/iso8859-1-16x32.bin] width[16] height[32]
+Pipeline_Init[AVCodec.c:250]:==>chnn[0] isEnable[1]
+IMP_Plat_VIPP_Enable[jz/t41/IMP_Platform.c:329]:-->CH0 width[2560] height[1440] fps[15]
+IMP_Plat_OSD_Enable[jz/t41/IMP_Platform.c:2193]:Channle0 create Rgn0 handle[0] off[1964x20] res[576x48]
+IMP_Plat_OSD_Enable[jz/t41/IMP_Platform.c:2193]:Channle0 create Rgn1 handle[1] off[100x1300] res[360x116]
+Pipeline_Init[AVCodec.c:250]:==>chnn[1] isEnable[1]
+IMP_Plat_VIPP_Enable[jz/t41/IMP_Platform.c:329]:-->CH1 width[1024] height[576] fps[15]
+IMP_Plat_ALGO_Enalbe[jz/t41/IMP_Platform.c:2408]:IMP_IVS_CreateChn channle[1] success!
+IMP_Plat_OSD_Enable[jz/t41/IMP_Platform.c:2193]:Channle1 create Rgn0 handle[2] off[620x20] res[384x32]
+IMP_Plat_OSD_Enable[jz/t41/IMP_Platform.c:2193]:Channle1 create Rgn1 handle[3] off[50x510] res[160x52]
+[WARNING]: The specified ScalingList is not allowed; it will be adjusted
+Pipeline_Init[AVCodec.c:250]:==>chnn[2] isEnable[1]
+[WARNING]: Ignoring GOP params, value will be adjusted
+Pipeline_Init[AVCodec.c:250]:==>chnn[3] isEnable[1]
+IMP_Plat_AENC_Enable[jz/t41/IMP_Platform.c:1566]:IMP_AENC_CreateChn 0 success!
+Pipeline_Init[AVCodec.c:250]:==>chnn[4] isEnable[1]
+IMP_Plat_AOPP_Enable[jz/t41/IMP_Platform.c:1763]:=====>Channle4 malloc done[0x14f1790]
+warn: shm_init,53shm init already
+Module_Init[AVCodec.c:364]:Module init done!
+VENC_StartService[Venc.c:614]:CH0 will start video encode service! runMode[0] viDev[0] veChn[0]
+VENC_StartService[Venc.c:617]:CH0 working thread creatting!
+IMP_Plat_VIN_StartCapture[jz/t41/IMP_Platform.c:970]:Channel[0] IMP_FrameSource_EnableChn[0] done!
+IMP_Plat_VENC_StartCapture[jz/t41/IMP_Platform.c:710]:IMP_Encoder_StartRecvPic for channel[0]!
+VENC_StartService[Venc.c:614]:CH1 will start video encode service! runMode[0] viDev[0] veChn[1]
+VENC_StartService[Venc.c:617]:CH1 working thread creatting!
+IMP_Plat_VIN_StartCapture[jz/t41/IMP_Platform.c:970]:Channel[1] IMP_FrameSource_EnableChn[1] done!
+IMP_Plat_VIN_StartCapture[jz/t41/IMP_Platform.c:981]:CH1 IMP_FrameSource_SetFrameDepth viChn[1] depth[1] done!
+IMP_Plat_VENC_StartCapture[jz/t41/IMP_Platform.c:710]:IMP_Encoder_StartRecvPic for channel[1]!
+VENC_StartService[Venc.c:614]:CH2 will start video encode service! runMode[0] viDev[1] veChn[2]
+IMP_Plat_VENC_StartCapture[jz/t41/IMP_Platform.c:710]:IMP_Encoder_StartRecvPic for channel[2]!
+warn: shm_init,53shm init already
+PipelineWorker[Venc.c:491]:Event->result[0x1505f90]
+VENC_OsdResource_Init[Venc.c:160]:Channle1 rgn1 isEnable[1] isShow[1]
+VENC_OsdResource_Init[Venc.c:160]:Channle1 rgn2 isEnable[0] isShow[0]
+VENC_OsdResource_Init[Venc.c:160]:Channle1 rgn3 isEnable[0] isShow[0]
+IMP_Plat_ALGO_StartService[jz/t41/IMP_Platform.c:2503]:IMP_IVS_StartRecvPic channle[1]
+VENC_CustomOSD_Refresh[Venc.c:177]:Channle[1] index[1] data[0x1364888]
+VENC_OsdResource_Init[Venc.c:160]:Channle0 rgn1 isEnable[1] isShow[1]
+VENC_OsdResource_Init[Venc.c:160]:Channle0 rgn2 isEnable[0] isShow[0]
+VENC_OsdResource_Init[Venc.c:160]:Channle0 rgn3 isEnable[0] isShow[0]
+VENC_CustomOSD_Refresh[Venc.c:177]:Channle[0] index[1] data[0x133bc00]
+IMP_Plat_AENC_GetOneFrame[jz/t41/IMP_Platform.c:1654]:AENC==>malloc for dummy
+aec version: v2.1.201201 in webrtc_profile.ini and v2.1.201201 in aec lib.
+PATH:AEC_PATH is empty,normal audio library
+IMP_Plat_AIPP_SetAEC[jz/t41/IMP_Platform.c:1484]:IMP_Plat_AIPP_SetAEC done
+IMP_Plat_VIN_SetFlip[jz/t41/IMP_Platform.c:1123]:viChn[0] set flip=[0] done!
+IMP_Plat_VIN_SetFlip[jz/t41/IMP_Platform.c:1123]:viChn[1] set flip=[0] done!
+IMP_Plat_VIN_SetMirror[jz/t41/IMP_Platform.c:1242]:viChn[0] set mirror=[0] done!
+IMP_Plat_VIN_SetMirror[jz/t41/IMP_Platform.c:1242]:viChn[1] set mirror=[0] done!
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+curl_easy_perform failed: Error
+
+Ingenic-uc1_1 login: root
+Jan  1 00:00:16 login[468]: root login on 'console'
+[root@Ingenic-uc1_1:~]# [   16.299353] watch_cache (577): drop_caches: 3
+
+[root@Ingenic-uc1_1:~]# cat /proc/kcurl_easy_perform failed: Error
+[root@Ingenic-uc1_1:~]# cat /proc/jz/
+audio/     codecs/    isp/       sinfo/
+clock/     dmmu/      reset/     watchdog/
+[root@Ingenic-uc1_1:~]# cat /proc/jz/[   26.325556] watch_cache (577): drop_caches: 3
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-
+isp-fs    isp-ivdc  isp-m0    isp-w00   isp-w01   isp-w02
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-fs 
+############## framesource 0 ###############
+chan status: running
+output pixformat: 
+output resolution: 2560 * 1440
+scaler : enable
+scaler width: 2560
+scaler height: 1440
+crop : disable
+the state of buffers:
+queue count: 2
+queue addr: 0x05415900
+queue addr: 0x04ecf900
+done count: 0
+the output buffers is: -2113544064
+the losted buffers is: 0
+---------------------------
+buf:0, state:3, buf_state:30, buf_qcnt:131, buf_dqcnt:130
+buf:1, state:3, buf_state:30, buf_qcnt:130, buf_dqcnt:129
+############## framesource 1 ###############
+chan status: running
+output pixformat: 
+output resolution: 1024 * 576
+scaler : enable
+scaler width: 1024
+scaler height: 576
+crop : disable
+the state of buffers:
+queue count: 2
+queue addr: 0x05a33900
+queue addr: 0x0595b900
+done count: 0
+the output buffers is: -2113544064
+the losted buffers is: 0
+---------------------------
+buf:0, state:3, buf_state:30, buf_qcnt:131, buf_dqcnt:130
+buf:1, state:3, buf_state:30, buf_qcnt:130, buf_dqcnt:129
+############## framesource 2 ###############
+chan status: stop
+############## framesource 3 ###############
+chan status: stop
+############## framesource 4 ###############
+chan status: stop
+############## framesource 5 ###############
+chan status: stop
+############## framesource 6 ###############
+chan status: stop
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-
+isp-fs    isp-ivdc  isp-m0    isp-w00   isp-w01   isp-w02
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-m0 
+****************** ISP( 0 ) INFO **********************
+Software Version : H20221101a
+SENSOR NAME : sc4336p
+SENSOR OUTPUT WIDTH : 2560
+SENSOR OUTPUT HEIGHT : 1440
+ISP OUTPUT FPS : 15 / 1
+SENSOR OUTPUT  : BGGR
+SENSOR DFBOOT  : 0
+ISP Runing Mode : day
+Saturation : 128
+Sharpness : 128
+Contrast : 128
+Brightness : 128
+Hue : 128
+expo fs : 1
+Wdr En : 0
+Bypass : 0
+Antiflicker : disable freq: 0
+Antiflicker nodes: 1: step : 0. 
+*********** Bin Attr ***********
+Version : V1.00
+DefaultPath : 
+RunningPath : /etc/sensor/sc4336p-t41.bin
+********* Ae Expr Info *********
+AeIntegrationTimeUnit : 0
+AeMode : 0
+AeIntegrationTimeMode : 0
+AeAGainManualMode : 0
+AeDGainManualMode : 0
+AeIspDGainManualMode : 0
+AeIntegrationTime : 2990
+AeAGain : 1280
+AeDGain : 0
+AeIspDGain : 1045
+AeMinIntegrationTimeMode : 0
+AeMinAGainMode : 0
+AeMinDgainMode : 0
+AeMinIspDGainMode : 0
+AeMaxIntegrationTimeMode : 0
+AeMaxAGainMode : 0
+AeMaxDgainMode : 0
+AeMaxIspDGainMode : 1
+AeMinIntegrationTime : 2
+AeMinAGain : 1024
+AeMinDgain : 1024
+AeMinIspDGain : 1024
+AeMaxIntegrationTime : 2990
+AeMaxAGain : 25085
+AeMaxDgain : 4096
+AeMaxIspDGain : 4096
+AeShortMode : 0
+AeShortIntegrationTimeMode : 0
+AeShortAGainManualMode : 0
+AeShortDGainManualMode : 0
+AeShortIspDGainManualMode : 0
+AeShortIntegrationTime : 0
+AeShortAGain : 0
+AeShortDGain : 0
+AeShortIspDGain : 0
+AeShortMinIntegrationTimeMode : 0
+AeShortMinAGainMode : 0
+AeShortMinDgainMode : 0
+AeShortMinIspDGainMode : 0
+AeShortMaxIntegrationTimeMode : 0
+AeShortMaxAGainMode : 0
+AeShortMaxDgainMode : 0
+AeShortMaxIspDGainMode : 1
+AeShortMinIntegrationTime : 5
+AeShortMinAGain : 1024
+AeShortMinDgain : 1024
+AeShortMinIspDGain : 1024
+AeShortMaxIntegrationTime : 94
+AeShortMaxAGain : 4096
+AeShortMaxDgain : 4096
+AeShortMaxIspDGain : 4096
+TotalGainDb : 22998
+TotalGainDbShort : 0
+ExposureValue : 3814
+EVLog2 : 779689
+debug : 305,0,0,0,0,0,0,0
+event debug : 0,0, memopt is 1
+static debug :AWB: 329, AE_S: 329, AE_H: 329, AF: 329, GSM: 0
+static debug :LCE: 329, ADR: 329, DEFOG: 329, WDR: 0, RMO: 0
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-ivdc 
+****************** IVDC INFO **********************
+ IVDC DDR Addr               : 0x00000000
+ IVDC DDR Buffer Size        : 0
+ IVDC DMA Frame Done         : 0
+ IVDC Check Sum Err          : 0
+ IVDC Vpu Err                : 0
+ IVDC ISP Rst                : 0
+ IVDC ISP Frm Err            : 0
+ IVDC Vpu Stop over          : 0
+ IVDC Vpu discard over       : 0
+ IVDC FIFO Overflow          : 0
+ IVDC DDR Overflow           : 0
+ ISP Frame Start             : 0
+ ISP Frame Done              : 0
+ IVDC Y Max ddr line         : 0
+ IVDC UV Max ddr line        : 0
+ help:
+ clean Max ddr line : set 0x132000ec to 0
+,such as:devmem 0x132000ec 32 0x0
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/i[   36.344199] watch_cache (577): drop_caches: 3
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-
+isp-fs    isp-ivdc  isp-m0    isp-w00   isp-w01   isp-w02
+[root@Ingenic-uc1_1:~]# cat /proc/jz/isp/isp-
+isp-fs    isp-ivdc  isp-m0    isp-w00   isp-w01   isp-w02
+[root@Ingenic-uc1_1:~]# cat /proc/jz/
+audio/     codecs/    isp/       sinfo/
+clock/     dmmu/      reset/     watchdog/
+[root@Ingenic-uc1_1:~]# cat /proc/jz/
+[root@Ingenic-uc1_1:~]# 
+
+=========================================================
+uboot
+
+U-Boot SPL 2013.07 (Sep 14 2023 - 13:47:16)
+Board info: T41NQ
+
+apll_freq = 1008000000 
+mpll_freq = 1200000000 
+vpll_freq = 1188000000 
+sdram init start
+DDR clk rate 600000000
+DDRP_INNOPHY_PLL_CTRL: 00000028
+DDRP_INNOPHY_PLL_CTRL: 00000020
+T41NQ ddr phy skew set
+CPU0 RESET ERROR PC: 800f061c
+CPU1 RESET ERROR PC: 8001c32c
+mem data:
+81000000:   00000000  ffffffff  00000000  ffffffff
+81000010:   00000000  ffffffff  00000000  ffffffff
+81000020:   00000000  ffffffff  00000000  ffffffff
+81000030:   00000000  ffffffff  00000000  ffffffff
+spl_sfc_nand_load:412
+00006c00,00064000,80100000
+spl_sfc_nand_load:415
+image entry point: 0x80100000
+Board: ISVP (Ingenic XBurst2 T41 SoC)
+DRAM size is 128 MiB
+Top of RAM usable for U-Boot at: 88000000
+Reserving 464k for U-Boot at: 87f88000
+Reserving 32896k for malloc() at: 85f68000
+Reserving 32 Bytes for Board Info at: 85f67fe0
+Reserving 124 Bytes for Global Data at: 85f67f64
+Reserving 128k for boot params() at: 85f47f64
+Stack Pointer at: 85f47f48
+Now running in RAM - U-Boot at: 87f88000
+NAND:  0 MiB
+SFC_NAND:  ***sfc init!
+MMC:   MSC: 0
+
+NAND read: device 0 offset 0xc0000, size 0x20000
+ 131072 bytes read: OK
+
+NAND read: device 0 offset 0xe0000, size 0x20000
+ 131072 bytes read: OK
+Data transfer:    serial
+Net:   Jz4775-9161
+Hit any key to stop autoboot:  0 
+isvp_t41# <INTERRUPT>
+isvp_t41# <INTERRUPT>
+isvp_t41# help
+?       - alias for 'help'
+autoboot- Auto check boot config and bootting system
+base    - print or set address offset
+boot    - boot default, i.e., run 'bootcmd'
+boota   - boot android system
+bootd   - boot default, i.e., run 'bootcmd'
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+cmp     - memory compare
+coninfo - print console devices and information
+cp      - memory copy
+crc32   - checksum calculation
+echo    - echo args to console
+env     - environment handling commands
+ethphy  - ethphy contrl
+fatinfo - print information about filesystem
+fatload - load binary file from a dos filesystem
+fatls   - list files in a directory (default /)
+gettime - get timer val elapsed,
+
+go      - start application at address 'addr'
+help    - print command description/usage
+loadb   - load binary file over serial line (kermit mode)
+loads   - load S-Record file over serial line
+loady   - load binary file over serial line (ymodem mode)
+loop    - infinite loop on address range
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mmc     - MMC sub system
+mmcinfo - display MMC info
+mw      - memory write (fill)
+nand    - NAND sub-system
+nboot   - boot from NAND device
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+powerinfo- show regulator output voltage and status
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+setenv  - set environment variables
+sfcnand - sfcnand    - SFC_NAND sub-system
+sleep   - delay execution for some time
+source  - run script from memory
+tftpboot- boot image via network using TFTP protocol
+version - print monitor, compiler and linker version
+watchdog- open or colse the watchdog
+isvp_t41# 
+
+

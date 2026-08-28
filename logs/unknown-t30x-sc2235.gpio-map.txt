@@ -1,0 +1,32 @@
+t30 / sc2235
+
+GPIOs 0-31, GPIO A:
+
+GPIOs 32-63, GPIO B:
+ gpio-49  (motor_st4_gpio      ) out lo
+ gpio-50  (motor_st3_gpio      ) out lo
+ gpio-51  (R331-USB            ) out hi
+ gpio-52  (reset button        ) in  hi
+ gpio-53  (SPK SELECT 1:t30/1:r333) out lo
+ gpio-54  (call button         ) in  hi
+ gpio-57  (sda                 ) in  hi
+ gpio-58  (scl                 ) in  hi
+ gpio-59  (mmc_detect          ) in  hi
+ gpio-62  (wifi power?         ) out hi
+ gpio-63  (gpio_spk_en         ) out lo
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (home key            ) in  hi
+ gpio-72  (motor_st2_gpio      ) out lo
+ gpio-73  (motor_st1_gpio      ) out lo
+ gpio-75  (motor_st4_gpio      ) out lo
+ gpio-76  (motor_st3_gpio      ) out lo
+ gpio-77  (motor_st2_gpio      ) out lo
+ gpio-78  (motor_st1_gpio      ) out lo
+ gpio-81  (ircut               ) out lo
+ gpio-89  (led_r               ) out lo
+ gpio-90  (led_b               ) out hi
+
+
+BSP][JzMotor.c][SetMotorResetPos:433]motor reset and maxMotorX is 4100 
+[BSP][JzMotor.c][SetMotorResetPos:434]motor reset and maxMotorY is 400 

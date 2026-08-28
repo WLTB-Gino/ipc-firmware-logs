@@ -55,7 +55,30 @@ devmem 0x10000018; devmem 0x10000000` (APLL/MPLL/VPLL/CPCCR on T-series).
 ## Current coverage
 
 See `extracted/clock-facts.csv`. Wishlist (no vendor serial capture yet):
-T20, T21, T30, T31 (any bin), T33, T40, T41, A1.
+T20, T33 (all other families now covered at least once).
+
+## 2026-08-28 — gtxaspec gist harvest
+
+30 captures imported from [gtxaspec's public gists](https://gist.github.com/gtxaspec)
+(53 gists screened; vendor camera logs extracted, MACs/credentials redacted).
+This nearly completes the SoC wishlist — first-ever captures for A1 (A1N NVR),
+T40, T40XP, T41, T41NQ, T30, T30X, T21, T21N, T10, T31A/LC/N/X, T32NQ.
+
+Headline findings:
+
+- **Wyze Cam4 (T41NQ)**: apll 1104 / mpll 1440 — mpll 1440, not 1200!
+- **Wyze V3 Pro (T40)**: mpll 1308 / DDR 654 — non-integer vendor tuning.
+- **A1N NVR**: apll 1104 / mpll 1500 / vpll 1200 / DDR 750.
+- **Wyze Cam Pan v4 (T32NQ)**: apll 1200 / mpll 840 — mpll below apll, unusual.
+- **Wansview Q5 T23N rev**: thingino profiles say T21N — newer hw runs T23N,
+  apll 1400 (upper T23 bin) with mpll 1200.
+- **Jooan JA-Q3H (T30)**: CCLK 720 — vendor ships T30 underclocked 20% below
+  the usual 900.
+- **noname green T10**: fractional apll 909.312 MHz (same class as T20X
+  860.160 fractional PLLs — kernel prints "909").
+
+Remaining wishlist: T20 (true serial capture; T20X clock facts exist from
+Wyze Cam2 evidence), T33.
 
 ## Provenance & license
 

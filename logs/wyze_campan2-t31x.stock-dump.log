@@ -1,0 +1,107 @@
+PAN v2
+
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(38)  Lvl(0)  Dir(out)
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(39)  Lvl(1)  Dir(out)
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(50)  Lvl(0)  Dir(out)
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(49)  Lvl(0)  Dir(out)
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(60)  Lvl(0)  Dir(out)
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(6)  Lvl(1)  Dir(in)
+Feb 16 18:06:02 iCamera: [sdk,0204]dbg: Pin(47)  Lvl(0)  Dir(in)
+
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+misc_init_r before change the wifi_enable_gpio
+gpio_request lable = wifi_enable_gpio gpio = 58
+misc_init_r after gpio_request the wifi_enable_gpio ret is 58
+misc_init_r after change the wifi_enable_gpio ret is 0
+misc_init_r before change the yellow_gpio
+gpio_request lable = yellow_gpio gpio = 39
+misc_init_r after gpio_request the yellow_gpio ret is 39
+misc_init_r after change the yellow_gpio ret is 1
+misc_init_r before change the blue_gpio
+gpio_request lable = blue_gpio gpio = 38
+misc_init_r after gpio_request the blue_gpio ret is 38
+misc_init_r after change the blue_gpio ret is 0
+gpio_request lable = night_gpio gpio = 60
+misc_init_r after gpio_request the night_gpio ret is 60
+misc_init_r after change the night_gpio ret is 0
+gpio_request lable = SPK_able_gpio gpio = 7
+misc_init_r after gpio_request the SPK_able_gpio ret is 7
+misc_init_r after change the SPK_able_gpio ret is 0
+gpio_request lable = TF_en_gpio gpio = 47
+misc_init_r after gpio_request the TF_en_gpio ret is 47
+misc_init_r after change the TF_en_gpio ret is 0
+gpio_request lable = TF_cd_gpio gpio = 48
+misc_init_r after gpio_request the TF_cd_gpio ret is 48
+misc_init_r after change the TF_cd_gpio ret is 0
+gpio_request lable = SD_able_gpio gpio = 54
+misc_init_r after gpio_request the SD_able_gpio ret is 54
+misc_init_r after change the SD_able_gpio ret is 1
+misc_init_r before change the wifi_enable_gpio
+gpio_request lable = wifi_enable_gpio gpio = 58
+misc_init_r after gpio_request the wifi_enable_gpio ret is 58
+misc_init_r after change the wifi_enable_gpio ret is 1
+Hit any key to stop autoboot:  0 
+Interface:  MMC
+  Device 0: Vendor: Man 000027 Snr 7bc03a01 Rev: 0.1 Prod: SD16G`
+            Type: Removable Hard Disk
+            Capacity: 14784.0 MB = 14.4 GB (30277632 x 512)
+Filesystem: FAT32 "NO NAME    "
+file_fat_detectfs OK
+reading factory_t31_ZMC6tiIDQN
+reading factory_t31_ZMC6tiIDQN
+## Booting kernel from Legacy Image at 84000000 ...
+   Image Name:   Linux-3.10.14__isvp_swan_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1998335 Bytes = 1.9 MiB
+   Load Address: 80010000
+   Entry Point:  80409660
+   Verifying Checksum ... OK
+
+
+MMC gpio = 54
+WIFI = 58
+echo "INSERT" > /sys/devices/platform/jzmmc_v1.2.0/present
+IRCUT GPIO1= 49
+IRCUT GPIO2= 50
+IR LED= 60
+blue led = 38
+red led=39
+speaker gpio = 7
+button gpio in =  6
+
+
+wifi:
+gpio clear 58; gpio set 58
+echo "INSERT" > /sys/devices/platform/jzmmc_v1.2.1/present
+modprobe atbm603x_wifi_sdio atbm_printk_mask=0
+
+[   13.997386] [motor_speed1078] speed:900, level:15
+[   14.008954] motor_ops_reset960
+[   17.409423] motor_ops_goback
+[   17.413676] arg = 0
+[   17.420421] sx=1270,sy=360,cx=2540,cy=720
+
+[root@livingroom:motor]# cat motor_info 
+The version of Motor driver is H20171204a
+Motor driver is opened
+The max speed is 900 and the min speed is 100
+The status of motor is stop
+The pos of motor is (1625, 198)
+The speed of motor is 900
+## motor is Horizontal motor ##
+max steps 2540
+motor direction 1
+motor state 3(normal; cruise; reset)
+the irq's counter of max pos is 0
+the irq's counter of min pos is 0
+## motor is Vertical motor ##
+max steps 720
+motor direction -1
+motor state 3(normal; cruise; reset)
+the irq's counter of max pos is 0
+the irq's counter of min pos is 0

@@ -1,0 +1,759 @@
+U-Boot SPL 2013.07 (Jun 22 2022 - 11:24:55)
+
+apll_freq = 1000000000 
+mpll_freq = 1308000000 
+vpll_freq = 1008000000 
+epll_freq = 891000000
+cpu clk source: apll
+ddr clk source: mpll
+DDR clk rate: 654000000
+
+spl_sfc_nand_load:399
+00006c00,00080000,80100000
+spl_sfc_nand_load:402
+gpio_request lable = VDDQ gpio = 7
+image entry point: 0x80100000
+Board: ISVP (Ingenic XBurst T40 SoC)
+DRAM:  256 MiB
+DTB: 0x8016f278
+Top of RAM usable for U-Boot at: 90000000
+Reserving 660k for U-Boot at: 8ff58000
+Reserving 102528k for malloc() at: 89b38000
+Reserving 32 Bytes for Board Info at: 89b37fe0
+Reserving 124 Bytes for Global Data at: 89b37f64
+Reserving 128k for boot params() at: 89b17f64
+Stack Pointer at: 89b17f48
+Now running in RAM - U-Boot at: 8ff58000
+NAND:  0 MiB
+SFC_NAND:  ***sfc init!
+MMC:   MSC: 0
+
+NAND read: device 0 offset 0xc0000, size 0x20000
+ 131072 bytes read: OK
+
+NAND read: device 0 offset 0xe0000, size 0x20000
+ 131072 bytes read: OK
+Data transfer:    serial
+gpio_request lable = yellow_gpio gpio = 106
+gpio_request lable = blue_gpio gpio = 105
+gpio_request lable = 940_night_gpio gpio = 67
+gpio_request lable = 850_light_gpio gpio = 66
+gpio_request lable = spk_able_gpio gpio = 63
+gpio_request lable = ircut_p_gpio gpio = 118
+gpio_request lable = ircut_n_gpio gpio = 119
+gpio_request lable = sd_m_gpio gpio = 58
+gpio_request lable = sd_n_gpio gpio = 121
+gpio_request lable = sd_cd_gpio gpio = 70
+gpio_request lable = sd_power_gpio gpio = 71
+gpio_request lable = wifi_enable_gpio gpio = 57
+Hit any key to stop autoboot:  0 
+[CMD8]: Error detected in status(0xC8000)!
+[CMD55]: Error detected in status(0xC8000)!
+SD card is not insert
+gpio_request lable = sdupgrade gpio = 107
+UBI: attaching mtd1 to ubi0
+UBI: physical eraseblock size:   131072 bytes (128 KiB)
+UBI: logical eraseblock size:    126976 bytes
+UBI: smallest flash I/O unit:    2048
+UBI: VID header offset:          2048 (aligned 2048)
+UBI: data offset:                4096
+UBI: attached mtd1 to ubi0
+UBI: MTD device name:            "mtd=2"
+UBI: MTD device size:            119 MiB
+UBI: number of good PEBs:        952
+UBI: number of bad PEBs:         0
+UBI: max. allowed volumes:       128
+UBI: wear-leveling threshold:    4096
+UBI: number of internal volumes: 1
+UBI: number of user volumes:     5
+UBI: available PEBs:             35
+UBI: total number of reserved PEBs: 917
+UBI: number of PEBs reserved for bad PEB handling: 9
+UBI: max/mean erase counter: 11/5
+UBIFS: recovery needed
+UBIFS: recovery deferred
+UBIFS: mounted UBI device 0, volume 3, name "back"
+UBIFS: mounted read-only
+UBIFS: file system size:   31236096 bytes (30504 KiB, 29 MiB, 246 LEBs)
+UBIFS: journal size:       4444160 bytes (4340 KiB, 4 MiB, 35 LEBs)
+UBIFS: media format:       w4/r0 (latest is w4/r0)
+UBIFS: default compressor: zlib
+UBIFS: reserved for root:  0 bytes (0 KiB)
+in ubifs upgrade.flag not found!
+
+NAND read: device 0 offset 0x100000, size 0x800000
+ 8388608 bytes read: OK
+## Loading kernel from FIT Image at 84000000 ...
+   Using 'conf' configuration
+   Verifying Hash Integrity ... sha256,rsa2048:kernel-dev+ sha256,rsa2048:kernel-dev+ OK
+   Trying 'kernel' kernel subimage
+     Description:  t40 kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x840044f8
+     Data Size:    2385504 Bytes = 2.3 MiB
+     Architecture: MIPS
+     OS:           Linux
+     Load Address: 0x80f00000
+     Entry Point:  0x80f00000
+     Hash algo:    sha256
+     Hash value:   36c15b88456a4f53123bdc1f51e62ba10e4f788f6ca34a028da107e8187b43fe
+   Verifying Hash Integrity ... sha256+ OK
+## Loading ramdisk from FIT Image at 84000000 ...
+   Using 'conf' configuration
+   Trying 'ramdisk' ramdisk subimage
+     Description:  t40 ramdisk image
+     Type:         RAMDisk Image
+     Compression:  uncompressed
+     Data Start:   0x8424ac64
+     Data Size:    2676338 Bytes = 2.6 MiB
+     Architecture: MIPS
+     OS:           Linux
+     Load Address: 0x00000000
+     Entry Point:  0x00000000
+     Hash algo:    sha256
+     Hash value:   f2628368efb85d8331a2d5070e8610431586fa6d7628ea959a9b368f08ee6a9c
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 84000000 ...
+   Using 'conf' configuration
+   Trying 'fdt' fdt subimage
+     Description:  t40 uboot dtb
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x840000dc
+     Data Size:    17209 Bytes = 16.8 KiB
+     Architecture: MIPS
+     Hash algo:    sha256
+     Hash value:   f4209193c055cfb076886ced3ed5b46e68ab24e3e3ab2c4957f7104f4e61027e
+   Verifying Hash Integrity ... sha256+ OK
+   Loading fdt from 0x840000dc to 0x83000000
+   Booting using the fdt blob at 0x83000000
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 89d70000, end 89ffd672 ... OK
+   Loading Device Tree to 8fff8000, end 8ffff338 ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (lih@ubuntu) (gcc version 7.2.0 (Ingenic r4.0.0-gcc720 2018.02-28) ) #1 SMP PREEMPT Tue Mar 22 13:47:05 CST 2022
+[    0.000000] CPU0 RESET ERROR PC:FDEFFFEE
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00132100 (Ingenic XBurst@II)
+[    0.000000] FPU revision is: 00f32100
+[    0.000000] MIPS: machine is ingenic,shark
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 0067c000 @ 00010000 (usable)
+[    0.000000]  memory: 00044000 @ 0068c000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 0a000000 @ 00000000 (usable)
+[    0.000000] initrd addr is [0x89d70000] [0x89ffd672], mapstart is [0x9ffe]
+[    0.000000] Initial ramdisk at: 0x89d70000 (2676338 bytes)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000009ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000009ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000009ffffff]
+[    0.000000] [SMP] Slave CPU(s) 1 available.
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.000000] 
+[    0.000000] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.000000] PERCPU: Embedded 11 pages/cpu @81197000 s12496 r8192 d24368 u45056
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 40640
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=160M@0x0 rmem=64M@0xA000000 nmem=32M@0xE000000 init=/linuxrc rootfstype=squashfs ubi.mtd=2 ubi.block=0,0 root=/dev/mtdblock3 rw mtdparts=sfc_nand:1M(uboot),8M(kernel),-(data) lpj=11968512
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 152200K/163840K available (4946K kernel code, 282K rwdata, 1404K rodata, 272K init, 125K bss, 11640K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:419
+[    0.000000] parse cpu-intc-iomap, intc define in dt is too large!
+[    0.000000] core irq setup finished
+[    0.000000] percpu irq inited.
+[    0.000000] t40 Clock Power Management Unit init!
+[    0.000000] =========== t40 clocks: =============
+[    0.000000] 	apll     = 1000000000 , mpll     = 1308000000
+[    0.000000] 	cpu_clk  = 1000000000 , l2c_clk  = 500000000
+[    0.000000] 	ahb0_clk = 218000000 , ahb2_clk = 218000000
+[    0.000000] 	apb_clk  = 109000000 , ext_clk  = 24000000
+[    0.000000] 
+[    0.000000] parse cpu-ost-iomap, ost number define in dt is too large!
+[    0.000000] percpu cpu_num:0 timerevent init
+[    0.000000] clockevents_config_and_register success.
+[    0.000000] clocksource: jz_clocksource: mask: 0x7fffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 64 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000082] ERROR epc 0xfdefffee
+[    0.003361] Console: colour dummy device 80x25
+[    0.007806] Calibrating delay loop (skipped) preset value.. 2393.70 BogoMIPS (lpj=11968512)
+[    0.016270] pid_max: default: 32768 minimum: 301
+[    0.021012] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.027668] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.035281] [SMP] Prepare 2 cores., cpu: 0
+[    0.115958] [SMP] Booting CPU1 ...
+[    0.119328] CPU1 RESET ERROR PC:FFEFBFFE
+[    0.119342] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.119346] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.119350] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.119350] 
+[    0.119353] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.119403] #### now starting init for cpu : 1
+[    0.119410] percpu irq inited.
+[    0.119413] percpu cpu_num:1 timerevent init
+[    0.119426] clockevents_config_and_register success.
+[    0.119431] CPU1 revision is: 00132100 (Ingenic XBurst@II)
+[    0.119433] FPU revision is: 00f32100
+[    0.119551] [SMP] slave cpu1 start up finished.
+[    0.120075] Brought up 2 CPUs
+[    0.123913] devtmpfs: initialized
+[    0.191747] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.201716] futex hash table entries: 512 (order: 2, 16384 bytes)
+[    0.207967] pinctrl core: initialized pinctrl subsystem
+[    0.213478] NET: Registered protocol family 16
+[    0.222419] ingenic pinctrl 10010000.pinctrl: 4 gpio chip add success, pins 128
+[    0.230349] ingenic pinctrl 10010000.pinctrl: ingenic pinctrl probe success
+[    0.243550] dmmu_init 807 PTRS_PER_PTE = 1024
+[    0.277582] ingenic-dma 13420000.dma: INGENIC SoC DMA initialized
+[    0.284460] SCSI subsystem initialized
+[    0.288537] usbcore: registered new interface driver usbfs
+[    0.294235] usbcore: registered new interface driver hub
+[    0.299753] usbcore: registered new device driver usb
+[    0.304980] inno phy probe success
+[    0.311177] clocksource: Switched to clocksource jz_clocksource
+[    0.333783] NET: Registered protocol family 2
+[    0.338555] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.345633] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.352194] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.358611] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.364550] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.370988] NET: Registered protocol family 1
+[    0.375723] RPC: Registered named UNIX socket transport module.
+[    0.381712] RPC: Registered udp transport module.
+[    0.386419] RPC: Registered tcp transport module.
+[    0.391226] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.397910] Trying to unpack rootfs image as initramfs...
+[    0.552766] Freeing initrd memory: 2612K
+[    0.568509] squashfs: version 4.0 (2021/14/49) Phillip Lougher 
+[    0.575835] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.594565] jitterentropy: Initialization failed with host not compliant with requirements: 2
+[    0.603798] io scheduler noop registered
+[    0.607701] io scheduler deadline registered
+[    0.612134] io scheduler cfq registered (default)
+[    0.618275] JZ DBOX probe ok!!!!
+[    0.622717] 10031000.serial: ttyS1 at MMIO 0x10031000 (irq = 58, base_baud = 6812500) is a uart1
+[    0.631661] console [ttyS1] enabled
+[    0.631661] console [ttyS1] enabled
+[    0.638755] bootconsole [early0] disabled
+[    0.638755] bootconsole [early0] disabled
+[    0.660180] brd: module loaded
+[    0.669937] loop: module loaded
+[    0.677042] ingenic-tcu 10002000.tcu: Ingenic TCU driver register completed ret = 0
+[    0.686177] Enter 'CDT' mode.
+[    0.689285] Enter 'DMA Descriptor chain' mode.
+[    0.694093] ingenic-sfc 13440000.sfc: Found Supported device, id_manufactory = 0xc8, id_device = 0x51
+[    0.703805] use nand common get feature interface!
+[    0.708834] Scanning device for bad blocks
+[    0.798434] ingenic-sfc 13440000.sfc: NOTICE: this flash haven`t param, magic_num:4c484c48
+[    0.807115] ingenic-sfc 13440000.sfc: read partition from flash failed!
+[    0.814052] ingenic-sfc 13440000.sfc: read mtdparts!
+[    0.819256] 3 cmdlinepart partitions found on MTD device sfc_nand
+[    0.825646] Creating 3 MTD partitions on "sfc_nand":
+[    0.830843] 0x000000000000-0x000000100000 : "uboot"
+[    0.837275] 0x000000100000-0x000000900000 : "kernel"
+[    0.843789] 0x000000900000-0x000008000000 : "data"
+[    0.850445] dwc2 13500000.otg: Configuration mismatch. Forcing host mode
+[    0.857581] OTG CLK 1f8f7f80
+[    0.862019] CPCCR CLK 1580
+[    1.064065] dwc2 13500000.otg: DWC OTG Controller
+[    1.069017] dwc2 13500000.otg: new USB bus registered, assigned bus number 1
+[    1.076472] dwc2 13500000.otg: irq 29, io mem 0x00000000
+[    1.082157] OTG VBUS ON
+[    1.085556] hub 1-0:1.0: USB hub found
+[    1.089530] hub 1-0:1.0: 1 port detected
+[    1.094313] usbcore: registered new interface driver usb-storage
+[    1.100899] usbcore: registered new interface driver usbserial
+[    1.107196] usbcore: registered new interface driver pl2303
+[    1.113195] usbserial: USB Serial support registered for pl2303
+[    1.119829] ingenic-i2c 10051000.i2c: register i2c1 success.
+[    1.126335] ingenic-i2c 10053000.i2c: register i2c3 success.
+[    1.133856] device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com
+[    1.143020] sdhci: Secure Digital Host Controller Interface driver
+[    1.149496] sdhci: Copyright(c) Pierre Ossman
+[    1.154409] ingenic,sdhci 13060000.msc: allocated mmc-pwrseq
+[    1.201244] mmc0: SDHCI controller on ingenic-sdhci [13060000.msc] using ADMA
+[    1.225883] mmc0: card removed
+[    1.271201] mmc1: SDHCI controller on ingenic-sdhci [13070000.msc] using ADMA
+[    1.279065] usbcore: registered new interface driver usbhid
+[    1.284985] usbhid: USB HID core driver
+[    1.289254] NET: Registered protocol family 17
+[    1.305912] ubi0: attaching mtd2
+[    1.394564] ingenic,sdhci 13070000.msc: card claims to support voltages below defined range
+[    1.409012] mmc1: new high speed SDIO card at address 0001
+[    1.759528] random: nonblocking pool is initialized
+[    1.818612] ubi0: scanning is finished
+[    1.835084] ubi0: attached mtd2 (name "data", size 119 MiB)
+[    1.840920] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    1.848140] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    1.855266] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    1.862577] ubi0: good PEBs: 952, bad PEBs: 0, corrupted PEBs: 0
+[    1.868864] ubi0: user volume: 5, internal volumes: 1, max. volumes count: 128
+[    1.876445] ubi0: max/mean erase counter: 11/5, WL threshold: 4096, image sequence number: 413059549
+[    1.886023] ubi0: available PEBs: 24, total reserved PEBs: 928, PEBs reserved for bad PEB handling: 20
+[    1.895810] ubi0: background thread "ubi_bgt0d" started, PID 622
+[    1.968418] block ubiblock0_0: created from ubi0:0(rootfs)
+[    1.974724] Freeing unused kernel memory: 272K
+fs_mgr start...
+Verity success
+Mount root success [mount /dev/dm-0 /root]
+mdev is ok......
+ __________________________________
+|                                  |
+|                                  |
+|              [    2.786627] UBIFS (ubi0:1): background thread "ubifs_bgt0_1" started, PID 694
+                    |
+|                                  |
+| _   _             _           _  |
+|| | | |_   _  __ _| |     __ _(_) |
+|| |_| | | | |/ _| | |  _ / _| | | |
+||  _  | |_| | (_| | |_| | (_| | | |
+||_| |_|\__,_|\__,_|_____|\__,_|_| |
+|                                  |
+|                                  |
+|__________________________________|
+
+[    2.852129] UBIFS (ubi0:1): recovery needed
+[    2.889299] UBIFS (ubi0:1): recovery completed
+[    2.893989] UBIFS (ubi0:1): UBIFS: mounted UBI device 0, volume 1, name "algo"
+[    2.901568] UBIFS (ubi0:1): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.911960] UBIFS (ubi0:1): FS size: 51552256 bytes (49 MiB, 406 LEBs), journal size 6983680 bytes (6 MiB, 55 LEBs)
+[    2.922893] UBIFS (ubi0:1): reserved for root: 0 bytes (0 KiB)
+[    2.928999] UBIFS (ubi0:1): media format: w4/r0 (latest is w4/r0), UUID 5E7B9199-85D8-4935-9EBC-006A91E3023D, small LPT model
+[    2.946448] UBIFS (ubi0:2): background thread "ubifs_bgt0_2" started, PID 697
+[    3.006387] UBIFS (ubi0:2): recovery needed
+[    3.170727] UBIFS (ubi0:2): recovery completed
+[    3.175425] UBIFS (ubi0:2): UBIFS: mounted UBI device 0, volume 2, name "cfg"
+[    3.182923] UBIFS (ubi0:2): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    3.193319] UBIFS (ubi0:2): FS size: 2793472 bytes (2 MiB, 22 LEBs), journal size 1142785 bytes (1 MiB, 8 LEBs)
+[    3.203888] UBIFS (ubi0:2): reserved for root: 0 bytes (0 KiB)
+[    3.209994] UBIFS (ubi0:2): media format: w4/r0 (latest is w4/r0), UUID 919B78A1-26A3-400D-927D-F8FA1035A333, small LPT model
+[    3.225801] UBIFS (ubi0:3): background thread "ubifs_bgt0_3" started, PID 700
+[    3.286154] UBIFS (ubi0:3): recovery needed
+[    3.435845] UBIFS (ubi0:3): recovery completed
+[    3.440523] UBIFS (ubi0:3): UBIFS: mounted UBI device 0, volume 3, name "back"
+[    3.448159] UBIFS (ubi0:3): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    3.458584] UBIFS (ubi0:3): FS size: 31236096 bytes (29 MiB, 246 LEBs), journal size 4444160 bytes (4 MiB, 35 LEBs)
+[    3.469520] UBIFS (ubi0:3): reserved for root: 0 bytes (0 KiB)
+[    3.475724] UBIFS (ubi0:3): media format: w4/r0 (latest is w4/r0), UUID 81B910C9-2B47-46A2-8E03-4C87FF0730B3, small LPT model
+[    3.490099] jffs2: write-buffering enabled buffer (2048) erasesize (126976)
+[    3.497587] jffs2: CLEANMARKER node found at 0x00000000 has totlen 0xc != normal 0x0
+[    3.507621] jffs2: Empty flash at 0x0000095c ends at 0x00001000
+[    3.571656] jffs2: notice: (702) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    1    0     0
+gpio status is output=0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    1    0     0
+gpio status is output=0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    1    0     0
+gpio status is output=0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    1    0     0
+gpio status is output=0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    1    0     0
+gpio status is output=0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    1    0     0
+gpio status is output=0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    0    0     0
+gpio status is func 0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+-------- T40 gpio status --------
+PxINT= 0x00000000
+PxMSK= 0xce01efff
+PxPAT1=0x4401efc0
+PxPAT0=0x0a000000
+INT  MSK  PAT1  PAT0
+ 0    0    0     0
+gpio status is func 0
+Pull up disable
+Pull down disable
+Drive strength is 1lev:9.7mA
+--------------------------------
+
+WCV3P login: [    3.859977] @@@@ tx-isp-probe ok (version H20220126c) @@@@@
+[    3.909689] exFAT: Version 1.2.9
+[    3.946753] @@@@@ inner codec power up@@@@@@
+[    4.241240] @@@@ audio driver ok(version H20210524a) @@@@@
+[    4.258538] jz_pwm_probe[359] d_name = ingenic,tcu_chn1
+[    4.264244] The version of PWM driver is H20210412a
+[    4.296993] request pwm channel 1 successfully
+[    4.302034] pwm-jz pwm-jz: jz_pwm_probe register ok !
+[    4.700605] wlan power on
+[    4.721190] no manual card detect
+[    4.839217] ====>_BlockWrite 98 i:5
+[    4.842893] ====>_WriteFW 229
+[    4.857519] ====>_BlockWrite 98 i:58
+[    4.861287] ====>_WriteFW 229
+[    4.991927] aw87xxx_pa_init: driver version: V0.2.0
+[    4.997156] aw87xxx_i2c_probe enter , i2c3@0x58
+[    5.001979] aw87xxx_malloc_init enter , client_addr = 0x58
+[    5.007722] [3-0058]aw87xxx_parse_dt enter, dev_i2c3@0x58
+[    5.013475] [3-0058]aw87xxx_parse_gpio_dt enter, dev_i2c3@0x58
+[    5.019595] [3-0058]aw87xxx_parse_gpio_dt: reset gpio provided ok
+[    5.026024] [3-0058]aw87xxx_parse_scene_mode_dt:read secne-mode failed,use default
+[    5.034015] [3-0058]aw87xxx_parse_channel_dt enter, dev_i2c3@0x58
+[    5.040395] [3-0058]aw87xxx_parse_channel_dt: pa-channel: 0
+[    5.046271] [3-0058]aw87xxx_int_to_str enter, dev_i2c3@0x58, pa_channel: 0
+[    5.053505] [3-0058]aw87xxx_int_to_str: channel: 0
+[    5.058351] [3-0058]aw87xxx_hw_reset enter
+[    5.072561] [3-0058]aw87xxx_read_chipid: the chip is aw87xxx chipid=0x5a
+[    5.079579] [3-0058]aw87xxx_product_select enter, dev_i2c3@0x58
+[    5.085800] [3-0058]aw87xxx_product_select: aw87559_i2c3@0x58 selected, chipid: 0x5A
+[    5.093919] [3-0058]aw87xxx_update_cfg_name:cfg_name: aw87xxx_pid_5a_off_0.bin
+[    5.101488] [3-0058]aw87xxx_update_cfg_name:cfg_name: aw87xxx_pid_5a_music_0.bin
+[    5.109227] [3-0058]aw87xxx_update_cfg_name:cfg_name: aw87xxx_pid_5a_voice_0.bin
+[    5.116977] [3-0058]aw87xxx_update_cfg_name:cfg_name: aw87xxx_pid_5a_fm_0.bin
+[    5.124459] [3-0058]aw87xxx_update_cfg_name:cfg_name: aw87xxx_pid_5a_rcv_0.bin
+[    5.132029] [3-0058]aw87xxx_update_cfg_name: dev_i2c3@0x58, vmax_name: aw87xxx_pid_5a_vmax_0.bin
+[    5.141233] [3-0058]aw87xxx_read_chipid: find device chip id is (0x5a)
+[    5.148093] aw87xxx_i2c_probe: dev_cnt 1
+[    5.152228] [aw87xxx_pa_3_58]aw87xxx_cfg_work_routine enter
+[    5.158061] [aw87xxx_pa_3_58]aw87xxx_scene_update enter, aw87559_i2c3@0x58
+[    5.165280] [aw87xxx_pa_3_58]aw87xxx_softreset: enter
+[    5.170408] [aw87xxx_pa_3_58]aw87xxx_scene_update enter, aw87559_i2c3@0x58
+[    5.177838] [aw87xxx_pa_3_58]aw87xxx_softreset: softreset, 0x0 = 0xaa
+[    5.184419] [aw87xxx_pa_3_58]aw87xxx_hw_off enter
+[    5.191187] [aw87xxx_pa_3_58]aw87xxx_scene_update enter, aw87559_i2c3@0x58
+[    5.198423] [aw87xxx_pa_3_58]aw87xxx_scene_update enter, aw87559_i2c3@0x58
+[    5.206122] [aw87xxx_pa_3_58]aw87xxx_scene_update enter, aw87559_i2c3@0x58
+[    5.213439] [aw87xxx_pa_3_58]aw87xxx_vbat_monitor_update enter
+[    5.231458] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded enter, aw87559_i2c3@0x58
+[    5.239049] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded: loaded aw87xxx_pid_5a_off_0.bin - size: 66
+[    5.239511] usbcore: registered new interface driver usb_ch34x
+[    5.239515] ch34x: USB to serial driver for USB to serial chip ch340, ch341, etc.
+[    5.239517] ch34x: V1.16 On 2020.12.23
+[    5.264993] soc_nna_probe success
+[    5.265129] soc_nna_init success
+[    5.273701] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way enter, aw87559_i2c3@0x58
+[    5.281392] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: check_sum:536 sum_data:536
+[    5.289278] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: use frame head parsing
+[    5.298527] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware enter
+/back is empty ,Nomal mode !
+[    5.305131] AWINIC_BIN aw_parsing_bin_file,line= 442,aw_bin_parse code version:V0.0.7-V1.0.4
+[    5.316592] AWINIC_BIN aw_check_bin_header_version,line= 423,aw_bin_parse header_version 0x1000000
+[    5.326046] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 372,enter aw_parse_bin_header_1_0_0
+[    5.334771] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 376,aw_bin_parse bin_data_type 0x0
+[    5.343399] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 384,aw_bin_parse enter single bin branch
+[    5.352574] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 387,aw_parse_bin_header_1_0_0 bin->single_bin_parse_num is 1
+[    5.363600] AWINIC_BIN aw_get_single_bin_header_1_0_0,line= 260,enter aw_get_single_bin_header_1_0_0
+[    5.373226] AWINIC_BIN aw_check_sum,line= 93,enter
+Updating device time to:
+[    5.378269] AWINIC_BIN aw_check_sum,line= 98,aw_bin_parse p_check_sum = 848a3c34
+[    5.388322] AWINIC_BIN aw_check_sum,line= 110,aw_bin_parse bin_num=0, check_sum = 0x218, sum_data = 0x218
+[    5.398412] AWINIC_BIN aw_check_data_version,line= 125,enter
+Thu May 25 10:55:45 PDT 2023
+[    5.404378] AWINIC_BIN aw_check_register_num_v1,line= 142,enter
+[    5.413222] AWINIC_BIN aw_check_register_num_v1,line= 146,aw_bin_parse p_check_sum = 848a3c70
+[    5.422254] AWINIC_BIN aw_check_register_num_v1,line= 155,aw_bin_parse bin_num=0, parse_register_num = 0x1, check_register_num = 0x1
+[    5.434860] AWINIC_BIN aw_parsing_bin_file,line= 509,aw_bin_parse parsing success
+[    5.442786] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_fh_ver:0x01000000
+[    5.450821] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: ui_ver:0x00000a00
+[    5.458565] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_ver:0x00000001
+[    5.466836] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: reg_byte_len:0x00000001
+[    5.475100] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: data_byte_len:0x00000001
+[    5.483418] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_type:0x00000000
+[    5.491729] [aw87xxx_pa_3_58]aw87xxx_parse_chip_name: chip name:AW87559
+[    5.498656] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: aw87xxx_pid_5a_off_0.bin update complete
+[    5.508420] [aw87xxx_pa_3_58]aw87xxx_parse_firmware: new bin file
+[    5.525763] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded enter, aw87559_i2c3@0x58
+[    5.533552] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded: loaded aw87xxx_pid_5a_music_0.bin - size: 144
+[    5.543142] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way enter, aw87559_i2c3@0x58
+[    5.550704] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: check_sum:7282 sum_data:7282
+[    5.558744] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: use frame head parsing
+[    5.566233] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware enter
+[    5.572729] AWINIC_BIN aw_parsing_bin_file,line= 442,aw_bin_parse code version:V0.0.7-V1.0.4
+[    5.581584] AWINIC_BIN aw_check_bin_header_version,line= 423,aw_bin_parse header_version 0x1000000
+[    5.590961] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 372,enter aw_parse_bin_header_1_0_0
+[    5.599625] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 376,aw_bin_parse bin_data_type 0x0
+[    5.608191] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 384,aw_bin_parse enter single bin branch
+[    5.617304] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 387,aw_parse_bin_header_1_0_0 bin->single_bin_parse_num is 1
+[    5.628238] AWINIC_BIN aw_get_single_bin_header_1_0_0,line= 260,enter aw_get_single_bin_header_1_0_0
+[    5.637804] AWINIC_BIN aw_check_sum,line= 93,enter
+[    5.642831] AWINIC_BIN aw_check_sum,line= 98,aw_bin_parse p_check_sum = 848a5c34
+[    5.650572] AWINIC_BIN aw_check_sum,line= 110,aw_bin_parse bin_num=0, check_sum = 0x1c72, sum_data = 0x1c72
+[    5.660779] AWINIC_BIN aw_check_data_version,line= 125,enter
+[    5.666706] AWINIC_BIN aw_check_register_num_v1,line= 142,enter
+[    5.672910] AWINIC_BIN aw_check_register_num_v1,line= 146,aw_bin_parse p_check_sum = 848a5c70
+[    5.681842] AWINIC_BIN aw_check_register_num_v1,line= 155,aw_bin_parse bin_num=0, parse_register_num = 0x28, check_register_num = 0x28
+[    5.694502] AWINIC_BIN aw_parsing_bin_file,line= 509,aw_bin_parse parsing success
+[    5.702342] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_fh_ver:0x01000000
+[    5.710353] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: ui_ver:0x01020000
+[    5.718012] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_ver:0x00000001
+[    5.726213] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: reg_byte_len:0x00000001
+[    5.734414] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: data_byte_len:0x00000001
+[    5.742707] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_type:0x00000000
+[    5.750991] [aw87xxx_pa_3_58]aw87xxx_parse_chip_name: chip name:AW87559
+[    5.757923] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: aw87xxx_pid_5a_music_0.bin update complete
+[    5.767853] [aw87xxx_pa_3_58]aw87xxx_parse_firmware: new bin file
+[    5.774199] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded enter, aw87559_i2c3@0x58
+[    5.781989] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded: loaded aw87xxx_pid_5a_voice_0.bin - size: 142
+[    5.791575] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way enter, aw87559_i2c3@0x58
+[    5.799136] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: check_sum:6981 sum_data:6981
+[    5.807175] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: use frame head parsing
+[    5.814665] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware enter
+[    5.821139] AWINIC_BIN aw_parsing_bin_file,line= 442,aw_bin_parse code version:V0.0.7-V1.0.4
+[    5.829996] AWINIC_BIN aw_check_bin_header_version,line= 423,aw_bin_parse header_version 0x1000000
+[    5.839390] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 372,enter aw_parse_bin_header_1_0_0
+[    5.848053] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 376,aw_bin_parse bin_data_type 0x0
+[    5.856622] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 384,aw_bin_parse enter single bin branch
+[    5.865736] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 387,aw_parse_bin_header_1_0_0 bin->single_bin_parse_num is 1
+[    5.876667] AWINIC_BIN aw_get_single_bin_header_1_0_0,line= 260,enter aw_get_single_bin_header_1_0_0
+[    5.886234] AWINIC_BIN aw_check_sum,line= 93,enter
+[    5.891254] AWINIC_BIN aw_check_sum,line= 98,aw_bin_parse p_check_sum = 848a7c34
+[    5.898995] AWINIC_BIN aw_check_sum,line= 110,aw_bin_parse bin_num=0, check_sum = 0x1b45, sum_data = 0x1b45
+[    5.909205] AWINIC_BIN aw_check_data_version,line= 125,enter
+[    5.915136] AWINIC_BIN aw_check_register_num_v1,line= 142,enter
+[    5.921340] AWINIC_BIN aw_check_register_num_v1,line= 146,aw_bin_parse p_check_sum = 848a7c70
+[    5.930262] AWINIC_BIN aw_check_register_num_v1,line= 155,aw_bin_parse bin_num=0, parse_register_num = 0x27, check_register_num = 0x27
+[    5.942921] AWINIC_BIN aw_parsing_bin_file,line= 509,aw_bin_parse parsing success
+[    5.950753] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_fh_ver:0x01000000
+[    5.958777] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: ui_ver:0x00000a00
+[    5.966433] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_ver:0x00000001
+[    5.974673] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: reg_byte_len:0x00000001
+[    5.982931] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: data_byte_len:0x00000001
+#######################[    5.991269] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_type:0x00000000
+
+[    6.001575] [aw87xxx_pa_3_58]aw87xxx_parse_chip_name: chip name:AW87559
+#   IS USER PROCESS   #
+[    6.008673] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: aw87xxx_pid_5a_voice_0.bin update complete
+[    6.020789] [aw87xxx_pa_3_58]aw87xxx_parse_firmware: new bin file#######################
+
+[    6.027192] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded enter, aw87559_i2c3@0x58
+[    6.037416] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded: loaded aw87xxx_pid_5a_fm_0.bin - size: 142
+[    6.046786] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way enter, aw87559_i2c3@0x58
+[    6.054449] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: check_sum:6981 sum_data:6981
+[    6.062547] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: use frame head parsing
+[    6.070070] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware enter
+[    6.076840] AWINIC_BIN aw_parsing_bin_file,line= 442,aw_bin_parse code version:V0.0.7-V1.0.4
+[    6.085743] AWINIC_BIN aw_check_bin_header_version,line= 423,aw_bin_parse header_version 0x1000000
+[    6.095202] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 372,enter aw_parse_bin_header_1_0_0
+[    6.095204] mmc0: card inserted
+[    6.107249] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 376,aw_bin_parse bin_data_type 0x0
+[    6.115859] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 384,aw_bin_parse enter single bin branch
+[    6.124994] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 387,aw_parse_bin_header_1_0_0 bin->single_bin_parse_num is 1
+[    6.135957] AWINIC_BIN aw_get_single_bin_header_1_0_0,line= 260,enter aw_get_single_bin_header_1_0_0
+[    6.145544] AWINIC_BIN aw_check_sum,line= 93,enter
+[    6.150578] AWINIC_BIN aw_check_sum,line= 98,aw_bin_parse p_check_sum = 85799c34
+[    6.158411] AWINIC_BIN aw_check_sum,line= 110,aw_bin_parse bin_num=0, check_sum = 0x1b45, sum_data = 0x1b45
+[    6.168668] AWINIC_BIN aw_check_data_version,line= 125,enter
+[    6.174631] AWINIC_BIN aw_check_register_num_v1,line= 142,enter
+[    6.180854] AWINIC_BIN aw_check_register_num_v1,line= 146,aw_bin_parse p_check_sum = 85799c70
+[    6.189827] AWINIC_BIN aw_check_register_num_v1,line= 155,aw_bin_parse bin_num=0, parse_register_num = 0x27, check_register_num = 0x27
+[    6.202517] AWINIC_BIN aw_parsing_bin_file,line= 509,aw_bin_parse parsing success
+[    6.210359] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_fh_ver:0x01000000
+[    6.218412] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: ui_ver:0x00000a00
+[    6.226103] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_ver:0x00000001
+[    6.234326] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: reg_byte_len:0x00000001
+[    6.242548] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: data_byte_len:0x00000001
+[    6.250837] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_type:0x00000000
+[    6.259144] [aw87xxx_pa_3_58]aw87xxx_parse_chip_name: chip name:AW87559
+[    6.266098] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: aw87xxx_pid_5a_fm_0.bin update complete
+[    6.275777] [aw87xxx_pa_3_58]aw87xxx_parse_firmware: new bin file
+[    6.282175] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded enter, aw87559_i2c3@0x58
+[    6.289949] [aw87xxx_pa_3_58]aw87xxx_scene_cfg_loaded: loaded aw87xxx_pid_5a_rcv_0.bin - size: 142
+[    6.299384] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way enter, aw87559_i2c3@0x58
+[    6.307001] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: check_sum:7002 sum_data:7002
+[    6.315059] [aw87xxx_pa_3_58]aw87xxx_get_parse_fw_way: use frame head parsing
+[    6.322589] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware enter
+[    6.329078] AWINIC_BIN aw_parsing_bin_file,line= 442,aw_bin_parse code version:V0.0.7-V1.0.4
+[    6.337967] AWINIC_BIN aw_check_bin_header_version,line= 423,aw_bin_parse header_version 0x1000000
+[    6.347402] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 372,enter aw_parse_bin_header_1_0_0
+[    6.356115] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 376,aw_bin_parse bin_data_type 0x0
+[    6.364709] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 384,aw_bin_parse enter single bin branch
+[    6.373839] AWINIC_BIN aw_parse_bin_header_1_0_0,line= 387,aw_parse_bin_header_1_0_0 bin->single_bin_parse_num is 1
+[    6.384797] AWINIC_BIN aw_get_single_bin_header_1_0_0,line= 260,enter aw_get_single_bin_header_1_0_0
+[    6.394383] AWINIC_BIN aw_check_sum,line= 93,enter
+[    6.399397] AWINIC_BIN aw_check_sum,line= 98,aw_bin_parse p_check_sum = 8579bc34
+[    6.407171] AWINIC_BIN aw_check_sum,line= 110,aw_bin_parse bin_num=0, check_sum = 0x1b5a, sum_data = 0x1b5a
+[    6.417403] AWINIC_BIN aw_check_data_version,line= 125,enter
+[    6.423360] AWINIC_BIN aw_check_register_num_v1,line= 142,enter
+[    6.429565] AWINIC_BIN aw_check_register_num_v1,line= 146,aw_bin_parse p_check_sum = 8579bc70
+[    6.438522] AWINIC_BIN aw_check_register_num_v1,line= 155,aw_bin_parse bin_num=0, parse_register_num = 0x27, check_register_num = 0x27
+[    6.451206] AWINIC_BIN aw_parsing_bin_file,line= 509,aw_bin_parse parsing success
+[    6.459064] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_fh_ver:0x01000000
+[    6.467136] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: ui_ver:0x00000a00
+[    6.474864] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_ver:0x00000001
+[    6.483113] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: reg_byte_len:0x00000001
+[    6.491341] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: data_byte_len:0x00000001
+[    6.499630] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: bin_data_type:0x00000000
+[    6.507948] [aw87xxx_pa_3_58]aw87xxx_parse_chip_name: chip name:AW87559
+[    6.514900] [aw87xxx_pa_3_58]aw87xxx_parse_add_head_firmware: aw87xxx_pid_5a_rcv_0.bin update complete
+[    6.524674] [aw87xxx_pa_3_58]aw87xxx_parse_firmware: new bin file
+[    6.531005] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded enter, aw87559_i2c3@0x58
+[    6.538708] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: minthr:50 ,vmax:0x00000000
+[    6.546486] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: minthr:40 ,vmax:0xfffbc458
+[    6.554263] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: minthr:30 ,vmax:0xfff766a3
+[    6.562034] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: minthr:20 ,vmax:0xfff2e4ac
+[    6.569783] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: minthr:10 ,vmax:0xffee3c06
+[    6.577556] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: minthr:0 ,vmax:0xffe96a00
+[    6.585262] [aw87xxx_pa_3_58]aw87xxx_vmax_cfg_loaded: vbat monitor update complete
+s:Bus 001 Device 001: ID 1d6b:0002
+
+line_num:1
+[FC] not found tfcard or usb store
+[FC] Test.tar no exist
+[FC] In [user] mode!
+kernel.core_pattern = |/system/bin/ucoredmp_collector.sh --pid %p --signal %s --name %e --time %t --output-dir /media/mmc/cores
+kernel.core_pipe_limit = 1
+net.unix.max_dgram_qlen = 128
+[    9.453938] mmc0: card removed
+[    9.576797] set sensor mclk(1) gpio
+[    9.641499] gc4653 chip found @ 0x29 (i2c1)
+ sensor drv version H20200825a Create framechan0 OK! 
+[    9.651540]  Create framechan1 OK! 
+[    9.655530]  Create framechan2 OK! 
+[   10.180553] [aw87xxx_pa_3_58]aw87xxx_audio_scene_load enter, mode = 1, channel = 0
+[   10.189157] [aw87xxx_pa_3_58]aw87xxx_reg_cnt_update enter, mode:1
+[   10.195629] [aw87xxx_pa_3_58]aw87xxx_hw_on enter
+
+=============================================================
+isvp_t40# printenv
+baudrate=115200
+bootargs=console=ttyS1,115200n8 mem=160M@0x0 rmem=64M@0xA000000 nmem=32M@0xE000000 init=/linuxrc rootfstype=squashfs ubi.mtd=2 ubi.block=0,0 root=/dev/mtdblock3 rw mtdparts=sfc_nand:1M(uboot),8M(kernel),-(data) lpj=11968512
+bootcmd=sdstart; sdupdate; nand read 0x84000000 0x100000 0x800000; bootm 0x84000000
+bootdelay=0
+ethaddr=XX:XX:XX:XX:XX:XX
+gatewayip=193.169.4.1
+ipaddr=193.169.4.151
+loads_echo=1
+mtdids=nand0=nand
+mtdparts=mtdparts=nand:1M(uboot),8M(kernel),-(data)
+netmask=255.255.255.0
+serverip=193.169.4.2
+stderr=serial
+stdin=serial
+stdout=serial
+
+Environment size: 603/131067 bytes
+===================================================================================
+isvp_t40# help
+?       - alias for 'help'
+base    - print or set address offset
+boot    - boot default, i.e., run 'bootcmd'
+boota   - boot android system
+bootd   - boot default, i.e., run 'bootcmd'
+bootm   - boot application image from memory
+chpart  - change active partition
+cmp     - memory compare
+coninfo - print console devices and information
+cp      - memory copy
+crc32   - checksum calculation
+echo    - echo args to console
+env     - environment handling commands
+fatinfo - print information about filesystem
+fatload - load binary file from a dos filesystem
+fatls   - list files in a directory (default /)
+fdt     - flattened device tree utility commands
+gettime - get timer val elapsed,
+
+go      - start application at address 'addr'
+help    - print command description/usage
+l2cache - allcate L2 cache size
+loadb   - load binary file over serial line (kermit mode)
+loads   - load S-Record file over serial line
+loady   - load binary file over serial line (ymodem mode)
+loop    - infinite loop on address range
+md      - memory display
+mm      - memory modify (auto-incrementing address)
+mmc     - MMC sub system
+mmcinfo - display MMC info
+mtdparts- define flash/nand partitions
+mw      - memory write (fill)
+nand    - NAND sub-system
+nboot   - boot from NAND device
+nm      - memory modify (constant address)
+powerinfo- show regulator output voltage and status
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+sdstart - auto sd start!
+sdupdate- auto upgrade file!
+setenv  - set environment variables
+sfcnand - sfcnand    - SFC_NAND sub-system
+sleep   - delay execution for some time
+source  - run script from memory
+ubi     - ubi commands
+ubifsload- load file from an UBIFS filesystem
+ubifsls - list files in a directory
+ubifsmount- mount UBIFS volume
+ubifsumount- unmount UBIFS volume
+version - print monitor, compiler and linker version
+watchdog- open or colse the watchdog

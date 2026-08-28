@@ -1,0 +1,608 @@
+U-Boot 2013.07-H20250211a (Jun 09 2025 - 21:30:32)
+
+apll_freq = 1200000000 
+mpll_freq = 840000000 
+vpll_freq = 1000000000
+
+sdram init start
+DDR clk rate 840000000
+80000e5c 00000000 00000000
+sdram init Finished
+----- LZMA_VERISON : 0x20231219
+image entry point: 0x80100000
+Board: PRJ007 (Ingenic XBurst PRJ007  SoC)
+DRAM:  128 MiB
+DTB: 0x8013fa4c
+######################################################################
+##### build-company: Tianjin Hualai Technology Co., Ltd. #####
+##### build-sha1: c556ef357b56857b9792c395dca192e8a22278c6 #####
+######################################################################
+Top of RAM usable for U-Boot at: 88000000
+Reserving 446k for U-Boot at: 87f90000
+Reserving 32800k for malloc() at: 85f88000
+Reserving 32 Bytes for Board Info at: 85f87fe0
+Reserving 124 Bytes for Global Data at: 85f87f64
+Reserving 128k for boot params() at: 85f67f64
+Stack Pointer at: 85f67f48
+Now running in RAM - U-Boot at: 87f90000
+serial_initialize done
+mem_malloc_init done
+MMC:   MSC: 0
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+gpio_request lable = red_gpio gpio = 39
+Hit any key to stop autoboot:  0 
+SF: Detected XT25F128B, flash size: 16MB, manufacturer id: 0b
+
+gpio_request lable = TF_cd_gpio gpio = 42
+gpio_request lable = SD_power_gpio gpio = 46
+[CMD8]: Error detected in status(0x18000)!
+[CMD55]: Error detected in status(0x18000)!
+[CMD1]: Error detected in status(0x18000)!
+Card did not respond to voltage select!
+SF: Detected XT25F128B, flash size: 16MB, manufacturer id: 0b
+
+### JFFS2 loading 'upGradeFlag' to 0x85f67130
+Scanning JFFS2 FS: . done.
+find_inode failed for name=upGradeFlag
+load: Failed to find inode
+### JFFS2 LOAD ERROR<0> for upGradeFlag!
+Removing MTD device #0 (nor0) with use count 7
+SF: Detected XT25F128B, flash size: 16MB, manufacturer id: 0b
+
+--->probe spend 6 ms
+SF: 4653056 bytes @ 0x30000 Read: OK
+--->read spend 1269 ms
+## Loading kernel from FIT Image at 80600000 ...
+   Using 'conf' configuration
+   Verifying Hash Integrity ... sha256,rsa2048:secureboot-verity+ OK
+   Trying 'kernel' kernel subimage
+     Description:  ingenict32 kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x8060355c
+     Data Size:    1465168 Bytes = 1.4 MiB
+     Architecture: MIPS
+     OS:           Linux
+     Load Address: 0x80f00000
+     Entry Point:  0x80f00000
+     Hash algo:    sha256
+     Hash value:   e6b97ee1dbde680ceb0780ceca673957446fd8cfbd1222a9dcc8b00653d60690
+   Verifying Hash Integrity ... sha256+ OK
+## Loading ramdisk from FIT Image at 80600000 ...
+   Using 'conf' configuration
+   Trying 'ramdisk' ramdisk subimage
+     Description:  ingenict32 ramdisk
+     Type:         RAMDisk Image
+     Compression:  uncompressed
+     Data Start:   0x807691b8
+     Data Size:    2990080 Bytes = 2.9 MiB
+     Architecture: MIPS
+     OS:           Linux
+     Load Address: 0x00000000
+     Entry Point:  0x87fd5730
+     Hash algo:    sha256
+     Hash value:   29601002dc00c5b2c477cfa936993c8d2703c62f4a93f1fc812553ba8659ec47
+   Verifying Hash Integrity ... sha256+ OK
+## Loading fdt from FIT Image at 80600000 ...
+   Using 'conf' configuration
+   Trying 'fdt' fdt subimage
+     Description:  ingenict32 dtb
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x806000c4
+     Data Size:    13232 Bytes = 12.9 KiB
+     Architecture: MIPS
+     Hash algo:    sha256
+     Hash value:   12c8211b55820d31e3188fbe261ad80e52424355a3b08519d1d787669c1ace2a
+   Verifying Hash Integrity ... sha256+ OK
+   Loading fdt from 0x806000c4 to 0x83000000
+   Booting using the fdt blob at 0x83000000
+   Loading Kernel Image ... OK
+   Loading Ramdisk to 83d26000, end 84000000 ... OK
+   Loading Device Tree to 83d1f000, end 83d253af ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (rocky@ubuntu) (gcc version 5.4.0 (Ingenic r3.3.7.mxu2-gcc540 memcpy memset memcmp memmove strcpy strlen only on mxu2 simd core fix02. 2024.12-19) ) #4 Thu Jun 19 10:18:58 CST 2025
+[    0.000000] Ingenic Kernel-4.4.94 version H20241120a
+[    0.000000] CPU0 RESET ERROR PC:0202801C
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00d00100 (Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] MIPS: machine is ingenic,zeratul
+[    0.000000] Warning!!!!! This version is not CI release version!!!!!
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 003e0000 @ 00010000 (usable)
+[    0.000000]  memory: 00030000 @ 003f0000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 05d00000 @ 00000000 (usable)
+[    0.000000] Initial ramdisk at: 0x83d26000 (2990080 bytes)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000005cfffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000005cfffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000005cfffff]
+[    0.000000] cma: Reserved 12 MiB at 0x05000000
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] cache c0 reg is 20000000
+[    0.000000] Unified secondary cache 128kB 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 23622
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=93M@0x0 rmem=35M@0x5d00000 init=/linuxrc rootfstype=squashfs root=/dev/ram0 ro mtdparts=sfc0_nor:192K(uboot),4544K(boot),5632K(system),5632K(back),320K(cfg),64K(provisioning) ramdisk_size=2920
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 74736K/95232K available (2958K kernel code, 138K rwdata, 864K rodata, 192K init, 89K bss, 8208K reserved, 12288K cma-reserved)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS:210
+[    0.000000] PRJ007 Clock Power Management Unit init!
+[    0.000000] Previous Boot Time is 3450068 us
+[    0.000000] clocksource: ingenic_clocksource: mask: 0xffffffffffffffff max_cycles: 0x1623fa770, max_idle_ns: 1763180808952 ns
+[    0.000005] sched_clock: 64 bits at 1500kHz, resolution 666ns, wraps every 4398046510951ns
+[    0.008459] ERROR epc 0x202801c
+[    0.011567] Calibrating delay loop... 1196.85 BogoMIPS (lpj=5984256)
+[    0.101157] pid_max: default: 32768 minimum: 301
+[    0.105917] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.112556] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.121009] devtmpfs: initialized
+[    0.125087] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.135033] futex hash table entries: 256 (order: -1, 3072 bytes)
+[    0.141457] pinctrl core: initialized pinctrl subsystem
+[    0.147029] NET: Registered protocol family 16
+[    0.152646] ingenic pinctrl 10010000.pinctrl: 3 gpio chip add success, pins 96
+[    0.160417] ingenic pinctrl 10010000.pinctrl: ingenic pinctrl probe success
+[    0.168827] dmmu_init 807 PTRS_PER_PTE = 1024
+[    0.182775] ingenic-dma 13420000.dma: INGENIC SoC DMA initialized
+[    0.189117] usbcore: registered new interface driver usbfs
+[    0.194627] usbcore: registered new interface driver hub
+[    0.200049] usbcore: registered new device driver usb
+[    0.205259] inno phy probe success
+[    0.209652] clocksource: Switched to clocksource ingenic_clocksource
+[    0.216958] NET: Registered protocol family 2
+[    0.221813] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.228834] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.235261] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.241754] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.247622] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.254129] NET: Registered protocol family 1
+[    0.258641] Trying to unpack rootfs image as initramfs...
+[    0.264181] rootfs image is not initramfs (junk in compressed archive); looks like an initrd
+[    0.282486] Freeing initrd memory: 2920K
+[    0.287217] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.293177] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.299939] NET: Registered protocol family 38
+[    0.304411] io scheduler noop registered
+[    0.308369] io scheduler cfq registered (default)
+[    0.313317] ingenic,PRJ007-pwm 13450000.pwm: PWM clk100k:500
+[    0.318993] ingenic,PRJ007-pwm 13450000.pwm: period_ns:max=1310700,min=41
+[    0.326453] vpu_node_num: 1radix0 probe success
+[    0.331186] vpu_node_num: 2helix0 success
+[    0.335636] 10031000.serial: ttyS1 at MMIO 0x10031000 (irq = 58, base_baud = 6562500) is a uart1
+[    0.344531] console [ttyS1] enabled
+[    0.344531] console [ttyS1] enabled
+[    0.351613] bootconsole [early0] disabled
+[    0.351613] bootconsole [early0] disabled
+[    0.360293] ingenic-trng 10072000.dtrng: ingenic HW dtrng Probe success!
+[    0.367991] brd: module loaded
+[    0.371783] TSensor enable auto tsRefi_func
+[    0.376495] @@@@ rsa driver ok(version H20250218a) @@@@@
+[    0.382605] ingenic-tcu 10002000.tcu: Ingenic TCU driver register completed ret = 0
+[    0.391556] ingenic-sfc 13440000.sfc0: Found Supported nor device, BE = 32K, id = b4018, name = XT25F128B
+[    0.401594] ingenic-sfc 13440000.sfc0: nor flash quad mode is set, now use quad mode!
+[    0.409699] ingenic-sfc 13440000.sfc0: nor flash now use 3bytes mode!
+[    0.416380] 6 cmdlinepart partitions found on MTD device sfc0_nor
+[    0.422685] Creating 6 MTD partitions on "sfc0_nor":
+[    0.427820] 0x000000000000-0x000000030000 : "uboot"
+[    0.433581] 0x000000030000-0x0000004a0000 : "boot"
+[    0.439246] 0x0000004a0000-0x000000a20000 : "system"
+[    0.445076] 0x000000a20000-0x000000fa0000 : "back"
+[    0.450781] 0x000000fa0000-0x000000ff0000 : "cfg"
+[    0.456342] 0x000000ff0000-0x000001000000 : "provisioning"
+[    0.462878] ingenic-sfc 13440000.sfc0: SPI NOR MTD LOAD OK
+[    0.468872] OTG CLK d139efe0
+[    0.472443] CPCCR CLK 1580
+[    0.688519] dwc2 13500000.otg: DWC OTG Controller
+[    0.693413] dwc2 13500000.otg: new USB bus registered, assigned bus number 1
+[    0.700757] dwc2 13500000.otg: irq 29, io mem 0x00000000
+[    0.706835] hub 1-0:1.0: USB hub found
+[    0.710773] hub 1-0:1.0: 1 port detected
+[    0.715261] ingenic-i2c 10050000.i2c: i2c0 clk is 400000.
+[    0.720972] ingenic-i2c 10050000.i2c: register i2c0 success.
+[    0.727468] device-mapper: ioctl: 4.34.0-ioctl (2015-10-28) initialised: dm-devel@redhat.com
+[    0.736406] sdhci: Secure Digital Host Controller Interface driver
+[    0.742815] sdhci: Copyright(c) Pierre Ossman
+[    0.747530] gpio_group_name =gpb
+[    0.751058] ingenic,sdhci 13060000.msc: allocated mmc-pwrseq
+[    0.757963] ingenic,sdhci 13060000.msc: No vmmc regulator found
+[    0.764106] ingenic,sdhci 13060000.msc: No vqmmc regulator found
+[    0.818407] mmc0: SDHCI controller on ingenic-sdhci [13060000.msc] using ADMA
+[    0.825800] mmc0: mmc_rescan_try_freq: trying to init card at 400000 Hz
+[    0.832791] mmc0: card inserted
+[    0.838229] gpio_group_name =gpc
+[    0.841760] ingenic,sdhci 13070000.msc: No vmmc regulator found
+[    0.847884] ingenic,sdhci 13070000.msc: No vqmmc regulator found
+[    0.869175] ====> mmc0, sdhci_irq 0x1 cmd NULL 0x0 0x502
+[    0.890858] mmc0: mmc_rescan_try_freq: trying to init card at 300000 Hz
+[    0.908401] mmc1: SDHCI controller on ingenic-sdhci [13070000.msc] using ADMA
+[    0.915997] gate = d139efe0
+[    1.018865] reg alg: ecb(aes)
+[    1.022166] reg alg: cbc(aes)
+[    1.025353] ingenic aes[2] register ok.
+[    1.029680] reg alg:  md5
+[    1.032774] reg alg:  sha1
+[    1.035662] reg alg:  sha224
+[    1.038909] reg alg:  sha256
+[    1.041998] reg alg:  sha384
+[    1.045064] reg alg:  sha512
+[    1.048130] ingenic hash[6] register ok.
+[    1.052370] NET: Registered protocol family 17
+[    1.057855] soc_vpu probe success,version:1.0.0-03203fd46d
+[    1.066297] RAMDISK: squashfs filesystem found at block 0
+[    1.075045] RAMDISK: Loading 2917KiB [1 disk] into ram disk... 
+[    1.083313] |
+[    1.087222] /
+[    1.091161] -
+[    1.095085] \
+[    1.099063] |
+[    1.103012] /
+[    1.106945] -
+[    1.110925] \
+[    1.114867] |
+[    1.118923] /
+[    1.124719] mmc0: mmc_rescan_try_freq: trying to init card at 200000 Hz
+[    1.131767] -
+[    1.138881] \
+[    1.158937] |
+[    1.178912] /
+[    1.182839] -
+[    1.187867] \
+[    1.191938] |
+[    1.195883] /
+[    1.199853] -
+[    1.203794] \
+[    1.207717] |
+[    1.211697] /
+[    1.215634] -
+[    1.219613] \
+[    1.223555] |
+[    1.227583] /
+[    1.233403] mmc0: mmc_rescan_try_freq: trying to init card at 100000 Hz
+[    1.240445] -
+[    1.248834] done.
+[    1.265298] VFS: Mounted root (squashfs filesystem) readonly on device 1:0.
+[    1.275714] devtmpfs: mounted
+[    1.279059] Freeing unused kernel memory: 192K
+[    1.607680] mmc0: mmc_rescan_try_freq: trying to init card at 400000 Hz
+[    1.756976] mmc0: mmc_rescan_try_freq: trying to init card at 300000 Hz
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+[    1.854229] mmc0: mmc_rescan_try_freq: trying to init card at 200000 Hz
+fs_mgr: fs_mgr start...
+[1970-01-01 00:00:01.879][INFO ] [localsdk_hwotp.c,0211] <>===================< SCB is status -> [enable] >==================<> 
+fs_mgr: crypt block device name: /dev/dm-0
+fs_mgr: verity block device name: /dev/dm-1
+[    1.947766] mmc0: mmc_rescan_try_freq: trying to init card at 100000 Hz
+fs_mgr: Verity success
+fs_mgr: Mount /dev/block/by-name/system to /system success
+[    2.049073] @@@@ multi-process system init sucess (Board: PRJ007, Version: H20240814a) @@@
+[    2.095181] the codec_type = 0 !!!!!
+[    2.118415] @@@@@ inner codec power up@@@@@@
+[    2.398592] @@@@ audio driver ok(version H20240815a) @@@@@
+[    2.608443] @@@@ tx-isp-probe ok (version H20250305a), compiler date: Apr 10 2025 17:33:11 @@@@@
+[    2.619616] usbcore: registered new interface driver usb_ch341
+[    2.625651] ch341: USB serial driver for ch340, ch341, etc.
+[    2.631453] ch341: V1.6 On 2020.12.23
+[    2.690269] <TNPU> Alloc 0xa00000 from CMA as tnpu pool memory.
+[    2.696473] <TNPU> tnna_clk=1200MHz, v0_clk=600MHz, default=600MHz
+[    2.703418] <TNPU> Successful insmod, version=0x10208.
+[    2.732280] timer 1 probe OK!!
+[    2.735586] timer 2 probe OK!!
+[    2.739281] motor_probe, [1400]
+[    2.742535] part_number: HZF-24BYJ48
+[    2.746227] pwm_tbl_cw:
+[    2.748791] 0x09 0x01 0x03 0x02 0x06 0x04 0x0c 0x08 
+[    2.754035] pwm_pins:
+[    2.756569] 0x3e 0x3c 0x3b 0x30 
+[    2.759743] steps-one-circle:4096
+[    2.763345] total-steps:2500
+[    2.766317] boundary-steps:50
+[    2.769381] attac-timer:1
+[    2.772085] index:0
+[    2.774248] speed-step:200
+[    2.778313] motor_probe success.
+[    2.781741] motor_probe, [1400]
+[    2.784989] part_number: HZF-24BYJ48
+[    2.788693] pwm_tbl_cw:
+[    2.791226] 0x09 0x01 0x03 0x02 0x06 0x04 0x0c 0x08 
+[    2.796471] pwm_pins:
+[    2.799035] 0x2d 0x29 0x3a 0x39 
+[    2.802188] steps-one-circle:4096
+[    2.805791] total-steps:600
+[    2.808679] boundary-steps:50
+[    2.811742] attac-timer:2
+[    2.814444] index:1
+[    2.816607] speed-step:200
+[    2.820771] motor_probe success.
+[    2.844316] @@@@ sinfo driver ok(version H20240801a) @@@@@
+Executing US specific operations...
+[    3.165216] [atbm_log]:platform_init(252)
+[    3.169492] [atbm_log]:cmd_init next c0640e40 c0640e40
+[    3.174809] [atbm_log]:SVN_VER=4154,DPLL_CLOCK=40,wifi6_40M_lite,BUILD_TIME=2025-05-09_16:55:05
+[    3.183817] [atbm_log]:----drvier support chip Cronus 
+[    3.708223] ingenic,sdhci 13070000.msc: card insert manually
+[    3.714098] ====> mmc1 jzmmc_manual_detect tasklet finish
+[    3.819486] mmc1: mmc_rescan_try_freq: trying to init card at 400000 Hz
+[    3.858467] mmc1 switch clock =f810800e
+[    3.862453] mmc1 switch clock =f811000e
+[    3.879161] mmc1 switch clock =f811000e
+[    3.885344] mmc1 switch clock =f811000e
+[    3.905789] mmc1 switch clock =f811000e
+[    3.909780] ====> set tx phase
+[    3.913293] mmc1 switch clock =80110009
+[    3.917262] ====> set tx phase
+[    3.923572] mmc1 switch clock =a8110009
+[    3.927540] ====> set tx phase
+[    3.931328] mmc1 switch clock =a8110009
+[    3.935290] ====> set tx phase
+[    3.940894] mmc1: new high speed SDIO card at address 0001
+[    3.946663] mmc_debug_enabled = 0
+[    3.959075] [atbm_log]:Probe called
+[    3.962683] [atbm_log]:host enable irq
+[    3.966556] [atbm_log]:sdio clock(25000000)
+[    3.973190] [atbm_log]:atbm_sdio_probe:v12
+[    3.977455] [atbm_log]:Allocated hw_priv @ 83ea1180
+[    3.983195] [atbm_log]: wait_event_interruptible from  send_prbresp_wq
+[    3.990963] [atbm_log]:atbm_get_chiptype, chipver=0x30, g_wifi_chip_type[17]
+[    3.998251] [atbm_log]:[BH] register.
+[    4.002491] [atbm_log]:atbmwifi INIT_WORK enable
+[    4.007613] [atbm_log]:atbmwifi INIT_WORK enable
+[    4.013901] [atbm_log]:atbm_get_chiptype, chipver=0x30, g_wifi_chip_type[17]
+[    4.021217] [atbm_log]:atbm_before_load_firmware++
+[    4.026231] [atbm_log]:atbm_before_load_firmware:do not set config to smu
+[    4.033606] [atbm_log]:mmc1 has been attached
+[    4.076538] [atbm_log]:atbm_before_load_firmware:0xab0016c = [34800000]
+[    4.083823] [atbm_log]:atbm_before_load_firmware:0xab0016c = [34800000]
+[    4.092290] [atbm_log]:reset val(2)
+[    4.096612] [atbm_log]:after reset(0)
+[    4.100431] [atbm_log]:atbm_start_load_firmware++
+[    4.105293] [atbm_log]:
+[    4.105293] ======>>> load WIFI+BLE firmware <<<======
+[    4.105293] 
+[    4.114659] [atbm_log]:firmware_usb_wifi_bt_comb_ocea.h
+[    4.120067] atbm_load_wifi_bt_firmware: fwhdr->flags 34353678 sram_addr a18400,chip_cat 1
+[    4.128525] [atbm_log]:START DOWNLOAD ICCM=========
+[    4.134495] [atbm_log]:atbm_load_firmware_generic: addr 60000: len 20000
+Updating device time to:
+Thu Jul  3 07:42:32 UTC 2025
+#######################
+#   IS USER STATUS   #
+#######################
+[    4.250764] random: nonblocking pool is initialized
+[    4.272514] [atbm_log]:START DOWNLOAD DCCM=========
+[    4.277570] [atbm_log]:atbm_load_firmware_generic: addr 800000: len 9000
+[    4.297549] [atbm_log]:START DOWNLOAD SRAM=========
+[    4.302619] [atbm_log]:atbm_load_firmware_generic: addr a18400: len 7a64
+[    4.320687] [atbm_log]:atbm_after_load_firmware++
+[    4.348434] [atbm_log]:ATBM_HIFREG_CONFIG_REG_ID(4005600)
+[    4.364205] [atbm_log]:firmwareCap f1e9
+[    4.368171] [atbm_log]:firmwareCap2 138c
+[    4.372237] [atbm_log]:wsm_caps.firmwareCap 138cf1e9 16
+[    4.377473] [atbm_log]:apollo wifi WSM init done.
+[    4.377473]    Input buffers: 34 x 1632 bytes
+[    4.377473]    Hardware: 7.21
+[    4.377473]    WSM firmware [=MODEM=DPLL40M+BLE+plat=13 2GHZ Apr 10 2025 21:15:05 Rx:5 16 Tx:34 8], ver: 24573, build: 7043, api: 1060, cap: 0x138CF1E9 Config[31010]  expection a05bdc, ep0 cmd addr a13508 NumOfStations[0x10] NumOfInterfaces[3]
+[    4.412367] [atbm_log]:CAPABILITIES_ATBM_PRIVATE_IE  [0]
+[    4.417858] [atbm_log]:CAPABILITIES_NVR_IPC  [0]
+[    4.422632] [atbm_log]:CAPABILITIES_NO_CONFIRM  [1]
+[    4.427675] [atbm_log]:CAPABILITIES_WOW  [0]
+[    4.432089] [atbm_log]:CAPABILITIES_NO_BACKOFF  [1]
+[    4.437131] [atbm_log]:CAPABILITIES_CFO  [1]
+[    4.441546] [atbm_log]:CAPABILITIES_CHIP_FLAG  [1]
+[    4.446494] [atbm_log]:CAPABILITIES_TXCAL  [1]
+[    4.451089] [atbm_log]:CAPABILITIES_HIF_TRACE  [0]
+[    4.456041] [atbm_log]:CAPABILITIES_SMARTCONFIG  [0]
+[    4.461177] [atbm_log]:CAPABILITIES_ETF  [1]
+[    4.465589] [atbm_log]:CAPABILITIES_BLE  [1]
+[    4.470004] [atbm_log]:CAPABILITIES_40M  [1]
+[    4.474417] [atbm_log]:CAPABILITIES_LDPC  [1]
+[    4.478921] [atbm_log]:CAPABILITIES_NAV_ENABLE  [0]
+[    4.483959] [atbm_log]:CAPABILITIES_USE_IPC  [1]
+[    4.488738] [atbm_log]:CAPABILITIES_OUTER_PA  [0]
+[    4.493599] [atbm_log]:CAPABILITIES_WFA  [0]
+[    4.498013] [atbm_log]:CAPABILITIES_EAP_GROUP_REKEY  [0]
+[    4.503506] [atbm_log]:CAPABILITIES_RTS_LONG_DURATION  [1]
+[    4.509178] [atbm_log]:CAPABILITIES_TX_CFO_PPM_CORRECTION  [1]
+[    4.515208] [atbm_log]:CAPABILITIES_RXCAL  [1]
+[    4.519803] [atbm_log]:CAPABILITIES_HW_CHECKSUM  [0]
+[    4.524931] [atbm_log]:CAPABILITIES_80211_TO_8023  [0]
+[    4.530246] [atbm_log]:CAPABILITIES_NEW_CHIPER  [1]
+[    4.535287] [atbm_log]:EXCAPABILITIES_BLE_50         [0]
+[    4.540151] [atbm_log]:EXCAPABILITIES_WIFI6  [1]
+[    4.544833] [atbm_log]:CONFIG_PRODUCT_TEST_USE_FEATURE_ID [1]
+[    4.550775] [atbm_log]:CONFIG_PRODUCT_TEST_USE_GOLDEN_LED [1]
+[    4.556763] [atbm_log]:atbm_sdio_rx_thread
+[    4.563962] [atbm_log]:set_block_size=256
+[    4.568113] [atbm_log]:mdelay wait wsm_startup_done  !!
+[    4.574663] [atbm_log]:atbm_sdio_sg_thread
+[    4.578987] [atbm_log]:atbm_sdio_tx_thread
+[    4.588571] [atbm_log]:rx timeout
+[    4.631235] [atbm_log]:wsm_generic_confirm:status(2)
+[    4.636386] [atbm_log]:<WARNING> wsm_write_mib fail !!! mibId=4132
+[    4.643602] [atbm_log]:apollo wifi : can't open /data/.mac.info
+[    4.649750] [atbm_log]:wlan0 mac0:� 
+[    4.653811] [atbm_log]:efuse data is [0x5,0x38,0x5,0x6,0x6,0x25,0x0,0x0,0xbc:0xad:0xae:0xc9:0x82:0xb1]
+[    4.663459] [atbm_log]:5G deltagain [0,63,0,1,3,0,62,61,61,59]
+[    4.670335] [atbm_log]:enable sg
+[    4.673693] [atbm_log]:[wlan0] has been disabled
+[    4.679554] [atbm_log]:ble start
+[    4.683009] [atbm_log]:[phy0-ble_recv] start
+[    4.687436] [atbm_log]:ble subscribe
+[    4.691561] [atbm_log]:[phy0-ble_xmit] start
+[    4.696110] [atbm_log]:ble_platform_probe(83eb1100)
+[    4.701596] [atbm_log]:is registered as 'phy0'
+[    4.707659] [atbm_log]:crystal:2
+[    4.711321] [atbm_log]:apollo wifi : can't open /tmp/atbm_txpwer_dcxo_cfg.txt
+[    4.718723] [atbm_log]:not support auto cfo! 
+[    4.724200] [atbm_log]:0,target_or_delta=1
+[    4.728469] [atbm_log]:1,b_1M_2M=210
+[    4.732163] [atbm_log]:2,b_5_5M_11M=210
+[    4.736125] [atbm_log]:3,g_6M_n_6_5M=210
+[    4.740183] [atbm_log]:4,g_9M=200
+[    4.743607] [atbm_log]:5,g_12M_n_13M=190
+[    4.747660] [atbm_log]:6,g_18M_n_19_5M=190
+[    4.751898] [atbm_log]:7,g_24M_n_26M=190
+[    4.755950] [atbm_log]:8,g_36M_n_39M=190
+[    4.760008] [atbm_log]:9,g_48M_n_52M=190
+[    4.764059] [atbm_log]:10,g_54M_n_58_5M=180
+[    4.768383] [atbm_log]:11,n_65M=180
+[    4.771993] [atbm_log]:12,VHT_MCS0=210
+[    4.775866] [atbm_log]:13,VHT_MCS1=190
+[    4.779743] [atbm_log]:14,VHT_MCS2=190
+[    4.783616] [atbm_log]:15,VHT_MCS3=190
+[    4.787489] [atbm_log]:16,VHT_MCS4=190
+[    4.791367] [atbm_log]:17,VHT_MCS5=190
+[    4.795240] [atbm_log]:18,VHT_MCS6=180
+[    4.799117] [atbm_log]:19,VHT_MCS7=170
+[    4.802991] [atbm_log]:20,VHT_MCS8=170
+[    4.806862] [atbm_log]:21,VHT_MCS9=170
+[    4.810739] [atbm_log]:22,HE-SU_MCS0=210
+[    4.814791] [atbm_log]:23,HE-SU_MCS1=190
+[    4.818845] [atbm_log]:24,HE-SU_MCS2=190
+[    4.822897] [atbm_log]:25,HE-SU_MCS3=190
+[    4.826948] [atbm_log]:26,HE-SU_MCS4=190
+[    4.831007] [atbm_log]:27,HE-SU_MCS5=190
+[    4.835060] [atbm_log]:28,HE-SU_MCS6=180
+[    4.839119] [atbm_log]:29,HE-SU_MCS7=180
+[    4.843171] [atbm_log]:30,HE-SU_MCS8=170
+[    4.847223] [atbm_log]:31,HE-SU_MCS9=170
+[    4.851277] [atbm_log]:32,HE-SU_MCS10=160
+[    4.855422] [atbm_log]:33,HE-SU_MCS11=160
+[    4.859568] [atbm_log]:34,g_6M_n_6_5M_40M=200
+[    4.864067] [atbm_log]:35,g_9M_40M=190
+[    4.867941] [atbm_log]:36,g_12M_n_13M_40M=190
+[    4.872447] [atbm_log]:37,g_18M_n_19_5M_40M=190
+[    4.877131] [atbm_log]:38,g_24M_n_26M_40M=190
+[    4.881637] [atbm_log]:39,g_36M_n_39M_40M=190
+[    4.886139] [atbm_log]:40,g_48M_n_52M_40M=190
+[    4.890644] [atbm_log]:41,g_54M_n_58_5M_40M=180
+[    4.895325] [atbm_log]:42,n_65M_40M=170
+[    4.899290] [atbm_log]:43,VHT_MCS0_40M=200
+[    4.903524] [atbm_log]:44,VHT_MCS1_40M=190
+[    4.907757] [atbm_log]:45,VHT_MCS2_40M=190
+[    4.911995] [atbm_log]:46,VHT_MCS3_40M=190
+[    4.916226] [atbm_log]:47,VHT_MCS4_40M=190
+[    4.920463] [atbm_log]:48,VHT_MCS5_40M=190
+[    4.924696] [atbm_log]:49,VHT_MCS6_40M=180
+[    4.928933] [atbm_log]:50,VHT_MCS7_40M=170
+[    4.933165] [atbm_log]:51,VHT_MCS8_40M=170
+[    4.937396] [atbm_log]:52,VHT_MCS9_40M=170
+[    4.941634] [atbm_log]:53,HE-SU_MCS0_40M=200
+[    4.946046] [atbm_log]:54,HE-SU_MCS1_40M=190
+[    4.950462] [atbm_log]:55,HE-SU_MCS2_40M=190
+[    4.954875] [atbm_log]:56,HE-SU_MCS3_40M=190
+[    4.959289] [atbm_log]:57,HE-SU_MCS4_40M=190
+[    4.963699] [atbm_log]:58,HE-SU_MCS5_40M=190
+[    4.968113] [atbm_log]:59,HE-SU_MCS6_40M=180
+[    4.972526] [atbm_log]:60,HE-SU_MCS7_40M=170
+[    4.976937] [atbm_log]:61,HE-SU_MCS8_40M=170
+[    4.981355] [atbm_log]:62,HE-SU_MCS9_40M=170
+[    4.985767] [atbm_log]:63,HE-SU_MCS10_40M=160
+[    4.990271] [atbm_log]:64,HE-SU_MCS11_40M=160
+[    5.002481] [atbm_log]:0,target_or_delta=1
+[    5.006723] [atbm_log]:1,g_6M_n_6_5M=200
+[    5.010807] [atbm_log]:2,g_9M=190
+[    5.014230] [atbm_log]:3,g_12M_n_13M=190
+[    5.018282] [atbm_log]:4,g_18M_n_19_5M=180
+[    5.022519] [atbm_log]:5,g_24M_n_26M=180
+[    5.026573] [atbm_log]:6,g_36M_n_39M=170
+[    5.030631] [atbm_log]:7,g_48M_n_52M=170
+[    5.034684] [atbm_log]:8,g_54M_n_58_5M=160
+[    5.038919] [atbm_log]:9,n_65M=160
+[    5.042433] [atbm_log]:10,VHT_MCS0=200
+[    5.046305] [atbm_log]:11,VHT_MCS1=190
+[    5.050182] [atbm_log]:12,VHT_MCS2=180
+[    5.054053] [atbm_log]:13,VHT_MCS3=180
+[    5.057925] [atbm_log]:14,VHT_MCS4=170
+[    5.061801] [atbm_log]:15,VHT_MCS5=170
+[    5.065675] [atbm_log]:16,VHT_MCS6=160
+[    5.069551] [atbm_log]:17,VHT_MCS7=160
+[    5.073421] [atbm_log]:18,VHT_MCS8=160
+[    5.077295] [atbm_log]:19,VHT_MCS9=150
+[    5.081174] [atbm_log]:20,HE-SU_MCS0=200
+[    5.085225] [atbm_log]:21,HE-SU_MCS1=190
+[    5.089283] [atbm_log]:22,HE-SU_MCS2=180
+[    5.093336] [atbm_log]:23,HE-SU_MCS3=180
+[    5.097389] [atbm_log]:24,HE-SU_MCS4=170
+[    5.101448] [atbm_log]:25,HE-SU_MCS5=170
+[    5.105501] [atbm_log]:26,HE-SU_MCS6=160
+[    5.109559] [atbm_log]:27,HE-SU_MCS7=160
+[    5.113612] [atbm_log]:28,HE-SU_MCS8=160
+[    5.117663] [atbm_log]:29,HE-SU_MCS9=150
+[    5.121719] [atbm_log]:30,HE-SU_MCS10=140
+[    5.125864] [atbm_log]:31,HE-SU_MCS11=130
+[    5.130011] [atbm_log]:32,g_6M_n_6_5M_40M=190
+[    5.134513] [atbm_log]:33,g_9M_40M=170
+[    5.138386] [atbm_log]:34,g_12M_n_13M_40M=170
+[    5.142893] [atbm_log]:35,g_18M_n_19_5M_40M=160
+[    5.147575] [atbm_log]:36,g_24M_n_26M_40M=160
+[    5.152080] [atbm_log]:37,g_36M_n_39M_40M=150
+[    5.156583] [atbm_log]:38,g_48M_n_52M_40M=150
+[    5.161088] [atbm_log]:39,g_54M_n_58_5M_40M=140
+[    5.165771] [atbm_log]:40,n_65M_40M=130
+[    5.169737] [atbm_log]:41,VHT_MCS0_40M=190
+[    5.173969] [atbm_log]:42,VHT_MCS1_40M=170
+[    5.178201] [atbm_log]:43,VHT_MCS2_40M=160
+[    5.182437] [atbm_log]:44,VHT_MCS3_40M=160
+[    5.186669] [atbm_log]:45,VHT_MCS4_40M=150
+[    5.190906] [atbm_log]:46,VHT_MCS5_40M=150
+[    5.195139] [atbm_log]:47,VHT_MCS6_40M=140
+[    5.199376] [atbm_log]:48,VHT_MCS7_40M=130
+[    5.203609] [atbm_log]:49,VHT_MCS8_40M=110
+[    5.207843] [atbm_log]:50,VHT_MCS9_40M=110
+[    5.212083] [atbm_log]:51,HE-SU_MCS0_40M=190
+[    5.216496] [atbm_log]:52,HE-SU_MCS1_40M=170
+[    5.220912] [atbm_log]:53,HE-SU_MCS2_40M=160
+[    5.225322] [atbm_log]:54,HE-SU_MCS3_40M=160
+[    5.229738] [atbm_log]:55,HE-SU_MCS4_40M=150
+[    5.234148] [atbm_log]:56,HE-SU_MCS5_40M=150
+[    5.238565] [atbm_log]:57,HE-SU_MCS6_40M=140
+[    5.242979] [atbm_log]:58,HE-SU_MCS7_40M=130
+[    5.247389] [atbm_log]:59,HE-SU_MCS8_40M=110
+[    5.251805] [atbm_log]:60,HE-SU_MCS9_40M=110
+[    5.256218] [atbm_log]:61,HE-SU_MCS10_40M=80
+[    5.260633] [atbm_log]:62,HE-SU_MCS11_40M=80
+[    5.272295] [atbm_log]:get chip id [2][0][0] 
+[    5.276805] [atbm_log]:current chiptype ATBM6162-S 
+[    5.281869] [atbm_log]:default country code:CN,support channel=13
+[    5.288168] [atbm_log]:Use an internal power amplifier!
+[    5.293575] [atbm_log]:[atbm_wtd]:set wtd_probe = 1
+s:Bus 001 Device 001: ID 1d6b:0002
+
+line_num:1
+[FC] not found usb store
+[FC] Test.tar no exist
+[FC] In [user] mode!
+kernel.core_pattern = |/system/bin/ucoredmp_collector.sh --pid %p --signal %s --name %e --time %t --output-dir /media/mmc/cores
+kernel.core_pipe_limit = 1
+net.unix.max_dgram_qlen = 128
+fs_mgr: fs_mgr start...
+[2025-07-03 07:42:33.754][INFO ] [localsdk_hwotp.c,0211] <>===================< SCB is status -> [enable] >==================<> 
+fs_mgr: crypt block device name: /dev/dm-2
+fs_mgr: verity block device name: /dev/dm-3
+fs_mgr: Not a valid squashfs filesystem
+fs_mgr: Failed to get squashfs fs size on /dev/dm-2.
+fs_mgr: Could not get target device size.
+fs_mgr: Verity fail, -1
+########## start_edgeai not found xxxxxxxxx ##########
+########## personvehiclepetDet-800K.mgk not found xxxxxxxxx ##########
+
+add tb ld library pahth
+[    6.405575] ash (176): drop_caches: 1
+Welcome to t32
+t32 login: 

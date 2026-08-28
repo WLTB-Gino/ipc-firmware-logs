@@ -1,0 +1,964 @@
+GPIOs 0-31, GPIO A:
+ gpio-18  (sc1235_reset        ) out hi
+
+GPIOs 32-63, GPIO B:
+ gpio-49  (IRLED               ) out lo
+ gpio-57  (sda                 ) in  hi
+ gpio-58  (scl                 ) in  hi
+ gpio-59  (mmc_detect          ) in  hi
+ gpio-61  (sysfs               ) in  hi
+ gpio-62  (sdio_wifi_power_on  ) out hi
+ gpio-63  (gpio_spk_en         ) out lo
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (home key            ) in  hi
+ gpio-72  (IRCUT               ) out lo
+ gpio-89  (ion/x-sv4crc        ) out lo
+ gpio-90  (LED ONBOARD       ) out hi
+
+GPIOs 96-127, GPIO D:
+
+GPIOs 128-159, GPIO E:
+
+GPIOs 160-191, GPIO F:
+
+
+U-Boot SPL 2013.07 (Jun 21 2019 - 09:00:12)
+Timer init
+CLK stop
+PLL init
+pll_init:411
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+fbdiv = 60 , refdiv = 1 , fdivq = 4 ,pllod = 2 range = 3
+cppcr is 03b01060
+CPM_CPAPCR 0770504d
+fbdiv = 42 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02900860
+CPM_CPMPCR 07c0882d
+fbdiv = 50 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 03100860
+CPM_CPVPCR 0310086d
+fbdiv = 50 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 03100860
+CPM_CPEPCR 0c50c82d
+cppcr 0x9a773310
+apll_freq 720000000 
+mpll_freq 1000000000 
+vpll_freq = 1200000000 epll = 1188000000 
+ddr sel mpll, cpu sel apll
+ddrfreq 500000000
+cclk  720000000
+l2clk 360000000
+h0clk 200000000
+h2clk 200000000
+pclk  100000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00e73011
+T30_0x5: 00000007
+T30_0x15: 0000000c
+T30_0x4: 00000000
+T30_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T30_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T30_118: 0000003c
+T30_158: 0000003c
+T30_190: 0000001e
+T30_194: 0000001e
+jz-04 :  0x00000051 
+jz-08 :  0x000000a0 
+jz-28 :  0x00000024 
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0a688a40
+DDRC_CTRL           0x0000891c
+DDRC_LMR            0x00000000
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x040e0806
+DDRC_TIMING2        0x02170707
+DDRC_TIMING3        0x2007051e
+DDRC_TIMING4        0x1a240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x32170505
+DDRC_REFCNT         0x00f2b901
+DDRC_MMAP0          0x000020fc
+DDRC_MMAP1          0x00002400
+DDRC_REMAP1         0x03020100
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f0e0d0c
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Jun 21 2019 - 09:00:12)
+
+Board: ISVP (Ingenic XBurst T30 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 436k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer c2
+SF: Detected MX25L128**E
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   Jz4775-9161
+isvp_t30# env default -f -a
+## Resetting to default environment
+isvp_t30# boot
+the manufacturer c2
+SF: Detected MX25L128**E
+
+--->probe spend 5 ms
+SF: 2621440 bytes @ 0x40000 Read: OK
+--->read spend 297 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_monkey_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1499355 Bytes = 1.4 MiB
+   Load Address: 80010000
+   Entry Point:  803a45c0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_monkey_1.0__ (karl@ubuntu) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #1 PREEMPT Mon Oct 8 10:39:54 CST 2018
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:40B068AA
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:720MHz L2CLK:360Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00445000 @ 00010000 (usable)
+[    0.000000]  memory: 0003b000 @ 00455000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02a00000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x029fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x029fffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10668
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=42M@0x0 rmem=22M@0x2a00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),1536k(kernel),2560k(rootfs),128k(rom),512k(config),9216k(appfs),-(appfs1)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 37332k/43008k available (3700k kernel code, 5676k reserved, 667k data, 236k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:422
+[    0.000000] clockevents_config_and_register success.
+[    0.000028] Calibrating delay loop... 718.02 BogoMIPS (lpj=3590144)
+[    0.057680] pid_max: default: 32768 minimum: 301
+[    0.062718] Mount-cache hash table entries: 512
+[    0.067935] Initializing cgroup subsys debug
+[    0.072201] Initializing cgroup subsys freezer
+[    0.079580] regulator-dummy: no parameters
+[    0.083858] NET: Registered protocol family 16
+[    0.093890] bio: create slab <bio-0> at 0
+[    0.100732] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.105926] usbcore: registered new interface driver usbfs
+[    0.111478] usbcore: registered new interface driver hub
+[    0.116980] usbcore: registered new device driver usb
+[    0.122231] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.128534]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.134652] media: Linux media interface: v0.10
+[    0.139242] Linux video capture interface: v2.00
+[    0.146371] Switching to clocksource jz_clocksource
+[    0.152043] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.157053] cfg80211: Calling CRDA to update world regulatory domain
+[    0.163516] jz-dwc2 jz-dwc2: regulator vbus get error
+[    0.168573] DWC IN OTG MODE
+[    0.321764] sft id =========================off
+[    0.326373] dwc2 dwc2: Keep PHY ON
+[    0.329746] dwc2 dwc2: Using Buffer DMA mode
+[    0.533810] dwc2 dwc2: Core Release: 3.00a
+[    0.537926] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.544284] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.551842] hub 1-0:1.0: USB hub found
+[    0.555589] hub 1-0:1.0: 1 port detected
+[    0.559714] dwc2 dwc2: DWC2 Host Initialized
+[    0.564309] NET: Registered protocol family 2
+[    0.569354] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.576342] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.582743] TCP: Hash tables configured (established 512 bind 512)
+[    0.589051] TCP: reno registered
+[    0.592284] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.598186] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.604886] NET: Registered protocol family 1
+[    0.609630] RPC: Registered named UNIX socket transport module.
+[    0.615649] RPC: Registered udp transport module.
+[    0.620340] RPC: Registered tcp transport module.
+[    0.625127] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.632128] freq_udelay_jiffys[0].max_num = 10
+[    0.636559] cpufreq 	udelay 	loops_per_jiffy	
+[    0.640990] dwc2 dwc2: ID PIN CHANGED!
+[    0.644846] init DWC as A_HOST
+[    0.647892] 12000	 59835	 59835	
+[    0.651130] 24000	 119671	 119671	
+[    0.654715] 60000	 299178	 299178	
+[    0.658085] 120000	 598357	 598357	
+[    0.661740] 200000	 997262	 997262	
+[    0.665198] 300000	 1495893	 1495893	
+[    0.668906] 600000	 2991786	 2991786	
+[    0.672642] 792000	 3949158	 3949158	
+[    0.676322] 1008000	 5026201	 5026201	
+[    0.680119] 1200000	 5983573	 5983573	
+[    0.690580] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.697675] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.703757] msgmni has been set to 72
+[    0.709097] io scheduler noop registered
+[    0.713168] io scheduler cfq registered (default)
+[    0.720009] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.728649] console [ttyS1] enabled, bootconsole disabled
+[    0.728649] console [ttyS1] enabled, bootconsole disabled
+[    0.744821] brd: module loaded
+[    0.750452] loop: module loaded
+[    0.754769] zram: Created 2 device(s) ...
+[    0.759032] logger: created 256K log 'log_main'
+[    0.764601] jz SADC driver registeres over!
+[    0.770338] jz TCU driver register completed
+[    0.775369] the id code = c22018, the flash name is MX25L12835F
+[    0.781585] JZ SFC Controller for SFC channel 0 driver register
+[    0.787753] 7 cmdlinepart partitions found on MTD device jz_sfc
+[    0.793918] Creating 7 MTD partitions on "jz_sfc":
+[    0.798893] 0x000000000000-0x000000040000 : "boot"
+[    0.804558] 0x000000040000-0x0000001c0000 : "kernel"
+[    0.810315] 0x0000001c0000-0x000000440000 : "rootfs"
+[    0.816171] 0x000000440000-0x000000460000 : "rom"
+[    0.821757] 0x000000460000-0x0000004e0000 : "config"
+[    0.827550] 0x0000004e0000-0x000000de0000 : "appfs"
+[    0.833331] 0x000000de0000-0x000001000000 : "appfs1"
+[    0.839119] SPI NOR MTD LOAD OK
+[    0.842525] tun: Universal TUN/TAP device driver, 1.6
+[    0.847769] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.854332] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.860752] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.867195] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.873627] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.880046] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.886477] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.892907] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.899325] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.905753] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.912183] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.918601] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.924230] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.930720] =======>gmacdev = 0x821fe380<================
+[    0.936346] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.943315] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.949732] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.956163] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.962593] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.969009] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.975439] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.981873] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.988295] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.994729] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    1.001147] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    1.007583] func:jz_mac_probe, synopGMAC_reset failed
+[    1.012848] jz_mac: probe of jz_mac.0 failed with error -1
+[    1.018653] usbcore: registered new interface driver zd1201
+[    1.024854] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.061432] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.066841] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.112341] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.118101] TCP: cubic registered
+[    1.121601] NET: Registered protocol family 17
+[    1.126737] soc_vpu probe success,version:1.0.0-03203fd46d
+[    1.132919] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.140317] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    1.152997] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    1.160819] Freeing unused kernel memory: 236K (80455000 - 80490000)
+[    1.753941] dwc2 dwc2:  ++OTG Interrupt: A-Device Timeout Change++
+mdev is ok......
+nvram_get: can't load library 'libsdutils.so'
+==> startapp ok
+Tue Jan  1 00:00:00 UTC 2019
+[    3.292252] exFAT: Version 1.2.9
+ifconfig: SIOCSIFADDR: No such device
+
+Jooan login: Cannot get device settings: No such device
+Cannot get wake-on-lan settings: No such device
+Cannot get message level: No such device
+Cannot get link status: No such device
+[    4.053142] RTL871X: module init start
+[    4.057041] RTL871X: rtl8189fs v4.3.24.12_27796.20180510
+[    4.062643] RTL871X: build time: Dec 24 2018 11:38:03
+[    4.067894] wlan power on
+[    4.081914] RTL871X: module init ret=0
+[    4.127068] mmc1: card claims to support voltages below the defined range. These will be ignored.
+[    4.147178] mmc1: new SDIO card at address 0001
+ifconfig: SIOCGIFFLAGS: No such device
+ifconfig: SIOCSIFADDR: No such device
+ifconfig: wlan0: error fetching interface information: Device not found
+[ Enter AP Mode: JA-Q3H-T ]
+ifconfig: SIOCGIFFLAGS: No such device
+ifconfig: SIOCSIFADDR: No such device
+killall: udhcpd: no process killed
+/mnt/mtd/startapp: line 23: can't create /sys/devices/platform/jz-dwc2/dwc2/udc/dwc2/soft_connect: nonexistent directory
+ifconfig: SIOCSIFADDR: No such device
+[    6.605359] name : i2c-gpio1 nr : 1
+[    6.608988] name : i2c0 nr : 0
+[    6.701868]  sensor_read: addr=0x3107 value = 0x12
+[    6.709335]  sensor_read: addr=0x3108 value = 0x35
+[    6.719215] info: success sensor find : sc1235
+sensor :sc1235
+[    7.121647] @@@@ tx-isp-probe ok(version H20190717a) @@@@@
+[    7.161333] jzmmc_v1.2 jzmmc_v1.2.1: timeout 3000ms op:53 r sz:512 state:0 STAT:0x1F001141 DMALEN:0x00000000 blks:0/1 clk:enable clk_gate:enable
+[    7.252116] jz_codec_register: probe() successful!
+[    7.651856] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a1d7a000)
+[    7.661255] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a1d7b000)
+Configuration file: /tmp/hostapd.conf
+Now Timezone is Asia/Shanghai
+ Goahead run ok ======
+ My_watch_dog run ok ======
+ avengine run ok ======
+[my_watch_dog.c][main][299]@@@@@@@@ my_watch_dog statrt...
+Could not read interface wlan1 flags: No such device
+nl80211: Driver does not support authentication/association or connect commands
+nl80211: deinit ifname=wlan1 disabled_11b_rates=0
+[2019-01-01 08:00:07][Info]=>[joa_main.c][init_signal:75]init_signal start
+
+[2019-01-01 08:00:07][Info]=>[joa_system.c][init_product:33]g_ipcParam.eProduct=18
+
+[2019-01-01 08:00:07][Info]=>[joa_system.c][init_version:41]FIRMWARE_VERSION====02.27.31
+
+[2019-01-01 08:00:07][Info]=>[joa_system.c][init_defaultParam:112]=> [stream 0]video Config Param: Codec=H264, Resolution=960P, Fps=15, Quality=low, Mode=SMART, bps=512
+
+[2019-01-01 08:00:07][Info]=>[joa_system.c][init_defaultParam:112]=> [stream 1]video Config Param: Codec=H264, Resolution=VGA, Fps=15, Quality=low, Mode=SMART, bps=512
+
+Could not read interface wlan1 flags: No such device
+nl80211 driver initialization failed.
+wlan1: interface state UNINITIALIZED->DISABLED
+wlan1: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan1 wasn't started
+[2019-01-01 08:00:07][Info]=>[joa_video.c][VE_IMP_system_init:653]imp_system_init start
+
+[2019-01-01 08:00:07][Info]=>[joa_video.c][VE_IMP_system_init:662]IMP[   11.074549] set sensor gpio as PA-12bit
+_ISP_AddSensor start
+
+[   11.152466] sc1235 chip found @ 0x30 (i2c0)
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_IMP_system_init:669]IMP_ISP_EnableSensor start
+
+flags = 0x1000000
+funcs: 0x0
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_IMP_system_init:676]IMP_System_Init start
+
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_IMP_system_init:683]IMP_ISP_EnableTuning start
+
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_IMP_system_init:705]ImpSystemInit success
+
+i264e[info]: profile Main, level 3.2
+i264e[info]: profile Main, level 2.2
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_GetVideoStreamFrameSize:338]iMaxFrameSize:921600, eProductDef:18
+
+Line=145, media_type=1, codec=3, res=16, key1=17830186, key2=17830187, iShmSize=921600, iMaxFrameSize=921600
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_VideoShmInit:385]video[0] init share memory success. Codec=3, shmsize = 921600
+
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_GetVideoStreamFrameSize:338]iMaxFrameSize:262144, eProductDef:18
+
+Line=145, media_type=1, codec=3, res=7, key1=17840186, key2=17840287, iShmSize=262144, iMaxFrameSize=262144
+[2019-01-01 08:00:08][Info]=>[joa_video.c][VE_VideoShmInit:385]video[1] init share memory success. Codec=3, shmsize = 262144
+
+[   12.531312] codec_set_device: set device: MIC...
+[   12.791458] codec_set_device: set device: speaker...
+[2019-01-01 08:00:09][Debug]=>[ipc_main.c][main:289]**************************************************************
+
+[2019-01-01 08:00:09][Debug]=>[ipc_main.c][main:290]*	 Build Time: 16:57:12--Aug 15 2019 				*
+
+[2019-01-01 08:00:09][Debug]=>[ipc_main.c][main:291]**************************************************************
+
+[2019-01-01 08:00:09][Debug]=>[ipc_main.c][IPC_APP_SDK_Init:166]IOTC Version: 0x3010526
+
+[2019-01-01 08:00:09][Info]=>[ipc_app_mgr_utils.c][IPC_APP_Register_Mgr_Info_Init:848]Init productName: JA-Q3H-T
+
+[2019-01-01 08:00:09][Info]=>[ipc_app_mgr_utils.c][IPC_APP_Register_Mgr_Info_Init:849]Init platformUID: 
+
+[2019-01-01 08:00:09][Info]=>[ipc_app_mgr_utils.c][IPC_APP_Register_Mgr_Info_Init:850]Init firmwareVer: 02.27.31
+
+Line=246, media_type=0, codec=100, key1=54637402, key2=54637703, iShmSize=102400, iMaxFrameSize=4096
+[2019-01-01 08:00:09][Info]=>[ipc_local_record.c][Record_Status_Param_Load:1526]0:0:0 -->  23:59:59
+
+[2019-01-01 08:00:09][Info]=>[ipc_app_mgr_utils.c][P2P_IOTC_Init:617]> P2P_IOTC_Init start.
+
+the /mnt/sd_card not mounted
+the offset 0x438 vaule is:0x0 0x0!
+Unknown filesystem type!
+the dev node file system is exfat
+[2019-01-01 08:00:09][Error]=>[ipc_local_record.c][mountpartion:758]mount sd card error is No such file or directory
+
+[2019-01-01 08:00:10][Info]=>[ipc_app_mgr_utils.c][P2P_IOTC_Init:653]> P2P_IOTC_Init end.
+
+shm space is not exist... please confirm you have create the space aready!
+[2019-01-01 08:00:10][Info]=>[joa_mbxCntl.c][IPC_Notify_Event_Status:45] eNotify_Event = 0
+
+[2019-01-01 08:00:10][Info]=>[joa_mbxCntl.c][ipxMagMbx_Handle_Thread:526]av server rcv mbx[0] from 2. id:209, status:2048
+
+[2019-01-01 08:00:10][Info]=>[joa_audio.c][AE_voice_guide_play:554]=====> sound guide play ---> filename: /mnt/mtd/VoiceGuide/CH/camera_start.amr
+
+Line=145, media_type=1, codec=3, res=4, key1=17870186, key2=17870587, iShmSize=307200, iMaxFrameSize=262144
+[2019-01-01 08:00:10][Info]=>[joa_video.c][VE_GetVideoStreamFrameSize:338]iMaxFrameSize:921600, eProductDef:18
+
+[2019-01-01 08:00:10][Info]=>[joa_video.c][VE_GetVideoStreamFrameSize:338]iMaxFrameSize:262144, eProductDef:18
+
+Line=246, media_type=0, codec=2, key1=54617402, key2=54617503, iShmSize=102400, iMaxFrameSize=4096
+[2019-01-01 08:00:10][Info]=>[joa_motion.c][motion_detectiom_area_config:282]---- Modify Move Detection Area or Sensitivity, Re-config Move Detection Thread! ----
+
+[2019-01-01 08:00:10][Info]=>[joa_motion.c][motion_detectiom_area_config:287]g_structMotionCtl.MotionLevel = 3, g_structMotionCtl.mdAreaMask = 33554431
+
+[2019-01-01 08:00:10][Info]=>[joa_main.c][main_open_server:145]listen at: 0.0.0.0/9898
+
+[2019-01-01 08:00:10][Info]=>[joa_main.c][main:199]+++++++++++++++++++++++++++++++Camera Engine Service Start up, socket=22
+
+the width height is (640, 360) region count is 25
+[INFO  rtsp/rtsp_demo.c:390:rtsp_new_demo] rtsp server demo starting on port 554
+[INFO  rtsp/rtsp_demo.c:576:rtsp_new_session] add session path: /live/ch00_
+rtsp Video Stream ShmID = 0, codec = 3
+rtsp Audio Stream ShmID = 0, codec = 2
+rtsp Video Stream ShmID = 1, codec = 3
+rtsp Audio Stream ShmID = 1, codec = 2
+[2019-01-01 08:00:10][Info]=>[joa_mbxCntl.c][IPC_Notify_Event_Status:45] eNotify_Event = 1
+
+[2019-01-01 08:00:11][Info]=>[joa_mbxCntl.c][ipxMagMbx_Handle_Thread:526]av server rcv mbx[1] from 2. id:209, status:2048
+
+[2019-01-01 08:00:11][Info]=>[joa_audio.c][AE_voice_guide_play:554]=====> sound guide play ---> filename: /mnt/mtd/VoiceGuide/CH/connect_guide.amr
+
+[   37.271336] jzmmc_v1.2 jzmmc_v1.2.1: request time out, op=53 arg=0x16020004, sz:512B state=0, status=0x1F001141, pending=0x00000000, nr_desc=1
+[   37.284703] jzmmc_v1.2 jzmmc_v1.2.1: 
+[   37.284703] REG dump:
+[   37.284703] 	CTRL2	= 0x00800000
+[   37.284703] 	STAT	= 0x1F001141
+[   37.284703] 	CLKRT	= 0x00000000
+[   37.284703] 	CMDAT	= 0x00000409
+[   37.284703] 	RESTO	= 0x00000100
+[   37.284703] 	RDTO	= 0x00FFFFFF
+[   37.284703] 	BLKLEN	= 0x00000004
+[   37.284703] 	NOB	= 0x00000001
+[   37.284703] 	SNOB	= 0x00000000
+[   37.284703] 	IMASK	= 0xFFFFFFFF
+[   37.284703] 	IFLG	= 0x00002101
+[   37.284703] 	CMD	= 0x00000035
+[   37.284703] 	ARG	= 0x16020004
+[   37.284703] 	RES	= 0x0000C490
+[   37.284703] 	LPM	= 0x00000000
+[   37.284703] 	DMAC	= 0x00000000
+[   37.284703] 	DMANDA	= 0x00000000
+[   37.284703] 	DMADA	= 0x00000000
+[   37.284703] 	DMALEN	= 0x00000000
+[   37.284703] 	DMACMD	= 0x00000000
+[   37.284703] 	RTCNT	= 0x00000000
+[   37.284703] 	DEBUG	= 0x00000000
+[   37.361407] jzmmc_v1.2 jzmmc_v1.2.1: Descriptor dump:
+[   37.366660] jzmmc_v1.2 jzmmc_v1.2.1: 	000	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.375623] jzmmc_v1.2 jzmmc_v1.2.1: 	001	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.384588] jzmmc_v1.2 jzmmc_v1.2.1: 	002	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.393552] jzmmc_v1.2 jzmmc_v1.2.1: 	003	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.402512] jzmmc_v1.2 jzmmc_v1.2.1: 	004	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.411476] jzmmc_v1.2 jzmmc_v1.2.1: 	005	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.420422] jzmmc_v1.2 jzmmc_v1.2.1: 	006	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.429385] jzmmc_v1.2 jzmmc_v1.2.1: 	007	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.438348] jzmmc_v1.2 jzmmc_v1.2.1: 	008	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.447306] jzmmc_v1.2 jzmmc_v1.2.1: 	009	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.456266] jzmmc_v1.2 jzmmc_v1.2.1: 	010	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.465233] jzmmc_v1.2 jzmmc_v1.2.1: 	011	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.474197] jzmmc_v1.2 jzmmc_v1.2.1: 	012	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.483158] jzmmc_v1.2 jzmmc_v1.2.1: 	013	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.492120] jzmmc_v1.2 jzmmc_v1.2.1: 	014	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.501066] jzmmc_v1.2 jzmmc_v1.2.1: 	015	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.510030] jzmmc_v1.2 jzmmc_v1.2.1: 	016	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.518991] jzmmc_v1.2 jzmmc_v1.2.1: 	017	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.527951] jzmmc_v1.2 jzmmc_v1.2.1: 	018	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.536911] jzmmc_v1.2 jzmmc_v1.2.1: 	019	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.545874] jzmmc_v1.2 jzmmc_v1.2.1: 	020	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.554837] jzmmc_v1.2 jzmmc_v1.2.1: 	021	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.563797] jzmmc_v1.2 jzmmc_v1.2.1: 	022	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.572760] jzmmc_v1.2 jzmmc_v1.2.1: 	023	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.581719] jzmmc_v1.2 jzmmc_v1.2.1: 	024	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.590669] jzmmc_v1.2 jzmmc_v1.2.1: 	025	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.599632] jzmmc_v1.2 jzmmc_v1.2.1: 	026	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.608591] jzmmc_v1.2 jzmmc_v1.2.1: 	027	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.617551] jzmmc_v1.2 jzmmc_v1.2.1: 	028	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.626513] jzmmc_v1.2 jzmmc_v1.2.1: 	029	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.635477] jzmmc_v1.2 jzmmc_v1.2.1: 	030	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.644437] jzmmc_v1.2 jzmmc_v1.2.1: 	031	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.653399] jzmmc_v1.2 jzmmc_v1.2.1: 	032	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.662359] jzmmc_v1.2 jzmmc_v1.2.1: 	033	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.671326] jzmmc_v1.2 jzmmc_v1.2.1: 	034	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.680281] jzmmc_v1.2 jzmmc_v1.2.1: 	035	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.689242] jzmmc_v1.2 jzmmc_v1.2.1: 	036	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.698201] jzmmc_v1.2 jzmmc_v1.2.1: 	037	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.707164] jzmmc_v1.2 jzmmc_v1.2.1: 	038	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.716127] jzmmc_v1.2 jzmmc_v1.2.1: 	039	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.725087] jzmmc_v1.2 jzmmc_v1.2.1: 	040	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.734049] jzmmc_v1.2 jzmmc_v1.2.1: 	041	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.743013] jzmmc_v1.2 jzmmc_v1.2.1: 	042	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.751976] jzmmc_v1.2 jzmmc_v1.2.1: 	043	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.760931] jzmmc_v1.2 jzmmc_v1.2.1: 	044	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.769897] jzmmc_v1.2 jzmmc_v1.2.1: 	045	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.778858] jzmmc_v1.2 jzmmc_v1.2.1: 	046	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.787821] jzmmc_v1.2 jzmmc_v1.2.1: 	047	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.796785] jzmmc_v1.2 jzmmc_v1.2.1: 	048	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.805745] jzmmc_v1.2 jzmmc_v1.2.1: 	049	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.814712] jzmmc_v1.2 jzmmc_v1.2.1: 	050	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.823673] jzmmc_v1.2 jzmmc_v1.2.1: 	051	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.832636] jzmmc_v1.2 jzmmc_v1.2.1: 	052	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.841599] jzmmc_v1.2 jzmmc_v1.2.1: 	053	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.850545] jzmmc_v1.2 jzmmc_v1.2.1: 	054	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.859504] jzmmc_v1.2 jzmmc_v1.2.1: 	055	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.868467] jzmmc_v1.2 jzmmc_v1.2.1: 	056	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.877430] jzmmc_v1.2 jzmmc_v1.2.1: 	057	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.886389] jzmmc_v1.2 jzmmc_v1.2.1: 	058	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.895352] jzmmc_v1.2 jzmmc_v1.2.1: 	059	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.904311] jzmmc_v1.2 jzmmc_v1.2.1: 	060	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.913275] jzmmc_v1.2 jzmmc_v1.2.1: 	061	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.922238] jzmmc_v1.2 jzmmc_v1.2.1: 	062	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.931193] jzmmc_v1.2 jzmmc_v1.2.1: 	063	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.940153] jzmmc_v1.2 jzmmc_v1.2.1: 	064	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.949120] jzmmc_v1.2 jzmmc_v1.2.1: 	065	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.958080] jzmmc_v1.2 jzmmc_v1.2.1: 	066	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.967041] jzmmc_v1.2 jzmmc_v1.2.1: 	067	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.976003] jzmmc_v1.2 jzmmc_v1.2.1: 	068	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.984964] jzmmc_v1.2 jzmmc_v1.2.1: 	069	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   37.993927] jzmmc_v1.2 jzmmc_v1.2.1: 	070	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.002899] jzmmc_v1.2 jzmmc_v1.2.1: 	071	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.011860] jzmmc_v1.2 jzmmc_v1.2.1: 	072	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.020806] jzmmc_v1.2 jzmmc_v1.2.1: 	073	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.029772] jzmmc_v1.2 jzmmc_v1.2.1: 	074	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.038733] jzmmc_v1.2 jzmmc_v1.2.1: 	075	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.047691] jzmmc_v1.2 jzmmc_v1.2.1: 	076	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.056654] jzmmc_v1.2 jzmmc_v1.2.1: 	077	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.065614] jzmmc_v1.2 jzmmc_v1.2.1: 	078	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.074577] jzmmc_v1.2 jzmmc_v1.2.1: 	079	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.083540] jzmmc_v1.2 jzmmc_v1.2.1: 	080	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.092500] jzmmc_v1.2 jzmmc_v1.2.1: 	081	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.101459] jzmmc_v1.2 jzmmc_v1.2.1: 	082	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.110419] jzmmc_v1.2 jzmmc_v1.2.1: 	083	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.119379] jzmmc_v1.2 jzmmc_v1.2.1: 	084	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.128339] jzmmc_v1.2 jzmmc_v1.2.1: 	085	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.137305] jzmmc_v1.2 jzmmc_v1.2.1: 	086	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.146266] jzmmc_v1.2 jzmmc_v1.2.1: 	087	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.155230] jzmmc_v1.2 jzmmc_v1.2.1: 	088	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.164193] jzmmc_v1.2 jzmmc_v1.2.1: 	089	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.173153] jzmmc_v1.2 jzmmc_v1.2.1: 	090	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.182113] jzmmc_v1.2 jzmmc_v1.2.1: 	091	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.191075] jzmmc_v1.2 jzmmc_v1.2.1: 	092	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.200035] jzmmc_v1.2 jzmmc_v1.2.1: 	093	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.208996] jzmmc_v1.2 jzmmc_v1.2.1: 	094	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.217962] jzmmc_v1.2 jzmmc_v1.2.1: 	095	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.226923] jzmmc_v1.2 jzmmc_v1.2.1: 	096	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.235889] jzmmc_v1.2 jzmmc_v1.2.1: 	097	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.244856] jzmmc_v1.2 jzmmc_v1.2.1: 	098	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.253820] jzmmc_v1.2 jzmmc_v1.2.1: 	099	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.262783] jzmmc_v1.2 jzmmc_v1.2.1: 	100	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.271751] jzmmc_v1.2 jzmmc_v1.2.1: 	101	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.280698] jzmmc_v1.2 jzmmc_v1.2.1: 	102	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.289658] jzmmc_v1.2 jzmmc_v1.2.1: 	103	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.298620] jzmmc_v1.2 jzmmc_v1.2.1: 	104	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.307582] jzmmc_v1.2 jzmmc_v1.2.1: 	105	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.316546] jzmmc_v1.2 jzmmc_v1.2.1: 	106	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.325509] jzmmc_v1.2 jzmmc_v1.2.1: 	107	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.334469] jzmmc_v1.2 jzmmc_v1.2.1: 	108	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.343429] jzmmc_v1.2 jzmmc_v1.2.1: 	109	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.352396] jzmmc_v1.2 jzmmc_v1.2.1: 	110	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.361354] jzmmc_v1.2 jzmmc_v1.2.1: 	111	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.370301] jzmmc_v1.2 jzmmc_v1.2.1: 	112	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.379263] jzmmc_v1.2 jzmmc_v1.2.1: 	113	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.388223] jzmmc_v1.2 jzmmc_v1.2.1: 	114	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.397186] jzmmc_v1.2 jzmmc_v1.2.1: 	115	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.406149] jzmmc_v1.2 jzmmc_v1.2.1: 	116	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.415109] jzmmc_v1.2 jzmmc_v1.2.1: 	117	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.424068] jzmmc_v1.2 jzmmc_v1.2.1: 	118	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.433035] jzmmc_v1.2 jzmmc_v1.2.1: 	119	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.441995] jzmmc_v1.2 jzmmc_v1.2.1: 	120	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.450940] jzmmc_v1.2 jzmmc_v1.2.1: 	121	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.459902] jzmmc_v1.2 jzmmc_v1.2.1: 	122	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.468862] jzmmc_v1.2 jzmmc_v1.2.1: 	123	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.477826] jzmmc_v1.2 jzmmc_v1.2.1: 	124	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.486788] jzmmc_v1.2 jzmmc_v1.2.1: 	125	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.495748] jzmmc_v1.2 jzmmc_v1.2.1: 	126	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.504708] jzmmc_v1.2 jzmmc_v1.2.1: 	127	 nda=00000000 da=00000000 len=00000000 dcmd=00000000
+[   38.513668] jzmmc_v1.2 jzmmc_v1.2.1: 
+[2019-01-01 08:00:35][Error]=>[joa_video.c][video_Thread:2409]IM[   38.521313] [sched_delayed] sched: RT throttling activated
+P_Encoder_PollingStream...(0) Polling stream timeout encoder_timeout_num = 0
+
+Jan  1 08:00:47 login[58]: root login on 'console'
+[root@Jooan:~]# cat /proc/jz/isp
+cat: read error: Is a directory
+[root@Jooan:~]# cat /proc/jz/isp/isp-
+isp-fs   isp-m0   isp-m1   isp-m2   isp-m3   isp-w00  isp-w01  isp-w02
+[root@Jooan:~]# cat /proc/jz/isp/isp-fs 
+############## framesource 0 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 1280 * 960
+scaler : disable
+crop : enable
+crop top: 0
+crop left: 0
+crop width: 1280
+crop height: 960
+the state of buffers:
+queue count: 2
+queue addr: 0x03190000
+queue addr: 0x03352000
+done count: 0
+the output buffers is: 1129
+the losted buffers is: 0
+############## framesource 1 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 640 * 360
+scaler : enable
+scaler width: 640
+scaler height: 360
+crop : disable
+the state of buffers:
+queue count: 2
+queue addr: 0x03514000
+queue addr: 0x0356a400
+done count: 0
+the output buffers is: 1129
+the losted buffers is: 0
+############## framesource 2 ###############
+chan status: stop
+[root@Jooan:~]# cat /proc/jz/isp/isp-
+isp-fs   isp-m0   isp-m1   isp-m2   isp-m3   isp-w00  isp-w01  isp-w02
+[root@Jooan:~]# cat /proc/jz/isp/isp-m0 
+****************** ISP INFO **********************
+Software Version : H20190523a
+Firmware Version : H01-380
+SENSOR NAME : sc1235
+SENSOR OUTPUT WIDTH : 1280
+SENSOR OUTPUT HEIGHT : 960
+SENSOR OUTPUT RAW PATTERN : BGGR
+SENSOR Integration Time : 524 lines
+ISP Top Value : 0x33242593
+ISP Runing Mode : Day
+ISP OUTPUT FPS : 25 / 1
+SENSOR analog gain : 29
+MAX SENSOR analog gain : 125
+SENSOR digital gain : 0
+MAX SENSOR digital gain : 0
+ISP digital gain : 3
+MAX ISP digital gain : 48
+ISP gain log2 id : 1
+ISP total gain : 512
+ISP exposure log2 id: 657686
+ISP EV Value: 67170
+ISP AE strategy: AE_SPLIT_BALANCED
+ISP Antiflicker : 50[0 means disable]
+Evtolux Probability Enable  : 0
+ISP WB Gain00 : 256
+ISP WB Gain01 : 282
+ISP WB Gain10 : 282
+ISP WB Gain11 : 548
+ISP WB rg : 247
+ISP WB bg : 253
+ISP WB Temperature : 2600
+ISP Black level 00 : 75
+ISP Black level 01 : 75
+ISP Black level 10 : 71
+ISP Black level 11 : 75
+ISP LSC mesh module : enable
+ISP LSC mesh blend mode : 2
+ISP LSC mesh R table : 0
+ISP LSC mesh G table : 0
+ISP LSC mesh B table : 0
+ISP LSC mesh R blend : 0
+ISP LSC mesh G blend : 0
+ISP LSC mesh B blend : 0
+ISP LSC mesh shading strength : 3560
+ISP Sinter thresh1h : 1
+ISP Sinter thresh4h : 1
+ISP Sinter thresh1v : 1
+ISP Sinter thresh4v : 1
+ISP Sinter thresh short : 10
+ISP Sinter thresh long : 10
+ISP Sinter strength1 : 255
+ISP Sinter strength4 : 255
+ISP Temper thresh module :disable
+ISP Temper thresh short : 95
+ISP Temper thresh long : 95
+ISP Iridix strength : 14
+ISP Defect pixel threshold : 100
+ISP Defect pixel slope : 206
+ISP sharpening directional : 105
+ISP sharpening undirectional : 100
+ISP FR sharpen strength : 30
+ISP DS1 sharpen strength : 20
+ISP CCM R_R : 408
+ISP CCM R_G : 32826
+ISP CCM R_B : 32866
+ISP CCM G_R : 32865
+ISP CCM G_B : 32877
+ISP CCM G_G : 458
+ISP CCM B_R : 32783
+ISP CCM B_G : 33212
+ISP CCM B_B : 712
+Saturation Target : 125
+Saturation : 128
+Sharpness : 128
+Contrast : 130
+Brightness : 132
+[root@Jooan:mtd]# dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_monkey_1.0__ (karl@ubuntu) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #1 PREEMPT Mon Oct 8 10:39:54 CST 2018
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:40B068AA
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_get_rate, parent = 1200000000, rate = 0, m = 0, n = 0, reg val = 0x881000ff
+[    0.000000] CCLK:720MHz L2CLK:360Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00445000 @ 00010000 (usable)
+[    0.000000]  memory: 0003b000 @ 00455000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02a00000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x029fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x029fffff]
+[    0.000000] On node 0 totalpages: 10752
+[    0.000000] free_area_init_node: node 0, pgdat 80451810, node_mem_map 81000000
+[    0.000000]   Normal zone: 84 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 10752 pages, LIFO batch:1
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10668
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=42M@0x0 rmem=22M@0x2a00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),1536k(kernel),2560k(rootfs),128k(rom),512k(config),9216k(appfs),-(appfs1)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 37332k/43008k available (3700k kernel code, 5676k reserved, 667k data, 236k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:422
+[    0.000000] clockevents_config_and_register success.
+[    0.000028] Calibrating delay loop... 718.02 BogoMIPS (lpj=3590144)
+[    0.057680] pid_max: default: 32768 minimum: 301
+[    0.062718] Mount-cache hash table entries: 512
+[    0.067935] Initializing cgroup subsys debug
+[    0.072201] Initializing cgroup subsys freezer
+[    0.079580] regulator-dummy: no parameters
+[    0.083858] NET: Registered protocol family 16
+[    0.093890] bio: create slab <bio-0> at 0
+[    0.100732] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.105926] usbcore: registered new interface driver usbfs
+[    0.111478] usbcore: registered new interface driver hub
+[    0.116980] usbcore: registered new device driver usb
+[    0.122231] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.128534]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.134652] media: Linux media interface: v0.10
+[    0.139242] Linux video capture interface: v2.00
+[    0.146371] Switching to clocksource jz_clocksource
+[    0.152043] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.157053] cfg80211: Calling CRDA to update world regulatory domain
+[    0.163516] jz-dwc2 jz-dwc2: regulator vbus get error
+[    0.168573] DWC IN OTG MODE
+[    0.321764] sft id =========================off
+[    0.326373] dwc2 dwc2: Keep PHY ON
+[    0.329746] dwc2 dwc2: Using Buffer DMA mode
+[    0.533810] dwc2 dwc2: Core Release: 3.00a
+[    0.537926] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.544284] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.551842] hub 1-0:1.0: USB hub found
+[    0.555589] hub 1-0:1.0: 1 port detected
+[    0.559714] dwc2 dwc2: DWC2 Host Initialized
+[    0.564309] NET: Registered protocol family 2
+[    0.569354] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.576342] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.582743] TCP: Hash tables configured (established 512 bind 512)
+[    0.589051] TCP: reno registered
+[    0.592284] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.598186] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.604886] NET: Registered protocol family 1
+[    0.609630] RPC: Registered named UNIX socket transport module.
+[    0.615649] RPC: Registered udp transport module.
+[    0.620340] RPC: Registered tcp transport module.
+[    0.625127] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.632128] freq_udelay_jiffys[0].max_num = 10
+[    0.636559] cpufreq 	udelay 	loops_per_jiffy	
+[    0.640990] dwc2 dwc2: ID PIN CHANGED!
+[    0.644846] init DWC as A_HOST
+[    0.647892] 12000	 59835	 59835	
+[    0.651130] 24000	 119671	 119671	
+[    0.654715] 60000	 299178	 299178	
+[    0.658085] 120000	 598357	 598357	
+[    0.661740] 200000	 997262	 997262	
+[    0.665198] 300000	 1495893	 1495893	
+[    0.668906] 600000	 2991786	 2991786	
+[    0.672642] 792000	 3949158	 3949158	
+[    0.676322] 1008000	 5026201	 5026201	
+[    0.680119] 1200000	 5983573	 5983573	
+[    0.690580] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.697675] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.703757] msgmni has been set to 72
+[    0.709097] io scheduler noop registered
+[    0.713168] io scheduler cfq registered (default)
+[    0.720009] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.728649] console [ttyS1] enabled, bootconsole disabled
+[    0.744821] brd: module loaded
+[    0.750452] loop: module loaded
+[    0.754769] zram: Created 2 device(s) ...
+[    0.759032] logger: created 256K log 'log_main'
+[    0.764601] jz SADC driver registeres over!
+[    0.770338] jz TCU driver register completed
+[    0.775369] the id code = c22018, the flash name is MX25L12835F
+[    0.781585] JZ SFC Controller for SFC channel 0 driver register
+[    0.787753] 7 cmdlinepart partitions found on MTD device jz_sfc
+[    0.793918] Creating 7 MTD partitions on "jz_sfc":
+[    0.798893] 0x000000000000-0x000000040000 : "boot"
+[    0.804558] 0x000000040000-0x0000001c0000 : "kernel"
+[    0.810315] 0x0000001c0000-0x000000440000 : "rootfs"
+[    0.816171] 0x000000440000-0x000000460000 : "rom"
+[    0.821757] 0x000000460000-0x0000004e0000 : "config"
+[    0.827550] 0x0000004e0000-0x000000de0000 : "appfs"
+[    0.833331] 0x000000de0000-0x000001000000 : "appfs1"
+[    0.839119] SPI NOR MTD LOAD OK
+[    0.842525] tun: Universal TUN/TAP device driver, 1.6
+[    0.847769] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.854332] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.860752] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.867195] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.873627] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.880046] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.886477] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.892907] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.899325] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.905753] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.912183] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.918601] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.924230] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.930720] =======>gmacdev = 0x821fe380<================
+[    0.936346] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.943315] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.949732] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.956163] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.962593] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.969009] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.975439] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.981873] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.988295] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.994729] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    1.001147] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    1.007583] func:jz_mac_probe, synopGMAC_reset failed
+[    1.012848] jz_mac: probe of jz_mac.0 failed with error -1
+[    1.018653] usbcore: registered new interface driver zd1201
+[    1.024854] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.061432] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.066841] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.112341] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.118101] TCP: cubic registered
+[    1.121601] NET: Registered protocol family 17
+[    1.126737] soc_vpu probe success,version:1.0.0-03203fd46d
+[    1.132919] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.140317] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    1.152997] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    1.160819] Freeing unused kernel memory: 236K (80455000 - 80490000)
+[    1.753941] dwc2 dwc2:  ++OTG Interrupt: A-Device Timeout Change++
+[    3.292252] exFAT: Version 1.2.9
+[    4.053142] RTL871X: module init start
+[    4.057041] RTL871X: rtl8189fs v4.3.24.12_27796.20180510
+[    4.062643] RTL871X: build time: Dec 24 2018 11:38:03
+[    4.067894] wlan power on
+[    4.081914] RTL871X: module init ret=0
+[    4.127068] mmc1: card claims to support voltages below the defined range. These will be ignored.
+[    4.147178] mmc1: new SDIO card at address 0001
+[    6.605359] name : i2c-gpio1 nr : 1
+[    6.608988] name : i2c0 nr : 0
+[    6.701868]  sensor_read: addr=0x3107 value = 0x12
+[    6.709335]  sensor_read: addr=0x3108 value = 0x35
+[    6.719215] info: success sensor find : sc1235
+[    7.121647] @@@@ tx-isp-probe ok(version H20190717a) @@@@@
+[    7.161333] jzmmc_v1.2 jzmmc_v1.2.1: timeout 3000ms op:53 r sz:512 state:0 STAT:0x1F001141 DMALEN:0x00000000 blks:0/1 clk:enable clk_gate:enable
+[    7.252097] request spk en gpio 63 ok!
+[    7.252116] jz_codec_register: probe() successful!
+[    7.282190] cgu_set_rate, parent = 1200000000, rate = 2048000, n = 9375, reg val = 0x8100249f
+[    7.282212] cgu_enable,cgu_i2s reg val = 0xa100249f
+[    7.651856] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a1d7a000)
+[    7.661255] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a1d7b000)
+[   11.074549] set sensor gpio as PA-12bit
+[   11.091577] @@@@@@@probe ok ------->sc1235
+[   11.151910] -----sc1235_detect: 586 ret = 0, v = 0x12
+[   11.152453] -----sc1235_detect: 594 ret = 0, v = 0x35
+[   11.152466] sc1235 chip found @ 0x30 (i2c0)
+[   11.521356] sc1235 stream on
+[   12.098645] codec_codec_ctl: set sample rate...
+[   12.099176] codec_codec_ctl: set device...
+[   12.531312] codec_set_device: set device: MIC...
+[   12.571576] codec_codec_ctl: set repaly channel...
+[   12.571602] codec_codec_ctl: set sample rate...
+[   12.571884] codec_codec_ctl: set device...
+[   12.791458] codec_set_device: set device: speaker...
+[   37.271336] jzmmc_v1.2 jzmmc_v1.2.1: request time out, op=53 arg=0x16020004, sz:512B state=0, status=0x1F001141, pending=0x00000000, nr_desc=1
+[   37.284703] jzmmc_v1.2 jzmmc_v1.2.1: 
+[   37.284703] REG dump:
+[   37.284703] 	CTRL2	= 0x00800000
+[   37.284703] 	STAT	= 0x1F001141
+[   37.284703] 	CLKRT	= 0x00000000
+[   37.284703] 	CMDAT	= 0x00000409
+[   37.284703] 	RESTO	= 0x00000100
+[   37.284703] 	RDTO	= 0x00FFFFFF
+[   37.284703] 	BLKLEN	= 0x00000004
+[   37.284703] 	NOB	= 0x00000001
+[   37.284703] 	SNOB	= 0x00000000
+[   37.284703] 	IMASK	= 0xFFFFFFFF
+[   37.284703] 	IFLG	= 0x00002101
+[   37.284703] 	CMD	= 0x00000035
+[   37.284703] 	ARG	= 0x16020004
+[   37.284703] 	RES	= 0x0000C490
+[   37.284703] 	LPM	= 0x00000000
+[   37.284703] 	DMAC	= 0x00000000
+[   37.284703] 	DMANDA	= 0x00000000
+[   37.284703] 	DMADA	= 0x00000000
+[   37.284703] 	DMALEN	= 0x00000000
+[   37.284703] 	DMACMD	= 0x00000000
+[   37.284703] 	RTCNT	= 0x00000000
+[   37.284703] 	DEBUG	= 0x00000000

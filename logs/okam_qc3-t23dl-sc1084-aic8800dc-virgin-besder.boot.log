@@ -582,7 +582,7 @@ udhcpd: max_leases=235 is too big, setting to 99
 2025-12-22 08:21:42-0635 [DEBUG] vp_session_ppcs.c:0674 [vp_obs_ppcs_ap_mode_func]:ppcs start state:1 suspend:0 listen_state:0
 2025-12-22 08:21:42-0744 [DEBUG] vp_session_ppcs.c:0534 [vp_session_ppcs_listen_fn]:start
 2025-12-22 08:21:42-0771 [DEBUG] vp_ppcs.c:0180 [vp_ppcs_init]:ppcs version = [5.2.1.0]
-2025-12-22 08:21:42-0808 [DEBUG] vp_ppcs.c:0184 [vp_ppcs_init]:init str: {"InitString":"REDACTED-SSID","MaxNumSess":3,"SessAliveSec":20}
+2025-12-22 08:21:42-0808 [DEBUG] vp_ppcs.c:0184 [vp_ppcs_init]:init str: {"InitString":"REDACTED-SSID"REDACTED"MaxNumSess":3,"SessAliveSec":20}
 2025-12-22 08:21:42-0860 [DEBUG] vp_session_ppcs.c:0614 [vp_session_ppcs_listen_fn]:device_id = VE9272667NVGM, pid = VSTC904862WFYGX, license = WRQBSV, server =
 2025-12-22 08:21:42-0860 [DEBUG] vp_session_ppcs.c:0092 [vp_session_ppcs_listen]:ppcs listen id:VSTC904862WFYGX server:
 **create skt:39

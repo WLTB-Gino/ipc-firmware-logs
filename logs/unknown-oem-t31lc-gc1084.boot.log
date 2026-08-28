@@ -1,0 +1,673 @@
+U-Boot SPL 2013.07-00014-g7e49a25-dirty (Jul 15 2022 - 19:00:08)
+Timer init
+CLK stop
+PLL init
+pll_init:366
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+nf=92 nr = 1 od0 = 1 od1 = 2
+cppcr is 05c05100
+CPM_CPAPCR 05c0510d
+nf=84 nr = 1 od0 = 1 od1 = 2
+cppcr is 05405100
+CPM_CPMPCR 07d0590d
+nf=100 nr = 1 od0 = 1 od1 = 2
+cppcr is 06405100
+CPM_CPVPCR 0640510d
+cppcr 0x9a773310
+apll_freq 1104000000 
+mpll_freq 1000000000 
+vpll_freq = 1200000000
+ddr sel mpll, cpu sel apll
+ddrfreq 500000000
+cclk  1104000000
+l2clk 552000000
+h0clk 200000000
+h2clk 200000000
+pclk  100000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00f73011
+T31_0x5: 00000007
+T31_0x15: 0000000c
+T31_0x4: 00000000
+T31_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T31_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T31_118: 0000003c
+T31_158: 0000003c
+T31_190: 00000020
+T31_194: 0000001f
+jz-04 :  0x00000051 
+jz-08 :  0x000000a0 
+jz-28 :  0x00000024 
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0a288a40
+DDRC_CTRL           0x0000011c
+DDRC_LMR            0x00400008
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x040e0806
+DDRC_TIMING2        0x02170707
+DDRC_TIMING3        0x2007051e
+DDRC_TIMING4        0x1a240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x32170505
+DDRC_REFCNT         0x00f25c01
+DDRC_MMAP0          0x000020fc
+DDRC_MMAP1          0x00002400
+DDRC_REMAP1         0x03020d0c
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f0e0100
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Aug 30 2022 - 17:52:01)
+
+Board: ISVP (Ingenic XBurst T31 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 439k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer 20
+SF: Detected XM25QH64C
+
+*** Warning - bad CRC, using default environment
+
+power gpio_value [1]
+In:    serial
+Out:   serial
+Err:   serial
+===T31LC-A9T-VO11T-VO14T-AOKAI-20220830-V2===
+
+jz sdk version Ingenic-SDK-T31-1.1.5-20220428
+Net:   ====>PHY not found!Jz4775-9161
+Hit any key to stop autoboot:  0 
+isvp_t31# <INTERRUPT>
+isvp_t31# printenv
+adcthreshold=1240
+baudrate=115200
+bootargs=console=ttyS1,115200n8 quiet mem=42M@0x0 rmem=22M@0x2A00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),1536k(kernel),4608k(root),1792k(appfs),8m@0(all)
+bootcmd=sf probe;sf read 0x80600000 0x40000 0x200000; bootm 0x80600000
+bootdelay=1
+ethact=Jz4775-9161
+ethaddr=XX:XX:XX:XX:XX:XX
+gatewayip=192.168.1.1
+ipaddr=192.168.1.126
+loads_echo=1
+netmask=255.255.255.0
+serverip=192.168.1.101
+stderr=serial
+stdin=serial
+stdout=serial
+
+Environment size: 537/16380 bytes
+isvp_t31# 
+
+===================================
+
+
+[vstarcam2017@veepai:~]# dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_swan_1.0__ (madong@vstarcam) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #7 PREEMPT Tue Aug 30 16:11:27 CST 2022
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:801A1EC0
+[    0.000000] [<801a1ec0>] __delay+0x0/0x10
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_get_rate, parent = 1104000000, rate = 0, m = 129, n = 255, reg val = 0x081000ff
+[    0.000000] cgu_get_rate, parent = 1104000000, rate = 0, m = 129, n = 255, reg val = 0x081000ff
+[    0.000000] CCLK:1104MHz L2CLK:552Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00429000 @ 00010000 (usable)
+[    0.000000]  memory: 00037000 @ 00439000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02a00000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x029fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x029fffff]
+[    0.000000] On node 0 totalpages: 10752
+[    0.000000] free_area_init_node: node 0, pgdat 80436bf0, node_mem_map 81000000
+[    0.000000]   Normal zone: 84 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 10752 pages, LIFO batch:1
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10668
+[    0.000000] Kernel command line: console=ttyS1,115200n8 quiet mem=42M@0x0 rmem=22M@0x2A00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),1536k(kernel),4608k(root),1792k(appfs),8m@0(all)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 37472k/43008k available (3201k kernel code, 5536k reserved, 1057k data, 220k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000018] Calibrating delay loop... 1099.36 BogoMIPS (lpj=5496832)
+[    0.040010] pid_max: default: 32768 minimum: 301
+[    0.040238] Mount-cache hash table entries: 512
+[    0.040738] Initializing cgroup subsys debug
+[    0.040759] Initializing cgroup subsys freezer
+[    0.042756] regulator-dummy: no parameters
+[    0.042912] NET: Registered protocol family 16
+[    0.043878] set gpio strength: 32-2
+[    0.043890] set gpio strength: 33-2set gpio strength: 34-2
+[    0.043902] set gpio strength: 35-2set gpio strength: 36-2
+[    0.043912] set gpio strength: 37-2set gpio strength: 39-1
+[    0.043923] set gpio pull: 61-90<6>[    0.053254] bio: create slab <bio-0> at 0
+[    0.055092] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.055382] usbcore: registered new interface driver usbfs
+[    0.055426] usbcore: registered new interface driver hub
+[    0.055586] usbcore: registered new device driver usb
+[    0.055737] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.055815]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.056946] Switching to clocksource jz_clocksource
+[    0.057474] dwc2 otg probe start
+[    0.057502] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.057528] DWC IN OTG MODE
+[    0.058173] dwc2 dwc2: Keep PHY ON
+[    0.05818cat4] dwc2 dwc2: Using Buffer DMA mode
+[    0.058196] dwc2 dwc2: Core Release: 3.00a
+[    0.058239] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.058266] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.059029] hub 1-0:1.0: USB hub found
+[    0.059054] hub 1-0:1.0: 1 port detected
+[    0.059161] dwc2 dwc2: DWC2 Host Initialized
+[    0.059218] dwc2 otg probe success
+[    0.059367] NET: Registered protocol family 2
+[    0.059816] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.059845] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.059862] TCP: Hash tables configured (established 512 bind 512)
+[    0.059916] TCP: reno registered
+[    0.059932] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.059955] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.060109] cfg80211: Calling CRDA to update world regulatory domain
+[    0.060390] NET: Registered protocol family 1
+[    0.060744] freq_udelay_jiffys[0].max_num = 10
+[    0.060754] cpufreq 	udelay 	loops_per_jiffy	
+[    0.060762] 12000	 59748	 59748	
+[    0.060768] 24000	 119496	 119496	
+[    0.060775] 60000	 298740	 298740	
+[    0.060782] 120000	 597481	 597481	
+[    0.060789] 200000	 995802	 995802	
+[    0.060796] 300000	 1493704	 1493704	
+[    0.060803] 600000	 2987408	 2987408	
+[    0.060810] 792000	 3943379	 3943379	
+[    0.060817] 1008000	 5018846	 5018846	
+[    0.060824] 1200000	 5974817	 5974817	
+[    0.065298] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.065465] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.065774] msgmni has been set to 73
+[    0.067025] io scheduler noop registered
+[    0.067068] io scheduler cfq registered (default)
+[    0.068402] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.069762] console [ttyS1] enabled, bootconsole disabled
+[    0.073148] brd: module loaded
+[    0.074822] loop: module loaded
+[    0.075326] zram: Created 2 device(s) ...
+[    0.075412] logger: created 256K log 'log_main'
+[    0.087340] jz SADC driver registeres over!
+[    0.088331] jz TCU driver register completed
+[    0.088743] the id code = 204017, the flash name is XM25QH64C
+[    0.088756] JZ SFC Controller for SFC channel 0 driver register
+[    0.088779] 5 cmdlinepart partitions found on MTD device jz_sfc
+[    0.088787] Creating 5 MTD partitions on "jz_sfc":
+[    0.088800] 0x000000000000-0x000000040000 : "boot"
+[    0.089319] 0x000000040000-0x0000001c0000 : "kernel"
+[    0.089736] 0x0000001c0000-0x000000640000 : "root"
+[    0.090148] 0x000000640000-0x000000800000 : "appfs"
+[    0.090597] 0x000000000000-0x000000800000 : "all"
+[    0.091033] SPI NOR MTD LOAD OK
+[    0.091104] tun: Universal TUN/TAP device driver, 1.6
+[    0.091114] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.091220] usbcore: registered new interface driver zd1201
+[    0.091280] usbcore: registered new interface driver asix
+[    0.091329] usbcore: registered new interface driver ax88179_178a
+[    0.091366] usbcore: registered new interface driver cdc_ether
+[    0.091400] usbcore: registered new interface driver rndis_host
+[    0.091478] usbcore: registered new interface driver cdc_acm
+[    0.091487] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    0.091598] usbcore: registered new interface driver usbserial
+[    0.091644] usbcore: registered new interface driver option
+[    0.091675] usbserial: USB Serial support registered for GSM modem (1-port)
+[    0.092034] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    0.092368] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    0.092428] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    0.092548] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    0.092828] TCP: cubic registered
+[    0.092842] NET: Registere /d protocol family 17
+[    0.093694] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    0.093837] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    0.105105] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    0.105504] Freeing unused kernel memory: 220K (80439000 - 80470000)
+[    0.158243] dwc2 dwc2: ID PIN CHANGED!
+[    0.587027] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    1.567656] globalvar_init major[252]-minor[252]
+[    1.576894] This chrdev is in open
+[    1.847081] mmc0: new SDHC card at address aaaa
+[    1.855582] mmcblk0: mmc0:aaaa AALCD 29.7 GiB 
+[    1.866564]  mmcblk0: p1
+[    2.821593] This chrdev is in open
+[    2.908162] sinfo version:v6 data:20220919 
+[    2.920120] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[    3.009048] name : i2c-gpio1 nr : 1
+[    3.009064] name : i2c0 nr : 0
+[    3.019451] jz_codec_register: probe() successful!
+[    3.019562] cgu_set_rate, parent = 1104000000, rate = 2048000, n = 8625, reg val = 0x010021b1
+[    3.019573] cgu_enable,cgu_i2s_spk reg val = 0x210021b1
+[    3.019598] cgu_set_rate, parent = 1104000000, rate = 2048000, n = 8625, reg val = 0x010021b1
+[    3.019608] cgu_enable,cgu_i2s_mic reg val = 0x210021b1
+[    3.097568]  sensor_read: addr=0x3f0 value = 0x10
+[    3.187785] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.197114] i2c i2c-0: --I2C txabrt:
+[    3.206212] i2c i2c-0: --I2C TXABRT[12]=I2C_TXABRT_ARB_LOST
+[    3.206242] error: sensor_read,179 ret = -5
+[    3.206250]  sensor_read: addr=0xf0 value = 0x0
+[    3.206258] err sensor read addr = 0xf0, value = 0x0
+[    3.287245] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.305218] i2c i2c-0: --I2C txabrt:
+[    3.316733] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.316764] error: sensor_read,179 ret = -5
+[    3.316771]  sensor_read: addr=0xa value = 0x0
+[    3.316778] err sensor read addr = 0xa, value = 0x0
+[    3.397473] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.414917] i2c i2c-0: --I2C txabrt:
+[    3.422737] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.422767] error: sensor_read,179 ret = -5
+[    3.422775]  sensor_read: addr=0xa value = 0x0
+[    3.422782] err sensor read addr = 0xa, value = 0x0
+[    3.427391] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a0e79000)
+[    3.427785] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a0e7a000)
+[    3.428211] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a0e7b000)
+[    3.507665] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.531102] i2c i2c-0: --I2C txabrt:
+[    3.539795] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.539827] error: sensor_read,179 ret = -5
+[    3.539835]  sensor_read: addr=0x3f0 value = 0x0
+[    3.539843] err sensor read addr = 0x3f0, value = 0x0
+[    3.627230] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.644741] i2c i2c-0: --I2C txabrt:
+[    3.658522] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.658552] error: sensor_read,179 ret = -5
+[    3.658559]  sensor_read: addr=0xf0 value = 0x0
+[    3.658567] err sensor read addr = 0xf0, value = 0x0
+[    3.699133] [VERSION]:Hi3881V100R001C00SPC021 2020-03-25 16:00:00
+[    3.747216] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.755282] i2c i2c-0: --I2C txabrt:
+[    3.759974] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.760004] error: sensor_read,179 ret = -5
+[    3.760011]  sensor_read: addr=0x3107 value = 0x0
+[    3.760019] err sensor read addr = 0x3107, value = 0x0
+[    3.847200] i2c i2c-0: i2c_jz_irq 441, I2C transfer eprorror, ABORT interrupt
+[    3.861453] i2c i2c-0: --I2C txabrt:
+[    3.871573] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.871603] error: sensor_read,179 ret = -5
+[    3.871610]  sensor_read: addr=0x3107 value = 0x0
+[    3.871618] err sensor read addr = 0x3107, value = 0x0
+[    3.957175] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    3.967526] i2c i2c-0: --I2C txabrt:
+[    3.977274] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    3.977303] error: sensor_read,179 ret = -5
+[    3.977311]  sensor_read: addr=0x2 value = 0x0
+[    3.977318] err sensor read addr = 0x2, value = 0x0
+[    4.067205] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    4.078748] i2c i2c-0: --I2C txabrt:
+[    4.087463] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    4.087489] error: sensor_read,179 ret = -5
+[    4.087496]  sensor_read: addr=0x2 value = 0x0
+[    4.087504] err sensor read addr = 0x2, value = 0x0
+[    4.177175] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    4.189383] i2c i2c-0: --I2C txabrt:
+[    4.198123] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    4.198148] error: sensor_read,179 ret = -5
+[    4.198156]  sensor_read: addr=0xf0 value = 0x0
+[    4.198163] err sensor read addr = 0xf0, value = 0x0
+[    4.287180] i2c i2c-0: i2c_jz_irq 441, I2C transfer error, ABORT interrupt
+[    4.300286] i2c i2c-0: --I2C txabrt:
+[    4.308850] i2c i2c-0: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    4.308875] error: sensor_read,179 ret = -5
+[    4.308882]  sensor_read: addr=0x3000 value = 0x0
+[    4.308890] err sensor read addr = 0x3000, value = 0x0
+[    4.397624]  sensor_read: addr=0x3f0 value = 0x10
+[    4.398240]  sensor_read: addr=0x3f1 value = 0x84
+[    4.398255] info: success sensor find : gc1084
+[    4.398440] codec_codec_ctl: set sample rate...
+[    4.398549] codec_codec_ctl: set device...
+[    4.398968] misc sinfo_release
+[    4.401624] oam_main_init SUCCESSFULLY!
+[    4.401644] wal_customize_init SUCCESSFULLY!
+[    4.401696] oal_main_init SUCCESSFULLY
+[    4.407092] frw_main_init SUCCESSFULLY!
+[    4.407107] hi_wifi_plat_init SUCCESSFULLY
+[    4.407140] sdio_card_detect_change. val: 1 
+[    4.463300] wait stable.[289][cgu_msc1]
+[    4.464196] mmc1: queuing unknown CIS tuple 0x91 (5 bytes)
+[    4.464247] mmc1: new SDIO card at address 0001
+[    4.471432] oal_sdio_probe 
+[    4.480434] hcc_hmac_init SUCCESSFULLY
+[    4.480566] plat_firmware_init SUCCESSFULLY
+[    4.684527] Device is Ready!
+[    4.687098] wlan_pm_open SUCCESSFULLY!!
+[    4.696868] hmac_main_init SUCCESSULLY
+[    4.700291] firmware_sync_cfg_paras_to_wal_customize SUCCESSFULLY
+[    4.723682] wal_main_init SUCCESSFULLY
+[    4.723698] hi_wifi_host_init SUCCESSFULLY
+[    4.723864] WiFi driver init SUCCESSFULLY!
+[    4.787303] OK
+[    4.788603] @@@@ tx-isp-probe ok(version H20210427a), compiler date=Apr 29 2021 @@@@@
+[    4.857020] codec_set_device: set device: MIC...
+[    4.857717] codec_codec_ctl: set repaly channel...
+[    4.857738] codec_codec_ctl: set sample rate...
+[    4.857801] codec_codec_ctl: set device...
+[    4.921297] @@@@@@@ probe ok ------->gc1084
+[    4.977573] -----gc1084_detect: 426 ret = 0, v = 0x10
+[    4.978189] -----gc1084_detect: 432 ret = 0, v = 0x84
+[    4.978200] gc1084 chip found @ 0x37 (i2c0)
+[    5.096998] codec_set_device: set device: speaker...
+[    5.148716] OK
+[    5.157548] OK
+[    5.217785] gc1084 stream on
+[   10.966284] codec_codec_ctl: set CODEC_TURN_OFF...
+[   11.062999] OK
+[   11.202947] OK
+[   11.261406] codec_codec_ctl: set CODEC_TURN_OFF...
+[   12.477564] cgu_set_rate, parent = 1104000000, rate = 11289600, n = 14375, reg val = 0x29303827
+[   12.477582] codec_codec_ctl: set sample rate...
+[   12.477968] codcec_codec_ctl: set device...
+[   12.937057] codec_set_device: set device: MIC...
+[   12.937684] codec_codec_ctl: set repaly channel...
+[   12.937881] cgu_set_rate, parent = 1104000000, rate = 11289600, n = 14375, reg val = 0x29303827
+[   12.937890] codec_codec_ctl: set sample rate...
+[   12.938102] codec_codec_ctl: set device...
+[   13.177044] codec_set_device: set device: speaker...
+[vstarcam2017@veepai:~]# cat /proc/jz/isp/isp-fs 
+############## framesource 0 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 1920 * 1080
+scaler : enable
+scaler width: 1920
+scaler height: 1080
+crop : disable
+the state of buffers:
+queue count: 0
+done count: 0
+the output buffers is: 0
+the losted buffers is: 0
+ch0_pre_dequeue_drop is: 0
+ch0_pre_dequeue_intc_ahead_cnt is: 0
+pdq cnt: 0, pdq intc cnt:0, pdq intc cnt1:0
+---------------------------
+buf:0, state:0, buf_state:102, buf_qcnt:430, buf_dqcnt:430
+############## framesource 1 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 640 * 360
+scaler : enable
+scaler width: 640
+scaler height: 360
+crop : disable
+the state of buffers:
+queue count: 1
+queue addr: 0x03985900
+done count: 0
+the output buffers is: 0
+the losted buffers is: 0
+---------------------------
+buf:0, state:3, buf_state:30, buf_qcnt:216, buf_dqcnt:215
+buf:1, state:0, buf_state:102, buf_qcnt:215, buf_dqcnt:215
+############## framesource 2 ###############
+chan status: stop
+[vstarcam2017@veepai:~]# cat /proc/jz/isp/isp-m0 
+****************** ISP INFO **********************
+Software Version : H20210427a
+SENSOR NAME : gc1084
+SENSOR OUTPUT WIDTH : 1280
+SENSOR OUTPUT HEIGHT : 720
+ISP OUTPUT FPS : 10 / 1
+SENSOR OUTPUT RAW PATTERN : BGGR
+ISP Top Value : 0xb574000d
+ISP Runing Mode : Night
+ISP Custom Mode : Disable
+ISP WDR Mode : Disable
+SENSOR Integration Time : 1018 lines
+SENSOR Max Integration Time : 2246 lines
+SENSOR analog gain : 0
+MAX SENSOR analog gain : 192
+SENSOR digital gain : 0
+MAX SENSOR digital gain : 0
+ISP digital gain : 0
+MAX ISP digital gain : 32
+ISP Tgain DB : 0
+ISP EV value: 1018
+ISP EV value log2: 654803
+ISP EV value us: 45244
+ISP EV min int: 2
+ISP EV min again: 1024
+ISP WB weighted rgain: 286
+ISP WB weighted bgain: 309
+ISP WB color temperature: 7874
+ISP AWB Start rgain 161: bgain 139
+Saturation : 126
+Saturation : 126
+Sharpness : 128
+Contrast : 126
+Brightness : 126
+Antiflicker : 0
+Mirror: Disable, Flip: Disable
+debug : ch0 done 461,ip done 463,0,0,0,0,0,0
+debug1 : 0,0,900
+[vstarcam2017@veepai:~]# cat /proc/jz/clock/clocks 
+ID NAME       FRE        stat       count     parent
+--------------------------------------------------------
+ 1 ext0          0.032MHz  enable   0 root
+ 2 ext1         24.000MHz  enable   11 root
+ 3 otg_phy      48.000MHz  enable   0 root
+--------------------------------------------------------
+ 5 apll       1104.000MHz  enable   1 ext1
+ 6 mpll       1000.000MHz  enable   7 ext1
+ 7 vpll       1080.000MHz  enable   2 ext1
+ 8 sclka      1104.000MHz  enable   8 apll
+--------------------------------------------------------
+10 cclk       1104.000MHz  enable   0 sclka
+11 l2clk       552.000MHz  enable   0 sclka
+12 h0clk       250.000MHz  enable   4 mpll
+13 h2clk       250.000MHz  enable   8 mpll
+14 pclk        125.000MHz  enable   7 mpll
+15 msc          24.000MHz  enable   0 ext1
+--------------------------------------------------------
+17 cgu_isp     100.000MHz  enable   1 mpll
+18 cgu_cim      27.000MHz  enable   1 vpll
+19 cgu_ssi      50.000MHz  enable   2 mpll
+20 cgu_msc_mux 1104.000MHz disable   0 sclka
+21 cgu_i2s_spk   11.289MHz  enable   3 sclka
+22 cgu_i2s_mic   11.289MHz  enable   3 sclka
+23 cgu_msc1     29.052MHz  enable   1 sclka
+24 cgu_msc0     24.000MHz  enable   1 sclka
+25 cgu_lpc       4.687MHz disable   0 vpll
+26 cgu_macphy   50.000MHz  enable   0 mpll
+27 cgu_vpu     360.000MHz  enable   1 vpll
+28 cgu_ddr     500.000MHz  enable   0 mpll
+29 cgu_rsa      62.500MHz disable   0 mpll
+--------------------------------------------------------
+31 ddr         250.000MHz  enable   0 h0clk
+32 tcu         125.000MHz  enable   0 pclk
+33 rtc         125.000MHz  enable   0 pclk
+34 des         125.000MHz  enable   0 pclk
+35 csi         125.000MHz  enable   1 pclk
+36 lcd         250.000MHz disable   0 h0clk
+37 isp         250.000MHz  enable   1 h0clk
+38 pdma        250.000MHz  enable   1 h2clk
+39 sfc         250.000MHz  enable   1 h2clk
+40 uart2        24.000MHz disable   0 ext1
+41 uart1        24.000MHz  enable   1 ext1
+42 uart0        24.000MHz disable   0 ext1
+43 sadc        125.000MHz  enable   1 pclk
+44 dmic        125.000MHz disable   0 pclk
+45 aic         125.000MHz  enable   1 pclk
+46 hash        250.000MHz  enable   0 h2clk
+47 i2c1        125.000MHz disable   0 pclk
+48 i2c0        125.000MHz disable   0 pclk
+49 ssi0         50.000MHz  enable   0 cgu_ssi
+50 ssi1         50.000MHz disable   0 cgu_ssi
+51 ssi_slv     125.000MHz disable   0 pclk
+52 msc1        250.000MHz  enable   0 h2clk
+53 msc0        250.000MHz  enable   0 h2clk
+54 otg1        250.000MHz  enable   1 h2clk
+--------------------------------------------------------
+56 cpu          24.000MHz  enable   0 ext1
+57 apb0         24.000MHz  enable   0 ext1
+58 sys_ost      24.000MHz  enable   2 ext1
+59 ahb0         24.000MHz  enable   0 ext1
+--------------------------------------------------------
+61 riscv       250.000MHz  enable   0 h2clk
+62 aes         250.000MHz disable   0 h2clk
+63 rsa         125.000MHz  enable   0 pclk
+64 ahb1         24.000MHz  enable   1 ext1
+65 gmac        250.000MHz  enable   0 h2clk
+66 ipu         250.000MHz  enable   1992 h0clk
+67 dtrng       125.000MHz disable   0 pclk
+68 avpu        250.000MHz  enable   1 h0clk
+[vstarcam2017@veepai:~]# 
+
+[vstarcam2017@veepai:~]# logcat
+I/ai      (   63): AI Enable: 1
+E/IMP-ISP (   63): AI Enable: 1
+E/IMP-ISP (   63): get_ispdev error !
+I/ai      (   63): AI Enable Chn: 1-0
+I/ai      (   63): EXIT AI Enable Chn: 1-0
+I/ao      (   63): AO Enable: 0
+I/OSD     (   63): IMP_OSD_SetPoolSize:524288
+D/Sample-Common(   63): sample_system_init start
+D/IMP-ISP (   63): ~~~~~~ IMP_ISP_Open[280] ~~~~~~~
+I/ao      (   63): AO Ch Enable: 0:0
+I/ao      (   63): EXIT AO Ch Enable: 0:0
+I/ai      (   63): AI Set Vol: 76
+I/ai      (   63): AI Get Vol: 76
+I/ai      (   63): AI Set Gain: 20
+I/ai      (   63): AI Get Gain: 20
+I/ao      (   63): AO Set Vol: 96
+I/ao      (   63): AO Get Vol: 96
+I/ao      (   63): AO Get Gain: 25
+I/ao      (   63): AO Get Gain: 25
+I/IMP-ISP (   63): IMP_ISP_AddSensor,366: paddr = 0x0, size = 0x1fc444
+I/Alloc Manager(   63): MEM Alloc Method is kmalloc
+D/KMEM Method(   63): CMD Line Rmem Size:23068672, Addr:0x02a00000
+D/KMEM Method(   63): alloc->mem_alloc.method = kmalloc
+D/KMEM Method(   63):  			alloc->mem_alloc.vaddr = 0x6c2d7000
+D/KMEM Method(   63):  			alloc->mem_alloc.paddr = 0x02a00000
+D/KMEM Method(   63):  			alloc->mem_alloc.length = 23068672
+I/Alloc Manager(   63): MEM Manager Method is continuous
+D/System  (   63): IMP_System_Init SDK Version:1.1.3-173dcd2-Mon Apr 19 21:51:14 2021 -0400, built: Jun  9 2021 11:29:01
+D/System  (   63): system_init()
+D/System  (   63): Calling DSystem
+D/System  (   63): Calling FrameSource
+D/System  (   63): [ignored]read /proc/cpuinfo ret is NULL
+D/System  (   63): Calling IVS
+D/System  (   63): Calling OSD
+D/System  (   63): Calling Encoder
+D/System  (   63): Calling FB
+D/Sample-Common(   63): ImpSystemInit success
+E/Encoder (   63): IMP_Encoder_GetPool(3337):chnNum: 0 not bind pool
+I/Encoder (   63): encChn=0,srcFrameCnt=3,srcFrameSize=3133440
+I/Encoder (   63): encChn=0,srcStreamCnt=2,enc_chn->stream_frame_size=949248
+E/Encoder (   63): IMP_Encoder_GetPool(3337):chnNum: 1 not bind pool
+I/Encoder (   63): encChn=1,srcFrameCnt=3,srcFrameSize=353280
+I/Encoder (   63): encChn=1,srcStreamCnt=2,enc_chn->stream_frame_size=319488
+I/OSD     (   63): IMP_OSD_CreateRgn(1176) create handle=0 success
+I/OSD     (   63): IMP_OSD_CreateRgn(1176) create handle=1 success
+D/System  (   63): system_bind(): bind DST-OSD-0(4.0.0) to SRC-Framesource-0(0.0.0)
+D/System  (   63): system_bind(): bind DST-Encoder-0(1.0.0) to SRC-OSD-0(4.0.0)
+I/OSD     (   63): IMP_OSD_CreateRgn(1176) create handle=2 success
+I/OSD     (   63): IMP_OSD_CreateRgn(1176) create handle=3 success
+D/System  (   63): system_bind(): bind DST-OSD-1(4.1.0) to SRC-Framesource-1(0.1.0)
+D/System  (   63): system_bind(): bind DST-Encoder-1(1.1.0) to SRC-OSD-1(4.1.0)
+E/Encoder (   63): IMP_Encoder_Query: Encoder Channel5 hasn't been created
+W/Encoder (   63): Jpeg channel will not share buff
+E/Encoder (   63): IMP_Encoder_GetPool(3337):chnNum: 5 not bind pool
+I/Encoder (   63): encChn=5,srcFrameCnt=2,srcFrameSize=353280
+I/Encoder (   63): encChn=5,srcStreamCnt=1,enc_chn->stream_frame_size=143552
+D/System  (   63): system_bind(): bind DST-IVS-0(3.0.0) to SRC-Framesource-1(0.1.1)
+I/Framesource(   63): [chn0]: width = 1920 height = 1080
+E/VBM     (   63): VBMCreatePool()-0: w=1920 h=1080 f=842094158
+E/VBM     (   63): VBMCreatePool()-0: pool->config.fmt.fmt.pix.sizeimage=3133440 sizeimage=3133440
+E/Framesource(   63): IMP_FrameSource_GetPool(3237):chnNum: 0 not bind pool
+E/VBM     (   63): VBMCreatePool()-0: sizeimage=3133440
+I/VBM     (   63): PoolId:0, frame=0x9a6f38, frame->priv=0x9a6f60, frame[0].virAddr=6cf5f900, frame[0].phyAddr=3688900
+I/Framesource(   63): [chn1]: width = 640 height = 360
+E/VBM     (   63): VBMCreatePool()-1: w=640 h=360 f=842094158
+E/VBM     (   63): VBMCreatePool()-1: pool->config.fmt.fmt.pix.sizeimage=353280 sizeimage=353280
+E/Framesource(   63): IMP_FrameSource_GetPool(3237):chnNum: 1 not bind pool
+E/VBM     (   63): VBMCreatePool()-1: sizeimage=353280
+I/VBM     (   63): PoolId:1, frame=0x9a75d0, frame->priv=0x9a75f8, frame[0].virAddr=6d25c900, frame[0].phyAddr=3985900
+I/VBM     (   63): PoolId:1, frame=0x9a79f0, frame->priv=0x9a7a18, frame[1].virAddr=6d2b2d00, frame[1].phyAddr=39dbd00
+D/IVS_MOVE(   63): move->param.sense[0]=3
+D/System  (   63): [ignored]read /proc/cpuinfo ret is NULL
+I/Encoder (   63): framePriv->i_fps_num=15, framePriv->i_fps_den=1
+D/Encoder (   63): enc_chn->index=0, gopAttr->uGopCtrlMode=2, gopAttr->uGopLength=30, gopAttr->uNumB=0, gopAttr->uMaxSameSenceCnt=2, gopAttr->bEnableLT=0, gopAttr->uFreqLT=0, gopAttr->bLTRC=0
+D/Encoder (   63): enc_chn->index=0, enc_chn->chnFpsMask=1, enc_chn->inFrmRate.frmRateNum=15, enc_chn->inFrmRate.frmRateDen=1, enc_chn->setFrmRate.frmRateNum=15, enc_chn->setFrmRate.frmRateDen=1, rcAttr->outFrmRate.frmRateNum=15, rcAttr->outFrmRate.frmRateDen=1
+D/Encoder (   63): do_day_night_change(598):enc_chn->inStat.is_day=1
+I/Encoder (   63): framePriv->i_fps_num=15, framePriv->i_fps_den=1
+D/Encoder (   63): enc_chn->index=1, gopAttr->uGopCtrlMode=2, gopAttr->uGopLength=30, gopAttr->uNumB=0, gopAttr->uMaxSameSenceCnt=2, gopAttr->bEnableLT=0, gopAttr->uFreqLT=0, gopAttr->bLTRC=0
+D/Encoder (   63): enc_chn->index=1, enc_chn->chnFpsMask=1, enc_chn->inFrmRate.frmRateNum=15, enc_chn->inFrmRate.frmRateDen=1, enc_chn->setFrmRate.frmRateNum=15, enc_chn->setFrmRate.frmRateDen=1, rcAttr->outFrmRate.frmRateNum=15, rcAttr->outFrmRate.frmRateDen=1
+D/Encoder (   63): do_day_night_change(598):enc_chn->inStat.is_day=1
+I/Encoder (   63): framePriv->i_fps_num=10, framePriv->i_fps_den=1
+D/Encoder (   63): enc_chn->index=0, gopAttr->uGopCtrlMode=2, gopAttr->uGopLength=20, gopAttr->uNumB=0, gopAttr->uMaxSameSenceCnt=2, gopAttr->bEnableLT=0, gopAttr->uFreqLT=0, gopAttr->bLTRC=0
+D/Encoder (   63): enc_chn->index=0, enc_chn->chnFpsMask=1, enc_chn->inFrmRate.frmRateNum=10, enc_chn->inFrmRate.frmRateDen=1, enc_chn->setFrmRate.frmRateNum=15, enc_chn->setFrmRate.frmRateDen=1, rcAttr->outFrmRate.frmRateNum=10, rcAttr->outFrmRate.frmRateDen=1
+I/Encoder (   63): framePriv->i_fps_num=10, framePriv->i_fps_den=1
+D/Encoder (   63): enc_chn->index=1, gopAttr->uGopCtrlMode=2, gopAttr->uGopLength=20, gopAttr->uNumB=0, gopAttr->uMaxSameSenceCnt=2, gopAttr->bEnableLT=0, gopAttr->uFreqLT=0, gopAttr->bLTRC=0
+D/Encoder (   63): enc_chn->index=1, enc_chn->chnFpsMask=1, enc_chn->inFrmRate.frmRateNum=10, enc_chn->inFrmRate.frmRateDen=1, enc_chn->setFrmRate.frmRateNum=15, enc_chn->setFrmRate.frmRateDen=1, rcAttr->outFrmRate.frmRateNum=10, rcAttr->outFrmRate.frmRateDen=1
+D/Encoder (   63): do_day_night_change(598):enc_chn->inStat.is_day=0
+D/Encoder (   63): do_day_night_change(598):enc_chn->inStat.is_day=0
+I/ai      (   63): AI Disable Chn: 1-0
+I/ai      (   63): EXIT AI Disable Chn: 1-0
+I/ai      (   63): AI Disable: 1
+I/ai      (   63): ai record thread exit
+I/ao      (   63): AO Ch Disable: 0:0
+I/ao      (   63): EXIT AO Ch Disable: 0:0
+I/ao      (   63): AO Disable: 0
+I/ao      (   63): ao record thread exit
+I/ai      (   63): AI Enable: 1
+I/ai      (   63): AI Enable Chn: 1-0
+I/ai      (   63): EXIT AI Enable Chn: 1-0
+I/ao      (   63): AO Enable: 0
+I/ao      (   63): AO Ch Enable: 0:0
+I/ao      (   63): EXIT AO Ch Enable: 0:0

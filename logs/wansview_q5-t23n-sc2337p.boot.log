@@ -1,0 +1,792 @@
+[root@Ingenic-uc1_1:~]#         cat /sys/kernel/debug/gpio
+GPIOs 0-31, GPIO A:
+ gpio-6   (sysfs               ) out hi
+ gpio-18  (sc2337p_reset       ) out hi
+
+GPIOs 32-63, GPIO B:
+ gpio-38  (gpioCtrl            ) in  hi
+ gpio-39  (gpioCtrl            ) out hi
+ gpio-40  (gpioCtrl            ) out lo
+ gpio-45  (gpioCtrl            ) out lo
+ gpio-46  (gpioCtrl            ) out hi
+ gpio-47  (sysfs               ) out lo
+ gpio-49  (ptzCtrl             ) out lo
+ gpio-50  (mmc_detect          ) in  lo
+ gpio-52  (ptzCtrl             ) out lo
+ gpio-53  (ptzCtrl             ) out lo
+ gpio-57  (gpioCtrl            ) out hi
+ gpio-58  (gpioCtrl            ) out hi
+ gpio-59  (ptzCtrl             ) out lo
+ gpio-61  (ptzCtrl             ) out lo
+ gpio-62  (ptzCtrl             ) out lo
+ gpio-63  (ptzCtrl             ) out lo
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (ptzCtrl             ) out lo
+
+
+U-Boot SPL 2013.07 (Jul 16 2024 - 15:39:26)
+Board info: T23N
+
+apll_freq = 1400000000 
+mpll_freq = 1200000000 
+sdram init start
+DDR clk rate 600000000
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Jul 16 2024 - 15:39:26)
+
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 426k for U-Boot at: 83f94000
+Reserving 32784k for malloc() at: 81f90000
+Reserving 32 Bytes for Board Info at: 81f8ffe0
+Reserving 124 Bytes for Global Data at: 81f8ff64
+Reserving 128k for boot params() at: 81f6ff64
+Stack Pointer at: 81f6ff48
+board_init_r lessPower
+Now running in RAM - U-Boot at: 83f94000
+MMC:   msc: 0
+the manufacturer 1c
+SF: Detected GM25Q64A
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+---- T23-N 8M {{ check Update:mmc_num=1 
+   not read:v4_boot.bin
+   not read:v4_kernel.bin
+   not read:v4_rootfs.bin
+   not read:v4_app.bin
+   not read:v4_syscfg.bin
+   not read:v4_all.bin
+---- }} check Update. bTFCard=1 bFat=1 nRet=-1
+Hit any key to stop autoboot:  0 
+the manufacturer 1c
+SF: Detected GM25Q64A
+
+--->probe spend 4 ms
+SF: 2097152 bytes @ 0x40000 Read: OK
+--->read spend 674 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_pike_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1510759 Bytes = 1.4 MiB
+   Load Address: 80010000
+   Entry Point:  803311e0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_pike_1.0__ (root@ubuntu6420) (gcc version 5.4.0 (Ingenic Linux-Release3.3.0-Default(xburst1(fp32)+uclibc0.9.33.2) Smaller libc 2022.11-07) ) #2 PREEMPT Mon Jun 17 11:00:00 CST 2024
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:83F945E0
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_macphy clk should be opened!
+[    0.000000] cgu_vpu clk should be opened!
+[    0.000000] CCLK:1400MHz L2CLK:700Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00431000 @ 00010000 (usable)
+[    0.000000]  memory: 0002f000 @ 00441000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02e80000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x02e7ffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x02e7ffff]
+[    0.000000] Primary instruction cache 16kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 16kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 64kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 11811
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 42080k/47616k available (3236k kernel code, 5536k reserved, 1052k data, 188k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:347
+[    0.000000] clockevents_config_and_register success.
+[    0.000018] Calibrating delay loop... 1397.55 BogoMIPS (lpj=6987776)
+[    0.087813] pid_max: default: 32768 minimum: 301
+[    0.092679] Mount-cache hash table entries: 512
+[    0.097660] Initializing cgroup subsys debug
+[    0.101917] Initializing cgroup subsys freezer
+[    0.108454] regulator-dummy: no parameters
+[    0.112678] NET: Registered protocol family 16
+[    0.125794] bio: create slab <bio-0> at 0
+[    0.131560] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.136582] usbcore: registered new interface driver usbfs
+[    0.142104] usbcore: registered new interface driver hub
+[    0.147600] usbcore: registered new device driver usb
+[    0.152782]  (null): set:249  hold:250 dev=100000000 h=500 l=500
+[    0.158956]  (null): set:249  hold:250 dev=100000000 h=500 l=500
+[    0.166486] Switching to clocksource jz_clocksource
+[    0.171884] NET: Registered protocol family 2
+[    0.176316] cfg80211: Calling CRDA to update world regulatory domain
+[    0.183210] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.190122] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.196605] TCP: Hash tables configured (established 512 bind 512)
+[    0.202883] TCP: reno registered
+[    0.206098] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.212054] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.218572] NET: Registered protocol family 1
+[    0.223247] freq_udelay_jiffys[0].max_num = 10
+[    0.227672] cpufreq 	udelay 	loops_per_jiffy	
+[    0.232130] 12000	 59895	 59895	
+[    0.235354] 24000	 119790	 119790	
+[    0.238798] 60000	 299476	 299476	
+[    0.242252] 120000	 598952	 598952	
+[    0.245772] 200000	 998253	 998253	
+[    0.249304] 300000	 1497380	 1497380	
+[    0.253023] 600000	 2994761	 2994761	
+[    0.256721] 792000	 3953084	 3953084	
+[    0.260429] 1008000	 5031198	 5031198	
+[    0.264236] 1200000	 5989522	 5989522	
+[    0.271922] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.277918] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.283789] msgmni has been set to 82
+[    0.289152] io scheduler noop registered
+[    0.293171] io scheduler cfq registered (default)
+[    0.298055] wait stable.[288][cgu_vpu]
+[    0.301848] cgu_vpu can not set to 450000000, will change!!!
+[    0.308716] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.316310] console [ttyS1] enabled, bootconsole disabled
+[    0.316310] console [ttyS1] enabled, bootconsole disabled
+[    0.330890] brd: module loaded
+[    0.335956] loop: module loaded
+[    0.339730] zram: Created 2 device(s) ...
+[    0.344036] logger: created 256K log 'log_main'
+[    0.361464] jz SADC driver registeres over!
+[    0.366170] jz TCU driver register completed
+[    0.370997] the id code = 1c4017, the flash name is GM25Q64A
+[    0.376897] jz-sfc jz-sfc: sfc use DMA mode
+[    0.381213] jz-sfc jz-sfc: nor flash now use standard mode!
+[    0.386974] JZ SFC Controller for SFC channel 0 driver register
+[    0.393112] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.399222] Creating 6 MTD partitions on "jz_sfc":
+[    0.404177] 0x000000000000-0x000000040000 : "boot"
+[    0.409585] 0x000000040000-0x0000001d8000 : "kernel"
+[    0.415213] 0x0000001d8000-0x000000488000 : "rootfs"
+[    0.420805] 0x000000488000-0x0000007a0000 : "app"
+[    0.426172] 0x0000007a0000-0x000000800000 : "syscfg"
+[    0.431812] 0x000000000000-0x000000800000 : "all"
+[    0.437127] SPI NOR MTD LOAD OK
+[    0.440416] tun: Universal TUN/TAP device driver, 1.6
+[    0.445662] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.452152] usbcore: registered new interface driver zd1201
+[    0.458005] DWC IN OTG MODE
+[    0.461586] dwc2 dwc2: Keep PHY ON
+[    0.465092] dwc2 dwc2: Using Buffer DMA mode
+[    0.469498] dwc2 dwc2: Core Release: 3.00a
+[    0.473796] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.480284] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.487528] hub 1-0:1.0: USB hub found
+[    0.491454] hub 1-0:1.0: 1 port detected
+[    0.495615] dwc2 dwc2: DWC2 Host Initialized
+[    0.500358] usbcore: registered new interface driver usbserial
+[    0.506498] usbcore: registered new interface driver option
+[    0.512316] usbserial: USB Serial support registered for GSM modem (1-port)
+[    0.519954] TCP: cubic registered
+[    0.523416] NET: Registered protocol family 17
+[    0.528326] soc_vpu probe success,version:1.0.0-03203fd46d
+[    0.534284] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    0.541608] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    0.552112] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    0.559660] Freeing unused kernel memory: 188K (80441000 - 80470000)
+[    0.573789] dwc2 dwc2: ID PIN CHANGED!
+swapoff: applet not found
+mdev is ok......
+
+Ingenic-uc1_1 login: [    1.373977] exFAT: Version 1.2.9
+  shell_wdt_0 v1.0 ----WDT_TIMEOUT_SEC=15
+  watchdogOpen success :3 
+  watchdogOpen complete value = 2,timeout= 15
+[    1.436891] gpioCtrl.ko(v2.11), hw=0 kver=30A0E
+[    1.451451] gpioCtrl gpioCtrl_gpio_init,827] will init gpio
+[    1.464019] gpioCtrl gpioCtrl_drv_init,1148] gpioCtrl.ko v2.11 success
+[    1.971398] usb 1-1: new high-speed USB device number 2 using dwc2
+[    2.413980] atbm603x_bt_usb SVN3407_AsmLite19040_ARESM18826_Meru19963_20240418
+[    2.423515] build time: May  7 2024 19:09:12
+[    2.430517] [atbm_log]:platform_init(251)
+[    2.436777] [atbm_log]:atbm_usb_probe : idVendor[7a] idProduct[888b] 
+[    2.443519] [atbm_log]:AsmLite probe!
+[    2.447482] [atbm_log]:ble_spin_lock init 
+[    2.452177] [atbm_log]: wait_event_interruptible from  send_prbresp_wq
+[    2.459345] [atbm_log]:Get 6012B-X UID Success!!support BLE
+[    2.465173] [atbm_log]:atbm_get_chiptype, chipver=0x4a, g_wifi_chip_type[12]
+[    2.472964] [atbm_log]:
+[    2.472964] ======>>> load WIFI BLE COMB firmware <<<======
+[    2.472964] 
+[    2.482797] fwhdr->flags 34353678 sram_addr 9009000
+[    2.731430] [atbm_log]:flush rx[-145][0]
+[    2.785579] [atbm_log]:wsm_generic_confirm:status(2)
+[    2.790777] [atbm_log]:<WARNING> wsm_write_mib fail !!! mibId=4132
+[    2.797631] [atbm_log]:apollo wifi : can't open /var/syscfg/mac.info
+[    2.804666] [atbm_log]:[ra0] has been disabled
+[    2.821310] [atbm_log]:[ap0] has been disabled
+[    2.843019] [atbm_log]:ble_platform_probe(81b69e00)
+[    2.850205] [atbm_log]:is registered as 'phy0'
+[    2.855005] [atbm_log]:apollo wifi : can't open /var/syscfg/atbm_txpwer_dcxo_cfg.txt
+[    2.863154] [atbm_log]:apollo wifi : can't open /var/syscfg/set_rate_power.txt
+[    2.870998] [atbm_log]:open_auto_cfo:ppm_buf:cfo 1 0 , buf_len:8 
+[    2.877555] [atbm_log]:get chip id [834][10][0] 
+[    2.882383] current chiptype 6012B-X
+[    2.887053] [atbm_log]:[atbm_wtd]:set wtd_probe = 1
+[    2.892435] usbcore: registered new interface driver atbm_wlan
+[    3.962116] wait stable.[288][cgu_msc0]
+[    3.968167] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    3.974443] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    4.471388] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    4.931389] mmc0: new SD card at address 21f5
+[    4.938468] mmcblk0: mmc0:21f5 APPSD 121 MiB 
+[    4.944423]  mmcblk0: p1
+partition count:1
+/dev/mmcblk0p1: UUID="5B5B-D3B6" TYPE="vfat"
+125829120
+partition size too small
+mount /mnt/mtd success
+power off: sp140a
+half_ch0_height=648
+[    7.227128] cgu_isp can not set to 153000000, will change!!!
+[    7.233078] cgu_vpu can not set to 416000000, will change!!!
+[    7.264090] @@@@ tx-isp-probe ok(version H20240204a), compiler date=Feb  4 2024 @@@@@
+[    7.313831] pipe_request_dma: paddr = 0x1ec0000
+[    7.318546] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a08d5000)
+[    7.329788] pipe_request_dma: paddr = 0x1f00000
+[    7.334594] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a1dd3000)
+[    7.343812] pipe_request_dma: paddr = 0x1f40000
+[    7.348595] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a1bee000)
+[    7.371406] @@@@@ inner codec power up@@@@@@
+[    7.781430] @@@@ audio driver ok(version H20230614a) @@@@@
+ptz support, load ptz driver
+[    7.809493] ptzCtrl.ko(v1.12) 
+[    7.817838] jz-pwm jz-pwm: period_ns:max=2730666,min=42
+  Wait Exit Wdt thread Sem Success [    7.840071] watchdog watchdog0: watchdog did not stop!
+
+  Close Watch Dog :1
+  Close HWDTWDIOC_SETOPTIONS :0,145,value:1,g_hWdtFd = 3 
+  shell_wdt_1 has exited
+ipc_sdk_v1.4.39;bulid:24-08-01T15:00
+00:00:00.000 00 EVENT> appAsyncEventHandlerRegister,371] module(18) event(34) handler(0x4ee5d4) register success
+00:00:00.044 02 ALOG> appSaveLogParseConfigFile,363] [SAVE LOG]app save log disable
+00:00:00.044 00 INITA> systemCommonEvnInit,410] initApp BUILDTIME: 2024-08-09T14:07, version: 01.10715.11.15
+00:00:00.044 00 WDT> fWatchDog_Init,147] 
+shellcmdD.c_473 serv_accept(.)=4 uidCli=0 err=2
+shellcmdD.c_473 serv_accept(.)=5 uidCli=0 err=2
+00:00:00.046 00 WDT> WatchdogOpen,52] WatchdogOpen success :5 
+00:00:00.046 00 WDT> WatchdogOpen,71] WatchdogOpen complete value = 2,timeout= 60
+00:00:00.097 22 INITA> libcurl/7.65.3 mbedTLS/2.14.0 nghttp2/1.35.000:00:00.101 08 GPIO> hal_gpioInit,151] gs_fdGpio=6 
+00:00:00.101 08 GPIO> coreGpioInit,143] pwm_support=0 from core.ini
+00:00:00.101 08 GPIO> coreGpioInit,156] pwm_support=0
+00:00:00.150 00 EVENT> appAsyncEventHandlerRegister,371] module(4) event(1) handler(0x57b328) register success
+00:00:00.150 00 USER> fUMG_Init,124] read /var/syscfg/config/app_user.bin ret: 216, size: 216, 0x8600e0
+00:00:00.151 00 EVENT> appAsyncEventHandlerRegister,371] module(1) event(28) handler(0x4296fc) register success
+00:00:00.151 00 EVENT> appAsyncEventHandlerRegister,371] module(1) event(27) handler(0x429464) register success
+00:00:00.151 00 EVENT> appAsyncEventHandlerRegister,371] module(1) event(10) handler(0x42956c) register success
+00:00:00.151 00 EVENT> appAsyncEventHandlerRegister,371] module(1) event(9) handler(0x4297ac) register success
+00:00:00.151 00 MON> fileMonitorModuleInit,178] init success
+00:00:00.154 00 MON> fileMonitorRegister,219] mask: 8
+00:00:00.154 00 MON> fileMonitorRegister,254] inotifyFd: 8 monitorFd: 1 filePath: /tmp/config mask: 8
+00:00:00.154 00 EVENT> appAsyncEventHandlerRegister,371] module(5) event(8) handler(0x4f1e94) register success
+00:00:00.154 00 EVENT> appAsyncEventHandlerRegister,401] module(5) event(28) handler(0x4f19d0) register success
+00:00:00.157 02 CFG> systemCoreConfigRead,450] invalid keyString
+00:00:00.157 00 CFG> systemCoreConfigRead,544] ir_support: 1, white_light_support: 0, white_light2_support: 0, red_led_support: 1,blue_led_support: 1
+00:00:00.157 00 CFG> systemCoreConfigRead,552] reset_key_support: 1, call_key_support: 0, ptz_h_support: 1, ptz_v_support: 1, zoom_support: 0, eth0_support: 1
+00:00:00.157 00 CFG> systemCoreConfigRead,557] pelco_ptz_support: 0, tf_support: 1, battery_support: 0
+00:00:00.157 02 CFG> systemCoreConfigRead,602] invalid keyString
+00:00:00.157 00 CFG> systemCoreConfigRead,611] mic_support: 1, spk_support: 1, nChannelNum: 1, nSampleRate: 8000, nSampleSize: 16 aec_support: 0
+00:00:00.158 00 CFG> systemCoreConfigRead,613] audio_db_det_algo_support: 0, bbm_cry_det_support: 0
+00:00:00.158 02 CFG> systemCoreConfigRead,701] invalid keyString
+00:00:00.158 00 CFG> systemCoreConfigRead,704] Video nChnNum: 2
+00:00:00.158 00 CFG> systemCoreConfigRead,712] Channel 0 nFps: 15, nNightFps: 10, nKBps: 1024, eBrMode: 4, nWidth: 2304, nHeight: 1296, eVideoFormat: 3
+00:00:00.158 02 CFG> systemCoreConfigRead,780] invalid keyString
+00:00:00.158 00 CFG> systemCoreConfigRead,782] channel 0 shm size: 0Kb, channel 1 shm size: 0Kb
+00:00:00.158 00 CFG> systemCoreConfigRead,791] Channel 1 nFps: 15, nNightFps: 10, nKBps: 256, eBrMode: 4, nWidth: 640, nHeight: 360, eVideoFormat: 3
+00:00:00.158 00 CFG> systemCoreConfigRead,839] dbl_sensor_support: 0 shortf_io_level: 0 lsfocus_multiple: 4.000000
+00:00:00.160 00 CFG> systemCommonConfigRead,971] defaultTimeZone: CST-8 autoRebootEnable: 1 autoRebootIntervalMin: 10080
+00:00:00.160 00 CFG> systemCommonConfigRead,986] flip: 0 mirror: 0
+00:00:00.160 00 CFG> systemCommonConfigRead,1048] private_region_support: 1, private_region_switch: 0
+00:00:00.160 00 CFG> systemCommonConfigRead,1051] private_region_left: 0 private_region_top: 0 private_region_right: 0 private_region_bottom: 0
+00:00:00.160 02 CFG> systemCommonConfigRead,1064] invalid keyString
+00:00:00.160 00 CFG> systemCommonConfigRead,1068] logo_switch: 1 date_time_switch: 1
+00:00:00.160 00 CFG> systemCommonConfigRead,1112] mic_switch: 1 mic_volume: 70 speaker_volume: 80
+00:00:00.160 02 CFG> systemCommonConfigRead,1118] invalid keyString
+00:00:00.160 02 CFG> systemCommonConfigRead,1129] invalid keyString
+00:00:00.160 02 CFG> systemCommonConfigRead,1136] invalid keyString
+00:00:00.161 02 CFG> systemCommonConfigRead,1147] invalid keyString
+00:00:00.161 00 CFG> systemCommonConfigRead,1151] sound_detn_switch: 0, sound_detn_sens: 60, cry_detn_switch: 0, cry_detn_sens: 60
+00:00:00.161 00 CFG> systemCommonConfigRead,1183] rtsp_support: 1 rtsp_switch: 1 rtsp_port: 554 rtsp_auth: 1
+00:00:00.161 00 CFG> systemCommonConfigRead,1215] onvif_support: 1 onvif_switch: 0 onvif_port: 8899 onvif_auth: 1
+00:00:00.161 00 CFG> systemCommonConfigRead,1331] md_switch: 1 md_sensitivity: 60 md_region_left: 0 md_region_top: 0 md_region_right: 10000 md_region_bottom: 10000
+00:00:00.491 00 CFG> systemCommonConfigRead,1333] md_region_line_support: 0 md_region_line_switch: 0
+00:00:00.491 00 CFG> systemCommonConfigRead,1334] md_filters_switch: 0
+00:00:00.491 00 CFG> systemCommonConfigRead,1337] move_track_switch: 0 move_track_reset: 0 move_track_person_switch: 1 person_detn_switch: 1 sound_detn_switch: 10000 sound_detn_sens: 10000
+00:00:00.491 00 CFG> systemCommonConfigRead,1398] preset[0] h: -1 v: -1
+00:00:00.491 00 CFG> systemCommonConfigRead,1398] preset[1] h: -1 v: -1
+00:00:00.491 00 CFG> systemCommonConfigRead,1398] preset[2] h: -1 v: -1
+00:00:00.491 00 CFG> systemCommonConfigRead,1398] preset[3] h: -1 v: -1
+00:00:00.492 00 CFG> systemCommonConfigRead,1398] preset[4] h: -1 v: -1
+00:00:00.492 00 CFG> systemCommonConfigRead,1398] preset[5] h: -1 v: -1
+00:00:00.492 00 CFG> systemCommonConfigRead,1398] preset[6] h: -1 v: -1
+00:00:00.492 00 CFG> systemCommonConfigRead,1398] preset[7] h: -1 v: -1
+00:00:00.492 02 CFG> systemCommonConfigRead,1431] invalid keyString
+00:00:00.492 00 CFG> systemCommonConfigRead,1436] ntp_switch: 1 ntp_interval: 7200 ntp_customized: 0 ntp_server: pool.ntp.org
+00:00:00.492 00 CFG> systemCommonConfigRead,1496] aging_time_hour: 2 aging_ptz: 1 aging_ircut: 1 aging_spk: 1 aging_led: 2
+00:00:00.492 00 CFG> systemCommonConfigRead,1553] log_level: 0xffff power_freq: 50 alarm_sound_switch: 0 external_alarm_out_time: 30 ir_mode: 0
+00:00:00.492 00 CFG> systemCommonConfigR[    9.612661] cgu_vpu can not set to 600000000, will change!!!
+ead,1593] tip_led_switch: 1 telnetd_switch: 0 alarm_interval_sec[    9.624214] [sc2337p_probe,1621] -> 1920*1080*15
+: 60 sd_capacity_multiply: 1
+00:00:00.492 00 CFG> systemConfigModuleInit,1643] init success
+00:00:00.492 00 EVENT> appAsyncEventHandlerRegister,401] module(11) event(9) handler(0x4e9f7c) register success
+00:00:00.492 00 EVENT> appAsyncEventHandlerRegister,371] module(11) event(32) handler(0x4ea4dc) register success
+00:00:00.493 00 EVENT> appAsyncEventHandlerRegister,371] module(11) event(33) handler(0x4ea3f0) register success
+00:00:00.493 00 LEDCL> fLed_setLedSwitch,251] bOpen: 1
+00:00:00.493 00 LEDCL> fLed_ledControl,258] nLedType: 1, eLedCtrlMode: 0
+00:00:00.493 00 LEDCL> fLed_ledControl,258] nLedType: 0, eLedCtrlMode: 1
+00:00:00.580 09 CORAV> readIni_drv_sinfo,179] cSensorName=sc2337p 
+00:00:00.581 08 CORAV> readIni_drv_sinfo,206] /var/syscfg/config/drv_sinfo.ini] cSensorName=sc2337p i2c_id=0
+00:00:00.581 10 CORAV> readIni_drv_sinfo,174] failed to open /var/syscfg/config/drv_sinfo1.ini.
+00:00:00.[    9.711901] -----sc2337p_detect: 1009 ret = 0, v = 0x9b
+581 08 CORAV> readIni_drv_sinfo,206] /var/syscfg/config/drv_sinf[    9.721302] -----sc2337p_detect: 1017 ret = 0, v = 0x3a
+o1.ini] cSensorName= i2c_id=0
+00:00:00.584 08 CORAV> loadVideoP[    9.731760] sc2337p chip found @ 0x30 (i2c0)
+aram,399] fps=15,gop_multiple_of_fps=2 qualityLvl_t23=2
+00:00:0[    9.741690] sensor driver version H20240723a
+0.584 08 CORAV> loadVideoImageParam,487]  sensor_flip=0
+00:00:00.584 09 NIGHT> loadSoftPSVal_sensor_bin_ini,148] NOT found '/var/syscfg/config_default/sc2337p.bin.ini' 
+00:00:00.584 09 NIGHT> loadSoftPSVal_sensor_bin_ini,148] NOT found '/mnt/mtd/sensor/sc2337p.bin.ini' 
+00:00:00.584 08 NIGHT> loadSoftPSVal,196] day2night:exp=30000 night2day:exp=12000 wb_rgain=225 wb_bgain=225,  timeChgEv=7200 delta_val_rbgain=2
+00:00:00.587 08 MTRAC> loadMTrackParam,106] mtrack_param:support=1 min_pixel=04 | sens=4 ivs_obj_min_width=10 ivs_obj_min_height=10 | timeout= 3s
+00:00:00.587 08 PTRAC> loadPerTrackParam,126] per_track_param:support=1 min_pixel=04 | sens=4 ivs_obj_min_width=10 ivs_obj_min_height=10 | timeout= 3s
+00:00:00.587 08 PERDE> loadPerDetParam,65] ai_person_det_support=1 
+00:00:00.587 08 alilv> load_ai_param,176] ai_ali_lv_lite_threshold=50 det_interval=4
+00:00:00.588 08 CORAV> sample_chnInit,130] sample_getSensorNum()=1 
+00:00:00.655 08 CORAV> sample_sensorInit,203] dbl_sensor1_support=0 0 sensor_id=0 i2c_adapter_id=0
+00:00:00.655 09 CORAV> sample_sensorInit,235] pSensorAttr[0].i2c_id=0 sensor_id=0
+[    9.931832] Ivdc init! direct_mode is 1
+[    9.959574] sc2337p stream on
+00:00:01.036 08 CORAV> sample_sensorInit,325] ok
+i264e[info]: profile High, level 5.0
+i264e[info]: profile High, level 2.2
+00:00:01.044 08 OLogo> osd_logoGenFileAndGet,108] enumFilesBy(2304x1296...)=2
+[   10.065520] vb is null, buf get:0x80000000 lastaddr = 0x00000000 idx=0 isp_index = 0
+[   10.132189] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.198855] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = 0
+[   10.265522] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = 0
+[   10.332191] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.398855] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.465523] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.532200] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = 1
+[   10.598855] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = 0
+[   10.665522] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.732189] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.798855] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.865522] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.932190] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+[   10.998855] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = -2143147856
+00:00:02.093 08 OLogo> isCmpOsdFileSiz_wh,31] chn=0 nFileSiz=117600, nSizCalcu=117600 
+00:00:02[   11.065532] vb is null, buf get:0x80000000 lastaddr = 0x80000000 idx=0 isp_index = 196610
+.093 08 OLogo> isCmpOsdFileSiz_wh,31] chn=1 nFileSiz=16128, nSizCalcu=16128 
+00:00:02.093 08 OLogo> osd_logoGenFileAndGet,160] nR=2 arrOsdFile[0]=/tmp/logo_osd_300x98_0_wansv_1296p.rgba 300X98
+00:00:02.093 08 CORAV> sample_createOsd,814] chn=0 PRIVACY_CHN_INDEX!=i (100,100)-(300,300)
+[   11.096296] sc2337p_set_vflip] 1 enable=0, val=0x0 
+00:00:02.093 08 CORAV> osd_rectZoominByRatio,776] privacy fRatio=3.600000 nDstCenter(720,720), wXh(720,720)
+00:00:02.094 08 CORAV> getOsdLogoData,80] /tmp/logo_osd_300x98_0_wansv_1296p.rgba nFileSize=117600
+00:00:02.094 08 CORAV> osd_logoInit,118] ---- g_stOsdLogo.handleOsdLogo: [a][b]=0 0 0 0 
+00:00:02.094 08 CORAV> sample_createOsd,842] i=0 300x98 stArea:[10,10] [309,107]
+00:00:02.094 08 CORAV> ispOsd_timeInit,48] ---- gs_handleIspOsd: timeIspOsd[.]=1 -1 tempHIspOsd=2 -1
+00:00:02.095 08 CORAV> getOsdLogoData,80] /tmp/logo_osd_84x48_1_wansv_360p.rgba nFileSize=16128
+00:00:02.095 08 CORAV> osd_logoInit,175] gs_prHanderLogo[1]=0
+00:00:02.095 08 CORAV> sample_createOsd,842] i=1 84x48 stArea:[10,10] [93,57]
+00:00:02.095 08 CORAV> osd_timeInit,327] ----nOsdGrpNo=1 nChnIdx=1, area:(460,1)~(619,18)
+00:00:02.095 08 osdIv> osdIvs_init,41] ----nOsdGrpNo=1 nShowChn_width=640X360 320X192
+00:00:02.095 08 CORAV> osd_timeInit,392] IMP_OSD_Start(nGrpNo=1)=0 nChnIdx=1 rHanderTime=1
+00:00:02.095 08 CORAV> osdTimeBg_init,257] osdTimeBg_init, prHander[0]=3 rect(465,1),(624,18)
+00:00:02.119 08 CORAV> sample_imageParamSet,1906] sample_imageParamSet,v4 nDo=7 bFlip=0 bMirror=0
+00:00:02.122 08 CORAV> loadAudioParam,587] aalgo_support=0  default: sensi=50 time_sec=2
+00:00:02.122 08 CORAV> loadAudioParam,615] bAudioAecSupport=0 audio_ns_level=3
+00:00:02.122 08 CORAV> coreAV_sampleInit,875] 1 AvBufInitParam,v ch0_size=1536 tmp=1000 KB
+00:00:02.122 08 CORAV> coreAV_sampleInit,883] 2 AvBufInitParam,v ch0_size=2560 KB
+00:00:02.122 08 CORAV> coreAV_sampleInit,899] AvBufInitParam,a size=142336 B
+00:00:02.123 00 INITA> avEnvironmentInit,132] sensor count: 1
+00:00:02.123 00 INITA> avEnvironmentInit,139] maxIFrmSize: 500Kb
+00:00:02.123 02 INITA> checkALiRecognAiSupport,84] coreAV_aiGet E_AV_AI_ALI_AUTH_FILE_OK failed(-11)
+00:00:02.123 00 INITA> avEnvironmentInit,196] iniParam video0 nFPS: 15 nVChn: 0 IFrmMax: 500Kb shmSize: 2621440Byte
+00:00:02.123 00 INITA> avEnvironmentInit,196] iniParam video1 nFPS: 15 nVChn: 1 IFrmMax: 0Kb shmSize: 393216Byte
+00:00:02.123 00 INITA> avEnvironmentInit,196] iniParam video2 nFPS: 0 nVChn: 0 IFrmMax: 0Kb shmSize: 0Byte
+00:00:02.123 00 INITA> avEnvironmentInit,196] iniParam video3 nFPS: 0 nVChn: 0 IFrmMax: 0Kb shmSize: 0Byte
+00:00:02.123 00 INITA> avEnvironmentInit,202] iniParam audio0 format: 18 nAChn: 10 shmSize: 131072
+00:00:02.123 00 INITA> avEnvironmentInit,202] iniParam audio1 format: 0 nAChn: 0 shmSize: 0
+00:00:02.123 00 INITA> avEnvironmentInit,204] iniParam extra data size: 0
+00:00:02.123 08 CORAV> coreAV_videoStart,1327] coreAV_videoStart pCb=(nil) pAVBufInstance=0x8c13b8
+00:00:02.123 08 CORAV> coreAV_videoStart,1360] AVBUF_create video 0 is ok handleAVBUF_V0=0x8c1430
+00:00:02.124 08 CORAV> coreAV_videoStart,1364] AVBUF_create video 1 is ok handleAVBUF_V1=0x900348
+00:00:02.124 00 INITA> avEnvironmentInit,230] logoSupport: 1
+00:00:02.124 08 CORAV> sample_videoFlipMirrorSet,1804] nRet=0 sensor_flip=0 bFlip=0(2=INVALID_MODE_VALUE) bFlipTmp=0   bAreaChg=1
+00:00:02.125 09 CORAV> ThreadVSampleData,1293] ----going---- nIdx=0
+00:00:02.125 09 CORAV> ThreadVSampleData,1293] ----going---- nIdx=1
+00:00:02.125 08 CORAV> sample_videoFlipMirrorSet,1839] nRet=0 sensor_flip=0 bMirror=0(2=INVALID_MODE_VALUE) bMirrorTmp=0   bAreaChg=1
+00:00:02.126 08 CORAV> osd_show,1252] E_LOGO_OSD gs_bOsdShow: 1,1,0,0
+00:00:02.126 08 CORAV> objPrivacySet,2115] osd_privacyCalcu(chn1)=-1 g_stPrivacyArea.bEnable=0 (0,0)-(0,0)
+00:00:02.126 08 CORAV> osd_rectZoominByRatio,776] privacy fRatio=3.600000 nDstCenter(0,0), wXh(0,0)
+00:00:02.126 08 CORAV> objPrivacySet,2124] osd_privacyCalcu(chn0)=-1 
+00:00:02.126 08 CORAV> objPrivacySet,2127] osd_privacySet(chn0,chn1)=0 
+00:00:02.126 08 CORAV> osd_show,1252] E_LOGO_OSD gs_bOsdShow: 1,1,0,0
+00:00:02.126 08 CORAV> coreAV_micStart,2884] bMicSupport=1 coreAV_micStart pCb=(nil) pAVBufInstance=0x8c13b8 ----semAudioEnc_USE
+00:00:02.126 08 CORAV> coreAV_micStart,2907] AVBUF_create mic audio is ok handleAVBUF_A0=0x900508 eAudioFormat=0x12
+00:00:02.462 09 CORAV> coreAV_micStart,2924] warn: failed to AVBUF_create audio1
+00:00:02.463 09 CORAV> ThreadOsdTimeUpdate,696] ----going---- osd_second_width=8
+00:00:02.465 10 CORAV> loopSampleData,1215] VIDEO_FRM_MAX_SIZ chnNum=0 nChnConfIdx=0 seq=      0 arr_bIFrmReady=1 packCount=3 dataType.h264Type=5 refType=0 ts= 1333393
+00:00:02.467 08 CORAV> coreAV_micStart,2937] bNOTPcmFormat=1
+00:00:02.470 10 CORAV> loopSampleData,1215] VIDEO_FRM_MAX_SIZ chnNum=1 nChnConfIdx=1 seq=      0 arr_bIFrmReady=1 packCount=3 dataType.h264Type=5 refType=0 ts= 1432258
+00:00:02.475 09 CORAV> ThreadASample,2775] ----going----
+00:00:02.475 08 CORAV> initASample,2583] bAudioAecSupport=0 
+00:00:02.476 08 CORAV> sample_audioMICInit,1963] audioIn amplerate=8000, bitwidth=16 soundmode=1 frmNum=40 numPerFrm=320 chnCnt=1 audio_ns_level=3
+00:00:02.619 08 CORAV> coreAV_micStart,2942] aacEnc_init(.)=0 sampleRate=8000 nSoundMode=1
+00:00:02.620 08 CORAV> coreAV_micStart,2962] g_hASampleThread=0x67ca24e0 g_hAEncodeThread=0x673914e0
+00:00:02.620 08 CORAV> coreAV_audioSet,3722] nMicVolApp=61 nValue=71 
+00:00:02.620 00 INITH> initAppSetMicVolume,38] set mic volume(70) success
+00:00:02.620 08 CORAU> audioPlay_init,217] audioOut g_bAoExitStatus=1
+00:00:02.620 08 CORAU> spk_gpio_disable,140] audio g_bEnable=0 will IMP_AO_Disable
+00:00:02.620 08 CORAU> spk_gpio_disable,160] audio g_bEnable=0 ret=-1
+00:00:02.620 08 CORAU> audioPlay_init,242] audioOut amplerate=8000, bitwidth=16 soundmode=1 frmNum=20 numPerFrm=320 chnCnt=1
+00:00:02.620 09 CORAV> ThreadAEncode,2663] ----going---- audioFormat[0,1]=0x12 0x00
+warn: shm_init,53shm init already
+00:00:02.905 09 COAAC> aacDec_init,192] codecid=0x15002
+00:00:02.905 08 COAAC> aacDec_init,198] bits_per_coded_sample:2 
+00:00:02.920 08 COAAC> aacDec_init,211] gs_pComponent=0x99c678
+00:00:02.928 09 CORAV> ThreadAPlay,3066] ----going----
+00:00:02.928 09 CORAU> ThreadAudioBeep,475] ----going----
+00:00:02.945 08 CORAV> sample_audioMICInit,1983] IMP_AI_GetChnParam(.), usrFrmDepth=40
+warn: shm_init,53shm init already
+00:00:02.985 08 CORAV> sample_audioMICInit,2013] nVol=70 nAIGain=31
+00:00:03.144 08 CORAV> sample_audioMICInit,2027] ----enable USE_AUDIO_NS, audio_ns_level=3(0:low[   12.115343] MOTOR_RESET, bTurn=0 max(3650,1200) cur(33554431,33554431)
+, 3:highest)---- ret=0
+00:00:03.145 00 INITH> initAppSetSpkVolume,57] set speaker volume(80) success
+00:00:03.145 00 INITA> avEnvironmentInit,336] ai_mv_track_support: 1 ai_person_det_support: 1
+00:00:03.145 00 INITA> avEnvironmentInit,344] silence boot: 0
+00:00:03.148 11 COPTZ> loadPtzParam,177] ptz_h_init_pos=50.000 ptz_h_init_pos_step=1825 
+00:00:03.148 11 COPTZ> loadPtzParam,190] ptz_v_init_pos=50.000 ptz_v_init_pos_step=600 
+00:00:03.148 11 COPTZ> loadPtzParam,298] loadPtzParam ok. 
+step_1_angle_h=11 step_1_angle_v=13 total:step_H=3650 ang_H=320 total:step_V=1200 ang_V=90  ptz_noise_support=2
+00:00:03.148 11 COPTZ> ptzrecvInit,102] sktFd=29 
+00:00[   12.178969] MOTOR_RESET, bTurn=1 max(3650,1200) cur(1825,600)
+:03.160 08 CORAV> ThreadASample,2804] bNotPcm=1  audioFormat[0,1]=0x12,0x00
+avcodec_receive_packet failed：-11 
+00:00:03.160 08 CORAV> doAEncode,2626]     aacEnc_frame(.)=-5 nLenAfterEnc=2048 
+00:00:03.160 11 COPTZ> ThreadPtzRecv,46] ----going----
+00:00:03.212 08 COPTZ> corePtz_turn,1057] 1, eDir=11, bOneStep=0
+00:00:03.224 00 MISC> tfCardStatusCheckInit,274] g_tfCardInsert init: 1
+00:00:03.224 00 EVENT> appAsyncEventHandlerRegister,371] module(10) event(7) handler(0x4fbe64) register success
+00:00:03.224 00 EVENT> appAsyncEventHandlerRegister,371] module(10) event(15) handler(0x4fcd74) register success
+00:00:03.224 00 EVENT> appAsyncEventHandlerRegister,401] module(10) event(32) handler(0x4fbe30) register success
+00:00:03.224 00 EVENT> appAsyncEventHandlerRegister,401] module(10) event(33) handler(0x4fbe4c) register success
+00:00:03.225 00 EVENT> appAsyncEventHandlerRegister,371] module(10) event(38) handler(0x4fc9c8) register success
+00:00:03.225 00 EVENT> appAsyncEventHandlerRegister,401] module(10) event(8) handler(0x4fca74) register success
+00:00:03.225 00 MON> fileMonitorRegister,219] mask: 520
+00:00:03.225 00 MON> fileMonitorRegister,254] inotifyFd: 8 monitorFd: 2 filePath: /var/syscfg/flag/debug mask: 520
+00:00:03.225 08 CORAV> objMDAreaSet,2020] set E_AV_MD_AREAS before changing: app coordinate(10000,10000); (0,0) (10000,10000)
+00:00:03.225 08 CORAV> objMDAreaSet,2053] set E_AV_MD_AREAS: chn1=640X360  sMaArea[0]:bEnable=1 bShowMDBox=0 (0,32) (640,360)
+00:00:03.225 08 IVS> ivsMD_start,355] bShowMDBox=0 sMaArea[0]:bEnable=1 (0,32) (640,360)  bFullWindow=1
+00:00:03.225 08 IVS> ivsMD_create,193] ---ivs stParam.roiRect[0].p0,p1=[0, 32, 639, 359],[old_sense=2,sense=2]----
+00:00:03.225 08 IVS> ivsMD_create,197] ---ivs stParam.roiRectCnt=1 skipFrameCnt=5---- 640X360
+00:00:03.227 08 IVSos> ivsMdOsdOpenClose,210] g_hIvsMdOsd=0x632744e0 bShowBox=0
+00:00:03.227 02 ALGO> soundDetnInit,701] sound detn is not support in core
+00:00:03.227 08 PTRAC> corePerTrack_start,662] bPerTrack=1 pCb=0x4ef304
+00:00:03.228 00 MISC> tfCardStatusCheckFunc,233] tf card status change, 255 to 3
+00:00:03.229 08 CORAV> coreAV_videoYuvWithWHStart,1622] gs_stCbYuvWithWH.bStart=1 
+00:00:03.229 08 PTRAC> corePerTrack_start,695] gs_bPerTrackLog=0
+00:00:03.229 02 ALGO> cryDetnInit,815] cry detn is not support
+00:00:03.229 00 EVENT> appAsyncEventHandlerRegister,401] module(9) event(9) handler(0x4f03a0) register success
+00:00:03.229 00 EVENT> appAsyncEventHandlerRegister,371] module(9) event(26) handler(0x4f14b8) register success
+00:00:03.229 00 EVENT> appAsyncEventHandlerRegister,371] module(9) event(24) handler(0x4ef87c) register success
+00:00:03.230 09 IVS> ThreadIVSMdResult,480] ----going---- coreUtil_notifySleepInit(.)=0 640X360 nSpanGetYuv_ms=46 ch1_md_skipFrameCnt=5
+00:00:03.257 08 IVSos> ThreadIVSMdOsd,159] ----going---- g_bMdOsdRunning=1
+00:00:03.257 09 PTRAC> ThreadPerTracking,529] 3.1 bVideoSampleOk=1 gs_personTrackParamInit=1 bPtzCheckingSelf=1
+00:00:03.260 08 CORAW>��+������2619]     aacEnc_frame(.)=0 srcLen=2048 nDstLen=231 
+00:00:03.275 00 AJYCg> ajySerialNumConfigRead,107] product_name: Q5
+L҂�҂�r�����
+� ajySerialNumConfigRead,108] model: NAV
+00:00:03.275 00 AJYCG> ajySerialNumConfigRead,109] vendor: WVC
+00:00:03.275 00 AJY��
+                     �������
+� ajySerialNumConfigRead,112] wifimacaddress: 
+00:00:03.276 00 AJYCG> ajySerialNumConfigRead,113] license_key: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,178] region: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,179] reg_url: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,180] gateway_url: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,181] tunnel_url: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,182] uac_url: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,183] cloudstore_url: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,184] emc_url: 
+00:00:03.276 00 AJYCG> ajyRegisterConfigRead,185] fwVersionCheck_url: 
+00:00:03.277 00 AJYCG> ajyRegisterConfigRead,186] p2psvrlist: 
+00:00:03.277 00 AJYCG> ajyRegisterConfigRead,187] reg_interval: 0
+00:00:03.277 00 AJYCG> ajyRegisterConfigRead,188] last_reg_time: 0
+00:00:03.277 00 AJYCG> ajyRegisterConfigRead,189] pingpong_interval: 120
+00:00:03.278 00 MON> fileMonitorcEventDispatch,86] app_ajy_cfg.ini FILE_MONITOR_MODIFY
+00:00:03.278 00 MON> fileMonitorcEventDispatch,86] app_ajy_register.ini FILE_MONITOR_MODIFY
+00:00:03.281 00 AJYCG> ajyFuncConfigRead,1177] platform_id: 0
+00:00:03.281 00 AJYCG> ajySilenceConfigRead,334] silence_switch: 0, silence_duration: 600
+�����I����336] silence plan0 enable: 1
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,341] silence plan0 week_day(1-1-1-1-1-1-1)
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,343] silence plan0 start: 000000 end: 235959
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,336] silence plan1 enable: 0
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,341] silence plan1 week_day(1-1-1-1-1-1-1)
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,343] silence plan1 start: 080000 end: 180000
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,336] silence plan2 enable: 0
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,341] silence plan2 week_day(1-1-1-1-1-1-1)
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,343] silence plan2 start: 080000 end: 180000
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,336] silence plan3 enable: 0
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,341] silence plan3 week_day(0-0-0-0-0-0-0)
+00:00:03.612 00 AJYCG> ajySilenceConfigRead,343] silence plan3 start:  end: 
+00:00:03.612 00 AJYCG> ajyLocalRecConfigRead,433] local_rec_remain_size_mb: 500 local_rec_mode: 0 local_rec_recover: 1
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,435] local rec plan0 enable: 1
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,440] local rec plan0 week_day(1-1-1-1-1-1-1)
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,442] local rec plan0 start: 000000 end: 235959
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,435] local rec plan1 enable: 0
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,440] local rec plan1 week_day(1-1-1-1-1-1-1)
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,442] local rec plan1 start: 080000 end: 180000
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,435] local rec plan2 enable: 0
+00:00:03.613 08�u� ajyLocalRecConfigRead,440] local rec plan2 week_day(1-1-1-1-1-1-1)
+00:00:03.613 00 AJYCG> ajyLocalRecC�˥�I����442] local rec plan2 start: 080000 end: 180000
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,435] local rec plan3 enable: 0
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,440] local rec plan3 week_day(0-0-0-0-0-0-0)
+00:00:03.613 00 AJYCG> ajyLocalRecConfigRead,442] local rec plan3 start:  end: 
+00:00:03.613 09 NIGHT> ThreadNightVision,762] ----going---- ir_type=1 ir_mode=0, 5000 ms, bSemiAuto=0
+00:00:03.613 02 AJYCG> ajyPushConfigRead,471] invalid keyValue
+00:00:03.614 00 AJYCG> ajyPushConfigRead,530] push_switch: 1 push_media_type: 2 push_gen_thumb: 0
+00:00:03.614 00 AJYCG> ajyPushConfigRead,532] push plan0 enable: 1
+00:00:03.614 00 AJYCG> ajyPushConfigRead,537] push plan0 week_day(1-1-1-1-1-1-1)
+00:00:03.614 00 AJYCG> ajyPushConfigRead,539] push plan0 start: 000000 end: 235959
+00:00:03.614 00 AJYCG> ajyPushConfigRead,532] push plan1 enable: 0
+00:00:03.614 00 AJYCG> ajyPushConfigRead,537] push plan1 week_day(1-1-1-1-1-1-1)
+00:00:03.614 00 AJYCG> ajyPushConfigRead,539] push plan1 start: 080000 end: 180000
+00:00:03.614 00 AJYCG> ajyPushConfigRead,532] push plan2 enable: 0
+00:00:03.614 00 AJYCG> ajyPushConfigRead,537] push plan2 week_day(1-1-1-1-1-1-1)
+00:00:03.614 00 AJYCG> ajyPushConfigRead,539] push plan2 start: 080000 end: 180000
+00:00:03.614 00 AJYCG> ajyPushConfigRead,532] push plan3 enable: 0
+00:00:03.614 00 AJYCG> ajyPushConfigRead,537] push plan3 week_day(0-0-0-0-0-0-0)
+00:00:03.614 00 AJYCG> ajyPushConfigRead,539] push plan3 start:  end: 
+00:00:03.614 02 AJYCG> ajyCloudStoreConfigRead,554] invalud keyValue
+35m00:00:03.614 02 AJYCG> ajyCloudStoreConfigRead,561] invalud keyValue
+� ajyCloudStoreConfigRead,568] invalud keyValue
+00:00:03.614 02 AJYCG> ajyCloudStoreConfigRead,582] invalud keyValue
+00:00:03.614 02 AJYCG> ajyCloudStoreConfigRead,589] invalud keyValue
+00:00:03.614 02 AJYCG> ajyCloudStoreConfigRead,596] invalud keyValue
+00:00:03.9���
+=� ajyClwnSt���nfigRead,603] invalud keyValue
+00:00:03.947 02 AJYCG> ajyCloudStoreConfigRead,610] invalud keyValue
+00:00:03.947 02 AJYCG> ajyCloudStoreConfigRead,617] invalud keyValue
+00:00:�&)����
+� ajyCloudStoreConfigRead,620] cs_rec���U���ɕ}��� 0
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,622] cs rec plan0 enable: 0
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,627] cs rec plan0 week_day(1-1-1-1-1-1-1)
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,629] cs rec plan0 start: 000000 end: 235959
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,622] cs rec plan1 enable: 0
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,627] cs rec plan1 week_day(0-0-0-0-0-0-0)
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,629] cs rec plan1 start:  end: 
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,622] cs rec plan2 enable: 0
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,627] cs rec plan2 week_day(0-0-0-0-0-0-0)
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,629] cs rec plan2 start:  end: 
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,622] cs rec plan3 enable: 0
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,627] cs rec plan3 week_day(0-0-0-0-0-0-0)
+00:00:03.948 00 AJYCG> ajyCloudStoreConfigRead,629] cs rec plan3 start:  end: 
+00:00:03.948 00 AJYCG> ajyWhiteLightConfigRead,745] white_light_night_mode_support: 0 white_light_night_mode_check_interval_sec: 60
+00:00:03.948 00 CJYCG> ajyWhiteLightConfigRead,747] white_light_timing_support: ���ѕ}�����}��ɍ�}�������CC!��80�NH�
+��fig�V������}�����}��ѽ}����� 0 white_light_auto_close_duration_sec: 15                                           )e
+�����I����751] white_light_brightness: 55 white_light_pwm_�l���K�
+00�90:03�
+�nfkg�ead,755] white light plan0 enable: 0
+00:00:03.948 00 AJYCG> ajyWhiteLightConfigRead,760] white light plan0 week_day(1-1-1-1-1-1-1)
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,762] white light plan0 start: 080000 end: 180000
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,755] white light plan1 enable: 0
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,760] white light plan1 week_day(1-1-1-1-1-1-1)
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,762] white light plan1 start: 080000 end: 180000
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,755] white light plan2 enable: 0
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,760] white light plan2 week_day(0-0-0-0-0-0-0)
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,762] white light plan2 start:  end: 
+�YX鲂�w����� week_day(0-0-0-0-0-0-0)ConfigRead,755] white light plan3 enable: 0
+00:00:03.949 00 AJYCG> ajyWhiteLightConfigRead,762] white light plan3 start:  end: 
+00:00:03.949 02 AJYCG> ajyMiscConfigRead,860] invalid pKeyString
+00:00:03.949 02 AJYCG> ajyMiscConfigRead,872] invalid pKeyString
+00:00:03.949 02 AJYCG> ajyMiscConfigRead,884] invalid pKeyString
+00:00:03.949 02 AJYCG> ajyMiscConfigRead,896] invalid pKeyString
+00:00:03.949 02 AJYCG> ajyMiscConfigRead,903] invalid keyValue
+00:00:03.949 02 AJYCG> ajyMiscConfigRead,931] invalid keyValue
+00:00:03.949 00 AJYCG> ajyMiscConfigRead,934] lang: en
+00:00:03.949 00 AJYCG> ajyMiscConfigRead,935] play_waiting_tip: 0 play_waiting_tip_duration_sec: 60
+00:00:03.950 00 AJYCG> ajyMiscConfigRead,936] fw_check_interval_sec: 14400
+00:00:03.950 00 AJYCG> ajyMiscConfigRead,937] local_app_support: 1 static_ip_support: 1
+00:00:03.950 00 AJYCG> ajyMiscConfigRead,939] alarm_bell_support: 1 alarm_media_type: 2 alarm_channel: 1
+00:00:04.280 00 AJYCG> ajyMiscConfigRead,940] mv_track_lost_reset_support: 1
+00:00:04.280 00 AJYCG> ajyMiscConfigRead,941] mv_track_person_support: 0
+00:00:04.280 00 AJYCG> ajyMiscConfigRead,942] ch0_app_show:  ch0_app_snap: 
+00:00:04.280 00 AJYCG> ajyMiscConfigRead,943] p2p_domain: 
+00:00:04.280 00 AJYCG> ajyMiscConfigRead,944] log_upload_url: 
+00:00:04.281 00 AJYCG> ajyMiscConfigRead,945] p2p_playback_support: 0
+00:00:04.281 00 AJYCG> ajyMiscConfigRead,946] app_live_mute: 0 app_playback_mute: 0
+00:00:04.281 00 AJYCG> ajyMiscConfigRead,947] customized_config: move-monitor-config
+00:00:04.281 00 AJYCG> ajyMiscConfigRead,948] fake_dbl_sensor: 0
+00:00:04.281 00 AJYCG> ajyFeederConfigRead,959] feeder support: 0
+00:00:04.281 00 AJYCG> ajySimConfigRead,1082] simIndex: 0
+00:00:04.281 00 AJYCG> ajyAiConfigRead,1127] algoSupport.human: 1 algoSwitch.human: 0
+00:00:04.281 00 AJYCG> ajyAiConfigRead,1135] algoSupport.vehicle: 1 algoSwitch.vehicle: 0
+00:00:04.281 00 AJYCG> ajyAiConfigRead,1143] algoSupport.pet: 1 algoSwitch.pet: 0
+00:00:04.281 00 AJYCG> ajyAiConfigRead,1155] algoSupport.package: 0 algoSwitch.package: 0
+00:00:04.288 08 CONET> loadNetIni,2807] net support:eth0=1 ra0=1 bStaticIpFlag=0 gs_cAp0GwIpv4=172.50.4.1
+00:00:04.288 08 CONET> loadNetIni,2809] net support: usb0_4g_valid_slot_type=2 4g_builtin_no=1 
+00:00:05.291 08 net4G> detect4GNetNode,418] NO 4G device
+00:00:05.291 08 CONET> LAN_hasAP0,613] =1
+00:00:05.292 00 NET> netMngrModuleInit,84] net mngr module init success
+00:00:05.292 08 CONET> inner_supportBleCfgNet,4091] 6012B-X
+ bSupport=1
+00:00:05.292 08 CONET> isSupportBleCfgNet,4168] usb: bSupport=1
+00:00:05.292 08 CONET> coreNetGet,4381] E_BLE_CFG_NET_SUPPORT, bSupport=1 
+00:00:05.292 00 AJYCG> ajySetBtConfigNetSupport,2148] bt config net support: 1
+00:00:05.292 00 AJYCG> ajySetSimDeviceFlag,2157] sim device support: 0
+00:00:05.296 08 CONET> ThreadNetEvent,253] ---- ThreadNetEvent is going...  g_bRuningNetEvent=1
+00:00:05.296 08 CONET> ThreadTfStatus,2904] ---- ThreadTfStatus is going...
+00:00:05.296 11 CONET> ThreadCoreNet,2154] ---- ThreadCoreNet is going...  eModule_type_4G=0 gs_bReset_coreNetInit=1
+00:00:05.318 00 PLAT> ajyPlatformCertInit,158] cert init success
+00:00:05.319 00 EVENT> appAsyncEventHandlerRegister,371] module(102) event(106) handler(0x537010) register success
+00:00:05.319 00 EVENT> appAsyncEventHandlerRegister,371] module(102) event(101) handler(0x5359fc) register success
+00:00:05.319 00 EVENT> appAsyncEventHandlerRegister,371] module(102) event(102) handler(0x536b3c) register success
+00:00:05.319 00 ALED> ajyLedSetWorkStatus,58] E_WORK_STA_NORMAL_START
+00:00:05.319 00 LEDCL> fLed_ledControl,258] nLedType: 1, eLedCtrlMode: 0
+00:00:05.319 00 LEDCL> fLed_ledControl,258] nLedType: 0, eLedCtrlMode: 1
+00:00:05.319 00 ALED> ajyLedSetWorkStatus,69] E_WORK_STA_WAIT_BIND
+00:00:05.319 00 LEDCL> fLed_ledControl,258] nLedType: 1, eLedCtrlMode: 2
+00:00:05.319 00 LEDCL> fLed_ledControl,258] nLedType: 0, eLedCtrlMode: 2
+00:00:05.320 00 EVENT> appAsyncEventHandlerRegister,371] module(113) event(2) handler(0x511088) register success
+00:00:05.321 00 EVENT> appAsyncEventHandlerRegister,371] module(113) event(31) handler(0x510fa4) register success
+00:00:05.321 00 EVENT> appAsyncEventHandlerRegister,401] module(113) event(32) handler(0x5109c8) register success
+00:00:05.321 00 EVENT> appAsyncEventHandlerRegister,401] module(113) event(33) handler(0x510ea8) register success
+00:00:05.321 00 EVENT> appAsyncEventHandlerRegister,401] module(113) event(27) handler(0x510960) register success
+00:00:05.321 00 EVENT> appAsyncEventHandlerRegister,371] module(113) event(100) handler(0x511174) register success
+00:00:05.321 00 AJYNW> ajyNetworkConfigMngrModuleInit,526] device is unbind, start network config
+00:00:05.322 00 EVENT> appAsyncEventHandlerRegister,371] module(100) event(12) handler(0x50c1f4) register success
+00:00:05.322 00 EVENT> appAsyncEventHandlerRegister,371] module(100) event(105) handler(0x50c000) register success
+00:00:05.322 00 EVENT> appAsyncEventHandlerRegister,371] module(100) event(120) handler(0x50bf20) register success
+00:00:05.367 00 AJYNW> ajyNetworkConfigMngrModuleInit,533] qr scan module init success
+00:00:05.367 00 EVENT> appAsyncEventHandlerRegister,371] module(7) event(4) handler(0x5c7880) register success
+00:00:05.368 00 EVENT> appAsyncEventHandlerRegister,401] module(6) event(32) handler(0x5c6330) register success
+00:00:05.368 00 EVENT> appAsyncEventHandlerRegister,401] module(6) event(33) handler(0x5c634c) register success
+00:00:06.297 08 CONET> ThreadCoreNet,2174]  wpa_supplicant.conf exist=1  LAN_hasNetNode()=2
+killall: udhcpd: no process killed
+killall: hostapd: no process killed
+killall: udhcpc: no process killed
+00:00:06.369 08 CONET> notifyThread_eventArrived,2682] ---- gs_eEventFromOuter=2 
+00:00:06.369 02 AP> apCfgNetModuleInit,191] coreNetSoftApStart failed(-1)
+00:00:06.369 00 AJYNW> ajyNetworkConfigMngrModuleInit,546] ap cfg net module init success
+00:00:06.369 08 CONET> coreNetGet,4392] isDoingBleCfgNet() bYes=1 
+00:00:06.370 00 AJYBT> GetDeviceName,111] deviceName: WQ5
+00:00:06.386 00 MON> fileMonitorRegister,219] mask: 8
+00:00:06.386 00 MON> fileMonitorRegister,254] inotifyFd: 8 monitorFd: 3 filePath: /tmp/ble_cfg_wifi_info mask: 8
+00:00:06.386 00 EVENT> appAsyncEventHandlerRegister,401] module(118) event(8) handler(0x54f620) register success
+00:00:06.387 00 EVENT> appAsyncEventHandlerRegister,401] module(103) event(9) handler(0x537d04) register success
+00:00:06.387 00 EVENT> appAsyncEventHandlerRegister,371] module(103) event(13) handler(0x5377a0) register success
+00:00:06.387 00 EVENT> appAsyncEventHandlerRegister,371] module(103) event(18) handler(0x538110) register success
+00:00:06.387 00 EVENT> appAsyncEventHandlerRegister,401] module(103) event(106) handler(0x537070) register success
+00:00:06.387 00 EVENT> appAsyncEventHandlerRegister,371] module(103) event(103) handler(0x537540) register success
+00:00:06.388 00 EVENT> appAsyncEventHandlerRegister,401] module(104) event(9) handler(0x54f39c) register success
+00:00:06.388 00 EVENT> appAsyncEventHandlerRegister,401] module(104) event(103) handler(0x54eeb4) register success
+00:00:06.388 02 ALI> recognAlgoCheckAuth,111] coreAV_aiGet E_AV_AI_ALI_AUTH_FILE_OK failed(-11)
+00:00:06.388 02 RECOG> ajyRecognAlgoModuleInit,116] ajy recogng algo not auth
+00:00:06.388 00 EVENT> appAsyncEventHandlerRegister,401] module(105) event(7) handler(0x509a10) register success
+00:00:06.388 00 EVENT> appAsyncEventHandlerRegister,371] module(105) event(20) handler(0x509a2c) register success
+00:00:06.389 00 EVENT> appAsyncEventHandlerRegister,371] module(105) event(25) handler(0x509af4) register success
+00:00:06.389 00 EVENT> appAsyncEventHandlerRegister,371] module(105) event(110) handler(0x50a944) register success
+00:00:06.389 02 AJYFL> ajyFloodLightModuleInit,797] not support flood light
+00:00:06.389 00 EVENT> appAsyncEventHandlerRegister,401] module(101) event(9) handler(0x534ca8) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,401] module(101) event(7) handler(0x534ba4) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,401] module(101) event(18) handler(0x5350b8) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,371] module(101) event(107) handler(0x533d20) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,401] module(112) event(7) handler(0x50f910) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,401] module(112) event(9) handler(0x50f500) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,401] module(112) event(20) handler(0x50dfb0) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,371] module(112) event(21) handler(0x50dc70) register success
+00:00:06.390 00 EVENT> appAsyncEventHandlerRegister,371] module(112) event(17) handler(0x50e9f4) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,401] module(112) event(18) handler(0x50daa0) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,371] module(112) event(117) handler(0x50db28) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,401] module(112) event(100) handler(0x50cfd0) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,401] module(12) event(2) handler(0x57dd38) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,401] module(12) event(9) handler(0x57ddbc) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,401] module(12) event(26) handler(0x57dc6c) register success
+00:00:06.391 00 EVENT> appAsyncEventHandlerRegister,371] module(12) event(36) handler(0x57d77c) register success
+00:00:06.392 00 EVENT> appAsyncEventHandlerRegister,371] module(13) event(5) handler(0x588130) register success
+00:00:06.392 00 EVENT> appAsyncEven[   15.700532] [atbm_log]:ioctl_open(81c65300)(81b69e00)
+tHandlerRegister,401] module(13) event(9) handler(0x587ed4) register success
+00:00:06.392 00 EVENT> appAsyncEventHandlerRegister,371] module(13) event(37) handler(0x587ca0) register success
+00:00:06.724 00 EVENT> appAsyncEventHandlerRegister,401] module(114) event(31) handler(0x54d580) register success
+00:00:06.725 02 SIM> ajySimDeviceModuleInit,626] this is not a sim device
+killall: wpa_supplicant: no process killed
+00:00:06.725 02 AGING> deviceAgingModuleInit,201] aging prevcheck failed
+StorageServeInit
+00:00:06.727 00 FFMPG> FfmpegChannelRegister,525] ffmpeg channel(recFun0_Chn0) register success
+[main.c|loadStartParam,134] ble_localname=WVCE9NSJKEI1IRR5 0xFACD, adv_version=0 mfd_data=WQ5
+[main.c|getWiFiCapacity,191] bFountThisChip=0 nCapacity=1
+[main.c|main,220] ======>>atbm_ble_start>>>
+nimble_port_init++
+[ble_smart_cfg.c|ble_smart_gatt_svcs_init,1038] ble_gatts_count_cfg(.)=0
+nimble_host_task
+00:00:06.759 00 REC> normalRecordSetSyncFlag,756] normal record syncFlag: 1
+00:00:06.760 00 EVENT> appAsyncEventHandlerRegister,371] module(14) event(29) handler(0x57bf10) register success
+00:00:06.760 00 EVENT> appAsyncEventHandlerRegister,401] module(15) event(5) handler(0x57bbe4) register success
+00:00:06.761 00 FFMPG> FfmpegChannelRegister,525] ffmpeg channel(recFun1_Chn1) register success
+00:00:06.762 00 EVENT> appAsyncEventHandlerRegister,401] module(8) event(20) handler(0x42b1e0) register success
+00:00:06.762 00 EVENT> appAsyncEventHandlerRegister,371] module(8) event(16) handler(0x42ad8c) register success
+00:00:06.762 00 EVENT> appAsyncEventHandlerRegister,371] module(8) event(39) handler(0x42ad70) register success
+00:00:06.762 00 NTPSY> syncTimeFormSavedTimestamp,89] saved timestamp: 1723191101
+00:00:06.762 00 BASEF> hy_set_systime_by_utc_time_t,1145] date -s '2024-08-09 08:11:41'
+ble_coexist_start--
+ble_hs_sync:333
+hif_ioctl_loop
+00:00:06.767 00 REC> avRecordThreadFunc,538] record func(1) disable, rec1Chn1_thd wait trigger
+00:00:06.775 00 REC> avRecordThreadFunc,538] record func(0) disable, rec0Chn0_thd wait trigger
+[ble_hci_hif.c|fs_read_func,612] ---- thread is going....
+ble_hs_hci_cmd_tx:354
+[ble_smart_cfg.c|ble_smart_cfg_startup,1059] ble_smart_cfg_startup!11
+[ble_hci_hif.c|get_command_func,763] ---- thread is going....
+[ble_smart_cfg.c|ble_smart_cfg_task,898] ---- thread is going ---- 
+
+[ATBM lOG]set default tx power(0)
+[ble_smart_cfg.c|blesmt_adv_rsp,855] mfg_data_len=7 get_mfd_data()=WQ5
+[ble_smart_cfg.c|ble_smart_cfg_task,911] pub addr XX:XX:XX:XX:XX:XX
+[ble_smart_cfg.c|blesmt_adv_rsp,855] mfg_data_len=7 get_mfd_data()=WQ5
+Fri Aug  9 08:11:41 UTC 2024
+00:00:06.787 02 NTPSY> ntpModuleGetTimeZoneInfo,306] fopen /var/syscfg/config/time_zone.conf failed(2)
+00:00:06.794 00 INITA> main,550] autoRebootSec(0) autoRebootIntvlSec(604800)
+00:00:06.794 00 INITA> main,557] clear drop_caches......
+00:00:06.805 00 NTPSY> ntpMainFunc,219] ntp start after 20 seconds
+��������M�ٕչ��142] save config file(app_ajy_register.ini) to flash success
+[   18.368806] [atbm_log]:atbm_setup_mac:addr(2cd8de3ccc09)
+[   18.374588] [atbm_log]:3 !!! atbm_vif_setup_params: enabling priv
+[   18.391407] [atbm_log]:[STA] Interface ID:0 of type:2 added
+[   18.397417] [atbm_log]:atbm_set_uapsd_param:uapsdFlags(0)
+[   18.404335] [atbm_log]:br0_netdev_open()-1201: dev_get_by_name(br0)
+[   18.412321] [atbm_log]:atbm_set_uapsd_param:uapsdFlags(0)
+[   18.418732] [atbm_log]:atbm_set_uapsd_param:uapsdFlags(0)
+[   18.425106] [atbm_log]:atbm_set_uapsd_param:uapsdFlags(0)
+[   18.435513] [atbm_log]:atbm_set_uapsd_param:uapsdFlags(0)
+[   18.600921] [atbm_log]:__ieee80211_start_scan:channels[14]
+[   18.635861] [atbm_log]:ieee80211_prep_hw_scan:n_chans(14),space(14),index(14),scaned(14)
+00:00:10.561 08 CONET> netReset,1599] over  eCurNetEvent=100
+00:00:10.561 08 CONET> log_printf_once,2133]  eTmpNetEvent=100 eCurNetEvent=100
+00:00:10.584 08 PTRAC> ThreadPerTracking,537] 3.2 gs_bRunningPerTrack=1 bVideoSampleOk=1 gs_personTrackParamInit=1 bPtzCheckingSelf=0
+00:00:10.584 09 PTRAC> ThreadPerTracking,541] ----going---- isExistAiPerTrack()=1 gs_pCbPertrack=0x4ef304 nSleep_us=100000 320X192
+IVS Version:1.0.0 built: Mar 26 2024 14:35:21
+INFO(ivs): person_tracker version:0.0.2(00000002_111fcc8)  built:20240326-1435(5.4.0 simd)
+INFO(jzdl): jzdl version:1.4.0(00010400_0a593ef)  built:20230925-1744(4.7.2 c)
+[   20.471459] [atbm_log]:ieee80211_prep_hw_scan:n_chans(14),space(14),index(14),scaned(14)
+

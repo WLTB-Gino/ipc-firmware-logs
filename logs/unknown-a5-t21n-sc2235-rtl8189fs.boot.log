@@ -1,0 +1,795 @@
+U-Boot SPL 2013.07 (Feb 19 2019 - 10:55:30)
+Timer init
+CLK stop
+PLL init
+pll_init:399
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+fbdiv = 36 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02300860
+CPM_CPAPCR 0470484d
+fbdiv = 38 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 02500860
+CPM_CPMPCR 04a0484d
+fbdiv = 50 , refdiv = 1 , fdivq = 2 ,pllod = 1 range = 3
+cppcr is 03100860
+CPM_CPVPCR 0310086d
+cppcr 0x9a773310
+apll_freq 864000000 
+mpll_freq 900000000 
+vpll_freq = 1200000000 
+ddr sel mpll, cpu sel apll
+ddrfreq 450000000
+cclk  864000000
+l2clk 432000000
+h0clk 180000000
+h2clk 180000000
+pclk  90000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00c73011
+T30_0x5: 00000007
+T30_0x15: 0000000c
+T30_0x4: 00000000
+T30_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T30_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T30_118: 0000003c
+T30_158: 0000003c
+T30_190: 0000001f
+T30_194: 0000001d
+jz-04 :  0x00000051 
+jz-08 :  0x000000a0 
+jz-28 :  0x00000024 
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0a688a40
+DDRC_CTRL           0x0000891c
+DDRC_LMR            0x00000000
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x040e0706
+DDRC_TIMING2        0x02150607
+DDRC_TIMING3        0x2006051b
+DDRC_TIMING4        0x17240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x32150505
+DDRC_REFCNT         0x00da5b01
+DDRC_MMAP0          0x000020fc
+DDRC_MMAP1          0x00002400
+DDRC_REMAP1         0x03020100
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f0e0d0c
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Feb 19 2019 - 10:55:30)
+
+Board: ISVP (Ingenic XBurst T21 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 438k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer c2
+SF: Detected MX25L128**E
+
+In:    serial
+Out:   serial
+Err:   serial
+A5 light RED
+Net:   Jz4775-9161
+Hit any key to stop autoboot:  0 
+the manufacturer c2
+SF: Detected MX25L128**E
+
+--->probe spend 5 ms
+SF: 2621440 bytes @ 0x40000 Read: OK
+--->read spend 422 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_turkey_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1685239 Bytes = 1.6 MiB
+   Load Address: 80010000
+   Entry Point:  803a6170
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_turkey_1.0__ (root@wja-PowerEdge-R420) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #3 PREEMPT Thu Feb 21 14:40:58 CST 2019
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:83F905DC
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:864MHz L2CLK:432Mhz H0CLK:225MHz H2CLK:225Mhz PCLK:112Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 004c0000 @ 00010000 (usable)
+[    0.000000]  memory: 00030000 @ 004d0000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02a00000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x029fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x029fffff]
+[    0.000000] Primary instruction cache 16kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 16kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 64kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10668
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=42M@0x0 rmem=22M@0x2a00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2M(kernel),2M(root),11M(app),768k(mnt),16M@0(all)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 36884k/43008k available (3707k kernel code, 6124k reserved, 1156k data, 192k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:422
+[    0.000000] clockevents_config_and_register success.
+[    0.000032] Calibrating delay loop... 858.52 BogoMIPS (lpj=4292608)
+[    0.037690] pid_max: default: 32768 minimum: 301
+[    0.042694] Mount-cache hash table entries: 512
+[    0.047933] Initializing cgroup subsys debug
+[    0.052200] Initializing cgroup subsys freezer
+[    0.059879] regulator-dummy: no parameters
+[    0.064189] NET: Registered protocol family 16
+[    0.085304] bio: create slab <bio-0> at 0
+[    0.092226] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.097458] usbcore: registered new interface driver usbfs
+[    0.103012] usbcore: registered new interface driver hub
+[    0.108559] usbcore: registered new device driver usb
+[    0.113825]  (null): set:280  hold:281 dev=112500000 h=562 l=562
+[    0.120068] media: Linux media interface: v0.10
+[    0.124642] Linux video capture interface: v2.00
+[    0.131698] Switching to clocksource jz_clocksource
+[    0.136685] cfg80211: Calling CRDA to update world regulatory domain
+[    0.143930] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.148891] jz-dwc2 jz-dwc2: regulator vbus get error
+[    0.153970] DWC IN OTG MODE
+[    0.306594] sft id =========================off
+[    0.311218] dwc2 dwc2: Keep PHY ON
+[    0.314641] dwc2 dwc2: Using Buffer DMA mode
+[    0.517933] dwc2 dwc2: Core Release: 3.00a
+[    0.522048] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.528416] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.535846] hub 1-0:1.0: USB hub found
+[    0.539598] hub 1-0:1.0: 1 port detected
+[    0.543836] dwc2 dwc2: DWC2 Host Initialized
+[    0.548372] NET: Registered protocol family 2
+[    0.553506] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.560432] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.566932] TCP: Hash tables configured (established 512 bind 512)
+[    0.573218] TCP: reno registered
+[    0.576425] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.582350] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.589080] NET: Registered protocol family 1
+[    0.593927] RPC: Registered named UNIX socket transport module.
+[    0.599863] RPC: Registered udp transport module.
+[    0.604722] RPC: Registered tcp transport module.
+[    0.609414] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.616418] freq_udelay_jiffys[0].max_num = 10
+[    0.620849] cpufreq 	udelay 	loops_per_jiffy	
+[    0.625333] dwc2 dwc2: ID PIN CHANGED!
+[    0.629106] init DWC as A_HOST
+[    0.632183] 12000	 59619	 59619	
+[    0.635449] 24000	 119239	 119239	
+[    0.638861] 60000	 298097	 298097	
+[    0.642304] 120000	 596195	 596195	
+[    0.645994] 200000	 993659	 993659	
+[    0.649456] 300000	 1490488	 1490488	
+[    0.653349] 600000	 2980977	 2980977	
+[    0.656986] 792000	 3934890	 3934890	
+[    0.660694] 1008000	 5008042	 5008042	
+[    0.664534] 1200000	 5961955	 5961955	
+[    0.674600] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.681702] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.687796] msgmni has been set to 72
+[    0.694197] io scheduler noop registered
+[    0.698141] io scheduler cfq registered (default)
+[    0.705279] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.713583] console [ttyS1] enabled, bootconsole disabled
+[    0.713583] console [ttyS1] enabled, bootconsole disabled
+[    0.730195] brd: module loaded
+[    0.736525] loop: module loaded
+[    0.740631] zram: Created 2 device(s) ...
+[    0.744993] logger: created 256K log 'log_main'
+[    0.750511] jz SADC driver registeres over!
+[    0.756805] jz TCU driver register completed
+[    0.761770] the id code = c22018, the flash name is MX25L12835F
+[    0.767946] JZ SFC Controller for SFC channel 0 driver register
+[    0.774131] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.780250] Creating 6 MTD partitions on "jz_sfc":
+[    0.785234] 0x000000000000-0x000000040000 : "boot"
+[    0.790884] 0x000000040000-0x000000240000 : "kernel"
+[    0.796806] 0x000000240000-0x000000440000 : "root"
+[    0.802475] 0x000000440000-0x000000f40000 : "app"
+[    0.808126] 0x000000f40000-0x000001000000 : "mnt"
+[    0.813791] 0x000000000000-0x000001000000 : "all"
+[    0.819361] SPI NOR MTD LOAD OK
+[    0.822701] tun: Universal TUN/TAP device driver, 1.6
+[    0.827987] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.834546] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.842977] libphy: jz_mii_bus: probed
+[    0.847049] =======>gmacdev = 0x821f8680<================
+[    0.852637] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.859616] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.866093] eth%d: Don't found any phy device at all
+[    0.871234] jz_mac jz_mac.0: MII Probe failed!
+[    0.876099] usbcore: registered new interface driver zd1201
+[    0.882301] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    0.923305] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    0.928697] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    0.974217] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    0.979943] TCP: cubic registered
+[    0.983445] NET: Registered protocol family 17
+[    0.988577] soc_vpu probe success,version:1.0.0-03203fd46d
+[    0.994763] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.002179] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    1.014052] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    1.021767] Freeing unused kernel memory: 192K (804d0000 - 80500000)
+[    1.733570] dwc2 dwc2:  ++OTG Interrupt: A-Device Timeout Change++
+mdev is ok......
+ifconfig: SIOCSIFADDR: No such device
+route: SIOCADDRT: No such device
+A5 disksize=11M
+[    4.363082] zram0: detected capacity change from 0 to 11534336
+Setting up swapspace version 1, size = 11530240 bytes
+UUID=b6d1018c-1078-4bc0-a2c8-f[    4.379905] Adding 11260k swap on /dev/zram0.  Priority:-1 extents:1 across:11260k SS
+f8ff66a82ce
+config A5 gpio
+
+wja login: gpio_value:1
+insmod /app/ko/T21 driver !!!
+[    5.866009] @@@@ tx-isp-probe ok(version H20190319b) @@@@@
+[    5.987988] jz_codec_register: probe() successful!
+[    6.363661] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a2639000)
+[    6.372953] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a26ae000)
+[    6.382397] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a26af000)
+[    7.059302] RTL871X: module init start
+[    7.063338] RTL871X: rtl8189fs v4.3.24.11_26052.20180108
+[    7.068835] RTL871X: build time: Nov 30 2018 16:31:24
+[    7.074160] wlan power on
+[    7.093202] wlan power on over 111 by jsk
+[    7.097400] wlan power on over by jsk
+[    7.101786] RTL871X: module init ret=0
+[    7.139091] mmc1: card claims to support voltages below the defined range. These will be ignored.
+[    7.160462] mmc1: new SDIO card at address 0001
+[    7.255179] RTL871X: HW EFUSE
+[    7.258280] RTL871X: hal_com_config_channel_plan chplan:0x20
+[    7.429477] RTL871X: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[    7.449122] RTL871X: rtw_ndev_init(wlan0) if1 mac_addr=XX:XX:XX:XX:XX:XX
+[Daemon.c][67]>>>>>>>>> Start Daemon Log Service <<<<<<<<<<
+
+UNRAR 4.20 freeware      Copyright (c) 1993-2012 Alexander Roshal
+
+
+Extracting from /app/ipcam/ipcam.rar
+
+Extracting  /tmp/ipcam                                                 1%setsockopt: No such device
+ 61%setsockopt: No such device
+ 80%[common/CommonBSP.c][431]Get Env Value = [A5]
+
+[misc/gpio/LedKey.c][95]write ON into /tmp/Led_Switch with length of 3
+[misc/gpio/LedKey.c][246]new led init success
+
+
+[Daemon_UnixDomainComunication.c][119]server waiting for  client connect
+
+the server wait form client data
+[ Daemon_FacInfoCtl.c, 162 ]=> Read Factory flash OK
+[ Daemon_FacInfoCtl.c, 162 ]=> Read Factory flash OK
+FILE:[pox_net.c] LINE:[158] Msg:ioctl func run err
+FILE:[pox_net.c] LINE:[158] Msg:ioctl func run err
+  OK 
+All OK
+[BSP-S][CommonBSP.c][PlatformInit:431]Get Env Value = [A5]
+[Main.cpp][759]>>>>>>>>> Start Auto Log Service <<<<<<<<<<
+
+
+vers[   12.524104] set sensor gpio as PA-high-10bit
+ion info:
+	vfware :2020-03-02 14:09:59
+[BSP][System.c][SystemGetCaps:340]MemoryTotal = 37076 MemoryLeft = 9164[Packet.cpp][789]Packet usage : 0K / 2048K, 0%
+
+[Main.cpp][270]Total Memory:2048 kb
+[BSP][Capture.c][CaptureGetChannels:195]Test
+00:00:12|info  digital chn num:0
+00:00:12|trace CConfigLocation::getLatest().iLanguage = 0.
+[BSP][Video.c][SystemGetVideoMode:186]get video mode = 0
+[   12.594248] sc2235 chip found @ 0x30 (i2c0)
+[BSP][initial.c][jz_stream_start:2299]===>>>width=1920 height=1080
+[BSP][initial.c][jz_stream_start:2361]IMP_FrameSource_GetChnAttr chn=0
+w=1920, h=1080
+pixFmt=10
+crop: enable=0, left=0, top=0, w=1920, h=1080
+scaler: enable=0, w=1920, h=1080
+outFrmRateNum=15, outFrmRateDen=1
+nrVBs=2
+ret=0
+[BSP][initial.c][jz_stream_start:2421]IMP_FrameSource_SetChnAttr chn=0, w=1920, h=1080, crop(0,0,0,1920,1080),scaler(0,1920,1080), ret=0
+[BSP][initial.c][jz_stream_start:2524]ENC_RC_MODE_SMART  1920X1080 
+i264e[info]: profile High, level 4.0
+setsockopt: No such device
+[BSP][Capture.c][CaptureSetVstd:562]Test
+00:00:12|info  Device Local Captures g_nCaptures = 1
+00:00:12|info  Device Logic Captures g_nLogicNum = 1
+[BSP][Audio.c][AudioInGetChannels:1955]Test
+[   13.373180] codec_set_device: set device: MIC...
+set safe_suppression_value 1.500000 
+[BSP][Audio.c][AudioInCreate:2000]audio_in_init return= 0 
+[BSP][Audio.c][AudioInStart:2055]Test
+[MobileCountryAppTalk.cpp][34]AppTalk
+[MobileCountrySdkAPI.cpp][24]CMobileCountrySdkApi
+[MobileCountrySdkAPI.cpp][95]sdk version=============================: 1.0.1950
+[xml_config_init, 186]
+00:00:13|trace CDevAudio(), Create Audio Device.
+[BSP][Audio.c][AudioCreate:1433]Test1
+==>CPacketManager: allocate buffer:0x00FE66FC size:200704
+thread create
+thread success
+[DaemonManager.cpp][43]wifi:0 wificonnect:0 Led:0 m_iConnectPostion��0
+[DevInfo.cpp][1044]Get Ip:245.255.255.255
+[BSP][Video.c][SystemGetVideoMode:186]get video mode = 0
+set device info ... [DevSearch.cpp][592]Read Factory flash OK
+[MobileCountrySdkAPI.cpp][180]sn:0000000000000000
+[misc/sdcard/SDcard.c][329]The Wifi.txt is not exist
+
+[Daemon_BackupRecover.c][122]sleep
+
+setsockopt: No such device
+[MobileCountrySdkAPI.cpp][205]version[1.01.043]
+[MobileCountrySdkAPI.cpp][129]CMobileCo[   13.949134] codec_set_device: set device: speaker...
+untry SN:0000000000000000
+[MobileCountrySdkAPI.cpp][146]pro_info.product_module_id:IPC_HY_JZ_HDC_51_SW 
+[MobileCountrySdkAPI.cpp][216]set device feature ... 
+set callback ... 
+MobileCountrySdkNetWorkCallback: cmd[1005] not legality
+MobileCountrySdkNetWorkCallback line(422) cmd(2)=CC_CMD_GET_WIFI_DEVICE_NAME
+[BSP][Audio.c][audio_out_init:1394]g_audioInfo_context.AOMaxVol is 60
+[BSP][Audio.c][audio_out_init:1395]g_audioInfo_context.AOFuncB is -30 
+[BSP][Audio.c][audio_out_init:1396] g_audioInfo_context.AOFuncK is 0.900000
+[BSP][Video.c][VideoInSetCamera:354]HorReverse = 0 VerReverse = 0 Color2WhiteBlack = 1 ExposureType = 0 shutter = 3000
+[BSP][Video.c][VideoInSetCamera:355]pFormat->AntiFlicker = 2 PAA = 1
+[BSP][Video.c][VideoInSetCamera:356]pFormat->IRCut = 0
+[BSP][Capture.c][CaptureSetTime:572]set datefmt = 0 datespc = 0 timefmt = 0
+[Encode.cpp][1032]CEncode::AppEncodeConfig
+[DevCapture.cpp][724]CDevCapture::SetFormat
+[BSP][Capture.c][CaptureSetFormat:755]CaptureSetFormat
+[BSP][Capture.c][CaptureSetFormat:756]channel    = 0
+[BSP][Capture.c][CaptureSetFormat:757]dwType     = 0
+[BSP][Capture.c][CaptureSetFormat:758]AVOption   = 1
+[BSP][Capture.c][CaptureSetFormat:759]BitRate    = 4096
+[BSP][Capture.c][CaptureSetFormat:760]BitRateControl = 0
+[BSP][Capture.c][CaptureSetFormat:761]Compression    = 7
+[BSP][Capture.c][CaptureSetFormat:762]FramesPerMinute= 0
+[BSP][Capture.c][CaptureSetFormat:763]FramesPerSecond= 25
+[BSP][Capture.c][CaptureSetFormat:764]Gop            = 50
+[BSP][Capture.c][CaptureSetFormat:765]ImageQuality   = 4
+[BSP][Capture.c][CaptureSetFormat:766]ImageSize      = 10
+[BSP][Capture.c][CaptureSetFormat:767]Reserved       = 0
+[BSP][Audio.c][AudioCreate:1437]audio_out_init return = 0
+[MobileCountryMediaManager.cpp][75]Icapture::instance ok
+[BSP][Capture.c][CaptureForceIFrame:734]Test
+[BSP][Capture.c][CaptureStart:865]********************CaptureStart*************************
+i264e[info]: kb/s:7057.56
+[BSP][initial.c][jz_stream_start:2299]===>>>width=1920 height=1080
+[BSP][initial.c][jz_stream_start:2361]IMP_FrameSource_GetChnAttr chn=0
+w=1920, h=1080
+pixFmt=10
+crop: enable=0, left=0, top=0, w=1920, h=1080
+scaler: enable=0, w=1920, h=1080
+outFrmRateNum=15, outFrmRateDen=1
+nrVBs=2
+ret=0
+[BSP][initial.c][jz_stream_start:2421]IMP_FrameSource_SetChnAttr chn=0, w=1920, h=1080, crop(0,0,0,1920,1080),scaler(0,1920,1080), ret=0
+[BSP][initial.c][jz_stream_start:2524]ENC_RC_MODE_SMART  1920X1080 
+i264e[info]: profile High, level 4.0
+[BSP][Color2Grey.c][SetDayMode:175]IMP_ISP_Tuning_GetISPRunningMode mode is IMPISP_RUNNING_MODE_DAY
+aec-debug: ecMode = 0
+aec-debug: dtdEnable = 1
+aec-debug: dtdBandNum = 3
+aec-debug: dtdPowThd = 6000000.000000
+aec-debug: dtdDxRatio = 0.200000
+aec-debug: safeSupression = 1.500000
+[BSP][initial.c][Jz_SetImageFormat:3109]sucess to Jz_SetImageFormat width = 1920, height = 1080, rcMode = 3, bitRate = 4096
+[BSP][Color2Grey.c][SetDayMode:175]IMP_ISP_Tuning_GetISPRunningMode mode is IMPISP_RUNNING_MODE_DAY
+[DevCapture.cpp][724]CDevCapture::SetFormat
+[BSP][Capture.c][CaptureSetFormat:755]CaptureSetFormat
+[BSP][Capture.c][CaptureSetFormat:756]channel    = 0
+[BSP][Capture.c][CaptureSetFormat:757]dwType     = 1
+[BSP][Capture.c][CaptureSetFormat:758]AVOption   = 1
+[BSP][Capture.c][CaptureSetFormat:759]BitRate    = 160
+[BSP][Capture.c][CaptureSetFormat:760]BitRateControl = 0
+[BSP][Capture.c][CaptureSetFormat:761]Compression    = 7
+[BSP][Capture.c][CaptureSetFormat:762]FramesPerMinute= 0
+[BSP][Capture.c][CaptureSetFormat:763]FramesPerSecond= 20
+[BSP][Capture.c][CaptureSetFormat:764]Gop            = 40
+[BSP][Capture.c][CaptureSetFormat:765]ImageQuality   = 4
+[BSP][Capture.c][CaptureSetFormat:766]ImageSize      = 5
+[BSP][Capture.c][CaptureSetFormat:767]Reserved       = 0
+[BSP][Capture.c][CaptureSetFormat:771]error dwType = 1
+[DevCapture.cpp][724]CDevCapture::SetFormat
+[BSP][Capture.c][CaptureSetFormat:755]CaptureSetFormat
+[BSP][Capture.c][CaptureSetFormat:756]channel    = 0
+[BSP][Capture.c][CaptureSetFormat:757]dwType     = 4
+[BSP][Capture.c][CaptureSetFormat:758]AVOption   = 1
+[BSP][Capture.c][CaptureSetFormat:759]BitRate    = 160
+[BSP][Capture.c][CaptureSetFormat:760]BitRateControl = 0
+[BSP][Capture.c][CaptureSetFormat:761]Compression    = 7
+[BSP][Capture.c][CaptureSetFormat:762]FramesPerMinute= 0
+[BSP][Capture.c][CaptureSetFormat:763]FramesPerSecond= 130
+[BSP][Capture.c][CaptureSetFormat:764]Gop            = 40
+[BSP][Capture.c][CaptureSetFormat:765]ImageQuality   = 3
+[BSP][Capture.c][CaptureSetFormat:766]ImageSize      = 6
+[BSP][Capture.c][CaptureSetFormat:767]Reserved       = 0
+[BSP][Capture.c][CaptureSetFormat:771]error dwType = 4
+[BSP][Capture.c][CaptureSetCover:657]channel======0  index===========0:  enable:0    color:0
+[BSP][Capture.c][CaptureSetCover:657]channel======0  index===========1:  enable:0    color:0
+[BSP][Capture.c][CaptureSetCover:657]channel======0  index===========2:  enable:0    color:0
+[BSP][Capture.c][CaptureSetCover:657]channel======0  index===========3:  enable:0    color:0
+[DevCapture.cpp][824]TextToRaster pBuffer []str[]
+[BSP][Capture.c][CaptureSetTitle:601]channel:0 index:3 color:ffffff x:0 y:990
+[BSP][Capture.c][CaptureSetTitle:602]color[ffffff]R[ff]G[ff]B[ff]
+[BSP][Capture.c][CaptureSetTitle:601]channel:0 index:0 color:ffffff x:960 y:24
+[BSP][Capture.c][CaptureSetTitle:602]color[ffffff]R[ff]G[ff]B[ff]
+[BSP][Video.c][VideoCreate:110]Test
+[DlgNtpCli.cpp][571]Set TimeZone:80,
+CUserManager::readConfig()
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+setsockopt: No such device
+[BSP][System.c][SystemSetCurrentTime:97]set time 2018-04-26 00:00:00
+[BSP][Video.c][SystemGetVideoMode:186]get video mode = 0
+cfgLocation.iVideoFormat = 0 videoMode = 0
+[BSP][Video.c][VideoSetVstd:133]Test
+[BSP][Capture.c][CaptureSetVstd:562]Test
+[DevCapture.cpp][1633]set val of suspend is 0
+[DevAudioIn.cpp][304]set val of suspend is 0
+[BSP][net/netIp.c][NetGetHostIP:592]#########################################################
+[net/netIp.c][592][NetGetHostIP]
+00:00:00|trace CFilterHelper::registerFilter had been register!!
+00:00:00|trace NetWorkService Run=======>>>>>>>>>>>>>>>>>
+===== web server Run: T
+===== http port = 80, tcp port = 9008, language = 100, web file name:webEN.lang
+===== build date: Aug 23 2017, 00:48:08
+[BSP][WatchDog.c][WatchdogCreate:34]Watchdog card enabled.
+[BSP][sample-wdt.c][wdt_enable:59]wdt_enable OK !!!
+==>>LedStat::stat()>>>>>>>>>
+[LedStat.cpp][146]==>>LedStat thread start!
+
+00:00:00|trace do_init: initialized context 0xee49c8@@@@@@@ enble 0 state 1
+00:00:00|trace main chn 0 Change fps is 25 iResol 10 rate 4096 
+00:00:00|trace extra chn 0 Change fps is 20 iResol 5  rate 160 
+00:00:00|trace @@@@@@@@@@@have extra stream
+00:00:00|trace $$$$$$$$connect count is 0
+[LedStat.cpp][118]
+Memory attached at 777C8000
+
+[BSP][initial.c][capture_pthread:1315]capture_pthread start*****************
+
+Add moniter to stream 0, total 1 viewer.
+[MobileCountryMediaManager.cpp][113]RecordCam AudioIn Start
+[BSP][Audio.c][AudioInStart:2055]Test
+[MobileCountryAppCmd.cpp][52]MobileCountryAppCmd
+[BSP][Audio.c][AudioDetectSetParam:1467]CrySenseLv == 1 ,  PubSenseLv == 3 
+[BSP][MotionDetect.c][MotionDetectSetParameter:134]iLevel == 3
+[DmManager.cpp][68]DmManager
+[AlarmDetect.cpp][592]bCryEnable:0,bMotionEnable:1,bHumanEnable:1,bVoiceEnable:1,bTraceEnable:0
+00:00:01|info  Challenger[IPD_1.2.S30.OV9732.R] Launched at Local Time 2018/4/26 00:00:01!
+00:00:01|info  open faile  /mnt/mtd/Log/Log 
+00:00:01|info  open faile  /mnt/mtd/Config/Config1 
+00:00:01|info  open faile  /mnt/mtd/Config/Config2 
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+[MobileCountryMediaManager.cpp][339]I Frame time:2000-01-01 08:00:14 with:1920 height:1080
+setsockopt: No such device
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+setsockopt: No such device
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+[misc/smartlink/Daemon_WifiConnect.c][539]wlan0 running error 
+
+[DriverManager.cpp][124]clear cache @@@@@@@@@@@@@@@@
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+setsockopt: No such device
+[ Daemon_Common.c, 497 ]=> normal termination, exit status = 0
+[MobileCountryMediaManager.cpp][339]I Frame time:2018-04-26 00:00:04 with:1920 height:1080
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][initial.c][jz_snap_pic:3218]jz_snap_pic ABCDEFG
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+setsockopt: No such device
+[misc/smartlink/Daemon_WifiConnect.c][568]NetCard is normal @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+[ Daemon_Common.c, 497 ]=> normal termination, exit status = 0
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+setsockopt: No such device
+FILE:[pox_net.c] LINE:[158] Msg:ioctl func run err
+FILE:[pox_net.c] LINE:[158] Msg:ioctl func run err
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+[DevSearch.cpp][592]Read Factory flash OK
+setsockopt: No such device
+[Daemon_BackupRecover.c][132]link error
+
+q[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[DlgNtpCli.cpp][127]Can't get address info! error code = -2,info : Name or service not known
+
+[BSP][Motion.c][MotionResultGet:445][INFO]: !!!!!MD result: 0!!!!!
+Failed to connect to non-global ctrl_ifname: (nil)  error: No such file or directory
+setsockopt: No such device
+[misc/smartlink/Daemon_WifiConnect.c][1223]Enter WifiSta_DetectWifi thread!!!
+
+Failed to connect to non-global ctrl_ifname: (nil)  error: No such file or directory
+====
+dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_turkey_1.0__ (root@wja-PowerEdge-R420) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #3 PREEMPT Thu Feb 21 14:40:58 CST 2019
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:83F905DC
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_get_rate, parent = 1200000000, rate = 0, m = 0, n = 0, reg val = 0x881000ff
+[    0.000000] CCLK:864MHz L2CLK:432Mhz H0CLK:225MHz H2CLK:225Mhz PCLK:112Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 004c0000 @ 00010000 (usable)
+[    0.000000]  memory: 00030000 @ 004d0000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02a00000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x029fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x029fffff]
+[    0.000000] On node 0 totalpages: 10752
+[    0.000000] free_area_init_node: node 0, pgdat 804cd4d0, node_mem_map 81000000
+[    0.000000]   Normal zone: 84 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 10752 pages, LIFO batch:1
+[    0.000000] Primary instruction cache 16kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 16kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 64kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10668
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=42M@0x0 rmem=22M@0x2a00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2M(kernel),2M(root),11M(app),768k(mnt),16M@0(all)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 36884k/43008k available (3707k kernel code, 6124k reserved, 1156k data, 192k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:422
+[    0.000000] clockevents_config_and_register success.
+[    0.000032] Calibrating delay loop... 858.52 BogoMIPS (lpj=4292608)
+[    0.037690] pid_max: default: 32768 minimum: 301
+[    0.042694] Mount-cache hash table entries: 512
+[    0.047933] Initializing cgroup subsys debug
+[    0.052200] Initializing cgroup subsys freezer
+[    0.059879] regulator-dummy: no parameters
+[    0.064189] NET: Registered protocol family 16
+[    0.085304] bio: create slab <bio-0> at 0
+[    0.092226] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.097458] usbcore: registered new interface driver usbfs
+[    0.103012] usbcore: registered new interface driver hub
+[    0.108559] usbcore: registered new device driver usb
+[    0.113825]  (null): set:280  hold:281 dev=112500000 h=562 l=562
+[    0.120068] media: Linux media interface: v0.10
+[    0.124642] Linux video capture interface: v2.00
+[    0.131698] Switching to clocksource jz_clocksource
+[    0.136685] cfg80211: Calling CRDA to update world regulatory domain
+[    0.143930] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.148891] jz-dwc2 jz-dwc2: regulator vbus get error
+[    0.153970] DWC IN OTG MODE
+[    0.306594] sft id =========================off
+[    0.311218] dwc2 dwc2: Keep PHY ON
+[    0.314641] dwc2 dwc2: Using Buffer DMA mode
+[    0.517933] dwc2 dwc2: Core Release: 3.00a
+[    0.522048] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.528416] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.535846] hub 1-0:1.0: USB hub found
+[    0.539598] hub 1-0:1.0: 1 port detected
+[    0.543836] dwc2 dwc2: DWC2 Host Initialized
+[    0.548372] NET: Registered protocol family 2
+[    0.553506] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.560432] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.566932] TCP: Hash tables configured (established 512 bind 512)
+[    0.573218] TCP: reno registered
+[    0.576425] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.582350] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.589080] NET: Registered protocol family 1
+[    0.593927] RPC: Registered named UNIX socket transport module.
+[    0.599863] RPC: Registered udp transport module.
+[    0.604722] RPC: Registered tcp transport module.
+[    0.609414] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.616418] freq_udelay_jiffys[0].max_num = 10
+[    0.620849] cpufreq 	udelay 	loops_per_jiffy	
+[    0.625333] dwc2 dwc2: ID PIN CHANGED!
+[    0.629106] init DWC as A_HOST
+[    0.632183] 12000	 59619	 59619	
+[    0.635449] 24000	 119239	 119239	
+[    0.638861] 60000	 298097	 298097	
+[    0.642304] 120000	 596195	 596195	
+[    0.645994] 200000	 993659	 993659	
+[    0.649456] 300000	 1490488	 1490488	
+[    0.653349] 600000	 2980977	 2980977	
+[    0.656986] 792000	 3934890	 3934890	
+[    0.660694] 1008000	 5008042	 5008042	
+[    0.664534] 1200000	 5961955	 5961955	
+[    0.674600] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.681702] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.687796] msgmni has been set to 72
+[    0.694197] io scheduler noop registered
+[    0.698141] io scheduler cfq registered (default)
+[    0.705279] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.713583] console [ttyS1] enabled, bootconsole disabled
+[    0.730195] brd: module loaded
+[    0.736525] loop: module loaded
+[    0.740631] zram: Created 2 device(s) ...
+[    0.744993] logger: created 256K log 'log_main'
+[    0.750511] jz SADC driver registeres over!
+[    0.756805] jz TCU driver register completed
+[    0.761770] the id code = c22018, the flash name is MX25L12835F
+[    0.767946] JZ SFC Controller for SFC channel 0 driver register
+[    0.774131] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.780250] Creating 6 MTD partitions on "jz_sfc":
+[    0.785234] 0x000000000000-0x000000040000 : "boot"
+[    0.790884] 0x000000040000-0x000000240000 : "kernel"
+[    0.796806] 0x000000240000-0x000000440000 : "root"
+[    0.802475] 0x000000440000-0x000000f40000 : "app"
+[    0.808126] 0x000000f40000-0x000001000000 : "mnt"
+[    0.813791] 0x000000000000-0x000001000000 : "all"
+[    0.819361] SPI NOR MTD LOAD OK
+[    0.822701] tun: Universal TUN/TAP device driver, 1.6
+[    0.827987] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.834546] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.842977] libphy: jz_mii_bus: probed
+[    0.847049] =======>gmacdev = 0x821f8680<================
+[    0.852637] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.859616] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.866093] eth%d: Don't found any phy device at all
+[    0.871234] jz_mac jz_mac.0: MII Probe failed!
+[    0.876099] usbcore: registered new interface driver zd1201
+[    0.882301] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    0.923305] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    0.928697] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    0.974217] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    0.979943] TCP: cubic registered
+[    0.983445] NET: Registered protocol family 17
+[    0.988577] soc_vpu probe success,version:1.0.0-03203fd46d
+[    0.994763] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    1.002179] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    1.014052] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    1.021767] Freeing unused kernel memory: 192K (804d0000 - 80500000)
+[    1.733570] dwc2 dwc2:  ++OTG Interrupt: A-Device Timeout Change++
+[    4.363082] zram0: detected capacity change from 0 to 11534336
+[    4.379905] Adding 11260k swap on /dev/zram0.  Priority:-1 extents:1 across:11260k SS
+[    5.866009] @@@@ tx-isp-probe ok(version H20190319b) @@@@@
+[    5.987988] jz_codec_register: probe() successful!
+[    5.993250] cgu_set_rate, parent = 1200000000, rate = 2048000, n = 9375, reg val = 0x8100249f
+[    5.993272] cgu_enable,cgu_i2s reg val = 0xa100249f
+[    6.363661] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a2639000)
+[    6.372953] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a26ae000)
+[    6.382397] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a26af000)
+[    7.059302] RTL871X: module init start
+[    7.063338] RTL871X: rtl8189fs v4.3.24.11_26052.20180108
+[    7.068835] RTL871X: build time: Nov 30 2018 16:31:24
+[    7.074160] wlan power on
+[    7.093202] wlan power on over 111 by jsk
+[    7.097400] wlan power on over by jsk
+[    7.101786] RTL871X: module init ret=0
+[    7.139091] mmc1: card claims to support voltages below the defined range. These will be ignored.
+[    7.160462] mmc1: new SDIO card at address 0001
+[    7.255179] RTL871X: HW EFUSE
+[    7.258280] RTL871X: hal_com_config_channel_plan chplan:0x20
+[    7.429477] RTL871X: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[    7.449122] RTL871X: rtw_ndev_init(wlan0) if1 mac_addr=XX:XX:XX:XX:XX:XX
+[   12.524104] set sensor gpio as PA-high-10bit
+[   12.535144] @@@@@@@probe ok ------->sc2235
+[   12.593690] -----sc2235_detect: 520 ret = 0, v = 0x22
+[   12.594236] -----sc2235_detect: 528 ret = 0, v = 0x35
+[   12.594248] sc2235 chip found @ 0x30 (i2c0)
+[   12.717876] sc2235 stream on
+[   12.941910] codec_codec_ctl: set sample rate...
+[   12.942408] codec_codec_ctl: set device...
+[   13.373180] codec_set_device: set device: MIC...
+[   13.732436] codec_codec_ctl: set repaly channel...
+[   13.732463] codec_codec_ctl: set sample rate...
+[   13.732711] codec_codec_ctl: set device...
+[   13.949134] codec_set_device: set device: speaker...
+======
+

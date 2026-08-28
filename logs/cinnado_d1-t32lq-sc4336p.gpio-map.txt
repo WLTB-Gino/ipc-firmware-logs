@@ -1,0 +1,26 @@
+[root@Ingenic-uc1_1:~]#         cat /sys/kernel/debug/gpio
+GPIOs 0-31, GPIO A:
+ gpio-10  (ADC_PIN             ) in  lo
+ gpio-20  (sc4336p_reset_1     ) out hi
+ gpio-21  (SDHCI EXT CD        ) in  lo
+ gpio-22  (gpioCtrl            ) in  hi
+
+GPIOs 32-63, GPIO B:
+ gpio-38  (gpioCtrl            ) out lo
+ gpio-39  (gpioCtrl            ) out hi
+ gpio-47  (gpioCtrl            ) out lo
+ gpio-48  (gpioCtrl            ) out lo
+ gpio-57  (ptzCtrl             ) out lo
+ gpio-58  (ptzCtrl             ) out lo
+ gpio-59  (gpioCtrl            ) out lo
+ gpio-61  (ptzCtrl             ) out lo
+ gpio-63  (gpioCtrl            ) out hi
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (ptzCtrl             ) out lo
+ gpio-66  (ptzCtrl             ) out lo
+ gpio-67  (ptzCtrl             ) out lo
+ gpio-68  (ptzCtrl             ) out lo
+ gpio-69  (ptzCtrl             ) out lo
+ gpio-70  (sysfs               ) out lo
+

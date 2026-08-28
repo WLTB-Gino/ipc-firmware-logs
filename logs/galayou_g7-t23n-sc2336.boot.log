@@ -1,0 +1,399 @@
+
+GPIOs 0-31, GPIO A:
+ gpio-6   (not used           ) out hi
+ gpio-7   (speaker            ) out hi
+ gpio-14  (button             ) in  hi
+ gpio-16  (ircut              ) out hi
+ gpio-17  (ircut              ) out hi
+ gpio-18  (sc2336_reset       ) out hi
+
+GPIOs 32-63, GPIO B:
+ gpio-35  (led_b active low    ) out hi
+ gpio-49  (mmc_detect          ) in  lo
+ gpio-50  (irled               ) out lo
+ gpio-57  (sda i2c-1           ) in  hi
+ gpio-58  (scl i2c-1           ) in  hi
+
+GPIOs 64-95, GPIO C:
+
+
+
+
+U-Boot SPL 2013.07 (Dec 20 2023 - 19:41:56)
+Board info: T23N
+
+apll_freq = 1188000000 
+mpll_freq = 1200000000 
+sdram init start
+DDR clk rate 600000000
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Dec 20 2023 - 19:41:56)
+
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 215k for U-Boot at: 83fc8000
+Reserving 32784k for malloc() at: 81fc4000
+Reserving 32 Bytes for Board Info at: 81fc3fe0
+Reserving 124 Bytes for Global Data at: 81fc3f64
+Reserving 128k for boot params() at: 81fa3f64
+Stack Pointer at: 81fa3f48
+Now running in RAM - U-Boot at: 83fc8000
+MMC:   msc: 0
+the manufacturer 85
+SF: Detected P25Q64H
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====>PHY not found!Jz4775-9161
+Hit any key to stop autoboot:  0 
+the manufacturer 85
+SF: Detected P25Q64H
+
+--->probe spend 4 ms
+otabakpaddr:0x0
+Card did not respond to voltage select!
+Error, mout fatfs failed, error num: 3
+the manufacturer 85
+SF: Detected P25Q64H
+
+--->probe spend 4 ms
+SF: 1835008 bytes @ 0x40000 Read: OK
+--->read spend 591 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_pike_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1681989 Bytes = 1.6 MiB
+   Load Address: 80010000
+   Entry Point:  8040bed0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_pike_1.0__ (cheng@cheng-PC) (gcc version 5.4.0 (Ingenic Linux-Release3.3.0-Default(xburst1(fp32)+uclibc0.9.33.2) Smaller libc 2022.11-07) ) #3 PREEMPT Tue Nov 21 17:58:01 CST 2023
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:00200834
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_vpu clk should be opened!
+[    0.000000] CCLK:1188MHz L2CLK:594Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 004c5000 @ 00010000 (usable)
+[    0.000000]  memory: 0003b000 @ 004d5000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02800000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x027fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x027fffff]
+[    0.000000] Primary instruction cache 16kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 16kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 64kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10160
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=40960K@0x0 rmem=24576K@0x2800000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(uboot),1792k(kernel),960k(rootfs),4800k(app),384k(config)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 34764k/40960k available (4114k kernel code, 6196k reserved, 768k data, 236k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:351
+[    0.000000] clockevents_config_and_register success.
+[    0.000020] Calibrating delay loop... 1185.38 BogoMIPS (lpj=5926912)
+[    0.087810] pid_max: default: 32768 minimum: 301
+[    0.092706] Mount-cache hash table entries: 512
+[    0.097744] Initializing cgroup subsys debug
+[    0.102002] Initializing cgroup subsys freezer
+[    0.108828] regulator-dummy: no parameters
+[    0.113068] NET: Registered protocol family 16
+[    0.121765] bio: create slab <bio-0> at 0
+[    0.127840] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.132846] usbcore: registered new interface driver usbfs
+[    0.138466] usbcore: registered new interface driver hub
+[    0.143894] usbcore: registered new device driver usb
+[    0.149163] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.155418]  (null): set:249  hold:250 dev=100000000 h=500 l=500
+[    0.161528] media: Linux media interface: v0.10
+[    0.166116] Linux video capture interface: v2.00
+[    0.172588] Switching to clocksource jz_clocksource
+[    0.177542] cfg80211: Calling CRDA to update world regulatory domain
+[    0.184550] NET: Registered protocol family 2
+[    0.189465] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.196420] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.202819] TCP: Hash tables configured (established 512 bind 512)
+[    0.209150] TCP: reno registered
+[    0.212354] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.218317] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.224874] NET: Registered protocol family 1
+[    0.229533] RPC: Registered named UNIX socket transport module.
+[    0.235528] RPC: Registered udp transport module.
+[    0.240230] RPC: Registered tcp transport module.
+[    0.245014] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.251863] freq_udelay_jiffys[0].max_num = 10
+[    0.256333] cpufreq 	udelay 	loops_per_jiffy	
+[    0.260704] 12000	 59867	 59867	
+[    0.263983] 24000	 119735	 119735	
+[    0.267414] 60000	 299338	 299338	
+[    0.270857] 120000	 598677	 598677	
+[    0.274436] 200000	 997796	 997796	
+[    0.277921] 300000	 1496694	 1496694	
+[    0.281629] 600000	 2993389	 2993389	
+[    0.285360] 792000	 3951274	 3951274	
+[    0.289046] 1008000	 5028895	 5028895	
+[    0.292842] 1200000	 5986779	 5986779	
+[    0.301235] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.308030] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.313868] msgmni has been set to 67
+[    0.319638] io scheduler noop registered
+[    0.323566] io scheduler cfq registered (default)
+[    0.328599] wait stable.[290][cgu_vpu]
+[    0.333720] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.341510] console [ttyS1] enabled, bootconsole disabled
+[    0.341510] console [ttyS1] enabled, bootconsole disabled
+[    0.356670] brd: module loaded
+[    0.361953] loop: module loaded
+[    0.365904] zram: Created 2 device(s) ...
+[    0.370152] logger: created 256K log 'log_main'
+[    0.394072] jz SADC driver registeres over!
+[    0.399009] jz TCU driver register completed
+[    0.403898] the id code = 856017, the flash name is P25Q64H
+[    0.409712] jz-sfc jz-sfc: sfc use DMA mode
+[    0.414058] jz-sfc jz-sfc: nor flash now use standard mode!
+[    0.419825] JZ SFC Controller for SFC channel 0 driver register
+[    0.425979] 5 cmdlinepart partitions found on MTD device jz_sfc
+[    0.432107] Creating 5 MTD partitions on "jz_sfc":
+[    0.437085] 0x000000000000-0x000000040000 : "uboot"
+[    0.442661] 0x000000040000-0x000000200000 : "kernel"
+[    0.448358] 0x000000200000-0x0000002f0000 : "rootfs"
+[    0.454048] 0x0000002f0000-0x0000007a0000 : "app"
+[    0.459440] 0x0000007a0000-0x000000800000 : "config"
+[    0.465155] SPI NOR MTD LOAD OK
+[    0.468467] tun: Universal TUN/TAP device driver, 1.6
+[    0.473695] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.480252] wait stable.[290][cgu_macphy]
+[    0.584342] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.590748] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.597166] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.603571] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.609989] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.616408] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.622812] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.629227] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.635643] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.642048] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.648463] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.654076] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.660550] =======>gmacdev = 0x821e1d00<================
+[    0.666180] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.673119] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.679536] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.685953] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.692357] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.698771] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.705187] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.711591] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.718005] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.724422] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.730827] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.737241] func:jz_mac_probe, synopGMAC_reset failed
+[    0.742478] jz_mac: probe of jz_mac.0 failed with error -1
+[    0.748271] usbcore: registered new interface driver cdc_ether
+[    0.754401] usbcore: registered new interface driver rndis_host
+[    0.760592] usbcore: registered new interface driver int51x1
+[    0.766613] DWC IN OTG MODE
+[    0.770166] dwc2 dwc2: Keep PHY ON
+[    0.773689] dwc2 dwc2: Using Buffer DMA mode
+[    0.778156] dwc2 dwc2: Core Release: 3.00a
+[    0.782433] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.788960] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.796313] hub 1-0:1.0: USB hub found
+[    0.800220] hub 1-0:1.0: 1 port detected
+[    0.804482] dwc2 dwc2: DWC2 Host Initialized
+[    0.809147] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.818338] usbcore: registered new interface driver cdc_acm
+[    0.824240] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    0.832679] usbcore: registered new interface driver usbserial
+[    0.838819] usbcore: registered new interface driver usbserial_generic
+[    0.845643] usbserial: USB Serial support registered for generic
+[    0.851918] usbcore: registered new interface driver option
+[    0.857764] usbserial: USB Serial support registered for GSM modem (1-port)
+[    0.865155] using random self ethernet address
+[    0.869770] using random host ethernet address
+[    0.874785] usb0: HOST MAC XX:XX:XX:XX:XX:XX
+[    0.879276] usb0: MAC XX:XX:XX:XX:XX:XX
+[    0.883257] dwc2 dwc2: ID PIN CHANGED!
+[    0.887259] using random self ethernet address
+[    0.891874] using random host ethernet address
+[    0.896565] g_ether gadget: Ethernet Gadget, version: Memorial Day 2008
+[    0.903415] g_ether gadget: g_ether ready
+[    0.907766] i2c /dev entries driver
+[    0.911861] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    0.918062] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    0.923669] TCP: cubic registered
+[    0.927681] NET: Registered protocol family 10
+[    0.933244] sit: IPv6 over IPv4 tunneling driver
+[    0.939062] ip6_gre: GRE over IPv6 tunneling driver
+[    0.944730] NET: Registered protocol family 17
+[    0.949358] lib80211: common routines for IEEE802.11 drivers
+[    0.955771] soc_vpu probe success,version:1.0.0-03203fd46d
+[    0.961470] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    0.973160] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    0.980927] Freeing unused kernel memory: 236K (804d5000 - 80510000)
+can't run '/sbin/swapoff': No such file or directory
+[    1.344061] usb 1-1: new high-speed USB device number 2 using dwc2
+mdev is ok......
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+[    1.489655] zram0: detected capacity change from 0 to 8388608
+Setting up swapspace version 1, size = 8384512 bytes
+UUID=3ad0a155-103c-4aa6-87b1-d[    1.500419] Adding 8188k swap on /dev/zram0.  Priority:-1 extents:1 across:8188k SS
+90cfd3cef81
+[    1.551860] exFAT: Version 1.2.9
+[    1.564490] usb 1-1: Dual-Role OTG device on HNP port
+
+Ingenic-uc1_1 login: [    1.572866] usb 1-1: device v007a p888b is not supported
+[    1.604804] name : i2c-gpio1 nr : 1
+[    1.608420] name : i2c0 nr : 0
+[    1.694510]  sensor_read: addr=0x3107 value = 0xcb
+[    1.784581]  sensor_read: addr=0x3107 value = 0xcb
+[    1.874494]  sensor_read: addr=0x3107 value = 0xcb
+[    1.879973]  sensor_read: addr=0x3108 value = 0x3a
+[    1.974500]  sensor_read: addr=0x3107 value = 0xcb
+[    1.979978]  sensor_read: addr=0x3108 value = 0x3a
+[    1.984962] info: success sensor find : sc2336
+sensor :sc2336
+/app/jz/start_param
+--------------------
+isp_clk=200000000
+
+--nrvbs 2
+[    2.419964] @@@@ tx-isp-probe ok(version H20231007a), compiler date=Oct 23 2023 @@@@@
+[    2.467593] pipe_request_dma: paddr = 0x2700000
+[    2.472327] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a19b0000)
+[    2.483147] pipe_request_dma: paddr = 0x19c0000
+[    2.488057] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a19b2000)
+[    2.497292] pipe_request_dma: paddr = 0x2680000
+[    2.502026] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a2652000)
+[    2.524025] @@@@@ inner codec power up@@@@@@
+[    2.934028] @@@@ audio driver ok(version H20230614a) @@@@@
+Version: dhcp.pre V0.4
+[0:00:03.089][I][daemon]Start app -> [@ipc]
+gv_ipc_ajcloud_version:11.23025.01.34
+{"time":[1970.01.01 00:00:03],"dev_log":"[gv_ipc_main_process 1945] version:11.23025.01.34"}
+device_id_decryption: v1.0.0
+[0:00:03.822][W][dfs]Open file:[/conf/ajcloud.json] failed! errmsg=[No such file or directory]
+{"time":[1970.01.01 00:00:03],"dev_log":"[gv_ipc_main_process 1969] vendor_code:GLY"}
+{"time":[1970.01.01 00:00:03],"dev_log":"[gv_ipc_main_process 1970] device_mode:NAV"}
+{"time":[1970.01.01 00:00:03],"dev_log":"[gv_ipc_main_process 1971] product_name:G7"}
+{"time":[1970.01.01 00:00:03],"dev_log":"[gv_ipc_main_process 1972] device_id:WVCE4CXPDEPDIXUF"}
+{"time":[1970.01.01 00:00:03],"dev_log":"[gv_ipc_main_process 1973] [ssid:][password:][language:]"}
+[0:00:03.825][I][tf]Init complete!
+gv_read_sensor_name_and_addr:sc2336
+gv_plat_io_init:3
+_card_io_init
+i264e[info]: profile High, level 5.0
+i264e[info]: profile High, level 2.2
+[0:00:07.409][I][mpp]Image flip off
+warn: shm_init,53shm init already
+warn: shm_init,53shm init already
+[0:00:08.380][I][mpp][hd]Get video stream start=[0] watchdog fd=[0]
+[0:00:08.381][I][mpp][sd]Get video stream start=[1] watchdog fd=[1]
+[0:00:08.381][I][mpp]Snapshot watchdog fd=[2]
+[0:00:08.381][I][mpp][ai]Get audio stream start watchdog fd=[3]
+[0:00:08.386][I][mpp]Init complete!
+build data: Dec 15 2023 15:51:31
+gv_plat_video_osd_init:0
+gv_plat_video_osd_init:1
+[0:00:08.408][I][net]Init complete!
+ifconfig: SIOCSIFADDR: No such device
+ifconfig: SIOCGIFFLAGS: No such device
+cat: can't open '/tmp/udhcpc_eth0.pid': No such file or directory
+kill: you need to specify whom to kill
+rm: can't remove '/tmp/udhcpc_eth0.pid': No such file or directory
+[0:00:08.447][W][net]wifi num: 9
+[0:00:10.602][I][net]insmod atbm603x_wifi_usb.ko wifi_bt_comb=1 success!
+{"time":[1970.01.01 00:00:10],"dev_log":"[_net_event 1764] net event:8"}
+[0:00:10.603][I][net]Check wifi exist!
+{"time":[1970.01.01 00:00:10],"dev_log":"[_net_event 1764] net event:2"}
+[0:00:10.616][W][dfs]Open file:[/conf/ajcloud.json] failed! errmsg=[No such file or directory]
+[0:00:10.616][W][dfs]Open file:[/conf/ajcloud.json] failed! errmsg=[No such file or directory]
+[0:00:10.616][W][dfs]Open file:[/conf/ajcloud.json] failed! errmsg=[No such file or directory]
+[0:00:10.616][W][dfs]Open file:[/conf/ajcloud.json] failed! errmsg=[No such file or directory]
+[0:00:10.616][W][dfs]Open file:[/conf/ajcloud.json] failed! errmsg=[No such file or directory]
+{"time":[1970.01.01 00:00:10],"dev_log":"[ajc_system_init 1312] sdk_version:1.0.19u8"}
+{"time":[1970.01.01 00:00:10],"dev_log":"[hwl_wf_get_mac 1274] WIFI Get MAC 20-98-ED-E1-E6-78"}
+{"time":[1970.01.01 00:00:10],"dev_log":"[ajc_system_init 1336] get mac[XX:XX:XX:XX:XX:XX]"}
+[1970/01/01 00:00:10] AJC-CRIT: [ajc_sdk_init, 323] ajcloud_sdk_version:1.0.19u8
+[1970/01/01 00:00:10] AJC-INFO: [ajc_device_set, 105] device_id[WVCE4CXPDEPDIXUF] device_mode[NAV] vendor_code[GLY] prod_name[G7]
+ERROR: serch the SERVER token failed
+[1970/01/01 00:00:10] AJC-NOTICE: [ajc_get_region, 75] region get error.
+[1970/01/01 00:00:10] AJC-CRIT: [ajc_get_device_id, 304] device_id:WVCE4CXPDEPDIXUF
+[1970/01/01 00:00:10] AJC-INFO: [ajc_cache_realloc_video_buf, 336] cache alloc 64KB, data_size(65536 bytes).
+[1970/01/01 00:00:10] AJC-INFO: [ajc_video_init, 1344] video module init success.
+[1970/01/01 00:00:10] AJC-NOTICE: [ajc_cache_set_max_size, 174] max cache size:1024KB
+[1970/01/01 00:00:10] AJC-NOTICE: [ajc_snapshot_set_max_size, 2161] max snapshot size:128KB
+fopen error file:/conf/ajcloud_server.ini
+[1970/01/01 00:00:10] AJC-NOTICE: [ajc_get_accesskey, 255] access_key get error.
+[1970/01/01 00:00:10] AJC-INFO: [ajc_httpd_main_thread, 674] httpd running on port 80
+
+[1970/01/01 00:00:10] AJC-WARN: [ajc_wss_thread, 865] wss clean context...
+[0:00:10.867][I][led]Init complete!
+[1970/01/01 00:00:10] AJC-CRIT: [ajc_set_video_param, 236] change fps:20
+[1970/01/01 00:00:10] AJC-INFO: [p2p_set_video_param, 1593] video[0]:(2304,1296) quality:6 codec_type:0x2 fps:20
+[1970/01/01 00:00:10] AJC-INFO: [p2p_set_video_param, 1593] video[1]:(640 ,360 ) quality:1 codec_type:0x2 fps:20
+[1970/01/01 00:00:10] AJC-INFO: [p2p_set_audio_param, 1625] audio:  codec_type:0x103 sample_rate:8000 channel_num:1
+ERROR: serch the STORAGE token failed
+[1970/01/01 00:00:10] AJC-INFO: [ajc_alarm_config_load, 598] alarm config get error.
+ERROR: serch the STORAGE token failed
+[1970/01/01 00:00:10] AJC-INFO: [ajc_localstor_config_load, 273] localstor config get error.
+ERROR: serch the STORAGE token failed
+[1970/01/01 00:00:10] AJC-INFO: [ajc_cloudstor_config_load, 795] cloudstor config get error.
+ERROR: serch the STORAGE token failed
+[1970/01/01 00:00:10] AJC-INFO: [ajc_sound_alarm_config_load, 834] alarm config get error.
+ERROR: serch the SIREN token failed
+[1970/01/01 00:00:10] AJC-ERROR: [ajc_device_get_siren_config, 908] siren get error.
+ERROR: serch the PRIVACY token failed
+[1970/01/01 00:00:10] AJC-INFO: [ajc_hibernate_config_load, 309] hibernate config get error.
+[0:00:10.870][I][btn]Init complete!
+[0:00:10.870][W][dfs]Open file:[/conf/bind_device.json] failed! errmsg=[No such file or directory]
+{"time":[1970.01.01 00:00:10],"dev_log":"[gv_ipc_main_process 2049] [_g_has_wifi:1]"}
+{"time":[1970.01.01 00:00:10],"dev_log":"[ajc_ble_cb_init 117] Bluetooth module init..."}
+[1970/01/01 00:00:10] AJC-CRIT: [ajc_ble_set_callback, 323] manufactor_data:GG7
+manufactor_data:cd fa 00 47 47 37 
+[1970/01/01 00:00:10] AJC-WARN: [ajc_softap_netconfig_thread, 467] wait for client connect ...
+nimble_port_init++
+ble_coexist_start success
+[0:00:10.912][I][ble]ble_hs_hci_cmd_reset
+[0:00:10.920][I][ble]nimble_host_task
+ble_hs_sync:333
+ble_hs_hci_cmd_tx:344
+ble_smart_cfg_startup!11
+[0:00:11.009][I][ble]Enable Bluetooth broadcasting...
+cat: can't open '/tmp/udhcpc_wlan0.pid': No such file or directory
+kill: you need to specify whom to kill
+rm: can't remove '/tmp/udhcpc_wlan0.pid': No such file or directory
+{"time":[1970.01.01 00:00:11],"dev_log":"[ajcloud_sensor_cur_fps 371] current frame rate:20"}
+[1970/01/01 00:00:11] AJC-CRIT: [ajc_set_video_param, 236] change fps:20
+[1970/01/01 00:00:11] AJC-INFO: [p2p_set_video_param, 1593] video[0]:(2304,1296) quality:6 codec_type:0x2 fps:20
+[1970/01/01 00:00:11] AJC-INFO: [p2p_set_video_param, 1593] video[1]:(640 ,360 ) quality:1 codec_type:0x2 fps:20
+[1970/01/01 00:00:11] AJC-CRIT: [ajc_cache_clear_media, 271] 
+{"time":[1970.01.01 00:00:11],"dev_log":"[ajc_video_request_iframe_callback 83] Device force i frame of channel[0]"}
+[1970/01/01 00:00:11] AJC-CRIT: [ajc_storage_record_retry, 142] timeout_ms:100
+killall: wpa_supplicant: no process killed
+[1970/01/01 00:00:11] AJC-INFO: [ajc_storage_active_local, 1758] alarm_activated:0 activated:0 trigger_mode:0
+[1970/01/01 00:00:11] AJC-WARN: [ajc_storage_active_local, 1774] no sdcard.
+[1970/01/01 00:00:11] AJC-INFO: [ajc_storage_active_local, 1863] alarm_activated:0
+[1970/01/01 00:00:11] AJC-INFO: [ajc_storage_active_cloud, 1876] alarm_activated:0 activated:0 trigger_mode:0
+[1970/01/01 00:00:11] AJC-WARN: [ajc_storage_active_cloud, 1892] time unsyncronized.
+[1970/01/01 00:00:11] AJC-INFO: [ajc_storage_active_cloud, 1973] alarm_activated:0
+[0:00:11.660][I][net]Disconnect station
+killall: udhcpd: no process killed
+[0:00:11.763][I][net]udhcpd stop!
+[0:00:12.110][I][net]AP destroy success!

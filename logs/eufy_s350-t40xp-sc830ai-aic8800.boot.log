@@ -1,0 +1,1409 @@
+[root@Ingenic-uc1_1:~]# mount -t debugfs none /sys/kernel/debug; cat /sys/kernel
+/debug/gpio
+mount: mounting none on /sys/kernel/debug failed: Device or resource busy
+GPIOs 0-31, platform/10010000.pinctrl, GPA:
+ gpio-0   (                    |wifi_reset          ) out hi    
+ gpio-6   (                    |wl_reg_on           ) out hi    
+
+GPIOs 32-63, platform/10010000.pinctrl, GPB:
+ gpio-40  (                    |Power               ) in  hi IRQ
+ gpio-41  (                    |sysfs               ) out lo    
+ gpio-42  (                    |sysfs               ) out lo    
+ gpio-43  (                    |sysfs               ) out lo    
+ gpio-45  (                    |sysfs               ) out lo    
+ gpio-46  (                    |sysfs               ) out hi    
+ gpio-47  (                    |reset               ) out lo    
+ gpio-59  (                    |ingenic,drvvbus     ) out hi    
+ gpio-63  (                    |sysfs               ) out lo    
+
+GPIOs 64-95, platform/10010000.pinctrl, GPC:
+ gpio-65  (                    |sysfs               ) out lo    
+ gpio-91  (                    |sc830ai_reset       ) out hi    
+ gpio-92  (                    |sc3338_reset        ) out hi    
+
+GPIOs 96-127, platform/10010000.pinctrl, GPD:
+ gpio-99  (                    |motor_wire          ) out lo    
+ gpio-100 (                    |motor_wire          ) out lo    
+ gpio-101 (                    |motor_wire          ) out lo    
+ gpio-102 (                    |motor_wire          ) out lo    
+ gpio-103 (                    |motor_wire          ) out lo    
+ gpio-105 (                    |motor_wire          ) out lo    
+ gpio-106 (                    |motor_wire          ) out lo    
+ gpio-107 (                    |motor_wire          ) out lo    
+ gpio-112 (                    |SDHCI EXT CD        ) in  hi IRQ
+
+
+setenv bootargs 'earlycon=uart8250,mmio32,0x10031000,115200n8 console=ttyS1,115200n8 mem=100M@0x0 rmem=134M@0x6400000 nmem=22M@0xEA00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2560k(kernel),4096k(root),17984k(appfs),2M(kernel_rec),3072k(rootfs_rec),2560k(data),64k(nv_user),64k(nv_factory),64k(rec_data) lpj=65536'
+
+
+U-Boot SPL 2013.07 (Aug 13 2024 - 15:31:19)
+bootup_wdt_enable:60000ms
+
+apll_freq = 1008000000 
+mpll_freq = 1200000000 
+vpll_freq = 1008000000 
+epll_freq = 891000000
+cpu clk source: apll
+ddr clk source: mpll
+DDR clk rate: 600000000
+
+image entry point: 0x80100000
+Board: ISVP (Ingenic XBurst T40 SoC)
+DRAM:  256 MiB
+Top of RAM usable for U-Boot at: 90000000
+Reserving 410k for U-Boot at: 8ff98000
+Reserving 32784k for malloc() at: 8df94000
+Reserving 32 Bytes for Board Info at: 8df93fe0
+Reserving 124 Bytes for Global Data at: 8df93f64
+Reserving 128k for boot params() at: 8df73f64
+Stack Pointer at: 8df73f48
+Now running in RAM - U-Boot at: 8ff98000
+MMC:   MSC: 0
+SF: Detected W25Q256JV, manufacturer id: ef
+
+Data transfer:    serial
+Net:   No ethernet found.
+
+set PA6 PA7 to 0
+process_boot_delay: line:357, func:process_boot_delay
+process_boot_delay: line:381, func:process_boot_delay, s:5
+process_boot_delay: line:415, func:process_boot_delay, s:sf probe;sf read 0x80600000 0x40000 0x280000;bootm 0x80600000
+SF: Detected W25Q256JV, manufacturer id: ef
+
+--->probe spend 4 ms
+SF: 4 bytes @ 0x1ff0000 Read: OK
+--->read spend 3 ms
+ota start flag:ffffffff
+SF: 4 bytes @ 0x1ff0004 Read: OK
+--->read spend 3 ms
+ota end  flag:ffffffff
+boot normal mode........
+Hit any key to stop autoboot:  0 
+isvp_t40# 
+
+
+SF: Detected W25Q256JV, manufacturer id: ef
+
+--->probe spend 4 ms
+SF: 2621440 bytes @ 0x40000 Read: OK
+--->read spend 423 ms
+   Image Name:   Linux-4.4.94
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    2342518 Bytes = 2.2 MiB
+   Load Address: 80010000
+   Entry Point:  804d0b50
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (iotbuild@bdf455d45383) (gcc version 7.2.0 (Ingenic Linux-Release5.1.1.a-Default(xburst2(fp64)+glibc2.29) 2022.03-01 09:37:14) ) #1 SMP PREEMPT Tue Aug 13 15:36:51 CST 2024
+[    0.000000] CPU0 RESET ERROR PC:FF58FE0B
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00132100 (Ingenic XBurst@II)
+[    0.000000] FPU revision is: 00f32100
+[    0.000000] MIPS: machine is ingenic,shark
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00669000 @ 00010000 (usable)
+[    0.000000]  memory: 00037000 @ 00679000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 06400000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x00000000063fffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x00000000063fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x00000000063fffff]
+[    0.000000] [SMP] Slave CPU(s) 1 available.
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.000000] 
+[    0.000000] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.000000] PERCPU: Embedded 10 pages/cpu @81118000 s8464 r8192 d24304 u40960
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 25400
+[    0.000000] Kernel command line: earlycon=uart8250,mmio32,0x10031000,115200n8 console=ttyS1,115200n8 mem=100M@0x0 rmem=134M@0x6400000 nmem=22M@0xEA00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2560k(kernel),4096k(root),17984k(appfs),2M(kernel_rec),3072k(rootfs_rec),2560k(data),64k(nv_user),64k(nv_factory),64k(rec_data) lpj=65536
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 94064K/102400K available (4893K kernel code, 271K rwdata, 1392K rodata, 220K init, 181K bss, 8336K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000]  Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:419
+[    0.000000] parse cpu-intc-iomap, intc define in dt is too large!
+[    0.000000] core irq setup finished
+[    0.000000] percpu irq inited.
+[    0.000000] t40 Clock Power Management Unit init!
+[    0.000000] =========== t40 clocks: =============
+[    0.000000]  apll     = 1008000000 , mpll     = 1200000000
+[    0.000000]  cpu_clk  = 1008000000 , l2c_clk  = 336000000
+[    0.000000]  ahb0_clk = 200000000 , ahb2_clk = 200000000
+[    0.000000]  apb_clk  = 100000000 , ext_clk  = 24000000
+[    0.000000] 
+[    0.000000] parse cpu-ost-iomap, ost number define in dt is too large!
+[    0.000000] percpu cpu_num:0 timerevent init
+[    0.000000] clockevents_config_and_register success.
+[    0.000000] clocksource: jz_clocksource: mask: 0x7fffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 64 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000094] ERROR epc 0xff58fe0b
+[    0.003393] Console: colour dummy device 80x25
+[    0.007841] Calibrating delay loop (skipped) preset value.. 13.10 BogoMIPS (lpj=65536)
+[    0.015853] pid_max: default: 32768 minimum: 301
+[    0.020623] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.027271] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.034944] [SMP] Prepare 2 cores., cpu: 0
+[    0.115965] [SMP] Booting CPU1 ...
+[    0.119339] CPU1 RESET ERROR PC:4CC95FF9
+[    0.119358] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.119363] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.119367] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.119367] 
+[    0.119371] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.119431] #### now starting init for cpu : 1
+[    0.119439] percpu irq inited.
+[    0.119442] percpu cpu_num:1 timerevent init
+[    0.119457] clockevents_config_and_register success.
+[    0.119463] CPU1 revision is: 00132100 (Ingenic XBurst@II)
+[    0.119466] FPU revision is: 00f32100
+[    0.119546] Brought up 2 CPUs
+[    0.120300] [SMP] slave cpu1 start up finished.
+[    0.186406] devtmpfs: initialized
+[    0.194568] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.204554] futex hash table entries: 512 (order: 2, 16384 bytes)
+[    0.210838] pinctrl core: initialized pinctrl subsystem
+[    0.216517] NET: Registered protocol family 16
+[    0.226620] ingenic pinctrl 10010000.pinctrl: 4 gpio chip add success, pins 128
+[    0.234596] ingenic pinctrl 10010000.pinctrl: ingenic pinctrl probe success
+[    0.251385] dmmu_init 807 PTRS_PER_PTE = 1024
+[    0.333326] ingenic-dma 13420000.dma: INGENIC SoC DMA initialized
+[    0.340752] usbcore: registered new interface driver usbfs
+[    0.346464] usbcore: registered new interface driver hub
+[    0.351964] usbcore: registered new device driver usb
+[    0.357270] inno phy probe success
+[    0.362546] Bluetooth: Core ver 2.21
+[    0.366284] NET: Registered protocol family 31
+[    0.370717] Bluetooth: HCI device and connection manager initialized
+[    0.377209] Bluetooth: HCI socket layer initialized
+[    0.382114] Bluetooth: L2CAP socket layer initialized
+[    0.388889] clocksource: Switched to clocksource jz_clocksource
+[    0.416385] NET: Registered protocol family 2
+[    0.421255] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.428257] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.434751] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.441245] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.447112] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.453651] NET: Registered protocol family 1
+[    0.458346] RPC: Registered named UNIX socket transport module.
+[    0.464319] RPC: Registered udp transport module.
+[    0.469065] RPC: Registered tcp transport module.
+[    0.473814] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.493764] squashfs: version 4.0 (2021/14/49) Phillip Lougher 
+[    0.501181] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.515233] jitterentropy: Initialization failed with host not compliant with requirements: 2
+[    0.524497] io scheduler noop registered
+[    0.528401] io scheduler deadline registered
+[    0.532801] io scheduler cfq registered (default)
+[    0.537598] jz-pwm apb:pwm_chip0: period_ns:max=2730666,min=42
+[    0.545748] JZ DBOX probe ok!!!!
+[    0.550465] 10030000.serial: ttyS0 at MMIO 0x10030000 (irq = 59, base_baud = 6250000) is a uart0
+[    0.559887] 10031000.serial: ttyS1 at MMIO 0x10031000 (irq = 58, base_baud = 6250000) is a uart1
+[    0.568787] console [ttyS1] enabled
+[    0.568787] console [ttyS1] enabled
+[    0.575839] bootconsole [early0] disabled
+[    0.575839] bootconsole [early0] disabled
+[    0.588015] ingenic SADC driver registeres over!
+[    0.593454] ingenic sadc aux probe success
+[    0.598009] ingenic sadc aux probe success
+[    0.602591] ingenic sadc aux probe success
+[    0.607128] ingenic sadc aux probe success
+[    0.611725] ingenic sadc aux probe success
+[    0.616257] ingenic sadc aux probe success
+[    0.623184] ingenic-tcu 10002000.tcu: Ingenic TCU driver register completed ret = 0
+[    0.631962] Enter 'CDT' mode.
+[    0.634979] Enter 'DMA Descriptor chain' mode. SFC use CPU mode
+[    0.641090] ingenic-sfc 13440000.sfc: Found Supported nor device, BE = 32K, id = ef4019, name = W25Q256JV
+[    0.650874] ingenic-sfc 13440000.sfc: nor flash now use standard mode!
+[    0.657561] 10 cmdlinepart partitions found on MTD device jz_sfc
+[    0.663692] Creating 10 MTD partitions on "jz_sfc":
+[    0.668654] 0x000000000000-0x000000040000 : "boot"
+[    0.675134] 0x000000040000-0x0000002c0000 : "kernel"
+[    0.681803] 0x0000002c0000-0x0000006c0000 : "root"
+[    0.688196] 0x0000006c0000-0x000001850000 : "appfs"
+[    0.694738] 0x000001850000-0x000001a50000 : "kernel_rec"
+[    0.701746] 0x000001a50000-0x000001d50000 : "rootfs_rec"
+[    0.708694] 0x000001d50000-0x000001fd0000 : "data"
+[    0.715207] 0x000001fd0000-0x000001fe0000 : "nv_user"
+[    0.721958] 0x000001fe0000-0x000001ff0000 : "nv_factory"
+[    0.728981] 0x000001ff0000-0x000002000000 : "rec_data"
+[    0.735859] sfc_do_lock =====> flash = 843e0800,flag = -2078495359
+[    0.752352] ingenic-sfc 13440000.sfc: SPI NOR MTD LOAD OK
+[    0.758402] ingenic-spi 10043000.spi0: Using dma0chan16 (tx) and dma0chan17 (rx) for DMA transfers
+[    0.768011] INGENIC SSI Controller for SPI channel 0 driver register. V20220520.
+[    0.775799] ingenic-spi 10044000.spi1: Using dma0chan18 (tx) and dma0chan19 (rx) for DMA transfers
+[    0.785414] INGENIC SSI Controller for SPI channel 0 driver register. V20220520.
+[    0.793403] dwc2 13500000.otg: Configuration mismatch. Forcing peripheral mode
+[    0.800878] OTG CLK 1f8f1f80
+[    0.803831] CPCCR CLK 1580
+[    0.806583] dwc2 13500000.otg: 1024 invalid for host_nperio_tx_fifo_size. Check HW configuration.
+[    0.815631] dwc2 13500000.otg: 1024 invalid for host_perio_tx_fifo_size. Check HW configuration.
+[    0.858931] dwc2 13500000.otg: EPs: 9, dedicated fifos, 3576 entries in SPRAM
+[    0.867428] ingenic-i2c 10050000.i2c: register i2c0 success.
+[    0.873643] ingenic-i2c 10051000.i2c: register i2c1 success.
+[    0.879866] ingenic-i2c 10053000.i2c: register i2c3 success.
+[    0.886909] Bluetooth: HCI UART driver ver 2.3
+[    0.891469] Bluetooth: HCI UART protocol H4 registered
+[    0.896690] Bluetooth: HCI UART protocol BCSP registered
+[    0.902107] Bluetooth: HCI UART protocol LL registered
+[    0.907505] sdhci: Secure Digital Host Controller Interface driver
+[    0.913817] sdhci: Copyright(c) Pierre Ossman
+[    0.931780] ingenic,sdhci 13060000.msc: allocated mmc-pwrseq
+[    0.937952] mmc0: SDHCI controller on ingenic-sdhci [13060000.msc] using ADMA
+[    0.959215] mmc1: SDHCI controller on ingenic-sdhci [13070000.msc] using ADMA
+[    0.967260] usbcore: registered new interface driver usbhid
+[    0.972963] usbhid: USB HID core driver
+[    0.976971] Netfilter messages via NETLINK v0.30.
+[    0.981879] ip_set: protocol 6
+[    0.985163] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    0.990728] NET: Registered protocol family 17
+[    0.997912] input: gpio_keys as /devices/platform/gpio_keys/input/input0
+[    1.010213] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    1.021181] devtmpfs: mounted
+[    1.024351] Freeing unused kernel memory: 220K
+mdev is ok......
+net.core.wmem_max = 26214400
+net.core.wmem_default = 26214400
+vm.min_free_kbytes = 5120
+vm.overcommit_memory = 1
+[    1.691948] jffs2: notice: (596) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+chmod: /system/bin/reset_factory.sh: Read-only file system
+[    1.774353] random: nonblocking pool is initialized
+[    1.794897] TCU0
+
+Ingenic-uc1_1 login: [    1.830306] soc_nna_probe success
+[    1.834032] soc_nna_init success
+[    1.843071] @@@@@ multi-process system driver init @@@@@
+[    1.848569] nmem_size = 22M
+[    1.852551] nmem_start = 0xEA00000
+******* T31 gpio status *********
+GPIOb BASE=0x10011000
+PxINT= 0x00000100
+PXMSK= 0xC07FEEFF
+PxPAT1=0xFE7F2F80
+PxPAT0=0x0000C000
+PxPIN =0x79FFC100
+PxPUEN=0x40000000
+PxPDEN=0x800000C0
+INT.8=1 MSK.8=0 PAT1.8=1 PAT0.8=0
+PIN.8 =1
+PUEN.8=0 PDEN.8=0
+Fall Edge trigger interrupt
+interrupt is enable
+Pull up disable
+Pull down disable
+*******************************
+[    2.124555] @@@@ tx-isp-probe ok (version H20231121a-R-3.3.0) compiler date: Nov 21 2023 14:46:25 @@@@@
+[    2.158507] @@@@@ inner codec power up@@@@@@
+[    2.758967] @@@@ audio driver ok(version H20220608a) @@@@@
+******catch the process crash signal******
+SIGUSR2 is 16,SIGUSR1 = 17
+This pid is 666
+strlen is 10
+***********************************
+compile:2024-08-13 15:45:36
+PRODUCT_NAME:T8416
+pid:666
+***********************************
+not system time
+ZLOG_LEVEL_ERROR|ZLOG_LEVEL_WARN start
+exec: log_eufy 16 /data/eufylog &
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:log_eufy 16 /data/eufylog &
+PLATRORM_LOGCENTER_AFFINITY_CPU_ID is not config
+LogCentre main Start version 1.1.B gFileCntTmp(16) gFilePathTmp(/data/eufylog) gFileFlag(1)
+LogCentre, pid:679
+LogCentre Create /var/run/log_eufy.pid ok, pid=679
+1970-01-01 00:00:03.919 ZOS: INFO: time init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: print init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: memory init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: dump init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: trace init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: fsm dump init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: inet init ok.
+1970-01-01 00:00:03.920 ZOS: INFO: dbuf init ok.
+1970-01-01 00:00:03.921 ZOS: INFO: pmem init ok.
+1970-01-01 00:00:03.921 ZOS: INFO: Zos_ModMgrEntry --------->
+1970-01-01 00:00:03.931 ZOS: INFO: module manager active run.
+1970-01-01 00:00:03.931 ZOS: INFO: module init ok.
+1970-01-01 00:00:03.932 ZOS: INFO: timer init ok.
+LogCentre create log dir(/data/eufylog) is OK!
+LogCentre create log dir(/tmp/log)
+LogCentre create log dir(/tmp/log) is OK!
+LogCentre create thread successfully.
+LogCentre create thread successfully.
+LogCentre create thread successfully.
+LogCentre Baize_MmcCreateReqSocket connect successed
+------------------Eufy_StationStart MMC_CreateDMCStream STG 0-----------------------Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+19700101000004.035;STRATEGY;Eufy_regMonitorMsg;197;0x12e00001;3;Eufy_regMonitorMsg timer success
+
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+19700101000004.036;ALARM;alarm_strategy_thread;421;0x0de00000;4;alarm strategy thread running
+19700101000004.036;STRATEGY;STRATEGY_BindRegister;196;0x12e00001;4;Module BIND ver 1.0.0.
+
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+19700101000004.036;MISCELL;Platform_InitEnv;123;0x13900001;4;Platform_InitEnv success 0
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+create audio dmc
+dmc create success 0x2 streamid 11351212 nowtime 4000
+19700101000004.037;MMC;Baize_MmcPubStrategyModuleOneStreamState;138;0xffffffff;4;pub one stream buf (0 0x2) error ret -1
+
+19700101000004.037;STRATEGY;Strategy_AICreateOnlyDmc;598;0x12e00000;4;dmc create suc 4
+
+19700101000004.038;STRATEGY;Strategy_AICreateOnlyDmc;598;0x12e00000;4;dmc create suc 16
+
+Strategy_Ai_Register suc
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+19700101000004.038;STRATEGY;record_strategy_thread;3238;0x12e00000;4;rec strategy thread running
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+print:register third app strategy
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+strategy_ptz_register success
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+19700101000004.039;PUSH;Push_TaskStart;1305;0x0dd0101e;4;get Push_TaskStart zTaskId: 245
+19700101000004.039;STRATEGY;Eufy_registerMonitorTask;146;0x12e00001;3;Strategy_RegisterTimerFunc timer success
+
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+Zos_TraceMemAdd 
+device time zone is ����������������������������������������������������������������
+input timetone:����������������������������������������������������������������
+19700101000004.040;STRATEGY;db_strategy_thread;535;0x12e00000;4;database strategy thread running
+19700101000004.040;PAL_PMU;PAL_Pmu_Init;38;0x13810001;4;Get HAL interface fail
+
+19700101000004.220;MMC;_hal_event_handle;188;0x06e00001;4;button_event,emButtonType:1
+19700101000004.220;MMC;MMC_EventHalFilter;732;0x06e00000;3;NV_GetBindType 0 0 0
+19700101000004.223;PAL_PIR;PAL_Pir_Init;38;0x13810001;4;Get HAL interface fail
+
+19700101000004.223;DEVMGR;dev_pal_init;7499;0x13500002;4;PAL_Pir_Init fail
+t40_Ircut_ModeSet ircut change to day(0:1)
+
+system default stack_size = 8388608Byte, 8192KB =====>
+00004636 #*#_factory_test() take:0ms
+19700101000004.637;DISK;Disk_Init;1011;0x0db01000;3;Disk Init
+19700101000004.637;DISK;Disk_Init;1017;0x0db01000;3;device sn: T8416P50244509D4
+19700101000004.637;DISK;Disk_Init;1024;0x0db01000;3;Disk Init done
+19700101000004.637;DISK;Disk_TaskStart;223;0x0db00000;3;get Disk zTaskId: 246
+19700101000004.637;STORAGE_EMMC_;TF_Storage_Init;1167;0x13835000;3;init done
+19700101000004.688;MMC;Baize_DealRegisterModule;89;0x06e00007;4;module 0x00001000 not found stream
+LogCentre Baize_MmcReqRegister successed
+19700101000004.689;MMC;Baize_DealReqCmdGetLogcenterConfInfo;599;0x06e00001;4;sdcard_status is 4
+
+LogCentre Baize_MmcReqGetLogcenterInfo successed sdcard_status(0:4)
+g_log_level set to:3
+19700101000004.740;OTA;OTA_GetDataNv;293;0x0ce33000;4;key:0 value:0
+19700101000004.740;MAIN;_ota_reboot_upgrade_handler;1186;0x12d3d001;4;exit ota reboot upgrade handler
+exec: insmod_wifi
+/bin/sh: insmod_wifi: not found
+SystemCall_Dbus_Call_Method systemcall ret:32512 cmd:insmod_wifi
+get reference voltage:1518
+test for version
+19700101000004.760;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_preinit;4375;0x1383c001;4;length of region_code <= 0
+19700101000004.760;PAL_WIFI;PAL_Wifi_PRE_INIT;31;0x13810001;4;HAL interface exec fail
+
+19700101000004.760;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_process_pre_init;4391;0x1383c000;3;no use static ip
+19700101000004.762;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_init;1963;0x1383c001;4;_wifi_driver_load by factory wifi init
+ble_status 0
+ble status 0 0
+exec: rmmod aic8800_fdrv
+SystemCall_D[    4.799641] aicbsp_init
+bus_Call_Method systemcall ret:0 cmd:rmmod aic8800_fdrv
+exec: r[    4.805333] RELEASE_DATE:2023_0609_1930
+mmod aic8800_bsp
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:rmmod aic8800_bsp
+19700101000004.778;HAL_WIFI_ATBM_IMP_DEBUG;wifi_driver_load;810;0x1383c000;3;hardware_version:P4
+exec: insmod /lib/modules/aic8800_bsp.ko aic_fw_path=/tmp/aic_firmware
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:insmod /lib/modules/aic8800_bsp.ko aic_fw_path=/tmp/aic_firmware
+exec: insmod /lib/modules/aic8800_fdrv.ko customer_mac=102CB1BBF1C2
+[    4.939407] AICWFDBG(LOGTRACE)       >>> rwnx_mod_init()
+[    4.944305] AICWFDBG(LOGINFO)        rwnx v6.4.3.0 - - 241c091M (master)
+[    4.951080] AICWFDBG(LOGINFO)        RELEASE_DATE:2023_0609_1929 
+[    4.957845] AICWFDBG(LOGTRACE)       rwnx_init_cmd_array Enter 
+[    4.963462] AICWFDBG(LOGTRACE)       rwnx_init_cmd_array Exit 
+[    4.969863] aicbsp: aicbsp_set_subsys, subsys: AIC_WIFI, state to: 1
+[    4.976326] aicbsp: aicbsp_set_subsys, power state change to 1 dure to AIC_WIFI
+[    4.986361] aicbsp: aicbsp_platform_power_on
+[    4.993367] @@@@@ reset pin control for t8416
+[    4.998452] ingenic,sdhci 13070000.msc: card insert manually
+[    5.004260] aicbsp_platform_power_on mmc rescan 1
+[    5.057313] mmc1: new high speed SDIO card at address 78aa
+[    5.064716] aicbsp: aicbsp_sdio_probe:1 vid:0xC8A1  did:0x0082
+[    5.074616] aicbsp: aicbsp_sdio_probe:2 vid:0xC8A1  did:0x0182
+[    5.080719] aicbsp: aicbsp_sdio_probe after replace:1
+[    5.085860] AICWFDBG(LOGINFO)        aicwf_sdio_chipmatch USE AIC8800D80
+[    5.094806] aicbsp_get_feature feature:8587bb40 fw_path:  (null) 
+[    5.101159] aicbsp: aicbsp_get_feature, set FEATURE_SDIO_CLOCK 2154 MHz
+[    5.107880] aicbsp: aicwf_sdio_reg_init
+[    5.112344] AICWFDBG(LOGINFO)        sdiodev is 84469e00
+[    5.117623] AICWFDBG(LOGINFO)        aicbsp: aicbsp_driver_fw_init, chip rev: 7
+[    5.124479] rwnx_load_firmware :firmware path = /tmp/aic_firmware/fw_patch_table_8800d80_u02.bin  
+[    5.168165] file md5:b984472306dd75bab3e162454b4e739b
+[    5.173570] rwnx_plat_bin_fw_upload_android
+[    5.177829] rwnx_load_firmware :firmware path = /tmp/aic_firmware/fw_adid_8800d80_u02.bin  
+[    5.186557] file md5:f546881a81b960d89a672578eb45a809
+[    5.192841] rwnx_plat_bin_fw_upload_android
+[    5.197111] rwnx_load_firmware :firmware path = /tmp/aic_firmware/fw_patch_8800d80_u02.bin  
+[    5.206210] file md5:91c540da15caf59e5d6e54dddda73dc5
+[    5.231770] aicbt_patch_table_load bt btmode:5 
+[    5.236476] aicbt_patch_table_load bt uart_baud:115200 
+[    5.241941] aicbt_patch_table_load bt uart_flowctrl:1 
+[    5.247249] aicbt_patch_table_load bt lpm_enable:0 
+[    5.252329] aicbt_patch_table_load bt tx_pwr:28463 
+[    5.264090] aicbsp: bt patch version: - Aug 10 2023 18:43:10 - git 502c0cd
+[    5.271271] rwnx_plat_bin_fw_upload_android
+[    5.275535] rwnx_load_firmware :firmware path = /tmp/aic_firmware/fmacfw_8800d80_u02.bin  
+[    5.437303] file md5:b06f134433bc0d369f8cd7acb60ed7a6
+[    5.581736] aicbsp: aicbsp_sdio_remove
+[    5.585553] aicbsp: aicwf_sdio_release
+[    5.589502] aicbsp: aicwf_bus_deinitaicbsp: aicwf_sdio_bus_stop
+[    5.599884] aicbsp: sdio_err:<aicwf_sdio_bustx_thread,1341>: sdio bustx thread stop
+[    5.607740] aicbsp: sdio_err:<aicwf_sdio_busrx_thread,1360>: sdio busrx thread stop
+[    5.615796] aicbsp: aicbsp_sdio_remove done
+[    5.620329] AICWFDBG(LOGDEBUG)       aicwf_sdio_probe:1
+[    5.625137] AICWFDBG(LOGDEBUG)       Class=7
+[    5.629003] AICWFDBG(LOGDEBUG)       sdio vendor ID: 0xc8a1
+[    5.634139] AICWFDBG(LOGDEBUG)       sdio device ID: 0x0082
+[    5.639886] AICWFDBG(LOGDEBUG)       Function#: 1
+[    5.644143] AICWFDBG(LOGINFO)        aicwf_sdio_chipmatch USE AIC8800D80
+19700101000005.661;NV;ARM_GetArmingAction;95;0x0d803001;4;arming[    5.651410] aicbsp_get_feature feature:8587bbb8 fw_path:  (null) 
+_action:0x19
+19700101000005.661;STRATEGY;Baize_CheckDevStatusNe[    5.662995] aicbsp: aicbsp_get_feature, set FEATURE_SDIO_CLOCK 2154 MHz
+edToStop;500;0x12e00000;3;NV_GetBindType 0 0 0
+
+19700101000005[    5.675896] aicsdio: aicwf_sdio_reg_init
+.662;STRATEGY;Baize_CheckAllModuleStreamMarkPirByTime;627;0x12e0[    5.685265] AICWFDBG(LOGINFO)        sdio ready
+0000;3;channel and module (0 0x2) close dev 120000,event 0 id 0 [    5.694001] AICWFDBG(LOGINFO)        sdio_bustx_thread the policy of current thread is:0
+trigger 0x4
+
+[    5.706983] AICWFDBG(LOGINFO)        sdio_bustx_thread the rt_priority of current thread is:0
+[    5.707174] AICWFDBG(LOGTRACE)       >>> rwnx_platform_init()
+[    5.707180] AICWFDBG(LOGTRACE)       >>> rwnx_cfg80211_init()
+[    5.707188] aicbsp_get_feature feature:8587bb68 fw_path:8587ba60 
+[    5.707195] aicbsp: aicbsp_get_feature, set FEATURE_SDIO_CLOCK 2240 MHz
+[    5.707212] AICWFDBG(LOGINFO)        rwnx_cfg80211_init sizeof(struct rwnx_hw):11144 
+[    5.707277] AICWFDBG(LOGTRACE)       >>> rwnx_init_aic()
+[    5.707284] AICWFDBG(LOGTRACE)       >>> rwnx_cmd_mgr_init()
+[    5.707526] AICWFDBG(LOGINFO)        aicwf_prealloc_txq_alloc size is diff will to be kzalloc 
+[    5.707585] AICWFDBG(LOGINFO)        aicwf_prealloc_txq_alloc txq kzalloc successful 
+[    5.717791] AICWFDBG(LOGTRACE)       >>> rwnx_send_dbg_mem_read_req()
+[    5.717809] AICWFDBG(LOGTRACE)       rwnx_send_msg (1025)DBG_MEM_READ_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    5.717821] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    5.717974] AICWFDBG(LOGINFO)        sdio_busrx_thread the policy of current thread is:0
+[    5.717981] AICWFDBG(LOGINFO)        sdio_busrx_thread the rt_priority of current thread is:0
+[    5.717988] AICWFDBG(LOGINFO)        sdio_busrx_thread the current pid is:756
+[    5.818961] AICWFDBG(LOGINFO)        sdio_bustx_thread the current pid is:755
+[    5.826087] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    5.832642] AICWFDBG(LOGTRACE)       >>> rwnx_send_dbg_mem_read_req()
+[    5.838662] AICWFDBG(LOGTRACE)       rwnx_send_msg (1025)DBG_MEM_READ_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    5.849554] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    5.857041] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    5.863591] AICWFDBG(LOGINFO)        FDRV chip_id=7, chip_sub_id=2!!
+[    5.869964] AICWFDBG(LOGTRACE)       >>> rwnx_platform_on()
+[    5.875106] AICWFDBG(LOGINFO)        userconfig file path:aic_userconfig_8800d80.txt 
+[    5.883677] AICWFDBG(LOGINFO)        ### Load file aic_userconfig_8800d80.txt
+[    5.891821] AICWFDBG(LOGINFO)        rwnx_load_firmware :firmware path = /tmp/aic_firmware/aic_userconfig_8800d80.txt  
+[    5.903878] AICWFDBG(LOGINFO)        file md5:edba370fc360e6f20fce331e9738345a
+[    5.910785] AICWFDBG(LOGINFO)        ### Load file done: aic_userconfig_8800d80.txt, size=1811
+[    5.921945] AICWFDBG(LOGINFO)        rwnx_plat_userconfig_parsing3: AIC USERCONFIG 2022/0803/1707
+[    5.930493] AICWFDBG(LOGINFO)        rwnx_plat_userconfig_parsing3: txpwr_lvl
+[    5.937422] AICWFDBG(LOGINFO)        rwnx_plat_userconfig_parsing3: txpwr_loss
+[    5.944291] AICWFDBG(LOGINFO)        rwnx_plat_userconfig_parsing3: txpwr_ofst
+[    5.951751] AICWFDBG(LOGINFO)        rwnx_plat_userconfig_parsing3: xtal cap
+[    5.958406] AICWFDBG(LOGINFO)        userconfig download complete
+[    5.958406] 
+[    5.965566] AICWFDBG(LOGTRACE)       rwnx_send_msg (124)MM_SET_STACK_START_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    5.976356] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    5.984015] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    5.990702] AICWFDBG(LOGINFO)        is 5g support = 1, vendor_info = 0x00
+[    5.997089] AICWFDBG(LOGTRACE)       rwnx_send_msg (129)MM_GET_FW_VERSION_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    6.007769] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    6.015150] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    6.021750] AICWFDBG(LOGINFO)        Firmware Version: mi May 20 2024 12:08:28 - ga44be98
+[    6.029592] AICWFDBG(LOGTRACE)       >>> rwnx_send_txpwr_lvl_v3_req()
+[    6.035618] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_v3_in_fdrv:enable:1
+[    6.042750] AICWFDBG(LOGINFO)        rwnx_send_txpwr_lvl_v3_req:enable:1
+[    6.049076] AICWFDBG(LOGTRACE)       rwnx_send_msg (120)MM_SET_TXPWR_IDX_LVL_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    6.060521] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    6.067935] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    6.074451] AICWFDBG(LOGTRACE)       >>> rwnx_send_txpwr_lvl_adj_req()
+[    6.080653] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:enable:0
+[    6.087828] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_2g4_chan_1_4:0
+[    6.096297] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_2g4_chan_5_9:0
+[    6.104774] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_2g4_chan_10_13:0
+[    6.113399] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_42:0
+[    6.121656] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_58:0
+[    6.129932] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_106:0
+[    6.138247] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_122:0
+[    6.146616] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_138:0
+[    6.154955] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_155:0
+[    6.163821] AICWFDBG(LOGTRACE)       >>> rwnx_msg_free()
+[    6.171588] AICWFDBG(LOGTRACE)       >>> rwnx_send_txpwr_ofst2x_req()
+[    6.177619] AICWFDBG(LOGINFO)        get_userconfig_txpwr_ofst2x_in_fdrv:enable      :0
+[    6.185261] AICWFDBG(LOGINFO)        pwrofst2x 2.4g: [0]:11b, [1]:ofdm_highrate, [2]:ofdm_lowrate
+  chan= 1-4     5-9     10-13AICWFDBG(LOGINFO)
+  [0] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [1] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [2] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+pwrofst2x 5g: [0]:ofdm_lowrate, [1]:ofdm_highrate, [2]:ofdm_midrate
+  chan= 36-50   51-64   98-114  115-130 131-146 147-166AICWFDBG(LOGINFO)
+  [0] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)       0AICWFDBG(LOGINFO)               0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [1] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)       0AICWFDBG(LOGINFO)               0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [2] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)       0AICWFDBG(LOGINFO)               0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+[    6.272907] AICWFDBG(LOGINFO)        rwnx_send_txpwr_ofst2x_req:Do not use txpwr_ofst2x
+[    6.280556] AICWFDBG(LOGTRACE)       >>> rwnx_msg_free()
+[    6.285428] AICWFDBG(LOGTRACE)       >>> rwnx_send_rf_calib_req()
+[    6.291152] AICWFDBG(LOGINFO)        get_userconfig_xtal_cap:enable       :0
+[    6.297801] AICWFDBG(LOGINFO)        get_userconfig_xtal_cap:xtal_cap     :24
+[    6.304569] AICWFDBG(LOGINFO)        get_userconfig_xtal_cap:xtal_cap_fine:31
+[    6.311343] AICWFDBG(LOGTRACE)       rwnx_send_msg (106)MM_SET_RF_CALIB_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    6.321807] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    6.941792] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    6.948290] AICWFDBG(LOGTRACE)       >>> rwnx_send_get_macaddr_req()
+[    6.954342] AICWFDBG(LOGTRACE)       rwnx_send_msg (116)MM_GET_MAC_ADDR_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    6.964801] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    6.972827] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    6.979328] set customer mac
+[    6.982414] AICWFDBG(LOGINFO)        get macaddr: XX:XX:XX:XX:XX:XX
+[    6.988263] AICWFDBG(LOGTRACE)       >>> rwnx_send_reset()
+[    6.993355] AICWFDBG(LOGTRACE)       rwnx_send_msg (1)MM_RESET_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    7.003062] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    7.010960] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    7.017430] AICWFDBG(LOGTRACE)       >>> rwnx_send_version_req()
+[    7.023272] AICWFDBG(LOGTRACE)       rwnx_send_msg (5)MM_VERSION_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    7.033159] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    7.040588] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    7.047060] AICWFDBG(LOGTRACE)       >>> rwnx_set_vers()
+[    7.051979] AICWFDBG(LOGTRACE)       >>> rwnx_send_me_config_req()
+[    7.057781] ieee80211 phy0: HT supp 1, VHT supp 1, HE supp 1
+[    7.063562] AICWFDBG(LOGTRACE)       rwnx_send_msg (5121)ME_CONFIG_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    7.074127] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    7.081596] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    7.088328] AICWFDBG(LOGTRACE)       >>> rwnx_send_me_chan_config_req()
+[    7.094621] AICWFDBG(LOGTRACE)       rwnx_send_msg (5123)ME_CHAN_CONFIG_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    7.105123] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    7.112794] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    7.119652] AICWFDBG(LOGINFO)        getRegdomainFromRwnxDB set ccode:00 
+[    7.126079] AICWFDBG(LOGINFO)        rwnx_get_countrycode_channels support channel:1 2 3 4 5 6 7 8 9 10 11 12 13 14 36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 
+[    7.144514] ieee80211 phy0: 
+[    7.144514] *******************************************************
+[    7.144514] ** CAUTION: USING PERMISSIVE CUSTOM REGULATORY RULES **
+[    7.144514] *******************************************************
+[    7.166589] AICWFDBG(LOGTRACE)       >>> rwnx_send_me_chan_config_req()
+[    7.172827] AICWFDBG(LOGTRACE)       rwnx_send_msg (5123)ME_CHAN_CONFIG_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    7.183802] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    7.191237] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    7.197816] AICWFDBG(LOGTRACE)       >>> rwnx_dbgfs_register()
+[    7.203353] AICWFDBG(LOGINFO)        fw_log_init: 85a20000, 85a22800
+[    7.209285] AICWFDBG(LOGINFO)        rwnx_interface_add: wlan%d, 2, 10
+[    7.215469] AICWFDBG(LOGINFO)        interface add:10 2c b1 bb f1 c2
+[    7.538293] AICWFDBG(LOGINFO)        New interface create wlan0 
+[    7.544347] rwnx_set_agg_disable_req:1, 1
+[    7.548563] AICWFDBG(LOGTRACE)       rwnx_send_msg (100)MM_SET_AGG_DISABLE_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    7.559368] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+[    7.569625] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:insmod /lib/mod[    7.580774] rwnx_dbgfs_vendor_hwconfig_write
+ules/aic8800_fdrv.ko customer_mac=102CB1BBF1C2
+19700101000007.5[    7.591025] set_channel_access_req:edca[]= fa522 fa522 fa522 fa522
+[    7.591025] vif_idx: 0, retry_cnt: 1e, rts_en: 1, long_nav_en: 0, cfe_en: 0, rc_retry_cnt: 5:5:5, ccademod_th = -85
+91;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_set_parameters;575;0x138[    7.612632] AICWFDBG(LOGTRACE)       rwnx_send_msg (127)MM_SET_VENDOR_HWCONFIG_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+3c000;3;use vendor_para:1 0xFA522 0xFA522 0xFA522 0xFA522 0 0x1E[    7.629369] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+ 1 0 0 5 5 5 0x55
+
+d_name:phy0
+19700101000007.652;STORAGE_EMMC_;_callback_sdcard_event;916;0x13835000;3;curState = 1
+
+ptz receive msg
+ptz receive msg, disk_status=1
+19700101000007.653;STR[    7.655006] AICWFDBG(LOGTRACE) rwnx_cmd_free cmd_array[0]:c0500368 
+ATEGY;strategy_msg_handle_dealdisk;598;0x12e00000;3;disk state: [    7.664668] CHANNEL_ACCESS_REQ edca:fa522,fa522,fa522,fa522, vif:0, retry_cnt:1e, rts:1, long_nav:0, cfe:0, rc_retry_cnt:5:5:5 ccademod_th ffffffab
+1
+19700101000007.653;BURIEDPOINT;upload_devparam_to_as;1010;0x13600000;3;have_bind_app(0)
+19700101000007.653;DISK;Storage_Status_CB;762;0x0db00000;3;SD NOT EXIST
+19700101000007.653;ALARM;strategy_msg_handle_dealdisk;298;0x0de00000;3;disk not ready, state: 1
+LogCentre BaizeEufy_SdcardEvent sdcard_event (4:2) gWriteLog(0) gCheckFileFlag(2)
+19700101000007.657;STRATEGY;db_strategy_thread;566;0x12e00000;3;disk no[    7.714584] AICWFDBG(LOGTRACE)        >>> rwnx_open()
+t ready(1), stop database
+19700101000007.658;STRATEGY;strategy_[    7.724174] AICWFDBG(LOGTRACE)  >>> rwnx_send_start()
+msg_handle_dealdisk;2830;0x12e00000;3;disk not ready:1
+19700101[    7.734786] AICWFDBG(LOGTRACE)       rwnx_send_msg (3)MM_START_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+000007.694;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_set_parameters;5[    7.750229] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+95;0x1383c000;3;write vendor_para done! ret:57
+d_name:phy0
+exe[    7.763196] AICWFDBG(LOGTRACE)    rwnx_cmd_free cmd_array[0]:c0500368 
+c: killall -9 wpa_supplicant
+1970-01-01 00:00:07.711 DB_[    7.775578] AICWFDBG(LOGTRACE)    >>> rwnx_send_dbg_mem_read_req()
+INTF: E: [db_interface.c:  246] cannot connect to the server: /t[    7.786041] AICWFDBG(LOGTRACE)       rwnx_send_msg (1025)DBG_MEM_READ_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+mp/server.embdb.sock, socket: 19, error<2>: No such file or dire[    7.802562] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+ctory
+1970-01-01 00:00:07.711 DB_INTF: E: [db_interf[    7.814762] AICWFDBG(LOGTRACE) rwnx_cmd_free cmd_array[0]:c0500368 
+ace.c:  335] db return err: 0
+1970-01-01 00:00:07.71[    7.826469] rwnx_open:rwnx_rx_gain = 0xc
+1 DB_INTF: E: [db_interface.c: 3066] db operate resp error, oper[    7.836003] AICWFDBG(LOGTRACE)       >>> rwnx_send_dbg_mem_mask_write_req()
+ate_str: {"account":"","is_ipc":1,"station_sn":"T8416P50244509D4[    7.848063] AICWFDBG(LOGTRACE)       rwnx_send_msg (1042)unknown reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+","station_event":2}
+1970-01-01 00:00:07.711 DB_INTF[    7.862965] AICWFDBG(LOGTRACE)        rwnx_cmd_malloc get cmd_array[0]:c0500368 
+: E: [db_interface.c:  246] cannot connect to the server: /tmp/s[    7.875948] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+erver.embdb.sock, socket: 19, error<2>: No such file or director[    7.887489] AICWFDBG(LOGTRACE)       >>> rwnx_send_coex_req()
+y
+1970-01-01 00:00:07.712 DB_INTF: E: [db_interface.[    7.898351] AICWFDBG(LOGTRACE)     rwnx_send_msg (102)MM_SET_COEX_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+c:  335] db return err: 0
+1970-01-01 00:00:07.712 DB[    7.914648] AICWFDBG(LOGTRACE)     rwnx_cmd_malloc get cmd_array[0]:c0500368 
+_INTF: E: [db_interface.c: 3066] db operate resp error, operate_[    7.927399] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+str: {"account":"","is_ipc":1,"station_sn":"T8416P50244509D4","s[    7.938491] AICWFDBG(LOGTRACE)       >>> rwnx_send_add_if()
+tation_event":2}
+1970-01-01 00:00:07.712 DB_INTF: E:[    7.949188] AICWFDBG(LOGTRACE)    rwnx_send_msg (7)MM_ADD_IF_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+ [db_interface.c:  246] cannot connect to the server: /tmp/serve[    7.964456] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+r.embdb.sock, socket: 19, error<2>: No such file or directory    7.977454] AICWFDBG(LOGTRACE)   rwnx_cmd_free cmd_array[0]:c0500368 
+m
+1970-01-01 00:00:07.712 DB_INTF: E: [db_interface.c:  335] db return err: 0
+1970-01-01 00:00:07.712 DB_INT[    7.994745] AICWFDBG(LOGINFO)  IOCTL PRIVATE
+F: E: [db_interface.c: 3066] db operate resp error, operate_str:[    8.004339] AICWFDBG(LOGTRACE)       >>> android_priv_cmd()
+ {"account":"","is_ipc":1,"station_sn":"T8416P50244509D4","stati[    8.015810] AICWFDBG(LOGINFO)        android_priv_cmd: Android private cmd "country IL" on wlan0
+on_event":2}
+1970-01-01 00:00:07.712 DB_INTF: E: [db[    8.028934] AICWFDBG(LOGINFO) cmd = 35313
+_interface.c:  246] cannot conne[    8.038409] AICWFDBG(LOGINFO)        buf_size=4096
+ct to the server: /tmp/server.embdb.sock, socket: 19, error<2>: [    8.045501] AICWFDBG(LOGINFO)        android_priv_cmd country code:IL
+No such file or directory
+1970-01-01 00:00:07.712 DB[    8.056978] AICWFDBG(LOGINFO)      getRegdomainFromRwnxDB set ccode:IL 
+_INTF: E: [db_interface.c:  335] db return err: 0
+19[    8.068920] AICWFDBG(LOGINFO)      rwnx_get_countrycode_channels support channel:5 6 7 8 36 40 44 48 52 56 60 64 
+70-01-01 00:00:07.712 DB_INTF: E: [db_interface.c: 3066] db oper[    8.084476] AICWFDBG(LOGINFO)        userconfig file path:aic_userconfig_8800d80_AU.txt 
+ate resp error, operate_str: {"account":"","is_ipc":1,"station_s[    8.097729] AICWFDBG(LOGINFO)        ### Load file aic_userconfig_8800d80_AU.txt
+n":"T8416P50244509D4","station_event":2}
+killall: wpa_suppl[    8.110314] AICWFDBG(LOGINFO)      rwnx_load_firmware :firmware path = /tmp/aic_firmware/aic_userconfig_8800d80_AU.txt  
+icant: no process killed
+SystemCall_Dbus_Call_Method systemcall[    8.127293] AICWFDBG(LOGINFO)  file md5:eb5e1975bac06c770d4720d1d31f2e07
+ ret:256 cmd:killall -9 wpa_supplicant
+exec: ifconfig wlan0 dow[    8.138673] AICWFDBG(LOGINFO)        ### Load file done: aic_userconfig_8800d80_AU.txt, size=1811
+n
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:ifconfig wla[    8.152634] AICWFDBG(LOGINFO)   rwnx_plat_userconfig_parsing3: AIC USERCONFIG 2022/0803/1707
+n0 down
+exec: ifconfig wlan0 up
+SystemCall_Dbus_Call_Method sy[    8.166674] AICWFDBG(LOGINFO)  rwnx_plat_userconfig_parsing3: txpwr_lvl
+stemcall ret:0 cmd:ifconfig wlan0 up
+19700101000008.004;HAL_WIF[    8.179121] AICWFDBG(LOGINFO)      rwnx_plat_userconfig_parsing3: txpwr_loss
+I_ATBM_IMP_DEBUG;aic8800_wifi_init_region_code;1654;0x1383c001;4[    8.191336] AICWFDBG(LOGINFO)        rwnx_plat_userconfig_parsing3: txpwr_ofst
+;use factory region code:IL
+19700101000008.005;HAL_WIFI_ATBM_IM[    8.203850] AICWFDBG(LOGINFO)     rwnx_plat_userconfig_parsing3: xtal cap
+P_DEBUG;aic8800_wifi_init_region_code;1667;0x1383c001;4;use fact[    8.215877] AICWFDBG(LOGINFO)        userconfig download complete
+[    8.215877] 
+ory region code:IL
+19700101000008.005;HAL_WIFI_ATBM_IMP_DEBUG;w[    8.229286] AICWFDBG(LOGTRACE)   >>> rwnx_send_txpwr_lvl_v3_req()
+ifi_init_set_region_code;711;0x1383c001;4;get mapped country IL [    8.240064] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_v3_in_fdrv:enable:1
+for IL
+19700101000008.005;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_[    8.252637] AICWFDBG(LOGINFO)        rwnx_send_txpwr_lvl_v3_req:enable:1
+get_current_country_str;3549;0x1383c000;3;country_buf:00
+
+1970[    8.264499] AICWFDBG(LOGTRACE)   rwnx_send_msg (120)MM_SET_TXPWR_IDX_LVL_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+0101000008.005;HAL_WIFI_ATBM_IMP_DEBUG;wifi_init_set_region_code[    8.280884] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+;732;0x1383c001;4;will set country : IL
+[    8.293989] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+[    8.303392] AICWFDBG(LOGTRACE)       >>> rwnx_send_txpwr_lvl_adj_req()
+[    8.309572] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:enable:0
+[    8.316754] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_2g4_chan_1_4:0
+[    8.325233] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_2g4_chan_5_9:0
+[    8.334410] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_2g4_chan_10_13:0
+[    8.343054] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_42:0
+[    8.351329] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_58:0
+[    8.359603] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_106:0
+[    8.367938] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_122:0
+[    8.376306] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_138:0
+[    8.384729] AICWFDBG(LOGINFO)        get_userconfig_txpwr_lvl_adj_in_fdrv:lvl_adj_5g_chan_155:0
+[    8.393082] AICWFDBG(LOGTRACE)       >>> rwnx_msg_free()
+[    8.397958] AICWFDBG(LOGTRACE)       >>> rwnx_send_txpwr_ofst2x_req()
+[    8.404025] AICWFDBG(LOGINFO)        get_userconfig_txpwr_ofst2x_in_fdrv:enable      :0
+[    8.411688] AICWFDBG(LOGINFO)        pwrofst2x 2.4g: [0]:11b, [1]:ofdm_highrate, [2]:ofdm_lowrate
+  chan= 1-4     5-9     10-13AICWFDBG(LOGINFO)
+  [0] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [1] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [2] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+pwrofst2x 5g: [0]:ofdm_lowrate, [1]:ofdm_highrate, [2]:ofdm_midrate
+  chan= 36-50   51-64   98-114  115-130 131-146 147-166AICWFDBG(LOGINFO)
+  [0] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)       0AICWFDBG(LOGINFO)               0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [1] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)       0AICWFDBG(LOGINFO)               0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+  [2] =AICWFDBG(LOGINFO)                0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)       0AICWFDBG(LOGINFO)               0AICWFDBG(LOGINFO)              0AICWFDBG(LOGINFO)
+[    8.499557] AICWFDBG(LOGINFO)        rwnx_send_txpwr_ofst2x_req:Do not use txpwr_ofst2x
+[    8.507172] AICWFDBG(LOGTRACE)       >>> rwnx_msg_free()
+[    8.512095] AICWFDBG(LOGTRACE)       >>> rwnx_send_rf_calib_req()
+[    8.517773] AICWFDBG(LOGINFO)        get_userconfig_xtal_cap:enable       :0
+[    8.524485] AICWFDBG(LOGINFO)        get_userconfig_xtal_cap:xtal_cap     :24
+[    8.531291] AICWFDBG(LOGINFO)        get_userconfig_xtal_cap:xtal_cap_fine:31
+[    8.538712] AICWFDBG(LOGTRACE)       rwnx_send_msg (106)MM_SET_RF_CALIB_CFM reqcfm:1 in_irq:0 in_softirq:0 in_atomic:0
+[    8.549205] AICWFDBG(LOGTRACE)       rwnx_cmd_malloc get cmd_array[0]:c0500368 
+AI process start: 8855
+19700101000008.856;AI;main;48;0x0cf01001;3;AI process start:
+g_log_level set to:3
+1970-01-01 00:00:08.960 ZOS: INFO: time init ok.
+1970-01-01 00:00:08.960 ZOS: INFO: print init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: memory init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: dump init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: trace init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: fsm dump init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: inet init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: dbuf init ok.
+1970-01-01 00:00:08.961 ZOS: INFO: pmem init ok.
+1970-01-01 00:00:08.962 ZOS: INFO: Zos_ModMgrEntry --------->
+1970-01-01 00:00:08.972 ZOS: INFO: module manager active run.
+1970-01-01 00:00:08.972 ZOS: INFO: module init ok.
+1970-01-01 00:00:08.972 ZOS: INFO: timer init ok.
+AI start untar: 8973
+19700101000008.973;AI;AI_ModelDepressProcess;40;0x0cf0203c;3;cmd mkdir /tmp/ai_model && cd /tmp/ai_model && tar -xvf /system/bin/model.bin rm -rf /tmp/ai_model
+19700101000008.973;AI;AI_ModelDepressProcess;44;0x0cf0203c;4;/tmp/ai_model/model is not exist
+model/
+model/face_det_magik_Eufy.dat
+[    9.169037] AICWFDBG(LOGTRACE)       rwnx_cmd_free cmd_array[0]:c0500368 
+19700101000009.186;HAL_WIFI_ATBM_IMP_DEBUG;wifi_init_set_region_code;749;0x1383c000;3;set region code:IL done!
+19700101000009.189;HAL_WIFI_ATBM_IMP_DEBUG;wifi_invalid_conf;1692;0x1383c001;4;wpa_s conf valid
+exec: cat /data/wpa_supplicant.conf
+ctrl_interface=/var/run/wpa_supplicant
+                        update_config=1
+                        country=US
+                        network={
+                                ssid="REDACTED"
+                                psk="REDACTED"
+                                scan_ssid=1
+                                key_mgmt=WPA-PSK
+                                disabled=1
+                                priority=1
+}
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:cat /data/wpa_supplicant.conf
+exec: wpa_supplicant -D nl80211 -i wlan0 -c /data/wpa_supplicant.conf -B
+model/motion_tracker_magik.dat
+Successfully initialized wpa_supplicant
+1970-01-01 00:00:11.150 REC: WARN: [main.c:  429] record_eufy start, version: 2.0.20
+1970-01-01 00:00:11.151 REC: WARN: [main.c:  430] compile time [Aug 13 2024 15:40:10]
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  399] build type                          : release
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  400] memory pool for pre cache           : enable
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  401] MP4                                 : disable
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  402] snapshot create                     : disable
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  403] snapshot check                      : disable
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  404] use tmp file                        : disable
+1970-01-01 00:00:11.151 REC: INFO: [main.c:  405] tmp storage path                    : /tmp
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  406] pts calibration                     : enable
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  407] pre alloc file size                 : 0 (byte)
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  408] min duration                        : 3 (sec)
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  409] min frame                           : 25
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  410] frame segment size                  : 409600 (byte)
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  411] pre cache duration                  : 4000 (ms)
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  412] fps                                 : 15
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  413] gop                                 : 30
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  414] file swap                           : enable
+1970-01-01 00:00:11.152 REC: INFO: [main.c:  415] continue record                     : enable
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  416] continue record clip duration       : 5 (min)
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  417] CA path                             : /system/GoDaddyCA.crt
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  418] storage dev name                    : /dev/mmcblk0p1
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  419] storage mount point                 : /media/mmcblk0p1
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  420] cloud storage                       : enable
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  421] cloud without sdcard                : enable
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  422] cloud without sdcard low mem        : 8192 (kB)
+1970-01-01 00:00:11.153 REC: INFO: [main.c:  423] cloud without sdcard max duration   : 60 (sec)
+1970-01-01 00:00:11.153 REC: WARN: [main.c:  434] record_eufy pid: 1058
+g_log_level set to:3
+1970-01-01 00:00:11.266 REC: ERROR: [record_log_unit.c:  167] nng log init suc
+19700101000011.652;REC;record_update_storage_info;4110;0x00000000;3;update storage path:/media/mmcblk0p1/, disk type:2, volume:, ready:0
+19700101000011.656;REC;record_mmc_sub_task;956;0x00000000;3;mmc sub sock create suc, sock:2
+19700101000011.657;REC;record_mmc_sub_task;969;0x00000000;3;mmc sub sock conn suc, sock:2
+19700101000011.658;REC;record_mmc_sub_task;982;0x00000000;3;mmc sub suc
+19700101000011.661;STRATEGY;strategy_create_rec_dmc;621;0x12e00000;4;Cam(0) rec dmc create succ, shm:0x5555888D
+19700101000011.661;STRATEGY;strategy_pub_rec_precache_msg;775;0x12e00000;4;pub event rec precache msg succ
+19700101000011.662;STRATEGY;strategy_check_dev_status;1283;0x12e00000;3;NV_GetBindType 0 0 0
+19700101000011.662;REC;sub_callback_strategy;696;0x00000000;3;recv pre rec start msg, chan:0, shm:0x5555888D
+19700101000011.663;REC;record_mmc_register;1045;0x00000000;3;mmc reg suc
+19700101000011.686;REC;record_update_stream_reader;3618;0x00000000;3;Get new AV reader param
+19700101000011.859;REC;sub_callback_storage_info;725;0x00000000;4;volume string len err:0
+19700101000011.862;REC;record_update_storage_info;4110;0x00000000;3;update storage path:/media/mmcblk0p1/, disk type:1, volume:, ready:0
+19700101000011.863;REC;record_update_station_info;4237;0x00000000;3;update station info, SN:<T8416P50244509D4>, account:<>, p2p_uid:<>
+19700101000011.864;REC;record_cloud_set_domain;1287;0x00000000;3;AS domain str err, p:0x74f48da2, len:0, 
+19700101000011.865;REC;Storage_SetHbTimeZoneEnv;178;0x00000000;3;set TZ:����������������������������������������������������������������
+19700101000011.866;REC;sub_callback_device_info;779;0x00000000;3;dev not bind, stop rec & upload
+19700101000011.866;REC;record_cloud_suspent_set;1261;0x00000000;3;record cloud suspent set:0x01
+19700101000011.871;REC;record_task_msg_camera_info;5095;0x00000000;3;Cam(0) update device info, SN:<T8416P50244509D4>, device type:104, mute:0, cloud:0
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:wpa_supplicant -D nl80211 -i wlan0 -c /data/wpa_supplicant.conf -B
+19700101000012.138;HAL_WIFI_ATBM_IMP_DEBUG;wifi_wpa_supplicant_init;1844;0x1383c000;3;ctrl_conn open ok at 1 times.
+19700101000012.138;HAL_WIFI_ATBM_IMP_DEBUG;wifi_wpa_supplicant_init;1858;0x1383c000;3;monitor_conn open ok at 1 times.
+19700101000012.156;HAL_WIFI_ATBM_IMP_DEBUG;wifi_wpa_supplicant[   12.160119] ingenic,sdhci 13060000.msc: card insert manually
+_init;1879;0x1383c000;3;get priority of wpa_supplicant: -20
+19700101000012.156;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_init;1994;0x1383c000;3;init done!
+19700101000012.156;HAL_WIFI_ATBM_IMP_DEBUG;wifi_monitor_thread;1415;0x1383c001;4;wifi_monitor_thread Thread ID: 1085
+exec: echo 1 > /sys/class/mmc_host/mmc0/device/detect_on
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:echo 1 > /sys/class/mmc_host/mmc0/device/detect_on
+exec: embdb_eufy /system/embdb_eufy.ini &
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:embdb_eufy /system/embdb_eufy.ini &
+[bootup][0012189ms] Bind_Register_Handle_Switch_Mode start
+19700101000012.189;BIND;Bind_TaskStart;1413;0x0d402000;3;bind zTaskId: 248
+[bootup][0012189ms] SDK_Init start
+19700101000012.189;SDKADAPTER;MINISDK_Init;113;0x06f01000;4;SDK ver: [2.1.0.4]
+19700101000012.189;SDKADAPTER;MINISDK_Init;130;0x06f01000;4;iDevType: [104]
+get reference voltage:1514
+test for version
+19700101000012.210;SDKADAPTER;MINISDK_Init;139;0x06f01000;4;sn:T8416P50244509D4 mac:102CB1BBF1C2, main ver:1.5.2.0
+19700101000012.211;SDKADAPTER;MINISDK_P[   12.259515] ingenic,sdhci 13060000.msc: no support for card's volts
+rintf;85;0x06f02007;3;INFO;P2P;p2p_command.c;EUFY_ParseDataSetAt[   12.269399] mmc0: Got command interrupt 0x00010001 even though no command operation was in progress.
+tr():67: in
+
+
+RUNNING: 64000us
+NAME     ID         TYPE   [   12.284915] mmc0: error -22 whilst initialising SDIO card
+ENTRY    STATE   PRI Q_BUSY Q_PEEK T_BUSY T_PEEK
+----     --         ----   -----    -----   --- ------ ------ ------ ------
+MOD_MGR  0x000000F0 SPAWN  0x774130F4 runing  4   0      0      0      0     
+TIMER    0x000000F1 SPAWN  0x77408B90 runing  4   0      0      0      0     
+MMCA     0x000000F2 SPAWN  0x77448020 runing  4   0      0      0      0     
+MMCT     0x000000F3 SPAWN  0x77448B8C runing  4   0      0      0      0     
+MMC      0x000000F4 SPAWN  0x77412E70 ready   4   0      0      0      0     
+PUSH     0x000000F5 SPAWN  0x77412E70 ready   4   0      0      0      0     
+STORAGE_DISK 0x000000F6 SPAWN  0x77412E70 runing  4   0      0      1      1     
+STRATEGY 0x000000F7 SPAWN  0x77412E70 ready   4   0      0      1      1     
+BIND     0x000000F8 SPAWN  0x77412E70 runing  4   0      0      3      3     
+
+19700101000012.211;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;INFO;DB;DB_api.c;DB_SetPath():236: Set sdk config path: [/data/]
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;INFO;DB;DB_task.c;DB_TaskStart():114: get DB zTaskId: 0
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_task.c;DB_TaskInit():25: --------NV size: 8613
+
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_InitDevConfig():99: -----------------nv init!
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_GetPath():244: DB path: [/data/]
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_CrcDB():89: DB file /data//eufy.db not exist!
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_GetPath():244: DB path: [/data/]
+19700101000012.212;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_CrcDB():89: DB file /data//eufy-back.db not exist!
+19700101000012.213;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_GetPath():244: DB path: [/data/]
+19700101000012.213;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_CrcDB():89: DB file /data//eufy-core.db not exist!
+19700101000012.213;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_GetPath():244: DB path: [/data/]
+19700101000012.213;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;DB;DB_api.c;DB_CrcDB():89: DB file /data//.eufy-core.db not exist!
+19700101000012.213;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;EVENT;event_manager_task.c;EVENT_MGR_TaskStart():123: system event manager id: 250
+19700101000012.214;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;P2P;p2p_server.c;NET_InitP2pServer():397: PPCS_API Version: 4.5.4.1
+19700101000012.426;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;INFO;P2P;p2p_server.c;NET_InitP2pServer():407: init json: [{"MaxNumSess":5,"InitString":"","SessAliveSec":6}]
+19700101000012.426;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;P2P;p2p_server.c;NET_InitP2pServer():408: PPCS_GetAPIInformation: {
+"LibType":"c",
+"LicenseReq":"Standard",
+"Version":"4.5.4.1",
+"BuiltDate":"Aug 31 2022 09:53:14",
+"MaxNumSess":5,
+"MaxNumCh":8,
+"SessAliveSec":6,
+"P2PPunchRange":0,
+"Initialized":"No"
+}
+19700101000012.427;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;P2P;p2p_server.c;NET_InitP2pServer():430: PPCS_Initialize Fail, result:-1, [ERROR_P2P_NOT_INITIALIZED] <-------
+19700101000012.427;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;P2P;p2p_server.c;NET_InitP2pServer():447: PPCS_GetAPIInformation: {
+"LibType":"c",
+"LicenseReq":"Standard",
+"Version":"4.5.4.1",
+"BuiltDate":"Aug 31 2022 09:53:14",
+"MaxNumSess":5,
+"MaxNumCh":8,
+"SessAliveSec":6,
+"P2PPunchRange":0,
+"Initialized":"No"
+}
+19700101000012.427;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;INFO;P2P;p2p_task.c;P2P_TaskInit():908: create cycle timer
+19700101000012.428;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;INFO;P2P;p2p_task.c;P2P_TaskInit():917: start timer
+19700101000012.428;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;INFO;P2P;p2p_task.c;P2P_TaskStart():991: P2PTask zTaskId: 251
+-------CA path: [/system/GoDaddyCA.crt]
+sn: [T8416P50244509D4]
+mac: [102CB1BBF1C2]
+account: []
+domain: []
+19700101000012.538;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;BIND;bind_task.c;BIND_TaskStart():301: zTaskId:0
+
+19700101000012.539;SDKADAPTER;MINISDK_Printf;85;0x06f02007;3;ERR;PUSH;push_task.c;PUSH_TaskStart():636: get push zTaskId: 254
+
+RUNNING: 64000us
+NAME     ID         TYPE   ENTRY    STATE   PRI Q_BUSY Q_PEEK T_BUSY T_PEEK
+----     --         ----   -----    -----   --- ------ ------ ------ ------
+MOD_MGR  0x000000F0 SPAWN  0x774130F4 runing  4   0      0      0      0     
+TIMER    0x000000F1 SPAWN  0x77408B90 runing  4   0      0      0      0     
+MMCA     0x000000F2 SPAWN  0x77448020 runing  4   0      0      0      0     
+MMCT     0x000000F3 SPAWN  0x77448B8C runing  4   0      0      0      0     
+MMC      0x000000F4 SPAWN  0x77412E70 ready   4   0      0      0      0     
+PUSH     0x000000F5 SPAWN  0x77412E70 ready   4   0      0      0      0     
+STORAGE_DISK 0x000000F6 SPAWN  0x77412E70 runing  4   0      0      1      1     
+STRATEGY 0x000000F7 SPAWN  0x77412E70 ready   4   0      0      1      1     
+BIND     0x000000F8 SPAWN  0x77412E70 runing  4   0      0      3      3     
+MiniSDK_DB 0x000000F9 SPAWN  0x77412E70 runing  1   0      0      0      0     
+MiniSDK_EVENTMG 0x000000FA SPAWN  0x77412E70 runing  1   0      0      0      0     
+MiniSDK_P2P 0x000000FB SPAWN  0x77412E70 runing  4   0      0      1      1     
+P2P_LOGIN 0x000000FC SPAWN  0x7C52F8 runing  4   0      0      0      0     
+MiniSDK_BIND 0x000000FD SPAWN  0x77412E70 runing  4   0      0      2      2     
+MiniSDK_PUSH 0x000000FE SPAWN  0x77412E70 runing  4   0      0      1      1     
+
+[bootup][0012541ms] SDK_Init end
+19700101000012.541;SDKADAPTER;HandlMsgProc;131;0x06f01000;4;Enter thread!
+19700101000012.541;PAL_PMU;PAL_Pmu_GetTime;308;0x13810001;4;Get HAL interface fail
+
+19700101000012.543;DEVMGR;dev_media_init_dualcam;6951;0x13500002;4;wide_areaView 1116.896973,701.476013,1525.904053,855.343018
+19700101000012.543;DEVMGR;dev_media_init_dualcam;6952;0x13500002;4;long_areaView 0.000000,0.000000,2304.000000,1296.000000
+video build_time:2024-08-13 15:38:07
+19700101000012.544;VIDEOMGR;Video_Init;3279;0x13302000;3;build_time:2024-08-13 15:38:07
+19700101000012.565;VIDEOMGR;_Video_ConfigLoad;684;0xffffffff;4;nWidth:3840,nHeight:2160
+19700101000012.566;VIDEOMGR;_Video_ConfigLoad;684;0xffffffff;4;nWidth:640,nHeight:360
+19700101000012.566;VIDEOMGR;_Video_ConfigLoad;684;0xffffffff;4;nWidth:640,nHeight:360
+19700101000012.569;VIDEOMGR;_Video_ConfigLoad;684;0xffffffff;4;nWidth:640,nHeight:360
+19700101000012.573;VIDEOMGR;_Video_ConfigLoad;684;0xffffffff;4;nWidth:640,nHeight:360
+model/multi_det_t40.dat
+[1970-01-01 00:00:13:260] ##### start embdb_eufy program #####
+[1970-01-01 00:00:13:261] release version:3.4.8, git: version: b7a5544d commit: 2024-03-18 01:53:51 build: 2024-03-18 01:54:11
+
+[1970-01-01 00:00:13:269] [main::set_time_zone] /etc/TZ content:���������������������������������������������������������������� 
+
+[1970-01-01 00:00:13:269] [get_pid_file:78] save current 1090 to /tmp/embdb_eufy.pid
+
+[INFO ]14ObserverHelper::load_ini_file(Line 32): open /system/embdb_eufy.ini success !!!
+[INFO ]14ObserverHelper::load_ini_file(Line 36): prepare read contents from /system/embdb_eufy.ini
+[INFO ]14ObserverHelper::load_ini_file(Line 74): is_batt:0, storage_type:3, log_path:/media/mmcblk0p1/log, proc_log_size:2097152, info_log_size:262144
+[1970-01-01 00:00:13:370] [11EmbdbHelper:wait_sem_start:110] wait trigger command(status:3) !!!
+[1970-01-01 00:00:13:371] [11LocalServer:start:83] *** start in loop ***
+[INFO ]11LocalServer::init_skt(Line 37): UNIX domain socket bind success
+
+[INFO ]11LocalServer::set_send_buf_size(Line 50): before setsockopt, SO_SNDBUF:26214400
+
+[INFO ]11LocalServer::set_send_buf_size(Line 62): Set send buf successful, SO_SNDBUF:1048576
+[1970-01-01 00:00:13:371] Accepting connections at /tmp/server.embdb.sock(6)...
+
+ISPInputMode.joint_mode = 0
+[   13.628690] set sensor mclk(1) gpio
+[   13.844072] sensor_attr_check() boot 0.
+[   13.848125] sensor_attr_check() interface 1.
+[   13.852560] set sensor mclk(2) gpio
+[   13.856131] sensor_attr_check() mclk 2.
+AI end untar. 14347
+19700101000014.347;AI;main;92;0x0cf01003;3;AI untar model ended.
+1970-01-01 00:00:14.347 : [ai_det_com_intf.c:AI_CheckAiEnvConf:87] /media/mmcblk0p1/video/AiTargeDetPicture access error
+
+
+1970-01-01 00:00:14.348 : [ai_det_com_intf.c:AI_CheckAiEnvConf:92] /user/ai_feature_picture access error
+
+
+19700101000014.348;AI;main;106;0x0cf01029;4;AI_CheckAiEnvConf error ret = 0
+19700101000014.348;AI;get_register_info_from_file;23;0x0cf0605f;4;/user/ai_feature_picture/zx_face_feature.dat open read conf error
+
+19700101000014.348;AI;main;117;0x0cf0102e;4;AI init_register_info_mange init error ret = -1
+19700101000014.348;AI;main;141;0x0cf0101f;4;Current AI App version : V0.1.3.3 
+19700101000014.34[   14.395179] soc_nna_open: open sucess
+9;AI;AI_InitParcelResultDeal;117;0x0cf03050;4;/user/parcel_store[   14.402706] soc-nna version is H20220525
+.info is not exist
+19700101000014.349;AI;AI_SaveParcelResultData;44;0x0cf03075;4;/user/parcel_store.info open error
+19700101000014.349;AI;AI_GetAiBusinessConf;312;0x0cf06110;4;AI_AiInitConf error(-1)
+19700101000014.349;AI;AI_InitDefaultConf;69;0x0cf01012;3;start use AI_InitDefaultConf:
+19700101000014.350;AI;AI_InitDefaultConf;436;0x0cf06008;3;Modch[0]: Wpath=/system/lib/model_0.json,lpath=,Vname=zhixin,flg=0,cat=262159,ope=3
+19700101000014.350;AI;AI_InitDefaultConf;465;0x0cf0101e;3;AIsdkVer: SDK_t40_229_release_V1.1.0.8
+19700101000014.350;AI;AI_InitDefaultConf;436;0x0cf06008;3;Modch[1]: Wpath=/system/bin/cry_det.bin,lpath=,Vname=jz,flg=0,cat=384,ope=0
+19700101000014.350;AI;AI_InitDefaultConf;452;0x0cf0102c;4;AIsdkVer is NULL
+19700101000014.351;AI;main;159;0x0cf0102a;3;AI_GetAiBusinessConf success,ret = 0
+19700101000014.356;AI;AI_Get_NvInfo;1236;0x0cf06008;3;AI user det conf: num=1, conf[0]: channel=0, sensor_id=0,ai_det_type=3,ai_enbale=1,day_or_night=0,md_sensitivity=0
+19700101000014.356;AI;AI_UpdateHotZoneInfo;4594;0x0cf060fe;3;AI hotzone info: ai_conf->s_hot_num 0,ai_det_type 3 tracking enable = 0
+19700101000014.357;AI;AI_SetDefaultHotZone;4675;0x0cf060fd;3;AI hotzone inf: use default zone: (0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+1970010[   14.518446] sc830ai sensor init.
+1000014.357;AI;AI_CalcUncheckPoint;4703;0x0cf060ff;3;AI uncheckzone inf: before calc: (0,0),(0,0),(0,0),(0,0)
+19700101000014.357;AI;AI_UpdateAiBusinessConf;4454;0x0cf060fd;3;first hot:(0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000014.358;AI;AI_UpdateAiBusinessConf;4524;0x0cf06020;3;Get audio data, type 128, enable 0, sensi 3
+
+19700101000014.358;AI;AI_AiProcess;3786;0x0cf06035;3;chnId=0, lp=, wp=/system/lib/model_0.json, vname=zhixin, flg=0
+AI sdk init start [   14.563115] sc3338 sensor init.
+14359
+19700101000014.359;AI;AI_AiReleaseDmcProcess;620;0x0cf060ea;3;AI_AiReleaseDmcProcess start:
+E/ANKER_AI:  [Line 1267]skip  license ,zx_ai_license=0
+I/ANKER_AI:  [Line 1269]start to create DL network:
+register_req_test start
+19700101000014.361;PTZ;ptz_strategy_check_dev_status;55;0x0e304000;4;ERR:unbind
+register_req_test succes 0
+19700101000014.363;AI;AI_AiReleaseDmcProcess;620;0x0cf060ea;3;AI_AiReleaseDmcProcess start:
+19700101000014.366;AI;AI_AiProcess;3786;0x0cf06035;3;chnId=1, lp=, wp=/system/bin/cry_det.bin, vname=jz, flg=0
+19700101000014.400;AI;AI_PrintNoAiVideo;858;0x0cf060f7;3;start wait video to ai detection
+I/ANKER_AI:  [Line 820]start init p_facedet 
+I/ANKER_AI:  [Line 53]Base Task Cannot get model package version=0.0.3.7 info from storage.
+E/ANKER_AI:  [Line 48]Config Can not find node [EngineConfig]->[device_id].
+E/ANKER_AI:  [Line 610]Config Can not get device_id from node [EngineConfig]->[Engine].
+I/ANKER_AI:  [Line 68]Base Task can not get device_id from config
+ The soc-nna version is 20220525
+INFO(magik): venus memory map size: 0
+INFO(magik): venus version:0.9.9.6.ALPHA(00000909_f198326)  built:20221014-1801(7.2.0 r5.1.3 glibc2.29 mips@NNA1)
+19700101000014.509;AI;AI_AiPrintReleaseDmcNoVideo;599;0x0cf060e9;3;AI start wait video to release dmc
+---- FPGA board is ready ----
+  Board UID : 30AB6E51
+  Board HW ID : 72000760
+  Board rev.  : A8A57397
+  Board date  : 20200311
+-----------------------------
+19700101000014.587;VIDEOMGR;_video_zoom_init;1591;0xffffffff;4;fac param ok
+19700101000014.588;VIDEOMGR;_video_zoom_init;1602;0x13302000;4;stwRect.w== 3840.00 ,stwRect.h = 2160.00
+19700101000014.589;VIDEOMGR;_video_zoom_init;1603;0x13302000;4;stlRect.w== 2304.00 ,stlRect.h = 1296.00
+19700101000014.590;VIDEOMGR;_video_zoom_init;1604;0x13302000;4;wide_areaView 1116.896973,701.476013,1525.904053,855.343018
+19700101000014.591;VIDEOMGR;_video_zoom_init;1605;0x13302000;4;long_areaView 0.000000,0.000000,2304.000000,1296.000000
+19700101000014.591;VIDEOMGR;_Video_BitrateLevel_Init;1315;0x13302000;4;lvq:0, rvq:3 1
+19700101000014.592;VIDEOMGR;_stream_init;2748;0x13302000;3;init form:0
+19700101000014.593;VIDEOMGR;_chn_init;2312;0x13302000;4;Cam0 Chn0 Fmt1
+E/ANKER_AI:  [Line 48]Config Can not find node [ModelConfig]->[model_color].
+E/ANKER_AI:  [Line 48]Config Can not find node [AlgorithmConfig]->[singleton].
+E/ANKER_AI:  [Line 467]Config ,Get integer value from [AlgorithmConfig]->[singleton] failed.
+E/ANKER_AI:  [Line 48]Config Can not find node [AlgorithmConfig]->[multi_threshold].
+E/ANKER_AI:  [Line 203]Config Get a array value from [AlgorithmConfig]->[multi_threshold] to vector failed.
+E/ANKER_AI:  [Line 545]Config ,Can not find node [ModelConfig]->[multi_threshold].
+I/ANKER_AI:  [Line 834]end init face_det,version [face_det_t40_V0.0.0.2] 
+I/ANKER_AI:  [Line 644]start init multi_det 
+19700101000014.605;VIDEOMGR;_IMP_OSD_Rgn_Init;842;0xffffffff;4;[0,0]rgn -1 type 0 not enable
+E/ANKER_AI:  [Line 48]Config Can not find node [ModelConfig]->[releases].
+19700101000014.605;VIDEOMGR;_IMP_OSD_Rgn_Start;880;0xffffffff;4;[0,0]rgn -1 type 0 not enable
+19700101000014.606;VIDEOMGR;_IMP_OSD_Rgn_Init;842;0xffffffff;4;[0,0]rgn 0 type 0 not enable
+E/ANKER_AI:  [Line 48]Config Can not find node [EngineConfig]->[device_id].
+E/ANKER_AI:  [Line 610]Config Can not get device_id from node [EngineConfig]->[Engine].
+I/ANKER_AI:  [Line 68]Base Task can not get device_id from config
+ INFO(magik): model version:0.9.3.NNA1_95adcb0 
+19700101000014.607;VIDEOMGR;_IMP_OSD_Rgn_Start;880;0xffffffff;4;[0,0]rgn 0 type 0 not enable
+19700101000014.608;VIDEOMGR;_chn_init;2312;0x13302000;4;Cam0 Chn2 Fmt4
+19700101000014.611;VIDEOMGR;_chn_init;2312;0x13302000;4;Cam1 Chn0 Fmt1
+19700101000014.624;VIDEOMGR;_IMP_OSD_Rgn_Init;842;0xffffffff;4;[1,0]rgn 0 type 0 not enable
+19700101000014.625;VIDEOMGR;_IMP_OSD_Rgn_Start;880;0xffffffff;4;[1,0]rgn 0 type 0 not enable
+19700101000014.626;AUDIOMGR;Audio_Init;889;0x13400000;3;Audio build in Aug 13 2024 15:38:09...
+
+19700101000014.627;AUDIOMGR;_audio_BJ_algo_init;874;0x13400000;3;use BJ algo
+###########SDK Verison   sdk8416/25_20ms_D1115  ##############
+19700101000014.689;MMC;_hal_event_handle;297;0x06e00001;4;lightsensor_event->event day 0
+
+19700101000014.689;LED;Led_PushEventMsg;1134;0x0e102002;4;Led_PushEventMsg msg error, send Task = 0
+19700101000014.689;MMC;MMC_EventHalFilter;732;0x06e00000;3;NV_GetBindType 0 0 0
+19700101000014.704;VIDEOMGR;_Video_GetStream_Thread;1386;0x13302000;3;[1.0]w2304 H1296 First frame 14704
+[1.0]:w: 2304,H: 1296 First frame 14704
+E/ANKER_AI:  [Line 48]Config Can not find node [ModelConfig]->[model_color].
+E/ANKER_AI:  [Line 48]Config Can not find node [AlgorithmConfig]->[singleton].
+E/ANKER_AI:  [Line 467]Config ,Get integer value from [AlgorithmConfig]->[singleton] failed.
+I/ANKER_AI:  [Line 46]scoreThresh_multi size = 6,level_number=2
+E/ANKER_AI:  [Line 55]Detection  get multi_threshold[0.780000,0.800000,0.750000,0.300000,0.300000,0.300000,] from storage,change score =0.300000
+E/ANKER_AI:  [Line 48]Config Can not find node [AlgorithmConfig]->[reid].
+E/ANKER_AI:  [Line 467]Config ,Get integer value from [AlgorithmConfig]->[reid] failed.
+I/ANKER_AI:  [Line 65]Detection  get reid from storage.
+E/ANKER_AI:  [Line 48]Config Can not find node [AlgorithmConfig]->[activity].
+I/ANKER_AI:  [Line 658]end init multi_det,version [multi_det_t40_V1.0.1.3] 
+I/ANKER_AI:  [Line 672]start init multi_feature_det 
+19700101000014.815;VIDEOMGR;_Video_GetStream_Thread;1386;0x13302000;3;[0.0]w2304 H1296 First frame 14815
+[0.0]:w: 2304,H: 1296 First frame 14816
+19700101000014.816;DEVMGR;dev_dual_video_callback;1286;0x13500000;3;dmc get chn_0 first iframe seq_0 size:13156
+19700101000014.816;STRATEGY;Baize_StrategyCommonGetDmcStreamModule;325;0x12e00000;3;dmc_module is 0xffffff75
+19700101000014.824;REC;record_video_pts_calib_init;169;0x00000000;3;video pts init, raw:153, calib:14824, start:14824, tick:14824, pts_diff:0
+I/ANKER_AI:  [Line 53]Base Task Cannot get model package version=0.0.4.2 info from storage.
+E/ANKER_AI:  [Line 48]Config Can not find node [EngineConfig]->[device_id].
+E/ANKER_AI:  [Line 610]Config Can not get device_id from node [EngineConfig]->[Engine].
+I/ANKER_AI:  [Line 68]Base Task can not get device_id from config
+ 19700101000014.836;AUDIOMGR;_audio_get_BJ_algo_cfg;122;0x13400000;3;NS:dB[40]
+########### NN denoise  is  40  dB ##############
+E/ANKER_AI:  [Line 48]Config Can not find node [ModelConfig]->[model_color].
+E/ANKER_AI:  [Line 48]Config Can not find node [AlgorithmConfig]->[singleton].
+E/ANKER_AI:  [Line 467]Config ,Get integer value from [AlgorithmConfig]->[singleton] failed.
+I/ANKER_AI:  [Line 46]scoreThresh_multi size = 6,level_number=2
+E/ANKER_AI:  [Line 55]Detection  get multi_threshold[0.600000,0.600000,0.500000,0.300000,0.300000,0.300000,] from storage,change score =0.300000
+I/ANKER_AI:  [Line 76]Classification  get activaty=[sigmoid->sigmoid]  from storage.
+I/ANKER_AI:  [Line 686]end init multi_det,version [multi_det_rk356x_V0.0.4.2] 
+I/ANKER_AI:  [Line 691]end init model release,version [0.0.4.2] 
+I/ANKER_AI:  [Line 1398]DL load models ok.
+E/ANKER_AI:  [Line 1410]DL load models ok.
+AI sdk init end 14933
+19700101000014.933;AI;AI_AiSdkInit;3599;0x0cf01007;3;AI_sdk_initial success!
+19700101000014.933;PTZ;ptz_strategy_check_dev_status;55;0x0e304000;4;ERR:unbind
+create audio dmc
+19700101000014.935;AI;ParseMsg;104;0x0cf651c5;3;StreamInfo
+19700101000014.937;AI;AI_Parse_Strategy_Stream_Nnmsg;273;0x0cf04091;4; dmc num 1, status 1 id 1 mdl id 2
+19700101000014.937;AI;AI_Parse_Strategy_Stream_Nnmsg;340;0x0cf040ad;4;start ai det
+19700101000014.938;AI;AI_Parse_Strategy_Stream_Nnmsg;362;0x0cf040ad;4;frmfifo null
+19700101000014.938;AI;ParseMsg;104;0x0cf651c5;3;StreamInfo
+19700101000014.938;AI;AI_Parse_Strategy_Stream_Nnmsg;273;0x0cf04091;4; dmc num 1, status 1 id 1 mdl id 2
+19700101000014.939;AI;AI_Parse_Strategy_Stream_Nnmsg;362;0x0cf040ad;4;frmfifo null
+register_req_test succes 0
+warn: shm_init,53shm init already
+19700101000015.641;STRATEGY;Baize_CheckDevStatusNeedToStop;500;0x12e00000;3;NV_GetBindType 0 0 0
+
+19700101000015.642;STRATEGY;Baize_CheckAllModuleStreamMarkPirByTime;627;0x12e00000;3;channel and module (0 0x2) close dev 120000,event 0 id 0 trigger 0x4
+
+19700101000015.643;AI;ParseMsg;104;0x0cf651c5;3;StreamInfo
+19700101000015.643;AI;AI_Parse_Strategy_Stream_Nnmsg;273;0x0cf04091;4; dmc num 1, status 2 id 1 mdl id 2
+19700101000015.643;AI;AI_Parse_Strategy_Stream_Nnmsg;362;0x0cf040ad;4;frmfifo null
+19700101000015.700;AUDIOMGR;_Audio_AI_PollingThread;283;0x13401000;3;AudioIn_Polling thread in
+warn: shm_init,53shm init already
+19700101000016.071;LED;Led_TaskStart;922;0x0e101000;3;get Led zTaskId: 256
+function:Led_TaskStart, line:953
+[bootup][0016073ms] start PAL_Pmu_EventEnable
+[bootup][0016073ms] end PAL_Pmu_EventEnable
+19700101000016.074;PTZ;Ptz_ReadTrackingCfgFile;449;0x0e303000;4;open /data/ai_tracking_param.cfg fail
+19700101000016.074;PTZ;_GetPidInfo;159;0x0e304000;4;data is len 31
+19700101000016.074;PTZ;_GetPidInfo;175;0x0e304000;4;rec 3, 0, 4.000000
+
+19700101000016.074;PTZ;_GetPidInfo;175;0x0e304000;4;rec 7, 4, 0.400000
+
+19700101000016.074;PTZ;_GetPidInfo;175;0x0e304000;4;rec 11, 8, 0.200000
+
+19700101000016.074;PTZ;_GetPidInfo;175;0x0e304000;4;rec 16, 12, 0.050000
+
+19700101000016.075;PTZ;_GetPidInfo;175;0x0e304000;4;rec 20, 17, 0.400000
+
+19700101000016.075;PTZ;_GetPidInfo;175;0x0e304000;4;rec 24, 21, 0.100000
+
+19700101000016.076;PTZ;_GetPidInfo;175;0x0e304000;4;rec 30, 25, 0.005000
+
+19700101000016.076;PTZ;_GetPidInfo;203;0x0e304000;3;pid info 0.400000 0.200000 0.050000 0.400000 0.100000 0.005000
+19700101000016.076;PTZ;_GetPidInfo;159;0x0e304000;4;data is len 32
+19700101000016.076;PTZ;_GetPidInfo;175;0x0e304000;4;rec 3, 0, 2.400000
+
+19700101000016.076;PTZ;_GetPidInfo;175;0x0e304000;4;rec 7, 4, 0.400000
+
+19700101000016.076;PTZ;_GetPidInfo;175;0x0e304000;4;rec 12, 8, 0.180000
+
+19700101000016.076;PTZ;_GetPidInfo;175;0x0e304000;4;rec 17, 13, 0.040000
+
+19700101000016.077;PTZ;_GetPidInfo;175;0x0e304000;4;rec 21, 18, 0.300000
+
+19700101000016.077;PTZ;_GetPidInfo;175;0x0e304000;4;rec 25, 22, 0.100000
+
+19700101000016.077;PTZ;_GetPidInfo;175;0x0e304000;4;rec 31, 26, 0.005000
+
+19700101000016.077;PTZ;_GetPidInfo;203;0x0e304000;3;pid info 0.400000 0.180000 0.040000 0.300000 0.100000 0.005000
+19700101000016.078;PTZ;_GetFilterInfo;314;0x0e304000;4;data is len 26
+19700101000016.078;PTZ;_GetFilterInfo;330;0x0e304000;4;rec 3, 0, 0.400000
+
+19700101000016.078;PTZ;_GetFilterInfo;330;0x0e304000;4;rec 7, 4, 0.200000
+
+19700101000016.078;PTZ;_GetFilterInfo;330;0x0e304000;4;rec 11, 8, 0.100000
+
+19700101000016.078;PTZ;_GetFilterInfo;330;0x0e304000;4;rec 16, 12, 0.050000
+
+19700101000016.079;PTZ;_GetFilterInfo;330;0x0e304000;4;rec 20, 17, 0.500000
+
+19700101000016.079;PTZ;_GetFilterInfo;330;0x0e304000;4;rec 25, 21, 0.250000
+
+19700101000016.079;PTZ;_GetFilterInfo;314;0x0e304000;4;data is len 1
+19700101000016.079;PTZ;_GetFilterInfo;354;0x0e304000;4;data is null
+init fx: 2205.973474 
+init fx: 2205.973474 
+19700101000016.079;PTZ;_set_ptz_default_position_id;405;0x0e302000;3;id:-1
+send_buf.state = 1
+send_buf.hot_zone.s_plat_hot_shape = 4
+send_buf.hot_zone.s_num = 0
+send_buf.privacy_zone.s_plat_hot_shape = 4
+send_buf.privacy_zone.s_num = 0
+send_buf.no_det_zone.s_plat_hot_shape = 4
+send_buf.no_det_zone.s_num = 0
+19700101000016.086;AI;ParseMsg;118;0x0cf651c8;3;ptzZone
+19700101000016.087;AI;AI_UpdateAiPtzConf;4381;0x0cf06101;3;ptz_state=1
+19700101000016.087;AI;AI_UpdateAiPtzConf;4381;0x0cf06101;3;ptz_state=1
+19700101000016.086;DEVMGR;_motion_tracker_update_set;1076;0x13500002;3;area_param->hot_zone.shape_num is 0, use default
+19700101000016.088;NV;Motion_GetGearFilterParam;171;0x0d801001;3;gear filter disable
+19700101000016.089;PTZ;Ptz_EnvLocate;92;0x0e304000;4;ERR:Zos_SysEnvLocate
+19700101000016.089;PTZ;Ptz_HomingTimeoutStop;305;0x0e304000;4;env is NULL
+19700101000016.089;PAL_BATTERY;PAL_Battery_GetStatus;92;0x13810001;4;Get HAL interface fail
+
+19700101000016.090;AUDIOMGR;Audio_FlushAACBuf;1136;0x13402021;4;p_AACDEC_Handler == NULL
+19700101000016.090;AUDIOMGR;Audio_Play_TalkBack_Thread;661;0x13403000;3;################ wait to start talk !!!!!!!! 
+
+have_bind_app: 0
+ssid: 
+REDACTED
+password: 
+REDACTED
+19700101000016.090;AUDIOMGR;Audio_GetNextSPKState;473;0x13403019;3;list empty
+19700101000016.090;DEVMGR;dev_motion_init;4933;0x13500000;3;nv record motion status is closed
+00016091 #*#Zos_SemWait(&sem_network_inited, 0xFFFFFFFFUL) take:0ms
+19700101000016.091;LED;Led_ModEntry;691;0x0e103007;4;unbind 0! status 1
+19700101000016.091;VIDEOMGR;Video_OSDSwitch;4049;0xffffffff;4;0.1
+function:_daynight_status_switch, line:558
+19700101000016.091;LED;_daynight_status_switch_thread;297;0x0e103000;4;mode:0
+t40_Ircut_ModeSet ircut change to day(0:1)
+19700101000016.092;VIDEOMGR;Video_OSDSwitch;4049;0xffffffff;4;1.1
+19700101000016.424;VIDEOMGR;Video_ChangeRecordVideoQuality;4762;0x13302000;3;3
+19700101000016.424;VIDEOMGR;_stream_bitrate_update;2734;0x13302000;3;0 0 1000
+19700101000016.424;VIDEOMGR;Video_ChangeLiveVideoQuality;4667;0x13302000;3;0
+19700101000016.425;MMC;Baize_MmcPub;112;0x06e00000;3;/platform/v1/baize/device/info pub success
+
+19700101000016.425;MMC;Baize_MmcPub;112;0x06e00000;3;/platform/v1/baize/product_param/ai pub success
+
+19700101000016.425;VIDEOMGR;Video_CoverOSD_Switch;4164;0xffffffff;4;stream close 0.1
+19700101000016.425;MMC;Baize_MmcPub;112;0x06e00000;3;/platform/v1/baize/product_param/ai pub success
+
+19700101000016.425;VIDEOMGR;Video_Motion_Close;4422;0xffffffff;4;cam0 not init
+19700101000016.425;DEVMGR;dev_dev_init;6674;0x13500000;3;PAL Pir_SetSwitch 1
+19700101000016.425;PAL_PIR;PAL_Pir_SetSwitch;146;0x13810001;4;Get HAL interface fail
+
+19700101000016.426;DEVMGR;dev_dev_init;6678;0x13500000;3;set standard pir param 4
+19700101000016.426;PAL_PIR;PAL_Pir_SetSensitivity;92;0x13810001;4;Get HAL interface fail
+
+19700101000016.426;OTA;OTA_GetDataNv;293;0x0ce33000;4;key:3 value:3
+19700101000016.426;OTA;OTA_GetDataNv;293;0x0ce33000;4;key:2 value:10
+19700101000016.426;OTA;OTA_TaskInit;165;0x0ce33000;4;OTA slient time:3:10
+19700101000016.091;LED;LED_PrintLedControlInfo;151;0x0e102000;3;control: 9 [NORMAL]
+send_buf.state = 3
+send_buf.hot_zone.s_plat_hot_shape = 4
+send_buf.hot_zone.s_num = 0
+send_buf.privacy_zone.s_plat_hot_shape = 4
+send_buf.privacy_zone.s_num = 0
+send_buf.no_det_zone.s_plat_hot_shape = 4
+send_buf.no_det_zone.s_num = 0
+19700101000016.392;PTZ;ptz_process_thread;4250;0x0e304000;3;change state,en:0x80000000,run:0x00000000
+19700101000016.427;REC;record_cloud_set_domain;1287;0x00000000;3;AS domain str err, p:0x65ddd5, len:0, 
+19700101000016.427;AI;ParseMsg;71;0x0cf651c2;3;NvInfo
+19700101000016.427;REC;sub_callback_device_info;779;0x00000000;3;dev not bind, stop rec & upload
+19700101000016.428;AI;AI_UpdateHotZoneInfo;4594;0x0cf060fe;3;AI hotzone info: ai_conf->s_hot_num 0,ai_det_type 3 tracking enable = 0
+19700101000016.428;AI;AI_SetDefaultHotZone;4675;0x0cf060fd;3;AI hotzone inf: use default zone: (0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000016.428;AI;AI_CalcUncheckPoint;4703;0x0cf060ff;3;AI uncheckzone inf: before calc: (0,0),(0,0),(0,0),(0,0)
+19700101000016.429;AI;AI_UpdateAiBusinessConf;4454;0x0cf060fd;3;first hot:(0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000016.429;AI;ParseMsg;71;0x0cf651c2;3;NvInfo
+19700101000016.429;AI;AI_UpdateHotZoneInfo;4594;0x0cf060fe;3;AI hotzone info: ai_conf->s_hot_num 0,ai_det_type 3 tracking enable = 0
+19700101000016.430;AI;AI_SetDefaultHotZone;4675;0x0cf060fd;3;AI hotzone inf: use default zone: (0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000016.430;AI;AI_CalcUncheckPoint;4703;0x0cf060ff;3;AI uncheckzone inf: before calc: (0,0),(0,0),(0,0),(0,0)
+19700101000016.430;AI;AI_UpdateAiBusinessConf;4454;0x0cf060fd;3;first hot:(0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000016.442;LED;LED_PrintLedFlashInfo;109;0x0e102069;3;flash: 5 [BLUE]
+19700101000016.443;DEVMGR;_motion_tracker_update_set;1076;0x13500002;3;area_param->hot_zone.shape_num is 0, use default
+led enable, type=2,enable=1
+19700101000016.444;NV;Motion_GetGearFilterParam;171;0x0d801001;3;gear filter disable
+19700101000016.444;OTA;EufyOta_LogCallback;2697;0x0ce36000;4;eufy ota moudle init success dev_main_version:1.5.2.0, sn:T8416P50244509D4, dev work mode:0
+19700101000016.444;OTA;OTA_SetDownloadPath;122;0x0ce34000;4;download path:/tmp/
+19700101000016.444;PTZ;__Ptz_Send_Current_Status;1638;0x0e302000;3;pub state=3,id=-1,pos=0.500000,0.500000
+19700101000016.445;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_get_status;3223;0x1383c000;3;wifi_module_status:10
+19700101000016.442;AI;ParseMsg;118;0x0cf651c8;3;ptzZone
+19700101000016.445;PTZ;Ptz_Calibrate;1991;0x0e304000;3;start
+send_buf.state = 4
+send_buf.hot_zone.s_plat_hot_shape = 4
+send_buf.hot_zone.s_num = 0
+send_buf.privacy_zone.s_plat_hot_shape = 4
+19700101000016.445;AI;AI_UpdateAiPtzConf;4381;0x0cf06101;3;ptz_state=3
+send_buf.privacy_zone.s_num = 0
+send_buf.no_det_zone.s_plat_hot_shape = 4
+send_buf.no_det_zone.s_num = 0
+19700101000016.776;DEVMGR;_motion_tracker_update_set;1076;0x13500002;3;area_param->hot_zone.shape_num is 0, use default
+19700101000016.776;NV;Motion_GetGearFilterParam;171;0x0d801001;3;gear filter disable
+19700101000016.776;AI;AI_UpdateAiPtzConf;4381;0x0cf06101;3;ptz_state=3
+19700101000016.776;PTZ;__Ptz_Send_Current_Status;1638;0x0e302000;3;pub state=4,id=0,pos=0.500000,0.500000
+19700101000016.445;OTA;OTA_ModEntry;240;0x0ce34001;4;receive OTA event: EVT_OTA_UPGRADE_SUB_MODULE
+19700101000016.777;OTA;OTA_CheckSubmoduleUpgradeSupport;393;0x0ce35000;4;device not support upgrade submodule
+19700101000016.777;OTA;OTA_ModEntry;240;0x0ce34001;4;receive OTA event: EVE_OTA_REPORT_DATA
+19700101000016.777;OTA;OTA_UpdateDevState;1683;0x0ce38000;4;work mode:1
+19700101000016.777;OTA;OTA_UpdateDevState;1690;0x0ce38000;4;unbind,dont upload status
+19700101000016.445;HAL_WIFI_ATBM_IMP_DEBUG;my_wpa_ctrl_request;1585;0x1383c001;4;'SIGNAL_POLL' reply is failed or unknow command. reply:FAIL
+
+19700101000016.503;BURIEDPOINT;_time_statistics_readfile;1233;0x1360300a;4;read fail use 0
+19700101000016.778;HAL_WIFI_ATBM_IMP_DEBUG;aic8800_wifi_get_rssi;3327;0x1383c000;3;RSSI=0 NOISE=0 LINKSPEED=0
+19700101000016.778;BURIEDPOINT;AS_Time_Statistics;1278;0x1360300a;4;read dev_time=0,red_time=0,w_time=0,ptz_time=0
+19700101000016.778;NET;NET_GetInterfaceIP;109;0x0d903003;4;Failed to exec ioctl
+19700101000016.778;NET;Netdetect_TaskStart;265;0x0d901000;4;get netdetect zTaskId: 259
+auto test is not configured, not start it.
+19700101000016.779;BURIEDPOINT;AS_TaskStart;978;0x13600000;3;ASTask zTaskId: 260
+Zos_TraceMemAdd 
+[bootup][0016780ms] while start
+crash label read is:0
+19700101000016.780;OTA;OTA_GetDataNv;293;0x0ce33000;4;key:3 value:3
+19700101000016.780;MAIN;zx_get_guard_pid;827;0x12d3d001;4;open file failed, file=/tmp/guard.pid,errno=2
+19700101000016.780;MAIN;zx_get_reboot_reason;814;0x12d3d001;4;debug: reboot because of 0(unknown)
+[1935]first audio aac frame
+19700101000016.781;AI;ParseMsg;118;0x0cf651c8;3;ptzZone
+19700101000016.782;AI;AI_UpdateAiPtzConf;4381;0x0cf06101;3;ptz_state=4
+19700101000016.782;AI;AI_UpdateAiPtzConf;4381;0x0cf06101;3;ptz_state=4
+19700101000016.784;NET;Netdetect_ModEntry;222;0x0d902000;4;NET_NTP_REQ --->
+19700101000016.784;NET;NET_TimeCalibrationHandle;871;0x0d901005;4;unbind, don't sync time
+exec: devmem 0x10000008
+19700101000016.786;MMC;Eufy_devHasBind;176;0x06e00001;4;dev not bind
+
+19700101000016.786;MMC;Eufy_StartConnecWebrtcServer;188;0x06e00001;4;Eufy_devHasBind false
+
+1970-01-01 00:00:16.787 : [udp_message.c:Udp_ReadConfigFile:170] TODO ...
+
+1970-01-01 00:00:16.788 : [udp_message.c:Udp_InitPushServerIPByDomain:329] TODO ...
+
+0x00000001
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:devmem 0x10000008
+exec: /system/bin/guard &
+SystemCall_Dbus_Call_Method systemcall ret:0 cmd:/system/bin/guard &
+1970-1-1 0:0:16 MonitorProcess INFO: [sysMonitor_init:307]Thread created successfully
+Hello from the thread!
+19700101000016.797;PTZ;Ptz_Wait;1386;0x0e301000;3;motor 0 run 10 ms
+19700101000016.801;REC;record_audio_pts_calib_init;79;0x00000000;3;audio pts init, raw:1935, calib:16606, start:14824, tick:16801, pts_diff:1782
+19700101000016.817;PTZ;Ptz_Wait;1386;0x0e301000;3;motor 1 run 10 ms
+[ERROR][guard.c:guard_write_pid_file:204]fd 6 write guard pid 1203
+19700101000017.079;MMC;Baize_MmcPub;112;0x06e00000;3;/platform/v1/baize/product_param/ai pub success
+
+19700101000017.083;AI;ParseMsg;71;0x0cf651c2;3;NvInfo
+19700101000017.084;AI;AI_UpdateHotZoneInfo;4594;0x0cf060fe;3;AI hotzone info: ai_conf->s_hot_num 0,ai_det_type 3 tracking enable = 0
+19700101000017.084;AI;AI_SetDefaultHotZone;4675;0x0cf060fd;3;AI hotzone inf: use default zone: (0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000017.085;AI;AI_CalcUncheckPoint;4703;0x0cf060ff;3;AI uncheckzone inf: before calc: (0,0),(0,0),(0,0),(0,0)
+19700101000017.085;AI;AI_UpdateAiBusinessConf;4454;0x0cf060fd;3;first hot:(0,0),(639,0),(639,20),(639,359),(0,359),(0,10)
+19700101000017.176;HAL_WIFI_ATBM_IMP_DEBUG;wifi_ctrl_recv;1225;0x1383c000;3;monitor_if timeout 5s
+connect error: Connection refused
+19700101000020.004;DEVMGR;_clear_dmc_info;338;0x13500002;4;clear dmc data
+connect error: Connection refused
+19700101000021.863;REC;waiting_for_fs_mount;178;0x00000000;4;wait for filesystem mount timeout
+key test reset factory end
+19700101000022.185;HAL_WIFI_ATBM_IMP_DEBUG;wifi_ctrl_recv;1225;0x1383c000;3;monitor_if timeout 5s
+connect error: Connection refused
+
+

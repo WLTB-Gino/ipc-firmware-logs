@@ -1,0 +1,1621 @@
+U-Boot SPL 2013.07-gb04373d-dirty (Jun 15 2016 - 18:02:18)
+t10/soc.c ===> board_init_f
+pll_init:347
+l2cache_clk = 450000000
+pll_cfg.pdiv = 8, pll_cfg.h2div = 4, pll_cfg.h0div = 4, pll_cfg.cdiv = 1, pll_cfg.l2div = 3
+nf=38 nr = 1 od0 = 1 od1 = 1
+cppcr is 02604900
+CPM_CPAPCR 04b0890d
+nf=50 nr = 1 od0 = 1 od1 = 1
+cppcr is 03204900
+CPM_CPMPCR 0320490d
+cppcr 0x9a7b5510
+apll_freq 909312000 
+mpll_freq 1200000000 
+ddr sel mpll, cpu sel apll
+ddrfreq 400000000
+cclk  909312000
+l2clk 303104000
+h0clk 300000000
+h2clk 300000000
+pclk  150000000
+CPM_DDRCDR(0000002c) = a0000002
+
+
+U-Boot 2013.07-gb04373d-dirty (Jun 15 2016 - 18:02:18)
+
+Board: ISVP (Ingenic XBurst T10 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 409k for U-Boot at: 83f98000
+Reserving 32784k for malloc() at: 81f94000
+Reserving 32 Bytes for Board Info at: 81f93fe0
+Reserving 124 Bytes for Global Data at: 81f93f64
+Reserving 128k for boot params() at: 81f73f64
+Stack Pointer at: 81f73f48
+lib/board.c=====>board_init_r
+Now running in RAM - U-Boot at: 83f98000
+MMC:   
+the manufacturer c2
+SF: Detected MX25L128**E
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   CPM_MACCDR(54) = a0000017
+Jz4775-9161
+common/main.c ====>main_loop
+Hit any key to stop autoboot:  0 
+the manufacturer c2
+SF: Detected MX25L128**E
+
+SF: 3932160 bytes @ 0x40000 Read: OK
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14
+   Image Type:   MIPS Linux Kernel Image (gzip compressed)
+   Data Size:    3387921 Bytes = 3.2 MiB
+   Load Address: 80010000
+   Entry Point:  80550540
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14 (t15@sywhost) (gcc version 4.7.2 (Ingenic 2015.02) ) #193 PREEMPT Mon Jun 20 17:07:47 CST 2016
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:8024C244
+[    0.000000] [<8024c244>] __udelay+0x34/0x40
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_ssi.reg=e000000f
+[    0.000000] clk->parent->name=mpll
+[    0.000000] CCLK:909MHz L2CLK:454Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 006f3000 @ 00010000 (usable)
+[    0.000000]  memory: 0003d000 @ 00703000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02400000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x023fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x023fffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 9144
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=36M@0x0 ispmem=8M@0x2400000 rmem=20M@0x2c00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),3840k(kernel),5120k(root),3072k(appfs),2048K(database),2048k(data)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 27616k/36864k available (5422k kernel code, 9248k reserved, 1691k data, 244k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:418
+[    0.000000] clockevents_config_and_register success.
+[    0.000024] Calibrating delay loop... 904.39 BogoMIPS (lpj=4521984)
+[    0.037706] pid_max: default: 32768 minimum: 301
+[    0.042678] Mount-cache hash table entries: 512
+[    0.047846] Initializing cgroup subsys debug
+[    0.052114] Initializing cgroup subsys freezer
+[    0.059632] regulator-dummy: no parameters
+[    0.063970] NET: Registered protocol family 16
+[    0.087114] bio: create slab <bio-0> at 0
+[    0.094058] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.099306] usbcore: registered new interface driver usbfs
+[    0.104844] usbcore: registered new interface driver hub
+[    0.110358] usbcore: registered new device driver usb
+[    0.115764] i2c-gpio i2c-gpio.0: using pins 12 (SDA) and 13 (SCL)
+[    0.122073] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.128259] media: Linux media interface: v0.10
+[    0.132821] Linux video capture interface: v2.00
+[    0.139815] Switching to clocksource jz_clocksource
+[    0.145152] cfg80211: Calling CRDA to update world regulatory domain
+[    0.152226] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.157200] DWC IN DEVICE ONLY MODE
+[    0.311992] sft id =========================off
+[    0.316654] dwc2 dwc2: Keep PHY ON
+[    0.320025] dwc2 dwc2: Using Buffer DMA mode
+[    0.523490] dwc2 dwc2: Core Release: 3.00a
+[    0.527967] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.536956] NET: Registered protocol family 2
+[    0.541926] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.548910] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.555306] TCP: Hash tables configured (established 512 bind 512)
+[    0.561613] TCP: reno registered
+[    0.564854] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.570750] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.577407] NET: Registered protocol family 1
+[    0.582130] RPC: Registered named UNIX socket transport module.
+[    0.588148] RPC: Registered udp transport module.
+[    0.592840] RPC: Registered tcp transport module.
+[    0.597624] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.604754] freq_udelay_jiffys[0].max_num = 10
+[    0.609186] cpufreq 	udelay 	loops_per_jiffy	
+[    0.613602] 12000	 59675	 59675	
+[    0.616886] 24000	 119351	 119351	
+[    0.620312] 60000	 298378	 298378	
+[    0.623754] 120000	 596756	 596756	
+[    0.627338] 200000	 994594	 994594	
+[    0.630819] 300000	 1491891	 1491891	
+[    0.634526] 600000	 2983783	 2983783	
+[    0.638263] 792000	 3938594	 3938594	
+[    0.641943] 1008000	 5012756	 5012756	
+[    0.645754] 1200000	 5967567	 5967567	
+[    0.657454] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.664546] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.670663] msgmni has been set to 53
+[    0.676098] io scheduler noop registered
+[    0.680039] io scheduler cfq registered (default)
+[    0.716513] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.723199] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.731490] console [ttyS1] enabled, bootconsole disabled
+[    0.731490] console [ttyS1] enabled, bootconsole disabled
+[    0.747645] brd: module loaded
+[    0.753344] loop: module loaded
+[    0.756780] wifi regulator missing
+[    0.760466] logger: created 256K log 'log_main'
+[    0.765262] logger: created 256K log 'log_events'
+[    0.770171] logger: created 256K log 'log_radio'
+[    0.775031] logger: created 256K log 'log_system'
+[    0.780699] jz SADC driver registeres over!
+[    0.786514] jz TCU driver register completed
+[    0.791447] CPM_SSICDR : 20000008
+[    0.794931] flash->clk->name=NULL
+[    0.798421] the id code = c22018, the flash name is MX25L12835F
+[    0.804529] JZ SFC Controller for SFC channel 0 driver register
+[    0.810669] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.816785] Creating 6 MTD partitions on "jz_sfc":
+[    0.821728] 0x000000000000-0x000000040000 : "boot"
+[    0.827400] 0x000000040000-0x000000400000 : "kernel"
+[    0.833166] 0x000000400000-0x000000900000 : "root"
+[    0.838866] 0x000000900000-0x000000c00000 : "appfs"
+[    0.844554] 0x000000c00000-0x000000e00000 : "database"
+[    0.850621] 0x000000e00000-0x000001000000 : "data"
+[    0.856309] SPI NOR MTD LOAD OK
+[    0.859687] hw->use_dma
+[    0.862253] dma dma0chan22: Channel 22 have been requested.(phy id 9,type 0x16 desc a1b4b000)
+[    0.871125] dma dma0chan23: Channel 23 have been requested.(phy id 8,type 0x16 desc a1b4c000)
+[    0.880242] jz-ssi jz-ssi.0: master is unqueued, this is deprecated
+[    0.886867] JZ SSI Controller for SPI channel 0 driver register
+[    0.893189] tun: Universal TUN/TAP device driver, 1.6
+[    0.898437] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.904995] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.911379] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.917795] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.924174] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.930565] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.936955] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.943331] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.949717] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.956104] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.962481] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.968869] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.974444] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.980915] =======>gmacdev = 0x81b50e00<================
+[    0.986511] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.993419] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.999815] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    1.006214] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    1.012593] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    1.018982] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    1.025371] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    1.031747] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    1.038135] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    1.044511] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    1.050897] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    1.057284] func:jz_mac_probe, synopGMAC_reset failed
+[    1.062495] jz_mac: probe of jz_mac.0 failed with error -1
+[    1.068196] PPP generic driver version 2.4.2
+[    1.072724] PPP BSD Compression module registered
+[    1.077611] PPP Deflate Compression module registered
+[    1.082833] PPP MPPE Compression module registered
+[    1.087791] NET: Registered protocol family 24
+[    1.092458] usbcore: registered new interface driver asix
+[    1.098111] usbcore: registered new interface driver ax88179_178a
+[    1.104429] usbcore: registered new interface driver cdc_ether
+[    1.110523] usbcore: registered new interface driver net1080
+[    1.116417] usbcore: registered new interface driver cdc_subset
+[    1.122551] usbcore: registered new interface driver zaurus
+[    1.128392] usbcore: registered new interface driver cdc_ncm
+[    1.134540] rtc-pcf8563 1-0051: chip found, driver version 0.4.3
+[    1.143152] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    1.150813] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    1.157299] rtc-pcf8563 1-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    1.164381] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.174751] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    1.204753] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.210120] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.254867] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.260411] ------------ init codec driver start!
+[    1.266461] jz_codec_probe: probe() start
+[    1.270611] jz_codec_probe, codec iomem is :0xb0021000
+[    1.275939] jz_codec_probe: probe() done
+[    1.280075] ----------------xb_snd_probe--------------------
+[    1.285941] i2s global init
+[    1.288832] current codec is :81b5d080
+[    1.293015] i2s init success.
+[    1.725117] ----------------xb_snd_probe--------------------
+[    1.731190] u32 classifier
+[    1.733980]     Actions configured
+[    1.737546] Netfilter messages via NETLINK v0.30.
+[    1.742482] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    1.749690] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    1.756158] xt_time: kernel timezone is -0000
+[    1.760672] ip_set: protocol 6
+[    1.764019] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.769701] arp_tables: (C) 2002 David S. Miller
+[    1.774540] TCP: cubic registered
+[    1.777997] NET: Registered protocol family 17
+[    1.782646] Key type dns_resolver registered
+[    1.787920] dhd_module_init: in
+[    1.791171] ======== bcm_wlan_set_plat_data ========
+[    1.796358] dhd_wifi_platform_load: Enter
+[    1.800512] Power-up adapter 'DHD generic adapter'
+[    1.805532] wifi_platform_set_power = 1
+[    1.809486] ======== PULL WL_REG_ON HIGH! ========
+[    2.734724] wifi_platform_bus_enumerate device present 1
+[    2.740208] ======== Card detection to detect SDIO card! ========
+[    2.801112] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    2.808400] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.815665] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.824166] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    2.846020] mmc1: new SDIO card at address 0001
+[    2.867477] bcmsdh_register: register client driver
+[    2.872624] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.877715] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.882657] bus num (host idx)=1, slot num (rca)=1
+[    2.887614] found adapter info 'DHD generic adapter'
+[    2.893282] F1 signature read @0x18000000=0x1591a962
+[    2.899910] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    2.907188] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    2.914423] dhd_conf_set_chiprev: chip=0xa962, chiprev=1
+[    2.919953] dhd_conf_set_conf_path_by_nv_path: config_path=/lib/firmware/config.txt
+[    2.928552] wl_create_event_handler(): thread:wl_event_handler:2a started
+[    2.935628] tsk Enter, tsk = 0x81ba13bc
+[    2.939889] dhd_attach(): thread:dhd_watchdog_thread:2b started
+[    2.946126] dhd_attach(): thread:dhd_dpc:2c started
+[    2.951238] dhd_dpc_thread: set dpc_cpucore 0 from config.txt
+[    2.957240] dhd_attach(): thread:dhd_rxf:2d started
+[    2.962280] dhd_deferred_work_init: work queue initialized 
+[    2.968206] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    2.986766] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    2.986766] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    3.000576] Register interface [wlan0]  MAC: XX:XX:XX:XX:XX:XX
+[    3.000576] 
+[    3.008178] dhd_prot_ioctl : bus is down. we have nothing to do
+[    3.014302] dhd_txglom_enable: enable 0
+[    3.018277] dhd_bus_devreset:  WLAN OFF DONE
+[    3.022894] wifi_platform_set_power = 0
+[    3.026890] ======== PULL WL_REG_ON LOW! ========
+[    3.344826] dhd_module_init: Exit err=0
+[    3.349292] dwc2 dwc2: session end detected!
+[    3.353785] file system registered
+[    3.358522] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    3.365681] android_usb gadget: Number of LUNs=1
+[    3.370444]  lun0: LUN: removable file: (no medium)
+[    3.375708] android_usb gadget: android_usb ready
+[    3.380957] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    3.390528] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    3.398206] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    3.404490] rtc-pcf8563 1-0051: hctosys: invalid date/time
+[    3.414942] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    3.422729] Freeing unused kernel memory: 244K (80703000 - 80740000)
+mdev is ok......
+deviceID=442C05550FE7
+fsck (busybox 1.22.1, 2014-05-13 08:27:59 CST)
+Successfully initialized wpa_supplicant
+10000000000000000
+drv->ifindex ===2,bss->ifname == wlan0
+8888888888888888888888
+[    6.422967] dhd_open: Enter 81907800
+aaaaaaaaaaaaaaaaaaaaaaaaaaaa
+66666666666666666666
+[    6.432366] 
+[    6.432366] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    6.432366] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    6.451632] wl_android_wifi_on in 1
+[    6.455307] wl_android_wifi_on in 2: g_wifi_on=0
+[    6.460077] wifi_platform_set_power = 1
+[    6.464027] ======== PULL WL_REG_ON HIGH! ========
+[    7.394748] sdio_reset_comm():
+[    7.420930] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    7.429699] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.438450] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.449644] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    7.481676] 
+[    7.481676] 
+[    7.481676] dhd_bus_devreset: == WLAN ON ==
+[    7.489184] F1 signature read @0x18000000=0x1591a962
+[    7.495816] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    7.503071] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    7.510364] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    7.516833] dhd_conf_read_config: Ignore config file /lib/firmware/config.txt
+[    7.524205] dhd_conf_set_fw_name_by_chip: firmware_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.532497] Final fw_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.538120] Final nv_path=/lib/firmware/nvram.txt
+[    7.542968] Final conf_path=/lib/firmware/config.txt
+[    7.690487] NVRAM version: AP6181_NVRAM_V1.1_01152013
+[    7.696604] dhdsdio_write_vars: Download, Upload and compare of NVRAM succeeded.
+[    7.704849] dhd_bus_init: delay 100ms for BCM43362
+[    7.921090] dhd_bus_init: enable 0x06, ready 0x06 (waited 0us)
+[    7.928390] dhd_conf_set_band: Set band 0
+[    7.932722] dhd_preinit_ioctls: Set tcpack_sup_mode 0
+[    7.939769] Firmware up: op_mode=0x0005, MAC=XX:XX:XX:XX:XX:XX
+[    7.945837] dhd_conf_set_country: Set country ALL, revision 0
+[    8.066836] Country code: ALL (ALL/0)
+[    8.070895] dhd_conf_set_roam: Set roam_off 1
+[    8.077283] dhd_preinit_ioctls buf_key_b4_m4 set failed -23
+[    8.089018] Firmware version = wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1
+[    8.098145]   Driver: 1.201.59.5 (r506368)
+[    8.098145]   Firmware: wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1 
+[    8.111180] dhd_txglom_enable: enable 0
+[    8.115189] dhd_conf_set_disable_proptx: set disable_proptx 1
+[    8.123863] dhd_preinit_ioctls wl ampdu_hostreorder failed -23
+[    8.130320] wl_android_wifi_on: Success
+[    8.274228] dhd_set_scb_probe: GET max_scb_probe failed
+[    8.280080] dhd_set_scb_probe: max_scb_probe setting failed
+[    8.285886] dhd_open: Exit ret=0
+qqqqqqqqqqqqqqqqqqq
+[    9.235430] @@@@@@@@@@@@@@@@@@@@ tx-isp-probe @@@@@@@@@@@@@@@@@@@@@@@@@@
+[    9.251757] &&&&&&&&&&& register_tx_isp_csi_device &&&&&&&&&&
+[    9.257799] &&&&&&&&&&& register_tx_isp_vic_device &&&&&&&&&&
+[    9.263738] &&&&&&&&&&& register_tx_isp_core_device &&&&&&&&&&
+[    9.269810] &&&&&&&&&&& register_tx_isp_core_device:slock = 817dbccc, mlock = 817dbd50 &&&&&&&&&&
+[    9.289621] ***********apical_sensor_early_init*******************313
+[    9.300756] ***********apical_sensor_early_init*******************318
+[    9.307626] &&&&&&&&&&& register_tx_isp_core_device core_dev = 817dbc00 &&&&&&&&&&
+[    9.315533] the device[tx-isp] isn't belong to ISP platform device.
+[    9.322039] &&&&tx_isp_create_media_link_and_pipeline[234] index = 0  &&&&
+[    9.329185] &&&&tx_isp_create_media_link_and_pipeline[234] index = 1  &&&&
+[    9.336316] &&&&tx_isp_create_media_link_and_pipeline[234] index = 2  &&&&
+[    9.392839] ili9225g_spidev_probe
+[    9.400815] inti_ili9225g
+[    9.614114] cgu_ssi.reg=c0000008
+[    9.617494] cgv=0x0
+[    9.952622] android_usb: already disabled
+[    9.964566] dwc2 dwc2: SRP: Device Mode
+
+Processing /etc/profile... Done
+
+~ # init_configure
+local_ip:net_mask
+[deviceid]=UNDEF
+[deviceid:id]=[442C05550FE7]
+[local_ip]=UNDEF
+[local_ip:ip_state]=[static]
+[local_ip:ip]=[192.168.1.155]
+[local_ip:netmask]=[255.255.255.0]
+[local_ip:gateway]=[192.168.1.1]
+
+received 159 bytes
+change@/devices/virtual/android_[   10.498975] android_work: sent uevent USB_STATE=CONNECTED
+usb/android0
+ACTION=change
+DEVPATH=/devices/virtual/android_usb/android0
+SUBSYSTEM=android_usb
+USB_STATE=CONNECTED
+SEQNUM=1044
+
+
+android_usb_state=1;
+The Header:70,Width:176,Height:220.
+The Header:70,Width:16,Height:16.
+The Header:70,Width:16,Height:16.
+The Header:70,Width:18,Height:16.
+time is: 1970-01-01 00:00:15
+UNIQUE constraint failed: power_table.time
+dot_address1
+[   15.282222] ili9225g_open
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+show_main_mode
+idle_mode!!!
+
+~ # mount -t debugfs none /sys/kernel/debug
+~ # cat /sys/kernel/debug/gpio
+GPIOs 0-31, GPIO A:
+ gpio-12  (sda                 ) in  hi
+ gpio-13  (scl                 ) in  hi
+ gpio-20  (bcm_power           ) out hi
+ gpio-22  (ili9225g_te         ) out hi
+ gpio-25  (motor               ) in  lo
+ gpio-26  (A key               ) in  hi
+
+GPIOs 32-63, GPIO B:
+ gpio-49  (ili9225g_reset      ) out hi
+ gpio-50  (ili9225g_rs         ) out hi
+ gpio-53  (charge control      ) out lo
+ gpio-57  (sda                 ) in  hi
+ gpio-58  (scl                 ) in  hi
+ gpio-59  (mmc_detect          ) in  lo
+ gpio-60  (B key               ) in  lo
+ gpio-61  (green_led           ) out lo
+ gpio-63  (buzzer              ) in  hi
+
+GPIOs 64-95, GPIO C:
+ gpio-72  (rf power            ) out hi
+ gpio-73  (ili9225g_backlight  ) out lo
+ gpio-78  (usb detect          ) in  hi
+ gpio-81  (red_led             ) out lo
+
+GPIOs 96-127, GPIO D:
+
+GPIOs 128-159, GPIO E:
+
+GPIOs 160-191, GPIO F:
+~ # dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14 (t15@sywhost) (gcc version 4.7.2 (Ingenic 2015.02) ) #193 PREEMPT Mon Jun 20 17:07:47 CST 2016
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:8024C244
+[    0.000000] [<8024c244>] __udelay+0x34/0x40
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_ssi.reg=e000000f
+[    0.000000] clk->parent->name=mpll
+[    0.000000] cgu_get_rate, parent = 909312000, rate = 0, m = 0, n = 0, reg val = 0x000020ff
+[    0.000000] CCLK:909MHz L2CLK:454Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 006f3000 @ 00010000 (usable)
+[    0.000000]  memory: 0003d000 @ 00703000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02400000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x023fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x023fffff]
+[    0.000000] On node 0 totalpages: 9216
+[    0.000000] free_area_init_node: node 0, pgdat 806ff780, node_mem_map 81000000
+[    0.000000]   Normal zone: 72 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 9216 pages, LIFO batch:1
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 9144
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=36M@0x0 ispmem=8M@0x2400000 rmem=20M@0x2c00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),3840k(kernel),5120k(root),3072k(appfs),2048K(database),2048k(data)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 27616k/36864k available (5422k kernel code, 9248k reserved, 1691k data, 244k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:418
+[    0.000000] clockevents_config_and_register success.
+[    0.000024] Calibrating delay loop... 904.39 BogoMIPS (lpj=4521984)
+[    0.037706] pid_max: default: 32768 minimum: 301
+[    0.042678] Mount-cache hash table entries: 512
+[    0.047846] Initializing cgroup subsys debug
+[    0.052114] Initializing cgroup subsys freezer
+[    0.059632] regulator-dummy: no parameters
+[    0.063970] NET: Registered protocol family 16
+[    0.087114] bio: create slab <bio-0> at 0
+[    0.094058] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.099306] usbcore: registered new interface driver usbfs
+[    0.104844] usbcore: registered new interface driver hub
+[    0.110358] usbcore: registered new device driver usb
+[    0.115764] i2c-gpio i2c-gpio.0: using pins 12 (SDA) and 13 (SCL)
+[    0.122073] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.128259] media: Linux media interface: v0.10
+[    0.132821] Linux video capture interface: v2.00
+[    0.139815] Switching to clocksource jz_clocksource
+[    0.145152] cfg80211: Calling CRDA to update world regulatory domain
+[    0.152226] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.157200] DWC IN DEVICE ONLY MODE
+[    0.311992] sft id =========================off
+[    0.316654] dwc2 dwc2: Keep PHY ON
+[    0.320025] dwc2 dwc2: Using Buffer DMA mode
+[    0.523490] dwc2 dwc2: Core Release: 3.00a
+[    0.527967] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.536956] NET: Registered protocol family 2
+[    0.541926] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.548910] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.555306] TCP: Hash tables configured (established 512 bind 512)
+[    0.561613] TCP: reno registered
+[    0.564854] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.570750] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.577407] NET: Registered protocol family 1
+[    0.582130] RPC: Registered named UNIX socket transport module.
+[    0.588148] RPC: Registered udp transport module.
+[    0.592840] RPC: Registered tcp transport module.
+[    0.597624] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.604754] freq_udelay_jiffys[0].max_num = 10
+[    0.609186] cpufreq 	udelay 	loops_per_jiffy	
+[    0.613602] 12000	 59675	 59675	
+[    0.616886] 24000	 119351	 119351	
+[    0.620312] 60000	 298378	 298378	
+[    0.623754] 120000	 596756	 596756	
+[    0.627338] 200000	 994594	 994594	
+[    0.630819] 300000	 1491891	 1491891	
+[    0.634526] 600000	 2983783	 2983783	
+[    0.638263] 792000	 3938594	 3938594	
+[    0.641943] 1008000	 5012756	 5012756	
+[    0.645754] 1200000	 5967567	 5967567	
+[    0.657454] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.664546] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.670663] msgmni has been set to 53
+[    0.676098] io scheduler noop registered
+[    0.680039] io scheduler cfq registered (default)
+[    0.716513] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.723199] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.731490] console [ttyS1] enabled, bootconsole disabled
+[    0.747645] brd: module loaded
+[    0.753344] loop: module loaded
+[    0.756780] wifi regulator missing
+[    0.760466] logger: created 256K log 'log_main'
+[    0.765262] logger: created 256K log 'log_events'
+[    0.770171] logger: created 256K log 'log_radio'
+[    0.775031] logger: created 256K log 'log_system'
+[    0.780699] jz SADC driver registeres over!
+[    0.786514] jz TCU driver register completed
+[    0.791447] CPM_SSICDR : 20000008
+[    0.794931] flash->clk->name=NULL
+[    0.798421] the id code = c22018, the flash name is MX25L12835F
+[    0.804529] JZ SFC Controller for SFC channel 0 driver register
+[    0.810669] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.816785] Creating 6 MTD partitions on "jz_sfc":
+[    0.821728] 0x000000000000-0x000000040000 : "boot"
+[    0.827400] 0x000000040000-0x000000400000 : "kernel"
+[    0.833166] 0x000000400000-0x000000900000 : "root"
+[    0.838866] 0x000000900000-0x000000c00000 : "appfs"
+[    0.844554] 0x000000c00000-0x000000e00000 : "database"
+[    0.850621] 0x000000e00000-0x000001000000 : "data"
+[    0.856309] SPI NOR MTD LOAD OK
+[    0.859687] hw->use_dma
+[    0.862253] dma dma0chan22: Channel 22 have been requested.(phy id 9,type 0x16 desc a1b4b000)
+[    0.871125] dma dma0chan23: Channel 23 have been requested.(phy id 8,type 0x16 desc a1b4c000)
+[    0.880242] jz-ssi jz-ssi.0: master is unqueued, this is deprecated
+[    0.886867] JZ SSI Controller for SPI channel 0 driver register
+[    0.893189] tun: Universal TUN/TAP device driver, 1.6
+[    0.898437] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.904995] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.911379] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.917795] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.924174] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.930565] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.936955] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.943331] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.949717] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.956104] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.962481] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.968869] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.974444] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.980915] =======>gmacdev = 0x81b50e00<================
+[    0.986511] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.993419] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.999815] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    1.006214] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    1.012593] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    1.018982] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    1.025371] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    1.031747] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    1.038135] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    1.044511] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    1.050897] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    1.057284] func:jz_mac_probe, synopGMAC_reset failed
+[    1.062495] jz_mac: probe of jz_mac.0 failed with error -1
+[    1.068196] PPP generic driver version 2.4.2
+[    1.072724] PPP BSD Compression module registered
+[    1.077611] PPP Deflate Compression module registered
+[    1.082833] PPP MPPE Compression module registered
+[    1.087791] NET: Registered protocol family 24
+[    1.092458] usbcore: registered new interface driver asix
+[    1.098111] usbcore: registered new interface driver ax88179_178a
+[    1.104429] usbcore: registered new interface driver cdc_ether
+[    1.110523] usbcore: registered new interface driver net1080
+[    1.116417] usbcore: registered new interface driver cdc_subset
+[    1.122551] usbcore: registered new interface driver zaurus
+[    1.128392] usbcore: registered new interface driver cdc_ncm
+[    1.134540] rtc-pcf8563 1-0051: chip found, driver version 0.4.3
+[    1.143152] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    1.150813] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    1.157299] rtc-pcf8563 1-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    1.164381] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.174751] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    1.204753] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.210120] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.254867] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.260411] ------------ init codec driver start!
+[    1.266461] jz_codec_probe: probe() start
+[    1.270611] jz_codec_probe, codec iomem is :0xb0021000
+[    1.275939] jz_codec_probe: probe() done
+[    1.280075] ----------------xb_snd_probe--------------------
+[    1.285941] i2s global init
+[    1.288832] current codec is :81b5d080
+[    1.292972] cgu_set_rate, parent = 909312000, rate = 2048000, n = 444, reg val = 0x000021bc
+[    1.292990] i2s_global_init, i2s clk rate is 2048000
+[    1.293001] cgu_enable,cgu_i2s reg val = 0x200021bc
+[    1.293015] i2s init success.
+[    1.725117] ----------------xb_snd_probe--------------------
+[    1.731190] u32 classifier
+[    1.733980]     Actions configured
+[    1.737546] Netfilter messages via NETLINK v0.30.
+[    1.742482] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    1.749690] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    1.756158] xt_time: kernel timezone is -0000
+[    1.760672] ip_set: protocol 6
+[    1.764019] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.769701] arp_tables: (C) 2002 David S. Miller
+[    1.774540] TCP: cubic registered
+[    1.777997] NET: Registered protocol family 17
+[    1.782646] Key type dns_resolver registered
+[    1.787920] dhd_module_init: in
+[    1.791171] ======== bcm_wlan_set_plat_data ========
+[    1.796358] dhd_wifi_platform_load: Enter
+[    1.800512] Power-up adapter 'DHD generic adapter'
+[    1.805532] wifi_platform_set_power = 1
+[    1.809486] ======== PULL WL_REG_ON HIGH! ========
+[    2.734724] wifi_platform_bus_enumerate device present 1
+[    2.740208] ======== Card detection to detect SDIO card! ========
+[    2.801112] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    2.808400] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.815665] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.824166] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    2.846020] mmc1: new SDIO card at address 0001
+[    2.867477] bcmsdh_register: register client driver
+[    2.872624] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.877715] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.882657] bus num (host idx)=1, slot num (rca)=1
+[    2.887614] found adapter info 'DHD generic adapter'
+[    2.893282] F1 signature read @0x18000000=0x1591a962
+[    2.899910] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    2.907188] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    2.914423] dhd_conf_set_chiprev: chip=0xa962, chiprev=1
+[    2.919953] dhd_conf_set_conf_path_by_nv_path: config_path=/lib/firmware/config.txt
+[    2.928552] wl_create_event_handler(): thread:wl_event_handler:2a started
+[    2.935628] tsk Enter, tsk = 0x81ba13bc
+[    2.939889] dhd_attach(): thread:dhd_watchdog_thread:2b started
+[    2.946126] dhd_attach(): thread:dhd_dpc:2c started
+[    2.951238] dhd_dpc_thread: set dpc_cpucore 0 from config.txt
+[    2.957240] dhd_attach(): thread:dhd_rxf:2d started
+[    2.962280] dhd_deferred_work_init: work queue initialized 
+[    2.968206] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    2.986766] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    2.986766] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    3.000576] Register interface [wlan0]  MAC: XX:XX:XX:XX:XX:XX
+[    3.000576] 
+[    3.008178] dhd_prot_ioctl : bus is down. we have nothing to do
+[    3.014302] dhd_txglom_enable: enable 0
+[    3.018277] dhd_bus_devreset:  WLAN OFF DONE
+[    3.022894] wifi_platform_set_power = 0
+[    3.026890] ======== PULL WL_REG_ON LOW! ========
+[    3.344826] dhd_module_init: Exit err=0
+[    3.349292] dwc2 dwc2: session end detected!
+[    3.353785] file system registered
+[    3.358522] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    3.365681] android_usb gadget: Number of LUNs=1
+[    3.370444]  lun0: LUN: removable file: (no medium)
+[    3.375708] android_usb gadget: android_usb ready
+[    3.380957] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    3.390528] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    3.398206] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    3.404490] rtc-pcf8563 1-0051: hctosys: invalid date/time
+[    3.414942] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    3.422729] Freeing unused kernel memory: 244K (80703000 - 80740000)
+[    6.422967] dhd_open: Enter 81907800
+[    6.432366] 
+[    6.432366] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    6.432366] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    6.451632] wl_android_wifi_on in 1
+[    6.455307] wl_android_wifi_on in 2: g_wifi_on=0
+[    6.460077] wifi_platform_set_power = 1
+[    6.464027] ======== PULL WL_REG_ON HIGH! ========
+[    7.394748] sdio_reset_comm():
+[    7.420930] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    7.429699] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.438450] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.449644] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    7.481676] 
+[    7.481676] 
+[    7.481676] dhd_bus_devreset: == WLAN ON ==
+[    7.489184] F1 signature read @0x18000000=0x1591a962
+[    7.495816] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    7.503071] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    7.510364] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    7.516833] dhd_conf_read_config: Ignore config file /lib/firmware/config.txt
+[    7.524205] dhd_conf_set_fw_name_by_chip: firmware_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.532497] Final fw_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.538120] Final nv_path=/lib/firmware/nvram.txt
+[    7.542968] Final conf_path=/lib/firmware/config.txt
+[    7.690487] NVRAM version: AP6181_NVRAM_V1.1_01152013
+[    7.696604] dhdsdio_write_vars: Download, Upload and compare of NVRAM succeeded.
+[    7.704849] dhd_bus_init: delay 100ms for BCM43362
+[    7.921090] dhd_bus_init: enable 0x06, ready 0x06 (waited 0us)
+[    7.928390] dhd_conf_set_band: Set band 0
+[    7.932722] dhd_preinit_ioctls: Set tcpack_sup_mode 0
+[    7.939769] Firmware up: op_mode=0x0005, MAC=XX:XX:XX:XX:XX:XX
+[    7.945837] dhd_conf_set_country: Set country ALL, revision 0
+[    8.066836] Country code: ALL (ALL/0)
+[    8.070895] dhd_conf_set_roam: Set roam_off 1
+[    8.077283] dhd_preinit_ioctls buf_key_b4_m4 set failed -23
+[    8.089018] Firmware version = wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1
+[    8.098145]   Driver: 1.201.59.5 (r506368)
+[    8.098145]   Firmware: wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1 
+[    8.111180] dhd_txglom_enable: enable 0
+[    8.115189] dhd_conf_set_disable_proptx: set disable_proptx 1
+[    8.123863] dhd_preinit_ioctls wl ampdu_hostreorder failed -23
+[    8.130320] wl_android_wifi_on: Success
+[    8.274228] dhd_set_scb_probe: GET max_scb_probe failed
+[    8.280080] dhd_set_scb_probe: max_scb_probe setting failed
+[    8.285886] dhd_open: Exit ret=0
+[    9.235430] @@@@@@@@@@@@@@@@@@@@ tx-isp-probe @@@@@@@@@@@@@@@@@@@@@@@@@@
+[    9.251757] &&&&&&&&&&& register_tx_isp_csi_device &&&&&&&&&&
+[    9.257799] &&&&&&&&&&& register_tx_isp_vic_device &&&&&&&&&&
+[    9.263738] &&&&&&&&&&& register_tx_isp_core_device &&&&&&&&&&
+[    9.269810] &&&&&&&&&&& register_tx_isp_core_device:slock = 817dbccc, mlock = 817dbd50 &&&&&&&&&&
+[    9.289621] ***********apical_sensor_early_init*******************313
+[    9.300756] ***********apical_sensor_early_init*******************318
+[    9.307626] &&&&&&&&&&& register_tx_isp_core_device core_dev = 817dbc00 &&&&&&&&&&
+[    9.315533] the device[tx-isp] isn't belong to ISP platform device.
+[    9.322039] &&&&tx_isp_create_media_link_and_pipeline[234] index = 0  &&&&
+[    9.329185] &&&&tx_isp_create_media_link_and_pipeline[234] index = 1  &&&&
+[    9.336316] &&&&tx_isp_create_media_link_and_pipeline[234] index = 2  &&&&
+[    9.392839] ili9225g_spidev_probe
+[    9.400815] inti_ili9225g
+[    9.614114] cgu_ssi.reg=c0000008
+[    9.617494] cgv=0x0
+[    9.952622] android_usb: already disabled
+[    9.964566] dwc2 dwc2: SRP: Device Mode
+[   10.498975] android_work: sent uevent USB_STATE=CONNECTED
+[   15.282222] ili9225g_open
+~ # 
+=================================================================================
+update
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14 (t15@sywhost) (gcc version 4.7.2 (Ingenic 2015.02) ) #193 PREEMPT Mon Jun 20 17:07:47 CST 2016
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:8024C244
+[    0.000000] [<8024c244>] __udelay+0x34/0x40
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_ssi.reg=e000000f
+[    0.000000] clk->parent->name=mpll
+[    0.000000] CCLK:909MHz L2CLK:454Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 006f3000 @ 00010000 (usable)
+[    0.000000]  memory: 0003d000 @ 00703000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02400000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x023fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x023fffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 9144
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=36M@0x0 ispmem=8M@0x2400000 rmem=20M@0x2c00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),3840k(kernel),5120k(root),3072k(appfs),2048K(database),2048k(data)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 27616k/36864k available (5422k kernel code, 9248k reserved, 1691k data, 244k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:418
+[    0.000000] clockevents_config_and_register success.
+[    0.000024] Calibrating delay loop... 904.39 BogoMIPS (lpj=4521984)
+[    0.037704] pid_max: default: 32768 minimum: 301
+[    0.042676] Mount-cache hash table entries: 512
+[    0.047843] Initializing cgroup subsys debug
+[    0.052110] Initializing cgroup subsys freezer
+[    0.059636] regulator-dummy: no parameters
+[    0.063972] NET: Registered protocol family 16
+[    0.087124] bio: create slab <bio-0> at 0
+[    0.094068] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.099314] usbcore: registered new interface driver usbfs
+[    0.104852] usbcore: registered new interface driver hub
+[    0.110368] usbcore: registered new device driver usb
+[    0.115770] i2c-gpio i2c-gpio.0: using pins 12 (SDA) and 13 (SCL)
+[    0.122080] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.128263] media: Linux media interface: v0.10
+[    0.132825] Linux video capture interface: v2.00
+[    0.139824] Switching to clocksource jz_clocksource
+[    0.145150] cfg80211: Calling CRDA to update world regulatory domain
+[    0.152236] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.157208] DWC IN DEVICE ONLY MODE
+[    0.312004] sft id =========================off
+[    0.316671] dwc2 dwc2: Keep PHY ON
+[    0.320042] dwc2 dwc2: Using Buffer DMA mode
+[    0.523501] dwc2 dwc2: Core Release: 3.00a
+[    0.527979] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.536966] NET: Registered protocol family 2
+[    0.541931] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.548915] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.555310] TCP: Hash tables configured (established 512 bind 512)
+[    0.561617] TCP: reno registered
+[    0.564858] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.570754] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.577412] NET: Registered protocol family 1
+[    0.582136] RPC: Registered named UNIX socket transport module.
+[    0.588154] RPC: Registered udp transport module.
+[    0.592849] RPC: Registered tcp transport module.
+[    0.597632] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.604765] freq_udelay_jiffys[0].max_num = 10
+[    0.609198] cpufreq 	udelay 	loops_per_jiffy	
+[    0.613613] 12000	 59675	 59675	
+[    0.616897] 24000	 119351	 119351	
+[    0.620323] 60000	 298378	 298378	
+[    0.623766] 120000	 596756	 596756	
+[    0.627350] 200000	 994594	 994594	
+[    0.630830] 300000	 1491891	 1491891	
+[    0.634538] 600000	 2983783	 2983783	
+[    0.638276] 792000	 3938594	 3938594	
+[    0.641955] 1008000	 5012756	 5012756	
+[    0.645765] 1200000	 5967567	 5967567	
+[    0.657453] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.664540] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.670658] msgmni has been set to 53
+[    0.676095] io scheduler noop registered
+[    0.680037] io scheduler cfq registered (default)
+[    0.716536] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.723226] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.731514] console [ttyS1] enabled, bootconsole disabled
+[    0.731514] console [ttyS1] enabled, bootconsole disabled
+[    0.747676] brd: module loaded
+[    0.753377] loop: module loaded
+[    0.756813] wifi regulator missing
+[    0.760501] logger: created 256K log 'log_main'
+[    0.765299] logger: created 256K log 'log_events'
+[    0.770207] logger: created 256K log 'log_radio'
+[    0.775069] logger: created 256K log 'log_system'
+[    0.780743] jz SADC driver registeres over!
+[    0.786560] jz TCU driver register completed
+[    0.791497] flash->clk->name=NULL
+[    0.795038] the id code = c22018, the flash name is MX25L12835F
+[    0.801148] JZ SFC Controller for SFC channel 0 driver register
+[    0.807287] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.813390] Creating 6 MTD partitions on "jz_sfc":
+[    0.818345] 0x000000000000-0x000000040000 : "boot"
+[    0.824008] 0x000000040000-0x000000400000 : "kernel"
+[    0.829851] 0x000000400000-0x000000900000 : "root"
+[    0.835534] 0x000000900000-0x000000c00000 : "appfs"
+[    0.841217] 0x000000c00000-0x000000e00000 : "database"
+[    0.847277] 0x000000e00000-0x000001000000 : "data"
+[    0.852897] SPI NOR MTD LOAD OK
+[    0.856329] hw->use_dma
+[    0.858907] dma dma0chan22: Channel 22 have been requested.(phy id 9,type 0x16 desc a1b4b000)
+[    0.867763] dma dma0chan23: Channel 23 have been requested.(phy id 8,type 0x16 desc a1b4c000)
+[    0.876875] jz-ssi jz-ssi.0: master is unqueued, this is deprecated
+[    0.883428] JZ SSI Controller for SPI channel 0 driver register
+[    0.889821] tun: Universal TUN/TAP device driver, 1.6
+[    0.895063] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.901600] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.908020] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.914399] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.920793] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.927180] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.933557] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.939943] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.946328] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.952705] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.959089] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.965479] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.971055] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.977526] =======>gmacdev = 0x81b50e00<================
+[    0.983095] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.990027] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.996418] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    1.002796] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    1.009194] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    1.015583] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    1.021960] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    1.028347] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    1.034733] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    1.041110] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    1.047496] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    1.053873] func:jz_mac_probe, synopGMAC_reset failed
+[    1.059093] jz_mac: probe of jz_mac.0 failed with error -1
+[    1.064795] PPP generic driver version 2.4.2
+[    1.069323] PPP BSD Compression module registered
+[    1.074173] PPP Deflate Compression module registered
+[    1.079426] PPP MPPE Compression module registered
+[    1.084365] NET: Registered protocol family 24
+[    1.089053] usbcore: registered new interface driver asix
+[    1.094672] usbcore: registered new interface driver ax88179_178a
+[    1.101025] usbcore: registered new interface driver cdc_ether
+[    1.107113] usbcore: registered new interface driver net1080
+[    1.112982] usbcore: registered new interface driver cdc_subset
+[    1.119145] usbcore: registered new interface driver zaurus
+[    1.124989] usbcore: registered new interface driver cdc_ncm
+[    1.131129] rtc-pcf8563 1-0051: chip found, driver version 0.4.3
+[    1.139744] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    1.147410] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    1.153875] rtc-pcf8563 1-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    1.160997] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.174761] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    1.204765] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.210139] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.254873] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.260411] ------------ init codec driver start!
+[    1.266469] jz_codec_probe: probe() start
+[    1.270619] jz_codec_probe, codec iomem is :0xb0021000
+[    1.275949] jz_codec_probe: probe() done
+[    1.280078] ----------------xb_snd_probe--------------------
+[    1.285943] i2s global init
+[    1.288837] current codec is :81b5d080
+[    1.293014] i2s init success.
+[    1.725123] ----------------xb_snd_probe--------------------
+[    1.731196] u32 classifier
+[    1.733989]     Actions configured
+[    1.737555] Netfilter messages via NETLINK v0.30.
+[    1.742490] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    1.749697] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    1.756168] xt_time: kernel timezone is -0000
+[    1.760682] ip_set: protocol 6
+[    1.764030] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.769717] arp_tables: (C) 2002 David S. Miller
+[    1.774559] TCP: cubic registered
+[    1.778014] NET: Registered protocol family 17
+[    1.782668] Key type dns_resolver registered
+[    1.787950] dhd_module_init: in
+[    1.791201] ======== bcm_wlan_set_plat_data ========
+[    1.796389] dhd_wifi_platform_load: Enter
+[    1.800544] Power-up adapter 'DHD generic adapter'
+[    1.805564] wifi_platform_set_power = 1
+[    1.809519] ======== PULL WL_REG_ON HIGH! ========
+[    2.213974] wait stable.[248][cgu_msc0]
+[    2.218035] mmc0: new high speed SD card at address 21f5
+[    2.223850] mmcblk0: mmc0:21f5 APPSD 121 MiB 
+[    2.229911]  mmcblk0: p1
+[    2.734733] wifi_platform_bus_enumerate device present 1
+[    2.740219] ======== Card detection to detect SDIO card! ========
+[    2.801172] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    2.808449] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.815699] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.824198] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    2.846084] mmc1: new SDIO card at address 0001
+[    2.867440] bcmsdh_register: register client driver
+[    2.872596] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.877690] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.882632] bus num (host idx)=1, slot num (rca)=1
+[    2.887589] found adapter info 'DHD generic adapter'
+[    2.893258] F1 signature read @0x18000000=0x1591a962
+[    2.899900] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    2.907194] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    2.914421] dhd_conf_set_chiprev: chip=0xa962, chiprev=1
+[    2.919954] dhd_conf_set_conf_path_by_nv_path: config_path=/lib/firmware/config.txt
+[    2.928550] wl_create_event_handler(): thread:wl_event_handler:2b started
+[    2.935630] tsk Enter, tsk = 0x81bc13bc
+[    2.939882] dhd_attach(): thread:dhd_watchdog_thread:2c started
+[    2.946128] dhd_attach(): thread:dhd_dpc:2d started
+[    2.951232] dhd_dpc_thread: set dpc_cpucore 0 from config.txt
+[    2.957239] dhd_attach(): thread:dhd_rxf:2e started
+[    2.962277] dhd_deferred_work_init: work queue initialized 
+[    2.968210] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    2.986868] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    2.986868] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    3.000684] Register interface [wlan0]  MAC: XX:XX:XX:XX:XX:XX
+[    3.000684] 
+[    3.008289] dhd_prot_ioctl : bus is down. we have nothing to do
+[    3.014415] dhd_txglom_enable: enable 0
+[    3.018390] dhd_bus_devreset:  WLAN OFF DONE
+[    3.022998] wifi_platform_set_power = 0
+[    3.026993] ======== PULL WL_REG_ON LOW! ========
+[    3.344836] dhd_module_init: Exit err=0
+[    3.349307] dwc2 dwc2: session end detected!
+[    3.353795] file system registered
+[    3.358526] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    3.365686] android_usb gadget: Number of LUNs=1
+[    3.370452]  lun0: LUN: removable file: (no medium)
+[    3.375710] android_usb gadget: android_usb ready
+[    3.380955] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    3.390528] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    3.398208] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    3.404495] rtc-pcf8563 1-0051: hctosys: invalid date/time
+[    3.414944] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    3.422733] Freeing unused kernel memory: 244K (80703000 - 80740000)
+mdev is ok......
+deviceID=442C05550FE7
+/bin/mount -t vfat /dev/mmcblk0p1 /mnt/sdmmc
+[    5.699973] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+fsck (busybox 1.22.1, 2014-05-13 08:27:59 CST)
+Successfully initialized wpa_supplicant
+10000000000000000
+drv->ifindex ===2,bss->ifname == wlan0
+8888888888888888888888
+[    6.462757] dhd_open: Enter 81b8c800
+aaaaaaaaaaaaaaaaaaaaaaaaaaaa
+66666666666666666666
+[    6.472077] 
+[    6.472077] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    6.472077] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    6.491438] wl_android_wifi_on in 1
+[    6.495087] wl_android_wifi_on in 2: g_wifi_on=0
+[    6.499855] wifi_platform_set_power = 1
+[    6.503805] ======== PULL WL_REG_ON HIGH! ========
+[    7.434750] sdio_reset_comm():
+[    7.460941] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    7.469713] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.478469] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.489670] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    7.521699] 
+[    7.521699] 
+[    7.521699] dhd_bus_devreset: == WLAN ON ==
+[    7.529208] F1 signature read @0x18000000=0x1591a962
+[    7.535842] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    7.543105] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    7.550397] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    7.556861] dhd_conf_read_config: Ignore config file /lib/firmware/config.txt
+[    7.564233] dhd_conf_set_fw_name_by_chip: firmware_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.572525] Final fw_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.578145] Final nv_path=/lib/firmware/nvram.txt
+[    7.582995] Final conf_path=/lib/firmware/config.txt
+[    7.730513] NVRAM version: AP6181_NVRAM_V1.1_01152013
+[    7.736625] dhdsdio_write_vars: Download, Upload and compare of NVRAM succeeded.
+[    7.744861] dhd_bus_init: delay 100ms for BCM43362
+[    7.961075] dhd_bus_init: enable 0x06, ready 0x06 (waited 0us)
+[    7.968382] dhd_conf_set_band: Set band 0
+[    7.972709] dhd_preinit_ioctls: Set tcpack_sup_mode 0
+[    7.979767] Firmware up: op_mode=0x0005, MAC=XX:XX:XX:XX:XX:XX
+[    7.985830] dhd_conf_set_country: Set country ALL, revision 0
+[    8.104017] Country code: ALL (ALL/0)
+[    8.108141] dhd_conf_set_roam: Set roam_off 1
+[    8.114477] dhd_preinit_ioctls buf_key_b4_m4 set failed -23
+[    8.126225] Firmware version = wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1
+[    8.135339]   Driver: 1.201.59.5 (r506368)
+[    8.135339]   Firmware: wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1 
+[    8.148373] dhd_txglom_enable: enable 0
+[    8.152333] dhd_conf_set_disable_proptx: set disable_proptx 1
+[    8.161056] dhd_preinit_ioctls wl ampdu_hostreorder failed -23
+[    8.167515] wl_android_wifi_on: Success
+[    8.271000] dhd_set_scb_probe: GET max_scb_probe failed
+[    8.276855] dhd_set_scb_probe: max_scb_probe setting failed
+[    8.282610] dhd_open: Exit ret=0
+qqqqqqqqqqqqqqqqqqq
+[    9.234933] @@@@@@@@@@@@@@@@@@@@ tx-isp-probe @@@@@@@@@@@@@@@@@@@@@@@@@@
+[    9.251440] &&&&&&&&&&& register_tx_isp_csi_device &&&&&&&&&&
+[    9.257483] &&&&&&&&&&& register_tx_isp_vic_device &&&&&&&&&&
+[    9.263419] &&&&&&&&&&& register_tx_isp_core_device &&&&&&&&&&
+[    9.269495] &&&&&&&&&&& register_tx_isp_core_device:slock = 80eff6cc, mlock = 80eff750 &&&&&&&&&&
+[    9.289392] ***********apical_sensor_early_init*******************313
+[    9.300517] ***********apical_sensor_early_init*******************318
+[    9.307387] &&&&&&&&&&& register_tx_isp_core_device core_dev = 80eff600 &&&&&&&&&&
+[    9.315292] the device[tx-isp] isn't belong to ISP platform device.
+[    9.321795] &&&&tx_isp_create_media_link_and_pipeline[234] index = 0  &&&&
+[    9.328942] &&&&tx_isp_create_media_link_and_pipeline[234] index = 1  &&&&
+[    9.336074] &&&&tx_isp_create_media_link_and_pipeline[234] index = 2  &&&&
+[    9.392605] ili9225g_spidev_probe
+[    9.400601] inti_ili9225g
+[    9.613892] cgu_ssi.reg=c0000008
+[    9.617272] cgv=0x0
+[    9.952231] android_usb: already disabled
+[    9.964100] dwc2 dwc2: SRP: Device Mode
+
+Processing /etc/profile... Done
+
+~ # init_configure
+local_ip:net_mask
+[deviceid]=UNDEF
+[deviceid:id]=[442C05550FE7]
+[local_ip]=UNDEF
+[local_ip:ip_state]=[static]
+[local_ip:ip]=[192.168.1.155]
+[local_ip:netmask]=[255.255.255.0]
+[local_ip:gateway]=[192.168.1.1]
+
+received 159 bytes
+change@/devices/virtual/android_[   10.305577] android_work: sent uevent USB_STATE=CONNECTED
+usb/android0
+ACTION=change
+DEVPATH=/devices/virtual/android_usb/android0
+SUBSYSTEM=android_usb
+USB_STATE=CONNECTED
+SEQNUM=1048
+
+
+android_usb_state=1;
+[   10.426245] android_usb gadget: high-speed config #1: android
+
+received 160 bytes
+change@/devices/virtual/android_[   10.433016] android_work: sent uevent USB_STATE=CONFIGURED
+usb/android0
+ACTION=change
+DEVPATH=/devices/virtual/android_usb/android0
+SUBSYSTEM=android_usb
+USB_STATE=CONFIGURED
+SEQNUM=1049
+
+
+android_usb_state=1;
+The Header:70,Width:176,Height:220.
+The Header:70,Width:16,Height:16.
+The Header:70,Width:16,Height:16.
+The Header:70,Width:18,Height:16.
+time is: 1970-01-01 00:00:14
+UNIQUE constraint failed: power_table.time
+
+~ # dot_address1
+[   14.298466] ili9225g_open
+show_main_mode
+show_main_mode
+
+~ # show_main_mode
+stream_on
+
+received 153 bytes
+add@/devices/platform/i2c-gpio.0[   17.190090] @@@@@@@sssssssssssssssssprobe ok ------->ov9712
+/i2c-0/0-0030
+ACTION=add
+DEVPATH=/devices/platform/i2c-gpio.0/i2c-0/0-0030
+SUBSYSTEM=i2c
+MODALIAS=i2c:ov9712
+SEQNUM=1050
+M=1049
+
+[   17.394702] -----ov9712_detect: 406 ret = 0, v = 0x97
+[   17.400589] -----ov9712_detect: 414 ret = 0, v = 0x11
+[   17.405814] ov9712 0-0030: ov9712 chip found @ 0x30 (i2c-gpio0)
+[   17.411915] tx_isp: Registered sensor subdevice ov9712 0-0030
+[   17.417881] do not support ctrl->cmd ====1
+[   17.422107] do not support ctrl->cmd ====0
+[   17.426351] functiong:csi_s_power,line:412
+[   17.430571] --ov9712_s_power:659
+[   17.469642] ^^^ sensor_init sensor is i2c ^^^
+[   17.476441] functiong:ov9712_set_mode, line:590
+[   17.481115] do not support ctrl->cmd ====1
+[   17.517783] do not support ctrl->cmd ====1
+[   17.522014] ^^^ sensor_set_mode mode = 0  resoultion = 1280*800 ^^^
+[   17.531247] functiong:csi_init, line:407
+[   17.567883] --------ov9712_init: 504
+[   17.571573] do not support ctrl->cmd ====1
+[   17.575826] --------ov9712_init: 509
+[   17.579544] tx_isp_media_pipeline_set_stream[152]
+[   17.584392] ~~~~~~ isp_core_video_s_stream[1734] enable = 1 ~~~~~~
+[   17.591009] --------vic_core_s_stream: 307 enable:1
+[   17.596149] ************RESOLUTION : 05000320***************
+[   17.601989] BT_DVP_CFG : 00020000
+[   17.605471] RESOLUTION : 05000320
+[   17.608888] AB_VALUE : 00000000
+[   17.613225] GLOBAL_CONFIGURE : 00000000
+[   17.617255] CONTROL : 00000000
+[   17.620405] PIXEL : 0x05000000
+[   17.623549] LINE : 0x01d70149
+[   17.626640] VIC_STATE : 0x00000002
+[   17.630144] OFIFO_COUNT : 0x0000010a
+[   17.633826] 0x3c :0x00000000
+[   17.636818] 0x40 :0x00000000
+[   17.639783] 0x44 :0x00000000
+[   17.642749] 0x54 :0x00913622
+[   17.647779] 0x58 :0x00515af0
+[   17.651787] 0x58 :0x00aaa610
+[   17.654817] 0x60 :0x00d21092
+[   17.657788] 0x64 :0x006acade
+[   17.660753] 0x68 :0x00000000
+[   17.663717] 0x6c :0x00000000
+[   17.666715] 0x70 :0x00000000
+[   17.669681] 0x74 :0xf469ec3a
+[   17.672645] 0x78 :0x00000011
+[   17.675634] VIC_EIGHTH_CB :0x006acade
+[   17.679408] CB_MODE0 :0x00000000
+[   17.682729] vic------------start
+[   17.686401] the sensor is not mipi bus
+[   17.690801] ov9712 stream on
+[   17.787284] ###### image_tuning_v4l2_open 2465 #######
+[   17.792816] isp_core_ops_g_ctrl[2004] ctrl->id = 0x08000016
+[   17.798673] apical_isp_core_ops_g_ctrl[1793] ctrl->id = 0x08000016
+i264e[info]: profile Main, level 3.1
+[   17.867084] &&& chan0  scaler.max_width = 0 max_height = 0  min_width = 0 min_height = 0 &&&
+[   17.879809] &&& chan1  scaler.max_width = 576 max_height = 480  min_width = 128 min_height = 128 &&&
+[chn1] scaler->outwidth = 176 scaler->outheight = 224, sscaler.outwidth = 176 sscaler.outheight = 224
+depth=3
+
+
+
+====
+dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14 (t15@sywhost) (gcc version 4.7.2 (Ingenic 2015.02) ) #193 PREEMPT Mon Jun 20 17:07:47 CST 2016
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:8024C244
+[    0.000000] [<8024c244>] __udelay+0x34/0x40
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_ssi.reg=e000000f
+[    0.000000] clk->parent->name=mpll
+[    0.000000] cgu_get_rate, parent = 909312000, rate = 0, m = 0, n = 0, reg val = 0x000020ff
+[    0.000000] CCLK:909MHz L2CLK:454Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 006f3000 @ 00010000 (usable)
+[    0.000000]  memory: 0003d000 @ 00703000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02400000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x023fffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x023fffff]
+[    0.000000] On node 0 totalpages: 9216
+[    0.000000] free_area_init_node: node 0, pgdat 806ff780, node_mem_map 81000000
+[    0.000000]   Normal zone: 72 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 9216 pages, LIFO batch:1
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 9144
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=36M@0x0 ispmem=8M@0x2400000 rmem=20M@0x2c00000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),3840k(kernel),5120k(root),3072k(appfs),2048K(database),2048k(data)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 27616k/36864k available (5422k kernel code, 9248k reserved, 1691k data, 244k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:418
+[    0.000000] clockevents_config_and_register success.
+[    0.000024] Calibrating delay loop... 904.39 BogoMIPS (lpj=4521984)
+[    0.037704] pid_max: default: 32768 minimum: 301
+[    0.042676] Mount-cache hash table entries: 512
+[    0.047843] Initializing cgroup subsys debug
+[    0.052110] Initializing cgroup subsys freezer
+[    0.059636] regulator-dummy: no parameters
+[    0.063972] NET: Registered protocol family 16
+[    0.087124] bio: create slab <bio-0> at 0
+[    0.094068] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.099314] usbcore: registered new interface driver usbfs
+[    0.104852] usbcore: registered new interface driver hub
+[    0.110368] usbcore: registered new device driver usb
+[    0.115770] i2c-gpio i2c-gpio.0: using pins 12 (SDA) and 13 (SCL)
+[    0.122080] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.128263] media: Linux media interface: v0.10
+[    0.132825] Linux video capture interface: v2.00
+[    0.139824] Switching to clocksource jz_clocksource
+[    0.145150] cfg80211: Calling CRDA to update world regulatory domain
+[    0.152236] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.157208] DWC IN DEVICE ONLY MODE
+[    0.312004] sft id =========================off
+[    0.316671] dwc2 dwc2: Keep PHY ON
+[    0.320042] dwc2 dwc2: Using Buffer DMA mode
+[    0.523501] dwc2 dwc2: Core Release: 3.00a
+[    0.527979] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.536966] NET: Registered protocol family 2
+[    0.541931] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.548915] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.555310] TCP: Hash tables configured (established 512 bind 512)
+[    0.561617] TCP: reno registered
+[    0.564858] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.570754] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.577412] NET: Registered protocol family 1
+[    0.582136] RPC: Registered named UNIX socket transport module.
+[    0.588154] RPC: Registered udp transport module.
+[    0.592849] RPC: Registered tcp transport module.
+[    0.597632] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.604765] freq_udelay_jiffys[0].max_num = 10
+[    0.609198] cpufreq 	udelay 	loops_per_jiffy	
+[    0.613613] 12000	 59675	 59675	
+[    0.616897] 24000	 119351	 119351	
+[    0.620323] 60000	 298378	 298378	
+[    0.623766] 120000	 596756	 596756	
+[    0.627350] 200000	 994594	 994594	
+[    0.630830] 300000	 1491891	 1491891	
+[    0.634538] 600000	 2983783	 2983783	
+[    0.638276] 792000	 3938594	 3938594	
+[    0.641955] 1008000	 5012756	 5012756	
+[    0.645765] 1200000	 5967567	 5967567	
+[    0.657453] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.664540] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.670658] msgmni has been set to 53
+[    0.676095] io scheduler noop registered
+[    0.680037] io scheduler cfq registered (default)
+[    0.716536] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.723226] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.731514] console [ttyS1] enabled, bootconsole disabled
+[    0.747676] brd: module loaded
+[    0.753377] loop: module loaded
+[    0.756813] wifi regulator missing
+[    0.760501] logger: created 256K log 'log_main'
+[    0.765299] logger: created 256K log 'log_events'
+[    0.770207] logger: created 256K log 'log_radio'
+[    0.775069] logger: created 256K log 'log_system'
+[    0.780743] jz SADC driver registeres over!
+[    0.786560] jz TCU driver register completed
+[    0.791497] flash->clk->name=NULL
+[    0.795038] the id code = c22018, the flash name is MX25L12835F
+[    0.801148] JZ SFC Controller for SFC channel 0 driver register
+[    0.807287] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.813390] Creating 6 MTD partitions on "jz_sfc":
+[    0.818345] 0x000000000000-0x000000040000 : "boot"
+[    0.824008] 0x000000040000-0x000000400000 : "kernel"
+[    0.829851] 0x000000400000-0x000000900000 : "root"
+[    0.835534] 0x000000900000-0x000000c00000 : "appfs"
+[    0.841217] 0x000000c00000-0x000000e00000 : "database"
+[    0.847277] 0x000000e00000-0x000001000000 : "data"
+[    0.852897] SPI NOR MTD LOAD OK
+[    0.856329] hw->use_dma
+[    0.858907] dma dma0chan22: Channel 22 have been requested.(phy id 9,type 0x16 desc a1b4b000)
+[    0.867763] dma dma0chan23: Channel 23 have been requested.(phy id 8,type 0x16 desc a1b4c000)
+[    0.876875] jz-ssi jz-ssi.0: master is unqueued, this is deprecated
+[    0.883428] JZ SSI Controller for SPI channel 0 driver register
+[    0.889821] tun: Universal TUN/TAP device driver, 1.6
+[    0.895063] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.901600] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.908020] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    0.914399] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    0.920793] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    0.927180] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    0.933557] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    0.939943] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    0.946328] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    0.952705] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    0.959089] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    0.965479] func:jz_mii_bus_probe, synopGMAC_reset failed
+[    0.971055] jz_mii_bus: probe of jz_mii_bus.0 failed with error -1
+[    0.977526] =======>gmacdev = 0x81b50e00<================
+[    0.983095] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.990027] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.996418] Bus Mode Reg after reset: 0x00020101, cnt=1
+[    1.002796] Bus Mode Reg after reset: 0x00020101, cnt=2
+[    1.009194] Bus Mode Reg after reset: 0x00020101, cnt=3
+[    1.015583] Bus Mode Reg after reset: 0x00020101, cnt=4
+[    1.021960] Bus Mode Reg after reset: 0x00020101, cnt=5
+[    1.028347] Bus Mode Reg after reset: 0x00020101, cnt=6
+[    1.034733] Bus Mode Reg after reset: 0x00020101, cnt=7
+[    1.041110] Bus Mode Reg after reset: 0x00020101, cnt=8
+[    1.047496] Bus Mode Reg after reset: 0x00020101, cnt=9
+[    1.053873] func:jz_mac_probe, synopGMAC_reset failed
+[    1.059093] jz_mac: probe of jz_mac.0 failed with error -1
+[    1.064795] PPP generic driver version 2.4.2
+[    1.069323] PPP BSD Compression module registered
+[    1.074173] PPP Deflate Compression module registered
+[    1.079426] PPP MPPE Compression module registered
+[    1.084365] NET: Registered protocol family 24
+[    1.089053] usbcore: registered new interface driver asix
+[    1.094672] usbcore: registered new interface driver ax88179_178a
+[    1.101025] usbcore: registered new interface driver cdc_ether
+[    1.107113] usbcore: registered new interface driver net1080
+[    1.112982] usbcore: registered new interface driver cdc_subset
+[    1.119145] usbcore: registered new interface driver zaurus
+[    1.124989] usbcore: registered new interface driver cdc_ncm
+[    1.131129] rtc-pcf8563 1-0051: chip found, driver version 0.4.3
+[    1.139744] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    1.147410] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    1.153875] rtc-pcf8563 1-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    1.160997] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.174761] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    1.204765] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.210139] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.254873] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.260411] ------------ init codec driver start!
+[    1.266469] jz_codec_probe: probe() start
+[    1.270619] jz_codec_probe, codec iomem is :0xb0021000
+[    1.275949] jz_codec_probe: probe() done
+[    1.280078] ----------------xb_snd_probe--------------------
+[    1.285943] i2s global init
+[    1.288837] current codec is :81b5d080
+[    1.292973] cgu_set_rate, parent = 909312000, rate = 2048000, n = 444, reg val = 0x000021bc
+[    1.292989] i2s_global_init, i2s clk rate is 2048000
+[    1.293000] cgu_enable,cgu_i2s reg val = 0x200021bc
+[    1.293014] i2s init success.
+[    1.725123] ----------------xb_snd_probe--------------------
+[    1.731196] u32 classifier
+[    1.733989]     Actions configured
+[    1.737555] Netfilter messages via NETLINK v0.30.
+[    1.742490] NF_TPROXY: Transparent proxy support initialized, version 4.1.0
+[    1.749697] NF_TPROXY: Copyright (c) 2006-2007 BalaBit IT Ltd.
+[    1.756168] xt_time: kernel timezone is -0000
+[    1.760682] ip_set: protocol 6
+[    1.764030] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.769717] arp_tables: (C) 2002 David S. Miller
+[    1.774559] TCP: cubic registered
+[    1.778014] NET: Registered protocol family 17
+[    1.782668] Key type dns_resolver registered
+[    1.787950] dhd_module_init: in
+[    1.791201] ======== bcm_wlan_set_plat_data ========
+[    1.796389] dhd_wifi_platform_load: Enter
+[    1.800544] Power-up adapter 'DHD generic adapter'
+[    1.805564] wifi_platform_set_power = 1
+[    1.809519] ======== PULL WL_REG_ON HIGH! ========
+[    2.213974] wait stable.[248][cgu_msc0]
+[    2.218035] mmc0: new high speed SD card at address 21f5
+[    2.223850] mmcblk0: mmc0:21f5 APPSD 121 MiB 
+[    2.229911]  mmcblk0: p1
+[    2.734733] wifi_platform_bus_enumerate device present 1
+[    2.740219] ======== Card detection to detect SDIO card! ========
+[    2.801172] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    2.808449] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.815699] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    2.824198] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    2.846084] mmc1: new SDIO card at address 0001
+[    2.867440] bcmsdh_register: register client driver
+[    2.872596] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.877690] bcmsdh_sdmmc: bcmsdh_sdmmc_probe Enter
+[    2.882632] bus num (host idx)=1, slot num (rca)=1
+[    2.887589] found adapter info 'DHD generic adapter'
+[    2.893258] F1 signature read @0x18000000=0x1591a962
+[    2.899900] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    2.907194] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    2.914421] dhd_conf_set_chiprev: chip=0xa962, chiprev=1
+[    2.919954] dhd_conf_set_conf_path_by_nv_path: config_path=/lib/firmware/config.txt
+[    2.928550] wl_create_event_handler(): thread:wl_event_handler:2b started
+[    2.935630] tsk Enter, tsk = 0x81bc13bc
+[    2.939882] dhd_attach(): thread:dhd_watchdog_thread:2c started
+[    2.946128] dhd_attach(): thread:dhd_dpc:2d started
+[    2.951232] dhd_dpc_thread: set dpc_cpucore 0 from config.txt
+[    2.957239] dhd_attach(): thread:dhd_rxf:2e started
+[    2.962277] dhd_deferred_work_init: work queue initialized 
+[    2.968210] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    2.986868] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    2.986868] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    3.000684] Register interface [wlan0]  MAC: XX:XX:XX:XX:XX:XX
+[    3.000684] 
+[    3.008289] dhd_prot_ioctl : bus is down. we have nothing to do
+[    3.014415] dhd_txglom_enable: enable 0
+[    3.018390] dhd_bus_devreset:  WLAN OFF DONE
+[    3.022998] wifi_platform_set_power = 0
+[    3.026993] ======== PULL WL_REG_ON LOW! ========
+[    3.344836] dhd_module_init: Exit err=0
+[    3.349307] dwc2 dwc2: session end detected!
+[    3.353795] file system registered
+[    3.358526] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    3.365686] android_usb gadget: Number of LUNs=1
+[    3.370452]  lun0: LUN: removable file: (no medium)
+[    3.375710] android_usb gadget: android_usb ready
+[    3.380955] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    3.390528] rtc-pcf8563 1-0051: low voltage detected, date/time is not reliable.
+[    3.398208] rtc-pcf8563 1-0051: retrieved date/time is not valid.
+[    3.404495] rtc-pcf8563 1-0051: hctosys: invalid date/time
+[    3.414944] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    3.422733] Freeing unused kernel memory: 244K (80703000 - 80740000)
+[    5.699973] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[    6.462757] dhd_open: Enter 81b8c800
+[    6.472077] 
+[    6.472077] Dongle Host Driver, version 1.201.59.5 (r506368)
+[    6.472077] Compiled in drivers/net/wireless/bcmdhd on May 18 2016 at 18:36:06
+[    6.491438] wl_android_wifi_on in 1
+[    6.495087] wl_android_wifi_on in 2: g_wifi_on=0
+[    6.499855] wifi_platform_set_power = 1
+[    6.503805] ======== PULL WL_REG_ON HIGH! ========
+[    7.434750] sdio_reset_comm():
+[    7.460941] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    7.469713] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.478469] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    7.489670] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    7.521699] 
+[    7.521699] 
+[    7.521699] dhd_bus_devreset: == WLAN ON ==
+[    7.529208] F1 signature read @0x18000000=0x1591a962
+[    7.535842] F1 signature OK, socitype:0x1 chip:0xa962 rev:0x1 pkg:0x9
+[    7.543105] DHD: dongle ram size is set to 245760(orig 245760) at 0x0
+[    7.550397] dhdsdio_probe_init: set use_rxchain 0 from config.txt
+[    7.556861] dhd_conf_read_config: Ignore config file /lib/firmware/config.txt
+[    7.564233] dhd_conf_set_fw_name_by_chip: firmware_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.572525] Final fw_path=/lib/firmware/fw_bcm40181a2.bin
+[    7.578145] Final nv_path=/lib/firmware/nvram.txt
+[    7.582995] Final conf_path=/lib/firmware/config.txt
+[    7.730513] NVRAM version: AP6181_NVRAM_V1.1_01152013
+[    7.736625] dhdsdio_write_vars: Download, Upload and compare of NVRAM succeeded.
+[    7.744861] dhd_bus_init: delay 100ms for BCM43362
+[    7.961075] dhd_bus_init: enable 0x06, ready 0x06 (waited 0us)
+[    7.968382] dhd_conf_set_band: Set band 0
+[    7.972709] dhd_preinit_ioctls: Set tcpack_sup_mode 0
+[    7.979767] Firmware up: op_mode=0x0005, MAC=XX:XX:XX:XX:XX:XX
+[    7.985830] dhd_conf_set_country: Set country ALL, revision 0
+[    8.104017] Country code: ALL (ALL/0)
+[    8.108141] dhd_conf_set_roam: Set roam_off 1
+[    8.114477] dhd_preinit_ioctls buf_key_b4_m4 set failed -23
+[    8.126225] Firmware version = wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1
+[    8.135339]   Driver: 1.201.59.5 (r506368)
+[    8.135339]   Firmware: wl0: Nov 25 2013 17:54:47 version 5.90.195.89.13 FWID 01-c2d628b1 
+[    8.148373] dhd_txglom_enable: enable 0
+[    8.152333] dhd_conf_set_disable_proptx: set disable_proptx 1
+[    8.161056] dhd_preinit_ioctls wl ampdu_hostreorder failed -23
+[    8.167515] wl_android_wifi_on: Success
+[    8.271000] dhd_set_scb_probe: GET max_scb_probe failed
+[    8.276855] dhd_set_scb_probe: max_scb_probe setting failed
+[    8.282610] dhd_open: Exit ret=0
+[    9.234933] @@@@@@@@@@@@@@@@@@@@ tx-isp-probe @@@@@@@@@@@@@@@@@@@@@@@@@@
+[    9.251440] &&&&&&&&&&& register_tx_isp_csi_device &&&&&&&&&&
+[    9.257483] &&&&&&&&&&& register_tx_isp_vic_device &&&&&&&&&&
+[    9.263419] &&&&&&&&&&& register_tx_isp_core_device &&&&&&&&&&
+[    9.269495] &&&&&&&&&&& register_tx_isp_core_device:slock = 80eff6cc, mlock = 80eff750 &&&&&&&&&&
+[    9.289392] ***********apical_sensor_early_init*******************313
+[    9.300517] ***********apical_sensor_early_init*******************318
+[    9.307387] &&&&&&&&&&& register_tx_isp_core_device core_dev = 80eff600 &&&&&&&&&&
+[    9.315292] the device[tx-isp] isn't belong to ISP platform device.
+[    9.321795] &&&&tx_isp_create_media_link_and_pipeline[234] index = 0  &&&&
+[    9.328942] &&&&tx_isp_create_media_link_and_pipeline[234] index = 1  &&&&
+[    9.336074] &&&&tx_isp_create_media_link_and_pipeline[234] index = 2  &&&&
+[    9.392605] ili9225g_spidev_probe
+[    9.400601] inti_ili9225g
+[    9.613892] cgu_ssi.reg=c0000008
+[    9.617272] cgv=0x0
+[    9.952231] android_usb: already disabled
+[    9.964100] dwc2 dwc2: SRP: Device Mode
+[   10.305577] android_work: sent uevent USB_STATE=CONNECTED
+[   10.426245] android_usb gadget: high-speed config #1: android
+[   10.433016] android_work: sent uevent USB_STATE=CONFIGURED
+[   14.298466] ili9225g_open
+[   17.190090] @@@@@@@sssssssssssssssssprobe ok ------->ov9712
+[   17.394702] -----ov9712_detect: 406 ret = 0, v = 0x97
+[   17.400589] -----ov9712_detect: 414 ret = 0, v = 0x11
+[   17.405814] ov9712 0-0030: ov9712 chip found @ 0x30 (i2c-gpio0)
+[   17.411915] tx_isp: Registered sensor subdevice ov9712 0-0030
+[   17.417881] do not support ctrl->cmd ====1
+[   17.422107] do not support ctrl->cmd ====0
+[   17.426351] functiong:csi_s_power,line:412
+[   17.430571] --ov9712_s_power:659
+[   17.469642] ^^^ sensor_init sensor is i2c ^^^
+[   17.476441] functiong:ov9712_set_mode, line:590
+[   17.481115] do not support ctrl->cmd ====1
+[   17.517783] do not support ctrl->cmd ====1
+[   17.522014] ^^^ sensor_set_mode mode = 0  resoultion = 1280*800 ^^^
+[   17.531247] functiong:csi_init, line:407
+[   17.567883] --------ov9712_init: 504
+[   17.571573] do not support ctrl->cmd ====1
+[   17.575826] --------ov9712_init: 509
+[   17.579544] tx_isp_media_pipeline_set_stream[152]
+[   17.584392] ~~~~~~ isp_core_video_s_stream[1734] enable = 1 ~~~~~~
+[   17.591009] --------vic_core_s_stream: 307 enable:1
+[   17.596149] ************RESOLUTION : 05000320***************
+[   17.601989] BT_DVP_CFG : 00020000
+[   17.605471] RESOLUTION : 05000320
+[   17.608888] AB_VALUE : 00000000
+[   17.613225] GLOBAL_CONFIGURE : 00000000
+[   17.617255] CONTROL : 00000000
+[   17.620405] PIXEL : 0x05000000
+[   17.623549] LINE : 0x01d70149
+[   17.626640] VIC_STATE : 0x00000002
+[   17.630144] OFIFO_COUNT : 0x0000010a
+[   17.633826] 0x3c :0x00000000
+[   17.636818] 0x40 :0x00000000
+[   17.639783] 0x44 :0x00000000
+[   17.642749] 0x54 :0x00913622
+[   17.647779] 0x58 :0x00515af0
+[   17.651787] 0x58 :0x00aaa610
+[   17.654817] 0x60 :0x00d21092
+[   17.657788] 0x64 :0x006acade
+[   17.660753] 0x68 :0x00000000
+[   17.663717] 0x6c :0x00000000
+[   17.666715] 0x70 :0x00000000
+[   17.669681] 0x74 :0xf469ec3a
+[   17.672645] 0x78 :0x00000011
+[   17.675634] VIC_EIGHTH_CB :0x006acade
+[   17.679408] CB_MODE0 :0x00000000
+[   17.682729] vic------------start
+[   17.686401] the sensor is not mipi bus
+[   17.690801] ov9712 stream on
+[   17.787284] ###### image_tuning_v4l2_open 2465 #######
+[   17.792780] video0: open (0)
+[   17.792816] isp_core_ops_g_ctrl[2004] ctrl->id = 0x08000016
+[   17.798673] apical_isp_core_ops_g_ctrl[1793] ctrl->id = 0x08000016
+[   17.806419] video0: v4l2 ioctl 'V', dir=rw, #198 (0xc00c56c6): driver-specific ioctl
+[   17.867084] &&& chan0  scaler.max_width = 0 max_height = 0  min_width = 0 min_height = 0 &&&
+[   17.879809] &&& chan1  scaler.max_width = 576 max_height = 480  min_width = 128 min_height = 128 &&&
+[   27.509835] tx_isp_media_pipeline_set_stream[152]
+[   27.514699] ~~~~~~ isp_core_video_s_stream[1734] enable = 0 ~~~~~~
+[   27.523530] --------vic_core_s_stream: 307 enable:0
+[   27.528656] vic--------------stop
+[   27.532075] the sensor is not mipi bus
+[   27.537374] expo is:0x10 is 0x58,0x16 is 0x1
+[   27.542430] gain is 0xd
+[   27.545554] ov9712 stream off
+[   27.554827] ^^^^ isp_core_ops_init[656] ^^^^
+[   27.559238] functiong:csi_init, line:407
+[   27.563280] functiong:csi_s_power,line:412
+[   27.567544] --ov9712_s_power:659
+[   27.570880] do not support ctrl->cmd ====0
+[   27.575920] video0: release
+

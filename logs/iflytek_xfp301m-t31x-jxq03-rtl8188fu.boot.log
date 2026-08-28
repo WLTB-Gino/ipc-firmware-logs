@@ -1,0 +1,746 @@
+mount -t debugfs none /sys/kernel/debug;cat /sys/kernel/debug/gpio
+
+
+=====================
+GPIOs 0-31, GPIO A:
+ gpio-8   (front touch btn     ) in  hi
+ gpio-9   (spker               ) out hi
+ gpio-10  (wifi                ) out hi
+ gpio-11  (motor_gpioud_en     ) out hi
+ gpio-16  (grn led             ) out hi
+ gpio-17  (led red             ) out hi
+ gpio-18  (jxq03_reset         ) out hi
+
+GPIOs 32-63, GPIO B:
+ gpio-49  (mmc_detect          ) in  hi
+ gpio-50  (rear butto          ) in  hi
+ gpio-51  (motor_gpioud_d      ) out lo
+ gpio-52  (motor_gpiolr_b      ) out lo
+ gpio-53  (motor_gpiolr_c      ) out lo
+ gpio-54  (motor_gpiolr_a      ) out lo
+ gpio-57  (ircut               ) out lo
+ gpio-58  (ircut               ) out lo
+ gpio-59  (irled               ) out lo
+ gpio-61  (motor_gpioud_a      ) out lo
+ gpio-62  (motor_gpioud_b      ) out lo
+ gpio-63  (motor_gpioud_c      ) out lo
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (motor_gpiolr_d      ) out lo 
+ ==================
+ bootlog:
+ 
+ 
+ 
+U-Boot SPL 2013.07 (Nov 15 2021 - 11:03:14)
+Timer init
+CLK stop
+PLL init
+pll_init:366
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+nf=116 nr = 1 od0 = 1 od1 = 2
+cppcr is 07405100
+CPM_CPAPCR 0740510d
+nf=100 nr = 1 od0 = 1 od1 = 2
+cppcr is 06405100
+CPM_CPMPCR 0640510d
+nf=100 nr = 1 od0 = 1 od1 = 2
+cppcr is 06405100
+CPM_CPVPCR 0640510d
+cppcr 0x9a7b5510
+apll_freq 1392000000 
+mpll_freq 1200000000 
+vpll_freq = 1200000000
+ddr sel mpll, cpu sel apll
+ddrfreq 600000000
+cclk  1392000000
+l2clk 696000000
+h0clk 240000000
+h2clk 240000000
+pclk  120000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00f73011
+T31_0x5: 00000007
+T31_0x15: 0000000c
+T31_0x4: 00000000
+T31_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T31_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T31_118: 0000003c
+T31_158: 0000003c
+T31_190: 0000001e
+T31_194: 0000001c
+jz-04 :  0x00000051 
+jz-08 :  0x000000a0 
+jz-28 :  0x00000024 
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0aa88a42
+DDRC_CTRL           0x0000011c
+DDRC_LMR            0x00400008
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x050f0a06
+DDRC_TIMING2        0x021c0a07
+DDRC_TIMING3        0x200a0722
+DDRC_TIMING4        0x26240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x321c0505
+DDRC_REFCNT         0x00910603
+DDRC_MMAP0          0x000020f8
+DDRC_MMAP1          0x00002800
+DDRC_REMAP1         0x030e0d0c
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f020100
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Nov 15 2021 - 11:03:14)
+
+Board: ISVP (Ingenic XBurst T31 SoC)
+DRAM:  128 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 446k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer 20
+SF: Detected XM25QH128C
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====>PHY not found!Jz4775-9161
+Card did not respond to voltage select!
+** Bad device mmc 0 **
+Hit Ctrl+c key to stop autoboot:  1 
+the manufacturer 20
+SF: Detected XM25QH128C
+
+--->probe spend 5 ms
+SF: 1835008 bytes @ 0x40000 Read: OK
+--->read spend 590 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_swan_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1769050 Bytes = 1.7 MiB
+   Load Address: 80010000
+   Entry Point:  803e15d0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+Initializing cgroup subsys cpu
+Initializing cgroup subsys cpuacct
+Linux version 3.10.14__isvp_swan_1.0__ (wy@wy-nuc) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #12 PREEMPT Wed Jan 19 20:47:35 CST 2022
+bootconsole [early0] enabled
+CPU0 RESET ERROR PC:801C8260
+[<801c8260>] __delay+0x0/0x10
+CPU0 revision is: 00d00100 (Ingenic Xburst)
+FPU revision is: 00b70000
+CCLK:1392MHz L2CLK:696Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+Determined physical RAM map:
+ memory: 00502000 @ 00010000 (usable)
+ memory: 0003e000 @ 00512000 (usable after init)
+User-defined physical RAM map:
+ memory: 06700000 @ 00000000 (usable)
+Zone ranges:
+  Normal   [mem 0x00000000-0x066fffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x00000000-0x066fffff]
+Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+pls check processor_id[0x00d00100],sc_jz not support!
+MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 26162
+Kernel command line: console=ttyS1,115200n8 mem=103M@0x0 rmem=25M@0x6700000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),1792k(kernel),5376k(root),8960k(appfs)
+PID hash table entries: 512 (order: -1, 2048 bytes)
+Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+Memory: 98464k/105472k available (3947k kernel code, 7008k reserved, 1177k data, 248k init, 0k highmem)
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Preemptible hierarchical RCU implementation.
+NR_IRQS:358
+clockevents_config_and_register success.
+Calibrating delay loop... 1391.00 BogoMIPS (lpj=6955008)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+Initializing cgroup subsys debug
+Initializing cgroup subsys freezer
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+bio: create slab <bio-0> at 0
+jz-dma jz-dma: JZ SoC DMA initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+ (null): set:249  hold:250 dev=100000000 h=500 l=500
+Switching to clocksource jz_clocksource
+cfg80211: Calling CRDA to update world regulatory domain
+jz-dwc2 jz-dwc2: cgu clk gate get error
+DWC IN OTG MODE
+dwc2 dwc2: Keep PHY ON
+dwc2 dwc2: Using Buffer DMA mode
+dwc2 dwc2: Core Release: 3.00a
+dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+dwc2 dwc2: new USB bus registered, assigned bus number 1
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+dwc2 dwc2: DWC2 Host Initialized
+NET: Registered protocol family 2
+TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+TCP: Hash tables configured (established 1024 bind 1024)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+freq_udelay_jiffys[0].max_num = 10
+cpufreq 	udelay 	loops_per_jiffy	
+12000	 59956	 59956	
+24000	 119913	 119913	
+60000	 299784	 299784	
+120000	 599569	 599569	
+200000	 999282	 999282	
+300000	 1498924	 1498924	
+600000	 2997848	 2997848	
+792000	 3957159	 3957159	
+1008000	 5036385	 5036385	
+1200000	 5995696	 5995696	
+dwc2 dwc2: ID PIN CHANGED!
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+msgmni has been set to 192
+io scheduler noop registered
+io scheduler cfq registered (default)
+jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+console [ttyS1] enabled, bootconsole disabled
+console [ttyS1] enabled, bootconsole disabled
+brd: module loaded
+loop: module loaded
+zram: Created 2 device(s) ...
+logger: created 256K log 'log_main'
+jz SADC driver registeres over!
+jz TCU driver register completed
+the id code = 204018, the flash name is XM25QH128C
+JZ SFC Controller for SFC channel 0 driver register
+4 cmdlinepart partitions found on MTD device jz_sfc
+Creating 4 MTD partitions on "jz_sfc":
+0x000000000000-0x000000040000 : "boot"
+0x000000040000-0x000000200000 : "kernel"
+0x000000200000-0x000000740000 : "root"
+0x000000740000-0x000001000000 : "appfs"
+SPI NOR MTD LOAD OK
+tun: Universal TUN/TAP device driver, 1.6
+tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+Bus Mode Reg after reset: 0x00020101, cnt=0
+libphy: jz_mii_bus: probed
+=======>gmacdev = 0x84190a00<================
+=========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+Bus Mode Reg after reset: 0x00020101, cnt=0
+jz_mac jz_mac.0: JZ on-chip Ethernet MAC driver, Version 1.0
+usbcore: registered new interface driver zd1201
+jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+jzmmc_v1.2 jzmmc_v1.2.0: register success!
+TCP: cubic registered
+NET: Registered protocol family 10
+mip6: Mobile IPv6
+sit: IPv6 over IPv4 tunneling driver
+ip6_gre: GRE over IPv6 tunneling driver
+NET: Registered protocol family 17
+input: gpio-keys as /devices/platform/gpio-keys/input/input0
+drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+Freeing unused kernel memory: 248K (80512000 - 80550000)
+jzmmc_v1.2 jzmmc_v1.2.0: card removed, state=0
+mdev is ok......
+net.core.wmem_max = 26214400
+net.core.wmem_default = 26214400
+exFAT: Version 1.2.9
+sensor not found
+/mnt/mtd/lib/modules/init/start_param
+SENSOR:jxq03
+--------------------
+isp_clk=125000000 isp_ch0_pre_dequeue_time=14 isp_ch0_pre_dequeue_interrupt_process=0 isp_ch0_pre_dequeue_valid_lines=540 isp_memopt=1
+shvflip=1
+--nrvbs 2
+@@@@ tx-isp-probe ok(version H20210220b), compiler date=Feb 22 2021 @@@@@
+jz_codec_register: probe() successful!
+dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a4bba000)
+dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a4ab0000)
+dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a4ab1000)
+carrier-server start
+/mnt/mtd/load_isvp_resource: line 127: carrier-server: not found
+carrier-server exit
+Wifi is 8188!!!
+usbcore: registered new interface driver rtl8188fu
+ingenic_timer_probe tcu timer channel : 2
+ln: /mnt/mtd/iwconfig: File exists
+If you want to run app by yourself, please input q 
+=======================Press q -> Entry ?./
+./daemon
+./ovdsdk
+./ifly_ipc
+===============inter CONFIG_PRODUCT_TYPE_YTJ_0715_2
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:0 pinNumber:17
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:ingenic_timer_set 3 ms start
+1 pinNumber:16
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111]ingenic_timer_set 3 ms done
+ [t31_gpio_init:1111] E_HAL_GPIO_INDEX:4 pinNumber:59
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:5 pinNumber:57
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:5 pinNumber:58
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:6 pinNumber:50
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:7 pinNumber:10
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:9 pinNumber:9
+1970-01-01 08:00:10 trace : [t31_gpio_init:1111] [t31_gpio_init:1111] E_HAL_GPIO_INDEX:12 pinNumber:8
+1970-01-01 08:00:10 error : [Sample_PTZ_get_save_steps:1906] open file failed
+1970-01-01 08:00:10 trace : [t31_get_systemcommand_result:129] t31_get_systemcommand_result bufferline:product_sensor_name = jxq03
+
+1970-01-01 08:00:10 trace : [t31_sensor_info_init:900] @@@@Get sensor name is (jxq03)
+-----jxq03_detect: 711 ret = 0, v = 0x05
+-----jxq03_detect: 719 ret = 0, v = 0x07
+jxq03 chip found @ 0x40 (i2c0)
+sensor driver version H20200930b
+usb 1-1: new high-speed USB device number 2 using dwc2
+jxq03 stream on
+---- FPGA board is ready ----
+  Board UID : 30AB6E51
+  Board HW ID : 72000460
+  Board rev.  : 5DE5A975
+  Board date  : 20190326
+-----------------------------
+1970-01-01 08:00:10 trace : [t31_venc_init:2560] t31_venc_init video stream framesourceChn(0)<->VencGroup(0)<->VencChn(1) resolution:2304x1296
+1970-01-01 08:00:10 trace : [t31_framesource_channel_attr_init:159] FrameSourceChn:0 fps:15 nrvbs:1
+1970-01-01 08:00:10 trace : [t31_framesource_create_channel:237] Framesource Channel:0
+1970-01-01 08:00:10 trace : [t31_venc_startPipeLine:917] Create Venc Group Channel:0
+1970-01-01 08:00:10 trace : [t31_venc_channel_attr_init:175] [t31_venc_channel_attr_init:175] [width,height]:2304x1296 uTargetBitRate:1510 fps:15 gop:15 rc_mode:3
+1970-01-01 08:00:10 trace : [t31_venc_create_channel:772] IMP_Encoder_SetMaxStreamCnt IMP_VENC_MAIN_CHN:1 nrvbs:1
+1970-01-01 08:00:10 trace : [t31_venc_create_channel:782] Create Venc Channel:1, Register it on VencGrpChn:0
+1970-01-01 08:00:10 trace : [t31_venc_init:2570] t31_venc_init video stream framesourceChn(1)<->VencGroup(1)<->VencChn(2) resolution:640x360
+1970-01-01 08:00:10 trace : [t31_framesource_channel_attr_init:159] FrameSourceChn:1 fps:15 nrvbs:2
+1970-01-01 08:00:10 trace : [t31_framesource_create_channel:237] Framesource Channel:1
+1970-01-01 08:00:11 trace : [t31_venc_startPipeLine:917] Create Venc Group Channel:1
+1970-01-01 08:00:11 trace : [t31_venc_channel_attr_init:175] [t31_venc_channel_attr_init:175] [width,height]:640x360 uTargetBitRate:624 fps:15 gop:15 rc_mode:3
+!! CABAC encoding is not allowed in baseline profile; CAVLC will be used instead !!
+1970-01-01 08:00:11 trace : [t31_venc_create_channel:782] Create Venc Channel:2, Register it on VencGrpChn:1
+1970-01-01 08:00:11 trace : [t31_venc_init:2579] t31_venc_init mjpeg stream framesourceChn(0)<->VencGroup(0)<->VencChn(0) resolution:352x240
+1970-01-01 08:00:11 trace : [t31_framesource_channel_already_created:795] framesourceChn:0 already created
+1970-01-01 08:00:11 trace : [t31_vencGroup_channel_already_created:811] VencGrpChn:0 already created
+1970-01-01 08:00:11 trace : [t31_venc_create_channel:777] IMP_Encoder_SetbufshareChn JPEG CHN:0 IMP_VENC_MAIN_CHN:1
+set jpeg streamMngCtx suceess
+1970-01-01 08:00:11 trace : [t31_venc_create_channel:782] Create Venc Channel:0, Register it on VencGrpChn:0
+1970-01-01 08:00:11 trace : [t31_framesource_channel_attr_init:159] FrameSourceChn:2 fps:15 nrvbs:1
+1970-01-01 08:00:11 trace : [t31_framesource_create_channel:237] Framesource Channel:2
+1970-01-01 08:00:11 trace : [t31_venc_stream_start:1710] [t31_venc_stream_start:1710] venc chn : 0 , g_ImpVStreamThread[i].eVencType : 4 
+1970-01-01 08:00:11 trace : [t31_venc_stream_start:1710] [t31_venc_stream_start:1710] venc chn : 1 , g_ImpVStreamThread[i].eVencType : 3 
+1970-01-01 08:00:11 trace : [t31_venc_stream_start:1732] [t31_venc_stream_start:1732] t31 venc[1] thread create successfully
+1970-01-01 08:00:11 trace : [t31_venc_stream_start:1710] [t31_venc_stream_start:1710] venc chn : 2 , g_ImpVStreamThread[i].eVencType : 2 
+1970-01-01 08:00:11 trace : [t31_venc_stream_start:1732] [t31_venc_stream_start:1732] t31 venc[2] thread create successfully
+1970-01-01 08:00:11 trace : [t31_venc_stream_start:1710] [t31_venc_stream_start:1710] venc chn : 3 , g_ImpVStreamThread[i].eVencType : 0 
+1970-01-01 08:00:11 trace : [t31_ai_param_init:1322] AI MAIN PointsPerFrame:320
+1970-01-01 08:00:11 trace : [t31_ai_enable:1681] Audio In GetPubAttr samplerate : 8000
+1970-01-01 08:00:11 trace : [t31_ai_enable:1682] Audio In GetPubAttr   bitwidth : 16
+1970-01-01 08:00:11 trace : [t31_ai_enable:1683] Audio In GetPubAttr  soundmode : 1
+1970-01-01 08:00:11 trace : [t31_ai_enable:1684] Audio In GetPubAttr     frmNum : 25
+1970-01-01 08:00:11 trace : [t31_ai_enable:1685] Audio In GetPubAttr  numPerFrm : 320
+1970-01-01 08:00:11 trace : [t31_ai_enable:1686] Audio In GetPubAttr     chnCnt : 1
+codec_set_device: set device: MIC...
+1970-01-01 08:00:11 trace : [t31_ai_channel_enable:1619] AI CHN usrFrmDepth:20
+warn: shm_init,53shm init already
+ERROR: no aec_version this parameter in /etc/webrtc_profile.ini file
+unknown aec version in webrtc_profile.ini
+1970-01-01 08:00:11 trace : [t31_ai_aenc_start:1203] [t31_ai_aenc_start:1203] ss335 ai[0] thread create successfully
+1970-01-01 08:00:11 trace : [t31_ai_set_gain:1152] gain:20
+1970-01-01 08:00:11 warn  : [t31_ai_get_stream_proc:773] [t31_ai_get_stream_proc:773] Audio Chn[0] PTS changed 567, frame_head.pts:567 pre_aframe_pts:0
+1970-01-01 08:00:11 trace : [t31_ao_enable:650] Audio Out DevId                 : 0
+1970-01-01 08:00:11 trace : [t31_ao_enable:651] Audio Out GetPubAttr samplerate : 16000
+1970-01-01 08:00:11 trace : [t31_ao_enable:652] Audio Out GetPubAttr   bitwidth : 16
+1970-01-01 08:00:11 trace : [t31_ao_enable:653] Audio Out GetPubAttr  soundmode : 1
+1970-01-01 08:00:11 trace : [t31_ao_enable:654] Audio Out GetPubAttr     frmNum : 20
+1970-01-01 08:00:11 trace : [t31_ao_enable:655] Audio Out GetPubAttr  numPerFrm : 640
+1970-01-01 08:00:11 trace : [t31_ao_enable:656] Audio Out GetPubAttr     chnCnt : 1
+codec_set_device: set device: speaker...
+warn: shm_init,53shm init already
+1970-01-01 08:00:12 trace : [t31_ao_set_gain:274] gain:20
+1970-01-01 08:00:12 trace : [t31_isp_get_day_night_state:699] sensor name : jxq03 
+1970-01-01 08:00:12 debug : [Sample_Hal_Sys_Extra_Params_init:3009] ipc_confs.bFlip:1, ipc_confs.bMirror:1
+1970-01-01 08:00:12 trace : [t31_set_mic_volume:1109] vol:39
+1970-01-01 08:00:12 trace : [t31_ao_set_speaker_volume:296] vol:82
+1970-01-01 08:00:12 debug : [t31_rgn_param_init:2873] bShowChnName:0
+1970-01-01 08:00:12 info  : [t31_get_day_night_state_process:515] inter t31_get_day_night_state process, dev_type:1
+1970-01-01 08:00:12 trace : [t31_updateRgnThreadStart:2581] u32ResWidth : 2304 , u32ResHeight: 1296 , osd_enable: 1
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:393] current video resolution width:2304 height:1296 u32OsdWidth:640 u32OsdHeight:64
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:579] osd position (1624, 52)
+1970-01-01 08:00:12 trace : [t31_Register_Rgn:1057] ============>init chn=0 rgn_idex =0 u32RgnHandle = 0 !
+1970-01-01 08:00:12 trace : [t31_get_rgn_osd_logo_resource:895] t31_get_rgn_osd_logo_resource u32Width=2304 ready to use logo /mnt/mtd/font/2340x1296.bmp w 232 h 60
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:393] current video resolution width:2304 height:1296 u32OsdWidth:232 u32OsdHeight:60
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:579] osd position (2052, 1216)
+1970-01-01 08:00:12 trace : [t31_Register_Rgn:1057] ============>init chn=0 rgn_idex =2 u32RgnHandle = 1 !
+pstRgnExalgoPra.u32RgnHandle:2
+1970-01-01 08:00:12 trace : [t31_updateRgnThreadStart:2581] u32ResWidth : 640 , u32ResHeight: 360 , osd_enable: 1
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:393] current video resolution width:640 height:360 u32OsdWidth:176 u32OsdHeight:16
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:579] osd position (456, 12)
+1970-01-01 08:00:12 trace : [t31_Register_Rgn:1057] ============>init chn=1 rgn_idex =0 u32RgnHandle = 7 !
+1970-01-01 08:00:12 trace : [t31_get_rgn_osd_logo_resource:895] t31_get_rgn_osd_logo_resource u32Width=640 ready to use logo /mnt/mtd/font/640x360.bmp w 68 h 20
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:393] current video resolution width:640 height:360 u32OsdWidth:68 u32OsdHeight:20
+1970-01-01 08:00:12 trace : [t31_rgnOsd_set_position:579] osd position (564, 332)
+1970-01-01 08:00:12 trace : [t31_Register_Rgn:1057] ============>init chn=1 rgn_idex =2 u32RgnHandle = 8 !
+1970-01-01 08:00:12 trace : [t31_updateRgnThreadStart:2581] u32ResWidth : 0 , u32ResHeight: 0 , osd_enable: 0
+1970-01-01 08:00:12 trace : [t31_updateRgnThreadStart:2581] u32ResWidth : 0 , u32ResHeight: 0 , osd_enable: 2
+1970-01-01 08:00:12 trace : [t31_set_ivs_sensitivity:647] t31_set_motion_param g_alarm_action_mdlevel : 1
+1970-01-01 08:00:12 trace : [t31_set_vdf_algo_mdodvg_grid_area:250] [t31_set_vdf_algo_mdodvg_grid_area:250] GridAreaDivRowNum:0, GridAreaDivColNum:0 MDGridAreaNum:0
+IVS Version:1.0.5 built: Dec 23 2020 12:13:18
+1970-01-01 08:00:12 trace : [t31_set_ivs_sensitivity:702] t31_set_motion_param g_alarm_action_tracklevel : 2
+IVS Version:1.0.5 built: Jun 11 2020 17:16:04
+1970-01-01 08:00:12 trace : [t31_set_ivs_sensitivity:757] t31_set_human_param g_alarm_action_hdlevel : 5
+1970-01-01 08:00:12 trace : [update_thread:1968] osd_thread_1, name_h:0, name_w:0
+INFO(jzdl): jzdl version:1.1.1(00010101_b4a8f4f)  built:20200630-0956(4.7.2 simd)
+1970-01-01 08:00:12 trace : [update_thread:1968] osd_thread_0, name_h:0, name_w:0
+INFO(persondet): Ingenic DL PersonDet Promotion Version:1.1.5(00010105)  built:20210428-1536(4.7.2 simd)
+1970-01-01 08:00:12 debug : [sample_day_night_ctrl_thread:1257] Environment Day
+1970-01-01 08:00:12 debug : [Sample_set_alarm_ignore_status:2512] ignore status:1, 12
+IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+mkdir: can't create directory '/mnt/sd_card/reboot_reason': Read-only file system
+
+IFLY_IPC login: *********************************************************
+MAIN: === build at [Aug  2 2022] [22:30:33] ===
+*********************************************************
+====================设备上电启动====================
+=======设备相关信息都放在目录configure文件夹下=======
+CS_PL: 0xf529a8: ptzRingBuffer
+CS_PL: 0xf529d0: qrRingBuffer
+CS_PL: 0xf529f8: audioPlaybackRingBuffer
+CS_PL: 0xf52a20: commandRingBuffer
+CS_PL: 0xf52a48: eventRingBuffer
+IFLY_TF: [13588]: ifly_tf_check_tf_size
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/root                 5376      5376         0 100% /
+tmpfs                    49356         8     49348   0% /dev
+tmpfs                    49356      8644     40712  18% /tmp
+tmpfs                    49356         4     49352   0% /run
+/dev/mtdblock3            8960      5252      3708  59% /mnt/mtd
+IFLY_TF: fail to atoi free size: []
+IFLY_TF: ifly_tf_set_tfcard_status: stat = 2
+IFLY_TFP: no sdcard
+IFLY_ME: enterProcEventDeal BEGIN
+IFLY_ME: enterProcEventDeal END
+IFLY_TFP: SAVE: set thread name: [tfp_datasave]
+
+
+=====> IFLY_ME: event type: [7: Event Voice Button]
+读取DeviceConf.ini
+whole file name /mnt/mtd/iflytek/config/DeviceConf.ini
+[warn][1970-01-01 08:00:13.671][256][OVD_DEMO] OVD_DemoInit.c:OVD_DEMOE_InitDeviceInfo:39 读取deviceConfiguration
+
+===[OVD_DEMO_DeviceInfo]====
+	 OVDDeviceID:5724512000079476 
+	 OVDHardWareModel: XFP301-M
+	 OVDSystemVersion: 1.0.1
+	 wifi_ssid: REDACTED
+	 wifi_signal: 0
+	 upBandwidth: 0
+	 downBandwidth: 0
+	 ipAddr: 
+	 macAddr: XX:XX:XX:XX:XX:XX
+GET SN:[5724512000079476]
+GET key1:[1MS2PiK6]
+GET key2:[1MS2PiK6]
+GET MAC:[XX:XX:XX:XX:XX:XX]
+GET BIND:[202005501]
+===[OVD_DEMO_Client]====
+	 OVDDeviceID:5724512000079476
+	 OVDLoginPassword:1MS2PiK6
+	 OVDMediaEncPassword:1MS2PiK6
+	 OVDHardWareModel:XFP301-M
+	 OVDSystemVersion:1.0.1
+	 netParam.passDomain:36.148.0.120
+	 netParam.passPort:9001
+	 netParam.Secure_PassPort:0
+	 netParam.p2p_passDomain:
+	 netParam.p2p_passPort:0
+	 netParam.turnDomain:
+	 netParam.turnPort:0
+	 netParam.hibernationDomain:
+	 netParam.hibernationPort:0
+	 netParam.hibernationHBInterval:100
+	 netParam.maxP2PSession:4
+读取deviceConfigInfo
+[warn][1970-01-01 08:00:13.708][256][OVD_DEMO] OVD_DemoInit.c:OVD_DEMOE_InitLogConfInfo:651 读取logConfiguration
+
+[warn][1970-01-01 08:00:13.709][256][OVD_DEMO] OVD_DemoInit.c:OVD_DEMOE_InitLogConfInfo:679 创建线程 设置回调
+
+[warn][1970-01-01 08:00:13.709][256][OVD_DEMO] OVD_DemoInit.c:OVD_DEMOE_InitSourceFile:699 读取sourcefileConfiguration
+
+[warn][1970-01-01 08:00:13.710][304][OVD_DEMO] OVD_DemoInit.c:pthread_OVDDemoLogOutput:601 pthread_OVDDemoLogOutput started
+
+==========setAudioTalkVol=[90]=============
+default timeout 5 sec.
+We reset timeout as 30 sec.
+-----------------------------------------------------------
+CMD = 0x1004 
+index = 0
+tflags = 90
+flags = 90
+-----------------------------------------------------------
+====================CMD = 0x1004, 90
+1970-01-01 08:00:13 trace : [t31_ao_set_speaker_volume:296] vol:96
+=====================发起SDK注册=====================
+
+======================SDK初始化======================
+
+OVD_DEMO_ConfigureInfo:channal count:1
+macID XX:XX:XX:XX:XX:XX Match SUCCESS.
+[info][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_Init:980 OVD_Init enter
+[info][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDInnerAPI_recordOvdLogParam:807 record param logLevel: 1, logSTD:1
+[debug][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_OpenAPISetLogConfigure:138 logstd:1
+
+[info][1970-01-01 08:00:13.834][256][demo] g_log_stream_no set to 1 
+[info][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_OpenAPISetLogConfigure:143 register log callback
+[warn][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_Init:989 GIT_INFO: 777eb93-202112031025-stable-1.17.0  compile time: Dec  6 2021:19:22:37
+
+[info][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDInnerAPI_recordOvdClientParam:802 record param cafilepath:/mnt/mtd/iflytek/config/cacert.pem
+
+[info][1970-01-01 08:00:13.834][256][OVD_OpenApi] OVD_CallBack.cpp:OVDInnerAPI_recordOvdCallBackFunInfo:286 record call back function
+[debug][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDInnerAPI_JsonParam:842 get param from OVD, image buff size 524288
+[debug][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDInnerAPI_JsonParam:855 get param from OVD, av buff duration 10
+[debug][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDInnerAPI_JsonParam:862 get param from OVD, debut_ts is 0
+[debug][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_OpenAPISetLogConfigure:138 logstd:1
+
+[info][1970-01-01 08:00:13.835][256][demo] g_log_stream_no set to 1 
+[info][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_OpenAPISetLogConfigure:143 register log callback
+[info][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_Init:1025 INIT SDK start
+[info][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDSDKInit:442 OVDSDKInit begin
+[info][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListInit:16 OVDInnerAPI_linkListInit init
+[info][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListInit:43 OVDInnerAPI_linkListInit init success
+[info][1970-01-01 08:00:13.835][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:13.836][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[info][1970-01-01 08:00:14.166][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:411 OVDInnerAPI_linkListChannelStatusInit init
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_LinkList.cpp:OVDInnerAPI_linkListChannelStatusInit:438 OVDInnerAPI_linkListChannelStatusInit init success
+[warn][1970-01-01 08:00:14.167][256][softProbe] softProbeHttpAPI.c:OVD_Probe_Module_init:106 Probe_global_status: 0, can not re-init
+
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDSDKInit:619 OVD_picuploadAPI_init begin
+[debug][1970-01-01 08:00:14.167][256][picupload] picuploadAPI.c:OVD_picuploadAPI_init:25 OVD_picuploadAPI_init
+
+[info][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDSDKInit:622 OVD_picuploadAPI_init result 0
+[debug][1970-01-01 08:00:14.167][256][OVD_OpenApi] OVD_pulsealarm.cpp:OPENAPI_pulsealarm_init:113 OVD_pulsealarm_init
+
+cseg init
+srt init
+[info][1970-01-01 08:00:14.168][256][PLAYBACK] src/CardPlaybackApi.cpp:62 AV_tfRecord_Init suc.
+[info][1970-01-01 08:00:14.168][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVDSDKInit:660 OVDSDKInit success
+[debug][1970-01-01 08:00:14.168][256][OVD_OpenApi] OVD_inner.cpp:OpenApi_hearbeat_content_init:21 simpleovdinfo: state: 1 ,channelcount:1 
+
+[debug][1970-01-01 08:00:14.168][256][OVD_OpenApi] OVD_inner.cpp:OpenApi_hearbeat_content_init:24 channel[0]: channelid: 0 channelstate:1
+
+[info][1970-01-01 08:00:14.168][256][OVD_OpenApi] OVD_OpenAPI.cpp:OVD_Init:1033 OVD_Init success
+----------------------------video----------------------------------
+ codec:4
+ quality:2
+ bitrate:1024
+ width:2304
+ height:1296
+ framerate:15
+ colorDepth:0
+ frameInterval:15
+ rsk_encrypt:0
+----------------------------audio----------------------------------
+ codec:1
+samplesRate:8000
+bitrate:1024
+waveFormat:0
+channelNumber:1
+blockAlign:0
+bitsPerSample:10
+sampleperframe:1024
+frameInterval:0
+startReadTFState start ok
+startReadTFState end ok
+[14169]: LED: [main] set led to [3][red twinkle]
+startWatchReset start ok
+IFLY_TF: BEGIN: startWatchReset
+IFLY_TF: END: startWatchReset
+startWatchReset end ok
+bindid:[202005501] 
+IFLY_TF: set reset thread name: [iflyReset]
+IFLY_TF: BEGIN: Start watch reset
+-----------------------------------------------------------
+CMD = 0x1001 
+index = 1
+tflags = 3
+flags = 3
+-----------------------------------------------------------
+====================CMD = 0x1001, 3
+Successfully initialized wpa_supplicant
+nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
+udhcpc: started, v1.33.1
+Setting IP address 0.0.0.0 on wlan0
+udhcpc: sending discover
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  1
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  2
+udhcpc: sending discover
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  3
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  4
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  5
+udhcpc: sending discover
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  6
+ifly_wifi_check_wlan_status:*********************************connect wifi fail  7
+
+
+====
+[@IFLY_IPC:root]# cat /proc/jz/isp/isp-fs 
+############## framesource 0 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 2304 * 1296
+scaler : enable
+scaler width: 2304
+scaler height: 1296
+crop : enable
+crop top: 0
+crop left: 0
+crop width: 2304
+crop height: 1296
+the state of buffers:
+queue count: 1
+queue addr: 0x07685200
+done count: 0
+the output buffers is: 0
+the losted buffers is: 0
+ch0_pre_dequeue_drop is: 28
+ch0_pre_dequeue_intc_ahead_cnt is: 0
+pdq cnt: 905, pdq intc cnt:0, pdq intc cnt1:0
+---------------------------
+buf:0, state:3, buf_state:30, buf_qcnt:344, buf_dqcnt:343
+############## framesource 1 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 640 * 360
+scaler : enable
+scaler width: 640
+scaler height: 360
+crop : disable
+the state of buffers:
+queue count: 1
+queue addr: 0x07bec300
+done count: 0
+the output buffers is: 0
+the losted buffers is: 0
+---------------------------
+buf:0, state:3, buf_state:30, buf_qcnt:172, buf_dqcnt:171
+buf:1, state:0, buf_state:102, buf_qcnt:171, buf_dqcnt:171
+############## framesource 2 ###############
+chan status: running
+output pixformat: NV12
+output resolution: 352 * 144
+scaler : enable
+scaler width: 352
+scaler height: 144
+crop : disable
+the state of buffers:
+queue count: 1
+queue addr: 0x07c98b00
+done count: 0
+the output buffers is: 0
+the losted buffers is: 0
+---------------------------
+buf:0, state:3, buf_state:30, buf_qcnt:933, buf_dqcnt:932
+
+===================================
+[@IFLY_IPC:root]# lsmod
+rts_motor 18066 1 - Live 0xc0624000 (O)
+8188fu 1183347 0 - Live 0xc04c7000 (O)
+sensor_jxq03_t31 10873 0 - Live 0xc0339000 (O)
+audio 76221 2 - Live 0xc031a000 (O)
+tx_isp_t31 958471 1 sensor_jxq03_t31, Live 0xc01ea000 (O)
+sinfo 16716 0 - Live 0xc00d2000 (O)
+avpu 17110 2 - Live 0xc00c1000 (O)
+exfat 106960 0 - Live 0xc0097000 (O)
+
+=========
+[@IFLY_IPC:root]# cat /proc/jz/isp/isp-m0 
+****************** ISP INFO **********************
+Software Version : H20210220b
+SENSOR NAME : jxq03
+SENSOR OUTPUT WIDTH : 2304
+SENSOR OUTPUT HEIGHT : 1296
+ISP OUTPUT FPS : 15 / 1
+SENSOR OUTPUT RAW PATTERN : BGGR
+ISP Top Value : 0xb5742209
+ISP Runing Mode : Day
+ISP Custom Mode : Disable
+ISP WDR Mode : Disable
+SENSOR Integration Time : 254 lines
+SENSOR Max Integration Time : 2661 lines
+SENSOR analog gain : 0
+MAX SENSOR analog gain : 126
+SENSOR digital gain : 0
+MAX SENSOR digital gain : 0
+ISP digital gain : 0
+MAX ISP digital gain : 96
+ISP Tgain DB : 0
+ISP EV value: 255
+ISP EV value log2: 524189
+ISP EV value us: 6353
+ISP EV min int: 2
+ISP EV min again: 1024
+ISP WB weighted rgain: 315
+ISP WB weighted bgain: 512
+ISP WB color temperature: 2773
+ISP AWB Start rgain 188: bgain 320
+Saturation : 128
+Saturation : 128
+Sharpness : 128
+Contrast : 128
+Brightness : 128
+Antiflicker : 0
+Antiflicker nodes: 5: step : 400, 799, 1199, 1599, 1999, 
+debug : 1925,0,0,0,0,0,0

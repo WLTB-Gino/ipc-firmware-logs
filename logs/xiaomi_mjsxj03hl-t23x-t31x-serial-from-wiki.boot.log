@@ -341,7 +341,7 @@ mdev is ok......
 [    2.490306] RTL871X: HW EFUSE
 [    2.493398] RTL871X: hal_com_config_channel_plan chplan:0x20
 [    2.679364] RTL871X: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
-[    2.706802] RTL871X: rtw_ndev_init(wlan0) if1 mac_addr=c8:5c:cc:93:22:96
+[    2.706802] RTL871X: rtw_ndev_init(wlan0) if1 mac_addr=XX:XX:XX:XX:XX:XX
 [    2.803476] @@@@ tx-isp-probe ok(version H20210112a), compiler date=Jan 12 2021 @@@@@
 [    2.815241] zram0: detected capacity change from 0 to 16777216
 Setting up swapspace version 1, size = 16773120 bytes
@@ -432,7 +432,7 @@ up
 Configuration file: /tmp/hostapd_wpa2.conf
 rfkill: Cannot open RFKILL control device
 nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
-Using interface wlan0 with hwaddr e4:aa:ec:9c:c2:00 and ssid "isa-camera-hlc7_miapC200"
+Using interface wlan0 with hwaddr XX:XX:XX:XX:XX:XX and ssid "REDACTED"
 [   21.605619] RTL871X: assoc success
 wlan0: interface state UNINITIALIZED->ENABLED
 wlan0: AP-ENABLED 

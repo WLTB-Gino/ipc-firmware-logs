@@ -1,0 +1,2506 @@
+isvp_t40# printenv
+baudrate=115200
+bootargs=console=ttyS1,115200n8 mem=128M@0x0 nmem=28M@0x8000000 rmem=100M@0x9C00000 ip=off root=/dev/ram rw rdinit=/linuxrc mtdparts=sfc_nand:1M(uboot),1M(factory),8M(config),6M(kernel),28M(appfs),84M(smart)
+bootcmd=nand read 0x80600000 0xa00000 0x600000;bootm 0x80600000
+bootdelay=1
+ethact=Jz4775-9161
+ethaddr=XX:XX:XX:XX:XX:XX
+ipaddr=169.254.118.188
+loads_echo=1
+nand_erasesize=20000
+nand_oobsize=80
+nand_writesize=800
+stderr=serial
+stdin=serial
+stdout=serial
+
+Environment size: 507/131067 bytes
+isvp_t40# 
+
+
+
+U-Boot SPL 2013.07 (Mar 22 2022 - 20:04:08)
+
+apll_freq = 1104000000 
+mpll_freq = 1400000000 
+vpll_freq = 1308000000 
+epll_freq = 108000000
+cpu clk source: apll
+ddr clk source: mpll
+DDR clk rate: 700000000
+
+spl_sfc_nand_load:399
+00006c00,00064000,80100000
+spl_sfc_nand_load:402
+image entry point: 0x80100000
+Board: ISVP (Ingenic XBurst T40 SoC)
+DRAM:  256 MiB
+Top of RAM usable for U-Boot at: 90000000
+Reserving 401k for U-Boot at: 8ff98000
+Reserving 32896k for malloc() at: 8df78000
+Reserving 32 Bytes for Board Info at: 8df77fe0
+Reserving 124 Bytes for Global Data at: 8df77f64
+Reserving 128k for boot params() at: 8df57f64
+Stack Pointer at: 8df57f48
+Now running in RAM - U-Boot at: 8ff98000
+NAND:  0 MiB
+SFC_NAND:  ***sfc init!
+
+NAND read: device 0 offset 0xc0000, size 0x20000
+ 131072 bytes read: OK
+
+NAND read: device 0 offset 0xe0000, size 0x20000
+ 131072 bytes read: OK
+*** Warning - bad CRC, using default environment
+
+Data transfer:    serial
+Net:   Jz4775-9161 using random MAC address XX:XX:XX:XX:XX:XX 
+ random ipaddr 169.254.94.118
+
+udplistenport not set, use default 10008
+jz_init......
+Bus Mode Reg after write: 0x00020100
+====>phy 0:0x0-0x128 found
+SPEED:1, DUPLEX:1
+====>found PHY 0
+====>PHY Autonegotiation Complete!
+GMAC init finish
+bready = 0
+Timeout
+jz_init......
+Bus Mode Reg after write: 0x00020100
+====>phy 0:0x0-0x128 found
+SPEED:1, DUPLEX:1
+====>found PHY 0
+====>PHY Autonegotiation Complete!
+GMAC init finish
+Udp: port 10008 listen exit
+watchdog open!
+Press password in 1 second.
+
+
+==============================================================================================
+isvp_t40# boot
+
+NAND read: device 0 offset 0xa00000, size 0x600000
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+jz_sfc_nand.c jz_sfcnand_read 309: jz_sfc_nand_read, ecc value = 3
+NAND read from offset a00000 failed 3
+ 0 bytes read: ERROR
+   Image Name:   Linux-4.4.94
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    5096951 Bytes = 4.9 MiB
+   Load Address: 80010000
+   Entry Point:  804cf850
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (root@turkey-Macmini) (gcc version 7.2.0 (Ingenic r4.0.0-gcc720 2018.02-28) ) #23 SMP PREEMPT Tue Dec 14 18:05:56 CST 2021
+[    0.000000] CPU0 RESET ERROR PC:FFFBFFFF
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00132100 (Ingenic XBurst@II)
+[    0.000000] FPU revision is: 00f32100
+[    0.000000] MIPS: machine is ingenic,shark
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 0066e000 @ 00010000 (usable)
+[    0.000000]  memory: 002e2000 @ 0067e000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 08000000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000007ffffff]
+[    0.000000] [SMP] Slave CPU(s) 1 available.
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.000000] 
+[    0.000000] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.000000] PERCPU: Embedded 10 pages/cpu @81118000 s8432 r8192 d24336 u40960
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 32512
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=128M@0x0 nmem=28M@0x8000000 rmem=100M@0x9C00000 ip=off root=/dev/ram rw rdinit=/linuxrc mtdparts=sfc_nand:1M(uboot),1M(factory),8M(config),6M(kernel),28M(appfs),84M(smart)
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 120020K/131072K available (4888K kernel code, 275K rwdata, 1412K rodata, 2952K init, 145K bss, 11052K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:419
+[    0.000000] parse cpu-intc-iomap, intc define in dt is too large!
+[    0.000000] core irq setup finished
+[    0.000000] percpu irq inited.
+[    0.000000] t40 Clock Power Management Unit init!
+[    0.000000] =========== t40 clocks: =============
+[    0.000000] 	apll     = 1104000000 , mpll     = 1400000000
+[    0.000000] 	cpu_clk  = 1104000000 , l2c_clk  = 552000000
+[    0.000000] 	ahb0_clk = 233333334 , ahb2_clk = 233333334
+[    0.000000] 	apb_clk  = 116666667 , ext_clk  = 24000000
+[    0.000000] 
+[    0.000000] parse cpu-ost-iomap, ost number define in dt is too large!
+[    0.000000] percpu cpu_num:0 timerevent init
+[    0.000000] clockevents_config_and_register success.
+[    0.000000] clocksource: jz_clocksource: mask: 0x7fffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 64 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000075] ERROR epc 0xfffbffff
+[    0.003354] Console: colour dummy device 80x25
+[    0.007798] Calibrating delay loop... 1099.36 BogoMIPS (lpj=5496832)
+[    0.048668] pid_max: default: 32768 minimum: 301
+[    0.053413] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.060072] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.067668] [SMP] Prepare 2 cores., cpu: 0
+[    0.145953] [SMP] Booting CPU1 ...
+[    0.149323] CPU1 RESET ERROR PC:FEFFE7BF
+[    0.149335] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.149339] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.149342] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.149342] 
+[    0.149345] Unified secondary cache 128kB 8-way, linesize 64 bytes.
+[    0.149393] #### now starting init for cpu : 1
+[    0.149400] percpu irq inited.
+[    0.149402] percpu cpu_num:1 timerevent init
+[    0.149414] clockevents_config_and_register success.
+[    0.149419] CPU1 revision is: 00132100 (Ingenic XBurst@II)
+[    0.149421] FPU revision is: 00f32100
+[    0.185983] Brought up 2 CPUs
+[    0.186523] [SMP] slave cpu1 start up finished.
+[    0.252750] devtmpfs: initialized
+[    0.260332] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.270299] futex hash table entries: 512 (order: 2, 16384 bytes)
+[    0.276543] pinctrl core: initialized pinctrl subsystem
+[    0.282071] NET: Registered protocol family 16
+[    0.290807] ingenic pinctrl 10010000.pinctrl: 4 gpio chip add success, pins 128
+[    0.298706] ingenic pinctrl 10010000.pinctrl: ingenic pinctrl probe success
+[    0.312855] dmmu_init 807 PTRS_PER_PTE = 1024
+[    0.381832] ingenic-dma 13420000.dma: INGENIC SoC DMA initialized
+[    0.388924] usbcore: registered new interface driver usbfs
+[    0.394586] usbcore: registered new interface driver hub
+[    0.400084] usbcore: registered new device driver usb
+[    0.405268] inno phy probe success
+[    0.411394] clocksource: Switched to clocksource jz_clocksource
+[    0.433662] NET: Registered protocol family 2
+[    0.438400] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.445471] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.451920] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.458341] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.464282] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.470705] NET: Registered protocol family 1
+[    0.475368] RPC: Registered named UNIX socket transport module.
+[    0.481296] RPC: Registered udp transport module.
+[    0.486120] RPC: Registered tcp transport module.
+[    0.490832] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.667808] jitterentropy: Initialization failed with host not compliant with requirements: 2
+[    0.676951] io scheduler noop registered
+[    0.680852] io scheduler deadline registered
+[    0.685297] io scheduler cfq registered (default)
+[    0.692048] JZ DBOX probe ok!!!!
+[    0.696387] 10031000.serial: ttyS1 at MMIO 0x10031000 (irq = 58, base_baud = 7291666) is a uart1
+[    0.705334] console [ttyS1] enabled
+[    0.705334] console [ttyS1] enabled
+[    0.712411] bootconsole [early0] disabled
+[    0.712411] bootconsole [early0] disabled
+[    0.721011] 10032000.serial: ttyS2 at MMIO 0x10032000 (irq = 57, base_baud = 7291666) is a uart2
+[    0.734275] ingenic-tcu 10002000.tcu: Ingenic TCU driver register completed ret = 0
+[    0.742940] Enter 'CDT' mode.
+[    0.746003] Enter 'DMA Descriptor chain' mode.
+[    0.750691] ingenic-sfc 13440000.sfc: Found Supported device, id_manufactory = 0x2c, id_device = 0x24
+[    0.760250] use nand common get feature interface!
+[    0.765233] Scanning device for bad blocks
+[    0.925626] ingenic-sfc 13440000.sfc: NOTICE: this flash haven`t param, magic_num:ffffffff
+[    0.934188] ingenic-sfc 13440000.sfc: read partition from flash failed!
+[    0.941014] ingenic-sfc 13440000.sfc: read mtdparts!
+[    0.946162] 6 cmdlinepart partitions found on MTD device sfc_nand
+[    0.952462] Creating 6 MTD partitions on "sfc_nand":
+[    0.957585] 0x000000000000-0x000000100000 : "uboot"
+[    0.963915] 0x000000100000-0x000000200000 : "factory"
+[    0.980407] 0x000000200000-0x000000a00000 : "config"
+[    0.996701] 0x000000a00000-0x000001000000 : "kernel"
+[    1.003124] 0x000001000000-0x000002c00000 : "appfs"
+[    1.009416] 0x000002c00000-0x000008000000 : "smart"
+[    1.031438] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    1.040533] libphy: ingenic_mii_bus: probed
+[    1.044990] id1=0,id2=296
+[    1.047692] phy_clk_freq=25000000
+[    1.051859] dwc-mac 134b0000.mac: Ingenic on-chip Ethernet MAC driver, Version 1.0
+[    1.059864] PPP generic driver version 2.4.2
+[    1.064652] PPP BSD Compression module registered
+[    1.069521] PPP Deflate Compression module registered
+[    1.074787] PPP MPPE Compression module registered
+[    1.079738] NET: Registered protocol family 24
+[    1.084493] dwc2 13500000.otg: Configuration mismatch. Forcing host mode
+[    1.091523] OTG CLK 1f8e7f80
+[    1.095081] CPCCR CLK 1580
+[    1.306395] dwc2 13500000.otg: DWC OTG Controller
+[    1.311275] dwc2 13500000.otg: new USB bus registered, assigned bus number 1
+[    1.318637] dwc2 13500000.otg: irq 29, io mem 0x00000000
+[    1.324997] hub 1-0:1.0: USB hub found
+[    1.328908] hub 1-0:1.0: 1 port detected
+[    1.333574] usbcore: registered new interface driver cdc_acm
+[    1.339423] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    1.347974] usbcore: registered new interface driver usbserial
+[    1.354156] usbcore: registered new interface driver option
+[    1.360022] usbserial: USB Serial support registered for GSM modem (1-port)
+[    1.367286] i2c /dev entries driver
+[    1.371639] ingenic-i2c 10050000.i2c: register i2c0 success.
+[    1.378042] ingenic-i2c 10051000.i2c: register i2c1 success.
+[    1.384453] ingenic-i2c 10052000.i2c: register i2c2 success.
+[    1.390843] ingenic-i2c 10053000.i2c: register i2c3 success.
+[    1.397838] sdhci: Secure Digital Host Controller Interface driver
+[    1.404247] sdhci: Copyright(c) Pierre Ossman
+[    1.451440] mmc0: SDHCI controller on ingenic-sdhci [13060000.msc] using ADMA
+[    1.458982] mmc0: card removed
+[    1.462512] usbcore: registered new interface driver usbhid
+[    1.468252] usbhid: USB HID core driver
+[    1.472491] Netfilter messages via NETLINK v0.30.
+[    1.477429] ip_set: protocol 6
+[    1.480733] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.486414] NET: Registered protocol family 17
+[    1.504548] Freeing unused kernel memory: 2952K
+[RCS]: /etc/init.d/S00devs
+mdev is ok......
+mknod: /dev/console: File exists
+mknod: /dev/null: File exists
+[RCS]: /etc/init.d/S01udev
+mkdir: can't create directory '/dev/pts': File exists
+mount: mounting devpts on /dev/pts failed: Device or resource busy
+/etc/init.d/S01udev: line 7: udevd: not found
+/etc/init.d/S01udev: line 8: udevadm: not found
+[RCS]: /etc/init.d/S10sysctl
+net.ipv4.tcp_fin_timeout = 20
+net.ipv4.tcp_keepalive_intvl = 60
+net.ipv4.tcp_keepalive_probes = 5
+net.ipv4.tcp_keepalive_time = 120
+net.ipv4.tcp_max_tw_buckets = 64
+net.ipv4.tcp_syn_retries = 3
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_tw_reuse = 1
+[RCS]: /etc/init.d/S50appfsup
+Starting up ........
+sfc_nand
+appfs
+Tried 0 times for mtdblock4.
+ubifs
+[    1.775807] ubi4: attaching mtd4
+[    1.830463] ubi4: scanning is finished
+[    1.844617] ubi4: attached mtd4 (name "appfs", size 28 MiB)
+[    1.850371] ubi4: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    1.857534] ubi4: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    1.864576] ubi4: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    1.871811] ubi4: good PEBs: 224, bad PEBs: 0, corrupted PEBs: 0
+[    1.878009] ubi4: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    1.885490] ubi4: max/mean erase counter: 10/4, WL threshold: 4096, image sequence number: 1283343047
+[    1.895059] ubi4: available PEBs: 0, total reserved PEBs: 224, PEBs reserved for bad PEB handling: 24
+[    1.904616] ubi4: background thread "ubi_bgt4d" started, PID 605
+[    1.914971] UBIFS (ubi4:0): background thread "ubifs_bgt4_0" started, PID 608
+[    1.941444] UBIFS (ubi4:0): recovery needed
+[    1.954970] random: nonblocking pool is initialized
+[    2.010069] UBIFS (ubi4:0): recovery completed
+[    2.014696] UBIFS (ubi4:0): UBIFS: mounted UBI device 4, volume 0, name "custom"
+[    2.022378] UBIFS (ubi4:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.032674] UBIFS (ubi4:0): FS size: 23617536 bytes (22 MiB, 186 LEBs), journal size 3936256 bytes (3 MiB, 31 LEBs)
+[    2.043542] UBIFS (ubi4:0): reserved for root: 0 bytes (0 KiB)
+[    2.049568] UBIFS (ubi4:0): media format: w4/r0 (latest is w4/r0), UUID 262A29E9-97E1-42A8-9257-AB7D3F0F29A0, small LPT model
+[    2.061890] UBIFS (ubi4:0): full atime support is enabled.
+/etc/init.d/S50appfsup: line 87: update: not found
+[RCS]: /etc/init.d/S80network
+      IP: off
+   BOOTP: 
+ GATEWAY: 
+ NETMASK: 
+HOSTNAME: 
+  NETDEV: 
+AUTOCONF: 
+BusyBox v1.22.1 (2021-04-21 12:12:24 CST) multi-call binary.
+
+Usage: ifconfig [-a] interface [address]
+
+Configure a network interface
+
+	[add ADDRESS[/PREFIXLEN]]
+	[del ADDRESS[/PREFIXLEN]]
+	[[-]broadcast [ADDRESS]] [[-]pointopoint [ADDRESS]]
+	[netmask ADDRESS] [dstaddr ADDRESS]
+	[outfill NN] [keepalive NN]
+	[hw ether|infiniband ADDRESS] [metric NN] [mtu NN]
+	[[-]trailers] [[-]arp] [[-]allmulti]
+	[multicast] [[-]promisc] [txqueuelen NN] [[-]dynamic]
+	[mem_start NN] [io_addr NN] [irq NN]
+	[up|down] ...
+
+[    2.170229] ubi2: attaching mtd24 CST) multi-call binary.
+
+
+Usage: route [{add|del|delete}]
+
+Edit kernel routing tables
+
+	-n	Don't resolve names
+	-e	Display other/more information
+	-A inet{6}	Select address family
+
+start appinstall ..........Thu Jan 1 00:00:02 UTC 1970
+             total         used   [    2.196664] ubi2: scanning is finished
+      free       shared      buffers
+Mem:        122972        17228       105744            0            0
+-/+ buffers:              17228       105744
+Swap:            0            0     [    2.214652] ubi2: attached mtd2 (name "config", size 8 MiB)
+       0
+[    2.226127] ubi2: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.234042] ubi2: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.241046] ubi2: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.248308] ubi2: good PEBs: 64, bad PEBs: 0, corrupted PEBs: 0
+[    2.254455] ubi2: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.261964] ubi2: max/mean erase counter: 10/4, WL threshold: 4096, image sequence number: 715036069
+[    2.271425] ubi2: available PEBs: 0, total reserved PEBs: 64, PEBs reserved for bad PEB handling: 24
+[    2.280861] ubi2: background thread "ubi_bgt2d" started, PID 658
+[    2.291215] UBIFS (ubi2:0): background thread "ubifs_bgt2_0" started, PID 661
+[    2.317564] UBIFS (ubi2:0): recovery needed
+
+(Ingenic-linux-t40) login: [    2.387790] UBIFS (ubi2:0): recovery completed
+[    2.392427] UBIFS (ubi2:0): UBIFS: mounted UBI device 2, volume 0, name "config"
+[    2.400100] UBIFS (ubi2:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.410358] UBIFS (ubi2:0): FS size: 3301376 bytes (3 MiB, 26 LEBs), journal size 1396736 bytes (1 MiB, 11 LEBs)
+[    2.420867] UBIFS (ubi2:0): reserved for root: 0 bytes (0 KiB)
+[    2.426892] UBIFS (ubi2:0): media format: w4/r0 (latest is w4/r0), UUID 84C08228-6B3F-437C-9815-37FEFB87CAAB, small LPT model
+[    2.438972] UBIFS (ubi2:0): full atime support is enabled.
+[    2.472980] ubi5: attaching mtd5
+[    2.633526] ubi5: scanning is finished
+[    2.642725] ubi5: attached mtd5 (name "smart", size 84 MiB)
+[    2.648479] ubi5: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    2.655759] ubi5: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    2.662832] ubi5: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    2.670039] ubi5: good PEBs: 672, bad PEBs: 0, corrupted PEBs: 0
+[    2.676291] ubi5: user volume: 1, internal volumes: 1, max. volumes count: 128
+[    2.683791] ubi5: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 204103087
+[    2.693164] ubi5: available PEBs: 0, total reserved PEBs: 672, PEBs reserved for bad PEB handling: 24
+[    2.702736] ubi5: background thread "ubi_bgt5d" started, PID 680
+[    2.713231] UBIFS (ubi5:0): background thread "ubifs_bgt5_0" started, PID 683
+[    2.739659] UBIFS (ubi5:0): recovery needed
+[    2.756280] UBIFS (ubi5:0): recovery completed
+[    2.760889] UBIFS (ubi5:0): UBIFS: mounted UBI device 5, volume 0, name "smart"
+[    2.768548] UBIFS (ubi5:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[    2.778821] UBIFS (ubi5:0): FS size: 80375808 bytes (76 MiB, 633 LEBs), journal size 9023488 bytes (8 MiB, 72 LEBs)
+[    2.789621] UBIFS (ubi5:0): reserved for root: 0 bytes (0 KiB)
+[    2.795671] UBIFS (ubi5:0): media format: w4/r0 (latest is w4/r0), UUID ACD64A7F-B5F3-4CEA-8695-A24EEA456B4C, small LPT model
+[    2.807837] UBIFS (ubi5:0): full atime support is enabled.
+start appinstall ..........Thu Jan 1 00:00:04 UTC 1970
+             total         used         free       shared      buffers
+Mem:        122972        52140        70832            0            0
+-/+ buffers:              52140        70832
+Swap:            0            0            0
+========== sys info: hw_type=jzt40xp_d11_q38  cpu_type=jzt40xp sensor_type=auto =============
+untar packet...
+bin/
+bin/ovfs_onvif
+bin/sysinit
+bin/ovfs_access
+bin/ovfs_network
+bin/ovfs_webserver
+bin/upflash
+bin/ovfs_ptz
+bin/ovfs_eventlog
+bin/wtdgops
+bin/update
+bin/ovfs_filemanage
+bin/mkfs.ext4
+bin/ovfs_mediaserver
+bin/fsck.ext4
+bin/udhcpc.script
+bin/ovfs_boardsystem
+bin/uritool
+bin/ovfs_alarm
+bin/ntpclient
+bin/ovfs_record
+bin/ovfs_smartserver
+bin/ovfs_access_host
+bin/upnpc-static
+bin/ovfs_hiserver
+bin/impdbg
+bin/ovfs_core
+ko/
+ko/sensor_imx334_t40.ko
+ko/loadko.sh
+ko/avpu.ko
+ko/sensor_imx415_t40.ko
+ko/sensor_imx335_t40.ko
+ko/ourdrv/
+ko/ourdrv/rtc8563.ko
+ko/ourdrv/ants_spi_ms41908_ex.ko
+ko/tx-isp-t40.ko
+ko/sensor_sc8238_t40.ko
+ko/soc-nna.ko
+ko/sinfo.ko
+ko/pwm_core.ko
+ko/audio.ko
+ko/pwm_hal.ko
+lib/
+lib/libressl.so
+lib/libimp.so
+lib/libsysutils.so
+lib/librtspserver_v2.so
+lib/libpolarssl.so
+lib/libboardsys_smart.so
+lib/libiaac.so
+lib/libstreamqueue.so
+lib/libssl.so
+lib/libtinyxml.so
+lib/libmodule.so
+lib/libpipemsg.so
+lib/libfont.so
+lib/libsqlite3.so
+lib/libaccess.so
+lib/libmxml.so
+lib/librtmpserver.so
+lib/libalog.so
+lib/libaudioProcess.so
+lib/libants_autolens_ex.so
+lib/libtoolfonts.so
+lib/libz.so
+lib/libcommon.so
+lib/libants_28181_sdk.so
+lib/l[    6.092938] name : i2c0 nr : 0
+ibcurl.so
+lib/librestcomm.so
+untar packet...ok
+t40xp
+[    6.100835] name : i2c1 nr : 1
+[    6.191446] i2c i2c-1: --I2C txabrt:
+[    6.195143] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.201743] error: sensor_read,314 ret = -5
+[    6.206058]  sensor_read: addr=0xf0 value = 0x0
+[    6.210729] err sensor read addr = 0xf0, value = 0x0
+[    6.301444] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    6.309011] i2c i2c-1: --I2C txabrt:
+[    6.312722] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.319294] error: sensor_read,314 ret = -5
+[    6.323621]  sensor_read: addr=0x3f0 value = 0x0
+[    6.328381] err sensor read addr = 0x3f0, value = 0x0
+[    6.421442] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    6.429011] i2c i2c-1: --I2C txabrt:
+[    6.432722] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.439289] error: sensor_read,314 ret = -5
+[    6.443616]  sensor_read: addr=0x3107 value = 0x0
+[    6.448469] err sensor read addr = 0x3107, value = 0x0
+[    6.541438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    6.549004] i2c i2c-1: --I2C txabrt:
+[    6.552710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.559280] error: sensor_read,314 ret = -5
+[    6.563607]  sensor_read: addr=0x302e value = 0x0
+[    6.568455] err sensor read addr = 0x302e, value = 0x0
+[    6.661439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    6.669005] i2c i2c-1: --I2C txabrt:
+[    6.672713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.679281] error: sensor_read,314 ret = -5
+[    6.683606]  sensor_read: addr=0x302e value = 0x0
+[    6.688460] err sensor read addr = 0x302e, value = 0x0
+[    6.781456] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    6.789032] i2c i2c-1: --I2C txabrt:
+[    6.792740] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.799315] error: sensor_read,314 ret = -5
+[    6.803645]  sensor_read: addr=0x3b00 value = 0x0
+[    6.808498] err sensor read addr = 0x3b00, value = 0x0
+[    6.901442] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    6.909013] i2c i2c-1: --I2C txabrt:
+[    6.912721] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    6.919290] error: sensor_read,314 ret = -5
+[    6.923614]  sensor_read: addr=0x3107 value = 0x0
+[    6.928465] err sensor read addr = 0x3107, value = 0x0
+[    7.021445] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.029016] i2c i2c-1: --I2C txabrt:
+[    7.032723] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.039292] error: sensor_read,314 ret = -5
+[    7.043619]  sensor_read: addr=0x3107 value = 0x0
+[    7.048470] err sensor read addr = 0x3107, value = 0x0
+[    7.141442] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.149012] i2c i2c-1: --I2C txabrt:
+[    7.152722] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.159290] error: sensor_read,314 ret = -5
+[    7.163617]  sensor_read: addr=0x3f0 value = 0x0
+[    7.168375] err sensor read addr = 0x3f0, value = 0x0
+[    7.261440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.269008] i2c i2c-1: --I2C txabrt:
+[    7.272720] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.279291] error: sensor_read,314 ret = -5
+[    7.283617]  sensor_read: addr=0x3000 value = 0x0
+[    7.288470] err sensor read addr = 0x3000, value = 0x0
+[    7.381438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.389004] i2c i2c-1: --I2C txabrt:
+[    7.392710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.399288] error: sensor_read,314 ret = -5
+[    7.403612]  sensor_read: addr=0xa value = 0x0
+[    7.408195] err sensor read addr = 0xa, value = 0x0
+[    7.501439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.509003] i2c i2c-1: --I2C txabrt:
+[    7.512710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.519279] error: sensor_read,314 ret = -5
+[    7.523602]  sensor_read: addr=0x300a value = 0x0
+[    7.528453] err sensor read addr = 0x300a, value = 0x0
+[    7.621438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.629005] i2c i2c-1: --I2C txabrt:
+[    7.632711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.639280] error: sensor_read,314 ret = -5
+[    7.643604]  sensor_read: addr=0x300b value = 0x0
+[    7.648453] err sensor read addr = 0x300b, value = 0x0
+[    7.741437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.749001] i2c i2c-1: --I2C txabrt:
+[    7.752709] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.759292] error: sensor_read,314 ret = -5
+[    7.763613]  sensor_read: addr=0xa value = 0x0
+[    7.768194] err sensor read addr = 0xa, value = 0x0
+[    7.861438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.869003] i2c i2c-1: --I2C txabrt:
+[    7.872713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.879283] error: sensor_read,314 ret = -5
+[    7.883608]  sensor_read: addr=0x580b value = 0x0
+[    7.888461] err sensor read addr = 0x580b, value = 0x0
+[    7.981438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    7.989006] i2c i2c-1: --I2C txabrt:
+[    7.992714] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    7.999281] error: sensor_read,314 ret = -5
+[    8.003629]  sensor_read: addr=0x580b value = 0x0
+[    8.008482] err sensor read addr = 0x580b, value = 0x0
+[    8.101443] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.109009] i2c i2c-1: --I2C txabrt:
+[    8.112719] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.119290] error: sensor_read,314 ret = -5
+[    8.123613]  sensor_read: addr=0x3107 value = 0x0
+[    8.128462] err sensor read addr = 0x3107, value = 0x0
+[    8.221441] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.229014] i2c i2c-1: --I2C txabrt:
+[    8.232723] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.239292] error: sensor_read,314 ret = -5
+[    8.243618]  sensor_read: addr=0x3107 value = 0x0
+[    8.248465] err sensor read addr = 0x3107, value = 0x0
+[    8.341440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.349002] i2c i2c-1: --I2C txabrt:
+[    8.352710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.359280] error: sensor_read,314 ret = -5
+[    8.363607]  sensor_read: addr=0x3000 value = 0x0
+[    8.368459] err sensor read addr = 0x3000, value = 0x0
+[    8.461438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.469006] i2c i2c-1: --I2C txabrt:
+[    8.472713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.479288] error: sensor_read,314 ret = -5
+[    8.483610]  sensor_read: addr=0xa value = 0x0
+[    8.488193] err sensor read addr = 0xa, value = 0x0
+[    8.581438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.589003] i2c i2c-1: --I2C txabrt:
+[    8.592711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.599291] error: sensor_read,314 ret = -5
+[    8.603612]  sensor_read: addr=0xf0 value = 0x0
+[    8.608281] err sensor read addr = 0xf0, value = 0x0
+[    8.701437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.709003] i2c i2c-1: --I2C txabrt:
+[    8.712711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.719293] error: sensor_read,314 ret = -5
+[    8.723620]  sensor_read: addr=0xf0 value = 0x0
+[    8.728292] err sensor read addr = 0xf0, value = 0x0
+[    8.821438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.829000] i2c i2c-1: --I2C txabrt:
+[    8.832708] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.839287] error: sensor_read,314 ret = -5
+[    8.843610]  sensor_read: addr=0xf0 value = 0x0
+[    8.848283] err sensor read addr = 0xf0, value = 0x0
+[    8.941439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    8.949004] i2c i2c-1: --I2C txabrt:
+[    8.952711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    8.959287] error: sensor_read,314 ret = -5
+[    8.963615]  sensor_read: addr=0xfc value = 0x0
+[    8.968285] err sensor read addr = 0xfc, value = 0x0
+[    9.061445] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    9.069013] i2c i2c-1: --I2C txabrt:
+[    9.072725] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    9.079295] error: sensor_read,314 ret = -5
+[    9.083621]  sensor_read: addr=0x3004 value = 0x0
+[    9.088472] err sensor read addr = 0x3004, value = 0x0
+[    9.181439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    9.189006] i2c i2c-1: --I2C txabrt:
+[    9.192715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    9.199287] error: sensor_read,314 ret = -5
+[    9.203611]  sensor_read: addr=0x300a value = 0x0
+[    9.208462] err sensor read addr = 0x300a, value = 0x0
+[    9.301439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    9.309010] i2c i2c-1: --I2C txabrt:
+[    9.312718] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    9.319290] error: sensor_read,314 ret = -5
+[    9.323614]  sensor_read: addr=0x301c value = 0x0
+[    9.328468] err sensor read addr = 0x301c, value = 0x0
+[    9.421439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[    9.429008] i2c i2c-1: --I2C txabrt:
+[    9.432715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[    9.439281] error: sensor_read,314 ret = -5
+[    9.443607]  sensor_read: addr=0x3107 value = 0x0
+[    9.448459] err sensor read addr = 0x3107, value = 0x0
+[   10.091455] i2c i2c-1: --I2C txabrt:
+[   10.095150] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.101744] error: sensor_read,314 ret = -5
+[   10.106058]  sensor_read: addr=0x4 value = 0x0
+[   10.110638] err sensor read addr = 0x4, value = 0x0
+[   10.201442] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.209009] i2c i2c-1: --I2C txabrt:
+[   10.212718] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.219301] error: sensor_read,314 ret = -5
+[   10.223624]  sensor_read: addr=0xa value = 0x0
+[   10.228205] err sensor read addr = 0xa, value = 0x0
+[   10.321440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.329012] i2c i2c-1: --I2C txabrt:
+[   10.332721] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.339290] error: sensor_read,314 ret = -5
+[   10.343617]  sensor_read: addr=0x0 value = 0x0
+[   10.348194] err sensor read addr = 0x0, value = 0x0
+[   10.441439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.449009] i2c i2c-1: --I2C txabrt:
+[   10.452720] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.459288] error: sensor_read,314 ret = -5
+[   10.463613]  sensor_read: addr=0x300a value = 0x0
+[   10.468463] err sensor read addr = 0x300a, value = 0x0
+[   10.561439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.569000] i2c i2c-1: --I2C txabrt:
+[   10.572710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.579291] error: sensor_read,314 ret = -5
+[   10.583615]  sensor_read: addr=0xa value = 0x0
+[   10.588197] err sensor read addr = 0xa, value = 0x0
+[   10.681439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.689007] i2c i2c-1: --I2C txabrt:
+[   10.692715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.699281] error: sensor_read,314 ret = -5
+[   10.703603]  sensor_read: addr=0x301c value = 0x0
+[   10.708454] err sensor read addr = 0x301c, value = 0x0
+[   10.801439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.809000] i2c i2c-1: --I2C txabrt:
+[   10.812707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.819275] error: sensor_read,314 ret = -5
+[   10.823603]  sensor_read: addr=0x3008 value = 0x0
+[   10.828454] err sensor read addr = 0x3008, value = 0x0
+[   10.921439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   10.929005] i2c i2c-1: --I2C txabrt:
+[   10.932710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   10.939282] error: sensor_read,314 ret = -5
+[   10.943604]  sensor_read: addr=0x3008 value = 0x0
+[   10.948453] err sensor read addr = 0x3008, value = 0x0
+[   11.041442] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.049007] i2c i2c-1: --I2C txabrt:
+[   11.052717] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.059294] error: sensor_read,314 ret = -5
+[   11.063617]  sensor_read: addr=0x2 value = 0x0
+[   11.068200] err sensor read addr = 0x2, value = 0x0
+[   11.161441] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.169009] i2c i2c-1: --I2C txabrt:
+[   11.172715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.179283] error: sensor_read,314 ret = -5
+[   11.183606]  sensor_read: addr=0x3107 value = 0x0
+[   11.188457] err sensor read addr = 0x3107, value = 0x0
+[   11.281440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.289008] i2c i2c-1: --I2C txabrt:
+[   11.292715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.299286] error: sensor_read,314 ret = -5
+[   11.303609]  sensor_read: addr=0x3000 value = 0x0
+[   11.308461] err sensor read addr = 0x3000, value = 0x0
+[   11.401438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.409005] i2c i2c-1: --I2C txabrt:
+[   11.412713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.419283] error: sensor_read,314 ret = -5
+[   11.423606]  sensor_read: addr=0x3107 value = 0x0
+[   11.428456] err sensor read addr = 0x3107, value = 0x0
+[   11.521438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.529001] i2c i2c-1: --I2C txabrt:
+[   11.532706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.539282] error: sensor_read,314 ret = -5
+[   11.543608]  sensor_read: addr=0xa value = 0x0
+[   11.548189] err sensor read addr = 0xa, value = 0x0
+[   11.641438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.649003] i2c i2c-1: --I2C txabrt:
+[   11.652707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.659277] error: sensor_read,314 ret = -5
+[   11.663605]  sensor_read: addr=0x3107 value = 0x0
+[   11.668455] err sensor read addr = 0x3107, value = 0x0
+[   11.761437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.769001] i2c i2c-1: --I2C txabrt:
+[   11.772707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.779290] error: sensor_read,314 ret = -5
+[   11.783614]  sensor_read: addr=0x2 value = 0x0
+[   11.788197] err sensor read addr = 0x2, value = 0x0
+[   11.881438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   11.889001] i2c i2c-1: --I2C txabrt:
+[   11.892710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   11.899292] error: sensor_read,314 ret = -5
+[   11.903615]  sensor_read: addr=0xa value = 0x0
+[   11.908198] err sensor read addr = 0xa, value = 0x0
+[   12.001439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.009001] i2c i2c-1: --I2C txabrt:
+[   12.012709] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.019290] error: sensor_read,314 ret = -5
+[   12.023617]  sensor_read: addr=0x0 value = 0x0
+[   12.028199] err sensor read addr = 0x0, value = 0x0
+[   12.121439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.129002] i2c i2c-1: --I2C txabrt:
+[   12.132710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.139292] error: sensor_read,314 ret = -5
+[   12.143615]  sensor_read: addr=0x0 value = 0x0
+[   12.148198] err sensor read addr = 0x0, value = 0x0
+[   12.241439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.249005] i2c i2c-1: --I2C txabrt:
+[   12.252713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.259283] error: sensor_read,314 ret = -5
+[   12.263609]  sensor_read: addr=0x300a value = 0x0
+[   12.268460] err sensor read addr = 0x300a, value = 0x0
+[   12.361439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.369006] i2c i2c-1: --I2C txabrt:
+[   12.372714] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.379284] error: sensor_read,314 ret = -5
+[   12.383607]  sensor_read: addr=0x300a value = 0x0
+[   12.388456] err sensor read addr = 0x300a, value = 0x0
+[   12.481438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.488999] i2c i2c-1: --I2C txabrt:
+[   12.492707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.499278] error: sensor_read,314 ret = -5
+[   12.503602]  sensor_read: addr=0x3107 value = 0x0
+[   12.508453] err sensor read addr = 0x3107, value = 0x0
+[   12.601438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.609000] i2c i2c-1: --I2C txabrt:
+[   12.612706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.619288] error: sensor_read,314 ret = -5
+[   12.623611]  sensor_read: addr=0xa value = 0x0
+[   12.628194] err sensor read addr = 0xa, value = 0x0
+[   12.721437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.729000] i2c i2c-1: --I2C txabrt:
+[   12.732710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.739289] error: sensor_read,314 ret = -5
+[   12.743613]  sensor_read: addr=0xa value = 0x0
+[   12.748194] err sensor read addr = 0xa, value = 0x0
+[   12.841439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.849007] i2c i2c-1: --I2C txabrt:
+[   12.852715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.859282] error: sensor_read,314 ret = -5
+[   12.863608]  sensor_read: addr=0x0 value = 0x0
+[   12.868189] err sensor read addr = 0x0, value = 0x0
+[   12.961436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   12.968998] i2c i2c-1: --I2C txabrt:
+[   12.972707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   12.979288] error: sensor_read,314 ret = -5
+[   12.983613]  sensor_read: addr=0xf0 value = 0x0
+[   12.988283] err sensor read addr = 0xf0, value = 0x0
+[   13.081497] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.089067] i2c i2c-1: --I2C txabrt:
+[   13.092801] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.099387] error: sensor_read,314 ret = -5
+[   13.103736]  sensor_read: addr=0xa value = 0x0
+[   13.108321] err sensor read addr = 0xa, value = 0x0
+[   13.201441] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.209006] i2c i2c-1: --I2C txabrt:
+[   13.212713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.219297] error: sensor_read,314 ret = -5
+[   13.223624]  sensor_read: addr=0x2 value = 0x0
+[   13.228206] err sensor read addr = 0x2, value = 0x0
+[   13.321439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.328998] i2c i2c-1: --I2C txabrt:
+[   13.332704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.339276] error: sensor_read,314 ret = -5
+[   13.343604]  sensor_read: addr=0x300a value = 0x0
+[   13.348456] err sensor read addr = 0x300a, value = 0x0
+[   13.441436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.449000] i2c i2c-1: --I2C txabrt:
+[   13.452707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.459276] error: sensor_read,314 ret = -5
+[   13.463601]  sensor_read: addr=0x3107 value = 0x0
+[   13.468451] err sensor read addr = 0x3107, value = 0x0
+[   13.561436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.568999] i2c i2c-1: --I2C txabrt:
+[   13.572706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.579277] error: sensor_read,314 ret = -5
+[   13.583600]  sensor_read: addr=0x3107 value = 0x0
+[   13.588452] err sensor read addr = 0x3107, value = 0x0
+[   13.681437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.688999] i2c i2c-1: --I2C txabrt:
+[   13.692706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.699275] error: sensor_read,314 ret = -5
+[   13.703599]  sensor_read: addr=0x3107 value = 0x0
+[   13.708452] err sensor read addr = 0x3107, value = 0x0
+[   13.801436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.808993] i2c i2c-1: --I2C txabrt:
+[   13.812700] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.819266] error: sensor_read,314 ret = -5
+[   13.823592]  sensor_read: addr=0x3107 value = 0x0
+[   13.828444] err sensor read addr = 0x3107, value = 0x0
+[   13.921436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   13.928996] i2c i2c-1: --I2C txabrt:
+[   13.932701] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   13.939270] error: sensor_read,314 ret = -5
+[   13.943594]  sensor_read: addr=0x3107 value = 0x0
+[   13.948446] err sensor read addr = 0x3107, value = 0x0
+[   14.041456] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.049022] i2c i2c-1: --I2C txabrt:
+[   14.052732] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.059303] error: sensor_read,314 ret = -5
+[   14.063628]  sensor_read: addr=0x3107 value = 0x0
+[   14.068478] err sensor read addr = 0x3107, value = 0x0
+[   14.161437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.168998] i2c i2c-1: --I2C txabrt:
+[   14.172706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.179288] error: sensor_read,314 ret = -5
+[   14.183611]  sensor_read: addr=0xf0 value = 0x0
+[   14.188283] err sensor read addr = 0xf0, value = 0x0
+[   14.281437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.288997] i2c i2c-1: --I2C txabrt:
+[   14.292704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.299272] error: sensor_read,314 ret = -5
+[   14.303600]  sensor_read: addr=0x3107 value = 0x0
+[   14.308449] err sensor read addr = 0x3107, value = 0x0
+[   14.401435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.408992] i2c i2c-1: --I2C txabrt:
+[   14.412699] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.419278] error: sensor_read,314 ret = -5
+[   14.423601]  sensor_read: addr=0xa value = 0x0
+[   14.428184] err sensor read addr = 0xa, value = 0x0
+[   14.521436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.528994] i2c i2c-1: --I2C txabrt:
+[   14.532703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.539284] error: sensor_read,314 ret = -5
+[   14.543610]  sensor_read: addr=0x0 value = 0x0
+[   14.548194] err sensor read addr = 0x0, value = 0x0
+[   14.641440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.649005] i2c i2c-1: --I2C txabrt:
+[   14.652715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.659298] error: sensor_read,314 ret = -5
+[   14.663622]  sensor_read: addr=0x2 value = 0x0
+[   14.668199] err sensor read addr = 0x2, value = 0x0
+[   14.761439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.769002] i2c i2c-1: --I2C txabrt:
+[   14.772709] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.779278] error: sensor_read,314 ret = -5
+[   14.783602]  sensor_read: addr=0x3107 value = 0x0
+[   14.788450] err sensor read addr = 0x3107, value = 0x0
+[   14.881436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   14.888999] i2c i2c-1: --I2C txabrt:
+[   14.892705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   14.899275] error: sensor_read,314 ret = -5
+[   14.903600]  sensor_read: addr=0x0 value = 0x0
+[   14.908184] err sensor read addr = 0x0, value = 0x0
+[   15.001442] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.009008] i2c i2c-1: --I2C txabrt:
+[   15.012716] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.019288] error: sensor_read,314 ret = -5
+[   15.023608]  sensor_read: addr=0x3000 value = 0x0
+[   15.028459] err sensor read addr = 0x3000, value = 0x0
+[   15.121440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.129005] i2c i2c-1: --I2C txabrt:
+[   15.132715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.139294] error: sensor_read,314 ret = -5
+[   15.143619]  sensor_read: addr=0xa value = 0x0
+[   15.148200] err sensor read addr = 0xa, value = 0x0
+[   15.241437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.248999] i2c i2c-1: --I2C txabrt:
+[   15.252708] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.259285] error: sensor_read,314 ret = -5
+[   15.263615]  sensor_read: addr=0x3107 value = 0x0
+[   15.268469] err sensor read addr = 0x3107, value = 0x0
+[   15.361438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.368996] i2c i2c-1: --I2C txabrt:
+[   15.372700] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.379272] error: sensor_read,314 ret = -5
+[   15.383596]  sensor_read: addr=0x300a value = 0x0
+[   15.388449] err sensor read addr = 0x300a, value = 0x0
+[   15.481436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.489000] i2c i2c-1: --I2C txabrt:
+[   15.492705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.499286] error: sensor_read,314 ret = -5
+[   15.503607]  sensor_read: addr=0x0 value = 0x0
+[   15.508187] err sensor read addr = 0x0, value = 0x0
+[   15.601435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.608995] i2c i2c-1: --I2C txabrt:
+[   15.612699] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.619281] error: sensor_read,314 ret = -5
+[   15.623607]  sensor_read: addr=0xa value = 0x0
+[   15.628187] err sensor read addr = 0xa, value = 0x0
+[   15.721436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.728998] i2c i2c-1: --I2C txabrt:
+[   15.732704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.739274] error: sensor_read,314 ret = -5
+[   15.743594]  sensor_read: addr=0x3107 value = 0x0
+[   15.748443] err sensor read addr = 0x3107, value = 0x0
+[   15.841435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.848999] i2c i2c-1: --I2C txabrt:
+[   15.852705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.859285] error: sensor_read,314 ret = -5
+[   15.863609]  sensor_read: addr=0x0 value = 0x0
+[   15.868190] err sensor read addr = 0x0, value = 0x0
+[   15.961435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   15.968996] i2c i2c-1: --I2C txabrt:
+[   15.972700] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   15.979282] error: sensor_read,314 ret = -5
+[   15.983604]  sensor_read: addr=0x2 value = 0x0
+[   15.988182] err sensor read addr = 0x2, value = 0x0
+[   16.081438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   16.089002] i2c i2c-1: --I2C txabrt:
+[   16.092710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   16.099293] error: sensor_read,314 ret = -5
+[   16.103615]  sensor_read: addr=0xa value = 0x0
+[   16.108198] err sensor read addr = 0xa, value = 0x0
+[   16.201438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   16.208991] i2c i2c-1: --I2C txabrt:
+[   16.212758] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   16.219357] error: sensor_read,314 ret = -5
+[   16.223734]  sensor_read: addr=0xa value = 0x0
+[   16.228322] err sensor read addr = 0xa, value = 0x0
+[   16.321447] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   16.329014] i2c i2c-1: --I2C txabrt:
+[   16.332724] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   16.339294] error: sensor_read,314 ret = -5
+[   16.343618]  sensor_read: addr=0x3107 value = 0x0
+[   16.348467] err sensor read addr = 0x3107, value = 0x0
+[   16.441438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   16.448999] i2c i2c-1: --I2C txabrt:
+[   16.452706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   16.459289] error: sensor_read,314 ret = -5
+[   16.463608]  sensor_read: addr=0xa value = 0x0
+[   16.468186] err sensor read addr = 0xa, value = 0x0
+[   16.561437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   16.569001] i2c i2c-1: --I2C txabrt:
+[   16.572706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   16.579272] error: sensor_read,314 ret = -5
+[   16.583593]  sensor_read: addr=0x0 value = 0x0
+[   16.588173] err sensor read addr = 0x0, value = 0x0
+[   16.681437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   16.689001] i2c i2c-1: --I2C txabrt:
+[   16.692709] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   16.699278] error: sensor_read,314 ret = -5
+[   16.703599]  sensor_read: addr=0x3107 value = 0x0
+[   16.708452] err sensor read addr = 0x3107, value = 0x0
+[   16.713764] info: failed sensor find
+[   16.717449] name : i2c2 nr : 2
+[   16.720593] name : i2c3 nr : 3
+SENSOR NOT FOUND
+sh: NOT: unknown operand
+sh: NOT: unknown operand
+sh: [   16.731328] sensor_sc8238_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+NOT: unknown operand
+sh: NOT: unknown operand
+not found sensor[   16.742425] sensor_sc8238_t40: Unknown symbol private_clk_set_rate (err 0)
+!!!
+[   16.755046] sensor_sc8238_t40: Unknown symbol private_clk_get_rate (err 0)
+[   16.762572] sensor_sc8238_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   16.769491] sensor_sc8238_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   16.776791] sensor_sc8238_t40: Unknown symbol private_gpio_request (err 0)
+[   16.783933] sensor_sc8238_t40: Unknown symbol private_gpio_free (err 0)
+[   16.790759] sensor_sc8238_t40: Unknown symbol private_msleep (err 0)
+[   16.797343] sensor_sc8238_t40: Unknown symbol private_devm_clk_get (err 0)
+[   16.804456] sensor_sc8238_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   16.812106] sensor_sc8238_t40: Unknown symbol isp_printf (err 0)
+[   16.818310] sensor_sc8238_t40: Unknown symbol private_capable (err 0)
+[   16.824977] sensor_sc8238_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   16.832898] sensor_sc8238_t40: Unknown symbol private_devm_clk_put (err 0)
+[   16.840000] sensor_sc8238_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   16.847383] sensor_sc8238_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   16.855032] sensor_sc8238_t40: Unknown symbol private_i2c_transfer (err 0)
+[   16.862135] sensor_sc8238_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   16.869771] sensor_sc8238_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   16.877063] sensor_sc8238_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_sc8238_t40.ko': unknown symbol in m[   16.913620] sensor_imx415_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+odule or invalid parameter
+[   16.924227] sensor_imx415_t40: Unknown symbol private_clk_set_rate (err 0)
+[   16.933720] sensor_imx415_t40: Unknown symbol private_clk_get_rate (err 0)
+[   16.940821] sensor_imx415_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   16.947758] sensor_imx415_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   16.955062] sensor_imx415_t40: Unknown symbol private_gpio_request (err 0)
+[   16.962190] sensor_imx415_t40: Unknown symbol private_gpio_free (err 0)
+[   16.969020] sensor_imx415_t40: Unknown symbol private_msleep (err 0)
+[   16.975603] sensor_imx415_t40: Unknown symbol private_devm_clk_get (err 0)
+[   16.982719] sensor_imx415_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   16.990356] sensor_imx415_t40: Unknown symbol isp_printf (err 0)
+[   16.996579] sensor_imx415_t40: Unknown symbol private_capable (err 0)
+[   17.003246] sensor_imx415_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   17.011147] sensor_imx415_t40: Unknown symbol private_devm_clk_put (err 0)
+[   17.018266] sensor_imx415_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   17.025651] sensor_imx415_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   17.033326] sensor_imx415_t40: Unknown symbol private_i2c_transfer (err 0)
+[   17.040425] sensor_imx415_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   17.048083] sensor_imx415_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   17.055379] sensor_imx415_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_imx415_t40.ko': unknown symbol in m[   17.093684] sensor_imx335_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+odule or invalid parameter
+[   17.104209] sensor_imx335_t40: Unknown symbol private_clk_set_rate (err 0)
+[   17.113703] sensor_imx335_t40: Unknown symbol private_clk_get_rate (err 0)
+[   17.120803] sensor_imx335_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   17.127743] sensor_imx335_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   17.135048] sensor_imx335_t40: Unknown symbol private_gpio_request (err 0)
+[   17.142176] sensor_imx335_t40: Unknown symbol private_gpio_free (err 0)
+[   17.149006] sensor_imx335_t40: Unknown symbol private_msleep (err 0)
+[   17.155588] sensor_imx335_t40: Unknown symbol private_devm_clk_get (err 0)
+[   17.162706] sensor_imx335_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   17.170345] sensor_imx335_t40: Unknown symbol isp_printf (err 0)
+[   17.176567] sensor_imx335_t40: Unknown symbol private_capable (err 0)
+[   17.183236] sensor_imx335_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   17.191143] sensor_imx335_t40: Unknown symbol private_devm_clk_put (err 0)
+[   17.198259] sensor_imx335_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   17.205645] sensor_imx335_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   17.213292] sensor_imx335_t40: Unknown symbol private_i2c_transfer (err 0)
+[   17.220387] sensor_imx335_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   17.228041] sensor_imx335_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   17.235328] sensor_imx335_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_imx335_t40.ko': unknown symbol in m[   17.273600] sensor_imx334_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+odule or invalid parameter
+[   17.284220] sensor_imx334_t40: Unknown symbol private_clk_set_rate (err 0)
+[   17.293713] sensor_imx334_t40: Unknown symbol private_clk_get_rate (err 0)
+[   17.300810] sensor_imx334_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   17.307748] sensor_imx334_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   17.315045] sensor_imx334_t40: Unknown symbol private_gpio_request (err 0)
+[   17.322172] sensor_imx334_t40: Unknown symbol private_gpio_free (err 0)
+[   17.329001] sensor_imx334_t40: Unknown symbol private_msleep (err 0)
+[   17.335585] sensor_imx334_t40: Unknown symbol private_devm_clk_get (err 0)
+[   17.342698] sensor_imx334_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   17.350334] sensor_imx334_t40: Unknown symbol isp_printf (err 0)
+[   17.356554] sensor_imx334_t40: Unknown symbol private_capable (err 0)
+[   17.363223] sensor_imx334_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   17.371124] sensor_imx334_t40: Unknown symbol private_devm_clk_put (err 0)
+[   17.378243] sensor_imx334_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   17.385627] sensor_imx334_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   17.393275] sensor_imx334_t40: Unknown symbol private_i2c_transfer (err 0)
+[   17.400373] sensor_imx334_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   17.408023] sensor_imx334_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   17.415310] sensor_imx334_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_imx334_t40.ko': unknown symbol in module or invalid parameter
+[   17.456212] @@@@@ inner codec power up@@@@@@
+[   17.751453] @@@@ audio driver ok(version H20210524a) @@@@@
+[   17.761207] jz_pwm_probe[359] d_name = ingenic,tcu_chn0
+[   17.767039] jz_pwm_probe[359] d_name = ingenic,tcu_chn1
+[   17.772696] The version of PWM driver is H20210412a
+[   17.782777] request pwm channel 0 successfully
+[   17.787393] request pwm channel 1 successfully
+[   17.792325] pwm-jz pwm-jz: jz_pwm_probe register ok !
+[   17.803079] soc_nna_probe success
+[   17.806699] soc_nna_init success
+insmod: can't read 'ourdrv/8188fu.ko': No such file or directory
+insmod ko ok
+DetectSensorType=SENSOR NOT FOUND
+AUTO
+sh: NOT: unknown operand
+t40xp
+insmod: can't insert 'sinfo.ko': File exists
+[   17.834785] name : i2c0 nr : 0
+[   17.841671] name : i2c1 nr : 1
+[   17.931447] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   17.939013] i2c i2c-1: --I2C txabrt:
+[   17.942723] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   17.949301] error: sensor_read,314 ret = -5
+[   17.953627]  sensor_read: addr=0xf0 value = 0x0
+[   17.958301] err sensor read addr = 0xf0, value = 0x0
+[   18.051440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.059002] i2c i2c-1: --I2C txabrt:
+[   18.062713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.069280] error: sensor_read,314 ret = -5
+[   18.073606]  sensor_read: addr=0x3f0 value = 0x0
+[   18.078371] err sensor read addr = 0x3f0, value = 0x0
+[   18.171440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.178999] i2c i2c-1: --I2C txabrt:
+[   18.182705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.189276] error: sensor_read,314 ret = -5
+[   18.193600]  sensor_read: addr=0x3107 value = 0x0
+[   18.198450] err sensor read addr = 0x3107, value = 0x0
+[   18.291437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.298996] i2c i2c-1: --I2C txabrt:
+[   18.302704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.309270] error: sensor_read,314 ret = -5
+[   18.313597]  sensor_read: addr=0x302e value = 0x0
+[   18.318446] err sensor read addr = 0x302e, value = 0x0
+[   18.411437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.418996] i2c i2c-1: --I2C txabrt:
+[   18.422702] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.429272] error: sensor_read,314 ret = -5
+[   18.433598]  sensor_read: addr=0x302e value = 0x0
+[   18.438447] err sensor read addr = 0x302e, value = 0x0
+[   18.531436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.538994] i2c i2c-1: --I2C txabrt:
+[   18.542699] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.549264] error: sensor_read,314 ret = -5
+[   18.553586]  sensor_read: addr=0x3b00 value = 0x0
+[   18.558435] err sensor read addr = 0x3b00, value = 0x0
+[   18.651437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.659000] i2c i2c-1: --I2C txabrt:
+[   18.662705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.669276] error: sensor_read,314 ret = -5
+[   18.673599]  sensor_read: addr=0x3107 value = 0x0
+[   18.678446] err sensor read addr = 0x3107, value = 0x0
+[   18.771436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.778997] i2c i2c-1: --I2C txabrt:
+[   18.782704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.789271] error: sensor_read,314 ret = -5
+[   18.793594]  sensor_read: addr=0x3107 value = 0x0
+[   18.798448] err sensor read addr = 0x3107, value = 0x0
+[   18.891436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   18.899000] i2c i2c-1: --I2C txabrt:
+[   18.902709] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   18.909277] error: sensor_read,314 ret = -5
+[   18.913601]  sensor_read: addr=0x3f0 value = 0x0
+[   18.918361] err sensor read addr = 0x3f0, value = 0x0
+[   19.011445] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.019006] i2c i2c-1: --I2C txabrt:
+[   19.022715] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.029287] error: sensor_read,314 ret = -5
+[   19.033639]  sensor_read: addr=0x3000 value = 0x0
+[   19.038490] err sensor read addr = 0x3000, value = 0x0
+[   19.131438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.139001] i2c i2c-1: --I2C txabrt:
+[   19.142703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.149283] error: sensor_read,314 ret = -5
+[   19.153608]  sensor_read: addr=0xa value = 0x0
+[   19.158191] err sensor read addr = 0xa, value = 0x0
+[   19.251438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.258999] i2c i2c-1: --I2C txabrt:
+[   19.262707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.269275] error: sensor_read,314 ret = -5
+[   19.273601]  sensor_read: addr=0x300a value = 0x0
+[   19.278450] err sensor read addr = 0x300a, value = 0x0
+[   19.371494] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.379070] i2c i2c-1: --I2C txabrt:
+[   19.382819] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.389395] error: sensor_read,314 ret = -5
+[   19.393830]  sensor_read: addr=0x300b value = 0x0
+[   19.398698] err sensor read addr = 0x300b, value = 0x0
+[   19.491447] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.499015] i2c i2c-1: --I2C txabrt:
+[   19.502728] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.509309] error: sensor_read,314 ret = -5
+[   19.513634]  sensor_read: addr=0xa value = 0x0
+[   19.518217] err sensor read addr = 0xa, value = 0x0
+[   19.611445] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.619010] i2c i2c-1: --I2C txabrt:
+[   19.622719] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.629289] error: sensor_read,314 ret = -5
+[   19.633615]  sensor_read: addr=0x580b value = 0x0
+[   19.638466] err sensor read addr = 0x580b, value = 0x0
+[   19.731437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.738997] i2c i2c-1: --I2C txabrt:
+[   19.742703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.749273] error: sensor_read,314 ret = -5
+[   19.753600]  sensor_read: addr=0x580b value = 0x0
+[   19.758451] err sensor read addr = 0x580b, value = 0x0
+[   19.851437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.858997] i2c i2c-1: --I2C txabrt:
+[   19.862705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.869276] error: sensor_read,314 ret = -5
+[   19.873598]  sensor_read: addr=0x3107 value = 0x0
+[   19.878450] err sensor read addr = 0x3107, value = 0x0
+[   19.971437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   19.979001] i2c i2c-1: --I2C txabrt:
+[   19.982711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   19.989281] error: sensor_read,314 ret = -5
+[   19.993607]  sensor_read: addr=0x3107 value = 0x0
+[   19.998461] err sensor read addr = 0x3107, value = 0x0
+[   20.091441] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.099004] i2c i2c-1: --I2C txabrt:
+[   20.102716] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.109285] error: sensor_read,314 ret = -5
+[   20.113609]  sensor_read: addr=0x3000 value = 0x0
+[   20.118459] err sensor read addr = 0x3000, value = 0x0
+[   20.211437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.218996] i2c i2c-1: --I2C txabrt:
+[   20.222700] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.229279] error: sensor_read,314 ret = -5
+[   20.233600]  sensor_read: addr=0xa value = 0x0
+[   20.238183] err sensor read addr = 0xa, value = 0x0
+[   20.331436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.338997] i2c i2c-1: --I2C txabrt:
+[   20.342707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.349285] error: sensor_read,314 ret = -5
+[   20.353610]  sensor_read: addr=0xf0 value = 0x0
+[   20.358282] err sensor read addr = 0xf0, value = 0x0
+[   20.451436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.458998] i2c i2c-1: --I2C txabrt:
+[   20.462706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.469287] error: sensor_read,314 ret = -5
+[   20.473613]  sensor_read: addr=0xf0 value = 0x0
+[   20.478281] err sensor read addr = 0xf0, value = 0x0
+[   20.571435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.578995] i2c i2c-1: --I2C txabrt:
+[   20.582702] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.589282] error: sensor_read,314 ret = -5
+[   20.593604]  sensor_read: addr=0xf0 value = 0x0
+[   20.598272] err sensor read addr = 0xf0, value = 0x0
+[   20.691435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.698997] i2c i2c-1: --I2C txabrt:
+[   20.702705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.709286] error: sensor_read,314 ret = -5
+[   20.713608]  sensor_read: addr=0xfc value = 0x0
+[   20.718277] err sensor read addr = 0xfc, value = 0x0
+[   20.811435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.819000] i2c i2c-1: --I2C txabrt:
+[   20.822703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.829274] error: sensor_read,314 ret = -5
+[   20.833598]  sensor_read: addr=0x3004 value = 0x0
+[   20.838444] err sensor read addr = 0x3004, value = 0x0
+[   20.931437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   20.938998] i2c i2c-1: --I2C txabrt:
+[   20.942703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   20.949272] error: sensor_read,314 ret = -5
+[   20.953598]  sensor_read: addr=0x300a value = 0x0
+[   20.958448] err sensor read addr = 0x300a, value = 0x0
+[   21.051438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   21.059006] i2c i2c-1: --I2C txabrt:
+[   21.062716] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   21.069303] error: sensor_read,314 ret = -5
+[   21.073639]  sensor_read: addr=0x301c value = 0x0
+
+[   21.078500] err sensor read addr = 0x301c, value = 0x0
+(Ingenic-linux-t40) login: [   21.171445] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   21.179009] i2c i2c-1: --I2C txabrt:
+[   21.182721] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   21.189294] error: sensor_read,314 ret = -5
+[   21.193615]  sensor_read: addr=0x3107 value = 0x0
+[   21.198465] err sensor read addr = 0x3107, value = 0x0
+[   21.841443] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   21.849005] i2c i2c-1: --I2C txabrt:
+[   21.852711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   21.859292] error: sensor_read,314 ret = -5
+[   21.863617]  sensor_read: addr=0x4 value = 0x0
+[   21.868199] err sensor read addr = 0x4, value = 0x0
+[   21.961437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   21.968993] i2c i2c-1: --I2C txabrt:
+[   21.972701] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   21.979281] error: sensor_read,314 ret = -5
+[   21.983605]  sensor_read: addr=0xa value = 0x0
+[   21.988187] err sensor read addr = 0xa, value = 0x0
+[   22.081440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.089004] i2c i2c-1: --I2C txabrt:
+[   22.092713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.099283] error: sensor_read,314 ret = -5
+[   22.103606]  sensor_read: addr=0x0 value = 0x0
+[   22.108188] err sensor read addr = 0x0, value = 0x0
+[   22.201437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.208997] i2c i2c-1: --I2C txabrt:
+[   22.212704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.219275] error: sensor_read,314 ret = -5
+[   22.223599]  sensor_read: addr=0x300a value = 0x0
+[   22.228450] err sensor read addr = 0x300a, value = 0x0
+[   22.321435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.328995] i2c i2c-1: --I2C txabrt:
+[   22.332704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.339285] error: sensor_read,314 ret = -5
+[   22.343608]  sensor_read: addr=0xa value = 0x0
+[   22.348185] err sensor read addr = 0xa, value = 0x0
+[   22.441438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.448999] i2c i2c-1: --I2C txabrt:
+[   22.452704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.459273] error: sensor_read,314 ret = -5
+[   22.463594]  sensor_read: addr=0x301c value = 0x0
+[   22.468447] err sensor read addr = 0x301c, value = 0x0
+[   22.561490] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.569057] i2c i2c-1: --I2C txabrt:
+[   22.572801] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.579378] error: sensor_read,314 ret = -5
+[   22.583734]  sensor_read: addr=0x3008 value = 0x0
+[   22.588588] err sensor read addr = 0x3008, value = 0x0
+[   22.681443] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.689008] i2c i2c-1: --I2C txabrt:
+[   22.692718] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.699287] error: sensor_read,314 ret = -5
+[   22.703612]  sensor_read: addr=0x3008 value = 0x0
+[   22.708462] err sensor read addr = 0x3008, value = 0x0
+[   22.801437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.808999] i2c i2c-1: --I2C txabrt:
+[   22.812706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.819282] error: sensor_read,314 ret = -5
+[   22.823608]  sensor_read: addr=0x2 value = 0x0
+[   22.828192] err sensor read addr = 0x2, value = 0x0
+[   22.921437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   22.928998] i2c i2c-1: --I2C txabrt:
+[   22.932704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   22.939275] error: sensor_read,314 ret = -5
+[   22.943601]  sensor_read: addr=0x3107 value = 0x0
+[   22.948453] err sensor read addr = 0x3107, value = 0x0
+[   23.041457] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.049022] i2c i2c-1: --I2C txabrt:
+[   23.052729] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.059295] error: sensor_read,314 ret = -5
+[   23.063621]  sensor_read: addr=0x3000 value = 0x0
+[   23.068476] err sensor read addr = 0x3000, value = 0x0
+[   23.161439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.169006] i2c i2c-1: --I2C txabrt:
+[   23.172713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.179284] error: sensor_read,314 ret = -5
+[   23.183605]  sensor_read: addr=0x3107 value = 0x0
+[   23.188455] err sensor read addr = 0x3107, value = 0x0
+[   23.281437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.288999] i2c i2c-1: --I2C txabrt:
+[   23.292705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.299284] error: sensor_read,314 ret = -5
+[   23.303608]  sensor_read: addr=0xa value = 0x0
+[   23.308191] err sensor read addr = 0xa, value = 0x0
+[   23.401437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.409001] i2c i2c-1: --I2C txabrt:
+[   23.412705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.419275] error: sensor_read,314 ret = -5
+[   23.423598]  sensor_read: addr=0x3107 value = 0x0
+[   23.428448] err sensor read addr = 0x3107, value = 0x0
+[   23.521438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.528997] i2c i2c-1: --I2C txabrt:
+[   23.532703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.539284] error: sensor_read,314 ret = -5
+[   23.543606]  sensor_read: addr=0x2 value = 0x0
+[   23.548190] err sensor read addr = 0x2, value = 0x0
+[   23.641436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.648997] i2c i2c-1: --I2C txabrt:
+[   23.652704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.659285] error: sensor_read,314 ret = -5
+[   23.663611]  sensor_read: addr=0xa value = 0x0
+[   23.668193] err sensor read addr = 0xa, value = 0x0
+[   23.761435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.768991] i2c i2c-1: --I2C txabrt:
+[   23.772699] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.779280] error: sensor_read,314 ret = -5
+[   23.783605]  sensor_read: addr=0x0 value = 0x0
+[   23.788188] err sensor read addr = 0x0, value = 0x0
+[   23.881435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   23.888989] i2c i2c-1: --I2C txabrt:
+[   23.892693] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   23.899271] error: sensor_read,314 ret = -5
+[   23.903598]  sensor_read: addr=0x0 value = 0x0
+[   23.908179] err sensor read addr = 0x0, value = 0x0
+[   24.001445] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.009009] i2c i2c-1: --I2C txabrt:
+[   24.012720] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.019290] error: sensor_read,314 ret = -5
+[   24.023610]  sensor_read: addr=0x300a value = 0x0
+[   24.028464] err sensor read addr = 0x300a, value = 0x0
+[   24.121438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.128999] i2c i2c-1: --I2C txabrt:
+[   24.132704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.139277] error: sensor_read,314 ret = -5
+[   24.143600]  sensor_read: addr=0x300a value = 0x0
+[   24.148449] err sensor read addr = 0x300a, value = 0x0
+[   24.241438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.249002] i2c i2c-1: --I2C txabrt:
+[   24.252708] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.259276] error: sensor_read,314 ret = -5
+[   24.263600]  sensor_read: addr=0x3107 value = 0x0
+[   24.268453] err sensor read addr = 0x3107, value = 0x0
+[   24.361436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.368996] i2c i2c-1: --I2C txabrt:
+[   24.372702] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.379283] error: sensor_read,314 ret = -5
+[   24.383607]  sensor_read: addr=0xa value = 0x0
+[   24.388190] err sensor read addr = 0xa, value = 0x0
+[   24.481436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.488995] i2c i2c-1: --I2C txabrt:
+[   24.492700] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.499281] error: sensor_read,314 ret = -5
+[   24.503602]  sensor_read: addr=0xa value = 0x0
+[   24.508184] err sensor read addr = 0xa, value = 0x0
+[   24.601446] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.609012] i2c i2c-1: --I2C txabrt:
+[   24.612716] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.619284] error: sensor_read,314 ret = -5
+[   24.623608]  sensor_read: addr=0x0 value = 0x0
+[   24.628189] err sensor read addr = 0x0, value = 0x0
+[   24.721438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.728999] i2c i2c-1: --I2C txabrt:
+[   24.732706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.739286] error: sensor_read,314 ret = -5
+[   24.743611]  sensor_read: addr=0xf0 value = 0x0
+[   24.748283] err sensor read addr = 0xf0, value = 0x0
+[   24.841435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.848995] i2c i2c-1: --I2C txabrt:
+[   24.852699] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.859278] error: sensor_read,314 ret = -5
+[   24.863602]  sensor_read: addr=0xa value = 0x0
+[   24.868181] err sensor read addr = 0xa, value = 0x0
+[   24.961436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   24.968997] i2c i2c-1: --I2C txabrt:
+[   24.972703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   24.979284] error: sensor_read,314 ret = -5
+[   24.983609]  sensor_read: addr=0x2 value = 0x0
+[   24.988191] err sensor read addr = 0x2, value = 0x0
+[   25.081440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.089005] i2c i2c-1: --I2C txabrt:
+[   25.092710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.099276] error: sensor_read,314 ret = -5
+[   25.103601]  sensor_read: addr=0x300a value = 0x0
+[   25.108452] err sensor read addr = 0x300a, value = 0x0
+[   25.201436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.208997] i2c i2c-1: --I2C txabrt:
+[   25.212705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.219274] error: sensor_read,314 ret = -5
+[   25.223598]  sensor_read: addr=0x3107 value = 0x0
+[   25.228448] err sensor read addr = 0x3107, value = 0x0
+[   25.321438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.329005] i2c i2c-1: --I2C txabrt:
+[   25.332713] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.339282] error: sensor_read,314 ret = -5
+[   25.343606]  sensor_read: addr=0x3107 value = 0x0
+[   25.348456] err sensor read addr = 0x3107, value = 0x0
+[   25.441436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.448999] i2c i2c-1: --I2C txabrt:
+[   25.452705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.459277] error: sensor_read,314 ret = -5
+[   25.463599]  sensor_read: addr=0x3107 value = 0x0
+[   25.468448] err sensor read addr = 0x3107, value = 0x0
+[   25.561436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.568996] i2c i2c-1: --I2C txabrt:
+[   25.572703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.579274] error: sensor_read,314 ret = -5
+[   25.583595]  sensor_read: addr=0x3107 value = 0x0
+[   25.588447] err sensor read addr = 0x3107, value = 0x0
+[   25.681436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.688994] i2c i2c-1: --I2C txabrt:
+[   25.692758] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.699356] error: sensor_read,314 ret = -5
+[   25.703736]  sensor_read: addr=0x3107 value = 0x0
+[   25.708591] err sensor read addr = 0x3107, value = 0x0
+[   25.801447] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.809017] i2c i2c-1: --I2C txabrt:
+[   25.812725] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.819295] error: sensor_read,314 ret = -5
+[   25.823622]  sensor_read: addr=0x3107 value = 0x0
+[   25.828470] err sensor read addr = 0x3107, value = 0x0
+[   25.921437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   25.928996] i2c i2c-1: --I2C txabrt:
+[   25.932703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   25.939284] error: sensor_read,314 ret = -5
+[   25.943610]  sensor_read: addr=0xf0 value = 0x0
+[   25.948282] err sensor read addr = 0xf0, value = 0x0
+[   26.041455] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.049020] i2c i2c-1: --I2C txabrt:
+[   26.052729] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.059301] error: sensor_read,314 ret = -5
+[   26.063626]  sensor_read: addr=0x3107 value = 0x0
+[   26.068478] err sensor read addr = 0x3107, value = 0x0
+[   26.161437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.168998] i2c i2c-1: --I2C txabrt:
+[   26.172706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.179286] error: sensor_read,314 ret = -5
+[   26.183610]  sensor_read: addr=0xa value = 0x0
+[   26.188188] err sensor read addr = 0xa, value = 0x0
+[   26.281436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.288996] i2c i2c-1: --I2C txabrt:
+[   26.292702] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.299281] error: sensor_read,314 ret = -5
+[   26.303605]  sensor_read: addr=0x0 value = 0x0
+[   26.308186] err sensor read addr = 0x0, value = 0x0
+[   26.401437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.408999] i2c i2c-1: --I2C txabrt:
+[   26.412705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.419285] error: sensor_read,314 ret = -5
+[   26.423611]  sensor_read: addr=0x2 value = 0x0
+[   26.428189] err sensor read addr = 0x2, value = 0x0
+[   26.521438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.529002] i2c i2c-1: --I2C txabrt:
+[   26.532705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.539277] error: sensor_read,314 ret = -5
+[   26.543599]  sensor_read: addr=0x3107 value = 0x0
+[   26.548447] err sensor read addr = 0x3107, value = 0x0
+[   26.641436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.649000] i2c i2c-1: --I2C txabrt:
+[   26.652708] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.659281] error: sensor_read,314 ret = -5
+[   26.663607]  sensor_read: addr=0x0 value = 0x0
+[   26.668188] err sensor read addr = 0x0, value = 0x0
+[   26.761436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.768999] i2c i2c-1: --I2C txabrt:
+[   26.772704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.779270] error: sensor_read,314 ret = -5
+[   26.783596]  sensor_read: addr=0x3000 value = 0x0
+[   26.788448] err sensor read addr = 0x3000, value = 0x0
+[   26.881435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   26.888995] i2c i2c-1: --I2C txabrt:
+[   26.892702] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   26.899283] error: sensor_read,314 ret = -5
+[   26.903606]  sensor_read: addr=0xa value = 0x0
+[   26.908188] err sensor read addr = 0xa, value = 0x0
+[   27.001440] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.009005] i2c i2c-1: --I2C txabrt:
+[   27.012710] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.019284] error: sensor_read,314 ret = -5
+[   27.023609]  sensor_read: addr=0x3107 value = 0x0
+[   27.028461] err sensor read addr = 0x3107, value = 0x0
+[   27.121439] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.129005] i2c i2c-1: --I2C txabrt:
+[   27.132711] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.139280] error: sensor_read,314 ret = -5
+[   27.143604]  sensor_read: addr=0x300a value = 0x0
+[   27.148450] err sensor read addr = 0x300a, value = 0x0
+[   27.241436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.248998] i2c i2c-1: --I2C txabrt:
+[   27.252706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.259287] error: sensor_read,314 ret = -5
+[   27.263612]  sensor_read: addr=0x0 value = 0x0
+[   27.268194] err sensor read addr = 0x0, value = 0x0
+[   27.361435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.368996] i2c i2c-1: --I2C txabrt:
+[   27.372702] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.379282] error: sensor_read,314 ret = -5
+[   27.383607]  sensor_read: addr=0xa value = 0x0
+[   27.388188] err sensor read addr = 0xa, value = 0x0
+[   27.481437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.488999] i2c i2c-1: --I2C txabrt:
+[   27.492707] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.499277] error: sensor_read,314 ret = -5
+[   27.503602]  sensor_read: addr=0x3107 value = 0x0
+[   27.508451] err sensor read addr = 0x3107, value = 0x0
+[   27.601435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.608998] i2c i2c-1: --I2C txabrt:
+[   27.612703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.619284] error: sensor_read,314 ret = -5
+[   27.623607]  sensor_read: addr=0x0 value = 0x0
+[   27.628189] err sensor read addr = 0x0, value = 0x0
+[   27.721435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.728993] i2c i2c-1: --I2C txabrt:
+[   27.732697] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.739274] error: sensor_read,314 ret = -5
+[   27.743598]  sensor_read: addr=0x2 value = 0x0
+[   27.748181] err sensor read addr = 0x2, value = 0x0
+[   27.841435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.848991] i2c i2c-1: --I2C txabrt:
+[   27.852696] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.859277] error: sensor_read,314 ret = -5
+[   27.863600]  sensor_read: addr=0xa value = 0x0
+[   27.868180] err sensor read addr = 0xa, value = 0x0
+[   27.961435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   27.968996] i2c i2c-1: --I2C txabrt:
+[   27.972703] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   27.979282] error: sensor_read,314 ret = -5
+[   27.983605]  sensor_read: addr=0xa value = 0x0
+[   27.988187] err sensor read addr = 0xa, value = 0x0
+[   28.081438] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   28.088999] i2c i2c-1: --I2C txabrt:
+[   28.092706] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   28.099274] error: sensor_read,314 ret = -5
+[   28.103596]  sensor_read: addr=0x3107 value = 0x0
+[   28.108447] err sensor read addr = 0x3107, value = 0x0
+[   28.201436] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   28.208996] i2c i2c-1: --I2C txabrt:
+[   28.212705] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   28.219281] error: sensor_read,314 ret = -5
+[   28.223603]  sensor_read: addr=0xa value = 0x0
+[   28.228185] err sensor read addr = 0xa, value = 0x0
+[   28.321437] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   28.328999] i2c i2c-1: --I2C txabrt:
+[   28.332704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   28.339276] error: sensor_read,314 ret = -5
+[   28.343602]  sensor_read: addr=0x0 value = 0x0
+[   28.348180] err sensor read addr = 0x0, value = 0x0
+[   28.441435] i2c i2c-1: i2c_ingenic_irq 446, I2C transfer error, ABORT interrupt
+[   28.448997] i2c i2c-1: --I2C txabrt:
+[   28.452704] i2c i2c-1: --I2C TXABRT[0]=I2C_TXABRT_ABRT_7B_ADDR_NOACK
+[   28.459270] error: sensor_read,314 ret = -5
+[   28.463595]  sensor_read: addr=0x3107 value = 0x0
+[   28.468447] err sensor read addr = 0x3107, value = 0x0
+[   28.473758] info: failed sensor find
+[   28.477446] name : i2c2 nr : 2
+[   28.480591] name : i2c3 nr : 3
+SENSOR NOT FOUND
+sh: NOT: unknown operand
+sh: NOT: unknown operand
+sh: [   28.491686] sensor_sc8238_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+NOT: unknown operand
+sh: NOT: unknown operand
+not found sensor[   28.502704] sensor_sc8238_t40: Unknown symbol private_clk_set_rate (err 0)
+!!!
+[   28.515375] sensor_sc8238_t40: Unknown symbol private_clk_get_rate (err 0)
+[   28.522834] sensor_sc8238_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   28.529755] sensor_sc8238_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   28.537068] sensor_sc8238_t40: Unknown symbol private_gpio_request (err 0)
+[   28.544209] sensor_sc8238_t40: Unknown symbol private_gpio_free (err 0)
+[   28.551038] sensor_sc8238_t40: Unknown symbol private_msleep (err 0)
+[   28.557617] sensor_sc8238_t40: Unknown symbol private_devm_clk_get (err 0)
+[   28.564721] sensor_sc8238_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   28.572370] sensor_sc8238_t40: Unknown symbol isp_printf (err 0)
+[   28.578568] sensor_sc8238_t40: Unknown symbol private_capable (err 0)
+[   28.585223] sensor_sc8238_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   28.593135] sensor_sc8238_t40: Unknown symbol private_devm_clk_put (err 0)
+[   28.600233] sensor_sc8238_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   28.607611] sensor_sc8238_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   28.615250] sensor_sc8238_t40: Unknown symbol private_i2c_transfer (err 0)
+[   28.622351] sensor_sc8238_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   28.629988] sensor_sc8238_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   28.637276] sensor_sc8238_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_sc8238_t40.ko': unknown symbol in m[   28.673634] sensor_imx415_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+odule or invalid parameter
+[   28.684234] sensor_imx415_t40: Unknown symbol private_clk_set_rate (err 0)
+[   28.693714] sensor_imx415_t40: Unknown symbol private_clk_get_rate (err 0)
+[   28.700818] sensor_imx415_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   28.707756] sensor_imx415_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   28.715056] sensor_imx415_t40: Unknown symbol private_gpio_request (err 0)
+[   28.722177] sensor_imx415_t40: Unknown symbol private_gpio_free (err 0)
+[   28.729002] sensor_imx415_t40: Unknown symbol private_msleep (err 0)
+[   28.735578] sensor_imx415_t40: Unknown symbol private_devm_clk_get (err 0)
+[   28.742692] sensor_imx415_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   28.750333] sensor_imx415_t40: Unknown symbol isp_printf (err 0)
+[   28.756554] sensor_imx415_t40: Unknown symbol private_capable (err 0)
+[   28.763220] sensor_imx415_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   28.771123] sensor_imx415_t40: Unknown symbol private_devm_clk_put (err 0)
+[   28.778233] sensor_imx415_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   28.785609] sensor_imx415_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   28.793253] sensor_imx415_t40: Unknown symbol private_i2c_transfer (err 0)
+[   28.800348] sensor_imx415_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   28.807998] sensor_imx415_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   28.815289] sensor_imx415_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_imx415_t40.ko': unknown symbol in module or invalid parameter
+[   28.855196] sensor_imx335_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+[   28.866775] sensor_imx335_t40: Unknown symbol private_clk_set_rate (err 0)
+[   28.873905] sensor_imx335_t40: Unknown symbol private_clk_get_rate (err 0)
+[   28.881003] sensor_imx335_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   28.887945] sensor_imx335_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   28.895250] sensor_imx335_t40: Unknown symbol private_gpio_request (err 0)
+[   28.902379] sensor_imx335_t40: Unknown symbol private_gpio_free (err 0)
+[   28.909207] sensor_imx335_t40: Unknown symbol private_msleep (err 0)
+[   28.915790] sensor_imx335_t40: Unknown symbol private_devm_clk_get (err 0)
+[   28.922907] sensor_imx335_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   28.930548] sensor_imx335_t40: Unknown symbol isp_printf (err 0)
+[   28.936773] sensor_imx335_t40: Unknown symbol private_capable (err 0)
+[   28.943441] sensor_imx335_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   28.951345] sensor_imx335_t40: Unknown symbol private_devm_clk_put (err 0)
+[   28.958464] sensor_imx335_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   28.965847] sensor_imx335_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   28.973494] sensor_imx335_t40: Unknown symbol private_i2c_transfer (err 0)
+[   28.980588] sensor_imx335_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   28.988242] sensor_imx335_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   28.995536] sensor_imx335_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_imx335_t40.ko': unknown symbol in m[   29.033741] sensor_imx334_t40: Unknown symbol tx_isp_subdev_deinit (err 0)
+odule or invalid parameter
+[   29.044280] sensor_imx334_t40: Unknown symbol private_clk_set_rate (err 0)
+[   29.053763] sensor_imx334_t40: Unknown symbol private_clk_get_rate (err 0)
+[   29.060866] sensor_imx334_t40: Unknown symbol tx_isp_subdev_init (err 0)
+[   29.067806] sensor_imx334_t40: Unknown symbol private_i2c_del_driver (err 0)
+[   29.075111] sensor_imx334_t40: Unknown symbol private_gpio_request (err 0)
+[   29.082241] sensor_imx334_t40: Unknown symbol private_gpio_free (err 0)
+[   29.089069] sensor_imx334_t40: Unknown symbol private_msleep (err 0)
+[   29.095652] sensor_imx334_t40: Unknown symbol private_devm_clk_get (err 0)
+[   29.102769] sensor_imx334_t40: Unknown symbol private_i2c_get_clientdata (err 0)
+[   29.110408] sensor_imx334_t40: Unknown symbol isp_printf (err 0)
+[   29.116632] sensor_imx334_t40: Unknown symbol private_capable (err 0)
+[   29.123301] sensor_imx334_t40: Unknown symbol private_clk_disable_unprepare (err 0)
+[   29.131204] sensor_imx334_t40: Unknown symbol private_devm_clk_put (err 0)
+[   29.138319] sensor_imx334_t40: Unknown symbol private_jzgpio_set_func (err 0)
+[   29.145700] sensor_imx334_t40: Unknown symbol private_i2c_set_clientdata (err 0)
+[   29.153348] sensor_imx334_t40: Unknown symbol private_i2c_transfer (err 0)
+[   29.160443] sensor_imx334_t40: Unknown symbol private_clk_prepare_enable (err 0)
+[   29.168097] sensor_imx334_t40: Unknown symbol private_i2c_add_driver (err 0)
+[   29.175381] sensor_imx334_t40: Unknown symbol private_gpio_direction_output (err 0)
+insmod: can't insert 'sensor_imx334_t40.ko': unknown symbol in module or invalid parameter
+insmod: can't insert 'audio.ko': File exists
+insmod: can't insert 'pwm_core.ko': File exists
+insmod: can't insert 'pwm_hal.ko': File exists
+insmod: can't insert 'soc-nna.ko': File exists
+insmod: can't insert 'ourdrv/rtc8563.ko': File exists
+insmod: can't read 'ourdrv/8188fu.ko': No such file or directory
+insmod k[   29.242600] ants_ssp_init.... 5800  5700
+o ok
+DetectSensorType=SENSOR NOT FOUND
+AUTO
+sh: NOT: unknown [   29.251315] gpio_request gpioTeam 58 0!
+operand
+insmod autolens drv AUTO
+[   29.260913] gpio_direction_output gpioTeam 58 0!
+[   29.268638] gpio_request gpioTeam 57 0!
+[   29.272739] gpio_direction_output gpioTeam 57 0!
+[   29.277511] gpio_request gpioTeam 59 0!
+[   29.281512] gpio_direction_input gpioTeam 59 0!
+[   29.286191] gpio_request gpioTeam 62 0!
+[   29.290146] gpio_direction_output gpioTeam 62 0!
+[   29.294945] gpio_request gpioTeam 52 0!
+[   29.298901] gpio_direction_output gpioTeam 52 0!
+[   29.303715] gpio_request gpioTeam 113 0!
+[   29.307764] gpio_direction_input gpioTeam 113 0!
+[   29.312556] gpio_request gpioTeam 112 0!
+[   29.316601] gpio_direction_input gpioTeam 112 0!
+[   29.321363] gpio_request gpioTeam 51 0!
+[   29.325332] gpio_direction_output gpioTeam 51 0!
+[   29.350913] appinstall (694): drop_caches: 3
+ifconfig eth0 down
+ifconfig eth0 hw ether XX:XX:XX:XX:XX:XX up
+[   29.385609] Bus Mode Reg after reset: 0x00020101, cnt=0
+ifconfig eth0 192.168.2.210 netmask 255.255.0.0
+./appinstall: line 619: startup_4g: not found
+/dev/snmpstatus not found
+net.ipv4.tcp_tw_recycle = 0
+[   29.453739] sysctl (918): drop_caches: 3
+vm.drop_caches = 3
+Thu Jan  1 00:00:29 UTC 1970
+             total         used         free       shared      buffers
+Mem:        122972        45728        77244        13020            0
+-/+ buffers:              45728        77244
+Swap:            0            0            0
+sysinit...
+update...
+killall: update: no process killed
+Start core...
+Start boardsystem...
+01-01 00:00:29 [INFO ](000000.514) - [pureUpdate_LOG] [update:937] updateLoadCfg/276: fopen /usr/etc/cfgfiles/Webserver.json error.
+01-01 00:00:29 [INFO ](000000.514) - [pureUpdate_LOG] [update:937] getWebServerConfig/338: Load /usr/etc/cfgfiles/Webserver.json failed.
+01-01 00:00:29 [INFO ](000000.514) - [pureUpdate_LOG] [update:937] updateLoadCfg/276: fopen /usr/etc/default/Webserver.json error.
+01-01 00:00:29 [INFO ](000000.514) - [pureUpdate_LOG] [update:937] getWebServerConfig/343: Load /usr/etc/cfgfiles/Webserver.json failed.
+01-01 00:00:29 [INFO ](000000.519) - [pureUpdate_LOG] [update:937] updateLoadVer/520: Get iot config error.
+open encry file fail 
+not found /tmp/boarduuid.txt
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 00:00:29 [DEBUG](000000.619) - [pureUpdate_LOG] [update:937] GetHardVerUUIDandSN/292: g_acSerialNumber = 
+open encry file fail 
+01-01 00:00:29 [INFO ](000000.619) - [pureUpdate_LOG] [update:937] updateLoadVer/1000: szUUID:[(null)]
+[   29.689158] watchdog watchdog0: watchdog did not stop!
+[   29.694537] watchdog watchdog0: watchdog did not stop!
+Module init 0
+01-01 00:00:29 [WARN ](000000.858) - [Ptz] [ovfs_ptz:939] ovfs_ptz_context_init/1040: Congfig Check!
+not found /tmp/boarduuid.txt
+01-01 00:00:29 [DEBUG](000000.861) - [pureUpdate_LOG] [update:937] GetHardVerUUIDandSN/292: g_acSerialNumber = 
+open encry file fail 
+01-01 00:00:29 [WARN ](000000.862) - [pureUpdate_LOG] [update:937] updateLoadVer/1081: It's Unactivated.
+01-01 00:00:29 [WARN ](000000.864) - [Ptz] [ovfs_ptz:939] ovfs_ptz_context_init/1044: Load CustomConfig!
+01-01 00:00:29 [WARN ](000000.864) - [Ptz] [ovfs_ptz:939] ovfs_ptz_context_init/1048: Load FileConfig!
+01-01 00:00:29 [WARN ](000000.865) - [Ptz] [ovfs_ptz:939] OpenUartDev/211: UartName:/dev/ttyS2
+01-01 00:00:29 [WARN ](000000.865) - [Ptz] [ovfs_ptz:939] FillTermiosInfo/100: baudRate:115200
+01-01 00:00:29 [INFO ](000000.866) - [Ptz] [ovfs_ptz:939] ovfs_ptz_uart_setattr/330: set uart attr idx=0 baudRate=115200 dataLen=8 stopLen=1 parity=0 flowCtl=0
+[ovfs_ptz_uart_setattr:333]attr
+01-01 00:00:29 [WARN ](000000.866) - [Ptz] [ovfs_ptz:939] FillTermiosInfo/100: baudRate:115200
+01-01 00:00:29 [INFO ](000000.868) - [Ptz] [ovfs_ptz:939] ovfs_ptz_hal_init/219: init ovfs ptz
+01-01 00:00:29 [DEBUG](000000.869) - [pureUpdate_LOG] [update:937] MultiAddrCreateAndListen/705: lo sockfd=5,type=1,port=10008,IPV4 Address 127.0.0.1
+01-01 00:00:29 [INFO ](000000.868) - [Ptz] [ovfs_ptz:939] ovfs_ptz_hal_init/227: init ptz
+01-01 00:00:29 [DEBUG](000000.869) - [pureUpdate_LOG] [update:937] MultiAddrCreateAndListen/705: eth0 sockfd=6,type=1,port=10008,IPV4 Address 192.168.2.210
+01-01 00:00:29 [INFO ](000000.869) - [Ptz] [ovfs_ptz:939] InitPtzAttr/130:  Ptz support protocol:pelcoD Idx: 1
+01-01 00:00:29 [INFO ](000000.870) - [Ptz] [ovfs_ptz:939] InitPtzAttr/130:  Ptz support protocol:pelcoP Idx: 2
+01-01 00:00:29 [WARN ](000000.871) - [Ptz] [ovfs_ptz:939] InitPtzAttr/148: ProtocolType:1, Addr:1
+01-01 00:00:29 [DEBUG](000000.870) - [pureUpdate_LOG] [update:937] MultiAddrCreateAndListen/705: lo sockfd=7,type=0,port=10008,IPV4 Address 127.0.0.1
+01-01 00:00:29 [DEBUG](000000.874) - [pureUpdate_LOG] [update:937] MultiAddrCreateAndListen/705: eth0 sockfd=8,type=0,port=10008,IPV4 Address 192.168.2.210
+01-01 00:00:29 [WARN ](000000.873) - [Ptz] [ovfs_ptz:939] ovfs_ptz_context_init/1054: HAL Init OK!
+open encry file fail 
+not found /tmp/boarduuid.txt
+chTemp=  CST-8:0
+  
+gmtime is:19700101-00:00:30
+localtime is:19700101-00:00:30
+gmtime is:19700101-00:00:30
+localtime is:19700101-08:00:30
+01-01 08:00:30 [DEBUG](000001.048) - [Core] [ovfs_core:938] get_hwclock_time/372: read ftcTime 946688408
+01-01 08:00:30 [WARN ](000001.049) - [Core] [ovfs_core:938] get_hwclock_time/378: rtc 0 ftcTime 946688408
+01-01 08:00:30 [WARN ](000001.049) - [Core] [ovfs_core:938] get_hwclock_time/390: use ftc time 
+pTime is:20000101-01:00:08
+hw_time is:20000101-01:00:08
+01-01 08:00:30 [DEBUG](000001.049) - [Core] [ovfs_core:938] proc_cnt_sys_time/442: [org]hw_time: 2000-1-1 1:0:8
+01-01 08:00:30 [DEBUG](000001.049) - [Core] [ovfs_core:938] proc_cnt_sys_time/454: [out]sys_time: 2000-1-1 1:0:8
+01-01 08:00:30 [DEBUG](000001.050) - [Core] [ovfs_core:938] get_hwclock_time/372: read ftcTime 946688408
+01-01 08:00:30 [WARN ](000001.050) - [Core] [ovfs_core:938] get_hwclock_time/378: rtc 0 ftcTime 946688408
+01-01 08:00:30 [WARN ](000001.050) - [Core] [ovfs_core:938] get_hwclock_time/390: use ftc time 
+pTime is:20000101-01:00:08
+01-01 08:00:30 [WARN ](000001.050) - [Core] [ovfs_core:938] set_sys_time/187: HW_CLOCK: 2000-1-1 1:0:8
+01-01 08:00:30 [DEBUG](000001.052) - [Core] [ovfs_core:938] set_sys_time/274: write ftcTime 54
+stime is:20000101-09:00:08
+Check and Need dog to reboot .off[0][] vip[0]
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:08 [WARN ](000000.683) - [BoardSys] [ovfs_boardsyste:978] Rest_Init/227: start Initialization.
+01-01 09:00:08 [INFO ](000000.683) - [BoardSys] [ovfs_boardsyste:978] GetPlatformInfo/204: Can't find platform info tmp file:/tmp/etc/factoryinfo.json
+01-01 09:00:08 [WARN ](000000.684) - [BoardSys] [ovfs_boardsyste:978] GetPlatformInfo/264: unknow sensor type:AUTO
+01-01 09:00:08 [DEBUG](000000.684) - [BoardSys] [ovfs_boardsyste:978] GetPlatformInfo/278: @isExternalSensor=13988884
+01-01 09:00:08 [ERROR](000000.685) - [BoardSys] [ovfs_boardsyste:978] GetCustomInfo/510: IrBoardType=Ir_Warm
+01-01 09:00:08 [INFO ](000000.686) - [BoardSys] [ovfs_boardsyste:978] ResFac_InitPlatform/683: third=1/0  roi=1/0 
+01-01 09:00:08 [WARN ](000000.686) - [BoardSys] [ovfs_boardsyste:978] Hal_Init/125: Start Hal init. BoardType=1 SensorType=0 
+01-01 09:00:08 [INFO ](000000.686) - [BoardSys] [ovfs_boardsyste:978] Hal_Init/128: Start init hal res...
+01-01 09:00:08 [WARN ](000000.686) - [BoardSys] [ovfs_boardsyste:978] FillAbilityCostomFunc/171: custom : HDT --> 2
+01-01 09:00:08 [INFO ](000000.686) - [BoardSys] [ovfs_boardsyste:978] Hal_Init/136: Start init Isp...
+AL_Board_Create failed
+01-01 09:00:08 [ERROR](000000.734) - [BoardSys] [ovfs_boardsyste:978] HalSys_Init/23 : IMP_System_Init fail!
+01-01 09:00:08 [ERROR](000000.734) - [BoardSys] [ovfs_boardsyste:978] Hal_Init/176: hal sys init fail!
+01-01 09:00:08 [ERROR](000000.735) - [BoardSys] [ovfs_boardsyste:978] Rest_Init/249: platform init and load cfg fail!
+01-01 09:00:08 [ERROR](000000.735) - [BoardSys] [ovfs_boardsyste:978] main/166: Rest init Fail!
+01-01 09:00:08 [WARN ](000000.735) - [BoardSys] [ovfs_boardsyste:978] Rest_Destroy/288: start Destroy.
+01-01 09:00:08 [WARN ](000000.735) - [BoardSys] [ovfs_boardsyste:978] RestAudioStream_Destroy/615: dec thread exit!
+01-01 09:00:08 [INFO ](000000.884) - [BoardSys] [ovfs_boardsyste:978] Hal_Destory/269: Destroy isp...
+01-01 09:00:08 [ERROR](000000.884) - [BoardSys] [ovfs_boardsyste:978] HalIsp_Destroy/1994: IMP_ISP_DisableSensor fail!
+01-01 09:00:08 [ERROR](000000.884) - [BoardSys] [ovfs_boardsyste:978] Hal_Destory/272: isp destroy fail!
+ ret=-101-01 09:00:08 [INFO ](000000.884) - [BoardSys] [ovfs_boardsyste:978] Hal_Destory/274: Destroy Peripheral...
+[   32.041569] dwc-mac 134b0000.mac eth0: Link is Up - 100Mbps/Full - flow control off
+Start network...
+Start alarm....
+eventlog
+Start access...
+Start mediaserver...
+open encry file fail 
+not found /tmp/boarduuid.txt
+p2p= libcount=2
+sh: 1: unknown operand
+Start webserver...
+Start websocket
+Start onvifserver...
+open encry file fail 
+not found /tmp/boarduuid.txt
+./appinstall: line 619: reset_mmc: not found
+./appinstall: line 619: ovfs_websocket: not found
+open encry file fail 
+not found /tmp/boarduuid.txt
+open encry file fail 
+not found /tmp/boarduuid.txt
+open encry file fail 
+not found /tmp/boarduuid.txt
+open encry file fail 
+not found /tmp/boarduuid.txt
+netstat: showing only processes with your user ID
+netstat: /proc/net/tcp6: No such file or directory
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:14 [DEBUG](000000.680) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1398: do
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:14 [ERROR](000006.707) - [BoardSys] [Thread_10003_11:1067] Rest_Get/324: boardsys not readly !
+01-01 09:00:14 [ERROR](000000.708) - [Alarm] [ovfs_alarm:1002] ovfs_init_ability/1517: DevTotalNum:-1!
+{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}
+01-01 09:00:14 [WARN ](000000.709) - [Alarm] [ovfs_alarm:1002] main/149: ======Retry request ability======
+01-01 09:00:14 [DEBUG](000000.767) - [Onvif] [RestOnvif_Init:1070] RestOnvif_Init/789: do
+open encry file fail 
+not found /tmp/boarduuid.txt
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:14 [INFO ](000000.788) - [Access] [ovfs_access:1004] main/339: Module init 0
+01-01 09:00:14 [ERROR](000006.790) - [BoardSys] [Thread_10004_10:1084] Rest_Get/324: boardsys not readly !
+01-01 09:00:14 [DEBUG](000000.791) - [Access] [ovfs_access:1004] request_channel_ability/5066: Dev0:1,Chan0:2
+01-01 09:00:14 [DEBUG](000000.791) - [Access] [ovfs_access:1004] request_channel_ability/5069: DevNum:1
+01-01 09:00:14 [WARN ](000000.791) - [Access] [ovfs_access:1004] main/353: ======request channel ability failed======
+01-01 09:00:14 [DEBUG](000000.867) - [EventLog] [ovfs_eventlog:1003] main/328: Module init 0
+01-01 09:00:14 [WARN ](000000.946) - [NetWork] [ovfs_network:999] NetWork_Rest_Init/197: start Initialization.
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:15 [DEBUG](000001.106) - [AccessHost] [ovfs_access_hos:1020] Access_Init/2342: =========get user cfg=========
+01-01 09:00:15 [WARN ](000001.107) - [Access] [tThread_10001_7:1103] AnalyzeUriAndMakeResult/793: g_rest_res  == null
+01-01 09:00:15 [ERROR](000001.108) - [AccessHost] [ovfs_access_hos:1020] Access_GetUserCfg/846: error!!!UserCount:0
+01-01 09:00:15 [ERROR](000007.183) - [BoardSys] [Thread_10005_10:1108] Rest_Get/324: boardsys not readly !
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+01-01 09:00:15 [ERROR](000001.184) - [SmartServer] [ovfs_smart:1053] ParserBoardAbility/1057: could not parser DevTotalNum
+01-01 09:00:15 [ERROR](000001.184) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1437: request board ability failed
+01-01 09:00:15 [WARN ](000001.184) - [SmartServer] [ovfs_smart:1000] HandleMsgData/261: SMART_MSG_REST_INIT_FAIL
+01-01 09:00:15 [DEBUG](000001.265) - [Webserver] [ovfs_webserver:1021] Access_Init/2342: =========get user cfg=========
+01-01 09:00:15 [WARN ](000001.266) - [Access] [tThread_10002_7:1113] AnalyzeUriAndMakeResult/793: g_rest_res  == null
+01-01 09:00:15 [ERROR](000001.267) - [Webserver] [ovfs_webserver:1021] Access_GetUserCfg/846: error!!!UserCount:0
+01-01 09:00:15 [DEBUG](000001.343) - [Onvif] [RestOnvif_Init:1070] Access_Init/2342: =========get user cfg=========
+01-01 09:00:15 [WARN ](000001.344) - [Access] [tThread_10003_7:1118] AnalyzeUriAndMakeResult/793: g_rest_res  == null
+01-01 09:00:15 [ERROR](000001.345) - [Onvif] [RestOnvif_Init:1070] Access_GetUserCfg/846: error!!!UserCount:0
+01-01 09:00:15 [DEBUG](000001.424) - [MediaServer] [RestMedia_Init:1072] Access_Init/2342: =========get user cfg=========
+01-01 09:00:15 [WARN ](000001.425) - [Access] [tThread_10004_7:1123] AnalyzeUriAndMakeResult/793: g_rest_res  == null
+01-01 09:00:15 [ERROR](000001.426) - [MediaServer] [RestMedia_Init:1072] Access_GetUserCfg/846: error!!!UserCount:0
+open encry file fail 
+not found /tmp/boarduuid.txt
+not found /tmp/boarduuid.txt
+01-01 09:00:15 [DEBUG](000001.515) - [EventLog] [ovfs_eventlog:1003] checkWriteShutdownLog/327: InsertLog 946688385 3 66   1 0 0 0 succ
+01-01 09:00:15 [ERROR](000001.594) - [NetWork] [ovfs_network:999] NetWork_SetCfg_MAC/1162: [NetWork_SetCfg_MAC:1162]:Module_GetSerialNumber fail
+01-01 09:00:15 [ERROR](000001.594) - [NetWork] [ovfs_network:999] NetWork_Cfgm_init/3747: NetWork_SetCfg_MAC fail! ret=-2
+01-01 09:00:15 [INFO ](000001.595) - [NetWork] [ovfs_network:999] NetWork_Rest_NetAttr_init/3551: [NetAttr] tree:={
+	"DefaultRoute":	0,
+	"DNS":	0,
+	"Eth":	{
+		"0":	0
+	},
+	"LteCfg":	0
+}
+01-01 09:00:15 [INFO ](000001.596) - [NetWork] [ovfs_network:999] NetWork_Rest_NetApp_init/3583: [NetApp] tree:={
+	"PPPoE":	0,
+	"DDNS":	0,
+	"UPnP":	0,
+	"Mail":	0,
+	"Telnetd":	0,
+	"SNMP":	0,
+	"Ftp":	0,
+	"HTTP":	0
+}
+01-01 09:00:15 [INFO ](000001.596) - [NetWork] [ovfs_network:999] NetWork_Rest_Functions_init/3610: [Functions] tree:={
+	"SendMail":	0,
+	"ModifyMac":	0,
+	"DoFtp":	0,
+	"DoHTTP":	0,
+	"TestMail":	0
+}
+01-01 09:00:15 [INFO ](000001.596) - [NetWork] [ovfs_network:999] NetWork_Rest_Status_init/3633: [Status] tree:={
+	"NetOut":	0,
+	"NetIpConflict":	0,
+	"NetTraffic":	0,
+	"Ftp":	0
+}
+01-01 09:00:15 [INFO ](000001.597) - [NetWork] [ovfs_network:999] NetWork_Rest_Subscribe_init/3658: [Status] tree:={
+	"NetOut":	0,
+	"NetIpConflict":	0
+}
+01-01 09:00:15 [INFO ](000001.598) - [NetWork] [ovfs_network:999] NetWork_Rest_Restore_init/3711: [Status] tree:=0
+01-01 09:00:15 [DEBUG](000001.675) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2048: szDeviceName = 
+01-01 09:00:15 [DEBUG](000001.675) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2055: szSerialNumber = 000000000040788b7b7c
+01-01 09:00:15 [DEBUG](000001.675) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2062: IsOfDome = 0
+01-01 09:00:15 [DEBUG](000001.676) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2069: LensSupport = 1
+01-01 09:00:15 [DEBUG](000001.676) - [Hikvision] [ovfs_hikserver:1024] Rest_Init/2099: done
+01-01 09:00:15 [INFO ](000001.677) - [NetWork] [ovfs_network:999] FillNetMailInfo/805: FillNetMailInfo: receiver_num = 0
+01-01 09:00:15 [ERROR](000001.677) - [NetWork] [ovfs_network:999] ovfs_cfgm_set_email_receiver/663: NULL Pointer cfg=0x7fe2b2e8,receiver_num=0
+-------try_count:[1]
+[sysinit.info][0]run <killall -9 telnetd> .
+01-01 09:00:15 [ERROR](000007.710) - [BoardSys] [Thread_10006_10:1141] Rest_Get/324: boardsys not readly !
+01-01 09:00:15 [ERROR](000001.710) - [Alarm] [ovfs_alarm:1002] ovfs_init_ability/1517: DevTotalNum:-1!
+{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}
+01-01 09:00:15 [WARN ](000001.710) - [Alarm] [ovfs_alarm:1002] main/149: ======Retry request ability======
+killall: telnetd: no process killed
+01-01 09:00:15 [INFO ](000001.730) - [NetWork] [DoFtpThread:1152] NetWork_Run_Ftp/240: enter pid = 999!
+01-01 09:00:15 [DEBUG](000001.791) - [Access] [ovfs_access:1004] access_loadCfg/4189: Load default cfg!
+01-01 09:00:15 [DEBUG](000001.793) - [Access] [ovfs_access:1004] access_loadCfg/4643: nOnlineUserCount:0
+01-01 09:00:15 [ERROR](000007.795) - [BoardSys] [Thread_10008_10:1161] Rest_Get/324: boardsys not readly !
+01-01 09:00:15 [DEBUG](000001.796) - [Access] [ovfs_access:1004] request_channel_ability/5066: Dev0:1,Chan0:2
+01-01 09:00:15 [DEBUG](000001.796) - [Access] [ovfs_access:1004] request_channel_ability/5069: DevNum:1
+01-01 09:00:15 [WARN ](000001.796) - [Access] [ovfs_access:1004] main/404: ======Retry request channel ability======
+[sysinit.info][0]run <ifconfig eth0 up > .
+01-01 09:00:15 [WARN ](000001.825) - [NetWork] [ovfs_network:999] set_local_netcard_cfg/1245: cmd:ifconfig eth0 up 
+01-01 09:00:15 [DEBUG](000001.825) - [NetWork] [ovfs_network:999] set_default_if/1755: if_index=
+01-01 09:00:15 [DEBUG](000001.825) - [NetWork] [ovfs_network:999] ovfs_network_config_mgr/1073: ovfs_network_config_mgr construct
+01-01 09:00:15 [ERROR](000001.826) - [NetWork] [ovfs_network:999] open_ddns_lib/150: open dir /root/custom/ddns_libs fail 
+01-01 09:00:15 [DEBUG](000001.826) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_adtddns.so exist ? 
+01-01 09:00:15 [DEBUG](000001.826) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:15 [DEBUG](000001.826) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_adtddns.so
+01-01 09:00:15 [DEBUG](000001.827) - [NetWork] [ovfs_network:999] open_ddns_lib/224: load DDNS /root/ddns_libs/libddns_adtddns.so
+01-01 09:00:15 [WARN ](000001.827) - [NetWork] [ovfs_network:999] add_one_node/281: load ddns lib <8> -> AdtDDns
+01-01 09:00:15 [DEBUG](000001.828) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_dyndns.so exist ? 
+01-01 09:00:15 [DEBUG](000001.828) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:15 [DEBUG](000001.828) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_dyndns.so
+01-01 09:00:15 [DEBUG](000001.829) - [NetWork] [ovfs_network:999] open_ddns_lib/224: load DDNS /root/ddns_libs/libddns_dyndns.so
+01-01 09:00:15 [WARN ](000001.829) - [NetWork] [ovfs_network:999] add_one_node/281: load ddns lib <1> -> DynDns
+01-01 09:00:15 [DEBUG](000001.829) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_3322.so exist ? 
+01-01 09:00:15 [DEBUG](000001.829) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:15 [DEBUG](000001.829) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_3322.so
+01-01 09:00:15 [DEBUG](000001.831) - [NetWork] [ovfs_network:999] open_ddns_lib/224: load DDNS /root/ddns_libs/libddns_3322.so
+01-01 09:00:15 [WARN ](000001.831) - [NetWork] [ovfs_network:999] add_one_node/281: load ddns lib <4> -> 3322
+01-01 09:00:15 [DEBUG](000001.831) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_vizeodns.so exist ? 
+01-01 09:00:15 [DEBUG](000001.831) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:15 [DEBUG](000001.831) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_vizeodns.so
+01-01 09:00:15 [DEBUG](000001.832) - [NetWork] [ovfs_network:999] open_ddns_lib/224: load DDNS /root/ddns_libs/libddns_vizeodns.so
+01-01 09:00:15 [WARN ](000001.832) - [NetWork] [ovfs_network:999] add_one_node/281: load ddns lib <8> -> VizeoDns
+01-01 09:00:16 [ERROR](000002.108) - [AccessHost] [ovfs_access_hos:1020] Access_Init/2355: get user cfg failed!!!
+01-01 09:00:16 [DEBUG](000002.163) - [AccessHost] [ovfs_access_hos:1020] Access_Init/2342: =========get user cfg=========
+01-01 09:00:16 [DEBUG](000002.163) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_noip.so exist ? 
+01-01 09:00:16 [DEBUG](000002.163) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:16 [DEBUG](000002.163) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_noip.so
+01-01 09:00:16 [ERROR](000002.164) - [NetWork] [ovfs_network:999] open_ddns_lib/175: open /root/ddns_libs/libddns_noip.so fail err:File not found
+open /root/ddns_libs/libddns_noip.so fail err:(null)
+01-01 09:00:16 [DEBUG](000002.164) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_peanuthull.so exist ? 
+01-01 09:00:16 [DEBUG](000002.165) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:16 [DEBUG](000002.165) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_peanuthull.so
+01-01 09:00:16 [DEBUG](000002.166) - [AccessHost] [ovfs_access_hos:1020] Access_GetUserCfg/851: UserList count:3
+01-01 09:00:16 [DEBUG](000002.166) - [NetWork] [ovfs_network:999] open_ddns_lib/224: load DDNS /root/ddns_libs/libddns_peanuthull.so
+01-01 09:00:16 [WARN ](000002.166) - [NetWork] [NetTaskThread:1154] issue_setting_task/1155: set netcard cfg
+01-01 09:00:16 [DEBUG](000002.166) - [NetWork] [NetTaskThread:1154] update_netcard_cfg/1276: if_name=eth0  netCfg->dhcp=0
+01-01 09:00:16 [DEBUG](000002.167) - [NetWork] [NetTaskThread:1154] update_netcard_cfg/1336: ip={192.168.2.210},netmask={255.255.0.0},gateway={192.168.2.1}
+01-01 09:00:16 [WARN ](000002.167) - [NetWork] [ovfs_network:999] add_one_node/281: load ddns lib <2> -> PeanutHull
+01-01 09:00:16 [DEBUG](000002.167) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_dnsdynamic.so exist ? 
+01-01 09:00:16 [DEBUG](000002.168) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:16 [DEBUG](000002.168) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_dnsdynamic.so
+01-01 09:00:16 [DEBUG](000002.169) - [AccessHost] [ovfs_access_hos:1020] Access_MallocGlobalId/1066: g_iModuleId:1
+01-01 09:00:16 [DEBUG](000002.169) - [NetWork] [ovfs_network:999] open_ddns_lib/224: load DDNS /root/ddns_libs/libddns_dnsdynamic.so
+01-01 09:00:16 [WARN ](000002.169) - [NetWork] [ovfs_network:999] add_one_node/281: load ddns lib <7> -> DnsDynamic
+01-01 09:00:16 [DEBUG](000002.170) - [NetWork] [ovfs_network:999] is_custom_lib_exist/28 : check custom lib /root/custom/ddns_libs/libddns_public.so exist ? 
+01-01 09:00:16 [DEBUG](000002.170) - [NetWork] [ovfs_network:999] is_custom_lib_exist/35 : not exist
+01-01 09:00:16 [DEBUG](000002.170) - [NetWork] [ovfs_network:999] open_ddns_lib/170: /root/ddns_libs/libddns_public.so
+01-01 09:00:16 [INFO ](000002.170) - [AccessHost] [ovfs_access_hos:1020] Access_Init/2359: init succ!
+01-01 09:00:16 [INFO ](000002.172) - [AccessHost] [ovfs_access_hos:1020] LoadConfig/105: fileDefaultCfg:={
+	"HostLists":	[{
+			"ServerName":	"I8S",
+			"Describe":	"",
+			"ServerId":	8,
+			"Enable":	0,
+			"Statu":	0,
+			"ParamCnt":	0,
+			"Fixed":	0,
+			"Params":	{
+		}
+		}, {
+			"ServerName":	"Device_ID",
+			"Describe":	"",
+			"ServerId":	11,
+			"Enable":	1,
+			"Statu":	1,
+			"ParamCnt":	0,
+			"Fixed":	0,
+			"Params":	{
+				"Port":	"",
+				"IfEnableSrvCheck":	""
+			}
+		}],
+	"Gb28181":	{
+		"SipCode":	"",
+		"SipZone":	"",
+		"SipDeviceID":	"",
+		"SipPassword":REDACTED"",
+		"SipIP":	"",
+		"SipPort":	0,
+		"SipCode2":	"",
+		"SipZone2":	"",
+		"SipPassword2":REDACTED"",
+		"SipIP2":	"",
+		"SipPort2":	0,
+		"MulticastAddr":	"",
+		"MulticastEnable":	0,
+		"MulticastPort":	0,
+		"LocalPort":	0,
+		"StreamType":	0,
+		"IsMojing":	0,
+		"Expires":	0,
+		"KeepAlive":	0,
+		"KeepAliveMaxCount":	0,
+		"Channels":	[],
+		"ChannelNum":	0,
+		"Alarms":	[],
+		"AlarmNum":	0
+	}
+}
+01-01 09:00:16 [ERROR](000002.173) - [NetWork] [ovfs_network:999] open_ddns_lib/186: /root/ddns_libs/libddns_public.so func error Unable to resolve symbol
+01-01 09:00:16 [DEBUG](000002.185) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1398: do
+01-01 09:00:16 [INFO ](000002.505) - [NetWork] [ovfs_network:999] FillNetDDNSInfo/460: FillNetDDNSInfo: ovfs_ddns_ability node_num = 6
+01-01 09:00:16 [DEBUG](000002.506) - [NetWork] [ovfs_network:999] load_pppoe_cfg/529: PPPOE Use PHY eth0
+01-01 09:00:16 [DEBUG](000002.506) - [NetWork] [ovfs_network:999] load_pppoe_cfg/535: PPPOE Enable:0
+01-01 09:00:16 [DEBUG](000002.506) - [NetWork] [ovfs_network:999] load_pppoe_cfg/536: PPPOE Username:
+01-01 09:00:16 [DEBUG](000002.507) - [NetWork] [ovfs_network:999] load_pppoe_cfg/537: PPPOE Password:
+01-01 09:00:16 [DEBUG](000002.507) - [NetWork] [ovfs_network:999] load_network_card_info/585: Upnp Detect Network Card Total Num: 1
+01-01 09:00:16 [DEBUG](000002.507) - [NetWork] [ovfs_network:999] get_ip_by_eth_name/481: Interface name : eth0 , IP address : 192.168.2.210
+01-01 09:00:16 [DEBUG](000002.507) - [NetWork] [ovfs_network:999] load_network_card_info/595: Detect Network Card Index 0, Name: eth0, IP: 192.168.2.210
+01-01 09:00:16 [INFO ](000002.508) - [NetWork] [upnp:1192] ovfs_upnp_thread/23 : enter pid = 999!
+01-01 09:00:16 [DEBUG](000002.509) - [NetWork] [NetTaskThread:1154] NetWorkTool_GetGateway/163: devName=eth0,ifname=eth0,gateway=192.168.2.1
+01-01 09:00:16 [WARN ](000002.509) - [NetWork] [NetTaskThread:1154] NetWorkTool_GetGateway/167: devName=eth0,ifname=eth0,gateway=192.168.2.1
+01-01 09:00:16 [ERROR](000002.267) - [Webserver] [ovfs_webserver:1021] Access_Init/2355: get user cfg failed!!!
+01-01 09:00:16 [ERROR](000002.345) - [Onvif] [RestOnvif_Init:1070] Access_Init/2355: get user cfg failed!!!
+01-01 09:00:16 [ERROR](000002.426) - [MediaServer] [RestMedia_Init:1072] Access_Init/2355: get user cfg failed!!!
+01-01 09:00:16 [DEBUG](000002.509) - [Onvif] [RestOnvif_Init:1070] Access_Init/2342: =========get user cfg=========
+01-01 09:00:16 [DEBUG](000002.510) - [MediaServer] [RestMedia_Init:1072] Access_Init/2342: =========get user cfg=========
+01-01 09:00:16 [DEBUG](000002.510) - [Webserver] [ovfs_webserver:1021] Access_Init/2342: =========get user cfg=========
+01-01 09:00:16 [INFO ](000002.512) - [AccessHost] [ovfs_access_hos:1020] LoadConfig/117: fileCurrentCfg:={
+	"HostLists":	[{
+			"ServerName":	"I8S",
+			"Describe":	"",
+			"ServerId":	8,
+			"Enable":	0,
+			"Statu":	0,
+			"ParamCnt":	0,
+			"Fixed":	0,
+			"Params":	{
+		}
+		}, {
+			"ServerName":	"Device_ID",
+			"Describe":	"",
+			"ServerId":	11,
+			"Enable":	1,
+			"Statu":	1,
+			"ParamCnt":	0,
+			"Fixed":	0,
+			"Params":	{
+				"Port":	"",
+				"IfEnableSrvCheck":	""
+			}
+		}],
+	"Gb28181":	{
+		"SipCode":	"",
+		"SipZone":	"",
+		"SipDeviceID":	"",
+		"SipPassword":REDACTED"",
+		"SipIP":	"",
+		"SipPort":	0,
+		"SipCode2":	"",
+		"SipZone2":	"",
+		"SipPassword2":REDACTED"",
+		"SipIP2":	"",
+		"SipPort2":	0,
+		"MulticastAddr":	"",
+		"MulticastEnable":	0,
+		"MulticastPort":	0,
+		"LocalPort":	0,
+		"StreamType":	0,
+		"IsMojing":	0,
+		"TalkOverTCP":	0,
+		"CmdTranType":	0,
+		"Expires":	0,
+		"KeepAlive":	0,
+		"KeepAliveMaxCount":	0,
+		"Channels":	[],
+		"ChannelNum":	0,
+		"Alarms":	[],
+		"AlarmNum":	0,
+		"Voices":	[],
+		"VoiceNum":	0
+	}
+}
+01-01 09:00:16 [INFO ](000002.843) - [AccessHost] [ovfs_access_hos:1020] LoadConfig/775: fileCurrentCfg Gb28181/Channels nArraySize =0
+01-01 09:00:16 [INFO ](000002.843) - [AccessHost] [ovfs_access_hos:1020] LoadConfig/780: fileDefaultCfg Gb28181/Channels nArraySize =0
+bsave = 1 
+01-01 09:00:16 [ERROR](000008.514) - [BoardSys] [Thread_10009_10:1193] Rest_Get/324: boardsys not readly !
+01-01 09:00:16 [DEBUG](000002.514) - [MediaServer] [RestMedia_Init:1072] Access_GetUserCfg/851: UserList count:3
+01-01 09:00:16 [DEBUG](000002.516) - [Onvif] [RestOnvif_Init:1070] Access_GetUserCfg/851: UserList count:3
+01-01 09:00:16 [DEBUG](000002.518) - [Webserver] [ovfs_webserver:1021] Access_GetUserCfg/851: UserList count:3
+[sysinit.info][0]run <route del default dev eth0> .
+writing: Cpu=7 Mem=43 Net=0 ONLINE=1
+01-01 09:00:16 [INFO ](000002.848) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/316: . not a lib.so
+01-01 09:00:16 [INFO ](000002.620) - [NetWork] [ovfs_network:999] NetWork_Event_Start/598: Module_SubscribeEvent /Alarm/Subscribe/Status?AlarmName=Vhide 131072!
+01-01 09:00:16 [INFO ](000002.848) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/316: .. not a lib.so
+01-01 09:00:16 [INFO ](000002.848) - [NetWork] [ovfs_network:999] NetWork_Event_Start/609: Module_SubscribeEvent /Alarm/Subscribe/Status?AlarmName=Vdiagnose 196609!
+01-01 09:00:16 [ERROR](000008.844) - [BoardSys] [Thread_1000a_11:1212] Rest_Get/324: boardsys not readly !
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+01-01 09:00:16 [ERROR](000002.850) - [Alarm] [ovfs_alarm:1002] ovfs_init_ability/1517: DevTotalNum:-1!
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}
+01-01 09:00:16 [ERROR](000002.851) - [SmartServer] [ovfs_smart:1053] ParserBoardAbility/1057: could not parser DevTotalNum
+01-01 09:00:16 [WARN ](000002.851) - [Alarm] [ovfs_alarm:1002] main/149: ======Retry request ability======
+01-01 09:00:16 [ERROR](000002.851) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1437: request board ability failed
+01-01 09:00:16 [WARN ](000002.851) - [SmartServer] [ovfs_smart:1000] HandleMsgData/261: SMART_MSG_REST_INIT_FAIL
+01-01 09:00:16 [ERROR](000008.851) - [BoardSys] [Thread_1000b_12:1213] Rest_Get/324: boardsys not readly !
+01-01 09:00:16 [DEBUG](000002.852) - [Access] [ovfs_access:1004] request_channel_ability/5066: Dev0:1,Chan0:2
+01-01 09:00:16 [DEBUG](000002.852) - [Access] [ovfs_access:1004] request_channel_ability/5069: DevNum:1
+01-01 09:00:16 [WARN ](000002.853) - [Access] [ovfs_access:1004] main/404: ======Retry request channel ability======
+01-01 09:00:16 [DEBUG](000002.854) - [MediaServer] [RestMedia_Init:1072] Access_MallocGlobalId/1066: g_iModuleId:3
+01-01 09:00:16 [DEBUG](000002.856) - [Onvif] [RestOnvif_Init:1070] Access_MallocGlobalId/1066: g_iModuleId:2
+01-01 09:00:16 [INFO ](000002.856) - [MediaServer] [RestMedia_Init:1072] Access_Init/2359: init succ!
+01-01 09:00:16 [INFO ](000002.857) - [Onvif] [RestOnvif_Init:1070] Access_Init/2359: init succ!
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:16 [DEBUG](000002.859) - [Onvif] [RestOnvif_Init:1070] RestOnvif_CfgJsonToCfgStruct/977: 
+01-01 09:00:16 [DEBUG](000002.861) - [Onvif] [RestOnvif_Init:1070] RestOnvif_Init/849: done
+01-01 09:00:16 [WARN ](000002.861) - [Onvif] [ovfs_onvifserve:1023] HandleMsgData/373: ONVIF_MSG_REST_INIT_DONE
+01-01 09:00:16 [DEBUG](000002.866) - [Webserver] [ovfs_webserver:1021] Access_MallocGlobalId/1066: g_iModuleId:4
+01-01 09:00:16 [DEBUG](000002.872) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/327: dlopen libgb28181.so successed!
+01-01 09:00:17 [DEBUG](000003.192) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/350: libgb28181.so : GetSupportFunctions successed!
+01-01 09:00:17 [WARN ](000003.192) - [Onvif] [ovfs_onvifserve:1023] HandleMsgData/385: ONVIF_MSG_MGR_INIT_DONE
+[sysinit.info][0]run <route add default gw 192.168.2.1 dev eth0 metric 0> .
+01-01 09:00:17 [INFO ](000003.192) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/411: load host proto libpath=/root/host_libs/libgb28181.so / libinfo id=5 / libname=GB28181
+not found /tmp/boarduuid.txt
+01-01 09:00:17 [DEBUG](000003.193) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/472:  GB28181 : fSetDeviceFunctions success
+01-01 09:00:17 [DEBUG](000003.195) - [Onvif] [OnvifMgr_Start:1070] OnvifMgr_GetCfg/3351: OnvifMgr_GetCfg!
+01-01 09:00:17 [DEBUG](000003.195) - [Onvif] [OnvifMgr_Start:1070] RestOnvif_CfgJsonToCfgStruct/977: 
+01-01 09:00:17 [DEBUG](000003.195) - [Onvif] [OnvifMgr_Start:1070] OnvifMgr_GetCfg/3358: authEnable 0 adaptiveIp 1!
+01-01 09:00:17 [DEBUG](000003.197) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/327: dlopen libhost_gb28181.so successed!
+01-01 09:00:17 [DEBUG](000003.197) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/350: libhost_gb28181.so : GetSupportFunctions successed!
+01-01 09:00:17 [ERROR](000003.198) - [AccessHost] [ovfs_access_hos:1020] CheckProtorName/286: same lib name!
+01-01 09:00:17 [DEBUG](000003.198) - [Onvif] [UdpMulticastSer:1241] MultiAddrCreateAndListen/904: lo IPV4 Address 127.0.0.1
+01-01 09:00:17 [ERROR](000003.198) - [AccessHost] [ovfs_access_hos:1020] LoadAccessLib/368: /root/host_libs/libhost_gb28181.so CheckProtorName failed!
+01-01 09:00:17 [DEBUG](000003.198) - [Onvif] [UdpMulticastSer:1241] MultiAddrCreateAndListen/904: eth0 IPV4 Address 192.168.2.210
+01-01 09:00:17 [DEBUG](000003.105) - [Access] [tThread_10011_7:1235] static_Access_Subscribe_fxn/4017: /Access/Subscribe/Iptable 0 50594305
+01-01 09:00:17 [DEBUG](000003.199) - [Access] [tThread_10011_7:1235] insertSubscribeListNode/3969: insert node iCount = 1 
+01-01 09:00:17 [ERROR](000009.202) - [BoardSys] [Thread_1000c_10:1247] Rest_Get/324: boardsys not readly !
+01-01 09:00:17 [INFO ](000003.203) - [Webserver] [ovfs_webserver:1021] Access_Init/2359: init succ!
+01-01 09:00:17 [DEBUG](000003.203) - [Webserver] [ovfs_webserver:1021] web_register_to_core/797: Web Register to Access (0)
+01-01 09:00:17 [DEBUG](000003.204) - [Webserver] [ovfs_webserver:1021] ovfs_web_init/892: Access_LoadConfigByType:0x4d3d90
+01-01 09:00:17 [DEBUG](000003.204) - [Webserver] [ovfs_webserver:1021] ovfs_web_init/905: Access_LoadConfig:(nil)
+01-01 09:00:17 [DEBUG](000003.203) - [Access] [tThread_10013_7:1248] static_Access_Subscribe_fxn/4017: /Access/Subscribe/UserCfg?UserName=all 0 17104897
+01-01 09:00:17 [DEBUG](000003.205) - [Access] [tThread_10013_7:1248] insertSubscribeListNode/3969: insert node iCount = 2 
+[sysinit.info][1]run <rm /dev/test_asdpd> .
+01-01 09:00:17 [DEBUG](000003.216) - [NetWork] [NetTaskThread:1154] update_netcard_cfg/1366: route add default gw 192.168.2.1 dev eth0 metric 0
+01-01 09:00:17 [WARN ](000003.216) - [NetWork] [NetTaskThread:1154] issue_setting_task/1159: set DNS
+01-01 09:00:17 [DEBUG](000003.216) - [NetWork] [NetTaskThread:1154] update_dns_cfg/1720: dns->auto_dns=0
+rm: can't remove '/dev/test_asdpd': No such file or directory
+01-01 09:00:17 [DEBUG](000003.228) - [NetWork] [NetTaskThread:1154] update_new_dns/1577: nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 192.168.2.1
+
+01-01 09:00:17 [DEBUG](000003.264) - [Access] [tThread_10014_7:1258] static_Access_Subscribe_fxn/4017: /Access/Subscribe/Iptable 0 50725378
+01-01 09:00:17 [DEBUG](000003.265) - [Access] [tThread_10014_7:1258] insertSubscribeListNode/3969: insert node iCount = 3 
+01-01 09:00:17 [DEBUG](000003.266) - [Access] [tThread_10015_7:1259] static_Access_Subscribe_fxn/4017: /Access/Subscribe/UserCfg?UserName=all 0 17235970
+01-01 09:00:17 [DEBUG](000003.267) - [Access] [tThread_10015_7:1259] insertSubscribeListNode/3969: insert node iCount = 4 
+open encry file fail 
+@{
+	"Header":	{
+		"Code":	0
+	},
+	"Data":	{
+		"DeviceName":	"",
+		"ProductName":	"",
+		"DeviceType":	"IPC",
+		"DeviceTypeString":	"ipc_normal",
+		"DeviceModel":	"",
+		"Country":	"",
+		"City":	"",
+		"Web":	"",
+		"Tel":	"",
+		"Copyright":	"",
+		"Manufacturer":	"",
+		"Vendor":	"HDT-NEUTRAL",
+		"Brand":	"",
+		"Customer":	"HDT",
+		"SensorModel":	"AUTO",
+		"IsOfDome":	0,
+		"IsOfIr":	1,
+		"LensSupport":	1,
+		"LensDrvType":	"MS41908",
+		"LensType":	"YT_27135_8MP",
+		"IrisSupport":	0,
+		"IrisType":	"DC-IRIS",
+		"Version":	"V4.3",
+		"SvnNumber":	1645,
+		"HardVersion":	"V4.0-AF",
+		"BuildDate":	"20220507",
+		"ProductDate":	"20220507",
+		"Hardware":	"JZT40XP_D11_Q38",
+		"AuthMethod":	"UUID",
+		"SerialNumber":	"000000000040788b7b7c",
+		"Status":	"Unactivated",
+		"DateTime":	"20000101090017"
+	}
+}@
+[sysinit.info][0]run <netstat -anp | grep 10000 > /dev/test_asdpd> .
+[sysinit.info][1]run <cp /tmp/resolv.conf /etc/resolv.conf> .
+01-01 09:00:17 [WARN ](000003.600) - [MediaServer] [RestMedia_Init:1072] RestReqCustomType/1684: customer type HDT
+./appinstall: line 619: reset_mmc: not found
+name=/root/nginx/sbin/nginx parm1=-p parm2=/root/nginx/ param3=
+not found /tmp/boarduuid.txt
+01-01 09:00:17 [DEBUG](000003.606) - [Access] [tThread_10016_8:1263] static_Access_Subscribe_fxn/4017: /Access/Subscribe/Iptable 0 50856451
+01-01 09:00:17 [DEBUG](000003.606) - [Access] [tThread_10016_8:1263] insertSubscribeListNode/3969: insert node iCount = 5 
+01-01 09:00:17 [DEBUG](000003.606) - [Access] [tThread_10017_9:1266] static_Access_Subscribe_fxn/4017: /Access/Subscribe/Iptable 0 50921988
+01-01 09:00:17 [DEBUG](000003.607) - [Access] [tThread_10017_9:1266] insertSubscribeListNode/3969: insert node iCount = 6 
+01-01 09:00:17 [DEBUG](000003.610) - [Access] [tThread_10018_7:1276] static_Access_Subscribe_fxn/4017: /Access/Subscribe/UserCfg?UserName=all 0 17432579
+01-01 09:00:17 [DEBUG](000003.610) - [Access] [tThread_10018_7:1276] insertSubscribeListNode/3969: insert node iCount = 7 
+01-01 09:00:17 [DEBUG](000003.618) - [Access] [tThread_10019_8:1277] static_Access_Subscribe_fxn/4017: /Access/Subscribe/UserCfg?UserName=all 0 17498116
+01-01 09:00:17 [DEBUG](000003.619) - [Access] [tThread_10019_8:1277] insertSubscribeListNode/3969: insert node iCount = 8 
+01-01 09:00:17 [WARN ](000003.626) - [NetWork] [NetTaskThread:1154] update_new_dns/1589: real_dns1:8.8.8.8 real_dns2:8.8.4.4
+Sat Jan  1 09:00:17 CST 2000 Starting up /root/nginx/sbin/nginx .... 0/20
+netstat: showing only processes with your user ID
+netstat: /proc/net/tcp6: No such file or directory
+Sat Jan  1 09:00:17 CST 2000 /root/nginx/sbin/nginx proc exit=0 
+netstat: /proc/net/udp6: No such file or directory
+netstat: /proc/net/raw6: No such file or directory
+01-01 09:00:17 [DEBUG](000003.685) - [Webserver] [ovfs_webserver:1021] ovfs_web_init/986: password_tips:0
+freespace = 268185600 4096 65475
+cmdBuffer=[cd /root/nginx;cp -af conf/nginx.conf /update/nginx/conf/nginx.conf;sbin/nginx -p /root/nginx -s stop;/root/nginx/sbin/nginx -p /root/nginx/;if [ $? == 0 ]; then echo "ok" > /dev/ngx_start_status;else echo "failed" > /dev/ngx_start_status;fi]
+[sysinit.info][0]run <cd /root/nginx;cp -af conf/nginx.conf /update/nginx/conf/nginx.conf;sbin/nginx -p /root/nginx -s stop;/root/nginx/sbin/nginx -p /root/nginx/;if [ $? == 0 ]; then echo "ok" > /dev/ngx_start_status;else echo "failed" > /dev/ngx_start_status;fi> .
+01-01 09:00:17 [DEBUG](000003.717) - [MediaServer] [RtspMgr_Init:1072] RtspMgr_Init/2558: 
+01-01 09:00:17 [DEBUG](000003.717) - [MediaServer] [RtspMgr_Init:1072] RtspMgr_Init/2580: 
+01-01 09:00:17 [INFO ](000003.717) - [MediaServer] [RtmpMgr_Init:1072] RtmpMgr_Init/562: do
+01-01 09:00:17 [INFO ](000003.717) - [MediaServer] [RtmpMgr_Init:1072] RtmpMgr_Init/580: done
+01-01 09:00:17 [DEBUG](000003.718) - [MediaServer] [SmartProto_Init:1072] SmartProto_Init/809: begin
+01-01 09:00:17 [INFO ](000003.718) - [MediaServer] [ovfs_mediaserve:1005] HandleMsgDataRtsp/1476: MEDIA_MSG_RTSP_SERVER_INIT_DONE
+01-01 09:00:17 [INFO ](000003.719) - [MediaServer] [ovfs_mediaserve:1005] HandleMsgDataRtmp/1525: MEDIA_MSG_RTMP_SERVER_INIT_DONE
+01-01 09:00:17 [DEBUG](000003.720) - [MediaServer] [RtspMgr_Start:1289] RtspMgr_Start/2588: 
+01-01 09:00:17 [WARN ](000003.720) - [MediaServer] [RtspMgr_Start:1289] RtspJsonToCfg/369: rtsp stream max num is 10
+not found /tmp/boarduuid.txt
+01-01 09:00:17 [DEBUG](000003.722) - [MediaServer] [RtmpMgr_Start:1288] RtmpMgr_Start/591: 
+[INFO.Ants_RTMPServer_Start.66]Ants_RTMPServer_Start  start!
+[INFO.Ants_RTMPServer_Start.87]create i 1 start!
+[Start.4046][RTMP] [src/server.cpp:00004046:Start] Start ok!
+01-01 09:00:17 [DEBUG](000003.723) - [MediaServer] [RtmpMgr_Init:1291] RtmpPushMgr_Init/1220: 
+[StartListenThread.4090][RTMP] [src/server.cpp:00004090:StartListenThread] Create Listen Thread OK
+[INFO.Ants_RTMPServer_Start.91]create i 1 end!
+[INFO.Ants_RTMPServer_Start.102]hRtmpHandle = 1!
+01-01 09:00:17 [WARN ](000003.809) - [Webserver] [ovfs_webserver:1021] ovfs_web_init/1047: {
+	"EnableHttpRedirectToHttps":	0,
+	"EnableHttp":	1,
+	"HttpPort":	80,
+	"EnableHttps":	1,
+	"HttpsPort":	443,
+	"PlatFormReady":	1,
+	"SessionSupport":	0,
+	"SingleAccountLogin":	0,
+	"PasswordTips":	0,
+	"PluginParams":	{
+		"PicQuality":	1
+	}
+}
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:17 [WARN ](000003.824) - [Onvif] [ovfs_onvifserve:1023] HandleMsgData/397: ONVIF_MSG_MGR_START_DONE
+01-01 09:00:17 [ERROR](000009.851) - [BoardSys] [Thread_1000d_10:1308] Rest_Get/324: boardsys not readly !
+01-01 09:00:17 [DEBUG](000003.853) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1398: do
+01-01 09:00:17 [ERROR](000004.055) - [Alarm] [ovfs_alarm:1002] ovfs_init_ability/1517: DevTotalNum:-1!
+{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}
+01-01 09:00:17 [ERROR](000010.055) - [BoardSys] [Thread_1000e_11:1309] Rest_Get/324: boardsys not readly !
+01-01 09:00:17 [WARN ](000004.055) - [Alarm] [ovfs_alarm:1002] main/149: ======Retry request ability======
+[INFO.Ants_RTMPServer_Start.106]Ants_RTMPServer_Start  end!
+[INFO.Ants_RTMPServer_SetStreamCallBack.145]Ants_RTMPServer_SetStreamCallBack  start!
+[INFO.Ants_RTMPServer_SetStreamCallBack.165]Ants_RTMPServer_SetStreamCallBack  end!
+[INFO.Ants_RTMPServer_SetStreamCallBackV2.291]Ants_RTMPServer_SetStreamCallBack  start!
+[INFO.Ants_RTMPServer_SetStreamCallBackV2.315]Ants_RTMPServer_SetStreamCallBack  end!
+01-01 09:00:17 [DEBUG](000004.056) - [Access] [ovfs_access:1004] request_channel_ability/5066: Dev0:1,Chan0:2
+01-01 09:00:17 [DEBUG](000004.056) - [Access] [ovfs_access:1004] request_channel_ability/5069: DevNum:1
+01-01 09:00:17 [WARN ](000004.057) - [Access] [ovfs_access:1004] main/404: ======Retry request channel ability======
+[RTMP][static void* CRtmpServer::ListenThread(void*):4337]pid=1297 enter
+[INFO.ListenProc.4379]ListenProc  start!
+01-01 09:00:17 [DEBUG](000003.723) - [MediaServer] [RtmpMgr_Init:1291] RtmpPushMgr_Restart/1231: 
+01-01 09:00:17 [DEBUG](000004.057) - [MediaServer] [RtspMgr_Start:1289] RtspMgr_Start/2658: 
+01-01 09:00:18 [INFO ](000004.060) - [MediaServer] [RtmpMgr_Start:1288] RtmpMgr_Start/671: done
+01-01 09:00:18 [ERROR](000010.061) - [BoardSys] [Thread_10010_12:1318] Rest_Get/324: boardsys not readly !
+01-01 09:00:18 [INFO ](000004.065) - [MediaServer] [ovfs_mediaserve:1005] HandleMsgDataRtsp/1487: MEDIA_MSG_RTSP_SERVER_START_DONE
+01-01 09:00:18 [INFO ](000004.065) - [MediaServer] [ovfs_mediaserve:1005] HandleMsgDataRtmp/1539: MEDIA_MSG_RTMP_SERVER_START_DONE
+01-01 09:00:18 [ERROR](000010.067) - [BoardSys] [Thread_1000f_10:1314] Rest_Get/324: boardsys not readly !
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+01-01 09:00:18 [ERROR](000004.067) - [SmartServer] [ovfs_smart:1053] ParserBoardAbility/1057: could not parser DevTotalNum
+01-01 09:00:18 [ERROR](000004.067) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1437: request board ability failed
+01-01 09:00:18 [WARN ](000004.068) - [SmartServer] [ovfs_smart:1000] HandleMsgData/261: SMART_MSG_REST_INIT_FAIL
+01-01 09:00:18 [DEBUG](000004.067) - [MediaServer] [RtmpMgr_Init:1291] RtmpPushMgr_Restart/1329: 
+[sysinit.info][0]run <cp /root/nginx/html/static/uiconfig.json /root/nginx/html/static/uiconfig.json.bak> .
+01-01 09:00:18 [WARN ](000004.138) - [Webserver] [ovfs_webserver:1021] ovfs_web_discovery/228: SLINK Discovery!
+01-01 09:00:18 [DEBUG](000004.139) - [Webserver] [ovfs_webserver:1021] MultiAddrCreateAndListen/164: eth0 IPV4 Address 192.168.2.210
+not found /tmp/boarduuid.txt
+01-01 09:00:18 [ERROR](000010.203) - [BoardSys] [Thread_10011_10:1329] Rest_Get/324: boardsys not readly !
+[sysinit.info][0]run <ln -s /root/res_xml/factoryInfo.xml  /root/nginx/html/factoryInfo.xml> .
+01-01 09:00:18 [DEBUG](000004.242) - [MediaServer] [SmartProto_Init:1072] SmartProto_Init/827: end
+01-01 09:00:18 [INFO ](000004.242) - [MediaServer] [ovfs_mediaserve:1005] HandleMsgDataHttpPush/1436: MEDIA_MSG_SMARTPROTOCOL_INIT_DONE
+01-01 09:00:18 [DEBUG](000004.243) - [MediaServer] [SmartProto_Star:1072] SmartProto_Start/899: begin
+01-01 09:00:18 [INFO ](000004.244) - [MediaServer] [ovfs_mediaserve:1005] HandleMsgDataHttpPush/1447: MEDIA_MSG_SMARTPROTOCOL_START_DONE
+[sysinit.info][0]run <ln -s /tmp/mmc/mmc1/snapshot  /root/nginx/html/snapshot> .
+/root/autoupgrade
+
+[autoupgrade] [00002378:PrintVersionInfo] PLATFORM[mips-t40-linux-uclibc-gnu] BuildDate[V03.04.08] Vsesion[2021-12-09-18]
+cp: '/update/aliIoT4ovfs' and '/update/aliIoT4ovfs' are the same file
+system [cp -f /update/aliIoT4ovfs /update] succ
+
+[autoupgrade] [00000253:MainProc] wait-timeout(5) sec
+open encry file fail 
+not found /tmp/boarduuid.txt
+not found /tmp/boarduuid.txt
+01-01 09:00:18 [DEBUG](000004.854) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/[   40.848927] device eth0 entered promiscuous mode
+2048: szDeviceName = 
+01-01 09:00:18 [DEBUG](000004.[   40.859319] eth0: Enter promisc mode!
+854) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2055:[   40.868324] eth0: Enter promisc mode!
+ szSerialNumber = 000000000040788b7b7c
+01-01 09:00:18 [DEBUG](000004.854) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2062: IsOfDome = 0
+01-01 09:00:18 [DEBUG](000004.854) - [Hikvision] [ovfs_hikserver:1024] RestGetDeviceInfo/2069: LensSupport = 1
+01-01 09:00:18 [INFO ](000004.855) - [Hikvision] [ovfs_hikserver:1024] GetDeviceCfg/1477: devicename:,deviceSN=000000000040788b7b7c
+01-01 09:00:18 [WARN ](000004.856) - [MediaServer] [tThread_10002_8:1380] RestModuleCalleeFunctions/999: RestModuleCalleeFunctions
+01-01 09:00:18 [INFO ](000004.856) - [MediaServer] [tThread_10002_8:1380] RestModuleCalleeFunctions/1012: Recv Request {"Header":{"Method":"get","Uri":"/Mediaserver/Rtsp/Attribute","From":{"Uri":"/Hikserver"}},"Data":{}}
+g_sadpInst.packet=0x62dcb0
+01-01 09:00:18 [ERROR](000011.056) - [BoardSys] [Thread_10013_10:1385] Rest_Get/324: boardsys not readly !
+01-01 09:00:18 [ERROR](000005.057) - [Alarm] [ovfs_alarm:1002] ovfs_init_ability/1517: DevTotalNum:-1!
+{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}
+01-01 09:00:18 [WARN ](000005.057) - [Alarm] [ovfs_alarm:1002] main/149: ======Retry request ability======
+01-01 09:00:18 [ERROR](000011.057) - [BoardSys] [Thread_10014_10:1386] Rest_Get/324: boardsys not readly !
+01-01 09:00:18 [DEBUG](000005.058) - [Access] [ovfs_access:1004] request_channel_ability/5066: Dev0:1,Chan0:2
+01-01 09:00:18 [DEBUG](000005.058) - [Access] [ovfs_access:1004] request_channel_ability/5069: DevNum:1
+01-01 09:00:18 [WARN ](000005.058) - [Access] [ovfs_access:1004] main/404: ======Retry request channel ability======
+01-01 09:00:19 [DEBUG](000005.068) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1398: do
+01-01 09:00:19 [ERROR](000011.069) - [BoardSys] [Thread_10015_10:1387] Rest_Get/324: boardsys not readly !
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+01-01 09:00:19 [ERROR](000005.069) - [SmartServer] [ovfs_smart:1053] ParserBoardAbility/1057: could not parser DevTotalNum
+01-01 09:00:19 [ERROR](000005.069) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1437: request board ability failed
+01-01 09:00:19 [WARN ](000005.070) - [SmartServer] [ovfs_smart:1000] HandleMsgData/261: SMART_MSG_REST_INIT_FAIL
+01-01 09:00:19 [INFO ](000005.140) - [SmartServer] [tThread_10002_7:1388] RestModuleCalleeFunctions/890: Recv Request {"Header":{"Method":"get","Uri":"/SmartServer/Ability","From":{"Uri":"/Webserver"}}}
+01-01 09:00:19 [ERROR](000005.140) - [SmartServer] [tThread_10002_7:1388] RestTreeCallFun/788: no such uri /SmartServer/Ability
+01-01 09:00:19 [DEBUG](000005.141) - [Webserver] [ovfs_webserver:1021] test_device_type/433: str={
+	"Header":	{
+		"Code":	-94004,
+		"Describe":	"No such Uri"
+	}
+}
+
+open encry file fail 
+not found /tmp/boarduuid.txt
+01-01 09:00:19 [ERROR](000011.204) - [BoardSys] [Thread_10016_10:1394] Rest_Get/324: boardsys not readly !
+not found /tmp/boarduuid.txt
+
+[autoupgrade] [00000253:MainProc] wait-timeout(5) sec
+make_sadp_packet:ip=192.168.2.210,mac=XX:XX:XX:XX:XX:XX
+01-01 09:00:19 [ERROR](000012.058) - [BoardSys] [Thread_10018_10:1408] Rest_Get/324: boardsys not readly !
+01-01 09:00:19 [ERROR](000006.058) - [Alarm] [ovfs_alarm:1002] ovfs_init_ability/1517: DevTotalNum:-1!
+{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}
+01-01 09:00:19 [WARN ](000006.058) - [Alarm] [ovfs_alarm:1002] main/149: ======Retry request ability======
+01-01 09:00:19 [ERROR](000012.059) - [BoardSys] [Thread_10019_10:1409] Rest_Get/324: boardsys not readly !
+01-01 09:00:19 [DEBUG](000006.059) - [Access] [ovfs_access:1004] request_channel_ability/5066: Dev0:1,Chan0:2
+01-01 09:00:20 [DEBUG](000006.060) - [Access] [ovfs_access:1004] request_channel_ability/5069: DevNum:1
+01-01 09:00:20 [WARN ](000006.060) - [Access] [ovfs_access:1004] main/404: ======Retry request channel ability======
+01-01 09:00:20 [DEBUG](000006.070) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1398: do
+01-01 09:00:20 [ERROR](000012.071) - [BoardSys] [Thread_1001a_10:1410] Rest_Get/324: boardsys not readly !
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+@{
+	"Header":	{
+		"Code":	-9019,
+		"Decribe":	"Rest is not readly.Try layer."
+	}
+}@
+01-01 09:00:20 [ERROR](000006.071) - [SmartServer] [ovfs_smart:1053] ParserBoardAbility/1057: could not parser DevTotalNum
+01-01 09:00:20 [ERROR](000006.071) - [SmartServer] [ovfs_smart:1053] RestSmart_Init/1437: request board ability failed
+01-01 09:00:20 [WARN ](000006.071) - [SmartServer] [ovfs_smart:1000] HandleMsgData/261: SMART_MSG_REST_INIT_FAIL
+01-01 09:00:20 [ERROR](000012.205) - [BoardSys] [Thread_1001b_10:1411] Rest_Get/324: boardsys not readly !
+01-01 09:00:20 [INFO ](000006.313) - [SmartServer] [tThread_10003_7:1412] RestModuleCalleeFunctions/890: Recv Request {"Header":{"Method":"get","Uri":"/SmartServer/Ability","From":{"Uri":"/Webserver"}}}
+01-01 09:00:20 [ERROR](000006.313) - [SmartServer] [tThread_10003_7:1412] RestTreeCallFun/788: no such uri /SmartServer/Ability
+01-01 09:00:20 [DEBUG](000006.313) - [Webserver] [ovfs_webserver:1021] test_device_type/433: str={
+	"Header":	{
+		"Code":	-94004,
+		"Describe":	"No such Uri"
+	}
+}
+
+
+[autoupgrade] [00000253:MainProc] wait-timeout(5) sec
+./appinstall: line 619: reset_mmc: not found
+
+
+========================================================================================================

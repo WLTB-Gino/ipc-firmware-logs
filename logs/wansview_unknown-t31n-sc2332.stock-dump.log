@@ -1,0 +1,415 @@
+[root@Ingenic-uc1_1:bin]# cat /sys/kernel/debug/gpio
+GPIOs 0-31, GPIO A:
+
+GPIOs 32-63, GPIO B:
+ gpio-51  (sw9714_xsd          ) out hi
+ gpio-53  (led_r               ) out lo
+ gpio-57  (sda                 ) in  lo
+ gpio-58  (scl                 ) in  lo
+ gpio-63  (gpio_spk_en         ) in  lo
+
+
+
+isvp_t31# reset
+reset in 4ms
+U-Boot SPL 2013.07-gad18488 (Nov 13 2020 - 16:54:20)
+Timer init
+CLK stop
+PLL init
+pll_init:366
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+nf=84 nr = 1 od0 = 1 od1 = 2
+cppcr is 05405100
+CPM_CPAPCR 0540510d
+nf=84 nr = 1 od0 = 1 od1 = 2
+cppcr is 05405100
+CPM_CPMPCR 07d0590d
+nf=100 nr = 1 od0 = 1 od1 = 2
+cppcr is 06405100
+CPM_CPVPCR 0640510d
+cppcr 0x9a773310
+apll_freq 1008000000 
+mpll_freq 1000000000 
+vpll_freq = 1200000000
+ddr sel mpll, cpu sel apll
+ddrfreq 500000000
+cclk  1008000000
+l2clk 504000000
+h0clk 200000000
+h2clk 200000000
+pclk  100000000
+CLK init
+SDRAM init
+sdram init start
+ddr_inno_phy_init ..!
+phy reg = 0x00000007, CL = 0x00000007
+ddr_inno_phy_init ..! 11:  00000004
+ddr_inno_phy_init ..! 22:  00000006
+ddr_inno_phy_init ..! 33:  00000006
+REG_DDR_LMR: 00000210
+REG_DDR_LMR: 00000310
+REG_DDR_LMR: 00000110
+REG_DDR_LMR, MR0: 00f73011
+T31_0x5: 00000007
+T31_0x15: 0000000c
+T31_0x4: 00000000
+T31_0x14: 00000002
+INNO_TRAINING_CTRL 1: 00000000
+INNO_TRAINING_CTRL 2: 000000a1
+T31_cc: 00000003
+INNO_TRAINING_CTRL 3: 000000a0
+T31_118: 0000003c
+T31_158: 0000003c
+T31_190: 00000021
+T31_194: 00000020
+jz-04 :  0x00000051 
+jz-08 :  0x000000a0 
+jz-28 :  0x00000024 
+DDR PHY init OK
+INNO_DQ_WIDTH   :00000003
+INNO_PLL_FBDIV  :00000014
+INNO_PLL_PDIV   :00000005
+INNO_MEM_CFG    :00000051
+INNO_PLL_CTRL   :00000018
+INNO_CHANNEL_EN :0000000d
+INNO_CWL        :00000006
+INNO_CL         :00000007
+DDR Controller init
+DDRC_STATUS         0x80000001
+DDRC_CFG            0x0a288a40
+DDRC_CTRL           0x0000011c
+DDRC_LMR            0x00400008
+DDRC_DLP            0x00000000
+DDRC_TIMING1        0x040e0806
+DDRC_TIMING2        0x02170707
+DDRC_TIMING3        0x2007051e
+DDRC_TIMING4        0x1a240031
+DDRC_TIMING5        0xff060405
+DDRC_TIMING6        0x32170505
+DDRC_REFCNT         0x00f25a01
+DDRC_MMAP0          0x000020fc
+DDRC_MMAP1          0x00002400
+DDRC_REMAP1         0x03020d0c
+DDRC_REMAP2         0x07060504
+DDRC_REMAP3         0x0b0a0908
+DDRC_REMAP4         0x0f0e0100
+DDRC_REMAP5         0x13121110
+DDRC_AUTOSR_EN      0x00000000
+sdram init finished
+SDRAM init ok
+board_init_r
+image entry point: 0x80100000
+
+
+U-Boot 2013.07-gad18488 (Nov 13 2020 - 16:54:20)
+
+Board: ISVP (Ingenic XBurst T31 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 442k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer 52
+SF: Detected NM25Q64EVB
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====>PHY not found!Jz4775-9161
+Hit any key to stop autoboot:  0 
+the manufacturer 52
+SF: Detected NM25Q64EVB
+
+--->probe spend 4 ms
+SF: 2621440 bytes @ 0x40000 Read: OK
+--->read spend 842 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_swan_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1311087 Bytes = 1.3 MiB
+   Load Address: 80010000
+   Entry Point:  802c1e40
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_swan_1.0__ (jdong@ubuntu) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #2 PREEMPT Wed Aug 19 16:53:07 CST 2020
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:83F905DC
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:1008MHz L2CLK:504Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 003a6000 @ 00010000 (usable)
+[    0.000000]  memory: 0003a000 @ 003b6000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02000000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x01ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x01ffffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 8128
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=32M@0x0 rmem=32M@0x2000000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2560k(kernel),2048k(root),-(appfs)
+[    0.000000] PID hash table entries: 128 (order: -3, 512 bytes)
+[    0.000000] Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Memory: 27772k/32768k available (2791k kernel code, 4996k reserved, 943k data, 232k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000019] Calibrating delay loop... 1001.88 BogoMIPS (lpj=5009408)
+[    0.037789] pid_max: default: 32768 minimum: 301
+[    0.042710] Mount-cache hash table entries: 512
+[    0.047754] Initializing cgroup subsys debug
+[    0.052014] Initializing cgroup subsys freezer
+[    0.058628] regulator-dummy: no parameters
+[    0.062856] NET: Registered protocol family 16
+[    0.077124] bio: create slab <bio-0> at 0
+[    0.083063] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.088115] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.094290]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.100424] media: Linux media interface: v0.10
+[    0.104975] Linux video capture interface: v2.00
+[    0.110118] Switching to clocksource jz_clocksource
+[    0.115626] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.120506] DWC IN DEVICE ONLY MODE
+[    0.124660] dwc2 dwc2: Keep PHY ON
+[    0.128062] dwc2 dwc2: Using Buffer DMA mode
+[    0.132358] dwc2 dwc2: Core Release: 3.00a
+[    0.136796] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.145741] NET: Registered protocol family 2
+[    0.150670] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.157706] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.164084] TCP: Hash tables configured (established 512 bind 512)
+[    0.170412] TCP: reno registered
+[    0.173616] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.179567] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.186150] NET: Registered protocol family 1
+[    0.190806] freq_udelay_jiffys[0].max_num = 10
+[    0.195282] cpufreq 	udelay 	loops_per_jiffy	
+[    0.199647] 12000	 59635	 59635	
+[    0.202914] 24000	 119271	 119271	
+[    0.206369] 60000	 298179	 298179	
+[    0.209801] 120000	 596358	 596358	
+[    0.213332] 200000	 993930	 993930	
+[    0.216874] 300000	 1490895	 1490895	
+[    0.220572] 600000	 2981790	 2981790	
+[    0.224281] 792000	 3935963	 3935963	
+[    0.227999] 1008000	 5009408	 5009408	
+[    0.231786] 1200000	 5963580	 5963580	
+[    0.240339] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.246440] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.252270] msgmni has been set to 54
+[    0.257201] io scheduler noop registered
+[    0.261130] io scheduler cfq registered (default)
+[    0.267430] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.275459] console [ttyS1] enabled, bootconsole disabled
+[    0.275459] console [ttyS1] enabled, bootconsole disabled
+[    0.290100] brd: module loaded
+[    0.295176] loop: module loaded
+[    0.298994] zram: Created 2 device(s) ...
+[    0.303207] logger: created 256K log 'log_main'
+[    0.308502] jz TCU driver register completed
+[    0.313312] the id code = 522217, the flash name is NM25Q64EVB
+[    0.319410] JZ SFC Controller for SFC channel 0 driver register
+[    0.325575] 4 cmdlinepart partitions found on MTD device jz_sfc
+[    0.331695] Creating 4 MTD partitions on "jz_sfc":
+[    0.336678] 0x000000000000-0x000000040000 : "boot"
+[    0.342162] 0x000000040000-0x0000002c0000 : "kernel"
+[    0.347818] 0x0000002c0000-0x0000004c0000 : "root"
+[    0.353245] 0x0000004c0000-0x000000800000 : "appfs"
+[    0.358837] SPI NOR MTD LOAD OK
+[    0.362578] TCP: cubic registered
+[    0.366063] NET: Registered protocol family 17
+[    0.371221] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    0.382276] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    0.390085] Freeing unused kernel memory: 232K (803b6000 - 803f0000)
+mdev is ok......
+/system/init/app_init.sh: line 8: anticopy: not found
+
+Ingenic-uc1_1 login: [    1.506570] dac_value is 100 
+[    1.510879] dw9714-input 0-000c: misc_deregister is ok!
+[    1.764478] dmic driver init.
+[    1.770024] jz_codec_register: probe() successful!
+[    2.185359] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a0852000)
+[    2.194575] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a0853000)
+[    2.203866] dma dma0chan21: Channel 21 have been requested.(phy id 10,type 0x0c desc a0854000)
+[    2.213757] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a0855000)
+[    2.239847] g_camera gadget: g_camera ready
+INFO: anticopy verify OK![Ucamera]: [INFO]: Video Start.
+
+[    2.697262] @@@@ tx-isp-probe ok(version H20201124a), compiler date=Nov 25 2020 @@@@@
+[Ucamera]: catch signal 16
+
+[    2.985846] jxf37 chip found @ 0x40 (i2c0)
+[    2.990114] sensor driver version H20200608a
+---- FPGA board is ready ----
+  Board UID : 30AB6E51
+  Board HW ID : 72000460
+  Board rev.  : 5DE5A975
+  Board date  : 20190326
+-----------------------------
+[    3.735008] codec_set_device: set device: MIC...
+[Ucamera]: [INFO]: Audio Start.
+
+
+Ingenic-uc1_1 login: root
+Jan  1 00:00:07 login[47]: root login on 'console'
+[root@Ingenic-uc1_1:~]# nopw
+
+
+
+[root@Ingenic-uc1_1:gpio53]# dmesg
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_swan_1.0__ (jdong@ubuntu) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #2 PREEMPT Wed Aug 19 16:53:07 CST 2020
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:10824E1D
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_get_rate, parent = 1008000000, rate = 0, m = 0, n = 0, reg val = 0x081000ff
+[    0.000000] cgu_get_rate, parent = 1008000000, rate = 0, m = 0, n = 0, reg val = 0x081000ff
+[    0.000000] CCLK:1008MHz L2CLK:504Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 003a6000 @ 00010000 (usable)
+[    0.000000]  memory: 0003a000 @ 003b6000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02000000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x01ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x01ffffff]
+[    0.000000] On node 0 totalpages: 8192
+[    0.000000] free_area_init_node: node 0, pgdat 803b4550, node_mem_map 81000000
+[    0.000000]   Normal zone: 64 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 8192 pages, LIFO batch:0
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 8128
+[    0.000000] Kernel command line: console=ttyS1,115200n8 mem=32M@0x0 rmem=32M@0x2000000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2560k(kernel),2048k(root),-(appfs)
+[    0.000000] PID hash table entries: 128 (order: -3, 512 bytes)
+[    0.000000] Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Memory: 27772k/32768k available (2791k kernel code, 4996k reserved, 943k data, 232k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000019] Calibrating delay loop... 1001.88 BogoMIPS (lpj=5009408)
+[    0.037789] pid_max: default: 32768 minimum: 301
+[    0.042711] Mount-cache hash table entries: 512
+[    0.047756] Initializing cgroup subsys debug
+[    0.052016] Initializing cgroup subsys freezer
+[    0.058630] regulator-dummy: no parameters
+[    0.062859] NET: Registered protocol family 16
+[    0.068273] set gpio strength: 32-2
+[    0.068286] set gpio strength: 33-2set gpio strength: 34-2
+[    0.068299] set gpio strength: 35-2set gpio strength: 36-2
+[    0.068310] set gpio strength: 37-2set gpio pull: 59-90
+[    0.077125] bio: create slab <bio-0> at 0
+[    0.083066] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.088118] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.094292]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.100426] media: Linux media interface: v0.10
+[    0.104978] Linux video capture interface: v2.00
+[    0.110121] Switching to clocksource jz_clocksource
+[    0.115594] dwc2 otg probe start
+[    0.115627] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.120508] DWC IN DEVICE ONLY MODE
+[    0.124663] dwc2 dwc2: Keep PHY ON
+[    0.128066] dwc2 dwc2: Using Buffer DMA mode
+[    0.132360] dwc2 dwc2: Core Release: 3.00a
+[    0.136799] dwc2 dwc2: enter dwc2_gadget_plug_change:2589: plugin = 1 pullup_on = 0 suspend = 0
+[    0.145584] dwc2 otg probe success
+[    0.145742] NET: Registered protocol family 2
+[    0.150673] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.157710] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.164087] TCP: Hash tables configured (established 512 bind 512)
+[    0.170416] TCP: reno registered
+[    0.173619] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.179570] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.186154] NET: Registered protocol family 1
+[    0.190810] freq_udelay_jiffys[0].max_num = 10
+[    0.195286] cpufreq 	udelay 	loops_per_jiffy	
+[    0.199652] 12000	 59635	 59635	
+[    0.202919] 24000	 119271	 119271	
+[    0.206374] 60000	 298179	 298179	
+[    0.209806] 120000	 596358	 596358	
+[    0.213337] 200000	 993930	 993930	
+[    0.216879] 300000	 1490895	 1490895	
+[    0.220577] 600000	 2981790	 2981790	
+[    0.224286] 792000	 3935963	 3935963	
+[    0.228004] 1008000	 5009408	 5009408	
+[    0.231790] 1200000	 5963580	 5963580	
+[    0.240345] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.246447] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.252277] msgmni has been set to 54
+[    0.257210] io scheduler noop registered
+[    0.261140] io scheduler cfq registered (default)
+[    0.267440] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.275469] console [ttyS1] enabled, bootconsole disabled
+[    0.290108] brd: module loaded
+[    0.295184] loop: module loaded
+[    0.299004] zram: Created 2 device(s) ...
+[    0.303218] logger: created 256K log 'log_main'
+[    0.308513] jz TCU driver register completed
+[    0.313326] the id code = 522217, the flash name is NM25Q64EVB
+[    0.319425] JZ SFC Controller for SFC channel 0 driver register
+[    0.325590] 4 cmdlinepart partitions found on MTD device jz_sfc
+[    0.331710] Creating 4 MTD partitions on "jz_sfc":
+[    0.336694] 0x000000000000-0x000000040000 : "boot"
+[    0.342176] 0x000000040000-0x0000002c0000 : "kernel"
+[    0.347832] 0x0000002c0000-0x0000004c0000 : "root"
+[    0.353257] 0x0000004c0000-0x000000800000 : "appfs"
+[    0.358846] SPI NOR MTD LOAD OK
+[    0.362584] TCP: cubic registered
+[    0.366070] NET: Registered protocol family 17
+[    0.371230] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    0.382280] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    0.390089] Freeing unused kernel memory: 232K (803b6000 - 803f0000)
+[    1.506575] dac_value is 100 
+[    1.510904] dw9714-input 0-000c: misc_deregister is ok!
+[    1.765908] dmic driver init.
+[    1.771376] request spk en gpio 63 ok!
+[    1.771389] jz_codec_register: probe() successful!
+[    1.778386] cgu_set_rate, parent = 1008000000, rate = 2048000, n = 7875, reg val = 0x01001ec3
+[    1.778403] cgu_enable,cgu_i2s_spk reg val = 0x21001ec3
+[    1.778431] cgu_set_rate, parent = 1008000000, rate = 2048000, n = 7875, reg val = 0x01001ec3
+[    1.778441] cgu_enable,cgu_i2s_mic reg val = 0x21001ec3
+[    2.185363] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a0852000)
+[    2.194578] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a0853000)
+[    2.203868] dma dma0chan21: Channel 21 have been requested.(phy id 10,type 0x0c desc a0854000)
+[    2.213757] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a0855000)
+[    2.239893] g_camera gadget: g_camera ready
+[    2.696898] @@@@ tx-isp-probe ok(version H20201124a), compiler date=Nov 25 2020 @@@@@
+[    2.819967] probe ok ------->jxf37
+[    2.975426] -----jxf37_detect: 1309 ret = 0, v = 0x0f
+[    2.975840] -----jxf37_detect: 1317 ret = 0, v = 0x37
+[    2.975851] jxf37 chip found @ 0x40 (i2c0)
+[    2.980118] sensor driver version H20200608a
+[    3.272573] cgu_set_rate, parent = 1008000000, rate = 4096000, n = 7875, reg val = 0x22001ec3
+[    3.272589] codec_codec_ctl: set sample rate...
+[    3.272854] codec_codec_ctl: set device...
+[    3.725012] codec_set_device: set device: MIC...

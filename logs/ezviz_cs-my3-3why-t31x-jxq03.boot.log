@@ -1,0 +1,1012 @@
+normal boot, boot to uboot...
+
+
+U-Boot 2013.07 (Aug 17 2021 - 11:21:10)
+
+Board: ISVP (Ingenic XBurst T31 SoC)
+DRAM:  128 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 511k for U-Boot at: 83f80000
+Reserving 32769k for malloc() at: 81f7fc00
+Reserving 32 Bytes for Board Info at: 81f7fbe0
+Reserving 124 Bytes for Global Data at: 81f7fb64
+Reserving 128k for boot params() at: 81f5fb64
+Stack Pointer at: 81f5fb48
+Now running in RAM - U-Boot at: 83f80000
+MMC:   msc: 0
+the manufacturer ef
+SF: Detected W25Q128
+
+libezbsp-[svn 91010] (Sep 22 2020-20:00:30)
+
+U-Boot 2013.07 svn119050 (Aug 17 2021 - 11:21:10)
+product name:CP1_1296P_2020_CMCC
+device name mmc!
+Interface:  MMC
+  Device 0: Vendor: Man 000000 Snr 006b8601 Rev: 0.0 Prod: 00000
+            Type: Removable Hard Disk
+            Capacity: 7624.0 MB = 7.4 GB (15613952 x 512)
+Filesystem: FAT32 "NO NAME    "
+ezplat_mmc_read_file addr 0x82000000 
+reading 5f9552c2f2a52e9d.dav
+MMC read file 5f9552c2f2a52e9d.dav failed,ret=-1!
+load_update_file fail
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====> At PhyBase:0 found phy id:0x1cc816
+Jz4775-9161
+Hit Ctrl+u to stop autoboot: 0
+run ez_fastboot!
+load sys to 0x82000000 ... 
+checksum=0x2d91e989
+Verify [app0] img successfully...
+Verify kernel successfully...
+Done!
+## Booting kernel from Legacy Image at 82000000 ...
+   Image Name:   Linux-3.10.14__isvp_swan_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    3870227 Bytes = 3.7 MiB
+   Load Address: 80010000
+   Entry Point:  803ac1c0
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_swan_1.0__[svn 119860] (zhengxiaodong@Cpl-Ezviz-General-74-190) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #2 PREEMPT Tue Aug 17 11:24:03 CST 2021
+[    0.000000] CPU0 RESET ERROR PC:0110241C
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:1392MHz L2CLK:696Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 004c9000 @ 00010000 (usable)
+[    0.000000]  memory: 002b7000 @ 004d9000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 04e00000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x04dfffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x04dfffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 19812
+[    0.000000] Kernel command line: console=ttyS1,115200n8 init=/linuxrc rootfstype=initramfs root=/dev/ram0 rw mtdparts=jz_sfc:256k(bld)ro,64k(env),64k(enc)ro,4608k(sys0),4m(recov),6272k(app0),1m(cfg) ip=192.0.0.64:::255.255.255.0 ethaddr=XX:XX:XX:XX:XX:XX devinfo=CP1_1296P_2020_CMCC DEVINFO=CP1_1296P_2020_CMCC rst=0 boot_from=PART_MAIN UPDATE_SOURCE=net SERVERIP=192.0.0.128 XAPP=0 mem=78M@0x0 rmem=50M@0x4e00000
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 70572k/79872k available (3734k kernel code, 9300k reserved, 1164k data, 2780k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000017] Calibrating delay loop... 1391.00 BogoMIPS (lpj=6955008)
+[    0.090036] pid_max: default: 32768 minimum: 301
+[    0.090230] Mount-cache hash table entries: 512
+[    0.090721] Initializing cgroup subsys debug
+[    0.090742] Initializing cgroup subsys freezer
+[    0.092702] regulator-dummy: no parameters
+[    0.092848] NET: Registered protocol family 16
+[    0.093310] register process exit failed.
+[    0.102863] bio: create slab <bio-0> at 0
+[    0.104416] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.104698] usbcore: registered new interface driver usbfs
+[    0.104740] usbcore: registered new interface driver hub
+[    0.104893] usbcore: registered new device driver usb
+[    0.105075] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.105151]  (null): set:249  hold:250 dev=100000000 h=500 l=500
+[    0.105216] media: Linux media interface: v0.10
+[    0.105250] Linux video capture interface: v2.00
+[    0.106780] Switching to clocksource jz_clocksource
+[    0.107308] NET: Registered protocol family 2
+[    0.107706] TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.107737] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.107758] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.107810] TCP: reno registered
+[    0.107822] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.107842] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.108065] NET: Registered protocol family 1
+[    0.110115] cfg80211: Calling CRDA to update world regulatory domain
+[    0.201890] freq_udelay_jiffys[0].max_num = 10
+[    0.201901] cpufreq 	udelay 	loops_per_jiffy	
+[    0.201906] 12000	 59956	 59956	
+[    0.201912] 24000	 119913	 119913	
+[    0.201918] 60000	 299784	 299784	
+[    0.201923] 120000	 599569	 599569	
+[    0.201928] 200000	 999282	 999282	
+[    0.201934] 300000	 1498924	 1498924	
+[    0.201940] 600000	 2997848	 2997848	
+[    0.201945] 792000	 3957159	 3957159	
+[    0.201950] 1008000	 5036385	 5036385	
+[    0.201956] 1200000	 5995696	 5995696	
+[    0.205819] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.205968] jffs2: version 2.2. © 2001-2006 Red Hat, Inc.
+[    0.206230] msgmni has been set to 137
+[    0.207544] io scheduler noop registered (default)
+[    0.207586] io scheduler cfq registered
+[    0.207652] The version of PWM driver is H20180309a
+[    0.208734] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.654021] console [ttyS1] enabled
+[    0.660412] brd: module loaded
+[    0.664936] loop: module loaded
+[    0.668720] zram: Created 2 device(s) ...
+[    0.672924] logger: created 256K log 'log_main'
+[    0.677845] jz_pwm_probe[212] d_name = tcu_chn0
+[    0.682747] jz TCU driver register completed
+[    0.687457] wait stable.[289][cgu_ssi]
+[    0.691381] the id code = ef4018, the flash name is WIN25Q128
+[    0.697396] jz-sfc jz-sfc: Status: CMD_RDSR:0, CMD_RDSR_1:2, CMD_RDSR_2:60
+[    0.704576] JZ SFC Controller for SFC channel 0 driver register
+[    0.710714] 7 cmdlinepart partitions found on MTD device jz_sfc
+[    0.716829] Creating 7 MTD partitions on "jz_sfc":
+[    0.721770] 0x000000000000-0x000000040000 : "bld"
+[    0.727073] 0x000000040000-0x000000050000 : "env"
+[    0.732258] 0x000000050000-0x000000060000 : "enc"
+[    0.737522] 0x000000060000-0x0000004e0000 : "sys0"
+[    0.742805] 0x0000004e0000-0x0000008e0000 : "recov"
+[    0.748251] 0x0000008e0000-0x000000f00000 : "app0"
+[    0.753535] 0x000000f00000-0x000001000000 : "cfg"
+[    0.758784] SPI NOR MTD LOAD OK
+[    0.762381] jz-ssi jz-ssi.1: master is unqueued, this is deprecated
+[    0.769020] JZ SSI Controller for SPI channel 1 driver register
+[    0.775172] tun: Universal TUN/TAP device driver, 1.6
+[    0.780395] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.786867] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.799336] libphy: jz_mii_bus: probed
+[    0.803285] =======>gmacdev = 0x8256a200<================
+[    0.808936] =========>gmacdev->MacBase = 0xb34b0000 DmaBase = 0xb34b1000
+[    0.815845] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    0.822682] jz_mac jz_mac.0: JZ on-chip Ethernet MAC driver, Version 1.0
+[    0.829757] PPP generic driver version 2.4.2
+[    0.834339] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.839455] DWC IN OTG MODE
+[    0.842999] dwc2 dwc2: Keep PHY ON
+[    0.846509] dwc2 dwc2: Using Buffer DMA mode
+[    0.850951] dwc2 dwc2: Core Release: 3.00a
+[    0.855210] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.861706] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.868995] hub 1-0:1.0: USB hub found
+[    0.872883] hub 1-0:1.0: 1 port detected
+[    0.877079] dwc2 dwc2: DWC2 Host Initialized
+[    0.881612] rtc-pcf8563 1-0051: chip found, driver version 0.4.3
+[    0.889813] rtc-pcf8563 1-0051: rtc core: registered rtc-pcf8563 as rtc0
+[    0.896755] i2c /dev entries driver
+[    0.900723] wait stable.[289][cgu_msc0]
+[    0.904685] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    0.946837] card [jzmmc_v1.2.0] connected!
+[    0.955174] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    0.960507] dwc2 dwc2: ID PIN CHANGED!
+[    0.964389] jzmmc_v1.2 jzmmc_v1.2.0: card inserted, state=0
+[    0.970317] jz_codec_register: probe() successful!
+[    0.975485] codec_codec_ctl ignore init codec
+[    0.980045] codec_fast_start init
+[    0.983457] Audio init codec
+[    0.987151] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a2583000)
+[    0.996487] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a2590000)
+[    1.005958] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a257f000)
+[    1.015261] TCP: cubic registered
+[    1.019127] NET: Registered protocol family 10
+[    1.024414] sit: IPv6 over IPv4 tunneling driver
+[    1.029745] NET: Registered protocol family 17
+[    1.035070] gpio-keys gpio-keys: No IRQ specified
+[    1.040051] gpio-keys: probe of gpio-keys failed with error -22
+[    1.048121] rtc-pcf8563 1-0051: setting system clock to 2025-01-29 10:18:23 UTC (1738145903)
+[    1.071407] Adjust rtl8201 MDI amplitude Page1 Reg17 value from 0x84ca to 0x819a
+[    1.079240] Bus Mode Reg after reset: 0x00020101, cnt=0
+[    1.097101] IP-Config: Complete:
+[    1.100454]      device=eth0, hwaddr=XX:XX:XX:XX:XX:XX, ipaddr=192.0.0.64, mask=255.255.255.0, gw=255.255.255.255
+[    1.111127]      host=192.0.0.64, domain=, nis-domain=(none)
+[    1.117041]      bootserver=255.255.255.255, rootserver=255.255.255.255, rootpath=
+[    1.132648] Freeing unused kernel memory: 2780K (804d9000 - 80790000)
+[    1.154100] set smart card not supported!
+[    1.166906] mmc_is_support_smart_tf: cid info not matched ...
+[    1.172937] mmc_is_support_smart_tf: cid info not matched ...
+[    1.186907] mmc0: new SDHC card at address 0001
+[    1.199513] mmcblk0: mmc0:0001 00000 7.44 GiB 
+[    1.218994]  mmcblk0: p1
+[    1.229670] online sd_name=mmc0
+[    1.232917] Change SD state from STOR_OFFLINE to STOR_ONLINE
+mdev is ok......
+[    1.376375] @@@@ tx-isp-probe ok(version H20200612a), compiler date=Jun 12 2020 @@@@@
+[    1.386898] Audio codec_set_buildin_mic
+[    1.426922] usb 1-1: new high-speed USB device number 2 using dwc2
+[    1.447072] motor_probe911
+[    1.463940] MS419X9 svn version:53394
+[    1.487135] wait stable.[289][cgu_ssi]
+[    1.504535] MS419X9 driver init success
+[    1.517098] Enter hikio_motor_init 
+[    1.520725] mmc0 power register success!
+[    1.524761] set_mci_pin_mode: SD state is STOR_ONLINE 
+[    1.826891] codec_fast_start done
+Input 'q' to exit initrun.sh~
+[    3.816966] libphy: 0:00 - Link is Up - 100/Full
+mkdir: can't create directory '/usr': File exists
+mkdir: can't create directory '/usr/share': File exists
+mkdir: can't create directory '/usr/share/udhcpc': File exists
+cp: can't stat '/dav/default.script': No such file or directory
+ln: help: File exists
+ln: prtHardInfo: File exists
+ln: taskShow: File exists
+chmod: voice: Read-only file system
+BusyBox Protect Shell (psh)
+Enter 'help' for a list of davinci system commands.
+
+# [29 10:18:28][SYSINIT][ERROR]main in
+set_decouple_mode, DECOUPLE_MODE=3[0:none 1:only_cn 2:only_sea 3:all] bSea=0 --> bNeedDecouple=1
+[29 18:18:28][ALARM_EXP][ERROR]alarm_set_decouple_mode :1[0:no dec 1:dec] 
+compute /devinfo/devlog//. iresult:0 buf.st_size:0
+compute /devinfo/devlog//.. iresult:0 buf.st_size:0
+compute /devinfo/devlog//log_J00176490.20211101190908 iresult:0 buf.st_size:61440
+compute /devinfo/devlog//log_J00176490.20211101191312 iresult:0 buf.st_size:61440
+compute /devinfo/devlog//log_J00176490.20211101191718 iresult:0 buf.st_size:61440
+compute /devinfo/devlog//log_J00176490.20240103230808 iresult:0 buf.st_size:61440
+compute /devinfo/devlog//log_J00176490.20240118180711 iresult:0 buf.st_size:16022
+path:/devinfo/devlog filesize:261782 
+cant open /devinfo/devlog/opensdk 
+checkLogFile :261782 255(kb) LOG_FILE_DEAD_SIZE(kb):410
+
+**************************************
+           EZVIZ_STD_APP
+              V5.3.0
+   Bulid date : 2021-08-17 19:26:18
+**************************************
+GenerateDefaultBootParam start
+GenerateDefaultBootParam end
+
+svn_ver: [116666] @ product_type 2562, v1.0.0-svn1234
+LIBSYS DEBUG:type=2562 and TYPE=2562 
+Libsys init ok!
+LIBSYS INFO: hwif_getsecinfo devModel [CS-MY3-3WHY] , prodNo[J00176490]
+init_boot_params ret=0  [2]
+init_core_info ret=0check_boot_key_event NOT RESET_KEY_DOWN [1]
+init_config_field [0] encrypt_cfg 44, hiksdk_cfg 3192, disk_cfg 4, ezvizcfg 1364, reccfg 720, device_cfg 276
+dsp_cfg 1744, isp_cfg 52, alarm_cfg 5532, time_cfg 52, network_cfg 912, preview_cfg 8, bsp_cfg 16, sadp_cfg 20
+pt_cfg 2204
+version_cfg.version=2562
+init enable_voice_plan!
+ [29 18:18:29][CONFIG][ERROR]config_load_all, file /devinfo/ipc_db
+[29 18:18:29][CONFIG][ERROR]config_read_record_cfg enable_allday_rec=0!
+[29 18:18:29][CONFIG][ERROR]read config enable_picture_video=2!
+[29 18:18:29][CONFIG][ERROR]read ezvizcfg enable_allday_rec[res0]=0!
+[29 18:18:29][CONFIG][ERROR]on_read, read all config field success!
+timer_add_element id:1 name config_backup find_slot 0
+DB version = 2562
+hwif_rtc_read beg
+hwif_rtc_read end
+set_support_led:1 
+timer_add_element id:2 name led_ctrl find_slot 0
+[29 18:18:29][SYSINIT][ERROR]get_sensor_info vitype = 0x87, cmd: insmod /dav/isp/sensor_jxq03_t31.ko
+hwif dsp init beg
+get_lenstype lenstype=0
+[dy_shm]Shm_create_module enter sizeof(SHM_MODULE_CONFIG) 33224
+[dy_shm]Shm_create_module step1 
+[dy_shm]Shm_create_module step2 shareBufSize 2162688 
+[dy_shm]Shm_create_module step3
+[dy_shm]Shm_create_module step4 shmKey 1711603724
+[dy_shm]Shm_create_module step5 shmId 0
+[dy_shm]Shm_create_module step6 shmat addr 0x76a13000
+[dy_shm]Shm_create_module step7 clean addr 0x210000
+[dy_shm]Shm_create_module step8 pShm_module_config attch success
+[dy_shm]Shm_create_module step9 pShm_module_config config success
+[dy_shm]chan_idx 0 buff_size 2097152
+[dy_shm]pdyShm_stream_ptr 0x76a13000 pappBase 0x76a23000
+[armlib]shmKey = 32769, DSPINITPARA share size = 658656, addr 0x76972000 
+[29 18:18:29][DSP][ERROR]init dsp: lenstype=0, enAK7755=0 b_isp_stard=0
+[29 18:18:29][DSP][ERROR]init dsp: lenstype=0, enAK7755=0, humidity = 1 
+[29 18:18:29][DSP][ERROR]init dsp: type=8201 res:num=2 [0x1038 0x101b] [0x1062 0x0]
+[29 18:18:29][DSP][ERROR]init dsp: viwide vihigh[0x900 0x510] viwide vihigh[0x780 0x438]
+[29 18:18:29][DSP][ERROR]hwif_dsp_init: vitype 2009, encChanCnt 2, device_type 165, bHaveMenu 0 b_fd:1 
+[29 18:18:29][DSP][ERROR]hwif_dsp_init: viType 135, hdr_mode 0, image_viH 1296, image_viW 2304, original_viW 2304, original_viH 1296, dspMemSize 64
+powerLineFrequencyMode = 0
+[29 18:18:29][DSP][ERROR]hwif_dsp_init: viStandard:4097 frame_rate 25
+[29 18:18:29][DSP][ERROR]hwif_dsp_init:    resolution  56
+[29 18:18:29][DSP][ERROR]hwif_dsp_init: index 0, resolution 0x1038[56], streamType 1003, audioType 1, videoType 7, bps 1310720, bpsType 0, fps f, IFrameInterval 60
+[29 18:18:29][DSP][ERROR]hwif_dsp_init:    resolution  3
+[29 18:18:29][DSP][ERROR]hwif_dsp_init: index 1, resolution 0x1003[3], streamType 1003, audioType 1, videoType 7, bps 262144, bpsType 0, fps a, IFrameInterval 40
+[armlib]start ezdsp &
+[armlib]start dsp core timeOut, bootInfo=0(0x0)
+[dsp]***********************************************
+[dsp]******************ezdsp SVN********************
+[dsp]*************SVN VERSION IS 116470*[    6.933796] wait stable.[289][cgu_isp]
+*************
+[dsp]makeBuildDate year 2021 month 6 day 25 10:10:21
+[dsp]***********************************************
+[dsp]**********DSP_Sdk_Version_Show V2_1_1**********
+[dsp][dsp_dbg] control dsp_dbg = (null)
+[dsp]enDspDebug is 0
+[dsp]pDspInitPara->boardType = 0x2009
+name:jxq03
+[    7.067312] -----jxq03_detect: 711 ret = 0, v = 0x05
+[    7.072914] -----jxq03_detect: 719 ret = 0, v = 0x07
+[    7.078049] jxq03 chip found @ 0x40 (i2c0)
+[    7.082270] sensor driver version H20200930b
+[armlib]start dsp core timeOut, bootInfo=5(0x5)
+[    7.232498] jxq03 stream on
+/bin/sh: can't create /proc/jz/isp/cmd: nonexistent directory
+<ISP><ez_start_inner_thread> Start <INNER_AE_TSK> ok
+<ISP><ez_start_inner_thread> Start <INNER_ICR_TSK> ok
+#############################
+platform:i2
+version:1.0.48
+build: 2021.07.29 09:05:45
+code:271592189 release
+#############################
+[dsp][../work/src/dsp_logo.c][DSP_LO[    7.267877] codec_set_device ignore codec_set_buildin_mic
+GO_Init]line:511  [dsp]open file /devinfo/logo_1080P failed
+[ds[    7.280447] codec_set_device ignore codec_set_speaker
+p][../work/src/dsp_logo.c][DSP_LOGO_Init]line:537  [dsp]open fil[    7.290800] aes_open: aes open successful!
+e /devinfo/logo_720P failed
+[dsp][../work/src/dsp_logo.c][DSP_LOGO_Init]line:587  [dsp]open file /devinfo/slogo.bin failed
+voice_check memsize : 36
+[dsp]dsp_md_init size zero
+[dsp]YS_ObjectTrack_Create init success
+[dsp]dsp_obj_init send
+[dsp]dsp_obj_init send
+[dsp]dsp_obj_init send
+[dy_shm]Shm_dsp_attach_module step1
+[dy_shm]Shm_dsp_attach_module step4 shmKey 1711603724
+[dy_shm]Shm_dsp_attach_module step5 shmKey 1711603724 shmId 0
+[dy_shm]Shm_dsp_attach_module shmat step6 shmKey = 1711603724,shmId 0 ,pShm_chan_param share size = 0, tmp_ptr 0x670e8000
+[dy_shm]Shm_dsp_attach_module step7 shmKey = 1711603724,shmId 0, pShm_module_ezdspPort_config 0x670e8000 
+[dy_shm]Shm_dsp_attach_module step8 sshmKey = 1711603724,shmId 0, shareBufSize 2162688 shm_stream_buff_chan 1
+[dy_shm]Shm_dsp_attach_module step9 shmdt pShm_module_ezdspPort_config
+[dy_shm]Shm_dsp_attach_module step10 shmdt shmget shmId 0
+[dy_shm]Shm_dsp_attach_module step11 shmat shmget tmp_ptr 0x670e8000
+[dy_shm]Shm_dsp_attach_module step12 pShm_module_ezdspPort_config shm_stream_buff_chan 1
+[dy_shm]buff_size 2097152 pdspBase 0x670f8000
+[frame_pooling_thread--419 Channel:0 ]:12799(ms)
+[frame_pooling_thread--419 Channel:1 ]:12799(ms)
+[dsp]dsp_md_init send
+[dsp]dsp_md_init send
+[dsp]dsp_md_init send
+[armlib]start dsp core ok, bootInfo=100(0x64), bDSPStarted = 1
+[armlib]dspMemSec[0].virtaddr =  0x761e1000!!!
+[armlib]dspMemSec[0].virtaddr =  0x75a50000!!!
+[armlib]dspMemSec[0].virtaddr =  0x752bf000!!!
+[armlib]dspMemSec[0].virtaddr =  0x74b2e000!!!
+[armlib]dspMemSec[0].virtaddr =  0x7439d000!!!
+[armlib]dspMemSec[0].virtaddr =  0x73c0c000!!!
+[armlib]phyaddr =[    7.438694] 15689,1024,1596,8016,15872,156,1024,1024,1024,1024,2,1024,1024,1,1024,1024
+= 0
+[armlib]getVirtAddr error!!!, phyAddr=(nil) 
+
+[armlib]dspMemSec[0].virtaddr =  0x7347b000!!!
+[armlib]dspMemSec[0].virtaddr =  0x72cea000!!!
+[armlib]dspMemSec[0].virtaddr =  0x72559000!!!
+[armlib]phyaddr == 0
+[armlib]getVirtAddr error!!!, phyAddr=(nil) 
+
+[armlib]dspMemSec[0].virtaddr =  0x71dc8000!!!
+[armlib]phyaddr == 0
+[armlib]getVirt[    7.477667] request pwm channel 0 successfully
+Addr error!!!, phyAddr=(nil) 
+
+hwif dsp init end ret=0
+HostSetAesSecretKey err=0
+HostSetSmdRuleParam sensitivity is :1 smd_limit_num is 6
+host_start_human_detect!!!
+[29 18:18:29][DSP][ERROR]******set human det area
+[IMP_Encoder_GetStream--2361 Channel:1 ]:12867(ms)
+[dsp]start DSP_STREAM_PACK_VideoStreamPack chan 1 encode_type 7  
+[IMP_Encoder_GetStream--2361 Channel:0 ]:12868(ms)
+[dsp]start DSP_STREAM_PACK_VideoStreamPack chan 0 encode_type 7  
+[frame_pooling_thread--419 Channel:2 ]:12878(ms)
+config_stand ISP_AE_ANTI_FLICKER_I val=0 
+[29 18:18:29][SENSOR][ERROR]value = 40000 map_val=40000 slow_shutter_mod = 0 
+[zjf max shut time1111 ] integration_max = 1600
+[29 18:18:29][SENSOR][ERROR]config_hue value=50
+ispcfg.ccd.dayNightFilterType:2 input_mode:255
+automode,cut to day!!! 
+LIBSYS INFO:   brightness:0
+<ISP> IMPISP_RUNNING_MODE_DAY
+[zjf max shut time1111 ] integration_max = 1600[    9.199343] 15689,1024,1596,8016,15872,156,1024,1024,1024,1024,2,1024,1024,1,1024,1024
+
+[29 18:18:31][SENSOR][ERROR]image_style[1], day:1
+day_night_init end
+register share memory type=6 size=2097152, malloc succ 
+1 hwif_dsp_register num=15 
+2 hwif_dsp_register num=15 
+0 func:0 0x69dcd8 
+1 func:1 0x69dfdc 
+2 func:2 0x69dfb8 
+3 func:3 0x69dcf8 
+4 func:4 0x69dd18 
+5 func:5 0x69dd38 
+6 func:6 0x69dd58 
+7 func:7 0x69dcb8 
+8 func:8 0x69dd78 
+9 func:9 0x69dd98 
+10 func:10 0x69ddb8 
+11 func:11 0x69df48 
+12 func:12 0x69dea4 
+13 func:13 0x69ddf8 
+14 func:14 0x69ddd8 
+create_bcm_config_file 
+[29 18:18:31][OTHER][ERROR]set_ap_enable !!!
+LIBSYS INFO: Init wifi device success 
+load_wifi_driver wifi_type[9]
+load_wifi_driver exec_cmd[insmod /dav/8188fu.ko]
+[   11.218854] RTW: module init start
+[   11.234012] RTW: rtl8188fu v5.7.4_33085.20190419_country_onekey_xingneng_20201113
+[   11.251138] RTW: build time: Jun 17 2021 15:52:57
+[   11.256325] hik_wifi_preinit: enter
+[   11.260406] RTW: ERROR hik_wifi_preinit: pick=CN,len=2
+[   11.279190] RTW: ERROR hik_set_country country_code:CN,use default channel plan set . 
+[   11.301924] RTW: ERROR ##hik_set_country :: country_code:CN;rtw_channel_plan=0x20
+[   11.326624] soc platform:MIPS-T31
+[   11.333875] wifi chip:rtl8188fu
+[   11.353769] wifi version:SVN-SN115913
+[   11.364466] build time:Jun 17 2021  15:52:57
+[   11.422610] RTW: HW EFUSE
+[   11.431402] RTW: 0x000: 29 81 00 CC  0B 00 00 00  00 0C 04 4C  10 0C 00 00  
+[   11.445514] RTW: 0x010: 2C 2B 2B 2B  2B 2B 2E 2C  2B 2B 2B 02  FF FF FF FF  
+[   11.474116] RTW: 0x020: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.490122] RTW: 0x030: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.509806] RTW: 0x040: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.523300] RTW: 0x050: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.550632] RTW: 0x060: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.568647] RTW: 0x070: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.590485] RTW: 0x080: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.610175] RTW: 0x090: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.634225] RTW: 0x0A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.649661] RTW: 0x0B0: FF FF FF FF  FF FF FF FF  20 1F 1C 00  00 00 00 FF  
+[   11.675602] RTW: 0x0C0: FF 11 00 10  00 FF 00 FF  00 00 FF FF  FF FF FF FF  
+[   11.690553] RTW: 0x0D0: DA 0B 79 F1  42 66 40 D4  E8 53 0A 20  D3 09 03 52  
+[   11.711579] RTW: 0x0E0: 65 61 6C 74  65 6B 09 03  38 30 32 2E  31 31 6E 00  
+[   11.719468] RTW: 0x0F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.726784] RTW: 0x100: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.735805] RTW: 0x110: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.747768] RTW: 0x120: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.760371] RTW: 0x130: C1 AE FF FF  FF FF FF FF  FF FF 00 11  FF FF FF FF  
+[   11.767770] RTW: 0x140: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.776079] RTW: 0x150: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.789992] RTW: 0x160: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.801001] RTW: 0x170: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.808833] RTW: 0x180: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.817880] RTW: 0x190: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.833137] RTW: 0x1A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.842025] RTW: 0x1B0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.849624] RTW: 0x1C0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.858491] RTW: 0x1D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.874480] RTW: 0x1E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.882808] RTW: 0x1F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[   11.890250] RTW: hal_com_config_channel_plan chplan:0x20
+[   11.942786] RTW: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[   11.961660] RTW: exception mapping country:00 domain:0x20 to regd_name:NONE
+[   11.973210] RTW: rtw_ndev_init(wlan0) if1 mac_addr=XX:XX:XX:XX:XX:XX
+[   12.043015] usbcore: registered new interface driver rtl8188fu
+[   12.060130] RTW: module init ret=0
+[dsp]md image process failed , the input image buffer is wrong
+[dsp]vali_cnt = 0,move work, pDspInitPara->dsp_boot_statu = 0
+[   12.643584] RTW: wlan0- hw port(0) mac_addr =XX:XX:XX:XX:XX:XX
+[   12.656066] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[0]wlan mac: XX:XX:XX:XX:XX:XX
+simple_config_start_task check: get_net_connect_status = 1 
+Wifi param has been updated, return!
+set_support_sd : 1 
+init_hdisk_param lstInit beg
+init_hdisk_param lstInit end
+alarm_init,alarm_is_decouple_mode:1 g_stAlmInfo num=22 mem_size=18KB
+rtcp_init success.
+[29 18:18:35][DEVLOG][ERROR]init_metadata_mem packetlen = 1460
+[29 18:18:35][DEVLOG][ERROR]packetlen = 1460
+[29 18:18:35][DEVLOG][ERROR]g_metadata_mem.base = 0x9f0c50
+[29 18:18:35][DEVLOG][ERROR]g_metadata_mem.totalsize = 93440
+[29 1[   13.181585] FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+8:18:35][DEVLOG][ERROR]g_metadata_mem.ridx = 0
+[29 18:18:35][DEVLOG][ERROR]g_metadata_mem.widx = 0
+[29 18:18:35][DEVLOG][ERROR]g_metadata_mem.packetlen = 1460
+[29 18:18:35][DEVLOG][ERROR]g_metadata_mem.peer_packetlen = 1460
+timer_add_element id:3 name detect_netlink_num find_slot 0
+[29 18:18:35][SDKCMD][ERROR]swm_set_write_part app=/dev/mtd5 sys=/dev/mtd3
+umount /mnt/mmc01 
+mount /dev/mmc01 - /mnt/mmc01 
+[29 18:18:35][SD][ERROR]<sdctrl> partition /mnt/mmc01 mount success.
+[29 18:18:35][SD][ERROR]<sdctrl> partition /dev/mmc02 don't exist and errno=2.
+total sectors = 15613952 
+set_hdisk_param hd_param->totalSize=7624MaddPartition 
+addPartition lstAdd 
+[29 18:18:35][SYSLOG][ERROR]open [   13.250966] Enter hikio_motor_run 
+log file:/mnt/mmc01/logMainFile.bin error
+BURN_TEST FALSE
+ptz_init func_opt=0x66
+support mtd cli set
+set_dev_capability begin
+kernel version = 3-10-14
+kernel kern_svn_build_no = 20120425
+update_flag = 630003002115003002
+set_dev_capability end
+sadp_init, version V5.3.0
+timer_add_element id:4 name sadp_detect find_slot 0
+[29 18:18:35][DOT][E[   13.286665] @@@ WANGC in step_num: 780 act: 736 speed=150...
+RROR][dot_product_capability_add] g_capability=0x6b7
+[29 18:18:35][DOT][ERROR][dot_product_capability_add] g_capability=0x600d7ff0006b7
+[29 18:18:35][DOT][ERROR]dot_get_cmei getCustomNo[3172670000486854$VLe3iGKk111036290486854] success, cmei[111036290486854]
+[LWM2M_SDK_INIT:866] init sucess
+timer_add_element id:5 name alarm_pxy find_slot 0
+[29 18:18:35][BASE][ERROR]ntp_server_buffer[0]:time.ys7.com
+[29 18:18:35][BASE][ERROR]sntp_start get_time_result is NULL!
+Trying to bind LWM2M Client to port host_start_human_detect!!!
+56830
+[lwm2m_init:64] Entering
+[lwm2m_configure:264] endpointName: "L@#@kBRYW6BDSKpgZwWQNFqqB5/SkwR1GduQW2zW5Nx82iI=@#@M100000033", msisdn: "(null)", altPath: "(null)", numObject: 3
+[29 18:18:35][DOT][ERROR]dot_get_uuid getCustomNo[3172670000486854$VLe3iGKk111036290486854] success, uuid[3172670000486854]
+[29 18:18:35][PTZ][ERROR]recover p=175 t=10.
+[29 18:18:35][PTZ][ERROR][Tilt_self_check]A ~~~
+[dsp][prev]: mic_volume = 0, speak_volume = 80
+[29 18:18:35][PTZ][ERROR]~~~motor_run 65
+[29 18:18:35][BASE][ERROR]ntp_failed_cnt:1
+[29 18:18:35][BASE][ERROR]sntp_start ret -1. ntp_server_cnt = 0, ntpSrv[time.ys7.com], timeZone[8:0], force_start_ntp 0 das_ret=-1
+[29 18:18:35][ALARM_EXP][ERROR]set position open
+[29 18:18:35][PTZ][ERROR]open_pt_schedule_message~~~
+LWM2M Client "L@#@kBRYW6BDSKpgZwWQNFqqB5/SkwR1GduQW2zW5Nx82iI=@#@M100000033" started on port 56830.
+
+State: STATE_INITIAL
+No Bootstrap Server.
+No LWM2M Server.
+[lwm2m_step:370] timeoutP: 8577325823998844752
+[lwm2m_step:375] State: STATE_INITIAL
+[object_getServers:740] Entering
+[lwm2m_data_new:143] size: 3
+[lwm2m_data_encode_bool:406] value: false
+[lwm2m_data_encode_int:270] value: 123
+[lwm2m_data_encode_int:270] value: 10
+[lwm2m_data_decode_bool:416] Entering
+[lwm2m_data_decode_bool:467] result: 1, value: false
+[lwm2m_data_decode_int:280] Entering
+[lwm2m_data_decode_int:335] result: 1, value: 123
+[lwm2m_data_new:143] size: 1
+[lwm2m_data_encode_int:270] value: 123
+[lwm2m_data_decode_int:280] Entering
+[lwm2m_data_decode_int:335] result: 1, value: 123
+[lwm2m_data_free:161] size: 1
+[lwm2m_data_new:143] size: 2
+[lwm2m_data_encode_int:270] value: 86400
+[lwm2m_data_encode_string:195] "U"
+[lwm2m_data_decode_int:280] Entering
+[lwm2m_data_decode_int:335] result: 1, value: 86400
+[lwm2m_data_free:161] size: 2
+[lwm2m_data_free:161] size: 3
+[registration_start:513] State: STATE_REGISTER_REQUIRED
+[object_getRegisterPayloadBufferLength:508] Entering
+[object_getRegisterPayload:579] Entering
+[prv_register]query:?lwm2m=1.0&ep=L@#@kBRYW6BDSKpgZwWQNFqqB5/SkwR1GduQW2zW5Nx82iI=@#@M100000033&b=U&lt=86400
+Connecting to coap://m.fxltsbl.com:5683
+Connection [AF_INET6].
+[29 18:18:35][ALARM_EXP][ERROR]set position open
+Connection [AF_INET].
+Connection creation failed.
+lwm2m_step() failed: 0xA3
+[lwm2m_close:176] Entering
+[lwm2m_deregister:82] Entering
+[registration_deregister:601] State: STATE_REGISTER_REQUIRED, serverP->status: STATE_DEREGISTERED
+loop func quit
+
+[29 18:18:35][SADP][ERROR]init_default_param !!! 
+sadp_init_mul_sock device:eth0 
+[29 18:18:35][BASE][ERROR]get_ipaddr ioctl error and errno=126
+[29 18:18:35][BASE][ERROR]get_netmask ioctl error and errno=126
+fscanf error: Cannot assign requested address
+initSADP(eth0=)iRet= 0
+[29 18:18:35][BASE][ERROR]get_ipaddr ioctl error and errno=126
+[29 18:18:35][BASE][ERROR]get_netmask ioctl error and errno=126
+fscanf error: Cannot assign requested address
+[29 18:18:35][BASE][ERROR]get_gateway error!
+rm: can't remove 'ezapp': Read-only file system
+rm: can't remove 'ezdsp': Read-only file system
+rm: can't remove 'execSystemCmd': Read-only file system
+rm: can't remove 'libagc.so': Read-only file system
+rm: can't remove 'libaudioProcess.so': Read-only file system
+rm: can't remove 'libdadsp.so': Read-only file system
+rm: can't remove 'libdata_pack.so': Read-only file system
+rm: can't remove 'libdewarp.so': Read-only file system
+rm: can't remove 'libhpf.so': Read-only file system
+rm: can't remove 'libi2_isp.so': Read-only file system
+rm: can't remove 'libiaac.so': Read-only file system
+rm: can't remove 'libns.so': Read-only file system
+rm: can't remove 'libpersonDet_inf.so': Read-only file system
+rm: can't remove 'libsys.so': Read-only file system
+rm: can't remove 'libubacktrace.so': Read-only file system
+timer_add_element id:6 name clean_tmp_file find_slot 0
+timer_add_element id:7 name swwd_daemon find_slot 0
+timer_add_element id:8 name run_time find_slot 0
+[29 18:18:35][BASE][ERROR]start net_broken_probe_task
+timer_add_element id:9 name net_broken_probe find_slot 0
+### need switch 1
+[29 18:18:35][BASE][ERROR]need switch, broken 1, index 0, last active index 0 wifi_rest_time:0
+probe_net_connect, status 1
+wifi_rest_time set to 0
+[29 18:18:35][BASE][ERROR]dhcp task already stop!
+init_net_if begin inf: eth0 dns:10.25.50.2 0.0.0.0
+set_eth_mode 5 
+name = eth0 speed = 0, duplex = 0, and autoneg = 1
+[29 18:18:35][BASE][ERROR]starting DHCP...
+[29 18:18:35][BASE][ERROR]start_dhcp_task, interface_name eth0
+[29 18:18:35][BASE][ERROR]get_ipaddr ioctl error and errno=126
+[29 18:18:35][BASE][ERROR]get_ipaddr ret -1
+Wed Jan 29 18:18:35 2025
+ warning, Sending discover...
+[   13.817123] libphy: 0:00 - Link is Down
+====in client6_init()====
+Jan/29/2025 10:18:36: found an interface eth0 for DUID
+Jan/29/2025 10:18:36: generated a new DUID: XX:XX:XX:XX:XX:XX
+Jan/29/2025 10:18:36: saved generated DUID to /var/run/dhcp6c_duid_eth0
+====client6_init() 1====
+Jan/29/2025 10:18:36: failed to open /var/run/dhcp6cctlkey: No such file or directory
+Jan/29/2025 10:18:36: failed initialize control message authentication
+Jan/29/2025 10:18:36: skip opening control port
+Jan/29/2025 10:18:36: <3>[interface] (9)
+Jan/29/2025 10:18:36: <5>[eth0] (4)
+Jan/29/2025 10:18:36: <3>begin of closure [{] (1)
+Jan/29/2025 10:18:36: <3>[send] (4)
+Jan/29/2025 10:18:36: <3>[ia-na] (5)
+Jan/29/2025 10:18:36: <3>[0] (1)
+Jan/29/2025 10:18:36: <3>end of sentence [;] (1)
+Jan/29/2025 10:18:36: <3>end of closure [}] (1)
+Jan/29/2025 10:18:36: <3>end of sentence [;] (1)
+Jan/29/2025 10:18:36: <3>[id-assoc] (8)
+Jan/29/2025 10:18:36: <13>[na] (2)
+Jan/29/2025 10:18:36: <13>begin of closure [{] (1)
+Jan/29/2025 10:18:36: <3>end of closure [}] (1)
+Jan/29/2025 10:18:36: <3>end of sentence [;] (1)
+Jan/29/2025 10:18:36: called
+Jan/29/2025 10:18:36: called
+Jan/29/2025 10:18:36: reset a timer on eth0, state=INIT, timeo=0, retrans=905
+probe_net_connect, status 0
+[29 18:18:36][BASE][ERROR]stop_dhcp_task, interface eth0
+dhcp end!
+[   14.655565] RTW: nolinked power save enter
+[client6_mainloop]result :0
+[client6_timo]state:0
+Jan/29/2025 10:18:37: a new XID (ea3aa0) is generated
+Jan/29/2025 10:18:37: set client ID (len 14)
+Jan/29/2025 10:18:37: set identity association
+Jan/29/2025 10:18:37: set elapsed time (len 2)
+Jan/29/2025 10:18:37: send solicit to ff02::1:2
+Jan/29/2025 10:18:37: reset a timer on eth0, state=SOLICIT, timeo=0, retrans=1070
+OK
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+Waiting for dhcp thread exist [1]eth0.
+[   15.560165] RTW: wlan0- hw port(0) mac_addr =XX:XX:XX:XX:XX:XX
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   15.573646] RTW: nolinked power save leave
+[29 18:18:38][BASE][ERROR]get_ipaddr ioctl error and errno=126
+[29 18:18:38][BASE][ERROR]get_netmask ioctl error and errno=126
+fscanf error: Cannot assign requested address
+[29 18:18:38][BASE][ERROR]get_gateway error!
+[   15.600662] scan ch:1
+supplicant ctrl event: CTRL-EVENT-SCAN-STARTED 
+[   15.721491] scan ch:2
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   15.827680] libphy: 0:00 - Link is Up - 100/Full
+[   15.846540] scan ch:3
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   15.963989] scan ch:4
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   16.114691] scan ch:5
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - co[   16.270655] scan ch:6
+nnection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   16.439540] scan ch:7
+/dav/copy_sdk_log.sh start check ./ezapp
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+### need switch 1
+[29 18:18:38][BASE][ERROR]need switch, broken 1, index 0, last active index 0 wifi_rest_time:0
+probe_net_connect, status 1
+wifi_rest_time set to 0
+[29 18:18:38][BASE][ERROR]dhcp task already stop!
+init_net_if begin inf: eth0 dns:10.25.50.2 0.0.0.0
+set_eth_mode 5 
+no need to set eth mode !!! oldEthMode:5 setval:5 g_set_eth_mode_flag:1 
+[29 18:18:38][BASE][ERROR]starting DHCP...
+[29 18:18:38][BASE][ERROR]start_dhcp_task, interface_name eth0
+./ezapp is alive
+====in client6_init()====
+Jan/29/2025 10:18:39: extracted an existing DUID from /var/run/dhcp6c_duid_eth0: XX:XX:XX:XX:XX:XX
+====client6_init() 1====
+Jan/29/2025 10:18:39: failed to open /var/run/dhcp6cctlkey: No such file or directory
+Jan/29/2025 10:18:39: failed initialize control message authentication
+Jan/29/2025 10:18:39: skip opening control port
+Jan/29/2025 10:18:39: <3>[interface] (9)
+Jan/29/2025 10:18:39: <5>[eth0] (4)
+Jan/29/2025 10:18:39: <3>begin of closure [{] (1)
+Jan/29/2025 10:18:39: <3>[sen[   16.608661] scan ch:8
+d] (4)
+Jan/29/2025 10:18:39: <3>[ia-na] (5)
+Jan/29/2025 10:18:39: <3>[0] (1)
+Jan/29/2025 10:18:39: <3>end of sentence [;] (1)
+Jan/29/2025 10:18:39: <3>end of closure [}] (1)
+Jan/29/2025 10:18Wed Jan 29 18:18:39 2025
+ warning, Sending discover...
+:39: <3>end of sentence [;] (1)
+Jan/29/2025 10:18:39: <3>[id-assoc] (8)
+Jan/29/2025 10:18:39: <13>[na] (2)
+Jan/29/2025 10:18:39: <13>begin of closure [{] (1)
+Jan/29/2025 10:18:39: <3>end of closure [}] (1)
+Jan/29/2025 10:18:39: <3>end of sentence [;] (1)
+Jan/29/2025 10:18:39: called
+Jan/29/2025 10:18:39: called
+Jan/29/2025 10:18:39: reset a timer on eth0, state=INIT, timeo=0, retrans=68
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[client6_mainloop]result :0
+[client6_timo]state:0
+Jan/29/2025 10:18:39: a new XID (571734) is generated
+Jan/29/2025 10:18:39: set client ID (len 14)
+Jan/29/2025 10:18:39: set identity association
+Jan/29/2025 10:18:39: set elapsed time (len 2)
+Jan/29/2025 10:18:39: send solicit to ff02::1:2
+Jan/29/2025 10:18:39: reset a timer on eth0, state=SOLICIT, timeo=0, retrans=1059
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   16.750338] scan ch:9
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   16.887363] scan ch:10
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   17.040255] scan ch:11
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   17.158691] scan ch:12
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+day_night_set_config_time :1738145919 
+day_night_set_config_time :173[   17.311381] scan ch:13
+8145919 
+LIBSYS INFO:   brightness:0
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   17.440805] ========== ACS (VER-3) ==========
+[   17.450349] Best 24G Channel:13
+[   17.453989] Best 5G Channel:0
+[   17.453989] 
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[   17.482916] RTW: nolinked power save enter
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+[29 18:18:40][BASE][ERROR]get_ipaddr ioctl error and errno=126
+[29 18:18:40][BASE][ERROR]get_netmask ioctl error and errno=126
+fscanf error: Cannot assign requested address
+[29 18:18:40][BASE][ERROR]get_gateway error!
+supplicant ctrl event: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+[client6_mainloop]result :0
+[client6_timo]state:1
+[client6_timo]Tag:936
+Jan/29/2025 10:18:40: set client ID (len 14)
+Jan/29/2025 10:18:40: set identity association
+Jan/29/2025 10:18:40: set elapsed time (len 2)
+Jan/29/2025 10:18:40: send solicit to ff02::1:2
+[client6_timo]Tag:938
+Jan/29/2025 10:18:40: reset a timer on eth0, state=SOLICIT, timeo=1, retrans=2106
+supplicant ctrl event: IFNAME=wlan0 CTRL-EVENT-TERMINATING  - connection closed
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 0 XX:XX:XX:XX:XX:XX
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 1 XX:XX:XX:XX:XX:XX
+[29 18:18:40][SENSOR][ERROR]image_style[1], day:1
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 2 XX:XX:XX:XX:XX:XX
+LIBSYS INFO:   brightness:0
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 3 XX:XX:XX:XX:XX:XX
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 4 XX:XX:XX:XX:XX:XX
+[   18.321237] Exit hikio_motor_run ctrl->left_step=0 
+[dsp][prev]: mic_volume = 90, speak_volume = 80
+[29 18:18:40][PTZ][ERROR]~~~ nor[   18.329563] Enter hikio_motor_run 
+ 1, ang=65, l_ang=0
+[29 18:18:40][PTZ][ERROR][Tilt_self_check]B degree[10]
+[dsp][prev]: mic_volume = 0, speak_volume = 80
+[29 18:18:40][PTZ][ERROR]~~~motor_run 10
+[   18.356712] @@@ WANGC in step_num: 120 act: 113 speed=150...
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 5 XX:XX:XX:XX:XX:XX
+supplicant ctrl event: CTRL-EVENT-BSS-ADDED 6 XX:XX:XX:XX:XX:XX
+[29 18:18:40][BASE][ERROR]get_ipaddr ioctl error and errno=126
+[29 18:18:40][BASE][ERROR]get_ipaddr ret -1
+supplicant ctrl event: CTRL-EVENT-SCAN-RESULTS 
+wpa_cli_parse_bss_info ret=0
+[29 18:18:41][DOT][ERROR]dot_task_routine DoT_GetVersion value 3.3.3552.7c81494
+[29 18:18:41][DOT][ERROR]dot_get_uuid getCustomNo[3172670000486854$VLe3iGKk111036290486854] success, uuid[3172670000486854]
+[29 18:18:41][DOT][ERROR]dot_get_mac [ec97e05a044e]
+[29 18:18:41][DOT][ERROR]dot_get_device_info sn:3172670000486854 model:IPC_YS_JZ_CS_MY3_3WHY log path:/tmp/ config path:/devinfo/ fw_version:1.01.000 cloud_path:/home/ cloud_size:4194304 resolution_set:0x9 logo_path:/devinfo/
+create thread timer ok,id:10640904
+create thread timer ok,id:10755104
+create thread timer ok,id:10755664
+create thread timer ok,id:10755744
+create thread timer ok,id:10755824
+create thread timer ok,id:10755904
+create thread timer ok,id:10755984
+[29 18:18:41][DOT][ERROR]check register status ret=0x0, device_status=0
+[   19.135594] Exit hikio_motor_run ctrl->left_step=0 
+[dsp][prev]: mic_volume = 90, speak_volume = 80
+[29 18:18:41][PTZ][ERROR]~~~ n[   19.142556] tcu_chn1 tcu_chn1.1: timer enable
+or 1, ang=10, l_ang=0
+[29 18:18:41][PTZ][ERROR]=========== pt_type =========== [4] [175]
+[29 18:18:41][PTZ][ERROR]day/night mode=1.
+[dsp]HostSetRCRunKey infraredrFlag 0  usrOpterFlag 1  tmp 0x1
+[dsp][prev]: mic_volume = [   19.167386] MS419X9:thread id:272, done:0
+50, speak_volume = 80
+[29 18:18:41][PTZ][ERROR]~~~motor_run 350
+LIBSYS INFO: Pid:184,Tid:272,type:0,dir:0,angel:350,stop:0,speed:3
+[29 18:18:41][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_INFO_START
+[dsp] ###### QR Set Status Key: 1 ######
+ [29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 0, file: app.img, need_upfrade: 1, write_part: /dev/mtd5]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 1, file: uImage, need_upfrade: 1, write_part: /dev/mtd3]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 2, file: , need_upfrade: 0, write_part: ]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 3, file: , need_upfrade: 0, write_part: ]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 4, file: , need_upfrade: 0, write_part: ]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 5, file: , need_upfrade: 0, write_part: ]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 6, file: , need_upfrade: 0, write_part: ]
+[29 18:18:41][DOT][ERROR]dot_upgrade_init upgrade info[ 7, file: , need_upfrade: 0, write_part: ]
+[29 18:18:41][DOT][ERROR]dot_event_task_start start event task successful, ret=0.
+dot_media_preview frm=15
+[dsp]host_cmd_InsertIFrame_function 
+[29 18:18:41][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+create thread timer ok,id:10755072
+DSP_MESSAGE_Send() = curRd 0 curWr 1 count 1
+[dsp]jpegCode 0x1013, jpeg_request_num 1
+[dsp]HostCMD: HostGetQrStatusValue 
+DSP_MESSAGE_Recv() = curRd 1 curWr 1 count 0
+[IMP_Encoder_GetStream--2361 Channel:2 ]:2583(ms)
+Wed Jan 29 18:18:42 2025
+ warning, unrelated/bogus packet
+Wed Jan 29 18:18:42 2025
+ warning, Sending discover...
+Wed Jan 29 18:18:42 2025
+ warning, oooooh!!! got some!
+Wed Jan 29 18:18:42 2025
+ warning, Sending select for 10.25.1.180...
+./ezapp is alive
+Wed Jan 29 18:18:42 2025
+ warning, oooooh!!! got some!
+Wed Jan 29 18:18:42 2025
+ warning, oooooh!!! got some!
+Wed Jan 29 18:18:42 2025
+ warning, oooooh!!! got some!
+Wed Jan 29 18:18:42 2025
+ eth0: ip = 10.25.1.180, subnet = 255.255.255.0, router = 10.25.1.1, dns = 10.25.50.2, svr = 10.25.1.1, lease = 21600
+change_wifiroute_bynetcfg: interface_name eth0 inf eth0
+ioctl: Cannot assign requested address
+delete_interface_route dst 0.0.0.0, mask 0.0.0.0, dev (null), flag 0
+delete_interface_route, ioctl: No such process
+add_interface_route dst 0.0.0.0, mask 0.0.0.0, gateway 10.25.1.1, dev eth0, flag 2
+dns server address 1 = 10.25.50.2
+dns2 not valid !!! 
+ write dns:nameserver  10.25.50.2
+ 
+warn Write dns server address ok.
+[29 18:18:42][DOT][ERROR]dot_cb_bind_status DOT[   19.712273] MS419X9:stat:1,thread id:248
+_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:42][PTZ][ERROR]rotate_chk_notify_callback, chk_result = 1
+[29 18:18:42][PTZ][ERROR]ipc_motor_stop reverse = 0, pantilt = 0
+LIBSYS INFO: Pid:184,Tid:248,type:0,dir:0,angel:0,stop:1,speed:0
+[29 18:18:42][PTZ][ERROR]stop_pt_by_dsp_rotate_check succ
+[dsp]DSP_SEND_CMD_NotifyHostRotateCheckSuccess  rotate_check_flag 1
+[dsp]pCtrl->out.is_Stop 1, is_Fake 0
+[   19.757082] stat:3, stop flag:0
+[   19.796904] stat:4, stop flag:0
+[client6_mainloop]result :0
+[client6_timo]state:1
+[client6_timo]Tag:936
+Jan/29/2025 10:18:42: set client ID (len 14)
+Jan/29/2025 10:18:42: set identity association
+Jan/29/2025 10:18:42: set elapsed time (len 2)
+Jan/29/2025 10:18:42: sen[   19.827839] stat:0, stop flag:0
+d solicit to ff02::1:2
+[client6_timo]Tag:938
+Jan/29/2025 10:18:42: reset a timer on eth0, state=SOLICIT, timeo=2, retrans=4006
+[client6_mainloop]result :1
+[client6_recv]recv msg
+Jan/29/2025 10:18:42: receive advertise from fe80::daec:5eff:fe94:92c2 on eth0
+LIBSYS INFO: Pid:184,Tid:272,typ[   19.855053] MS419X9:left_angle=305, left_vd_times=115, last_step=44, step:60, fix_left_steps:-160 thread id:272
+e:0,dir:0,angel:350,stop:2,speed:3
+LIBSYS INFO: horizontal motor stop abnormally, left_angle=305
+[dsp][prev]: mic_volume = 90, speak_volume = 80
+[29 18:18:42][   19.948215] tcu_chn1 tcu_chn1.1: timer enable
+[PTZ][ERROR]~~~ abnor, 0, ang=350, l_ang=305
+[dsp]HostSetRCRunKey infraredrFlag 0  usrOpterFlag 0  tmp 0x0
+[29 18:18:42][PTZ][ERROR]ipc_pan_self_check 7 [175]
+[dsp][prev]: mic_volume = 50, speak_volume = 80
+[29 18:18:42][PTZ][ERROR]~~~motor_run 175
+LIBSYS INFO: Pid:184,Tid:272,type:0,dir:1,angel:175,stop:0,speed:3
+Jan/29/2025 10:18:42: get DHCP[   19.983199] MS419X9:thread id:272, done:0
+ option server ID, len 10
+Jan/29/2025 10:18:42:   DUID: XX:XX:XX:XX:XX:XX
+Jan/29/2025 10:18:42: get DHCP option client ID, len 14
+Jan/29/2025 10:18:42:   DUID: XX:XX:XX:XX:XX:XX
+Jan/29/2025 10:18:42: get DHCP option opt_82, len 4
+Jan/29/2025 10:18:42: unknown or unexpected DHCP6 option opt_82, len 4
+Jan/29/2025 10:18:42: get DHCP option DNS, len 16
+Jan/29/2025 10:18:42: get DHCP option domain search list, len 24
+Jan/29/2025 10:18:42: get DHCP option identity association, len 68
+Jan/29/2025 10:18:42:   IA_NA: ID=0, T1=10800, T2=17280
+Jan/29/2025 10:18:42: get DHCP option IA address, len 24
+Jan/29/2025 10:18:42:   IA_NA address: 2603:8001:1400:ae00::480 pltime=21600 vltime=21600
+Jan/29/2025 10:18:42: get DHCP option IA address, len 24
+Jan/29/2025 10:18:42:   IA_NA address: fdfc:a30a:2d0::480 pltime=21600 vltime=21600
+Jan/29/2025 10:18:42: server ID: XX:XX:XX:XX:XX:XX, pref=-1
+Jan/29/2025 10:18:42: reset timer for eth0 to 0.846842
+[29 18:18:42][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:42][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:43][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[client6_mainloop]result :0
+[client6_timo]state:1
+[client6_timo]Tag:902
+Jan/29/2025 10:18:43: picked a server (ID: XX:XX:XX:XX:XX:XX)
+[client6_timo]Tag:911
+[client6_timo]Tag:921
+[client6_timo]Tag:927
+[client6_timo]Tag:936
+Jan/29/2025 10:18:43: a new XID (5c1fd6) is generated
+Jan/29/2025 10:18:43: set client ID (len 14)
+Jan/29/2025 10:18:43: set server ID (len 10)
+Jan/29/2025 10:18:43: set IA address
+Jan/29/2025 10:18:43: set IA address
+Jan/29/2025 10:18:43: set identity association
+Jan/29/2025 10:18:43: set elapsed time (len 2)
+Jan/29/2025 10:18:43: send request to ff02::1:2
+[client6_timo]Tag:938
+Jan/29/2025 10:18:43: reset a timer on eth0, state=REQUEST, timeo=0, retrans=976
+[client6_mainloop]result :1
+[client6_recv]recv msg
+Jan/29/2025 10:18:43: receive reply from fe80::daec:5eff:fe94:92c2 on eth0
+Jan/29/2025 10:18:43: get DHCP option server ID, len 10
+Jan/29/2025 10:18:43:   DUID: XX:XX:XX:XX:XX:XX
+Jan/29/2025 10:18:43: get DHCP option client ID, len 14
+Jan/29/2025 10:18:43:   DUID: XX:XX:XX:XX:XX:XX
+Jan/29/2025 10:18:43: get DHCP option opt_82, len 4
+Jan/29/2025 10:18:43: unknown or unexpected DHCP6 option opt_82, len 4
+Jan/29/2025 10:18:43: get DHCP option DNS, len 16
+Jan/29/2025 10:18:43: get DHCP option domain search list, len 24
+Jan/29/2025 10:18:43: get DHCP option identity association, len 68
+Jan/29/2025 10:18:43:   IA_NA: ID=0, T1=10800, T2=17280
+Jan/29/2025 10:18:43: get DHCP option IA address, len 24
+Jan/29/2025 10:18:43:   IA_NA address: 2603:8001:1400:ae00::480 pltime=21600 vltime=21600
+Jan/29/2025 10:18:43: get DHCP option IA address, len 24
+Jan/29/2025 10:18:43:   IA_NA address: fdfc:a30a:2d0::480 pltime=21600 vltime=21600
+Jan/29/2025 10:18:43: nameserver[0] 2603:8001:1400:ae50::2
+Jan/29/2025 10:18:43: Domain search list[0] r7800.lax.i.gtxent.com.
+Jan/29/2025 10:18:43: make an IA: NA-0
+Jan/29/2025 10:18:43: create an address 2603:8001:1400:ae00::480 pltime=21600, vltime=21600
+Jan/29/2025 10:18:43: add an address 2603:8001:1400:ae00::480/64 on eth0
+Jan/29/2025 10:18:43: create an address fdfc:a30a:2d0::480 pltime=21600, vltime=21600
+Jan/29/2025 10:18:43: add an address fdfc:a30a:2d0::480/64 on eth0
+Jan/29/2025 10:18:43: removing an event on eth0, state=REQUEST
+Jan/29/2025 10:18:43: removing server (ID: XX:XX:XX:XX:XX:XX)
+Jan/29/2025 10:18:43: got an expected reply, sleeping.
+[29 18:18:43][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:43][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:43][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:44][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[29 18:18:44][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[   22.326892] stat:2, stop flag:0
+[   22.367158] stat:3, stop flag:0
+[   22.396989] stat:4, stop flag:0
+[29 18:18:44][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+[   22.432606] stat:0, stop flag:0
+LIBSYS INFO: Pid:184,Tid:272,type:0,dir:1,angel:175,stop:2,speed[   22.436964] MS419X9:left_angle=0, left_vd_times=0, last_step=0, step:60, fix_left_steps:-160 thread id:272
+:3
+LIBSYS INFO: horizontal motor stop normally
+[dsp][prev]: mic_volume = 90, speak_volume = 80
+[29 18:18:44][PTZ][ERROR]~~~ nor 0, ang=175, l_ang=0
+[29 18:18:44][PTZ][ERROR]~~~save_ptPos_poweroff cur_pdegree = 175, cur_tdegree = 10
+[29 18:18:44][PTZ][ERROR]pt_function_init: g_rec_p_degree[175], g_rec_t_degree[10]
+timer_add_element id:10 name rec_pos find_slot 0
+[29 18:18:45][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 
+./ezapp is alive
+[29 18:18:45][DOT][ERROR]dot_cb_bind_status DOT_DEVICE_BIND_REQUEST_QRCODE_INFO
+[dsp]HostCMD: HostGetQrStatusValue 

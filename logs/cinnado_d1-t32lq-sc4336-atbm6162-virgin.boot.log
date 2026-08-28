@@ -1200,7 +1200,7 @@ dump_stats:      recycled[4]        = 0
 _zbar_qr_destroy: max finder lines = 63x127
 rfkill: Cannot open RFKILL control device
 nl80211: Could not re-add multicast membership for vendor events: -2 (No such file or directory)
-Using interface ap0 with hwaddr XX:XX:XX:XX:XX:XX and ssid "REDACTED-SSID"
+Using interface ap0 with hwaddr XX:XX:XX:XX:XX:XX and ssid "REDACTED"
 ap0: interface state UNINITIALIZED->ENABLED
 ap0: AP-ENABLED
 udhcpd: started, v1.35.0

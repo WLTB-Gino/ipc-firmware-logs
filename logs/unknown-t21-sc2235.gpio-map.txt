@@ -1,0 +1,24 @@
+cat /sys/kernel/debug/gpio
+GPIOs 0-31, GPIO A:
+ gpio-18  (sc2235_reset        ) out hi
+
+GPIOs 32-63, GPIO B:
+ gpio-50  IRCUT 1 pin              ) out hi
+ gpio-51  (mmc_detect          ) in  hi
+ gpio-52  (sysfs               ) out hi
+ gpio-53  (sysfs               ) out hi
+ gpio-59  (sysfs               ) in  hi
+ gpio-62  (sdio_wifi_power_on  ) out lo
+ gpio-63  (sysfs               ) out lo
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (home key            ) in  hi
+ gpio-72  (sysfs               ) out hi
+ gpio-73  (sysfs               ) out hi
+
+GPIOs 96-127, GPIO D:
+
+GPIOs 128-159, GPIO E:
+
+GPIOs 160-191, GPIO F:
+

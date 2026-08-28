@@ -1,0 +1,1554 @@
+U-Boot SPL 2013.07 (Aug 01 2024 - 11:20:18)
+chip type is A1N
+
+apll_freq = 1104000000 
+mpll_freq = 1500000000 
+vpll_freq = 1200000000 
+epll_freq = 1500000000
+cpu clk source: apll
+ddr clk source: mpll
+chipid 0x00001111
+A1N@V20230825a
+ddr_param_efuse_init
+use default param
+DDR clk rate: 750000000
+
+mr2: 00018483
+mr3: 00000683
+mr1: 00006283
+mr0: 01f70083
+ZQCL ENABLE
+timeout is 999984, val = 0x00000003
+ddrp rx hard calibration:
+ddrp rx hard calibration: reg1 is 0x00000001
+ddrp rx hard calibration:reg2 is 0x000000c2
+CALIB_AL: cyc 1, oph 2, dll 24
+CALIB_AH: cyc 1, oph 2, dll 23
+CALIB_BL: cyc 1, oph 0, dll 2
+CALIB_BH: cyc 1, oph 0, dll 2
+remap_array[0] is 0x030f0e0d
+remap_array[1] is 0x07060504
+remap_array[2] is 0x0b0a0908
+remap_array[3] is 0x0201000c
+remap_array[4] is 0x13121110
+mem data:
+81000000:   00000000  ffffffff  00000000  ffffffff
+81000010:   00000000  ffffffff  00000000  ffffffff
+81000020:   00000000  ffffffff  00000000  ffffffff
+81000030:   00000000  ffffffff  00000000  ffffffff
+chip type is A1N
+Board: ISVP (Ingenic XBurst A1 SoC)
+DRAM:  256 MiB
+Top of RAM usable for U-Boot at: 90000000
+Reserving 833k for U-Boot at: 8ff2c000
+Reserving 32832k for malloc() at: 8df1c000
+Reserving 32 Bytes for Board Info at: 8df1bfe0
+Reserving 124 Bytes for Global Data at: 8df1bf64
+Reserving 128k for boot params() at: 8defbf64
+Stack Pointer at: 8defbf48
+Now running in RAM - U-Boot at: 8ff2c000
+chip type is A1N
+MMC:   MSC: 0
+SF: Detected XM25QH128C, manufacturer id: 20
+
+Data transfer:    serial
+AUTH_INFO is 'JZA1 old ants gui'!
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 4 ms
+SF: 196608 bytes @ 0x0 Read: OK
+--->read spend 66 ms
+Liuy : licence product id = 1005!
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 5 ms
+SF: 65536 bytes @ 0xff0000 Read: OK
+--->read spend 25 ms
+Liuy : licence serial no is 03ed00020089969c43bf!
+SF: Detected XM25QH128C, manufacturer id: 20
+
+Erasing SPI flash...Writing to SPI flash...done
+gpio_request lable = buzzer gpio = 144
+AUTH_INFO is 'JZA1 old ants gui'!
+AUTH_INFO is 'JZA1 old ants gui'!
+AUTH_INFO is 'JZA1 old ants gui'!
+Debug Uboot bootargs = console=ttyS1,115200n8 asc_sn=0002bf439c968900000000000000000000000003ed00000000 flash_type=0 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 ro board_type=0x3ed local_av=1 have_face=0 system_mode=0 mtdparts=jz_sfc:192K(uboot),64K(env),1856K(kernel_m2),12288K(rootfs_m3),1920K(config_m4),64K(logo_m5) licence=1.5 libata.force=1.5Gbps mem=190M@0x0 rmem=66M@0xbe00000
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 4 ms
+SF: 65536 bytes @ 0xff0000 Read: OK
+--->read spend 24 ms
+Load logo cmd: sf probe 0x0; sf read 0x81000000 0xff0000 0x10000
+vobuf 0x8f600000
+<<imgwidth=1024, imgheight=768, linebytes=2048>>
+decode success!!!!
+Debug Uboot Boot CMD = sf probe 0x0; sf read 0x80600000 0x40000 0x1d0000;bootm 0x80600000;
+Board init end, close watch dog
+(Re)start USB...
+USB0:   Core Release: 3.00a
+scanning bus 0 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+stopping USB..
+Net:   gmac: tx_mac_descrtable : 0x8ffb4000
+gmac: rx_mac_descrtable : 0x8ffb3c00
+gmac: txbuffs           : 0x8ffbc400
+gmac: rxbuffs           : 0x8ffab800
+gmac debug: eth0mii = rmii
+mii0 [PRIME]
+main loop is runing!
+Hit any key to stop autoboot:  0 
+isvp_a1# <INTERRUPT>
+isvp_a1# <INTERRUPT>
+isvp_a1# reset<INTERRUPT>
+isvp_a1# help
+?       - alias for 'help'
+base    - print or set address offset
+boot    - boot default, i.e., run 'bootcmd'
+boota   - boot android system
+bootd   - boot default, i.e., run 'bootcmd'
+bootm   - boot application image from memory
+bootp   - boot image via network using BOOTP/TFTP protocol
+cmp     - memory compare
+coninfo - print console devices and information
+cp      - memory copy
+crc32   - checksum calculation
+decjpg  - jpgd   - decode jpeg picture.
+
+echo    - echo args to console
+env     - environment handling commands
+epc_show- Print the EPC for CPU0 and CPU1
+fatinfo - print information about filesystem
+fatload - load binary file from a dos filesystem
+fatls   - list files in a directory (default /)
+gettime - get timer val elapsed,
+
+go      - start application at address 'addr'
+help    - print command description/usage
+l2cache - allcate L2 cache size
+loadb   - load binary file over serial line (kermit mode)
+loads   - load S-Record file over serial line
+loady   - load binary file over serial line (ymodem mode)
+loop    - infinite loop on address range
+md      - memory display
+mdio    - MDIO utility commands
+mii     - MII utility commands
+mm      - memory modify (auto-incrementing address)
+mmc     - MMC sub system
+mmcinfo - display MMC info
+mw      - memory write (fill)
+nm      - memory modify (constant address)
+ping    - send ICMP ECHO_REQUEST to network host
+powerinfo- show regulator output voltage and status
+printenv- print environment variables
+reset   - Perform RESET of the CPU
+run     - run commands in an environment variable
+saveenv - save environment variables to persistent storage
+setenv  - set environment variables
+setvobg - setvobg  - set background color.
+	- setvobg [color]
+sf      - SPI flash sub-system
+sleep   - delay execution for some time
+source  - run script from memory
+startgx - startgx   - open graphics layer.
+	- startgx [addr stride pixfmt w h]
+
+startvl - startvl   - open video layer.
+	- startvl [layer yaddr uvaddr stride x y w h]
+
+startvo - startvo   - open interface of vo device.
+	- startvo [type sync]
+stopgx  - stopgx   - close graphics layer.
+	- stopgx [none]
+stopvl  - stopvl   - close video layer.
+	- stopvl [layer]
+stopvo  - stopvo   - close interface of vo device.
+	- stopvo [none]
+tftpboot- boot image via network using TFTP protocol
+tftpdownload- auto upgrade file from tftp to flash
+update  - update  - update image
+
+usb     - USB sub-system
+usbboot - boot from USB device
+usbrestore- usbrestore  - update image
+
+version - print monitor, compiler and linker version
+watchdog- open or colse the watchdog
+isvp_a1# 
+
+
+
+
+U-Boot SPL 2013.07 (Aug 01 2024 - 11:20:18)
+chip type is A1N
+
+apll_freq = 1104000000 
+mpll_freq = 1500000000 
+vpll_freq = 1200000000 
+epll_freq = 1500000000
+cpu clk source: apll
+ddr clk source: mpll
+chipid 0x00001111
+A1N@V20230825a
+ddr_param_efuse_init
+use default param
+DDR clk rate: 750000000
+
+mr2: 00018483
+mr3: 00000683
+mr1: 00006283
+mr0: 01f70083
+ZQCL ENABLE
+timeout is 999984, val = 0x00000003
+ddrp rx hard calibration:
+ddrp rx hard calibration: reg1 is 0x00000001
+ddrp rx hard calibration:reg2 is 0x000000c2
+CALIB_AL: cyc 1, oph 2, dll 24
+CALIB_AH: cyc 1, oph 2, dll 23
+CALIB_BL: cyc 1, oph 0, dll 2
+CALIB_BH: cyc 1, oph 0, dll 2
+remap_array[0] is 0x030f0e0d
+remap_array[1] is 0x07060504
+remap_array[2] is 0x0b0a0908
+remap_array[3] is 0x0201000c
+remap_array[4] is 0x13121110
+mem data:
+81000000:   00000000  ffffffff  00000000  ffffffff
+81000010:   00000000  ffffffff  00000000  ffffffff
+81000020:   00000000  ffffffff  00000000  ffffffff
+81000030:   00000000  ffffffff  00000000  ffffffff
+chip type is A1N
+Board: ISVP (Ingenic XBurst A1 SoC)
+DRAM:  256 MiB
+Top of RAM usable for U-Boot at: 90000000
+Reserving 833k for U-Boot at: 8ff2c000
+Reserving 32832k for malloc() at: 8df1c000
+Reserving 32 Bytes for Board Info at: 8df1bfe0
+Reserving 124 Bytes for Global Data at: 8df1bf64
+Reserving 128k for boot params() at: 8defbf64
+Stack Pointer at: 8defbf48
+Now running in RAM - U-Boot at: 8ff2c000
+chip type is A1N
+MMC:   MSC: 0
+SF: Detected XM25QH128C, manufacturer id: 20
+
+Data transfer:    serial
+AUTH_INFO is 'JZA1 old ants gui'!
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 4 ms
+SF: 196608 bytes @ 0x0 Read: OK
+--->read spend 66 ms
+Liuy : licence product id = 1005!
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 5 ms
+SF: 65536 bytes @ 0xff0000 Read: OK
+--->read spend 25 ms
+Liuy : licence serial no is 03ed00020089969c43bf!
+SF: Detected XM25QH128C, manufacturer id: 20
+
+Erasing SPI flash...Writing to SPI flash...done
+gpio_request lable = buzzer gpio = 144
+AUTH_INFO is 'JZA1 old ants gui'!
+AUTH_INFO is 'JZA1 old ants gui'!
+AUTH_INFO is 'JZA1 old ants gui'!
+Debug Uboot bootargs = console=ttyS1,115200n8 asc_sn=0002bf439c968900000000000000000000000003ed00000000 flash_type=0 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 ro board_type=0x3ed local_av=1 have_face=0 system_mode=0 mtdparts=jz_sfc:192K(uboot),64K(env),1856K(kernel_m2),12288K(rootfs_m3),1920K(config_m4),64K(logo_m5) licence=1.5 libata.force=1.5Gbps mem=190M@0x0 rmem=66M@0xbe00000
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 4 ms
+SF: 65536 bytes @ 0xff0000 Read: OK
+--->read spend 25 ms
+Load logo cmd: sf probe 0x0; sf read 0x81000000 0xff0000 0x10000
+vobuf 0x8f600000
+<<imgwidth=1024, imgheight=768, linebytes=2048>>
+decode success!!!!
+Debug Uboot Boot CMD = sf probe 0x0; sf read 0x80600000 0x40000 0x1d0000;bootm 0x80600000;
+Board init end, close watch dog
+(Re)start USB...
+USB0:   Core Release: 3.00a
+scanning bus 0 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+stopping USB..
+Net:   gmac: tx_mac_descrtable : 0x8ffb4000
+gmac: rx_mac_descrtable : 0x8ffb3c00
+gmac: txbuffs           : 0x8ffbc400
+gmac: rxbuffs           : 0x8ffab800
+gmac debug: eth0mii = rmii
+mii0 [PRIME]
+main loop is runing!
+Hit any key to stop autoboot:  0 
+SF: Detected XM25QH128C, manufacturer id: 20
+
+--->probe spend 4 ms
+SF: 1900544 bytes @ 0x40000 Read: OK
+--->read spend 611 ms
+   Image Name:   Linux-4.4.94
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1886879 Bytes = 1.8 MiB
+   Load Address: 80010000
+   Entry Point:  8041e410
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (wangben@smartvideo-MS-7C80) (gcc version 7.2.0 (Ingenic Linux-Release5.1.8.smaller2-Default_xburst2_uclibc0.9.33.2 Optimize: jr base on 5.1.6 and compile use Os 2023.07-25 07:27:57) ) #1 SMP PREEMPT Thu Aug 1 11:22:21 CST 2024
+[    0.000000] CPU0 RESET ERROR PC:BE1FFDE6
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00132100 (Ingenic XBurst@II)
+[    0.000000] FPU revision is: 00f32100
+[    0.000000] MIPS: machine is ingenic,tucana
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00519000 @ 00010000 (usable)
+[    0.000000]  memory: 00047000 @ 00529000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 0be00000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x000000000bdfffff]
+[    0.000000]   HighMem  empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x000000000bdfffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x000000000bdfffff]
+[    0.000000] [SMP] Slave CPU(s) 1 available.
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.000000] 
+[    0.000000] Unified secondary cache 1024kB 8-way, linesize 64 bytes.
+[    0.000000] PERCPU: Embedded 11 pages/cpu @81199000 s12464 r8192 d24400 u45056
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 48260
+[    0.000000] Kernel command line: console=ttyS1,115200n8 asc_sn=0002bf439c968900000000000000000000000003ed00000000 flash_type=0 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock3 ro board_type=0x3ed local_av=1 have_face=0 system_mode=0 mtdparts=jz_sfc:192K(uboot),64K(env),1856K(kernel_m2),12288K(rootfs_m3),1920K(config_m4),64K(logo_m5) licence=1.5 libata.force=1.5Gbps mem=190M@0x0 rmem=66M@0xbe00000
+[    0.000000] get_asc_sn : 0002bf439c968900000000000000000000000003ed00000000
+[    0.000000] Wangben debug i2c-ingenic get board id 0x3ed
+[    0.000000] licence str : 1.5
+[    0.000000] is licence = 1, licence_part = 5!
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 186924K/194560K available (4180K kernel code, 271K rwdata, 760K rodata, 284K init, 137K bss, 7636K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:419
+[    0.000000] parse cpu-intc-iomap, intc define in dt is too large!
+[    0.000000] core irq setup finished
+[    0.000000] percpu irq inited.
+[    0.000000] A1 Clock Power Management Unit init!
+[    0.000000] =========== a1 clocks: =============
+[    0.000000] 	apll     = 1104000000 , mpll     = 1500000000
+[    0.000000] 	cpu_clk  = 1104000000 , l2c_clk  = 368000000
+[    0.000000] 	ahb0_clk = 250000000 , ahb2_clk = 187500000
+[    0.000000] 	apb_clk  = 93750000 , ext_clk  = 24000000
+[    0.000000] 
+[    0.000000] parse cpu-ost-iomap, ost number define in dt is too large!
+[    0.000000] percpu cpu_num:0 timerevent init
+[    0.000000] clockevents_config_and_register success.
+[    0.000000] clocksource: jz_clocksource: mask: 0x7fffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000000] sched_clock: 64 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000000] ERROR epc 0xbe1ffde6
+[    0.000000] Console: colour dummy device 80x25
+[    0.000000] Calibrating delay loop... 1099.36 BogoMIPS (lpj=5496832)
+[    0.000000] pid_max: default: 32768 minimum: 301
+[    0.000000] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] [SMP] Prepare 2 cores., cpu: 0
+[    0.000000] [SMP] Booting CPU1 ...
+[    0.000000] CPU1 RESET ERROR PC:025A801C
+[    0.000000] Primary instruction cache 32kB, VIPT, 8-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] =======found ...... ingenic sc cache ops ...!, found: 1
+[    0.000000] 
+[    0.000000] Unified secondary cache 1024kB 8-way, linesize 64 bytes.
+[    0.000000] #### now starting init for cpu : 1
+[    0.000000] percpu irq inited.
+[    0.000000] percpu cpu_num:1 timerevent init
+[    0.000000] clockevents_config_and_register success.
+[    0.000000] CPU1 revision is: 00132100 (Ingenic XBurst@II)
+[    0.000000] FPU revision is: 00f32100
+[    0.000000] Brought up 2 CPUs
+[    0.000000] [SMP] slave cpu1 start up finished.
+[    0.000000] devtmpfs: initialized
+[    0.000000] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.000000] futex hash table entries: 512 (order: 2, 16384 bytes)
+[    0.000000] pinctrl core: initialized pinctrl subsystem
+[    0.000000] NET: Registered protocol family 16
+[    0.000000] ingenic pinctrl 10010000.pinctrl: 5 gpio chip add success, pins 156
+[    0.000000] ingenic pinctrl 10010000.pinctrl: ingenic pinctrl probe success
+[    0.000000] dmmu_init 807 PTRS_PER_PTE = 1024
+[    0.000000] Can't analyze schedule() prologue at 804201a4
+[    0.000000] ingenic-dma 13420000.dma: INGENIC SoC DMA initialized
+[    0.000000] SCSI subsystem initialized
+[    0.000000] usbcore: registered new interface driver usbfs
+[    0.000000] usbcore: registered new interface driver hub
+[    0.000000] usbcore: registered new device driver usb
+[    0.000000] inno phy probe success
+[    0.000000] Board 0x3ed i2c0 is not in use, disable it
+[    0.000000] pps_core: LinuxPPS API ver. 1 registered
+[    0.000000] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.000000] PTP clock support registered
+[    0.000020] clocksource: Switched to clocksource jz_clocksource
+[    0.014105] NET: Registered protocol family 2
+[    0.018814] TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.025954] TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.032475] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.038891] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.044888] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.051297] NET: Registered protocol family 1
+[    0.056879] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.062831] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.073782] jitterentropy: Initialization failed with host not compliant with requirements: 2
+[    0.082906] ----------------- encryption start --------------------------
+[    0.089714] ----------------- licence ok !! --------------------------
+[    0.096402] io scheduler noop registered
+[    0.100338] io scheduler deadline registered (default)
+[    0.105528] io scheduler cfq registered
+[    0.109483] helix probe!!!!!!!!!! pdev->name=13200000.jpeg pdev->id=0, vpu_id=0x02000001
+[    0.117709] vpu_register
+[    0.120219] helix probe success!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[    0.126087] Board 0x3ed uart0 is not in use, disable it
+[    0.131415] 10031000.serial: ttyS1 at MMIO 0x10031000 (irq = 58, base_baud = 5859375) is a uart1
+[    0.140308] console [ttyS1] enabled
+[    0.140308] console [ttyS1] enabled
+[    0.147381] bootconsole [early0] disabled
+[    0.147381] bootconsole [early0] disabled
+[    0.156434] brd: module loaded
+[    0.161280] ingenic-tcu 10002000.tcu: Ingenic TCU driver register completed ret = 0
+[    0.169266] st: Version 20101219, fixed bufsize 32768, s/g segs 256
+[    0.175863] osst :I: Tape driver with OnStream support version 0.99.4
+[    0.175863] osst :I: $Id: osst.c,v 1.73 2005/01/01 21:13:34 wriede Exp $
+[    0.189652] SCSI Media Changer driver v0.25 
+[    0.194257] ahci_ingenic_probe, 294,init phy
+[    0.198676] Before config,P0PHYCR is 0x0000
+[    0.203057] ahci-ingenic 130d0000.sata: forcing port_map 0x0 -> 0x3
+[    0.209579] ahci-ingenic 130d0000.sata: AHCI 0001.0300 32 slots 2 ports 3 Gbps 0x3 impl platform mode
+[    0.219161] ahci-ingenic 130d0000.sata: flags: ncq sntf pm led clo only pmp fbs pio slum part ccc apst 
+[    0.228915] ahci-ingenic 130d0000.sata: port 0 is not capable of FBS
+[    0.236752] ahci-ingenic 130d0000.sata: port 1 is not capable of FBS
+[    0.245342] scsi host0: ahci-ingenic
+[    0.249328] scsi host1: ahci-ingenic
+[    0.253238] ata1: FORCE: PHY spd limit set to 1.5Gbps
+[    0.258465] ata1: SATA max UDMA/133 mmio [mem 0x130d0000-0x130dffff] port 0x100 irq 51
+[    0.266694] ata2: FORCE: PHY spd limit set to 1.5Gbps
+[    0.271944] ata2: SATA max UDMA/133 mmio [mem 0x130d0000-0x130dffff] port 0x180 irq 51
+[    0.280622] Enter 'CDT' mode.
+[    0.283686] Enter 'DMA Descriptor chain' mode. SFC use CPU mode
+[    0.289971] ingenic-sfc 13440000.sfc0: Found Supported nor device, BE = 64K, id = 204018, name = XM25QH128C
+[    0.300089] ingenic-sfc 13440000.sfc0: nor flash now use standard mode!
+[    0.306940] 6 cmdlinepart partitions found on MTD device jz_sfc
+[    0.313089] Creating 6 MTD partitions on "jz_sfc":
+[    0.318044] 0x000000000000-0x000000030000 : "uboot"
+[    0.323904] 0x000000030000-0x000000040000 : "env"
+[    0.329508] 0x000000040000-0x000000210000 : "kernel_m2"
+[    0.350417] 0x000000210000-0x000000e10000 : "rootfs_m3"
+[    0.370406] 0x000000e10000-0x000000ff0000 : "config_m4"
+[    0.390420] 0x000000ff0000-0x000001000000 : "logo_m5"
+[    0.410354] ingenic-sfc 13440000.sfc0: SPI NOR MTD LOAD OK
+[    0.416232] libphy: GPIO Bitbanged MDIO: probed
+[    0.421178] libphy: GPIO Bitbanged MDIO: probed
+[    0.426079] stmmac_dt_phy[370]: Found MDIO subnode
+[    0.431092] ingenic-dwmac 130b0000.gmac0: PTP uses main clock
+[    0.437037] ingenic-dwmac 130b0000.gmac0: no reset control found
+[    0.460035] ingenic-dwmac 130b0000.gmac0: User ID: 0x76, Synopsys ID: 0x31
+[    0.467150] ingenic-dwmac 130b0000.gmac0: 	XGMAC2
+[    0.472030] ingenic-dwmac 130b0000.gmac0: DMA HW capability register supported
+[    0.479502] ingenic-dwmac 130b0000.gmac0: RX Checksum Offload Engine supported
+[    0.486987] ingenic-dwmac 130b0000.gmac0: COE Type 1
+[    0.492132] ingenic-dwmac 130b0000.gmac0: TX Checksum insertion supported
+[    0.499153] ingenic-dwmac 130b0000.gmac0: TSO supported
+[    0.504567] ingenic-dwmac 130b0000.gmac0: Enable RX Mitigation via HW Watchdog Timer
+[    0.512592] ingenic-dwmac 130b0000.gmac0: TSO feature enabled
+[    0.518537] ingenic-dwmac 130b0000.gmac0: Using 32 bits DMA width
+[    0.524958] libphy: stmmac: probed
+[    0.540035] #####　gmac get_phy_id,phy id 0x2000a140
+[    0.545829] stmmac_dvr_probe[4936]: success!
+[    0.550353] Board 0x3ed not support gmac1, disable it
+[    0.555626] PPP generic driver version 2.4.2
+[    0.560205] NET: Registered protocol family 24
+[    0.564874] dwc2 13600000.otg0: Configuration mismatch. Forcing host mode
+[    0.571941] get usb gate: gate_otg0
+[    0.575579] ingenic usb phy_init otgid:0
+[    0.630034] ata2: SATA link down (SStatus 0 SControl 310)
+[    0.635646] ata1: SATA link down (SStatus 0 SControl 310)
+[    0.800099] dwc2 13600000.otg0: DWC OTG Controller
+[    0.805067] dwc2 13600000.otg0: new USB bus registered, assigned bus number 1
+[    0.812479] dwc2 13600000.otg0: irq 29, io mem 0x00000000
+[    0.818627] hub 1-0:1.0: USB hub found
+[    0.822550] hub 1-0:1.0: 1 port detected
+[    0.826839] dwc2 13640000.otg1: Configuration mismatch. Forcing host mode
+[    0.833896] get usb gate: gate_otg1
+[    0.837530] ingenic usb phy_init otgid:1
+[    1.060098] dwc2 13640000.otg1: DWC OTG Controller
+[    1.065064] dwc2 13640000.otg1: new USB bus registered, assigned bus number 2
+[    1.072473] dwc2 13640000.otg1: irq 36, io mem 0x00000000
+[    1.078553] hub 2-0:1.0: USB hub found
+[    1.082478] hub 2-0:1.0: 1 port detected
+[    1.086752] dwc2 13680000.otg2: Configuration mismatch. Forcing host mode
+[    1.093808] get usb gate: gate_otg2
+[    1.097439] ingenic usb phy_init otgid:2
+[    1.320094] dwc2 13680000.otg2: DWC OTG Controller
+[    1.325060] dwc2 13680000.otg2: new USB bus registered, assigned bus number 3
+[    1.332469] dwc2 13680000.otg2: irq 37, io mem 0x00000000
+[    1.338549] hub 3-0:1.0: USB hub found
+[    1.342467] hub 3-0:1.0: 1 port detected
+[    1.346855] usbcore: registered new interface driver usb-storage
+[    1.852631] i8042: i8042 controller selftest timeout
+[    1.858133] mousedev: PS/2 mouse device common for all mice
+[    1.880164] rtc-ingenic 10003000.rtc: rtc core: registered rtc-ingenic as rtc0
+[    1.887689] i2c /dev entries driver
+[    1.891731] hidraw: raw HID events driver (C) Jiri Kosina
+[    1.897404] usbcore: registered new interface driver usbhid
+[    1.903192] usbhid: USB HID core driver
+[    1.907198] Netfilter messages via NETLINK v0.30.
+[    1.912122] ip_set: protocol 6
+[    1.915414] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.921004] NET: Registered protocol family 17
+[    1.926725] Key type encrypted registered
+[    1.931019] soc_vpu probe success,version:1.0.0-03203fd46d
+[    1.936600] rtc-ingenic 10003000.rtc: setting system clock to 1970-03-18 12:57:20 UTC (6613040)
+[    1.948669] VFS: Mounted root (squashfs filesystem) readonly on device 31:3.
+[    1.959210] devtmpfs: mounted
+[    1.962447] Freeing unused kernel memory: 284K
+[    1.968122] random: nonblocking pool is initialized
+the version of rootfs is gcc720_229_5.1.0.1
+mdev is ok......
+[RCS]: /etc/init.d/S99ants
+./init_board.sh: cd: line 80: can't cd to /mnt/mtd/res/nginx/
+[    3.093585] @@@ JZ IPU Probe Success (Version 20230705a), Build Time: 2023-07-05 14:07:32-785e9fe @@@
+[    3.136032] @@@@ JZ VDEC Init Success @@@@
+[    3.140340] @@@VDEC register success!version=L��0���-2024-05-16 17:48:54-5676cb4@@@
+[    3.188347] @@@VDE register success!version=H20230516a-2023-07-05 14:05:52-785e9fe@@@
+[    3.224803] fbdev[0]display vaddr=aa400000 paddr=0x0a400000
+[    3.231042] fbdev[1]display vaddr=ab7a8000 paddr=0x0b7a8000
+[    3.237066] @@@FB register success!version=H20220818A-2023-07-05 14:07:48-785e9fe@@@
+[    3.260104] dsp_create_dma_chan 863
+[    3.263726] @@@@ hdmi audio driver ok(version H20220611a) @@@@@
+[    3.310084] @@@@@ inner codec power up@@@@@@
+[    3.760066] @@@@ audio driver ok(version H20220818a) @@@@@
+[    3.773100] Board 3ed not support switchmac
+insmod: can't insert 'switch.ko': No such device
+Get rtc time base 1735136032,1789 from /config/.rtc_base
+chmod: /mnt/mtd/app/host/script/ntsclientcon: No such file or directory
+not find hostmgr_UMID.dat
+chmod: autoupgrade: Read-only file system
+vm.drop_caches = 3
+ash: 1: unknown operand
+=================================================================
+MemTotal:         187208 kB
+MemFree:          168824 kB
+MemAvailable:     165096 kB
+Buffers:             504 kB
+Cached:             2180 kB
+SwapCached:            0 kB
+Active:             1348 kB
+Inactive:           1616 kB
+Active(anon):        384 kB
+Inactive(anon):       92 kB
+Active(file):        964 kB
+Inactive(file):     1524 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:         187208 kB
+LowFree:          168824 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:           348 kB
+Mapped:             1280 kB
+Shmem:                92 kB
+Slab:               5300 kB
+SReclaimable:        552 kB
+SUnreclaim:         4748 kB
+KernelStack:         464 kB
+PageTables:           88 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93604 kB
+Committed_AS:       2104 kB
+VmallocTotal:    1015800 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+=================================================================
+Wed Mar 12 02:41:25 UTC 2025
+MemTotal:         187208 kB
+MemFree:          169616 kB
+MemAvailable:     165548 kB
+Buffers:             168 kB
+Cached:             1736 kB
+SwapCached:            0 kB
+Active:              844 kB
+Inactive:           1256 kB
+Active(anon):        204 kB
+Inactive(anon):       92 kB
+Active(file):        640 kB
+Inactive(file):     1164 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:         187208 kB
+LowFree:          169616 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:           204 kB
+Mapped:             1280 kB
+Shmem:                92 kB
+Slab:               5300 kB
+SReclaimable:        552 kB
+SUnreclaim:         4748 kB
+KernelStack:         464 kB
+PageTables:           88 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93604 kB
+Committed_AS:       2104 kB
+VmallocTotal:    1015800 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+=================================================================
+
+Ingenic-uc1_1 login: root
+Password: 
+REDACTED
+[    9.263551] Timing: vactive = 768
+[    9.266972] Timing: htotal = 1344
+[    9.270429] Timing: vtotal = 806
+[    9.273763] Timing: hde_st = 297
+[    9.277094] Timing: hde_sp = 1321
+[    9.280550] Timing: vde_st = 36
+[    9.283794] Timing: vde_sp = 804
+[    9.287126] Timing: hsync_st = 1
+[    9.290470] Timing: hsync_sp = 161
+[    9.293983] Timing: vsync_st = 1
+[    9.297314] Timing: vsync_sp = 7
+[    9.300657] Timing: polarity = 111011
+[    9.304440] Timing: freq = 60
+[    9.307502] Timing: pix_clk = 64995840
+[    9.311419] vde_algo_analysis_params():can't open /system/init/vde_param.txt, using default paramters
+[    9.380204] hdmi_inv_hsync = 0
+[    9.383359] hdmi_inv_vsync = 0
+[    9.386510] hactive = 1024
+[    9.389302] hblank = 320
+[    9.391930] hfrontporch = 24
+[    9.394903] hdmi_hsync width = 160
+[    9.398415] vactive = 768
+[    9.401129] vblank = 38
+[    9.403652] vfrontporch = 3
+[    9.406534] hdmi_vsync width = 6
+[    9.569455] debug paramter:
+[    9.572389] peak:on
+[    9.574554] sharpness:12
+[    9.577167] edge:40
+[    9.579329] sma_dte:0,1,2,4,8,16,32,64,80,96,112,128,144,160,176,200,255,
+[    9.586448] big_dte:255,255,255,250,240,220,200,180,150,100,80,60,40,20,10,5,0,
+[    9.594100] csc:1
+[    9.596085] /* CSC_MATRIX_BT601_FULL=0; */
+[    9.600330] /* CSC_MATRIX_BT601_LIMIT=1; */
+[    9.604651] /* CSC_MATRIX_BT709_FULL=2; */
+[    9.608882] /* CSC_MATRIX_BT709_LIMIT=3; */
+[    9.613215] /* CSC_MATRIX_BT2020_FULL=4; */
+[    9.617536] /* CSC_MATRIX_BT2020_LIMIT=5; */
+[    9.621962] bcsh:on
+[    9.624128] brightness:132
+[    9.626920] contrast:134
+[    9.629532] saturation:130
+[    9.632341] hue:127
+[   10.260430] hdmi_set_clk_regenerator: fs=48000Hz ftdms=64.995MHz N=6144 cts=64995
+err: Dsys_func_register,421 func.keyword is same, funcs[10].keyword = AUDIO_info, func->keyword = AUDIO_info
+err: Dsys_func_register,421 func.keyword is same, funcs[10].keyword = AUDIO_info, func->keyword = AUDIO_info
+Login incorrect
+Ingenic-uc1_1 login: [   11.570211] Timing: hactive = 1920
+[   11.573729] Timing: vactive = 1080
+[   11.577242] Timing: htotal = 2200
+[   11.580734] Timing: vtotal = 1125
+[   11.584158] Timing: hde_st = 193
+[   11.587488] Timing: hde_sp = 2113
+[   11.590981] Timing: vde_st = 42
+[   11.594224] Timing: vde_sp = 1122
+[   11.597646] Timing: hsync_st = 1
+[   11.601004] Timing: hsync_sp = 45
+[   11.604427] Timing: vsync_st = 1
+[   11.607759] Timing: vsync_sp = 6
+[   11.611104] Timing: polarity = 0
+[   11.614437] Timing: freq = 60
+[   11.617499] Timing: pix_clk = 148500000
+[   11.621510] vde_algo_analysis_params():can't open /system/init/vde_param.txt, using default paramters
+[   11.690113] hdmi_inv_hsync = 1
+[   11.693269] hdmi_inv_vsync = 1
+[   11.696420] hactive = 1920
+[   11.699211] hblank = 280
+[   11.701872] hfrontporch = 88
+[   11.704846] hdmi_hsync width = 44
+[   11.708268] vactive = 1080
+[   11.711092] vblank = 45
+[   11.713617] vfrontporch = 4
+[   11.716496] hdmi_vsync width = 5
+[   11.836401] hdmi_set_clk_regenerator: fs=48000Hz ftdms=148.500MHz N=6144 cts=148500
+err: Dsys_func_register,421 func.keyword is same, funcs[10].keyword = AUDIO_info, func->keyword = AUDIO_info
+<ZhangXinda Debug> QT Init Step 1:   QCoreApplicationPrivate Construct
+<ZhangXinda Debug> QT Init Step 2:   QApplicationPrivate Construct
+<ZhangXinda Debug> QT Init Step 3:   QCoreApplication Construct
+<ZhangXinda Debug> QT Init Step 4:   QApplication Construct
+<ZhangXinda Debug> QT Init Step 5:   QWSServer Construct
+<ZhangXinda Debug> QT Font Directory Location:   /mnt/mtd/res/qt/fonts  
+<ZhangXinda Debug> QT Init Step 6:   QWSDisplay Construct
+<ZhangXinda Debug> QT Init Step 7:   QWSDisplay::Data Construct
+<ZhangXinda Debug> QT Init Step 8:   QLinuxFbScreen Construct
+
+
+<ZhangXinda Debug> Qt FrameBuffer Info:
+    FB Width = 1920
+    FB Height = 1080
+    FB BitsPerPixel = 16
+    FB Size = 4149248(Bytes)
+    FB Address = 0x695da000
+
+
+<ZhangXinda Debug> QT Init Step 9:   QScreenCursor Construct
+QImage::scaled: Image is a null image
+newMouseHandler mouseProto Auto, mouseDev
+
+erro[embedded/qmousedriverfactory_qws.cpp create��122]
+
+<ZhangXinda Debug> QT Init Step 10:   QWSMouseHandler Construct
+<ZhangXinda Debug> QT Init Step 11:   QWSPcMouseHandler Construct
+QImage::scaled: Image is a null image
+<ZhangXinda Debug> QT Init Step 12:   QWSTtyKeyboardHandler Construct
+QWS_KEYBOARD_TYPE:[gpioLed]
+"Arial" 
+"Source Han Sans CN" 
+"Arial,Source Han Sans CN" 
+Initializing QFontEngineQPF failed for /mnt/mtd/res/qt/fonts/arial.ttf
+[   16.726402] ingenic-dwmac 130b0000.gmac0 eth0: device MAC address XX:XX:XX:XX:XX:XX
+[   16.734414] ingenic-dwmac 130b0000.gmac0 eth0: phy_id[2000a140] modify macphy clock rate: 25000000-->50000000
+[   16.771435] ingenic-dwmac 130b0000.gmac0 eth0: No Safety Features support found
+[   17.251315] ingenic-dwmac 130b0000.gmac0 eth0: No Safety Features support found
+[I8_DDNS_GetSupportFunctions][414]
+[I8_DDNS_GetSupportFunctions][419]
+[I8_DDNS_GetSupportFunctions][423]
+[I8_DDNS_GetSupportFunctions][433]
+[I8_DDNS_GetSupportFunctions][435]
+[I8_DDNS_GetSupportFunctions][437]
+[I8_DDNS_GetSupportFunctions][442]
+[I8_DDNS_GetSupportFunctions][447]
+[I8_DDNS_GetSupportFunctions][449]
+[I8_DDNS_GetSupportFunctions][451]
+[I8_DDNS_GetSupportFunctions][453]
+rm: can't remove '/var/.ntp_bat': No such file or directory
+pool.ntp.org: Unknown host
+/bin/sh: iptables: not found
+/bin/sh: iptables: not found
+/bin/sh: iptables: not found
+/bin/sh: iptables: not found
+/bin/sh: iptables: not found
+/bin/sh: iptables: not found
+killall: aliIoT4nvr: no process killed
+killall: autoupgrade: no process killed
+
+[autoupgrade] [00002093:PrintVersionInfo] PLATFORM[mips-v720s229-linux-uclibc-gnu] BuildDate[2024-07-19-18] Vsesion[V06.00.00]
+
+[autoupgrade] [00000010:main] starttime[2285546066 ms]
+
+[autoupgrade] [00002062:CopySerialNo] /reserve/devcie_info.xml exist now
+
+[autoupgrade] [00001495:ReadDebugUpgradeConf] /config/hostmgr_autoupgrade/autoupgrade_debug.conf
+
+[autoupgrade] [00001500:ReadDebugUpgradeConf] /config/hostmgr_autoupgrade/autoupgrade_debug.conf not exist now
+
+[autoupgrade] [00001495:ReadDebugUpgradeConf] /ants_config/hostmgr_autoupgrade/autoupgrade_debug.conf
+
+[autoupgrade] [00001500:ReadDebugUpgradeConf] /ants_config/hostmgr_autoupgrade/autoupgrade_debug.conf not exist now
+[autoupgrade] [00001515:ReadDebugUpgradeConf] autoupgrade_debug.conf not found
+
+[autoupgrade] [00000439:MainProc] firstCheckTime(5) checkIntervalTime(21600) upgradeStartHour(0) upgradeStopHour(23)
+
+[autoupgrade] [00000478:MainProc] wait-time: 5 second
+
+[autoupgrade] [00000478:MainProc] wait-time: 5 second
+
+[autoupgrade] [00000478:MainProc] wait-time: 5 second
+QLayout: Attempting to add QLayout "" to ants_local_gui::AntsPbInquiryWidget "", which already has a layout
+
+[autoupgrade] [00000478:MainProc] wait-time: 5 second
+
+[autoupgrade] [00000568:CheckProc] downloadFileFlag: 0 begin
+
+[autoupgrade] [00000573:CheckProc] restart process begin
+killall: aliIoT4nvr: no process killed
+[autoupgrade] [00000356:RestartProcess] system [killall aliIoT4nvr] succ
+
+[autoupgrade] [00000478:MainProc] wait-time: 5 second
+
+[autoupgrade] [00000478:MainProc] wait-time: 5 second
+
+[autoupgrade] [00000504:MainProc] production environment(host: p2p-update-service.antsvision.com port: 8200)
+
+{"name":"aliIoT4nvr","platform":"mips-v720s229-linux-uclibc-gnu"}
+[autoupgrade] [00000746:CheckVersion] uri: http://p2p-update-service.antsvision.com:8200/api/v1/p2pLastVersion
+
+[autoupgrade] [00002224:MakeSignature] raw data: accesssecret=289c6664dbf94aa38e9affb8b0d04565&name=aliIoT4nvr&nonce=17417473065932&platform=mips-v720s229-linux-uclibc-gnu&timestamp=1741747306
+
+[autoupgrade] [00002250:MakeSignature] dictionary sort data: accesssecret=289c6664dbf94aa38e9affb8b0d04565&name=aliIoT4nvr&nonce=17417473065932&platform=mips-v720s229-linux-uclibc-gnu&timestamp=1741747306
+
+[autoupgrade] [00002262:MakeSignature] md5 data: 285483FA140553DB727599BEBF7C7871
+* getaddrinfo(3) failed for p2p-update-service.antsvision.com:8200
+* Couldn't resolve host 'p2p-update-service.antsvision.com'
+* Closing connection 0
+[autoupgrade] [00000824:CheckVersion] call curl_easy_perform(http://p2p-update-service.antsvision.com:8200/api/v1/p2pLastVersion) error(6:Couldn't resolve host name)
+
+[autoupgrade] [00000225:OnUpgrade] environment: production host: p2p-update-service.antsvision.com port: 8200 p2p: aliIoT4nvr check version failed(7)
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+Initializing QFontEngineQPF failed for /mnt/mtd/res/qt/fonts/arial.ttf
+Initializing QFontEngineQPF failed for /mnt/mtd/res/qt/fonts/syfont.ttf
+[autoupgrade] [00000368:RestartProcess] system [chmod +x aliIoT4nvr; ./aliIoT4nvr //config//hostmgr_autoupgrade/ &] succ
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+killall: ntsclientcon: no process killed
+[03-12 10:41:47.442][aliIoT4nvr][LOG][Start(282)]: I8H-SDK version(v04.00.09-2024060019)
+[03-12 10:41:47.442][aliIoT4nvr][ERR][AutoBurnProc(4686)]: I8HModel(0xd7f800) login State(failed)
+[03-12 10:41:47.443][aliIoT4nvr][LOG][UpdateProc(4915)]: Port[80][80] or Passwd changed
+[03-12 10:41:47.443][aliIoT4nvr][LOG][UpdateProc(4922)]: Call Reconnect
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00000375:RestartProcess] form autoupgrade to start aliIoT4nvr time[2285555145 ms] use time[9079 ms]
+
+[autoupgrade] [00000577:CheckProc] restart process end
+
+[autoupgrade] [00000580:CheckProc] downloadFileFlag: 0 end
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+QWidget::setMinimumSize: (/QTableWidget) Negative sizes (-66,170) are not possible
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+[03-12 10:41:52.486][aliIoT4nvr][ERR][AutoBurnProc(4686)]: I8HModel(0xd7f800) login State(failed)
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 10 second
+
+[autoupgrade] [00000504:MainProc] production environment(host: p2p-update-service.antsvision.com port: 8200)
+
+{"name":"aliIoT4nvr","platform":"mips-v720s229-linux-uclibc-gnu"}
+[autoupgrade] [00000746:CheckVersion] uri: http://p2p-update-service.antsvision.com:8200/api/v1/p2pLastVersion
+
+[autoupgrade] [00002224:MakeSignature] raw data: accesssecret=289c6664dbf94aa38e9affb8b0d04565&name=aliIoT4nvr&nonce=1741747316175870&platform=mips-v720s229-linux-uclibc-gnu&timestamp=1741747316
+
+[autoupgrade] [00002250:MakeSignature] dictionary sort data: accesssecret=289c6664dbf94aa38e9affb8b0d04565&name=aliIoT4nvr&nonce=1741747316175870&platform=mips-v720s229-linux-uclibc-gnu&timestamp=1741747316
+
+[autoupgrade] [00002262:MakeSignature] md5 data: 553A087202E2CF2A3D437C630D51F32F
+* getaddrinfo(3) failed for p2p-update-service.antsvision.com:8200
+* Couldn't resolve host 'p2p-update-service.antsvision.com'
+* Closing connection 0
+[autoupgrade] [00000824:CheckVersion] call curl_easy_perform(http://p2p-update-service.antsvision.com:8200/api/v1/p2pLastVersion) error(6:Couldn't resolve host name)
+
+[autoupgrade] [00000225:OnUpgrade] environment: production host: p2p-update-service.antsvision.com port: 8200 p2p: aliIoT4nvr check version failed(7)
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+[03-12 10:41:57.537][aliIoT4nvr][ERR][AutoBurnProc(4686)]: I8HModel(0xd7f800) login State(failed)
+Initializing QFontEngineQPF failed for /mnt/mtd/res/qt/fonts/arial.ttf
+Initializing QFontEngineQPF failed for /mnt/mtd/res/qt/fonts/arial.ttf
+Initializing QFontEngineQPF failed for /mnt/mtd/res/qt/fonts/arial.ttf
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+[03-12 10:41:58.190][aliIoT4nvr][LOG][Login(5634)]: pDeviceProperty->acDevType(IVR) pDeviceProperty->wChanNum(16) ActiveStatus[1]
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+[03-12 10:41:58.270][aliIoT4nvr][ERR][GetDevFaceCount(12682)]: cJSON_GetObjectItem error
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000568:CheckProc] downloadFileFlag: 0 begin
+
+[autoupgrade] [00000573:CheckProc] restart process begin
+
+[autoupgrade] [00000577:CheckProc] restart process end
+
+[autoupgrade] [00000580:CheckProc] downloadFileFlag: 0 end
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /tmp/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] /ants_config/hostmgr_autoupgrade/aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00001920:IsP2POnline] //aliIoT4nvr.conf
+
+[autoupgrade] [00001925:IsP2POnline] //aliIoT4nvr.conf not exist now
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+[03-12 10:42:02.587][aliIoT4nvr][LOG][AutoBurnProc(4799)]: read license file(/config//hostmgr_autoupgrade/DeviceLicense.json) device(03ed00020089969c43bf) burTime(2024-12-25 22:15:41) has burn
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+[03-12 10:42:03.596][aliIoT4nvr][LOG][MainProc(895)]: CUpgradeFirmwareModel(0xd85f78) listen-port(30000) socket(27) succ
+[03-12 10:42:03.597][aliIoT4nvr][ERR][ReadUpgradeInfoFile(12278)]: fopen file(//config//hostmgr_autoupgrade//aliIoT4nvr_upgrade_info) error
+[03-12 10:42:03.677][aliIoT4nvr][ERR][LoadModelConfig(11051)]: call end(cJSON_GetObjectItem() error)
+[03-12 10:42:03.677][aliIoT4nvr][LOG][MainProc(941)]: CUpgradeFirmwareModel(0xd85f78) check upgrade file lastUpdateTime(1741747323)
+[03-12 10:42:03.678][aliIoT4nvr][ERR][DestroyUDPSocket(3420)]: error, sock = -1
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+[LV-INFO   |25-03-12-10:42:06.010] (lv_base_c.c:11) : Standard POSIX
+[LV-INFO   |25-03-12-10:42:06.010] (lv_base_c.c:19) : Bind MBEDTLS
+[LV-INFO   |25-03-12-10:42:06.050] (dns_service.cpp:419) : Dns server 223.5.5.5
+[LV-INFO   |25-03-12-10:42:06.051] (dns_service.cpp:419) : Dns server 223.6.6.6
+[LV-INFO   |25-03-12-10:42:06.051] (dns_service.cpp:419) : Dns server 8.8.8.8
+[inf](46055) kv_version_init(1419): kv version:1.0
+[prt] log level set as: [ 2 ]
+.................................
+   PK : a14DlpdtDGF
+   DN : QjDYWde3OXAdz7a5ARQn
+   DS : 86a7add98a
+  PID : Your company name
+  MID : Your module name
+   SM : TLS + Direct
+   TS : 2524608000000
+.................................
+.................................
+      Host : public.iot-as-mqtt.cn-shanghai.aliyuncs.com
+      Port : 1883
+  ClientID : a14DlpdtDGF.QjDYWde3OXAdz7a5ARQn|securemode=2,tokenType=0,token=D2AAEA6FB0832BB1BD1C288F61134AE4,_v=sdk-c-2.3.0_FY_1.6.6-6,timestamp=2524608000000,signmethod=hmacsha1,lan=C,pid=Your company name,mid=Your module name,authtype=custom-ilop,_fy=1.6.6-6,_ss=1|
+        CA : ('... HMUfpIBvFSDJ3gyI ...')
+.................................
+[prt] Loading the CA root certificate ...
+[prt]  ok (0 skipped)
+[prt] Connecting to /public.iot-as-mqtt.cn-shanghai.aliyuncs.com/1883...
+[prt] dns server: 223.5.5.5
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+[prt] dns server: 223.6.6.6
+[LV-ERROR  |25-03-12-10:42:09.080] (dns_service.cpp:143) : Dns request timeout, quit, addr = aliyun.com
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000568:CheckProc] downloadFileFlag: 0 begin
+
+[autoupgrade] [00000573:CheckProc] restart process begin
+
+[autoupgrade] [00000577:CheckProc] restart process end
+
+[autoupgrade] [00000580:CheckProc] downloadFileFlag: 0 end
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000478:MainProc] wait-time: 15 second
+
+[autoupgrade] [00000504:MainProc] production environment(host: p2p-update-service.antsvision.com port: 8200)
+
+{"name":"aliIoT4nvr","platform":"mips-v720s229-linux-uclibc-gnu"}
+[autoupgrade] [00000746:CheckVersion] uri: http://p2p-update-service.antsvision.com:8200/api/v1/p2pLastVersion
+
+[autoupgrade] [00002224:MakeSignature] raw data: accesssecret=289c6664dbf94aa38e9affb8b0d04565&name=aliIoT4nvr&nonce=1741747331325850&platform=mips-v720s229-linux-uclibc-gnu&timestamp=1741747331
+
+[autoupgrade] [00002250:MakeSignature] dictionary sort data: accesssecret=289c6664dbf94aa38e9affb8b0d04565&name=aliIoT4nvr&nonce=1741747331325850&platform=mips-v720s229-linux-uclibc-gnu&timestamp=1741747331
+
+[autoupgrade] [00002262:MakeSignature] md5 data: 340EFE6A3763D5E4FF9E3E38229A787C
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[prt] dns server: 8.8.8.8
+[LV-ERROR  |25-03-12-10:42:12.140] (dns_service.cpp:143) : Dns request timeout, quit, addr = aliyun.com
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[prt] getaddrinfo error[1], res: Bad value for ai_flags, host: public.iot-as-mqtt.cn-shanghai.aliyuncs.com, port: 1883
+
+[LV-ERROR  |25-03-12-10:42:15.200] (dns_service.cpp:143) : Dns request timeout, quit, addr = aliyun.com
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[prt] dns server: 223.5.5.5
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[LV-ERROR  |25-03-12-10:42:18.260] (dns_service.cpp:143) : Dns request timeout, quit, addr = aliyun.com
+[LV-ERROR  |25-03-12-10:42:18.290] (net_connector_dns.cpp:33) : DNS parse failed, DNS service: 223.6.6.6 addr: aliyun.com IP: 
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[prt] dns server: 223.6.6.6
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00000568:CheckProc] downloadFileFlag: 0 begin
+
+[autoupgrade] [00000573:CheckProc] restart process begin
+
+[autoupgrade] [00000577:CheckProc] restart process end
+
+[autoupgrade] [00000580:CheckProc] downloadFileFlag: 0 end
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[prt] dns server: 8.8.8.8
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+=================================================================
+MemTotal:         187208 kB
+MemFree:           84944 kB
+MemAvailable:     110024 kB
+Buffers:            4052 kB
+Cached:            31244 kB
+SwapCached:            0 kB
+Active:            54328 kB
+Inactive:          30016 kB
+Active(anon):      49076 kB
+Inactive(anon):      188 kB
+Active(file):       5252 kB
+Inactive(file):    29828 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:         187208 kB
+LowFree:           84944 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         49016 kB
+Mapped:            26104 kB
+Shmem:               216 kB
+Slab:               6952 kB
+SReclaimable:        988 kB
+SUnreclaim:         5964 kB
+KernelStack:         960 kB
+PageTables:          492 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93604 kB
+Committed_AS:     302324 kB
+VmallocTotal:    1015800 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+=================================================================
+Wed Mar 12 10:42:25 CST 2025
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+MemTotal:         187208 kB
+MemFree:           93928 kB
+MemAvailable:     110060 kB
+Buffers:              68 kB
+Cached:            26336 kB
+SwapCached:            0 kB
+Active:            50008 kB
+Inactive:          25408 kB
+Active(anon):      49040 kB
+Inactive(anon):      188 kB
+Active(file):        968 kB
+Inactive(file):    25220 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:         187208 kB
+LowFree:           93928 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         49052 kB
+Mapped:            26104 kB
+Shmem:               216 kB
+Slab:               6844 kB
+SReclaimable:        880 kB
+SUnreclaim:         5964 kB
+KernelStack:         960 kB
+PageTables:          492 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       93604 kB
+Committed_AS:     302816 kB
+VmallocTotal:    1015800 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+=================================================================
+[prt] getaddrinfo error[2], res: Bad value for ai_flags, host: public.iot-as-mqtt.cn-shanghai.aliyuncs.com, port: 1883
+
+
+[autoupgrade] [00001920:IsP2POnline] /tmp/aliIoT4nvr.conf
+
+[autoupgrade] [00001931:IsP2POnline] /tmp/aliIoT4nvr.conf exist now
+
+[autoupgrade] [00001958:IsP2POnline] /tmp/aliIoT4nvr.conf p2p-state: 0
+[prt] dns server: 223.5.5.5
+

@@ -1,0 +1,26 @@
+GPIOs 0-31, GPIO A:
+ gpio-6   (?               )          out hi
+ gpio-12  (sda             )          in  hi
+ gpio-13  (scl             )          in  hi
+ gpio-18  (sc2336_reset    )          out hi
+
+GPIOs 32-63, GPIO B:
+ gpio-38  (BUTTON          )          in  hi
+ gpio-39  (SPK             )          out hi
+ gpio-40  (BLUE LED        )          out hi
+ gpio-45  (IRLED           )          out lo
+ gpio-46  (RED LED         )          out lo
+ gpio-47  (wifi power      )          out lo
+ gpio-49  (ptzCtrl         )          out lo
+ gpio-50  (mmc_detect      )          in  hi
+ gpio-52  (ptzCtrl         )          out lo
+ gpio-53  (ptzCtrl         )          out lo
+ gpio-57  (IRCUT1          )          out lo
+ gpio-58  (IRCUT2          )          out lo
+ gpio-59  (ptzCtrl         )          out lo
+ gpio-61  (ptzCtrl         )          out lo
+ gpio-62  (ptzCtrl         )          out lo
+ gpio-63  (ptzCtrl         )          out lo
+
+GPIOs 64-95, GPIO C:
+ gpio-64  (ptzCtrl         )          out lo
