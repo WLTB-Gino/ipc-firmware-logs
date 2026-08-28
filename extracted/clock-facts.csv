@@ -22,3 +22,9 @@ wiki:Xiaomi-MJSXJ03HL,Xiaomi MJSXJ03HL vendor serial,t31l_or_t31n,vendor_spl_pla
 wiki:Xiaomi-MJSXJ03HL,Xiaomi MJSXJ03HL vendor serial,t31l_or_t31n,vendor_spl_plan,mpll,1200000000,logs/xiaomi_mjsxj03hl-t23x-t31x-serial-from-wiki.boot.log
 wiki:Xiaomi-MJSXJ03HL,Xiaomi MJSXJ03HL vendor serial,t31l_or_t31n,vendor_spl_plan,vpll,1200000000,logs/xiaomi_mjsxj03hl-t23x-t31x-serial-from-wiki.boot.log
 wiki:Xiaomi-MJSXJ03HL,Xiaomi MJSXJ03HL vendor serial,t31l_or_t31n,vendor_kernel_clk,H0CLK,200000000,logs/xiaomi_mjsxj03hl-t23x-t31x-serial-from-wiki.boot.log
+discord:nic 2026-08-28,Shelly S1 vendor serial (eth unit, bootloop),t23n,vendor_spl_plan,apll,1188000000,logs/shelly_s1-t23n-mis20c1-eth.boot.log
+discord:nic 2026-08-28,Shelly S1 vendor serial (eth unit, bootloop),t23n,vendor_spl_plan,mpll,1200000000,logs/shelly_s1-t23n-mis20c1-eth.boot.log
+discord:nic 2026-08-28,Shelly S1 vendor serial (eth unit, bootloop),t23n,vendor_spl_plan,ddr,600000000,logs/shelly_s1-t23n-mis20c1-eth.boot.log
+discord:nic 2026-08-28,Shelly S1 vendor serial (eth unit, bootloop),t23n,note,no_kernel_cclk_line,logs/shelly_s1-t23n-mis20c1-eth.boot.log
+discord:nic 2026-08-28,Shelly S1 vendor serial (eth unit, bootloop),t23n,note,iseth_no_phy,"dwc-mac PROB:synopGMAC_reset timeout; Net: ====>PHY not found!Jz4775-9161; gpio pin 40 value 1 (jz4775-9161 integrated PHY select?)",logs/shelly_s1-t23n-mis20c1-eth.boot.log
+discord:nic 2026-08-28,Shelly S1 vendor serial (eth unit, bootloop),t23n,note,sensor,mis20c1 (SmartSens MIS20C1; sibling of SDK mis2009/mis2008 family),logs/shelly_s1-t23n-mis20c1-eth.boot.log

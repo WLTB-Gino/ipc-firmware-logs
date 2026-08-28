@@ -1,0 +1,126 @@
+U-Boot SPL 2013.07-MALMOSET-2025.09a (Apr 24 2026 - 17:33:34)
+Board info: T23N
+
+apll_freq = 1188000000
+mpll_freq = 1200000000
+sdram init start
+DDR clk rate 600000000
+DDR_PAR of eFuse: 00000000 00000000
+sdram init finished
+image entry point: 0x80100000
+
+
+U-Boot 2013.07 (Apr 24 2026 - 17:33:34)
+
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 232k for U-Boot at: 83fc4000
+Reserving 32784k for malloc() at: 81fc0000
+Reserving 32 Bytes for Board Info at: 81fbffe0
+Reserving 124 Bytes for Global Data at: 81fbff64
+Reserving 128k for boot params() at: 81f9ff64
+Stack Pointer at: 81f9ff48
+Now running in RAM - U-Boot at: 83fc4000
+the manufacturer 20
+SF: Detected XM25QH256C
+
+SF: Warning - Only lower 16MiB accessible, Full access #define CONFIG_SPI_FLASH_BAR
+In:    serial
+Out:   serial
+Err:   serial
+Net:  ====>PHY not found!Jz4775-9161
+Enter password in 1 secondsgpio: pin 40 value is 1
+the manufacturer 20
+SF: Detected XM25QH256C
+
+SF: Warning - Only lower 16MiB accessible, Full access #define CONFIG_SPI_FLASH_BAR
+--->probe spend 11 ms
+Shelly OS loader 1.0.2
+Read BS0: seq 3 as 0 rs 1 ba 0 mfs 0 c 1 | v 1
+Read BS1: seq 0 bst 0x00 seq2 0 | v 0
+Booting app 0
+SF: 2621440 bytes @ 0x80000 Read: OK
+--->read spend 842 ms
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-4.4.94
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    2574394 Bytes = 2.5 MiB
+   Load Address: 80010000
+   Entry Point:  80553060
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.4.94 (build@def5926a3b8c) (gcc version 9.4.0 (Buildroot 2021.02.12-926-g9012a4daf6-dirty)                                                                                             ) #4 PREEMPT Wed Jun 24 20:21:11 UTC 2026
+[    0.000000] Ingenic Kernel-4.4.94 version H20250815a
+[    0.000000] CPU0 RESET ERROR PC:B422CFC4
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00d00100 (Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] MIPS: machine is ingenic,pike
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00717000 @ 00010000 (usable)
+[    0.000000]  memory: 00039000 @ 00727000 (usable after init)
+[    0.303403] dwc-mac 134b0000.mac: PROB:synopGMAC_reset timeout...
+Started mdev
+mknod: /dev/null: File exists
+mknod: /dev/console: File exists
+Arming watchdog (30 seconds): OK
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Starting mdev... OK
+Seeding RNG from /dev/hwrng
+No compatible wifi device found
+Bus 001 Device 001: ID 1d6b:0002
+Loading sensor driver: sensor_mis20c1_t23.ko from /usr/lib/modules
+Starting Shelly application: [Jan 01 00:00:05.638] I shos_linux_main.cpp:44  Camera 2.1.99 (20260630-070052/gd0bc966)
+OK
+
+Welcome to Malmoset T23
+malmoset login: E shos_event.cpp:207      Group SHy is not registered
+E shos_linux_wifi.cpp:112 Failed to setup AP: NOT_FOUND: failed to init : Error getting interface info for wlan0 : Not f                                                                                            ound
+E shos_init.cpp:43        wifi init failed
+E linux_main_shos.cpp:305 SHOS init failed
+E linux_main_shos.cpp:343 Main task exited (-3)
+E linux_main_host.cpp:179 Finished, returning 102
+W shos_linux_main.cpp:111 === Rebooting in 5 seconds ===
+W shos_linux_main.cpp:119 === Rebooting ===
+E shos_linux_main.cpp:131 Exiting 102
+Device has HW RNG, no need for saved random seed.
+Stopping mdev... stopped process in pidfile '/var/run/mdev.pid' (pid 602)
+OK
+Stopping klogd: OK
+Stopping syslogd: OK
+umount: devtmpfs busy - remounted read-only
+Sent SIGKILL to all processes
+Requesting system reboot
+
+Requesting system reboot
+
+--- second boot cycle, identical except CPU0 RESET ERROR PC value (80272D04, __delay+0x4/0x10) ---
+U-Boot SPL 2013.07-MALMOSET-2025.09a (Apr 24 2026 - 17:33:34)
+Board info: T23N
+
+apll_freq = 1188000000
+mpll_freq = 1200000000
+sdram init start
+DDR clk rate 600000000
+DDR_PAR of eFuse: 00000000 00000000
+sdram init finished
+image entry point: 0x80100000
+
+U-Boot 2013.07 (Apr 24 2026 - 17:33:34)
+Board: ISVP (Ingenic XBurst T23 SoC)
+DRAM:  64 MiB
+Shelly OS loader 1.0.2
+Read BS0: seq 3 as 0 rs 1 ba 0 mfs 0 c 1 | v 1
+Read BS1: seq 0 bst 0x00 seq2 0 | v 0
+Booting app 0
+SF: 2621440 bytes @ 0x80000 Read: OK
+Linux-4.4.94, Ingenic Kernel-4.4.94 version H20250815a
+Loading sensor driver: sensor_mis20c1_t23.ko from /usr/lib/modules
+Starting Shelly application: Camera 2.1.99 (20260630-070052/gd0bc966)
+Same failure path: wifi init failed -> SHOS init failed -> Main task exited (-3) -> reboot
